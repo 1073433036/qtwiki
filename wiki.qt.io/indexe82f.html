@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_Jambi_on_Windows_using_MinGW&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Building Qt Jambi on Windows using MinGW - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building_Qt_Jambi_on_Windows_using_MinGW","wgTitle":"Building Qt Jambi on Windows using MinGW","wgCurRevisionId":19217,"wgRevisionId":19217,"wgArticleId":149,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building_Qt_Jambi_on_Windows_using_MinGW","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building_Qt_Jambi_on_Windows_using_MinGW skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Building Qt Jambi on Windows using MinGW</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexd53d.html?title=Building_Qt_Jambi_on_Windows_using_MinGW&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Building_Qt_Jambi_on_Windows_using_MinGW"><span class="tocnumber">1</span> <span class="toctext">Building Qt Jambi on Windows using MinGW</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#General"><span class="tocnumber">1.1</span> <span class="toctext">General</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Prerequisites:"><span class="tocnumber">1.2</span> <span class="toctext">Prerequisites:</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Compile_own_Qt_with_MinGW_and_MSYS"><span class="tocnumber">1.3</span> <span class="toctext">Compile own Qt with MinGW and MSYS</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Compile_Qtjambi"><span class="tocnumber">1.4</span> <span class="toctext">Compile Qtjambi</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Building_Qt_Jambi_on_Windows_using_MinGW">Building Qt Jambi on Windows using MinGW</span></h1>
+<h2><span class="mw-headline" id="General">General</span></h2>
+<p>The following howto describes the steps neccessary to compile Qt Jambi on Windows using the MinGW development environment. It was tested on a 32bit Windows 7 installation. If you encounter any problems following it you are encouraged to seek help in the <i>#qtjambi</i> channel on <i>freenode</i>.
+</p>
+<h2><span class="mw-headline" id="Prerequisites:">Prerequisites:</span></h2>
+<p><b>Note about current releases:</b>
+Current Qt releases are compiled using MinGW version 4.4, while the current official version of MinGW from <a rel="nofollow" class="external free" href="http://www.mingw.org/">http://www.mingw.org/</a> is 4.5. Issues may arise if you try to run applications which were compiled against MinGW-4.5 with a Qt library compiled against MinGW-4.4.
+Unless you have access to a MinGW version known to work with the official Qt binaries, you are encouraged to build your own Qt binaries from source. If you want to stick to the official Qt binaries you may try the MinGW-4.4 binaries provided by <a rel="nofollow" class="external text" href="http://code.google.com/p/msysgit/">msysgit</a> or those shipped with the Qt SDK releases.
+</p>
+<ul>
+<li> <b>MinGW:</b> You can download MinGW from <a rel="nofollow" class="external free" href="http://www.mingw.org/">http://www.mingw.org</a>. Follow the installation instructions there. In the rest of this howto we will assume that you have installed MinGW to <i>C:</i>. If you chose a different installation destination configure your <b>PATH</b> accordingly in the section <i>Adjust your CMD environment</i> below.
+</li>
+</ul>
+<ul>
+<li> <b>Git (optional):</b> You need that if you want to fetch the Qtjambi sources via git. The easiest way to achieve that is by installing Msysgit which can be downloaded from <a rel="nofollow" class="external text" href="http://code.google.com/p/msysgit/">http://code.google.com/p/msysgit</a>.
+</li>
+</ul>
+<ul>
+<li> <b>Qt:</b> You can download Qt here: <a rel="nofollow" class="external free" href="http://qt.nokia.com/">http://qt.nokia.com/</a>. The version of Qt used for this howto is Qt-4.7.1. You may have to change your <b>PATH</b> settings below if you chose a different version or installed it to another destination.
+</li>
+</ul>
+<ul>
+<li> <b>Java Development kit:</b> You can get it here: <a rel="nofollow" class="external free" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>. Make sure you use the 32bit version if your Qt is 32bit.
+</li>
+</ul>
+<ul>
+<li> <b>Apache Ant:</b> Ant is the tool used to build qtjambi. You can get it here: <a rel="nofollow" class="external free" href="http://ant.apache.org/bindownload.cgi">http://ant.apache.org/bindownload.cgi</a>. The version used for this howto is ant-1.8.1.
+</li>
+</ul>
+<ul>
+<li> <b>Qtjambi:</b> Last but not least, you of course need Qtjambi itself. You have to fetch it from <a rel="nofollow" class="external free" href="http://qt.gitorious.org/qt-jambi">http://qt.gitorious.org/qt-jambi</a>. Make sure you use the latest community version, not the official version which is hopelessly outdated and not maintained anymore. You need git to fetch it: You can use <a rel="nofollow" class="external text" href="http://code.google.com/p/msysgit/">msysgit</a> for it. Alternatively you can just take a source package from our website, if currently available.
+</li>
+</ul>
+<p>Executing git clone <a rel="nofollow" class="external free" href="git://gitorious.org/qt-jambi/qtjambi-4_7.git">git://gitorious.org/qt-jambi/qtjambi-4_7.git</a> qtjambi will fetch the current development version of qtjambi into a directory called qtjambi. Now change into that directory and start with adjusting the environment.
+</p>
+<h2><span class="mw-headline" id="Compile_own_Qt_with_MinGW_and_MSYS">Compile own Qt with MinGW and MSYS</span></h2>
+<p>1. Get Qt sources from git repo or their site
+2. Open MSYS console
+</p>
+3. Go to extracted Qt source directory and run ./configure.exe with arguments you want (TODO: proper argument listing) <b>Important note:</b> Do not use ./configure, it fails with MSYS. You may also need to use <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">-</span>platform win32<span class="sy0">-</span>g<span class="sy0">++&lt;</span>code<span class="sy0">&gt;</span>
+<span class="nu0">4</span>. <span class="me1">exec</span> <span class="st0">&quot;make&quot;</span> or <span class="st0">&quot;mingw32-make&quot;</span><span class="sy0">,</span> which one ever is available
+<span class="nu0">5</span>. <span class="me1">Go</span> to eat something.
+&#160;
+<span class="sy0">==</span> Adjust the build properties <span class="sy0">==</span>
+In the root directory of Qtjambi there are two files named <span class="st0">''</span>build.<span class="me1">properties</span><span class="st0">''</span> and <span class="st0">''</span>buildpath.<span class="me1">properties</span><span class="st0">''</span> respectively. <span class="me1">These</span> two files represent the build configuration used by ant to build Qtjambi. <span class="me1">In</span> order <span class="kw1">for</span> Qtjambi to compile on windows<span class="sy0">,</span> we have to change a few settings in <span class="st0">''</span>buildpath.<span class="me1">properties</span><span class="st0">''</span> since the <span class="kw1">default</span> settings are geared towards compilation on linux. <span class="me1">You</span> have to comment in or <span class="kw1">delete</span> <span class="br0">&#40;</span>thereby effectively deactivating<span class="br0">&#41;</span> the entries <span class="st0">''</span>qtjambi.<span class="me1">java</span>.<span class="me1">library</span>.<span class="me1">path</span><span class="st0">''</span> and all those starting with <span class="st0">''</span>qtjambi.<span class="me1">phonon</span>.<span class="st0">''</span>. <span class="me1">It</span> is also safe to <span class="kw1">do</span> the same to those entries describing the location of the <span class="kw5">Qt</span> library. <span class="me1">Those</span> start with <span class="st0">''</span>qt.<span class="st0">''</span> <span class="br0">&#40;</span>eg.<span class="sy0">:</span> qt.<span class="me1">bindir</span><span class="sy0">,</span> qt.<span class="me1">libdir</span><span class="br0">&#41;</span>. <span class="me1">The</span> resulting <span class="st0">''</span>buildpath.<span class="me1">properties</span><span class="st0">''</span> configuration file<span class="sy0">-</span> stripped of all comment lines <span class="sy0">-</span> may look like <span class="kw1">this</span><span class="sy0">:</span></pre></div></div>timestamp.dir = build/timestamps
+<p>java.srcdir = src/java
+java.outdir = build/java/out
+jardir = jars
+generator.outputdir = build/generator/out
+generator.xmlmerge.srcdir = generator/typesystem/xml
+generator.xmlmerge.outputdir = build/generator
+</p>
+juic.outputdir = build/juic/out<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">==</span> Adjust your CMD environment<span class="sy0">:</span> <span class="sy0">==</span>
+&#160;
+You have to at least set the <span class="st0">''</span><span class="st0">'QTDIR'</span><span class="st0">''</span> and <span class="st0">''</span><span class="st0">'JDK_HOME'</span><span class="st0">''</span> variables to point to your <span class="kw5">Qt</span> and JDK installation respectively. <span class="me1">The</span> compiler suit shipped with MinGW must be in <span class="st0">''</span><span class="st0">'PATH'</span><span class="st0">''</span> so ant can find and run it. <span class="me1">Also</span> make sure the ant binary is in <span class="st0">''</span><span class="st0">'PATH'</span><span class="st0">''</span> or <span class="kw1">else</span> you have to use the full path to the ant binaries in order to execute the ant command.
+&#160;
+<span class="me1">Below</span> we assume that <span class="kw5">Qt</span> is installed to <span class="st0">''</span>C<span class="sy0">:</span>.7.1<span class="st0">''</span><span class="sy0">,</span> The Java JDK can be found in <span class="st0">''</span>C<span class="sy0">:</span>Files\Java\jdk1.6.0_23<span class="st0">''</span> and ant has been installed to _C<span class="sy0">:</span>Files\ant <span class="kw1">while</span> mingw can be found in <span class="st0">''</span>C<span class="sy0">:</span><span class="st0">''</span> <span class="br0">&#40;</span>That<span class="st0">'s the default installation path if you installed Mingw using msysgit: http://code.google.com/p/msysgit/).
+&#160;
+The commands to set up the environment may (depending on your installation paths) look like this:</span></pre></div></div>set "JAVA_HOME=C:Files (x86)1.6.0_23"
+<p>set "MINGW=C:"
+set "ANT=C:Files\ant"
+set "QTDIR=C:.7.1"
+</p>
+set "PATH=JAVA_HOME;ANT;QTDIR;MINGW;PATH"<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">==</span> Clean Qtjambi from <span class="br0">&#40;</span>possibly<span class="br0">&#41;</span> existing build files <span class="sy0">==</span>
+&#160;
+It is best to clean the root directory of qtjambi from old build<span class="sy0">-</span>files by calling <span class="st0">''</span>ant clean<span class="st0">''</span> or <span class="st0">''</span>ant distclean<span class="st0">''</span> to have a fresh start<span class="sy0">:</span></pre></div></div>ant clean&lt;/code&gt;
+<h2><span class="mw-headline" id="Compile_Qtjambi">Compile Qtjambi</span></h2>
+<p>Now start the compilation of qtjambi with the following command:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ant all<span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+Alternatively you can use the following batch script that takes care of all <span class="kw1">this</span> <span class="br0">&#40;</span>except cleaning the build directory<span class="br0">&#41;</span><span class="sy0">:</span>
+&#160;
+Save the script content below to a file called <span class="st0">''</span>compile<span class="sy0">-</span>qtjambi<span class="sy0">-</span>win32.<span class="me1">bat</span><span class="st0">''</span><span class="sy0">:</span></pre></div></div>
+<p>@echo off
+</p><p>setlocal EnableDelayedExpansion
+</p><p>REM Setting environment variables
+set "LC_ALL=C"
+if not defined JAVA_HOME (set "JAVA_HOME=C:Files (x86)1.6.0_23")
+if not defined MINGW (set "MINGW=C:")
+if not defined ANT (set "ANT=C:Files\ant")
+if not defined QTDIR (set "QTDIR=C:.7.1")
+set "PATH=JAVA_HOME;ANT;QTDIR;MINGW;PATH"
+</p><p>REM Starting the compilation process
+echo "COMPILING QTJAMBI"
+ant&#160;%1
+</p><p>endlocal
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">This way you only have to call <span class="st0">''</span>compile<span class="sy0">-</span>qtjambi<span class="sy0">-</span>win32.<span class="me1">bat</span><span class="st0">''</span> <span class="sy0">&lt;</span>argument<span class="sy0">&gt;</span> where <span class="sy0">&lt;</span>target<span class="sy0">&gt;</span> can be any of the ant targets defined <span class="kw1">for</span> <span class="kw1">this</span> project. <span class="me1">The</span> script can basically be regarded an alias <span class="kw1">for</span> ant with some environment variables set. <span class="me1">You</span> use it as you would use ant. <span class="me1">For</span> example<span class="sy0">,</span> in order to compile Qtjambi you would execute<span class="sy0">:</span></pre></div></div>compile-win32.bat all&lt;/code&gt;
+To see a list of supported targets use: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">compile<span class="sy0">-</span>win32.<span class="me1">bat</span> <span class="sy0">-</span>projecthelp<span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+Note however that the script must be placed into the root directory of Qtjambi and also be executed from within that very directory.
+&#160;
+<span class="me1">If</span> the compilation is successfull you will see a line similar to <span class="kw1">this</span><span class="sy0">:</span></pre></div></div>BUILD SUCCESSFUL
+Total time: 61 minutes 8 seconds<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">==</span> Launching Qtjambi demo <span class="sy0">==</span>
+&#160;
+In order to launch Qtjambi you have to set the <span class="st0">''</span><span class="st0">'CLASSPATH'</span><span class="st0">''</span> and run qtjambi like <span class="kw1">this</span> from the Qtjambis root directory<span class="sy0">:</span></pre></div></div>java -cp build\qtjambi-win32-mingw-4.7.1.jar;^
+<p>qtjambi-4.7.1.jar;^
+</p>
+qtjambi-examples-4.7.1.jar com.trolltech.launcher.Launcher<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Note that the symbol <span class="sy0">^</span> in batch scripts or in the command console on windows is used to <span class="kw2">break</span> up <span class="kw4">long</span> commands into several lines. <span class="me1">You</span> could have just as well put the entire command into a single line. <span class="me1">We</span> broke it up here to make it more readable.
+&#160;
+<span class="sy0">==</span> Troubleshooting <span class="sy0">==</span>
+<span class="sy0">===</span> Can<span class="st0">'t compile Qt Jambi ===
+If your Qt libraries are not compiled against MinGW 4.5 you won'</span>t be able to build <span class="kw5">Qt</span> Jambi <span class="kw2">using</span> that version of MinGW. <span class="me1">The</span> standard Qt<span class="sy0">-</span><span class="nu16">4.7</span>.<span class="me1">x</span> binaries provided by Nokia are compiled against MinGW <span class="nu16">4.4</span> so you need to use that version of MinGW to compile Qtjambi. <span class="me1">If</span> you want to stick to your bleeding edge version of MinGW you have to compile <span class="kw5">Qt</span> yourself <span class="kw2">using</span> MinGW <span class="nu16">4.5</span>.
+&#160;
+<span class="sy0">===</span> Can<span class="st0">'t load Qt Jambi examples ===
+It might happen that loading the demo app shipped with Qt Jambi fails with the following error:</span></pre></div></div>Loading library: 'QtCore4.dll'…
+<p>- using deployment spec
+</p><p>at com.trolltech.qt.internal.NativeLibraryManager.loadNativeLibrary(Unknown Source)
+</p>
+<pre>at com.trolltech.qt.internal.NativeLibraryManager.loadQtLibrary(Unknown Source)
+at com.trolltech.qt.Utilities.loadQtLibrary(Unknown Source)
+at com.trolltech.qt.Utilities.loadQtLibrary(Unknown Source)
+at com.trolltech.qt.QtJambi_LibraryInitializer.&lt;clinit&gt;(Unknown Source)
+… 1 more
+</pre>
+<p>Caused by: java.lang.UnsatisfiedLinkError: C:_x86_4.7.1_mingw-[stamp]4.dll:
+Can't find dependent libraries
+</p>
+<pre>at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+at java.lang.ClassLoader.loadLibrary0(Unknown Source)
+at java.lang.ClassLoader.loadLibrary(Unknown Source)
+at java.lang.Runtime.load0(Unknown Source)
+at java.lang.Runtime.load(Unknown Source)
+at com.trolltech.qt.internal.NativeLibraryManager.loadLibrary_helper(Unknown Source)
+… 6 more
+</pre>
+Could not find the main class: com.trolltech.launcher.Launcher. Program will exit.<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">This means it fails to load two vital dlls from one of the jar files listed above. <span class="me1">This</span> is a known bug which has already been fixed in the git repository. <span class="me1">If</span> you use an older version you have to workaround it by adding the location of those libs to <span class="st0">''</span><span class="st0">'PATH'</span><span class="st0">''</span>. <span class="kw5">Qt</span> and mingw both ship those files. <span class="me1">If</span> you want to use the ones shipped with <span class="kw5">Qt</span> you would have to adjust your path like so assuming <span class="kw5">Qt</span> was installed to <span class="st0">''</span>C<span class="sy0">:</span>.7.1<span class="st0">''</span><span class="sy0">:</span></pre></div></div>set PATH=C:.7.1\bin;PATH&lt;/code&gt;
+<p>Now launching the qtjambi demo should work as expected.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.173 seconds
+Real time usage: 0.182 seconds
+Preprocessor visited node count: 82/1000000
+Preprocessor generated node count: 276/1000000
+Post‐expand include size: 1368/2097152 bytes
+Template argument size: 437/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:149-0!*!0!!en!*!* and timestamp 20151104133726 and revision id 19217
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexaabf.html?title=Building_Qt_Jambi_on_Windows_using_MinGW&amp;oldid=19217">http://wiki.qt.io/index.php?title=Building_Qt_Jambi_on_Windows_using_MinGW&amp;oldid=19217</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=15413a4e9233be64&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Building_Qt_Jambi_on_Windows_using_MinGW.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Building_Qt_Jambi_on_Windows_using_MinGW.html?title=Talk:Building_Qt_Jambi_on_Windows_using_MinGW&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Building_Qt_Jambi_on_Windows_using_MinGW.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexd53d.html?title=Building_Qt_Jambi_on_Windows_using_MinGW&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index527f.html?title=Building_Qt_Jambi_on_Windows_using_MinGW&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Building_Qt_Jambi_on_Windows_using_MinGW.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Building_Qt_Jambi_on_Windows_using_MinGW.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="indexaabf.html?title=Building_Qt_Jambi_on_Windows_using_MinGW&amp;oldid=19217" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexb277.html?title=Building_Qt_Jambi_on_Windows_using_MinGW&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:20.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,046 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":206});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_Jambi_on_Windows_using_MinGW&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:51 GMT -->
+</html>

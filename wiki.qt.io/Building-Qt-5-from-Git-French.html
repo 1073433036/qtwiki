@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Building-Qt-5-from-Git-French by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Building Qt 5 from Git/fr - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="Building_Qt_5_from_Git/fr.html" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building_Qt_5_from_Git/fr","wgTitle":"Building Qt 5 from Git/fr","wgCurRevisionId":15830,"wgRevisionId":15830,"wgArticleId":159,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","HowTo","Developing with Qt::Qt 5"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building_Qt_5_from_Git/fr","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Building-Qt-5-from-Git-French","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building_Qt_5_from_Git_fr skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Building Qt 5 from Git/fr</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="Building_Qt_5_from_Git.html" title="Building Qt 5 from Git">Building Qt 5 from Git</a></span>(Redirected from <a href="index0585.html?title=Building-Qt-5-from-Git-French&amp;redirect=no" title="Building-Qt-5-from-Git-French">Building-Qt-5-from-Git-French</a>)</div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="index6345.html?title=Building_Qt_5_from_Git/fr&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><b>French</b> <a href="Building_Qt_5_from_Git_SimplifiedChinese.html?title=Building_Qt_5_from_Git_SimplifiedChinese&amp;action=edit&amp;redlink=1" class="new" title="Building Qt 5 from Git SimplifiedChinese (page does not exist)">简体中文</a> <a href="Building_Qt_5_from_Git_Bulgarian.html?title=Building_Qt_5_from_Git_Bulgarian&amp;action=edit&amp;redlink=1" class="new" title="Building Qt 5 from Git Bulgarian (page does not exist)">Български</a> <a href="Building_Qt_5_from_Git.html" title="Building Qt 5 from Git">English</a>
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Compiler_Qt_5_depuis_Git"><span class="tocnumber">1</span> <span class="toctext">Compiler Qt 5 depuis Git</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Introduction"><span class="tocnumber">1.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#R.C3.A9cup.C3.A9rer_le_code_source"><span class="tocnumber">1.2</span> <span class="toctext">Récupérer le code source</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Configurer_et_compiler"><span class="tocnumber">1.3</span> <span class="toctext">Configurer et compiler</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Nettoyer"><span class="tocnumber">1.4</span> <span class="toctext">Nettoyer</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Obtenir_des_mises_.C3.A0_jour"><span class="tocnumber">1.5</span> <span class="toctext">Obtenir des mises à jour</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Utiliser_les_branches_master_dans_les_sous-modules"><span class="tocnumber">1.6</span> <span class="toctext">Utiliser les branches master dans les sous-modules</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Probl.C3.A8mes"><span class="tocnumber">1.7</span> <span class="toctext">Problèmes</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Questions_.26_Commentaires"><span class="tocnumber">1.8</span> <span class="toctext">Questions &amp; Commentaires</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Compiler_Qt_5_depuis_Git">Compiler Qt 5 depuis Git</span></h1>
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>Cet article a pour objectif de vous donner quelques indices pour récupérer le Qt5 modularisé depuis git et de le compiler. Vous êtes invité à mettre à jour cet article au fil des changements pendant le développement. Ces instructions sont pour Linux, des ajustements seront probablement nécessaires pour d'autres plateformes.
+</p>
+<h2><span class="mw-headline" id="R.C3.A9cup.C3.A9rer_le_code_source">Récupérer le code source</span></h2>
+<p>D'abord, clonez le dépôt git racine de qt5:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git clone git<span class="sy0">:</span><span class="co1">//code.qt.io/qt/qt5.git qt5</span>
+cd qt5</pre></div></div>
+<p>En suivant le fichier README, il faut initialiser le dépôt. Cette opération clone les différénts sous-modules de Qt5:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">.<span class="sy0">/</span>init<span class="sy0">-</span>repository</pre></div></div>
+<p><i>Indice1: Si vous souhaitez contribuer à Qt5, vous aurez besoin de passer l'option —codereview-username &lt;nom d'utilisateur Jira/Gerrit&gt; pour configurer une destination "gerrit" pour tous les sous-modules.</i>
+<i>Indice2: Si vous rencontrez des problèmes pour télécharger le dépôt webkit (qui est relativement imposant), vous pouvez passer l'option —no-webkit.</i>
+<i>Indice3: Si vous êtes connecté via un proxy ou firewall, passez l'option —http.</i>
+</p>
+<h2><span class="mw-headline" id="Configurer_et_compiler">Configurer et compiler</span></h2>
+<p>A présent, configurez votre PATH pour utiliser les outils de Qt5 en lieu et place d'éventuels outils Qt4 qui pourraient être présents sur votre système.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">export PATH<span class="sy0">=</span>$PWD<span class="sy0">/</span>qtbase<span class="sy0">/</span>bin<span class="sy0">:</span>$PATH</pre></div></div>
+<p>Configurez maintenant la compilation (depuis le répertoire de plus haut niveau). Il est préférable de désactiver les tests, examples et démonstrations pour l'instant:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">.<span class="sy0">/</span>configure <span class="sy0">-</span>nokia<span class="sy0">-</span>developer <span class="sy0">-</span>nomake examples <span class="sy0">-</span>nomake demos <span class="sy0">-</span>nomake tests <span class="sy0">-</span>no<span class="sy0">-</span>gtkstyle</pre></div></div>
+<p>Notez que nous désactivons également le support pour le style GTK. Ceci peut être nécessaire sur un certain nombre de systèmes (au moins SUSE et Gentoo) car `pkg-config —cflags gtk+–2.0` retourne des chemins qui incluent les répertoires d'include de Qt4.x du système.
+</p><p>L'option -nokia-developer désactive les vérifications de license et active l'option -developer-build qui exporte plus de symboles qu'une compilation classique de Qt afin de permettre à plus de classes et de fonctions d'être testées unitairement. De plus, cette option installe les binaires dans l'arbre des sources, évitant le besoin d'effectuer un 'make install'.
+</p><p>Vous pouvez désormais compiler Qt comme à l'accoutumée (ajustez l'option -j pour accomoder votre nombre de cores CPU):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make <span class="sy0">-</span>j3</pre></div></div>
+<p>Ou compilez juste un module specifique, e.g. declarative, et les modules dont il dépend:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make module<span class="sy0">-</span>qtdeclarative</pre></div></div>
+<h2><span class="mw-headline" id="Nettoyer">Nettoyer</span></h2>
+<p>Pour <b>vraiment</b> retrouver un arbre propre, utilisez:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git submodule <span class="kw2">foreach</span> <span class="st0">'git clean -dfx'</span></pre></div></div>
+<p>puisque 'make confclean' ne fonctionne plus depuis le répertoire de plus haut niveau du dépôt.
+</p>
+<h2><span class="mw-headline" id="Obtenir_des_mises_.C3.A0_jour">Obtenir des mises à jour</span></h2>
+<p>Pour mettre à jour à la fois le dépôt qt5.git ainsi que tous les sous-modules vers la liste des révisions qui sont connues comme fonctionnelles, exécutez:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git pull
+git submodule update —recursive</pre></div></div>
+<p><b>Attention: git submodule update effectue un "hard reset" des sous-modules, éliminant potentiellement tout commit local que vous auriez effectué! Si ce cas se présente (et que vous n'avez pas travaillé avec des branches), 'git reflog' est votre ami…</b>
+</p>
+<h2><span class="mw-headline" id="Utiliser_les_branches_master_dans_les_sous-modules">Utiliser les branches master dans les sous-modules</span></h2>
+<p>Par défault, le "checkout" ne contiendra pas les dernières branches master des dépôts de chaque sous-module, mais une combinaison de versions qui sont connues pour fonctionner ensemble. Si vous voulez vraiment les versions les plus récentes, vous pouvez le faire individuellement pour chaque module, e.g.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd qtdeclarative
+git fetch
+git checkout master origin<span class="sy0">/</span>master</pre></div></div>
+<p>ou utiliser qt5_tool pour mettre à jour tous les dépôts sur leur branche master:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">.<span class="sy0">/</span>qtrepotools<span class="sy0">/</span>bin<span class="sy0">/</span>qt5_tool <span class="sy0">-</span>p</pre></div></div>
+<p>Cependant, il y a de bonnes chances que la compilation échoue en raison d'incompatibilités de version des sous-modules! Vous devriez demander à d'autres personnes développant activement un module comment résoudre ces situations.
+</p>
+<h2><span class="mw-headline" id="Probl.C3.A8mes">Problèmes</span></h2>
+<p>Si vous rencontrez des problèmes avec les instructions ci-dessus (si vous voulez une compilation "prefix" mais obtenez des erreurs à propos de QMAKESPEC n'étant pas configuré correctement) vous pouvez essayer de construire les modules dont vous avez besoin à la main.
+</p><p>Par exemple, pour travailler sur la version WebKit2 de QtWebKit, vous avez besoin de qtbase, qtscript, qtsvg, qtxmlpatterns et qtdeclarative.
+Après avoir cloné le dépôt de Qt5, exécutez le script init-repository mais après, utilisez:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git pull
+<span class="co2"># va tirer les versions testées par le système d'Intégration Continue</span>
+git submodule update
+unset QTDIR
+&#160;
+.<span class="sy0">/</span>configure <span class="sy0">-</span>nokia<span class="sy0">-</span>developer <span class="sy0">-</span>nomake examples <span class="sy0">-</span>nomake demos <span class="sy0">-</span>nomake tests <span class="sy0">-</span>no<span class="sy0">-</span>webkit <span class="sy0">-</span>no<span class="sy0">-</span>gtkstyle <span class="sy0">-</span>prefix<span class="sy0">-</span>install <span class="sy0">-</span>prefix <span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>Trolltech<span class="sy0">/</span>Qt<span class="sy0">-</span>5.0.0
+cd qtbase
+make
+make install
+cd ..
+<span class="me1">export</span> QTDIR<span class="sy0">=/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>Trolltech<span class="sy0">/</span>Qt<span class="sy0">-</span>5.0.0
+export PATH<span class="sy0">=</span>$QTDIR<span class="sy0">/</span>bin<span class="sy0">:</span>$PATH
+&#160;
+<span class="kw1">for</span> dir in qtscript qtsvg qtxmlpatterns qtdeclarative
+<span class="kw1">do</span>
+ cd $dir
+ qmake <span class="sy0">&amp;&amp;</span> make
+ cd ..
+<span class="me1">done</span>
+&#160;
+<span class="kw1">for</span> dir in qtscript qtsvg qtxmlpatterns qtdeclarative
+<span class="kw1">do</span>
+ cd $dir
+ make install
+ cd ..
+<span class="me1">done</span></pre></div></div>
+<h3><span class="mw-headline" id="La_configuration_.C3.A9choue_avec_le_message_.22No_QPA_platform_plugin_enabled.21.22">La configuration échoue avec le message "No QPA platform plugin enabled!"</span></h3>
+<p>Vous devriew installer la librairie libxcb et ses dépendances, e.g. avec (sur Ubuntu/Debian):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo apt<span class="sy0">-</span>get install libxcb<span class="sy0">*</span></pre></div></div>
+<h3><span class="mw-headline" id="qmlscene_.C3.A9choue_.28segfault.29_avec_le_message_.22Cannot_create_platform_GL_context.2C_none_of_GLX.2C_EGL.2C_DRI2_is_enabled.22">qmlscene échoue (segfault) avec le message "Cannot create platform GL context, none of GLX, EGL, DRI2 is enabled"</span></h3>
+<p>Essayez d'installer le paquet libx11-xcb-dev:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo apt<span class="sy0">-</span>get install libx11<span class="sy0">-</span>xcb<span class="sy0">-</span>dev</pre></div></div>
+<p>après-coup, vous devez ré-exécuter la configuration et forcer la recompilation de qtbase/src/plugins/platforms/xcb.
+</p>
+<h2><span class="mw-headline" id="Questions_.26_Commentaires">Questions &amp; Commentaires</span></h2>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.237 seconds
+Real time usage: 0.246 seconds
+Preprocessor visited node count: 178/1000000
+Preprocessor generated node count: 380/1000000
+Post‐expand include size: 1308/2097152 bytes
+Template argument size: 422/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:159-0!*!0!!en!*!* and timestamp 20151105063422 and revision id 15830
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index7bec.html?title=Building_Qt_5_from_Git/fr&amp;oldid=15830">http://wiki.qt.io/index.php?title=Building_Qt_5_from_Git/fr&amp;oldid=15830</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li><li><a href="Category_Developing_with_Qt__Qt_5.html" title="Category:Developing with Qt::Qt 5">Developing with Qt::Qt 5</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=985cacf941e0fa58&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Building_Qt_5_from_Git/fr.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Building_Qt_5_from_Git/fr.html?title=Talk:Building_Qt_5_from_Git/fr&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Building_Qt_5_from_Git/fr.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index6345.html?title=Building_Qt_5_from_Git/fr&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexbca4.html?title=Building_Qt_5_from_Git/fr&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Building_Qt_5_from_Git/fr.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Building_Qt_5_from_Git/fr.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexb67a.html?title=Building_Qt_5_from_Git/fr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index7bec.html?title=Building_Qt_5_from_Git/fr&amp;oldid=15830" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexd830.html?title=Building_Qt_5_from_Git/fr&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:12.</li>
+											<li id="footer-info-viewcount">This page has been accessed 2,205 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":234});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Building-Qt-5-from-Git-French by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:11 GMT -->
+</html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Handling_PDF&oldid=19731 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:18:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handling PDF - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Handling_PDF","wgTitle":"Handling PDF","wgCurRevisionId":19731,"wgRevisionId":19731,"wgArticleId":889,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing with Qt"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Handling_PDF","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Handling_PDF skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Handling PDF</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 12:55, 21 October 2015 by <a href="http://wiki.qt.io/User:Waldyrious" title="User:Waldyrious" class="mw-userlink">Waldyrious</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:Waldyrious&amp;action=edit&amp;redlink=1" class="new" title="User talk:Waldyrious (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Waldyrious" title="Special:Contributions/Waldyrious">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Handling_PDF&amp;diff=prev&amp;oldid=19731" title="Handling PDF">diff</a>) <a href="http://wiki.qt.io/index.php?title=Handling_PDF&amp;direction=prev&amp;oldid=19731" title="Handling PDF">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> TODO: Tips for implementing a custom interactive viewer, using Qt and the PDF parsing and rendering libraries mentioned above
+</td></tr></table>
+<div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Reading_.2F_Writing"><span class="tocnumber">1</span> <span class="toctext">Reading / Writing</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Using_QPrinter"><span class="tocnumber">1.1</span> <span class="toctext">Using QPrinter</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Using_third-party_libraries"><span class="tocnumber">1.2</span> <span class="toctext">Using third-party libraries</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Using_batch_conversion_tools"><span class="tocnumber">1.3</span> <span class="toctext">Using batch conversion tools</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Rendering"><span class="tocnumber">2</span> <span class="toctext">Rendering</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Using_third-party_libraries.2Ftools"><span class="tocnumber">2.1</span> <span class="toctext">Using third-party libraries/tools</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Interactive_Viewing"><span class="tocnumber">3</span> <span class="toctext">Interactive Viewing</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Calling_an_external_viewer_application"><span class="tocnumber">3.1</span> <span class="toctext">Calling an external viewer application</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Using_a_third-party_Qt_widget"><span class="tocnumber">3.2</span> <span class="toctext">Using a third-party Qt widget</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Embedding_a_third-party_ActiveX_control"><span class="tocnumber">3.3</span> <span class="toctext">Embedding a third-party ActiveX control</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Embedding_a_third-party_browser_plugin"><span class="tocnumber">3.4</span> <span class="toctext">Embedding a third-party browser plugin</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#See_Also"><span class="tocnumber">4</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<p>This page discusses various available options for working with <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Portable_Document_Format">Portable Document Format (PDF)</a> [en.wikipedia.org] documents in your Qt application. Please also read the general considerations outlined on the <a href="http://wiki.qt.io/Handling_Document_Formats" title="Handling Document Formats"> Handling Document Formats</a> page.
+</p>
+<h2><span class="mw-headline" id="Reading_.2F_Writing">Reading / Writing</span></h2>
+<h3><span class="mw-headline" id="Using_QPrinter">Using QPrinter</span></h3>
+For <span style="color:#800080">  creating</span> PDF documents from scratch, you can use Qt's built-in print support which also allows "printing" to PDF files. To do so you can set up a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qprinter.html#">QPrinter</a></span> instance like this: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QPrinter</span> printer<span class="br0">&#40;</span><span class="kw5">QPrinter</span><span class="sy0">::</span><span class="me2">HighResolution</span><span class="br0">&#41;</span><span class="sy0">;</span>
+printer.<span class="me1">setOutputFormat</span><span class="br0">&#40;</span><span class="kw5">QPrinter</span><span class="sy0">::</span><span class="me2">PdfFormat</span><span class="br0">&#41;</span><span class="sy0">;</span>
+printer.<span class="me1">setOutputFileName</span><span class="br0">&#40;</span><span class="st0">&quot;path/to/file.pdf&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div> Since QPrinter inherits <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qpaintdevice.html#">QPaintDevice</a></span>, anything that supports outputting graphical content to a QPaintDevice (or has convenience API for printing with QPrinter) can thus be used for generating PDFs:
+<ul>
+<li> <i><b>manual QPainter painting</b></i>
+</li>
+</ul>
+<p>The most basic (but not necessarily simplest) way of creating PDF documents with QPrinter is by manually painting the document's content with Qt's <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtdesigner-arthurplugin-example.html#">Arthur paint system</a></span>.
+Just pass the QPrinter object as a reference to the constructor of <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/paintsystem.html.html#">QPainter</a></span> (or, alternatively, to <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qpainter.html#begin">QPainter::begin()</a></span> for an already existing QPainter) and then perform any painting operations with that QPainter instance like you usually would (with intermittent calls to <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qprinter.html#newPage">QPrinter::newPage()</a></span> whenever you want to move on to the next PDF page).
+</p>
+<ul>
+<li> <i><b>Scribe</b></i>
+</li>
+</ul>
+<p>For a more high-level API for creating structured rich-text documents, use Qt's Scribe framework (see <a href="http://wiki.qt.io/Handling_Document_Formats" title="Handling Document Formats">Handling Document Formats</a>), which is based on a cursor interface that mimics the behavior of a cursor in a text editor. You can export the whole document with <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtextdocument.html#print">QTextDocument::print()</a></span>, or a part of it with <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtextedit.html#print">QTextEdit::print()</a></span> (see <a href="http://wiki.qt.io/Exporting_a_document_to_PDF" title="Exporting a document to PDF">Exporting a document to PDF</a> for more details).
+</p>
+<ul>
+<li> <i><b>Graphics View</b></i>
+</li>
+</ul>
+<p>Qt's <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/graphicsview.html#">Graphics View framework</a></span> can be a more suitable alternative for creating PDF documents with content that is mainly based on arbitrarily positioned and transformed 2D graphical items rather than continuous flowed rich text.
+To export the content of a graphics scene or view (or a part of it) to PDF, you need to manually initialize a QPainter configured to paint on a PDF-creating QPrinter (as described above), and pass it to <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qgraphicsscene.html#render">QGraphicsScene::render()</a></span> or <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qgraphicsview.html#render">QGraphicsView::render()</a></span>.
+</p>
+<h3><span class="mw-headline" id="Using_third-party_libraries">Using third-party libraries</span></h3>
+<p>If you need more control over the output when <span style="color:#800080">creating</span> PDF documents, or you need to <span style="color:#800080">parse</span> existing PDF documents (anything from extracting specific information to assembling a full in-memory document object tree) and maybe even <span style="color:#800080">modify</span> their structure or content before writing them back to disk, refer to third-party PDF reading/writing libraries:
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> API
+</th>
+<th style="text-align:left; color:#800080"> parsing
+</th>
+<th style="text-align:left; color:#800080"> modifying
+</th>
+<th style="text-align:left; color:#800080"> creating
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td style="text-align:left;"> <a rel="nofollow" class="external text" href="http://freedesktop.org/wiki/Software/poppler"><b>poppler-qt4</b></a> [freedesktop.org]
+</td>
+<td> C+<i>/Qt</i>
+</td>
+<td> yes
+</td>
+<td>&#160;?
+</td>
+<td>&#160;?
+</td>
+<td> Win, Mac?, Linux, …
+</td>
+<td> GPL v2+ <span style="color:Navy">  [strong copyleft] </span>
+</td></tr>
+<tr>
+<td style="text-align:left;"> <a rel="nofollow" class="external text" href="http://pdfhummus.com/"><b>Hummus</b></a> [pdfhummus.com]
+</td>
+<td> C++
+</td>
+<td> yes
+</td>
+<td> yes
+</td>
+<td> yes
+</td>
+<td> Win, Mac, Linux
+</td>
+<td> Apache 2.0 <span style="color:Navy"> [permissive] </span>
+</td></tr>
+<tr>
+<td style="text-align:left;"> <a rel="nofollow" class="external text" href="http://podofo.sourceforge.net/"><b>PoDoFo</b></a> [podofo.sourceforge.net]
+</td>
+<td> C++
+</td>
+<td> yes
+</td>
+<td> yes
+</td>
+<td> yes
+</td>
+<td> Win, Mac, Linux
+</td>
+<td> LGPL <span style="color:Navy"> [weak copyleft] </span>
+</td></tr></table>
+<h3><span class="mw-headline" id="Using_batch_conversion_tools">Using batch conversion tools</span></h3>
+<p>If all else fails, there is always the option of using an existing tool to automatically convert between PDF files and a more manageable format, and let your Qt application read/write that format instead. The conversion tool could be bundled with your application or specified as a prerequisite, and controlled via <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qprocess.html">QProcess</a>. Some possibilities are:
+</p><p><br />
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> executable names
+</th>
+<th style="text-align:left;"> .pdf to:
+</th>
+<th style="text-align:left;"> … to .pdf
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td style="text-align:left;"> <a rel="nofollow" class="external text" href="http://freedesktop.org/wiki/Software/poppler/"><b>poppler-utils </b></a> [freedesktop.org]
+</td>
+<td> pdftotext, pdftocairo, pdftohtml
+</td>
+<td> .txt .svg .html …
+</td>
+<td> -
+</td>
+<td> Win, Mac?, Linux, …
+</td>
+<td> GPL v2+ <span style="color:Navy">  [strong copyleft] </span>
+</td></tr>
+<tr>
+<td style="text-align:left;"> <a rel="nofollow" class="external text" href="http://inkscape.org/"><b>Inkscape</b></a> [inkscape.org]
+</td>
+<td> inkscape
+</td>
+<td> .svg …
+</td>
+<td> .svg …
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> GPL v2 <span style="color:Navy"> [strong copyleft] </span>
+</td></tr></table>
+<h2><span class="mw-headline" id="Rendering">Rendering</span></h2>
+<h3><span class="mw-headline" id="Using_third-party_libraries.2Ftools">Using third-party libraries/tools</span></h3>
+<p>For rendering pages or elements from existing PDF documents to image files or in-memory pixmaps (useful e.g. for thumbnail generation or implementing custom viewers), third-party libraries can be used:
+</p><p><br />
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> API
+</th>
+<th style="text-align:left;"> can render
+</th>
+<th style="text-align:left;"> output to
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://freedesktop.org/wiki/Software/poppler"><b>poppler-qt4</b></a> [freedesktop.org]
+</td>
+<td> C++/Qt
+</td>
+<td> pages, …?
+</td>
+<td> QImage
+</td>
+<td> Win, Mac?, Linux, …
+</td>
+<td> GPL v2 <span style="color:Navy"> [strong copyleft] </span>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://freedesktop.org/wiki/Software/poppler"><b>poppler-qt5</b></a> [freedesktop.org]
+</td>
+<td> C++/Qt
+</td>
+<td> pages, …?
+</td>
+<td> QImage
+</td>
+<td> Win, Mac?, Linux, …
+</td>
+<td> GPL v2 <span style="color:Navy"> [strong copyleft] </span>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://mupdf.com/"><b>muPDF</b></a> [mupdf.com]
+</td>
+<td> C
+</td>
+<td> pages
+</td>
+<td> RGBA byte array
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> GPL v3+ <span style="color:Navy"> [strong copyleft]; </span> or commercial
+</td></tr></table>
+<p>Alternatively, the task can be delegated to existing command-line tools:
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> executable names
+</th>
+<th style="text-align:left;"> can render
+</th>
+<th style="text-align:left;"> output to
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://freedesktop.org/wiki/Software/poppler"><b>poppler-utils</b></a> [freedesktop.org]
+</td>
+<td> pdftocairo, pdftoppm, pdfimages
+</td>
+<td> pages, image elements
+</td>
+<td> .png .jpg .svg .ppm …
+</td>
+<td> Win, Mac?, Linux, …
+</td>
+<td> GPL v2+ <span style="color:Navy"> [strong copyleft] </span>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://mupdf.com/"><b>muPDF</b></a> [mupdf.com]
+</td>
+<td> pdfdraw
+</td>
+<td> pages
+</td>
+<td> .png, .ppm, .pgm, .pam, .pbm
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> GPL v3+ <span style="color:Navy"> [strong copyleft]; </span> or commercial
+</td></tr></table>
+<h2><span class="mw-headline" id="Interactive_Viewing">Interactive Viewing</span></h2>
+<h3><span class="mw-headline" id="Calling_an_external_viewer_application">Calling an external viewer application</span></h3>
+<p>If your application merely needs to let the user view/read certain PDF documents on demand, displaying them within the UI of the application itself might not be necessary, and delegating the task to an existing viewer application can be a viable option.
+</p><p>Many users have already chosen and installed a stand-alone PDF viewer according to their personal preferences, so simply letting the operating system open the PDF file with whatever it considers the default viewer for such files, might be the easiest (and potentially most user-friendly) choice.
+To do so, simply pass the PDF file's URL to <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qdesktopservices.html#openUrl">QDesktopServices::openUrl</a>. If you're downloading the file from the Internet, store it on disk using <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtemporaryfile.html">QTemporaryFile</a> first, since not all viewers can handle remote URLs.
+</p>
+<h3><span class="mw-headline" id="Using_a_third-party_Qt_widget">Using a third-party Qt widget</span></h3>
+<p>The following widgets provide native PDF viewing for Qt applications:
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> class name
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.glyphandcog.com/XpdfWidgetQt.html"><b>XpdfWidget/Qt</b></a> [glyphandcog.com]
+</td>
+<td> XpdfWidget
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> commercial
+</td></tr></table>
+<h3><span class="mw-headline" id="Embedding_a_third-party_ActiveX_control">Embedding a third-party ActiveX control</span></h3>
+<p>If you are exclusively targeting the Windows platform, you can embed an existing ActiveX component for viewing PDFs in your Qt applications by instantiating it as a <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qaxwidget.html">QAxWidget</a> (see <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/activeqt.html">Qt's ActiveX Framework</a>).
+</p><p>The following PDF viewers provide such an ActiveX control:
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> DLL file
+</th>
+<th style="text-align:left;"> ActiveX control name
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://get.adobe.com/reader/"><b>Adobe Reader</b></a> [get.adobe.com]
+</td>
+<td> Acropdf.dll
+</td>
+<td> AxAcroPDFLib.AxAcroPDF
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> <span style="color:Navy"> freeware </span> <i>(for commercial redistribution see <a rel="nofollow" class="external text" href="http://www.adobe.com/products/reader/distribution.html">here</a>) [adobe.com])</i>
+</td></tr></table>
+<p>In the case of the Adobe Reader control, opening a PDF file is done with:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">dynamicCall<span class="br0">&#40;</span><span class="st0">&quot;LoadFile(const QString)&quot;</span><span class="sy0">,</span> pathToFile<span class="br0">&#41;</span></pre></div></div>
+<h3><span class="mw-headline" id="Embedding_a_third-party_browser_plugin">Embedding a third-party browser plugin</span></h3>
+<p>A more cross-platform technology for embedding reusable components is the <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/NPAPI">NPAPI</a> [en.wikipedia.org] browser plugin architecture- which Qt's WebKit-based browser framework <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtwebkitwidgets-index.html">happens to support</a>. You'll need to set up a simple HTML page containing appropriate embed&gt;…&lt;/embed&gt; tags, and let a <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qwebview.html">QWebView</a> display it (with <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qwebsettings.html#WebAttribute-enum">QWebSettings::PluginsEnabled</a>.
+</p><p>The following applications provide a reusable NPAPI plugin for viewing PDF:
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> plugin name
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://get.adobe.com/reader/"><b>Adobe Reader</b></a> [get.adobe.com]
+</td>
+<td> nppdf
+</td>
+<td> Win, Mac, (Linux)¹, …
+</td>
+<td> <span style="color:Navy"> freeware </span><i>(for commercial redistribution see <a rel="nofollow" class="external text" href="http://www.adobe.com/products/reader/distribution.html">here</a> [adobe.com])</i>
+</td></tr></table>
+<p><small>  ¹<i>While in theory it should work on all Desktop platforms, application developers have "reported problems":/forums/viewthread/14055 in trying to get it to work with Qt Webkit on Linux. </i> </small>
+</p><p>As an alternative to using QWebView for running the plugin, it is possible to use a third-party solution that allows embedding NPAPI plugins in a Qt application without the overhead of a full web browser instance:
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> component type
+</th>
+<th style="text-align:left;"> has special convenience API for
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.devmachines.com/products/qtitanmultimedia-overview.html"><b>QtitanMultimedia</b></a> [devmachines.com]
+</td>
+<td> QWidget
+</td>
+<td> Adobe Reader, …
+</td>
+<td> Win, Linux
+</td>
+<td> <span style="color:Navy"> commercial </span>
+</td></tr></table>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul>
+<li> <a href="http://wiki.qt.io/Handling_Document_Formats" title="Handling Document Formats">Handling Document Formats</a>
+</li>
+<li> <a href="http://wiki.qt.io/Handling_HTML" title="Handling HTML">Handling HTML</a>
+</li>
+<li> <a href="http://wiki.qt.io/Handling_Microsoft_Excel_file_format" title="Handling Microsoft Excel file format">Handling Microsoft Excel file format</a>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.099 seconds
+Real time usage: 0.105 seconds
+Preprocessor visited node count: 318/1000000
+Preprocessor generated node count: 1190/1000000
+Post‐expand include size: 3530/2097152 bytes
+Template argument size: 496/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:889-0!*!0!!en!*!* and timestamp 20151105100927 and revision id 19731
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Handling_PDF&amp;oldid=19731">http://wiki.qt.io/index.php?title=Handling_PDF&amp;oldid=19731</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:Developing_with_Qt" title="Category:Developing with Qt">Developing with Qt</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Handling+PDF" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Handling_PDF"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Handling_PDF&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Handling_PDF" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Handling_PDF&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Handling_PDF&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Handling_PDF" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Handling_PDF" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Handling_PDF&amp;oldid=19731&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Handling_PDF&amp;oldid=19731" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Handling_PDF&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 21 October 2015, at 12:55.</li>
+											<li id="footer-info-viewcount">This page has been accessed 13,005 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":333});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Handling_PDF&oldid=19731 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:18:55 GMT -->
+</html>

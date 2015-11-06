@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Handling_microsoft_excel_file_format by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:15:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Handling Microsoft Excel file format - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="Handling_Microsoft_Excel_file_format.html" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Handling_Microsoft_Excel_file_format","wgTitle":"Handling Microsoft Excel file format","wgCurRevisionId":18185,"wgRevisionId":18185,"wgArticleId":881,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing with Qt"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Handling_Microsoft_Excel_file_format","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Handling_microsoft_excel_file_format","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Handling_Microsoft_Excel_file_format skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Handling Microsoft Excel file format</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub">(Redirected from <a href="indexa8f8.html?title=Handling_microsoft_excel_file_format&amp;redirect=no" title="Handling microsoft excel file format">Handling microsoft excel file format</a>)</div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> TODO: Info on using ODBC drivers (via QSqlDatabase) for accessing Excel spreadsheets - please fill out this section if you know more. (What is the ODBC driver called? Where does it come from? Windows only or also Mac/Linux? Link to sample code snippet?)
+</td></tr></table>
+<table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> TODO: If you know more about the container format, and whether it really needs a specialized library for processing, please expand this section.
+</td></tr></table>
+<table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> TODO: Tips for displaying Excel documents which were manually parsed using one of the methods described.
+</td></tr></table>
+<table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> TODO: If you know whether Excel provides a "viewer" ActiveX control that can be embedded in a Qt application through ActiveQt, please fill out this section (including links to relevant resources).
+</td></tr></table>
+<div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<p>This page discusses various available options for working with <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Microsoft_Excel#File_formats">Microsoft Excel</a> documents in your Qt application. Please also read the general considerations outlined on the <a href="Handling_Document_Formats.html" title="Handling Document Formats"> Handling Document Formats</a> page.
+</p><p>One needs to distinguish between two different formats (this page deals with both of them):
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> Legacy "Excel Spreadsheet" format
+</th>
+<th style="text-align:left;"> "Office Open XML Workbook" format
+</th></tr>
+<tr>
+<td> classification:
+</td>
+<td> binary BIFF-based
+</td>
+<td> XML-based
+</td></tr>
+<tr>
+<td> main filename extension:
+</td>
+<td> .xls
+</td>
+<td> .xlsx
+</td></tr>
+<tr>
+<td> main internet media type:
+</td>
+<td> <small> application/vnd.ms-excel </small>
+</td>
+<td> <small> application/vnd.openxmlformats-officedocument.spreadsheetml.sheet </small>
+</td></tr>
+<tr>
+<td> default format of Excel:
+</td>
+<td> until Excel 2003
+</td>
+<td> since Excel 2007
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Reading_.2F_Writing"><span class="tocnumber">1</span> <span class="toctext">Reading / Writing</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Using_Excel_itself"><span class="tocnumber">1.1</span> <span class="toctext">Using Excel itself</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Using_ODBC"><span class="tocnumber">1.2</span> <span class="toctext">Using ODBC</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Using_independent_parser.2Fwriter_libraries"><span class="tocnumber">1.3</span> <span class="toctext">Using independent parser/writer libraries</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Using_manual_XML_processing"><span class="tocnumber">1.4</span> <span class="toctext">Using manual XML processing</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Using_batch_conversion_tools"><span class="tocnumber">1.5</span> <span class="toctext">Using batch conversion tools</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#See_Also"><span class="tocnumber">2</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Reading_.2F_Writing">Reading / Writing</span></h2>
+<h3><span class="mw-headline" id="Using_Excel_itself">Using Excel itself</span></h3>
+<p>If you are exclusively targeting the Windows platform and Microsoft Excel will be installed on all target machines, then you can use <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/activeqt.html">Qt's ActiveX framework</a> to access Excel's spreadsheet processing functionality through OLE automation. For an introductory code example (and a way to list the API provided by the Excel COM object), consult <a href="Using_ActiveX_Object_in_QT.html" title="Using ActiveX Object in QT" class="mw-redirect"> this how-to</a>.
+</p><p><br />
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> DLL file name
+</th>
+<th style="text-align:left;"> COM object name
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://office.microsoft.com/excel/"><b>Microsoft Excel</b></a>
+</td>
+<td>&#160;?
+</td>
+<td> Excel.Application
+</td>
+<td> Windows
+</td>
+<td> <span style="color:Navy"> commercial </span>
+</td></tr></table>
+<h3><span class="mw-headline" id="Using_ODBC">Using ODBC</span></h3>
+<p>To read an Excel file with ODBC (tested on Windows 7 with QT 4.7.1)&#160;:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QSqlDatabase</span> db <span class="sy0">=</span> <span class="kw5">QSqlDatabase</span><span class="sy0">::</span><span class="me2">addDatabase</span><span class="br0">&#40;</span><span class="st0">&quot;QODBC&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+db.<span class="me1">setDatabaseName</span><span class="br0">&#40;</span><span class="st0">&quot;DRIVER={Microsoft Excel Driver ('''.xls)};DBQ=&quot;</span> <span class="sy0">+</span> <span class="kw5">QString</span><span class="br0">&#40;</span><span class="st0">&quot;c:file.xlsx&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw1">if</span><span class="br0">&#40;</span>db.<span class="me1">open</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw5">QSqlQuery</span> query<span class="br0">&#40;</span><span class="st0">&quot;select''' from [&quot;</span> <span class="sy0">+</span> <span class="kw5">QString</span><span class="br0">&#40;</span><span class="st0">&quot;Sheet1&quot;</span><span class="br0">&#41;</span> <span class="sy0">+</span> <span class="st0">&quot;$]&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Select range, place A1:B5 after $</span>
+ <span class="kw1">while</span> <span class="br0">&#40;</span>query.<span class="me1">next</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="kw5">QString</span> column1<span class="sy0">=</span> query.<span class="me1">value</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> column1<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>This sample print in the console all column1's values. It works for <span style="color:SeaGreen">.xls</span> and <span style="color:SeaGreen">xlsx</span>
+</p><p>By default OBDC uses the first row as names for the columns, you can change this whith the 'FirstRowHasNames' option in the connection settings. Keep in mind that you are using a database and that each column has his own datatype. So if your second row contains text and your third row contains numbers, sql wil pick one of these datatypes. If a few rows contain text and the rest of them contains floating numbers, sql wil make the text appear and will make the numbers disappear.
+</p>
+<h3><span class="mw-headline" id="Using_independent_parser.2Fwriter_libraries">Using independent parser/writer libraries</span></h3>
+<p>For a more portable solution, you could take a look at some of the available third-party C/C++ libraries for parsing/writing Excel files:
+</p><p><br />
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> API
+</th>
+<th style="text-align:left;"> .xls
+</th>
+<th style="text-align:left;"> .xlsx
+</th>
+<th style="text-align:left;"> reading
+</th>
+<th style="text-align:left;"> writing
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://github.com/dbzhang800/QtXlsxWriter"><b>Qt Xlsx</b></a>
+</td>
+<td> C++
+<p>Qt
+</p>
+</td>
+<td> <span style="color:DarkRed">no</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> MIT <span style="color:Navy">[weak copyleft]</span>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://xlslib.sourceforge.net/"><b>xlsLib</b></a>
+</td>
+<td> C++
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:DarkRed">no</span>
+</td>
+<td> <span style="color:DarkRed">no</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> LGPL v3 <span style="color:Navy">[weak copyleft]</span>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://libxls.sourceforge.net/"><b>libxls</b></a>
+</td>
+<td> C
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:DarkRed">no</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:DarkRed">no</span>
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> LGPL <span style="color:Navy">[weak copyleft]</span>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.libxl.com/"><b>LibXL</b></a>
+</td>
+<td> C++
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> <span style="color:Navy">commercial</span>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.qtsoftware.de/vertrieb/db/qtxls_e.htm"><b>qtXLS</b></a>
+</td>
+<td> C
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:DarkRed">no</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> Win,&#160;?
+</td>
+<td> <span style="color:Navy">commercial</span>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://www.gaia-gis.it/fossil/freexl"><b>FreeXL</b></a>
+</td>
+<td> C
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:DarkRed">no</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:DarkRed">no</span>
+</td>
+<td> Linux,&#160;?
+</td>
+<td> LGPL / MPL <span style="color:Navy">[weak copyleft]</span>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.codeproject.com/Articles/13852/BasicExcel-A-Class-to-Read-and-Write-to-Microsoft"><b>BasicExcel</b></a>
+</td>
+<td> C++
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:DarkRed">no</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td>&#160;?
+</td>
+<td>&#160;?
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="https://numberduck.com/"><b>Number Duck</b></a>
+</td>
+<td> C++
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:DarkRed">no</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> <span style="color:Green">yes</span>
+</td>
+<td> Win, Linux
+</td>
+<td> <span style="color:Navy">commercial</span>
+</td></tr></table>
+<p>Note that these libraries differ in their scope and general approach to the problem.
+</p>
+<h3><span class="mw-headline" id="Using_manual_XML_processing">Using manual XML processing</span></h3>
+<p>Files using the XML-based (.xlsx) format could be processed using Qt's XML handling classes (see <a href="Handling_Document_Formats.html" title="Handling Document Formats"> Handling Document Formats</a>). Third-party libraries can help you in dealing with the container format that wraps the actual XML files:
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> API
+</th>
+<th style="text-align:left;"> supported platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://libopc.codeplex.com/"><b>libopc</b></a>
+</td>
+<td> C
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> <span style="color:Navy">permissive</span>
+</td></tr></table>
+<h3><span class="mw-headline" id="Using_batch_conversion_tools">Using batch conversion tools</span></h3>
+<p>If all else fails, there is always the option of using an existing tool to automatically convert between Excel files and a more manageable format, and let your Qt application deal with that format instead. The conversion tool could be bundled with your application or specified as a prerequisite, and controlled via <a href="Doc_QProcess.html?title=Doc:QProcess&amp;action=edit&amp;redlink=1" class="new" title="Doc:QProcess (page does not exist)">Doc:QProcess</a>. Some possibilities are:
+</p><p><br />
+</p>
+<table class="wikitable">
+<tr>
+<td>
+</td>
+<th style="text-align:left;"> .xls to *
+</th>
+<th style="text-align:left;"> .xlsx to *
+</th>
+<th style="text-align:left;"> *to .xls
+</th>
+<th style="text-align:left;"> *to .xlsx
+</th>
+<th style="text-align:left;"> platforms
+</th>
+<th style="text-align:left;"> license
+</th></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://www.libreoffice.org/"><b>LibreOffice</b></a>
+</td>
+<td> .ods .csv …
+</td>
+<td> .ods .csv …
+</td>
+<td> .ods .csv …
+</td>
+<td> .ods .csv …
+</td>
+<td> Win, Mac, Linux, …
+</td>
+<td> GPL v3 <span style="color:Navy">[strong copyleft]</span>
+</td></tr>
+<tr>
+<td> <a rel="nofollow" class="external text" href="http://xn--rvg/"><b>…</b></a>
+</td>
+<td> …
+</td>
+<td> …
+</td>
+<td> …
+</td>
+<td> …
+</td>
+<td> …
+</td>
+<td> …
+</td></tr></table>
+<p><i>Notes:</i>
+</p>
+LibreOffice can be used like this for batch conversion (it's slow, though): <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">soffice —invisible <span class="sy0">-</span>convert<span class="sy0">-</span>to xls test.<span class="me1">ods</span></pre></div></div>
+<hr />
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul>
+<li> <a href="Handling_Document_Formats.html" title="Handling Document Formats">Handling Document Formats</a>
+</li>
+<li> <a href="Handling_Microsoft_Word_file_format.html" title="Handling Microsoft Word file format">Handling Microsoft Word file format</a>
+</li>
+<li> <a href="Handling_Microsoft_PowerPoint_file_format.html" title="Handling Microsoft PowerPoint file format">Handling Microsoft PowerPoint file format</a>
+</li>
+<li> <a href="Handling_HTML.html" title="Handling HTML">Handling HTML</a>
+</li>
+<li> <a href="Handling_PDF.html" title="Handling PDF">Handling PDF</a>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.092 seconds
+Real time usage: 0.117 seconds
+Preprocessor visited node count: 214/1000000
+Preprocessor generated node count: 837/1000000
+Post‐expand include size: 4103/2097152 bytes
+Template argument size: 697/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:881-0!*!0!!en!*!* and timestamp 20151104104317 and revision id 18185
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexa44c.html?title=Handling_Microsoft_Excel_file_format&amp;oldid=18185">http://wiki.qt.io/index.php?title=Handling_Microsoft_Excel_file_format&amp;oldid=18185</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Developing_with_Qt.html" title="Category:Developing with Qt">Developing with Qt</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=86c326210503769c&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Handling_Microsoft_Excel_file_format.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Handling_Microsoft_Excel_file_format.html?title=Talk:Handling_Microsoft_Excel_file_format&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Handling_Microsoft_Excel_file_format.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexd201.html?title=Handling_Microsoft_Excel_file_format&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexcd65.html?title=Handling_Microsoft_Excel_file_format&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Handling_Microsoft_Excel_file_format.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Handling_Microsoft_Excel_file_format.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexc5a7.html?title=Handling_Microsoft_Excel_file_format&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexa44c.html?title=Handling_Microsoft_Excel_file_format&amp;oldid=18185" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index7551.html?title=Handling_Microsoft_Excel_file_format&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 June 2015, at 19:42.</li>
+											<li id="footer-info-viewcount">This page has been accessed 12,869 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":250});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Handling_microsoft_excel_file_format by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:15:03 GMT -->
+</html>

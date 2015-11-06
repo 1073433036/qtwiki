@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/New_Features_in_Qt_5.1 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:07:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>New Features in Qt 5.1 - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"New_Features_in_Qt_5.1","wgTitle":"New Features in Qt 5.1","wgCurRevisionId":18630,"wgRevisionId":18630,"wgArticleId":1173,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing with Qt::Qt 5"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"New_Features_in_Qt_5.1","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-New_Features_in_Qt_5_1 skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">New Features in Qt 5.1</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#New_Features_in_Qt_5.1"><span class="tocnumber">1</span> <span class="toctext">New Features in Qt 5.1</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#New_Modules"><span class="tocnumber">1.1</span> <span class="toctext">New Modules</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Support_for_New_Platforms"><span class="tocnumber">1.2</span> <span class="toctext">Support for New Platforms</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Qt_Creator"><span class="tocnumber">1.3</span> <span class="toctext">Qt Creator</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Installation"><span class="tocnumber">1.4</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Other_New_Features"><span class="tocnumber">1.5</span> <span class="toctext">Other New Features</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="New_Features_in_Qt_5.1">New Features in Qt 5.1</span></h1>
+<p>This is a list of new features slated to ship in Qt 5.1 release.
+</p><p>See also "Qt 5 Features":Qt-5Features.
+</p>
+<h2><span class="mw-headline" id="New_Modules">New Modules</span></h2>
+<ul>
+<li> "<b>Qt Quick Controls</b>":QtDesktopComponents (formerly known as Desktop Components)
+<ul>
+<li> A set of reusable UI components. For more details, see the <a rel="nofollow" class="external text" href="http://doc-snapshot.qt.io/qt5-stable/qtquickcontrols/qtquickcontrols-index.html">documentation snapshot</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li> <b>Qt Quick Layouts</b>
+<ul>
+<li> Provides layouts for Qt Quick.
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li> <b>Qt Quick Dialogs</b>
+<ul>
+<li> Provides dialogs for Qt Quick.
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li> <b>Qt X11 Extras</b>
+<ul>
+<li> Platform specific components / APIs for X11.
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li> <b>Qt Sensors</b>
+<ul>
+<li> Provides access to sensor hardware and motion gesture recognition both via QML and C++ interfaces.
+</li>
+<li> Supports Android, BlackBerry, iOS and Mer platforms.
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li> "<b>Qt Serial Port</b>":QtSerialPort
+<ul>
+<li> Provides an interface for hardware and virtual serial ports.
+</li>
+</ul>
+</li>
+</ul>
+<p>The full list of modules in Qt 5.1 is therefore as follows:
+</p><p><b>Essential Modules</b>
+</p>
+<ul>
+<li> moc
+<ul>
+<li> New keyword in Q_PROPERTY: MEMBER let you bind a property to a class member without requiring to have a getter or a setter.
+</li>
+</ul>
+</li>
+<li> qmake
+<ul>
+<li> Windows: Added support for specifying application icon (via RC_ICONS).
+</li>
+</ul>
+</li>
+<li> Qt Core
+<ul>
+<li> Add support for SHA3 to QCryptographicHash.
+</li>
+<li> A new class QMessageAuthenticationCode offering support for HMAC.
+</li>
+<li> Added toInt(), toUInt(), etc… functions to QStringRef.
+</li>
+<li> Threadsafe initialization of global statics trough refactored Q_GLOBAL_STATIC.
+</li>
+<li> New class QLockFile that provides locking between processes, using a file. This enables applications to check that there is only one instance of it running.
+</li>
+<li> New class QSaveFile that provides transaction like file writing. Ensures that nothing or everything you asked for is written.
+</li>
+</ul>
+</li>
+<li> Qt GUI
+<ul>
+<li> Support for embedding and reparenting of windows created from other processes, via QWindow::fromWinId(); (implemented in the X11 backend only, using the XEmbed protocol).
+</li>
+<li> QWidget::createWindowContainer() adds the capability to embed QWindow instances, such as QQuickView or a QWindow using QOpenGLContext, into a QWidget hierarchy.
+</li>
+<li> Support for kerning advances in QRawFont::advancesForGlyphIndexes.
+</li>
+<li> QImageReader and QImageWriter adds the ability to report supported MimeTypes.
+</li>
+<li> New input method plugin QComposeInputContext.
+</li>
+<li> New GTK+ 2.x platformtheme plugin that provides native file, font and color dialogs.
+</li>
+<li> QOpenGLContext::versionFunctions() provides access to all OpenGL functions.
+</li>
+<li> New QOpenGLTimerQuery and QOpenGLTimeMonitor classes.
+</li>
+<li> New QOpenGLDebugLogger class expose KHR_debug extension for easy debugging.
+</li>
+<li> Added support for Geometry, Tessellation Control, Tessellation Evaluation and Compute shaders to QOpenGLShader and QOpenGLShaderProgram.
+</li>
+<li> New QOpenGLVertexArrayObject class.
+</li>
+</ul>
+</li>
+<li> Qt Multimedia
+</li>
+<li> Qt Multimedia Widgets
+</li>
+<li> Qt Network
+<ul>
+<li> Add a new encrypted() signal to QNetworkAccessManager and QNetworkReply so that applications can perform additional checks on the certificate chain.
+</li>
+<li> Support for sending intermediate certificates when QSslSocket is used as a server, and when using client certificates.
+</li>
+<li> Support for SSL session re-use allowing much faster connections to servers.
+</li>
+</ul>
+</li>
+<li> Qt QML
+<ul>
+<li> New QQmlApplicationEngine convenience class for QML applications.
+</li>
+<li> New Instantiator type for generic, dynamic object creation
+</li>
+<li> New QtQml.Models module containing ListElement, ListModel, DelegateModel, DelegateModelGroup and ObjectModel. These are all types which were previously in QtQuick (some have changed names) and the types are still available in the QtQuick module by the old names for compatibility.
+</li>
+<li> New properties on Qt.application: arguments, name, version.
+</li>
+</ul>
+</li>
+<li> Qt Quick
+<ul>
+<li> New threaded render loop for Mac, Linux and Embedded.
+</li>
+<li> New render loop for windows providing velvet animations.
+</li>
+<li> New QtQuick.Dialogs module with FileDialog and ColorDialog types
+</li>
+<li> New Window properties: activeFocusItem, minimumWidth, minimumHeight, maximumWidth, maximumHeight, visibility, contentOrientation, opacity
+</li>
+<li> New Item property: activeFocusOnTab
+</li>
+<li> New Grid properties: horizontalAlignment, verticalAlignment, effectiveHorizontalAlignment
+</li>
+<li> New TextEdit properties: selectByKeyboard, textDocument
+</li>
+<li> A Window declared inside another Window or Item will automatically be transient for (centered upon) the outer window
+</li>
+</ul>
+</li>
+<li> Qt Quick Controls
+<ul>
+<li> see section at top of page ("New Modules")
+</li>
+</ul>
+</li>
+<li> Qt Quick Layouts
+<ul>
+<li> see section at top of page ("New Modules")
+</li>
+</ul>
+</li>
+<li> Qt SQL
+</li>
+<li> Qt Test
+</li>
+<li> Qt WebKit
+<ul>
+<li> JavaScript JIT on Windows 64 bit.
+</li>
+<li> Improved JavaScript performance on MIPS architecture (JIT DFG and LLInt).
+</li>
+<li> Improved font rendering, kerning enabled by default.
+</li>
+<li> Improved garbage collection.
+</li>
+<li> Improved support for Flash on Mac.
+</li>
+<li> Improved support for JavaScript requestAnimationFrame callback.
+</li>
+<li> Support for WOFF fonts.
+</li>
+<li> Support for GStreamer 1.0.
+</li>
+<li> Improved perceived page load performance and support for Link prefetch
+</li>
+</ul>
+</li>
+<li> Qt WebKit Widgets
+</li>
+<li> Qt Widgets
+<ul>
+<li> QMenu: [QTBUG-13663, QTBUG-2362] Added property toolTipsVisible.
+</li>
+</ul>
+</li>
+</ul>
+<p><b>Add-On Modules</b>
+</p>
+<ul>
+<li> Active Qt
+</li>
+<li> Qt Concurrent
+</li>
+<li> Qt D-Bus
+</li>
+<li> Qt Declarative
+</li>
+<li> Qt Graphical Effects
+</li>
+<li> Qt Image Formats
+</li>
+<li> Qt OpenGL
+</li>
+<li> Qt Print Support
+</li>
+<li> Qt Script
+</li>
+<li> Qt Script Tools
+</li>
+<li> Qt Sensors
+</li>
+<li> Qt Serial Port
+</li>
+<li> Qt SVG
+</li>
+<li> Qt X11 Extras
+</li>
+<li> Qt XML
+</li>
+<li> Qt XML Patterns 
+</li>
+</ul>
+<h2><span class="mw-headline" id="Support_for_New_Platforms">Support for New Platforms</span></h2>
+<p>Qt 5.1 introduces support for following new platforms with technology preview status:
+</p>
+<ul>
+<li> Qt for Android (Technology Preview)
+</li>
+<li> Qt for iOS (Technology Preview)
+</li>
+</ul>
+<p>Qt 5.1 re-introduces support for Windows Embedded Compact 7 (as Tier 2 platform)
+</p>
+<h2><span class="mw-headline" id="Qt_Creator">Qt Creator</span></h2>
+<p>Qt Creator 2.7 has been integrated in this Qt release with the most prominent new features:
+</p>
+<ul>
+<li> Improved C++11 code editing support
+</li>
+<li> Qt Quick Designer with full support for Qt Quick2
+</li>
+<li> Android development target
+</li>
+<li> Experimental QBS and Diff Integration
+</li>
+</ul>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<ul>
+<li> Online installer packages/repositories
+</li>
+<li> New reference installers
+<ul>
+<li> Qt for Android (Windows, Linux 32bit and 64bit hosts)
+</li>
+<li> MSVC2012 64bit OpenGL
+</li>
+<li> MSVC2012 32bit ANGLE
+</li>
+</ul>
+</li>
+<li> MInGW version upgraded from 4.7 to 4.8
+</li>
+</ul>
+<h2><span class="mw-headline" id="Other_New_Features">Other New Features</span></h2>
+<ul>
+<li> Support for Static Qt builds
+</li>
+<li> Perl build dependency removed (qtwebkit still has the perl dependency)
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.009 seconds
+Real time usage: 0.012 seconds
+Preprocessor visited node count: 23/1000000
+Preprocessor generated node count: 28/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1173-0!*!*!!en!*!* and timestamp 20151105022244 and revision id 18630
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexafbe-2.html?title=New_Features_in_Qt_5.1&amp;oldid=18630">http://wiki.qt.io/index.php?title=New_Features_in_Qt_5.1&amp;oldid=18630</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Developing_with_Qt__Qt_5.html" title="Category:Developing with Qt::Qt 5">Developing with Qt::Qt 5</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=6deb8b5d94c012e8&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="New_Features_in_Qt_5-3.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_New_Features_in_Qt_5-2.html?title=Talk:New_Features_in_Qt_5.1&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="New_Features_in_Qt_5-3.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexa2bc-2.html?title=New_Features_in_Qt_5.1&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index3d7c.html?title=New_Features_in_Qt_5.1&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/New_Features_in_Qt_5-2.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/New_Features_in_Qt_5-2.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index8ff3.html?title=New_Features_in_Qt_5.1&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexafbe-2.html?title=New_Features_in_Qt_5.1&amp;oldid=18630" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index2836.html?title=New_Features_in_Qt_5.1&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 June 2015, at 20:57.</li>
+											<li id="footer-info-viewcount">This page has been accessed 2,908 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":501});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/New_Features_in_Qt_5.1 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:08:01 GMT -->
+</html>

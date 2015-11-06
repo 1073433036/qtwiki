@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Model_View_Tutorial_Part2/de&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:37:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Model View Tutorial Part2/de - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Model_View_Tutorial_Part2/de","wgTitle":"Model View Tutorial Part2/de","wgCurRevisionId":17410,"wgRevisionId":17410,"wgArticleId":2981,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Model_View_Tutorial_Part2/de","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Model_View_Tutorial_Part2_de skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Model View Tutorial Part2/de</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexe7b7.html?title=Model_View_Tutorial_Part2/de&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div class="factbox right">
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Table_of_Content"><span class="tocnumber">1</span> <span class="toctext">Table of Content</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Ein_Modell.2C_dessen_Werte_editiert_werden_k.C3.B6nnen"><span class="tocnumber">2</span> <span class="toctext">Ein Modell, dessen Werte editiert werden können</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#flags"><span class="tocnumber">2.1</span> <span class="toctext">flags</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#setData"><span class="tocnumber">2.2</span> <span class="toctext">setData</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Table_of_Content">Table of Content</span></h3>
+<ul>
+<li> <a href="#6cf652940458d1314e876f9344973bb6">Ein Modell, dessen Werte editiert werden können</a>
+<ul>
+<li> <a href="#4e5868d676cb634aa75b125a0f741abf">flags</a>
+</li>
+<li> <a href="#8feaa50ca223fd78d6e50b2649d94ddc">setData</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><a rel="nofollow" class="external text" href="http://qt.io/groups/qt_german/wiki/Model-View-Tutorial-Teil1">←Teil 1: Table Modell</a><br /><a rel="nofollow" class="external text" href="http://qt.io/groups/qt_german/wiki/Model_View_Tutorial">↑Übersicht Model/View Tutorial:CD Verwaltung↑</a><br /><a rel="nofollow" class="external text" href="http://qt.io/groups/qt_german/wiki/Model-View-Tutorial-Teil2-Delegate-und-View">Teil 2: Delegate und View→</a>
+</p>
+<h1><span class="mw-headline" id="Ein_Modell.2C_dessen_Werte_editiert_werden_k.C3.B6nnen">Ein Modell, dessen Werte editiert werden können</span></h1>
+<p>Damit Werte in einem Modell editiert werden können, muss die Methode <b>flags(…)</b> überschrieben werden und für alle editierbaren Zellen auch das flag <b>Qt::ItemIsEditable</b> zurückliefern. Außerdem muss die Methode <b>setData</b> überschrieben werden, da diese von der View aufgerufen wird, um Werte in das Modell zu schreiben.
+</p><p>Wenn die Methode <b>setData()</b> überschrieben wird, muss nach dem Ändern der Werte das Signal <b>dataChanged()</b> explizit ausgelöst werden. Bleibt das Signal aus, dann fehlt den mit dem Modell verbundenen Views der Impuls, ihren Zustand aktualisieren.
+</p><p>Es sind also diese beiden <a rel="nofollow" class="external text" href="http://qt.io/groups/qt_german/wiki/virtuellen-Funktionen">virtuellen Funktionen</a> zu überschreiben:
+</p>
+<ul>
+<li> Qt::ItemFlags flags(const QModelIndex&amp; index ) const
+</li>
+<li> bool setData(const QModelIndex&amp; index, const QVariant&amp; value, int role)
+</li>
+</ul>
+<p>Im folgenden wird deren Implementierungen beschrieben
+</p>
+<h2><span class="mw-headline" id="flags">flags</span></h2>
+<p>Die Methode <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qabstractitemmodel.html#flags">flags()</a> <i>[doc.qt.nokia.com]</i> wird benutzt, wenn man Eigenschaften eines Modell-Elements ändern möchte. Die am häufigsten benötigten sind:
+</p>
+<table class="infotable line">
+<tr>
+<td> <b>Wert</b>
+</td>
+<td> <b>Beschreibung</b>
+</td></tr>
+<tr>
+<td> <b>Qt::ItemIsSelectable</b>
+</td>
+<td> Das Element kann selektiert werden (Standard).
+</td></tr>
+<tr>
+<td> <b>Qt::ItemIsEditable</b>
+</td>
+<td> Das Element kann editiert werden.
+</td></tr>
+<tr>
+<td> <b>Qt::ItemIsUserCheckable</b>
+</td>
+<td> Das Element kann (üblicherweise mittels einer Checkbox) angekreuzt werden.
+</td></tr>
+<tr>
+<td> <b>Qt::ItemIsEnabled</b>
+</td>
+<td> Der Benutzer kann mit dem Element interagieren (Standard).
+</td></tr></table>
+<p>Wird für ein Element <i>Qt::ItemIsUserCheckable</i> zurückgegeben, wird bei setData auch die Rolle Qt::CheckStateRole übergeben.
+</p><p>In unserem einfachen Beispiel kann jedes Element editiert werden:
+</p>
+<div class="cpp-qt geshi">
+<ol>
+<li> <div class="de1"><a rel="nofollow" class="external text" href="http://doc.qt.io/Qt.html"><span class="kw5">Qt</span></a><span class="sy0">::</span><span class="me2">ItemFlags</span> CdModel<span class="sy0">::</span><span class="me2">flags</span><span class="br0">(</span><span class="kw4">const</span> <a rel="nofollow" class="external text" href="http://doc.qt.io/QModelIndex.html"><span class="kw5">QModelIndex</span></a><span class="sy0">&amp;</span> index <span class="br0">)</span> <span class="kw4">const</span></div>
+</li>
+<li> <div class="de1"><span class="br0">{</span></div>
+</li>
+<li> <div class="de1">    <span class="kw1">if</span><span class="br0">(</span>index.<span class="me1">isValid</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span></div>
+</li>
+<li> <div class="de1">        <span class="kw1">return</span> <a rel="nofollow" class="external text" href="http://doc.qt.io/Qt.html"><span class="kw5">Qt</span></a><span class="sy0">::</span><span class="me2">ItemIsEnabled</span> <span class="sy0">|</span> <a rel="nofollow" class="external text" href="http://doc.qt.io/Qt.html"><span class="kw5">Qt</span></a><span class="sy0">::</span><span class="me2">ItemIsSelectable</span> <span class="sy0">|</span> <a rel="nofollow" class="external text" href="http://doc.qt.io/Qt.html"><span class="kw5">Qt</span></a><span class="sy0">::</span><span class="me2">ItemIsEditable</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de2"> </div>
+</li>
+<li> <div class="de1">    <span class="kw1">return</span> <a rel="nofollow" class="external text" href="http://doc.qt.io/QAbstractItemModel.html"><span class="kw5">QAbstractItemModel</span></a><span class="sy0">::</span><span class="me2">flags</span><span class="br0">(</span>index<span class="br0">)</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de1"><span class="br0">}</span></div>
+</li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="setData">setData</span></h2>
+<p>Die Methode <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qabstractitemmodel.html#setData">setData</a> <i>[doc.qt.nokia.com]</i> wird von der View (bzw. eigentlich dem Delegate, siehe später) aufgerufen, um die Werte zu setzen. Es können all die Werte gesetzt werden, die mittels data() auch gelesen werden können. Als erstes müssen die Übergabeparameter validiert (= auf ihre Gültigkeit geprüft werden) werden. Dann muss die Rolle überprüft und die Werte im Datenmodell geändert werden. Abschließend <i>muss</i> das Signal dataChanged ausgelöst werden. Wird das vergessen, wird die Datenänderung nicht in der View angezeigt.
+</p><p>Sollte ein Editiervorgang nicht klappen, <i>muss</i> die Methode <b>false</b> zurückliefern, ansonsten true.
+</p><p>In unserem einfachen Beispiel verwenden wir die folgende Implementierung:
+</p>
+<div class="cpp-qt geshi">
+<ol>
+<li> <div class="de1"><span class="kw4">bool</span> CdModel<span class="sy0">::</span><span class="me2">setData</span><span class="br0">(</span><span class="kw4">const</span> <a rel="nofollow" class="external text" href="http://doc.qt.io/QModelIndex.html"><span class="kw5">QModelIndex</span></a><span class="sy0">&amp;</span> index<span class="sy0">,</span> <span class="kw4">const</span> <a rel="nofollow" class="external text" href="http://doc.qt.io/QVariant.html"><span class="kw5">QVariant</span></a><span class="sy0">&amp;</span> value<span class="sy0">,</span> <span class="kw4">int</span> role<span class="br0">)</span></div>
+</li>
+<li> <div class="de1"><span class="br0">{</span></div>
+</li>
+<li> <div class="de1">    <span class="co1">// validate the index and that row and column are inside the given borders...</span></div>
+</li>
+<li> <div class="de1">    <span class="kw1">if</span><span class="br0">(</span><span class="sy0">!</span>index.<span class="me1">isValid</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">||</span> <span class="br0">(</span>m_data.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">&lt;=</span> index.<span class="me1">row</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">||</span> <span class="br0">(</span>columnCount<span class="br0">(</span><span class="br0">)</span> <span class="sy0">&lt;=</span> index.<span class="me1">column</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span></div>
+</li>
+<li> <div class="de2">        <span class="kw1">return</span> false<span class="sy0">;</span></div>
+</li>
+<li> <div class="de1"> </div>
+</li>
+<li> <div class="de1">    <span class="kw1">if</span><span class="br0">(</span><a rel="nofollow" class="external text" href="http://doc.qt.io/Qt.html"><span class="kw5">Qt</span></a><span class="sy0">::</span><span class="me2">EditRole</span> <span class="sy0">==</span> role<span class="br0">)</span></div>
+</li>
+<li> <div class="de1">    <span class="br0">{</span></div>
+</li>
+<li> <div class="de1">        <span class="co1">// change the value of the model</span></div>
+</li>
+<li> <div class="de2">        CdDisk disk <span class="sy0">=</span> m_data.<span class="me1">at</span><span class="br0">(</span>index.<span class="me1">row</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de1">        <span class="kw1">switch</span><span class="br0">(</span>index.<span class="me1">column</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span></div>
+</li>
+<li> <div class="de1">        <span class="br0">{</span></div>
+</li>
+<li> <div class="de1">        <span class="kw1">case</span> <span class="nu0">0</span><span class="sy0">:</span></div>
+</li>
+<li> <div class="de1">            disk.<span class="me1">m_title</span> <span class="sy0">=</span> value.<span class="me1">toString</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de2">            break<span class="sy0">;</span></div>
+</li>
+<li> <div class="de1">        <span class="kw1">case</span> <span class="nu0">1</span><span class="sy0">:</span></div>
+</li>
+<li> <div class="de1">            disk.<span class="me1">m_author</span> <span class="sy0">=</span> value.<span class="me1">toString</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de1">            break<span class="sy0">;</span></div>
+</li>
+<li> <div class="de1">        <span class="kw1">case</span> <span class="nu0">2</span><span class="sy0">:</span></div>
+</li>
+<li> <div class="de2">            disk.<span class="me1">m_genre</span> <span class="sy0">=</span> value.<span class="me1">toString</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de1">            break<span class="sy0">;</span></div>
+</li>
+<li> <div class="de1">        <span class="kw1">case</span> <span class="nu0">3</span><span class="sy0">:</span></div>
+</li>
+<li> <div class="de1">            disk.<span class="me1">m_year</span> <span class="sy0">=</span> value.<span class="me1">toInt</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de1">            break<span class="sy0">;</span></div>
+</li>
+<li> <div class="de2">        <span class="br0">}</span></div>
+</li>
+<li> <div class="de1">        m_data.<span class="me1">changeDisk</span><span class="br0">(</span>index.<span class="me1">row</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">,</span> disk<span class="br0">)</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de1"> </div>
+</li>
+<li> <div class="de1">        <span class="co1">// don't forget to emit the signal dataChanged and to return true</span></div>
+</li>
+<li> <div class="de1">        emit dataChanged<span class="br0">(</span>index<span class="sy0">,</span> index<span class="br0">)</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de2">        <span class="kw1">return</span> true<span class="sy0">;</span></div>
+</li>
+<li> <div class="de1">    <span class="br0">}</span></div>
+</li>
+<li> <div class="de1"> </div>
+</li>
+<li> <div class="de1">    <span class="co1">// in case, no editing was done, return false.</span></div>
+</li>
+<li> <div class="de1">    <span class="kw1">return</span> false<span class="sy0">;</span></div>
+</li>
+<li> <div class="de2"><span class="br0">}</span></div>
+</li>
+</ol>
+</div>
+<p>Zum Editieren muss auch die Methode <b>data()</b> modifiziert werden:
+</p>
+<div class="cpp-qt geshi">
+<ol>
+<li> <div class="de1"><a rel="nofollow" class="external text" href="http://doc.qt.io/QVariant.html"><span class="kw5">QVariant</span></a> CdModel<span class="sy0">::</span><span class="me2">data</span><span class="br0">(</span><span class="kw4">const</span> <a rel="nofollow" class="external text" href="http://doc.qt.io/QModelIndex.html"><span class="kw5">QModelIndex</span></a> <span class="sy0">&amp;</span>index<span class="sy0">,</span> <span class="kw4">int</span> role<span class="br0">)</span> <span class="kw4">const</span></div>
+</li>
+<li> <div class="de1"><span class="br0">{</span></div>
+</li>
+<li> <div class="de1">    <span class="kw1">if</span><span class="br0">(</span><span class="sy0">!</span>index.<span class="me1">isValid</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span></div>
+</li>
+<li> <div class="de1">        <span class="kw1">return</span> <a rel="nofollow" class="external text" href="http://doc.qt.io/QVariant.html"><span class="kw5">QVariant</span></a><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de2"> </div>
+</li>
+<li> <div class="de1">    <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span><a rel="nofollow" class="external text" href="http://doc.qt.io/Qt.html"><span class="kw5">Qt</span></a><span class="sy0">::</span><span class="me2">DisplayRole</span> <span class="sy0">==</span> role<span class="br0">)</span> <span class="sy0">||</span> <span class="br0">(</span><a rel="nofollow" class="external text" href="http://doc.qt.io/Qt.html"><span class="kw5">Qt</span></a><span class="sy0">::</span><span class="me2">EditRole</span> <span class="sy0">==</span> role<span class="br0">)</span><span class="br0">)</span></div>
+</li>
+<li> <div class="de1">    <span class="br0">{</span></div>
+</li>
+<li> <div class="de1">        ...</div>
+</li>
+<li> <div class="de1">    <span class="br0">}</span></div>
+</li>
+<li> <div class="de2"> </div>
+</li>
+<li> <div class="de1">    <span class="kw1">return</span> <a rel="nofollow" class="external text" href="http://doc.qt.io/QVariant.html"><span class="kw5">QVariant</span></a><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div>
+</li>
+<li> <div class="de1"><span class="br0">}</span></div>
+</li>
+</ol>
+</div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.061 seconds
+Real time usage: 0.064 seconds
+Preprocessor visited node count: 309/1000000
+Preprocessor generated node count: 644/1000000
+Post‐expand include size: 1320/2097152 bytes
+Template argument size: 425/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:2981-0!*!0!!en!*!* and timestamp 20151105105332 and revision id 17410
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexfd1e.html?title=Model_View_Tutorial_Part2/de&amp;oldid=17410">http://wiki.qt.io/index.php?title=Model_View_Tutorial_Part2/de&amp;oldid=17410</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=45c05c69516c5b4e&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Model_View_Tutorial_Part2/de.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Model_View_Tutorial_Part2/de.html?title=Talk:Model_View_Tutorial_Part2/de&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Model_View_Tutorial_Part2/de.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexe7b7.html?title=Model_View_Tutorial_Part2/de&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index6d8c.html?title=Model_View_Tutorial_Part2/de&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Model_View_Tutorial_Part2/de.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Model_View_Tutorial_Part2/de.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="indexfd1e.html?title=Model_View_Tutorial_Part2/de&amp;oldid=17410" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index76c7-2.html?title=Model_View_Tutorial_Part2/de&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 26 May 2015, at 12:29.</li>
+											<li id="footer-info-viewcount">This page has been accessed 262 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":546});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Model_View_Tutorial_Part2/de&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:37:23 GMT -->
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&oldid=15298 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:09:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Using-QtWebKit-and-QML-with-PySide - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Using-QtWebKit-and-QML-with-PySide","wgTitle":"Using-QtWebKit-and-QML-with-PySide","wgCurRevisionId":15298,"wgRevisionId":15298,"wgArticleId":2107,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["LanguageBindings::PySide","Snippets","Developing with Qt::Qt Quick","Developing with Qt::Qt Quick::QML","Developing with Qt::Qt Quick::Tutorial","Developing with Qt::QtWebKit"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Using-QtWebKit-and-QML-with-PySide","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Using-QtWebKit-and-QML-with-PySide skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Using-QtWebKit-and-QML-with-PySide</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 13:10, 30 March 2015 by <a href="http://wiki.qt.io/index.php?title=User:Henri_Vikki&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Henri Vikki (page does not exist)">Henri Vikki</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:Henri_Vikki&amp;action=edit&amp;redlink=1" class="new" title="User talk:Henri Vikki (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Henri_Vikki" title="Special:Contributions/Henri Vikki">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&amp;diff=prev&amp;oldid=15298" title="Using-QtWebKit-and-QML-with-PySide">diff</a>) <a href="http://wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&amp;direction=prev&amp;oldid=15298" title="Using-QtWebKit-and-QML-with-PySide">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p><p><br />
+<b>English</b> <a rel="nofollow" class="external text" href="http://qt-devnet.developpez.com/tutoriels/python/pyside/qml/qtwebkit/">French</a>
+</p><p><br />
+This <a href="http://wiki.qt.io/PySide" title="PySide" class="mw-redirect">PySide</a> tutorial shows you how to integrate Python code and <a href="http://wiki.qt.io/QtWebKit" title="QtWebKit" class="mw-redirect">QtWebKit</a> together with QML, so you can have HTML content and program logic inside a QML application while still being able to send messages back and forth between the JavaScript context inside the WebView and the Python world. It uses JSON, alert() and evaluateJavaScript() to exchange arbitrary data structures (values, lists, dictionaries) between Python and JavaScript in the WebView.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#WebKitView.py"><span class="tocnumber">1</span> <span class="toctext">WebKitView.py</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Importing_required_modules"><span class="tocnumber">1.1</span> <span class="toctext">Importing required modules</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Send_and_receive_helper_functions"><span class="tocnumber">1.2</span> <span class="toctext">Send and receive helper functions</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Putting_it_all_together"><span class="tocnumber">1.3</span> <span class="toctext">Putting it all together</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#WebKitView.qml"><span class="tocnumber">2</span> <span class="toctext">WebKitView.qml</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#WebKitView.html"><span class="tocnumber">3</span> <span class="toctext">WebKitView.html</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#HTML_header"><span class="tocnumber">3.1</span> <span class="toctext">HTML header</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#JavaScript_send_and_receive_functions"><span class="tocnumber">3.2</span> <span class="toctext">JavaScript send and receive functions</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Callbacks_for_our_buttons"><span class="tocnumber">3.3</span> <span class="toctext">Callbacks for our buttons</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#The_HTML_body_contents"><span class="tocnumber">3.4</span> <span class="toctext">The HTML body contents</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#How_the_example_app_looks_like"><span class="tocnumber">4</span> <span class="toctext">How the example app looks like</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="WebKitView.py">WebKitView.py</span></h2>
+<h3><span class="mw-headline" id="Importing_required_modules">Importing required modules</span></h3>
+<p>The <b>sys</b> module is used to get command line arguments, <b>time</b> is used to get the current time and <b>json</b> is used to en- and decode data structures to/from JSON.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import sys
+import <span class="kw3">time</span>
+import json
+&#160;
+from PySide import <span class="kw5">QtGui</span><span class="sy0">,</span> QtDeclarative</pre></div></div>
+<h3><span class="mw-headline" id="Send_and_receive_helper_functions">Send and receive helper functions</span></h3>
+<p>These two functions send data to the WebView and receive data from the WebView. <b>sendData</b> simply transforms the data into JSON and calls <b>receiveJSON</b> (as defined in the HTML file) via the <b>evaluateJavaScript</b> method to put the data there. <b>receiveData</b> is connected to the <b>alert</b> signal of the WebView object, and gets a string as parameter, which is decoded as JSON and processed. When we want to set the rotation, we simply set the QML property "rotation" on the WebView object, which will rotate it in our view.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">def sendData<span class="br0">&#40;</span>data<span class="br0">&#41;</span><span class="sy0">:</span>
+ global rootObject
+ print <span class="st0">'Sending data:'</span><span class="sy0">,</span> data
+ json_str <span class="sy0">=</span> json.<span class="me1">dumps</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span>.<span class="me1">replace</span><span class="br0">&#40;</span><span class="st0">'&quot;'</span><span class="sy0">,</span> <span class="st0">'&quot;'</span><span class="br0">&#41;</span>
+ rootObject.<span class="me1">evaluateJavaScript</span><span class="br0">&#40;</span><span class="st0">'receiveJSON(&quot;s&quot;)'</span> json_str<span class="br0">&#41;</span>
+&#160;
+def receiveData<span class="br0">&#40;</span>json_str<span class="br0">&#41;</span><span class="sy0">:</span>
+ global rootObject
+&#160;
+data <span class="sy0">=</span> json.<span class="me1">loads</span><span class="br0">&#40;</span>json_str<span class="br0">&#41;</span>
+ print <span class="st0">'Received data:'</span><span class="sy0">,</span> data
+&#160;
+<span class="kw1">if</span> len<span class="br0">&#40;</span>data<span class="br0">&#41;</span>  <span class="nu0">2</span> and data<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>  <span class="st0">'setRotation'</span><span class="sy0">:</span>
+ rootObject.<span class="me1">setProperty</span><span class="br0">&#40;</span><span class="st0">'rotation'</span><span class="sy0">,</span> data<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+ <span class="kw1">else</span><span class="sy0">:</span>
+ sendData<span class="br0">&#40;</span><span class="br0">&#123;</span><span class="st0">'Hello'</span><span class="sy0">:</span> <span class="st0">'from PySide'</span><span class="sy0">,</span> <span class="st0">'itsNow'</span><span class="sy0">:</span> <span class="kw4">int</span><span class="br0">&#40;</span><span class="kw3">time</span>.<span class="kw3">time</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#125;</span><span class="br0">&#41;</span></pre></div></div>
+<h3><span class="mw-headline" id="Putting_it_all_together">Putting it all together</span></h3>
+<p>Instantiate a new QApplication, a new QDeclarativeView and load the QML file. We also set the render hints to SmoothPixmapTransform, which makes the rotated WebView content look nicer (if you want more performance, remove this line). We then set the <b>url</b> property of our WebView to our HTML file, and finally make sure that we connect to the <b>alert</b> signal of the WebView, which gets emitted when the JavaScript code inside the WebView executes <b>alert()</b>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">app <span class="sy0">=</span> <span class="kw5">QtGui</span>.<span class="kw5">QApplication</span><span class="br0">&#40;</span>sys.<span class="me1">argv</span><span class="br0">&#41;</span>
+&#160;
+view <span class="sy0">=</span> QtDeclarative.<span class="me1">QDeclarativeView</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+view.<span class="me1">setRenderHints</span><span class="br0">&#40;</span><span class="kw5">QtGui</span>.<span class="kw5">QPainter</span>.<span class="me1">SmoothPixmapTransform</span><span class="br0">&#41;</span>
+view.<span class="me1">setSource</span><span class="br0">&#40;</span><span class="st0">''</span>file<span class="st0">''</span>.<span class="me1">replace</span><span class="br0">&#40;</span><span class="st0">'.py'</span><span class="sy0">,</span> <span class="st0">'.qml'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+rootObject <span class="sy0">=</span> view.<span class="me1">rootObject</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+rootObject.<span class="me1">setProperty</span><span class="br0">&#40;</span><span class="st0">'url'</span><span class="sy0">,</span> <span class="st0">''</span>file<span class="st0">''</span>.<span class="me1">replace</span><span class="br0">&#40;</span><span class="st0">'.py'</span><span class="sy0">,</span> <span class="st0">'.html'</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+rootObject.<span class="me1">alert</span>.<span class="kw2">connect</span><span class="br0">&#40;</span>receiveData<span class="br0">&#41;</span>
+view.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+app.<span class="me1">exec_</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>
+<h2><span class="mw-headline" id="WebKitView.qml">WebKitView.qml</span></h2>
+<p>This one is relatively unspectacular. Simply import QtWebKit (for this you have to install the <b>libqtwebkit4-declarative</b> package) and create a new WebView. The <b>settings.javascriptEnabled</b> part here is key - without it, JavaScript inside the WebView will not be executed.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">QtWebKit</span> <span class="nu16">1.0</span>
+&#160;
+WebView <span class="br0">&#123;</span> settings.<span class="me1">javascriptEnabled</span><span class="sy0">:</span> true<span class="sy0">;</span> width<span class="sy0">:</span> <span class="nu0">400</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">280</span> <span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="WebKitView.html">WebKitView.html</span></h2>
+<h3><span class="mw-headline" id="HTML_header">HTML header</span></h3>
+<p>Here's how we start out with the HTML file:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&lt;</span>html<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>head<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>script language<span class="sy0">=</span><span class="st0">&quot;javascript&quot;</span> type<span class="sy0">=</span><span class="st0">&quot;text/javascript&quot;</span><span class="sy0">&gt;</span></pre></div></div>
+<h3><span class="mw-headline" id="JavaScript_send_and_receive_functions">JavaScript send and receive functions</span></h3>
+<p>The <b>sendJSON</b> function will be called by our code (see below), the <b>receiveJSON</b> function will be called from Python by executing JavaScript code on the WebView.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> function sendJSON<span class="br0">&#40;</span>data<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ alert<span class="br0">&#40;</span>JSON.<span class="me1">stringify</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ function receiveJSON<span class="br0">&#40;</span>data<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ element <span class="sy0">=</span> document.<span class="me1">getElementById</span><span class="br0">&#40;</span><span class="st0">'received'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ element. <span class="me1">innerHTML</span> <span class="st0">''</span><span class="sy0">=</span> <span class="st0">&quot;&quot;</span><span class="st0">''</span> data<span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Callbacks_for_our_buttons">Callbacks for our buttons</span></h3>
+<p>We'll be using the <b>sendJSON</b> method to send data when the buttons are clicked. Here are the functions that generate the messages and then send the data to Python:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> function setRotation<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ element <span class="sy0">=</span> document.<span class="me1">getElementById</span><span class="br0">&#40;</span><span class="st0">'rotate'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ angle <span class="sy0">=</span> parseInt<span class="br0">&#40;</span>element.<span class="me1">value</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ message <span class="sy0">=</span> <span class="br0">&#91;</span><span class="st0">'setRotation'</span><span class="sy0">,</span> angle<span class="br0">&#93;</span><span class="sy0">;</span>
+ sendJSON<span class="br0">&#40;</span>message<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ function sendStuff<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ sendJSON<span class="br0">&#40;</span><span class="br0">&#91;</span><span class="nu0">42</span><span class="sy0">,</span> <span class="st0">'PySide'</span><span class="sy0">,</span> <span class="nu16">1.23</span><span class="sy0">,</span> <span class="kw2">true</span><span class="sy0">,</span> <span class="br0">&#123;</span><span class="st0">'a'</span><span class="sy0">:</span><span class="nu0">1</span><span class="sy0">,</span><span class="st0">'b'</span><span class="sy0">:</span><span class="nu0">2</span><span class="br0">&#125;</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="The_HTML_body_contents">The HTML body contents</span></h3>
+<p>This is the rest of the HTML file, which simply gives some text, the input field, two buttons and a preformatted text element where we will insert received stuff from Python:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">&lt;/</span>script<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;/</span>head<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>body<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>h2<span class="sy0">&gt;</span>PySide <span class="sy0">+</span> QML <span class="sy0">+</span> WebKit FTW<span class="sy0">&lt;/</span>h2<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>p<span class="sy0">&gt;</span>
+ Set rotation<span class="sy0">:</span>
+ <span class="sy0">&lt;</span>input type<span class="sy0">=</span><span class="st0">&quot;text&quot;</span> size<span class="sy0">=</span><span class="st0">&quot;5&quot;</span> id<span class="sy0">=</span><span class="st0">&quot;rotate&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;10&quot;</span><span class="sy0">/&gt;</span>
+ <span class="sy0">&lt;</span>button onclick<span class="sy0">=</span>setRotation<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">&gt;</span>Click me now<span class="sy0">!&lt;/</span>button<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>p<span class="sy0">&gt;</span>
+ Send arbitrary data structures<span class="sy0">:</span>
+ <span class="sy0">&lt;</span>button onclick<span class="sy0">=</span>sendStuff<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">&gt;</span>No<span class="sy0">,</span> click me<span class="sy0">!&lt;/</span>button<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>p<span class="sy0">&gt;</span>Received stuff<span class="sy0">:&lt;/</span>p<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>pre id<span class="sy0">=</span><span class="st0">&quot;received&quot;</span><span class="sy0">&gt;&lt;/</span>pre<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;/</span>body<span class="sy0">&gt;</span>
+<span class="sy0">&lt;/</span>html<span class="sy0">&gt;</span></pre></div></div>
+<h2><span class="mw-headline" id="How_the_example_app_looks_like">How the example app looks like</span></h2>
+<p>Once you have got all three files, start the example app like this: <b>python WebKitView.py</b>
+</p><p><img src="http://farm6.static.flickr.com/5169/5226208800_5a1b8351f5_z.jpg" alt="5226208800_5a1b8351f5_z.jpg" />
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.153 seconds
+Real time usage: 0.158 seconds
+Preprocessor visited node count: 115/1000000
+Preprocessor generated node count: 208/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:2107-0!*!0!!en!*!* and timestamp 20151104102857 and revision id 15298
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&amp;oldid=15298">http://wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&amp;oldid=15298</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/Category:LanguageBindings::PySide" title="Category:LanguageBindings::PySide">LanguageBindings::PySide</a></li><li><a href="http://wiki.qt.io/Category:Snippets" title="Category:Snippets">Snippets</a></li><li><a href="http://wiki.qt.io/Category:Developing_with_Qt::Qt_Quick" title="Category:Developing with Qt::Qt Quick">Developing with Qt::Qt Quick</a></li><li><a href="http://wiki.qt.io/Category:Developing_with_Qt::Qt_Quick::QML" title="Category:Developing with Qt::Qt Quick::QML">Developing with Qt::Qt Quick::QML</a></li><li><a href="http://wiki.qt.io/Category:Developing_with_Qt::Qt_Quick::Tutorial" title="Category:Developing with Qt::Qt Quick::Tutorial">Developing with Qt::Qt Quick::Tutorial</a></li><li><a href="http://wiki.qt.io/Category:Developing_with_Qt::QtWebKit" title="Category:Developing with Qt::QtWebKit">Developing with Qt::QtWebKit</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Using-QtWebKit-and-QML-with-PySide" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Using-QtWebKit-and-QML-with-PySide"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Using-QtWebKit-and-QML-with-PySide&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Using-QtWebKit-and-QML-with-PySide" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Using-QtWebKit-and-QML-with-PySide" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Using-QtWebKit-and-QML-with-PySide" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&amp;oldid=15298&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&amp;oldid=15298" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 30 March 2015, at 13:10.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,488 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":241});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Using-QtWebKit-and-QML-with-PySide&oldid=15298 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:09:45 GMT -->
+</html>

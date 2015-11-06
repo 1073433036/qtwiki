@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=QtQuick_ToolTip_Component&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:29:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>QtQuick ToolTip Component - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"QtQuick_ToolTip_Component","wgTitle":"QtQuick ToolTip Component","wgCurRevisionId":16083,"wgRevisionId":16083,"wgArticleId":1816,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing with Qt::Qt Quick"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"QtQuick_ToolTip_Component","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-QtQuick_ToolTip_Component skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">QtQuick ToolTip Component</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexcd7c.html?title=QtQuick_ToolTip_Component&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Qt_Quick_ToolTip_component"><span class="tocnumber">1</span> <span class="toctext">Qt Quick ToolTip component</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#The_first_sample_of_ToolTip"><span class="tocnumber">1.1</span> <span class="toctext">The first sample of ToolTip</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#The_second_sample_of_ToolTip."><span class="tocnumber">1.2</span> <span class="toctext">The second sample of ToolTip.</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Qt_Quick_ToolTip_component">Qt Quick ToolTip component</span></h1>
+<p>This article will give you a simple component to use a ToolTip in your QML applications. As you know in first version of Qt Quick Components (the first version has a different name ‘QML Desktop Component 1.0’) has a special component which gives developers to add ToolTip to any components (Rectangle, Item, Label, etc.). But in last version of Qt Quick Controls this component was removed. Really I don’t know why this happened but I think in future releases this small issue will be fix and we all get the nice component which we will use in our projects.
+</p><p>But while this will happen I think the most of you faced with situation when you need to show the information of UI element but can't add the Label because the designer doesn't provide any labels. In some UI component you can use the placeholder (TextField) but in most components you don't have any properties to set a label on a component. In this situation you need to add the label or insert your component to GroupBox which has the title property. But it is not always convenient.
+</p><p>This page is shows you two components which you can use as a ToolTip.
+</p>
+<h2><span class="mw-headline" id="The_first_sample_of_ToolTip">The first sample of ToolTip</span></h2>
+<p>The first implementation looks like a standard tooltip and you can create it from JavaScript. The author of this code is <a rel="nofollow" class="external text" href="http://qt.io/member/7754">Xander84</a> This tooltip has a show and hide function to fade it in and out respectively, by default it will destroy itself after it's hidden (the destroyOnHide property can be set to false if you don't want that). The code looks like:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">2.2</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> tooltip
+&#160;
+property alias text<span class="sy0">:</span> tooltipText.<span class="me1">text</span>
+ property alias textItem<span class="sy0">:</span> tooltipText
+ property <span class="kw4">int</span> fadeInDelay<span class="sy0">:</span> <span class="nu0">500</span>
+ property <span class="kw4">int</span> fadeOutDelay<span class="sy0">:</span> <span class="nu0">500</span>
+ property <span class="kw4">bool</span> autoHide<span class="sy0">:</span> <span class="kw2">true</span>
+ property alias autoHideDelay<span class="sy0">:</span> hideTimer.<span class="me1">interval</span>
+ property <span class="kw4">bool</span> destroyOnHide<span class="sy0">:</span> <span class="kw2">true</span>
+&#160;
+function show<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ state <span class="sy0">=</span> <span class="st0">&quot;showing&quot;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>hideTimer.<span class="me1">running</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ hideTimer.<span class="me1">restart</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+function hide<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>hideTimer.<span class="me1">running</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ hideTimer.<span class="me1">stop</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ state <span class="sy0">=</span> <span class="st0">&quot;hidden&quot;</span>
+ <span class="br0">&#125;</span>
+&#160;
+width<span class="sy0">:</span> tooltipText.<span class="me1">width</span> <span class="sy0">+</span> <span class="nu0">20</span>
+ height<span class="sy0">:</span> tooltipText.<span class="me1">height</span> <span class="sy0">+</span> <span class="nu0">10</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;#dd000000&quot;</span>
+ radius<span class="sy0">:</span> <span class="nu0">6</span>
+ opacity<span class="sy0">:</span> <span class="nu0">0</span>
+&#160;
+Text <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> tooltipText
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ horizontalAlignment<span class="sy0">:</span> Text.<span class="me1">AlignHCenter</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+ font.<span class="me1">pointSize</span><span class="sy0">:</span> <span class="nu0">10</span>
+ font.<span class="me1">bold</span><span class="sy0">:</span> <span class="kw2">true</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ onClicked<span class="sy0">:</span> hide<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+&#160;
+Timer <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> hideTimer
+ interval<span class="sy0">:</span> <span class="nu0">5000</span>
+ onTriggered<span class="sy0">:</span> hide<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+&#160;
+states<span class="sy0">:</span> <span class="br0">&#91;</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;showing&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> tooltip<span class="sy0">;</span> opacity<span class="sy0">:</span> <span class="nu0">1</span> <span class="br0">&#125;</span>
+ onCompleted<span class="sy0">:</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>autoHide<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ hideTimer.<span class="me1">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="sy0">,</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;hidden&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> tooltip<span class="sy0">;</span> opacity<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ onCompleted<span class="sy0">:</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>destroyOnHide<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ tooltip.<span class="me1">destroy</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span>
+&#160;
+transitions<span class="sy0">:</span> <span class="br0">&#91;</span>
+ Transition <span class="br0">&#123;</span>
+ to<span class="sy0">:</span> <span class="st0">&quot;showing&quot;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> tooltip<span class="sy0">;</span> property<span class="sy0">:</span> <span class="st0">&quot;opacity&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> fadeInDelay <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="sy0">,</span>
+ Transition <span class="br0">&#123;</span>
+ to<span class="sy0">:</span> <span class="st0">&quot;hidden&quot;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> tooltip<span class="sy0">;</span> property<span class="sy0">:</span> <span class="st0">&quot;opacity&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> fadeOutDelay <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Also this component has a simple JavaScript file to make it a little easier to create tooltips. This script looks like (TooltipCreator.js):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var component <span class="sy0">=</span> <span class="kw5">Qt</span>.<span class="me1">createComponent</span><span class="br0">&#40;</span><span class="st0">&quot;Tooltip.qml&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+function create<span class="br0">&#40;</span>text<span class="sy0">,</span> parent<span class="sy0">,</span> properties<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>typeof properties <span class="sy0">=</span> <span class="st0">&quot;undefined&quot;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        properties <span class="sy0">=</span> <span class="br0">&#123;</span>
+            anchors<span class="sy0">:</span> <span class="br0">&#123;</span>
+                horizontalCenter<span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span><span class="sy0">,</span>
+                bottom<span class="sy0">:</span> parent.<span class="me1">bottom</span><span class="sy0">,</span>
+                bottomMargin<span class="sy0">:</span> parent.<span class="me1">height</span> <span class="sy0">/</span> <span class="nu0">8</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    properties.<span class="me1">text</span> <span class="sy0">=</span> text<span class="sy0">;</span>
+    var tooltip <span class="sy0">=</span> component.<span class="me1">createObject</span><span class="br0">&#40;</span>parent<span class="sy0">,</span> properties<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>tooltip <span class="sy0">=</span> null<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ console.<span class="me1">error</span><span class="br0">&#40;</span><span class="st0">&quot;error creating tooltip: &quot;</span> <span class="sy0">+</span> component.<span class="me1">errorString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>properties.<span class="me1">anchors</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="co1">// manual anchor mapping necessary</span>
+ <span class="kw1">for</span> <span class="br0">&#40;</span>var anchor in properties.<span class="me1">anchors</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ tooltip.<span class="me1">anchors</span><span class="br0">&#91;</span>anchor<span class="br0">&#93;</span> <span class="sy0">=</span> properties.<span class="me1">anchors</span><span class="br0">&#91;</span>anchor<span class="br0">&#93;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="kw1">return</span> tooltip<span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="How_to_use.3F">How to use?</span></h3>
+<p>All you need to do is importing the JavaScript file and call a command from it.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="st0">&quot;TooltipCreator.js&quot;</span> as TooltipCreator
+…
+TooltipCreator.<span class="me1">create</span><span class="br0">&#40;</span><span class="st0">&quot;text on the tooltip&quot;</span><span class="sy0">,</span> parentItem<span class="br0">&#41;</span>.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>
+<p>By default it will fade in, stay visible for 5 seconds and than fade out and destroy itself, the user can click on the tooltip to hide it immediately, also it will be anchored at the bottom center of the provided parent Item (see the TooltipCreator.js).
+</p><p>The 3rd optional argument can be used to specify custom properties for the tooltip, e.g.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">TooltipCreator.<span class="me1">create</span><span class="br0">&#40;</span><span class="st0">&quot;absolute positioned tooltip&quot;</span><span class="br0">&#41;</span><span class="sy0">,</span> rootItem<span class="sy0">,</span> <span class="br0">&#123;</span> x<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">,</span> y<span class="sy0">:</span> <span class="nu0">50</span> <span class="br0">&#125;</span><span class="br0">&#41;</span>.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>
+<p>or set the properties on the item directly
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var tooltip <span class="sy0">=</span> TooltipCreator.<span class="me1">create</span><span class="br0">&#40;</span>qsTr<span class="br0">&#40;</span><span class="st0">&quot;Network Error!check your network connection<span class="es1">\n</span>or try again later.&quot;</span><span class="br0">&#41;</span><span class="sy0">,</span> mainView<span class="br0">&#41;</span>
+tooltip.<span class="me1">color</span> <span class="sy0">=</span> <span class="st0">&quot;#ddff0000&quot;</span>
+tooltip.<span class="me1">textItem</span>.<span class="me1">color</span> <span class="sy0">=</span> <span class="st0">&quot;white&quot;</span>
+tooltip.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>
+<h2><span class="mw-headline" id="The_second_sample_of_ToolTip.">The second sample of ToolTip.</span></h2>
+<p>The second implementation looks like a label which show near mouse on the component where it need to be shown. The author of this code is <a rel="nofollow" class="external text" href="http://qt.io/member/4674">shav</a> This component has less dynamic properties for the customisation than the first embodiment. The main difference of this implementation in that the label shown near with mouse and if user moving mouse on the component the label moving with mouse. The code looks like (ToolTip.qml):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">2.0</span>
+import QtQuick.<span class="me1">Controls</span> <span class="nu16">1.1</span>
+import QtGraphicalEffects <span class="nu16">1.0</span>
+&#160;
+Item <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> toolTipRoot
+ width<span class="sy0">:</span> toolTip.<span class="me1">contentWidth</span>
+ height<span class="sy0">:</span> toolTipContainer.<span class="me1">height</span>
+ visible<span class="sy0">:</span> <span class="kw2">false</span>
+ clip<span class="sy0">:</span> <span class="kw2">false</span>
+ z<span class="sy0">:</span> <span class="nu0">999999999</span>
+&#160;
+property alias text<span class="sy0">:</span> toolTip.<span class="me1">text</span>
+ property alias radius<span class="sy0">:</span> content.<span class="me1">radius</span>
+ property alias backgroundColor<span class="sy0">:</span> content.<span class="me1">color</span>
+ property alias textColor<span class="sy0">:</span> toolTip.<span class="me1">color</span>
+ property alias font<span class="sy0">:</span> toolTip.<span class="me1">font</span>
+ property var target<span class="sy0">:</span> null
+&#160;
+function onMouseHover<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ var obj <span class="sy0">=</span> toolTipRoot.<span class="me1">target</span>.<span class="me1">mapToItem</span><span class="br0">&#40;</span>toolTipRoot.<span class="me1">parent</span><span class="sy0">,</span> x<span class="sy0">,</span> y<span class="br0">&#41;</span><span class="sy0">;</span>
+ toolTipRoot.<span class="me1">x</span> <span class="sy0">=</span> obj.<span class="me1">x</span><span class="sy0">;</span>
+ toolTipRoot.<span class="me1">y</span> <span class="sy0">=</span> obj.<span class="me1">y</span> <span class="sy0">+</span> <span class="nu0">5</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+function onVisibleStatus<span class="br0">&#40;</span>flag<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ toolTipRoot.<span class="me1">visible</span> <span class="sy0">=</span> flag<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+Component.<span class="me1">onCompleted</span><span class="sy0">:</span> <span class="br0">&#123;</span>
+ var itemParent <span class="sy0">=</span> toolTipRoot.<span class="me1">target</span><span class="sy0">;</span>
+&#160;
+var newObject <span class="sy0">=</span> <span class="kw5">Qt</span>.<span class="me1">createQmlObject</span><span class="br0">&#40;</span><span class="st0">'import QtQuick 2.0; MouseArea {signal mouserHover(int x, int y); signal showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; onPositionChanged: {mouserHover(mouseX, mouseY)} onEntered: {showChanged(true)} onExited:{showChanged(false)} onClicked:{parent.focus = true}}'</span><span class="sy0">,</span>
+ itemParent<span class="sy0">,</span> <span class="st0">&quot;mouseItem&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ newObject.<span class="me1">mouserHover</span>.<span class="kw2">connect</span><span class="br0">&#40;</span>onMouseHover<span class="br0">&#41;</span><span class="sy0">;</span>
+ newObject.<span class="me1">showChanged</span>.<span class="kw2">connect</span><span class="br0">&#40;</span>onVisibleStatus<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+Item <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> toolTipContainer
+ z<span class="sy0">:</span> toolTipRoot.<span class="me1">z</span> <span class="sy0">+</span> <span class="nu0">1</span>
+ width<span class="sy0">:</span> content.<span class="me1">width</span> <span class="sy0">+</span> <span class="br0">&#40;</span><span class="nu0">2</span><span class="sy0">*</span>toolTipShadow.<span class="me1">radius</span><span class="br0">&#41;</span>
+ height<span class="sy0">:</span> content.<span class="me1">height</span> <span class="sy0">+</span> <span class="br0">&#40;</span><span class="nu0">2</span><span class="sy0">*</span>toolTipShadow.<span class="me1">radius</span><span class="br0">&#41;</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> content
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ width<span class="sy0">:</span> toolTipRoot.<span class="me1">width</span>
+ height<span class="sy0">:</span> toolTip.<span class="me1">contentHeight</span> <span class="sy0">+</span> <span class="nu0">10</span>
+ radius<span class="sy0">:</span> <span class="nu0">3</span>
+&#160;
+Text <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> toolTip
+ anchors <span class="br0">&#123;</span>fill<span class="sy0">:</span> parent<span class="sy0">;</span> margins<span class="sy0">:</span> <span class="nu0">5</span><span class="br0">&#125;</span>
+ wrapMode<span class="sy0">:</span> Text.<span class="me1">WrapAnywhere</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+DropShadow <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> toolTipShadow
+ z<span class="sy0">:</span> toolTipRoot.<span class="me1">z</span> <span class="sy0">+</span> <span class="nu0">1</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> source
+ cached<span class="sy0">:</span> <span class="kw2">true</span>
+ horizontalOffset<span class="sy0">:</span> <span class="nu0">4</span>
+ verticalOffset<span class="sy0">:</span> <span class="nu0">4</span>
+ radius<span class="sy0">:</span> <span class="nu16">8.0</span>
+ samples<span class="sy0">:</span> <span class="nu0">16</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;#80000000&quot;</span>
+ smooth<span class="sy0">:</span> <span class="kw2">true</span>
+ source<span class="sy0">:</span> toolTipContainer
+ <span class="br0">&#125;</span>
+&#160;
+Behavior on visible <span class="br0">&#123;</span> NumberAnimation <span class="br0">&#123;</span> duration<span class="sy0">:</span> <span class="nu0">200</span> <span class="br0">&#125;</span><span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>This component can be created in QML and from JavaScript. You can change a few properties:
+</p>
+<ul>
+<li> <b>text</b> The text of tooltip.
+</li>
+<li> <b>radius</b> The corner radius.
+</li>
+<li> <b>backgroundColor</b> The background color.
+</li>
+<li> <b>textColor</b> The text color.
+</li>
+<li> <b>font</b> The font settings to set custom font of text.
+</li>
+<li> <b>target</b> The component on which need to show tooltip.
+</li>
+</ul>
+<h3><span class="mw-headline" id="How_to_use.3F_2">How to use?</span></h3>
+<p>Create a new item with name ToolTip in component where you want to show tooltip. I recommend to add it to the root component. This component has a default width in 150px. The height will calculate automatically using the text. The simple code to use look like:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> ToolTip <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> tooltip1
+ width<span class="sy0">:</span> <span class="nu0">200</span>
+ target<span class="sy0">:</span> id_of_component
+ text<span class="sy0">:</span> <span class="st0">&quot;Enter the text here.&quot;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.143 seconds
+Real time usage: 0.153 seconds
+Preprocessor visited node count: 94/1000000
+Preprocessor generated node count: 232/1000000
+Post‐expand include size: 1308/2097152 bytes
+Template argument size: 422/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1816-0!*!0!!en!*!* and timestamp 20151104215101 and revision id 16083
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index2822.html?title=QtQuick_ToolTip_Component&amp;oldid=16083">http://wiki.qt.io/index.php?title=QtQuick_ToolTip_Component&amp;oldid=16083</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Developing_with_Qt__Qt_Quick.html" title="Category:Developing with Qt::Qt Quick">Developing with Qt::Qt Quick</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=240315cb9115297c&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="QtQuick_ToolTip_Component.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_QtQuick_ToolTip_Component.html?title=Talk:QtQuick_ToolTip_Component&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="QtQuick_ToolTip_Component.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexcd7c.html?title=QtQuick_ToolTip_Component&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexcf58.html?title=QtQuick_ToolTip_Component&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/QtQuick_ToolTip_Component.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/QtQuick_ToolTip_Component.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index2822.html?title=QtQuick_ToolTip_Component&amp;oldid=16083" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index7947.html?title=QtQuick_ToolTip_Component&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:34.</li>
+											<li id="footer-info-viewcount">This page has been accessed 2,135 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":553});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=QtQuick_ToolTip_Component&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:29:49 GMT -->
+</html>

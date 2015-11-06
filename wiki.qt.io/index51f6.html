@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&oldid=19238 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:58:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Getting Started Programming with QML/hu - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Getting_Started_Programming_with_QML/hu","wgTitle":"Getting Started Programming with QML/hu","wgCurRevisionId":19238,"wgRevisionId":19238,"wgArticleId":822,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Getting_Started_Programming_with_QML/hu","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Getting_Started_Programming_with_QML_hu skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Getting Started Programming with QML/hu</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 13:21, 23 August 2015 by <a href="http://wiki.qt.io/index.php?title=User:AutoSpider&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:AutoSpider (page does not exist)">AutoSpider</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:AutoSpider&amp;action=edit&amp;redlink=1" class="new" title="User talk:AutoSpider (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/AutoSpider" title="Special:Contributions/AutoSpider">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&amp;diff=prev&amp;oldid=19238" title="Getting Started Programming with QML/hu">diff</a>) <a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&amp;direction=prev&amp;oldid=19238" title="Getting Started Programming with QML/hu">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="http://wiki.qt.io/Updated_pages" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p>~Az alant olvasható leírás rev. 0.2 verziót visel, ezzel is jelezve, hogy a jövőben szeretnénk még csiszolni rajta~&#160;:)
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Bevezet.C3.A9s_a_QML_programoz.C3.A1sba"><span class="tocnumber">1</span> <span class="toctext">Bevezetés a QML programozásba</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Felhaszn.C3.A1l.C3.B3i_fel.C3.BClet_l.C3.A9trehoz.C3.A1sa_QML_nyelven"><span class="tocnumber">1.1</span> <span class="toctext">Felhasználói felület létrehozása QML nyelven</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Nyom.C3.B3gomb_.C3.A9s_men.C3.BC_l.C3.A9trehoz.C3.A1sa"><span class="tocnumber">1.2</span> <span class="toctext">Nyomógomb és menü létrehozása</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#A_men.C3.BCsor_implement.C3.A1l.C3.A1sa"><span class="tocnumber">1.3</span> <span class="toctext">A menüsor implementálása</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#A_sz.C3.B6vegszerkeszt.C5.91_megalkot.C3.A1sa"><span class="tocnumber">1.4</span> <span class="toctext">A szövegszerkesztő megalkotása</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Sz.C3.B6vegszerkeszt.C5.91nk_megjelen.C3.A9s.C3.A9nek_testreszab.C3.A1sa"><span class="tocnumber">1.5</span> <span class="toctext">Szövegszerkesztőnk megjelenésének testreszabása</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#QML_kib.C5.91v.C3.ADt.C3.A9se_Qt_C.2B.2B_haszn.C3.A1lat.C3.A1val"><span class="tocnumber">1.6</span> <span class="toctext">QML kibővítése Qt C++ használatával</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Bevezet.C3.A9s_a_QML_programoz.C3.A1sba">Bevezetés a QML programozásba</span></h1>
+<p>Üdvözöllek a QML világában, mely egy UI leíró nyelv! Ebben a bevezetőben egy egyszerű szövegszerkesztő alkalmazást fogunk létrehozni a QML segítségével. Ezen útmutató olvasása után már készen fogsz állni, hogy kifejleszd a saját alkalmazásaidat a QML és a Qt keretrendszer segítségével.
+</p>
+<h2><span class="mw-headline" id="Felhaszn.C3.A1l.C3.B3i_fel.C3.BClet_l.C3.A9trehoz.C3.A1sa_QML_nyelven">Felhasználói felület létrehozása QML nyelven</span></h2>
+<p>Példa alkalmazásunk egy egyszerű szövegszerkesztő lesz, amely alkalmas egyszerű szövegfájlok megnyitására illetve alapvető szerkesztési műveletek elvégzésére. A leírás első részében a program felhasználói felületét tervezzük meg a QML leírónyelv segítségével. A második részben a fájlok betöltése és elmentése lesz implementálva C++ nyelven. A Qt <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/metaobjects.html">Meta-Object System</a> segítségével a C++ függvényeket olyan tulajdonságokként ábrázolhatjuk, melyeket a QML elemek is képesek használni. QML és Qt C++ használatával hatékonyan szétválaszthatjuk a kezelői felület felépítését és a program logikáját.
+</p><p>p=. <a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 editmenu.png">qml-texteditor5_editmenu.png</a>
+</p><p>QML példakódunk futtatásához csupán adjuk meg argumentumként a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qmlviewer.html">qmlviewer</a> programnak a QML fájlunkat. Ezen útmutató C++ része feltételezi, hogy az olvasó le tud fordítani egy Qt-ban írt programot.
+</p><p>Az útmutató fejezetei:
+</p>
+<ol>
+<li> Nyomógomb és menü létrehozása
+</li>
+<li> Menüsáv implementálása
+</li>
+<li> Szövegszerkesztő létrehozása
+</li>
+<li> A szövegszerkesztő küllemének megteremtése
+</li>
+<li> QML kibővítése Qt C++ segítségével
+</li>
+</ol>
+<h2><span class="mw-headline" id="Nyom.C3.B3gomb_.C3.A9s_men.C3.BC_l.C3.A9trehoz.C3.A1sa">Nyomógomb és menü létrehozása</span></h2>
+<h3><span class="mw-headline" id="Alapelemek_.E2.80.93_a_gomb">Alapelemek – a gomb</span></h3>
+<p>Szövegszerkesztőnket egy gomb létrehozásával kezdjük. Ha funkcionálisan nézzük, akkor a gomb rendelkezik egy egér számára érzékeny területtel és egy felirattal. A gombok akkor hajtják végre a feladatokat, ha a felhasználó rájuk klikkel. QML-ben a legalapvetőbb vizuális elem a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a>. <i>A Rectangle</i> elem tulajdonságokkal rendelkezik, hogy beállíthassunk az elem megjelenését és elhelyezkedését.
+</p><p>Először az <i>import Qt 4.7</i> sor engedélyezi a qmlviewer eszköznek, hogy betöltse azokat a QML elemeket, melyeket később használni fogunk. Ennek a sornak szerepelnie kell minden QML fájlban! Figyeljük meg, hogy a Qt modulok verzióját az import utasítás már tartalmazza!
+</p><p>Ez az egyszerű <i>Rectangle</i> rendelkezik egy egyedi azonosítóval, <i>simplebutton</i>, amely az <i>id</i> tulajdonsághoz kötődik. A <i>Rectangle</i> elem tulajdonságaihoz értékeket rendelünk a tulajdonság kilistázásakor, ekkor a kettőspont után áll az érték. A mintakódban a grey (szürke) színt rendeltük a <i>Rectangle</i> <i>color</i> tulajdonságához. Hasonlóan járunk el a <i>Rectangle</i> <i>width</i> és <i>height</i> tulajdonságainak esetében.
+</p><p>A <i>Text</i> elem egy nem szerkeszthető szövegmező. Nevezzük el <i>buttonlabel</i>-ként ezt a <i>Text</i> elemet. A szövegmezőben lévő szöveget a <i>Text</i> tulajdonság segítségével módosíthatjuk. A feliratot a <i>Rectangle</i> tárolja és hogy középre igazítsuk, a <i>Text</i> elem <i>anchors</i> tuljadonságát a szülőjéhez rendeljük, ami itt most a <i>simplebutton</i>. Az <i>anchor</i>-ok (kapcsok) olykor más elemek <i>anchor</i>-jaihoz kötődnek, hogy leegyszerűsítsék az elrendezést.
+</p><p>Most mentsük el a kódot <i>SimpleButton.qml</i> néven. Futtassuk a <i>qmlviewer</i>-t a fájlunkat argumentumként megadva. Egy szürke téglalapot fogunk látni, benne a feliratunkkal.
+</p><p>A gombnyomás funkciójának implementálására használhatjuk a QML eseménykezelő metódusát. A QML esemény kezelése nagyon hasonlít a Qt signal and slot mechanizmusára. Példánkban az onClicked handlerben kezeljük le az eseményt.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>simplebutton
+ …
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonMouseArea
+&#160;
+anchors.<span class="me1">fill</span><span class="sy0">:</span> parent <span class="co1">//anchor all sides of the mouse area to the rectangle's anchors</span>
+ <span class="co1">//onClicked handles valid mouse button clicks</span>
+ onClicked<span class="sy0">:</span> console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Létrehozunk egy "MouseArea":qml-mousearea.html elemet a <i>simplebutton</i>-on belül. A <i>MouseArea</i> elem meghatározza azt az interaktív területet, ahol érzékelni fogjuk majd az egérkattintásokat. Gombunk esetében az egész <i>MouseArea</i>-t a szülőjéhez kapcsoljuk, ami most a <i>simplebutton</i>. Az <i>anchors.fill</i> szintaktika is egy mód, hogy elérjünk egy bizonyos tulajdonságot (<i>fill</i>), az <i>anchors</i> tulajdonságokon belül. A QML kapocs alapú vázat használ, ahol az egyes elemek más elemekhez kapcsolhatók, így robosztus vázakat hozhatunk létre.
+</p><p>A <i>MouseArea</i>-nak sok jelfeldolgozója ún. handler-je van, amelyek a meghatározott <i>MouseArea</i> határain belül történő egér események hatására hívódnak meg. Ezek közül az egyik az <i>onClicked</i>, amely a gomb megnyomásakor hívódik meg, alapértelmezésben ez itt a bal gomb. Műveleteket is köthetünk az <i>onClicked</i> handler-jéhez. A példánkban, a <i>console.log()</i> szöveget ír a kimenetre, akárhányszor ráklikkelünk a <i>MouseArea</i> területére. <i>A console.log()</i> függvény egy nagyon hasznos eszköz hibakeresésre, segítségével bármit kiírathatunk a konzolba.
+</p><p>A <i>SimpleButton.qml</i> kódja már képes arra, hogy megjelenítsen egy gombot és szöveget írjon képernyőre klikkeléskor.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> button
+ …
+&#160;
+property color buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightblue&quot;</span>
+ property color onHoverColor<span class="sy0">:</span> <span class="st0">&quot;gold&quot;</span>
+ property color borderColor<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+&#160;
+<span class="kw4">signal</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ onButtonClick<span class="sy0">:</span> <span class="br0">&#123;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonMouseArea
+ onClicked<span class="sy0">:</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ hoverEnabled<span class="sy0">:</span> <span class="kw2">true</span>
+ onEntered<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> onHoverColor
+ onExited<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> borderColor
+ <span class="br0">&#125;</span>
+&#160;
+<span class="co1">//determines the color of the button by using the conditional operator</span>
+ color<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="kw5">Qt</span>.<span class="me1">darker</span><span class="br0">&#40;</span>buttonColor<span class="sy0">,</span> <span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy0">:</span> buttonColor
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Egy teljesen működő gomb a <i>Button.qml</i> fájlban található. Ebben a leírásban szereplő kódrészlet mellőz néhány részletet, mert azokat már vagy tárgyaltuk az előzőekben vagy irreleváns a kód értelmezése szempontjából.
+</p><p>Egyedi tulajdonságokat a <i>tulajdonság típus név</i> szintaktikával tudunk deklarálni. Kódunkban a <i>color</i> típusú <i>buttonColor</i> tulajdonsághoz a „lightblue"-t rendeljük. A <i>buttonColor</i> később lesz használva egy kiegészítő műveletben, hogy meghatározzuk a gomb kitöltési színét. Megemlítendő, hogy értékadás az = jellel is történhet a kettőspont helyett. Az egyedi tulajdonságok lehetővé teszik, hogy belső elemek kívülről hozzáférhetőek legyenek, a <i>Rectangle</i> hatósugarán kívül is. A QML-nek megvannak a maga alaptípusai, mint az <i>int</i>, a <i>real</i>, a <i>string</i>, vagy az általános konténertípus a <i>variant</i>.
+</p><p>Színeket hozzáadva az <i>onEntered</i> és az <i>onExited</i> jelkezelőkhöz, a gomb szegélye sárgává fog válni, amikor az egér a gomb fölé ér, és visszaáll az eredeti színre, ha a kurzor távozik a területéről.
+</p><p>Egy <i>buttonClick()</i> signalt is deklarálunk a <i>Button.qml</i>-ben a signal neve elé tett signal kulcsszóval. Minden signal-nak automatikusan létrejön a handler-je, „on"-al kezdődő nevekkel. Így értelemszerűen az <i>onButtonClicked</i> a <i>buttonClicked</i> handler-je. Ezután az <i>onButtonClicked</i>-edet összekötjük egy művelettel, hogy az megfelelően működhessen. A mi gomb-példánkban egérkattintásra az <i>onClicked</i> handlerje szimplán meg fogja hívni az <i>onButtonClick</i> függvényt, mely megjelenít egy szöveget. Az <i>onButtonClick</i> lehetővé teszi, hogy külső objektumok könnyedén hozzáférjenek a <i>Button</i> klikkelési területéhez. Például egy elemnek több <i>MouseArea</i> deklarációja is van és a <i>ButtonClick</i> signal jobban el tudja végezni a megkülönböztetést a több <i>MouseArea</i> handler között.
+</p><p>Most már megvan az alaptudásunk, hogy implementáljunk olyan elemeket QML-ben, melyek képesek lekezelni alap egérműveleteket. Hozzunk létre egy <i>Text</i> feliratot egy <i>Rectangle</i>-ben, szabjuk testre a tulajdonságait és implementáljuk az egérmozgásokra válaszoló műveleteit. Ez az alapelv, hogy elemeket hozunk létre más elemeken belül, végig fogja kísérni a szövegszerkesztő programunkat. Ám ez a gomb haszontalan, amíg nem műveletek ellátására szolgáló komponensként használjuk. A következő részben létrehozunk egy menüt, mely több ilyen gombot is tartalmazni fog.
+</p><p>p=. <a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_button.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 button.png">qml-texteditor1_button</a>
+</p>
+<h3><span class="mw-headline" id="Men.C3.BC_l.C3.A9trehoz.C3.A1sa">Menü létrehozása</span></h3>
+<p>Eddig a részig áttekintettük, hogyan hozzunk létre elemeket és kössünk hozzájuk műveleteket egy QML fájlon belül. Ebben a fejezetben megtanuljuk, hogyan importáljunk QML elemeket és hogyan használjuk fel ezeket a komponenseket újra, hogy újabb komponenseket hozzunk létre.
+</p><p>Egy menü egy lista tartalmát jeleníti meg, mindegyik elemnek megvan a lehetősége, hogy végrehajtson egy feladatot. QML-ben sokféleképpen hozhatunk létre menüket. Először egy, a gombokat tartalmazó menüt fogunk készíteni, melyek különböző műveleteket hajtanak majd végre. A menü kódja a <i>FileMenu.qml</i>-ben található.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span> import the main <span class="kw5">Qt</span> QML module
+import <span class="st0">&quot;folderName&quot;</span> import the contents of the folder
+import <span class="st0">&quot;script.js&quot;</span> as Script import a Javascript file and name it as Script</pre></div></div>
+<p>A fent használt szintaktika megmutatja, hogyan használjuk az import parancsot. Olyan JavaScript vagy QML fájlok használatakor van szükségünk rá, melyek nem ugyanabban a mappában vannak. Mivel a <i>Button.qml</i> ugyanabban a mappában van, mint a <i>FileMenu.qml</i>, így nem kell importálnunk a <i>button.qml</i>-t, hogy használhassuk. Azonnal létrehozhatunk egy <i>Button</i> elemet a <i>Button { }</i> függvényt deklarálva, hasonlóan a <i>Rectangle { }</i>-hoz.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span> parent.<span class="me1">width</span><span class="sy0">/</span><span class="nu0">6</span>
+&#160;
+Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> loadButton
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightgrey&quot;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;Load&quot;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;grey&quot;</span>
+ id<span class="sy0">:</span> saveButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Save&quot;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> exitButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Exit&quot;</span>
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;darkgrey&quot;</span>
+&#160;
+onButtonClick<span class="sy0">:</span> <span class="kw5">Qt</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>A <i>FileMenu.qml</i>-ben deklaráljunk egy <i>Row</i> elemen belül 3 <i>Button</i> elemet. A <i>Row</i> egy pozícionáló elem, ami egy vízszintes sorban rendezi el a gyerekeit.
+</p><p>A <i>Button</i> deklarációja a <i>Button.qml</i>-ben van, ami ugyan az a <i>Button.qml</i>, amit mi az előző fejezetben használtunk. Új tulajdonságkötéseket deklarálhatunk az újonnan létrehozott gombokban, hatékonyan felülírva a <i>Button.qml</i>-ben beállított tulajdonságokat. Az Exit gomb megnyomásának hatására ki fog lépni a program és bezárja az ablakot. Gondoljuk végig, hogy a <i>Button.qml</i>-ben lévő <i>onButtonClick</i> signal handler is meg lesz hívva az <i>exitButton</i>-ban lévő <i>onButtonClick</i> handleren kívül.
+</p><p>p=. <a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_filemenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 filemenu.png">qml-texteditor1_filemenu</a>
+</p><p>A <i>Row</i>.t a <i>Rectangle</i>.en belül deklaráljuk, ezzel létrehozunk egy _Rectangle- tárolót a gombok sorának. A második <i>Rectangle</i> létrehozása a menü gombjainak egy sorban történő tárolására indirekt módon történik. A Edit menü nagyon hasonló ebben a fázisban. Ez a menu is 3 gombot fog tartalmazni a következő nevekkel: Copy, Paste, Select All.
+</p><p>p=. <a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 editmenu.png">qml-texteditor1_editmenu</a>
+</p><p>Most, hogy tudjuk hogyan importáljuk és szabjuk testre az előzőleg már létrehozott komponenseiket, már elkészíthetjük a menüsorunkat, mely a menüpontok kiválasztására szolgáló gombokból fog állni. Nézzük meg, hogyan rendszerezzük adatainkat a QML-ben!
+</p>
+<h2><span class="mw-headline" id="A_men.C3.BCsor_implement.C3.A1l.C3.A1sa">A menüsor implementálása</span></h2>
+<p>Szövegszerkesztőnknek meg kell tudni jelenítenie a menüket a menüsorból. A menüsoron kiválaszthatja a felhasználó, hogy melyik menüt jelenítse meg a program. A menük közötti váltásból következik, hogy az egy sorba rendezésnél bonyolultabb struktúrával fog rendelkezni a menünk.
+</p>
+<h3><span class="mw-headline" id="Adatmodellek_.28Data_Models.29_.C3.A9s_adatn.C3.A9zetek_.28Data_Views.29_haszn.C3.A1lata:">Adatmodellek (<i>Data Models</i>) és adatnézetek (<i>Data Views</i>) használata:</span></h3>
+<p>Különböző <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativemodels.html">Data View</a> -kal rendelkezik a QML a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativemodels.html">Data Model</a> -ek megjelenítésére. Menüsorunk listaként fogja megjeleníteni a kiválasztott menüt egy fejléccel, ahol többi menü nevét soroljuk fel vízszintesen. A menülistánk egy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-visualitemmodel.html">VisualItemModel</a> -ben lesz deklarálva, mely olyan elemeket tartalmaz, melyek már eleve rendelkeznek valamilyen megjelenéssel, mint például egy <i>Rectangle</i> vagy egy importált UI elem. Más modell típusoknak, mint például a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-listmodel.html">ListModel</a>, egy megbízott kell, hogy megjelenítse az adatait. Két vizuális elemet deklarálunk a menuListModel-ünkben, a <i>FileMenu</i>-t és az <i>EditMenu</i>-t. Testreszabjuk a két menüt és megjelenítjük őket a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-listview.html">ListView</a> -val. A <i>Menubar.qml</i> fájlunk tartalmazza a QML deklarálását és egy egyszerű szerkesztői menüt, melyet az <i>EditMenu.qml</i>-ben hoztunk létre.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">VisualItemModel<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListModel
+ FileMenu<span class="br0">&#123;</span>
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ color<span class="sy0">:</span> fileColor
+ <span class="br0">&#125;</span>
+ EditMenu<span class="br0">&#123;</span>
+ color<span class="sy0">:</span> editColor
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>A <i>ListView</i> elem egy megbízotton keresztül fogja megjeleníteni a modellünket. A megbízott lehet hogy meghatározza, hogy például egy sorban vagy egy hálóban jelenítse meg az elemeket. A mi <i>menuListModel</i>-ünknek már vannak látható elemei, így nekünk nem kell megbízottat deklarálnunk hozzá.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListView
+&#160;
+<span class="co1">//Anchors are set to react to window anchors</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ anchors.<span class="me1">bottom</span><span class="sy0">:</span> parent.<span class="me1">bottom</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ height<span class="sy0">:</span> parent.<span class="me1">height</span>
+&#160;
+<span class="co1">//the model contains the data</span>
+ model<span class="sy0">:</span> menuListModel
+&#160;
+<span class="co1">//control the movement of the menu switching</span>
+ snapMode<span class="sy0">:</span> ListView.<span class="me1">SnapOneItem</span>
+ orientation<span class="sy0">:</span> ListView.<span class="me1">Horizontal</span>
+ boundsBehavior<span class="sy0">:</span> Flickable.<span class="me1">StopAtBounds</span>
+ flickDeceleration<span class="sy0">:</span> <span class="nu0">5000</span>
+ highlightFollowsCurrentItem<span class="sy0">:</span> <span class="kw2">true</span>
+ highlightMoveDuration<span class="sy0">:</span><span class="nu0">240</span>
+ highlightRangeMode<span class="sy0">:</span> ListView.<span class="me1">StrictlyEnforceRange</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>A <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-flickable.html">Flickable</a> -ből örököljük a <i>ListView</i>-unkat, ezzel a listánk reagálhat majd az egérmozdulatokra és más gesztusokra. Fenti kódunk utolsó része beállítja a <i>Flickable</i> tuljadonságait, hogy létrehozzunk a nézetünk kívánt kinetikus mozgását. A <i>highLightMovementDuration</i> tuljadonság meghatározza, hogy meddig tartson a kinetikus transzformáció. Egy nagyobb <i>highLightMovementDuration</i> érték lassabb menüváltást fog eredményezni. A <i>ListView</i> a modell minden egyes elemét egy indexszel látja el a deklarálásuk sorrendjében, melyeket ezeken az indexeken keresztül érhetünk el. A <i>currentIndex</i> értékének megváltoztatásával a <i>ListView</i> egy másik elemét jelöljük ki. A menüsor fejlécére is hatással lesz ez az effektus. Két gomb van egy sorban, melyek mindketten megváltozatják a megjelenített menüt, ha rájuk klikkelünk. A <i>filebutton</i>-ra kattintva megjelenik a fálj menü, az index pedig 0 lesz, mivel a <i>FileMenu</i>-t deklaráltuk először. A <i>labelList</i> <i>rectangle</i>-jének van egy z értéke, mely itt 1, ezzel jelölve, hogy ezt a menüsor előtt jelenítjük meg. Minél nagyobb a z értéke, annál előrébb foglal helyet a képernyőre merőleges síkban. A z alapértelmezett értéke 0.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> labelList
+ …
+ z<span class="sy0">:</span> <span class="nu0">1</span>
+ Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span><span class="nu0">40</span>
+ Button<span class="br0">&#123;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;File&quot;</span>
+ id<span class="sy0">:</span> fileButton
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">0</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> editButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Edit&quot;</span>
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>A létrehozott menüsorunkon vagy a felette lévő két gomb valamelyikére klikkelve megjeleníthetjük a menüket. Így egy intuitív és interaktív menüválasztó képernyőt alkottunk.
+</p><p>p=. <a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor3_texteditor.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor3 texteditor.png">qml-texteditor3_texteditor</a>
+</p>
+<h2><span class="mw-headline" id="A_sz.C3.B6vegszerkeszt.C5.91_megalkot.C3.A1sa">A szövegszerkesztő megalkotása</span></h2>
+<h3><span class="mw-headline" id="TextArea_deklar.C3.A1l.C3.A1sa">TextArea deklarálása</span></h3>
+<p>Szövegszerkesztőnk mindaddig nem szövegszerkesztő, amíg nem tartalmaz egy szerkeszthető szövegmezőt.
+A QML <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-textedit.html">TextEdit</a> eleme egy többsoros szövegmező létrehozását teszi lehetővé. A <i>TextEdit</i> különbözik a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">Text</a> elemtől, melyet a felhasználó nem szerkeszthet direkt módon.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> TextEdit<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> textEditor
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ width<span class="sy0">:</span>parent.<span class="me1">width</span><span class="sy0">;</span> height<span class="sy0">:</span>parent.<span class="me1">height</span>
+ color<span class="sy0">:</span><span class="st0">&quot;midnightblue&quot;</span>
+ focus<span class="sy0">:</span> <span class="kw2">true</span>
+&#160;
+wrapMode<span class="sy0">:</span> TextEdit.<span class="me1">Wrap</span>
+&#160;
+onCursorRectangleChanged<span class="sy0">:</span> flickArea.<span class="me1">ensureVisible</span><span class="br0">&#40;</span>cursorRectangle<span class="br0">&#41;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>A szerkesztőnek megvan a saját betűszín tulajdonsága is. A <i>TextArea</i> egy <i>flickable</i> mezőn belül van, mely görgetni fogja a szöveget, ha a szövegkurzor a látható mezőn kívül van. Az <i>ensureVisibility()</i> függvény fogja leellenőrizni, hogy a kurzor <i>rectangle</i>-je kívül van-e a látható szegélyeken, és ha igen, akkor ennek megfelelően fogja mozgatni a szövegmezőt. A QML JavaScript szintaktikát használ a kódjaihoz, és ahogy már korábban említettük, importálhatunk és használhatunk is Javascript fájlokat egy QML fájlon belül.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> function ensureVisible®<span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>contentX <span class="sy0">&gt;=</span> r.<span class="me1">x</span><span class="br0">&#41;</span>
+ contentX <span class="sy0">=</span> r.<span class="me1">x</span><span class="sy0">;</span>
+ <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>contentX<span class="sy0">+</span>width <span class="sy0">&lt;=</span> r.<span class="me1">x</span><span class="sy0">+</span>r.<span class="me1">width</span><span class="br0">&#41;</span>
+ contentX <span class="sy0">=</span> r.<span class="me1">x</span><span class="sy0">+</span>r.<span class="me1">width</span><span class="sy0">-</span>width<span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>contentY <span class="sy0">&gt;=</span> r.<span class="me1">y</span><span class="br0">&#41;</span>
+ contentY <span class="sy0">=</span> r.<span class="me1">y</span><span class="sy0">;</span>
+ <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>contentY<span class="sy0">+</span>height <span class="sy0">&lt;=</span> r.<span class="me1">y</span><span class="sy0">+</span>r.<span class="me1">height</span><span class="br0">&#41;</span>
+ contentY <span class="sy0">=</span> r.<span class="me1">y</span><span class="sy0">+</span>r.<span class="me1">height</span><span class="sy0">-</span>height<span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Komponensek_kombin.C3.A1l.C3.A1sa_a_sz.C3.B6vegszerkeszt.C5.91h.C3.B6z">Komponensek kombinálása a szövegszerkesztőhöz</span></h3>
+<p>Most már készen állunk, hogy létrehozzuk szövegszerkesztőnket a QML segítségével. Programunk két fő komponensből áll, az általunk létrehozott menüsorból és egy szövegmezőből. A QML lehetővé teszi, hogy újrafelhasználjuk komponenseinket azok importálásával és testreszabásával ha szükséges, ezzel is egyszerűbbé téve a kódunkat. A szövegszerkesztőnk egyharmadát a menüsor, kétharmadát a szövegmez fogja elfoglalni. A menüsor minden más elem előtt fog megjelenni.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+&#160;
+id<span class="sy0">:</span> screen
+ width<span class="sy0">:</span> <span class="nu0">1000</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">1000</span>
+&#160;
+<span class="co1">//the screen is partitioned into the MenuBar and TextArea. 1/3 of the screen is assigned to the MenuBar</span>
+ property <span class="kw4">int</span> partition<span class="sy0">:</span> height<span class="sy0">/</span><span class="nu0">3</span>
+&#160;
+MenuBar<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>menuBar
+ height<span class="sy0">:</span> partition
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ z<span class="sy0">:</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+&#160;
+TextArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>textArea
+ anchors.<span class="me1">bottom</span><span class="sy0">:</span>parent.<span class="me1">bottom</span>
+ y<span class="sy0">:</span> partition
+ color<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+ height<span class="sy0">:</span> partition<span class="sy0">*</span><span class="nu0">2</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Újrafelhasznált komponenseikkel sokkal egyszerűbbnek tűnik a <i>TextEditor</i> forráskódja. Ezután testreszabhatjuk a fő alkalmazásunkat anélkül, hogy az előre definiál tulajdonságok miatt kellene aggódnunk. Ezzel a módszerrel könnyedén hozhatunk létre programvázakat és interfészeket.
+</p><p>p=. <a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor3_texteditor.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor3 texteditor.png">qml-texteditor3_texteditor</a>
+</p>
+<h2><span class="mw-headline" id="Sz.C3.B6vegszerkeszt.C5.91nk_megjelen.C3.A9s.C3.A9nek_testreszab.C3.A1sa">Szövegszerkesztőnk megjelenésének testreszabása</span></h2>
+<h3><span class="mw-headline" id="A_Drawer_Interface_implement.C3.A1l.C3.A1sa">A Drawer Interface implementálása</span></h3>
+<p>A szövegszerkesztőnk egyszerűen néz ki, most már a megjelenését is testre kellene szabnunk. A QML-t használva átmeneteket és animációkat deklarálhatunk a szövegszerkesztőnkhöz. Menüsorunk elfoglalja az ablak egyharmadát, így jó lenne, ha csak akkor jelenne meg, ha mi akarjuk.
+Hozzáadhatunk egy rajzoló interfészt, amely összecsukja illetve megjeleníti a menüsort klikkeléskor. Jelen esetben egy kis <i>rectange</i>.t használtunk, mely reagál az egérkattintásokra. A <i>drawer</i>, akárcsak az maga az alkalmazás, két állapottal rendelkezik, egy nyitottal és egy zárttal. A <i>drawer</i> elem egy kis magasságú rectangle, amihez kapcsolunk egy "Image":ttp://doc.qt.nokia.com/4.7/qml-image.html elemet, egy kis nyíl ikont jelenítve meg középen a <i>rectangle</i>-ön belül. A <i>drawer</i> meghatározza az program állapotát, ahogy a felhasználó rákattint a kis nyílra.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>drawer
+ height<span class="sy0">:</span><span class="nu0">15</span>
+&#160;
+Image<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> arrowIcon
+ source<span class="sy0">:</span> <span class="st0">&quot;images/arrow.png&quot;</span>
+ anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> drawerMouseArea
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ onClicked<span class="sy0">:</span><span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>screen.<span class="me1">state</span> <span class="st0">&quot;DRAWER_CLOSED&quot;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+ screen.<span class="me1">state</span> <span class="sy0">=</span> <span class="st0">&quot;DRAWER_OPEN&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>screen.<span class="me1">state</span> <span class="st0">&quot;DRAWER_OPEN&quot;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+ screen.<span class="me1">state</span> <span class="sy0">=</span> <span class="st0">&quot;DRAWER_CLOSED&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ …
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Ez az állapot egy sor konfigurációs beállítás, melyeket <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-state.html">State</a> elemeken keresztül deklarálunk. A különböző állapotok a <i>state</i> tulajdonsághoz kötődnek és kilistázhatjuk őket onnan. Az alkalmazásunkban két állapot, a <i>DRAWER_CLOSED</i> és a <i>DRAWER_OPEN</i> lesz. Az elemek konfigurációja a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-propertychanges.html">PropertyChanges</a> elemben lesznek deklarálva. A DRAWER_OPEN állapotban 4 elem tulajdonsága fog megváltozni. A <i>menuBar</i> y tulajdonsága 0-ra fog változni. Hasonlóképpen, a <i>textArea</i> pozíciója lejjebb fog kerül, ha a <i>DRAWER_OPEN</i> állapot az aktív. A <i>textArea</i>, a <i>drawer</i> és a <i>drawer</i> ikonja fog változáson keresztülmenni, hogy elérje a megfelelő állapotot.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> states<span class="sy0">:</span><span class="br0">&#91;</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;DRAWER_OPEN&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">0</span><span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> y<span class="sy0">:</span> partition <span class="sy0">+</span> drawer.<span class="me1">height</span><span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> y<span class="sy0">:</span> partition<span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> arrowIcon<span class="sy0">;</span> rotation<span class="sy0">:</span> <span class="nu0">180</span><span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="sy0">,</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;DRAWER_CLOSED&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> y<span class="sy0">:-</span>height<span class="sy0">;</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> y<span class="sy0">:</span> drawer.<span class="me1">height</span><span class="sy0">;</span> height<span class="sy0">:</span> screen.<span class="me1">height</span> – drawer.<span class="me1">height</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> arrowIcon<span class="sy0">;</span> rotation<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>Az állapotváltozások azonnaliak, ám az átmenetnek ennél finomabbaknak kell lenniük. A <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-transition.html">Transition</a> elemben határozzuk meg a különböző állapotok közötti átmeneteket, amelyet ezután az elem <i>transitions</i> tulajdonságához rendelhetjük. A szövegszerkesztőnknek állapotátmenete lesz, akár <i>DROWER_OPEN</i>-re akár <i>DROWER_CLOSED</i>-ra módosul az állapota. Fontos, hogy az átmeneteknek rendelkezniük kell egy <i>from</i> (honnan) és egy <i>to</i> (hová) állapottal, de jelen esetben használhatunk csillagot * is, jelölve, hogy ez itt minden átmenetre vonatkozik. Az átmenetek során animációkat rendelhetünk a tulajdonság változásokhoz. A menüsorunk y&#160;: 0-ból y&#160;: x helyre ugrik, de ezt a mozgást leanimálhatjuk a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-numberanimation.html">NumberAnimation</a> elem használatával. A cél elem tulajdonságait úgy állítjuk be, hogy annak mozgása egy meghatározott idő alatt, egy előre meghatározott csillapított görbe mentén animálódjon. Ez a csillapított görbe fogja szabályozni az animáció tulajdonságait az állapotváltozások között. Ez az ún. easing curve most az <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-propertyanimation.html#easing.type-prop">Easing.OutQuint</a> lesz, amely lelassítja az elem mozgását az animáció vége felé. Bővebb információért érdemes elolvasni a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeanimation.html">QML's Animation</a> c. leírást.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">transitions<span class="sy0">:</span> <span class="br0">&#91;</span>
+ Transition <span class="br0">&#123;</span>
+ to<span class="sy0">:</span> <span class="st0">&quot;*&quot;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y, height&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span>Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>Egy másik módja a tulajdonságváltozások animálásnak egy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-behavior.html">Behavior</a> elem deklarálása. Egy átmenet csak állapotváltozások alatt működik, míg a <i>Behavior</i> hozzárendelhető egy egyszerű tulajdonságváltozáshoz is. A szövegszerkesztőnkben a nyílnak van egy <i>NumberAnimation-ja</i>, mely leanimálja annak <i>rotation</i> tulajdonságát valahányszor megváltozik az.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In TextEditor.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Behavior<span class="br0">&#123;</span>
+ NumberAnimation<span class="br0">&#123;</span>property<span class="sy0">:</span> <span class="st0">&quot;rotation&quot;</span><span class="sy0">;</span>easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Térjünk vissza a komponenseinkhez az állapotokról és az animációkról megszerzett tudásunkkal, most már szebbé tehetjük azok megjelenését. A <i>Button.qml</i>-ben a gomb lenyomásához <i>color</i> és <i>scale</i> tulajdonságokat adhatunk. A szín típusokat a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-coloranimation.html">ColorAnimation</a> fogja animálni, míg a számokat a <i>NumberAnimation</i>. Az alant látható <i>on propertyName</i> szintakszis hasznos lehet, ha csak egyetlen tulajdonságra akarunk utalni.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In Button.<span class="me1">qml</span><span class="sy0">:</span>
+ …
+&#160;
+color<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="kw5">Qt</span>.<span class="me1">darker</span><span class="br0">&#40;</span>buttonColor<span class="sy0">,</span> <span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy0">:</span> buttonColor
+ Behavior on color <span class="br0">&#123;</span> ColorAnimation<span class="br0">&#123;</span> duration<span class="sy0">:</span> <span class="nu0">55</span><span class="br0">&#125;</span> <span class="br0">&#125;</span>
+&#160;
+scale<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="nu16">1.1</span> <span class="sy0">:</span> <span class="nu16">1.00</span>
+ Behavior on scale <span class="br0">&#123;</span> NumberAnimation<span class="br0">&#123;</span> duration<span class="sy0">:</span> <span class="nu0">55</span><span class="br0">&#125;</span> <span class="br0">&#125;</span></pre></div></div>
+<p>Még mutatósabbá tehetjük QML komponenseinket, ha olyan effektusokat adunk hozzájuk, mint a gradiens vagy az átlátszóság. Egy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-gradient.html">Gradient</a> elem deklarálásával felülírhatjuk az elem <i>color</i> tulajdonságát. A <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-gradientstop.html">GradientStop</a> elemmel színeket is deklarálhatunk a gradiensünkön belül, melyet egy 0.0 és 1.0 közötti skálával adunk meg.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In MenuBar.<span class="me1">qml</span>
+ gradient<span class="sy0">:</span> Gradient <span class="br0">&#123;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.0</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#8C8F8C&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.17</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#6A6D6A&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.98</span><span class="sy0">;</span>color<span class="sy0">:</span> <span class="st0">&quot;#3F3F3F&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">1.0</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#0e1B20&quot;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>A menüsorunkon használjuk majd a gradienst egy színátmenet megjelenítésére. Az első szín 0.0-nál kezdődik, az utolsó pedig 1.0-nál végződik.
+</p>
+<h3><span class="mw-headline" id="Innen_hova">Innen hova</span></h3>
+<p>Ezzel befejeztük egy nagyon egyszerű szövegszerkesztő felhasználói felületét. Tovább haladva most már implementálhatjuk az alkalmazásunk logikáját a jól megszokott Qt és C++ segítségével. A QML szépen dolgozik, elválasztva előbbit az UI designtól.
+</p><p>p=. <a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor4_texteditor.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor4 texteditor.png">qml-texteditor4_texteditor</a>
+</p>
+<h2><span class="mw-headline" id="QML_kib.C5.91v.C3.ADt.C3.A9se_Qt_C.2B.2B_haszn.C3.A1lat.C3.A1val">QML kibővítése Qt C++ használatával</span></h2>
+<p>Már megvan a szövegszerkesztőnk váza, most implementálhatjuk a funkciókat C++ -ban. A QML-t és a C++ -t együtt használva lehetőségünk van Qt-ben létrehozni a program logikáját. Beilleszthetünk egy QML kotextust a C++ alkalmazásunkban a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtbinding.html">Qt's Declarative</a> osztályok használatával és meg is jeleníthetjük a QML elemeket a Graphic Scene segítségével. Vagy exportálhatjuk a C++ kódunkat egy olyan pluginba, amit a qmlviewer olvasni tud. A programunk számára a mentés és betöltés funkciókat C++ -ban fogjuk implementálni és ezt exportáljuk egy pluginba. Így csak a QML fájlunkat kell betöltenünk, nem kell egy futtatható állományt elindítani.
+</p>
+<h3><span class="mw-headline" id="C.2B.2B_oszt.C3.A1lyok_megismertet.C3.A9se_a_QML-el">C++ osztályok megismertetése a QML-el</span></h3>
+<p>Qt és C++ segítségével fogjuk implementálni a betöltés és mentés opciókat. A C++ osztályok és függvények használatához regisztrálni kell őket a QML-ben. Az osztály továbbá Qt pluginként kell fordítani és a QML fájlnak tudnia kell, hogy ez a plugin merre található.
+</p><p>Az alkalmazásunk számára a következő elemeket kell létrehoznunk:
+</p>
+<ol>
+<li> Directory osztály, mely a mappákhoz kötődő művelteket fogja végrehajtani
+</li>
+<li> File osztály, ami egy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html">QObject</a>, amely fájlok listáját szimulálja egy mappában
+</li>
+<li> plugin osztály mely a QML kontextushoz fogja regisztálni az osztályt
+</li>
+<li> Qt project fájl, mely majd lefordítja a plugin-t
+</li>
+<li> qmldir, mely átadja a plugin helyét a qmlviewer számára
+</li>
+</ol>
+<h3><span class="mw-headline" id="Qt_plugin_l.C3.A9trehoz.C3.A1sa">Qt plugin létrehozása</span></h3>
+<p>A plugin létrehozásához a következőket kell beállítanunk a Qt project fájlunkban. Első körben a szükséges sources, headers, és a Qt modules szerepelnek a hozzáadandók listájában. Az összes C++ kód és project fájl a <i>filedialog</i> könyvtárban lesz.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In cppPlugins.<span class="me1">pro</span><span class="sy0">:</span>
+&#160;
+TEMPLATE <span class="sy0">=</span> lib
+ CONFIG <span class="st0">''</span><span class="sy0">=</span> qt plugin
+ QT<span class="st0">''</span><span class="sy0">=</span> declarative
+&#160;
+DESTDIR <span class="st0">''</span><span class="sy0">=</span> ..<span class="sy0">/</span>plugins
+ OBJECTS_DIR <span class="sy0">=</span> tmp
+ MOC_DIR <span class="sy0">=</span> tmp
+&#160;
+ TARGET <span class="sy0">=</span> FileDialog
+&#160;
+ HEADERS<span class="st0">''</span><span class="sy0">=</span> directory.<span class="me1">h</span>  file.<span class="me1">h</span>  dialogPlugin.<span class="me1">h</span>
+&#160;
+SOURCES <span class="sy0">+=</span> directory.<span class="me1">cpp</span>  file.<span class="me1">cpp</span>  dialogPlugin.<span class="me1">cpp</span></pre></div></div>
+<p>A <i>declarative</i> modullal fordítjuk a Qt-t és _plugin_ként konfiguráljuk, amihez egy <i>lib</i> sablonra lesz szükségünk. A szülő <i>plugins</i> mappába kell tennünk a lefordított plugint.
+</p>
+<h3><span class="mw-headline" id="Egy_oszt.C3.A1ly_regisztr.C3.A1l.C3.A1sa_QML-ben">Egy osztály regisztrálása QML-ben</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In dialogPlugin.<span class="me1">h</span><span class="sy0">:</span>
+&#160;
+<span class="co2">#include &lt;QDeclarativeExtensionPlugin&gt;</span>
+&#160;
+<span class="kw2">class</span> DialogPlugin <span class="sy0">:</span> <span class="kw2">public</span> QDeclarativeExtensionPlugin
+ <span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw4">void</span> registerTypes<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>uri<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>A <i>DialogPlugin</i> osztályunk a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeextensionplugin.html">QDeclarativeExtensionPlugin</a> egy alosztálya. Implementálnunk kell az örökölt függvényt, a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeextensionplugin.html#registerTypes">registerTypes()</a> -t. A <i>dialogPlugin.cpp</i> a következőképpen néz ki:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">DialogPlugin.<span class="me1">cpp</span><span class="sy0">:</span>
+&#160;
+<span class="co2">#include &quot;dialogPlugin.h&quot;</span>
+ <span class="co2">#include &quot;directory.h&quot;</span>
+ <span class="co2">#include &quot;file.h&quot;</span>
+ <span class="co2">#include &lt;qdeclarative.h&gt;</span>
+&#160;
+<span class="kw4">void</span> DialogPlugin<span class="sy0">::</span><span class="me2">registerTypes</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="st0">''</span><span class="st0">'uri){
+&#160;
+ qmlRegisterType&lt;Directory&gt;(uri, 1, 0, &quot;Directory&quot;);
+ qmlRegisterType&lt;File&gt;(uri, 1, 0,&quot;File&quot;);
+ }
+&#160;
+ Q_EXPORT_PLUGIN2(FileDialog, DialogPlugin);</span></pre></div></div>
+<p>A <i>registerTypes()</i> függvény regisztrálja a <i>FILE</i> és <i>DIRECTORY</i> osztályainkat QML-ben. Ennek a függvénynek meg kell adni a sablonja nevét, a fő- és az alverziószámot, valamint természetesen az osztályunk nevét.
+</p><p>Exportálnunk kell a plugint a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a> makróval. Megjegyzendő, hogy a <i>dialogPlugin.h</i> fájlunkban ott van a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html#Q_OBJECT">Q_OBJECT</a> makró az osztályunk tetején. Majd futassuk a <i>qmkae</i>-t a project fájlunkon hogy legeneráljuk a szükséges meta-object kódot.
+</p>
+<h3><span class="mw-headline" id="QML_tulajdons.C3.A1gok_l.C3.A9trehoz.C3.A1sa_C.2B.2B_oszt.C3.A1lyban">QML tulajdonságok létrehozása C++ osztályban</span></h3>
+<p>Létrehozhatunk QML elemeket és tulajdonságokat a C++ és a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/metaobjects.html">Qt's Meta-Object System</a> segítségével. Implementálhatjuk ezeket a tulajdonságokat slot-ok és signal-ok használatával, átadva ezeket a Qt-nek.
+</p><p>A szövegszerkesztőnknek be kell tudnia tölteni, illetve elmenteni a fájlokat. Általában ezeket a funkciókat egy fájl dialogban valósítjuk meg. Szerencsére használhatjuk a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdir.html">QDir</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qfile.html">QFile</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtextstream.html">QTextStream</a> függvényeket, hogy implementáljuk a mappaolvasásokat és az input/output folyamatokat.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Directory <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span><span class="br0">&#123;</span>
+&#160;
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw4">int</span> filesCount READ filesCount CONSTANT<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> filename READ filename WRITE setFilename NOTIFY filenameChanged<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> fileContent READ fileContent WRITE setFileContent NOTIFY fileContentChanged<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> files READ files CONSTANT <span class="br0">&#41;</span>
+&#160;
+ …</pre></div></div>
+<p>A <i>Directory</i> class a Qt's Meta-Object System-et használja, hogy regisztrálja a fájlkezelés megvalósításához szükséges tulajdonságokat. A <i>Directory</i> osztályt pluginként exportáltuk és QML-ben Directory elemként hivatkozhatunk rá. Az összes listázott tulajdonság a Q_PROPERTY makrót használja, amely egy QML tulajdonság.
+</p><p>A <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html#Q_PROPERTY">Q_PROPERTY</a> deklarál egy tulajdonságot, továbbá függvényeket olvas és ír a Qt's Meta-Object System-ből/be. Például a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qstring.html">QString</a> <i>filename</i> tulajdonságát a <i>filename()</i> függvénnyel tudjuk olvasni, illetve a <i>setFilename()</i> függvénnyel írni. Továbbá egy signál, a <i>filenameChanged()</i>, is rendelve van a <i>filename</i> tulajdonsághoz, amely minden esetben emittálásra kerül, ha a tulajdonság megváltozik. Az író és olvasó függvényeket <i>public</i>-ként deklaráljuk a header fájlban. 
+</p><p>Hasonlóképpen deklaráljuk a többi tulajdonságot, természetesen a használatuknak megfelelően. A <i>filesCount</i> tulajdonság az adott mappában lévő fájlok számát adja jelzi. A <i>filename</i> tulajdonság mindig az éppen kijelölt fájl nevét tárolja, a <i>fileContent</i> tulajdonságban pedig a betöltött/elmentett fájl tartalma tárolódik el.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Q_PROPERTY<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> files READ files CONSTANT <span class="br0">&#41;</span></pre></div></div>
+<p>A <i>files</i> lista tulajdonság egy lista a mappában lévő fájlokról. A <i>Directory</i> osztály azért implementáltuk, hogy kiszűrje az érvénytelen szöveges fájlokat, csak a .txt kiterjesztésűek lesznek érvényesek. Továbbá a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qlist.html">QList</a> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html">QDeclarativeListProperty</a> -ként delarálva C++ -ban lesz használható QML-ben. A sablon objektumot a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html">QObject</a> -től kell származtatni, így a File osztályt is. A <i>Directory</i> osztályban, a <i>File</i> objektumok listáját a _QList_–ben tárolj <i>m_fileList</i> néven.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> File <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span><span class="br0">&#123;</span>
+&#160;
+ <span class="kw2">Q_OBJECT</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> name READ name WRITE setName NOTIFY nameChanged<span class="br0">&#41;</span>
+&#160;
+ …
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Ez a tulajdonság ezután a <i>Directory</i> elem tulajdonságainak részeként használható QML-ben. Jegyezzük meg, hogy nem kell azonosító <i>id</i> tulajdonságot létrehoznunk a C++ kódunkban.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Directory<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> directory
+&#160;
+ filesCount
+ filename
+ fileContent
+ files
+&#160;
+ files<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>.<span class="me1">name</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Mivel a QML Javascript szintaktikát és struktúrát használ, így végigfuthatunk a fájlok listáján és meg is kapjuk azok tulajdonságait. Hogy megkapjuk az első fájl név tulajdonságát, csak hívjuk meg a <i>files[0].name</i> függvényt.
+</p><p>A sima C++ függvények is elérhetőek QML–ben. A betöltő és elmentő függvények C++ -ban kerültek implementálásra a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html#Q_INVOKABLE">Q_INVOKABLE</a> makró felhasználásával. De _slot_–ként is deklarálhatjuk a függvényeket, melyek ezután elérhetőek lesznek QML –ben.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In Directory.<span class="me1">h</span><span class="sy0">:</span>
+&#160;
+ Q_INVOKABLE <span class="kw4">void</span> saveFile<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ Q_INVOKABLE <span class="kw4">void</span> loadFile<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>A <i>Directory</i> osztálynak tudomást kell szereznie más objektumokról, ha megváltozik a mappa tartalma. Ezt a funkciót _signal_–ok használatával oldjuk meg. Ahogy előzőleg említettük, a QML _signal_–oknak van egy hozzájuk tartozó végrehajtójuk, egy ún. _handler_–jük, amelyek neve megegyezik egy on prefixumot leszámítva. A signal neve <i>directoryChanged</i> és ez mindig emittálásra kerül, ha a mappa frissül. A frissítés szimplán újra betölti a mappa tartalmát és frissíti a listában a mappa érvényes fájljait. Ezek a QML elemek észrevehetőek felhasználjuk az <i>onDirectoryChanged</i> handler-t.
+</p><p>Érdemes tovább vizsgálni a list tulajdonságokat, ugyanis ún. callback-eket, visszahívásokat alkalmaznak, hogy elérjék és módosítsák a lista tartalmát. A list tulajdonság <i>QDeclarativeListProperty&lt;File&gt;</i> típusú, így akárhányszor hozzáférünk a listához, a hozzáférőnek egy <i>QDeclarativeListProperty&lt;File&gt;</i>-al kell visszatérnie. A sablon típusnak, a _File_–nak <i>QObject</i> leszármaztatottnak kell lennie! Hogy létrehozzunk egy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html">QDeclarativeListProperty</a> -t , a lista hozzáférőjét és módosítóját függvény mutatókként át kell adni konstruktornak! A listának, esetünkben a _QList_–nek egy <i>File</i> mutató listának kell lennie! A <i>QDeclarativeProperrty</i> konstruktor konstruktorának és a Directory implementálása:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> QDeclarativeListProperty <span class="br0">&#40;</span> <span class="kw5">QObject</span><span class="st0">''</span><span class="st0">' object, void * data, AppendFunction append, CountFunction count = 0, AtFunction at = 0, ClearFunction clear = 0 )
+ QDeclarativeListProperty&lt;File&gt;( this, &amp;m_fileList, &amp;appendFiles, &amp;filesSize, &amp;fileAt, &amp;clearFilesPtr );</span></pre></div></div>
+<p>A konstruktor átadja a mutatókat a függényekneknek, amik csatolják, megszámolják a elemeinek számát vagy kiürítik a listát, illetve visszanyerik az elemeit az indexek segítségével. Csak az append (csatoló) függvény megbízott. Megjegyzendő, hogy a függvény mutatóknak meg kell egyezniük az <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html#AppendFunction-typedef">AppendFunction</a>, a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html#CountFunction-typedef">CountFunction</a>, az <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html#AtFunction-typedef">AtFunction</a>, és a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html#ClearFunction-typedef">ClearFunction</a> definícióival!
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">void</span> appendFiles<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="sy0">,</span> File <span class="sy0">*</span> file<span class="br0">&#41;</span>
+ File<span class="sy0">*</span> fileAt<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="sy0">,</span> <span class="kw4">int</span> index<span class="br0">&#41;</span>
+ <span class="kw4">int</span> filesSize<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="br0">&#41;</span>
+ <span class="kw4">void</span> clearFilesPtr<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span>property<span class="br0">&#41;</span></pre></div></div>
+<p>Hogy egyszerűbbé tegyük a dialógunkat, a <i>Directory</i> osztály kiszűr minden fájlt, amely nem .txt kiterjesztésű és csak azokat jeleníti meg, amelyek azok. Sőt, ez az implementáció arról is gondoskodik, hogy az elmentett fájljaink megfelelő (.txt) kiterjesztést kapjanak. A <i>Directory</i> a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtextstream.html">QTextStream</a> függvényt használja, hogy kiolvasson a fájlból, illetve hogy írjon bele.
+</p><p>A <i>Directory</i> elemünkkel tehát visszanyerhetjük a fájljaink listáját, azok nevét és tartalmát stringként, megtudhatjuk, hogy hány fájl van az adott mappában, és valahányszor megváltozik annak tartalma, arról értesítést kaphatunk.
+</p><p>Ahhoz hogy létrehozzuk a _plugin_–t, futassuk a _qmake_–t a <i>cppPlugins.pro</i> project fájlon, aztán futassuk a <i>make</i> parancsot hogy lefordítsuk és áthelyezzük a pluginunkkat a plugins könyvtára.
+</p>
+<h3><span class="mw-headline" id="Plugin_import.C3.A1l.C3.A1sa_QML-ben">Plugin importálása QML-ben</span></h3>
+<p>A <i>qmlviewer</i> azokat a fájlokat importálja, amelyek az alkalmazásunkkal egy mappában van. De létrehozhatunk egy <i>qmldir</i> fájlt is, amely tartalmazza majd, hogy merre találhatóak a QML fájljaink, melyeket importálni szeretnénk. A <i>qmldir</i> fájl tovább tartalmazhatta más pluginok és ún. <i>resources</i>, eszközök helyét.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In qmldir<span class="sy0">:</span>
+&#160;
+Button .<span class="sy0">/</span>Button.<span class="me1">qml</span>
+ FileDialog .<span class="sy0">/</span>FileDialog.<span class="me1">qml</span>
+ TextArea .<span class="sy0">/</span>TextArea.<span class="me1">qml</span>
+ TextEditor .<span class="sy0">/</span>TextEditor.<span class="me1">qml</span>
+ EditMenu .<span class="sy0">/</span>EditMenu.<span class="me1">qml</span>
+&#160;
+plugin FileDialog plugins</pre></div></div>
+<p>A <i>plugin</i>, melyet fentebb létrehoztunk <i>FileDialog</i> névvel rendelkezik, ahogy azt a <i>TARGET</i> mezőben is jeleztük a project fájlunkban. A lefordított plugin a plugins könyvtárban található.
+</p>
+<h3><span class="mw-headline" id="Egy_File_Dialog_integr.C3.A1l.C3.A1sa_a_File_Menu.E2.80.93be">Egy File Dialog integrálása a File Menu–be</span></h3>
+<p>A _FileMenu_–ünknek egy _FileDialog_–ot kell elemet megjelenítenie, amely tartalmazza a könyvtár, .txt kiterjesztésű, fájljait és lehetővé teszi a felhasználó számára, hogy kiválassza a megnyitni kívánt fájlt. Továbbá el kell helyeznünk benne a mentés, a megnyitás és az új gombokat, hogy azok elvégezhessék a kívánt műveletet. A <i>FileMenu</i> tartalmazni fog egy szerkeszthető szövegmezőt is, ahová a felhasználó begépelhet egy fájlnevet. A <i>Directory</i> elemet a _FileMenu.qml_–ben használjuk fel, és ez majd értesít minket, ha megváltozott a könyvtár tartalma. Ezt az <i>signal</i>-t az <i>onDirectoryChanged</i> handler fogja számunkra eljuttatni.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Directory<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>directory
+ filename<span class="sy0">:</span> textInput.<span class="me1">text</span>
+ onDirectoryChanged<span class="sy0">:</span> fileDialog.<span class="me1">notifyRefresh</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Alkalmazásunk egyszerűségét megőrizendő, a fájl dialógunk csak a szükséges fájlokat fogja megjeleníteni, amelyek .txt kiterjesztésűek.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In FileDialog.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+<span class="kw4">signal</span> notifyRefresh<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ onNotifyRefresh<span class="sy0">:</span> dirView.<span class="me1">model</span> <span class="sy0">=</span> directory.<span class="me1">files</span></pre></div></div>
+<p>Ahogy fentebb írtuk, a <i>FileDialog</i> elem meg fogja jeleníteni a mappa számunkra releváns tartalmát, amelyet a files tulajdonság kiolvasásával fogunk elérni. A fájlokat egy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-gridview.html">GridView</a> modellt használó elem fogja megjeleníteni rácsos elrendezésben egy <i>delegate</i>-nek megfelelően. A <i>delegate</i> fogja lekezelni a modellünk megjelenését és a fájl dialógunk létrehoz majd egy <i>grid</i>-et, egy rácsot, középre igazítva benne a szöveget. Egy fájlnévre kattintva egy rectangle jelenik meg, kijelölve a fájlnevet. Akárhányszor emittálásra kerül a <i>notifyRefresh</i> signal, a <i>FileDialog</i> újratölti majd a könyvtár tartalmát.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> newButton
+ label<span class="sy0">:</span> <span class="st0">&quot;New&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ textArea.<span class="me1">textContent</span> <span class="sy0">=</span> <span class="st0">&quot;&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> loadButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Load&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ directory.<span class="me1">filename</span> <span class="sy0">=</span> textInput.<span class="me1">text</span>
+ directory.<span class="me1">loadFile</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ textArea.<span class="me1">textContent</span> <span class="sy0">=</span> directory.<span class="me1">fileContent</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> saveButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Save&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ directory.<span class="me1">fileContent</span> <span class="sy0">=</span> textArea.<span class="me1">textContent</span>
+ directory.<span class="me1">filename</span> <span class="sy0">=</span> textInput.<span class="me1">text</span>
+ directory.<span class="me1">saveFile</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> exitButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Exit&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ <span class="kw5">Qt</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Most már a <i>FileMenu</i>-nk kapcsolódhat a megfelelő műveletekhez. A <i>saveButton</i> továbbítja majd a <i>TextEdit</i>-ből a szöveget a <i>Directory</i> <i>filecontent</i> tulajdonságában, majd átmásolja a fájl nevét a szerkeszthető szövegmezőből. Végül pedig a gomb meghívja a <i>saveFile()</i> függvényt, amely elmenti a fájlunkat. A <i>loadButton</i> hasonló végrehajtással rendelkezik. A <i>New</i> gomb megnyomására pedig kitörlődik a <i>TextEdit</i> tartalma. Továbbá a <i>EditMenu</i> gombjai kapcsolónak a <i>TextEdit</i> függvényeihez, hogy képesek legyenek a <i>copy</i>, <i>paste</i> funkció betöltésére, valamint hogy a kijelölhessük a szöveget.
+</p><p>p=. <a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_filemenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 filemenu.png">qml-texteditor5_filemenu</a>
+</p>
+<h3><span class="mw-headline" id="A_sz.C3.B6vegszerkeszt.C5.91nk_befejez.C3.A9se">A szövegszerkesztőnk befejezése</span></h3>
+<p>p=. <a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_newfile.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 newfile.png">qml-texteditor5_newfile</a>
+</p><p>Összegezve, a kis alkalmazásunk képes az alapvető szövegszerkesztési funkciók ellátása, így képes elmenteni, megnyitni, illetve módosítani bármilyen .txt kiterjesztésű fájlt.
+</p><p>Köszönjük, hogy elolvasta eme ismertetőt, reméljük hasznosnak bizonyult és remek QML alkalmazások fognak születni az itt elolvasott tudás birtokában!
+</p><p>Have a nice day!&#160;:)
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.659 seconds
+Real time usage: 0.692 seconds
+Preprocessor visited node count: 371/1000000
+Preprocessor generated node count: 760/1000000
+Post‐expand include size: 1364/2097152 bytes
+Template argument size: 436/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:822-0!*!0!!en!2!* and timestamp 20151105063639 and revision id 19238
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&amp;oldid=19238">http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&amp;oldid=19238</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/Category:Articles_needing_cleanup" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="http://wiki.qt.io/index.php?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Getting+Started+Programming+with+QML%2Fhu" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Getting_Started_Programming_with_QML/hu"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Getting_Started_Programming_with_QML/hu&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Getting_Started_Programming_with_QML/hu" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Getting_Started_Programming_with_QML/hu" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Getting_Started_Programming_with_QML/hu" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&amp;oldid=19238&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&amp;oldid=19238" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:21.</li>
+											<li id="footer-info-viewcount">This page has been accessed 702 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":302});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hu&oldid=19238 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:58:32 GMT -->
+</html>

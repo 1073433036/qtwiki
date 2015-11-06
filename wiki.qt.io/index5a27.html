@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=SimpleCrypt_algorithm_details&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:02:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>SimpleCrypt algorithm details - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SimpleCrypt_algorithm_details","wgTitle":"SimpleCrypt algorithm details","wgCurRevisionId":19722,"wgRevisionId":19722,"wgArticleId":1979,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Snippets"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"SimpleCrypt_algorithm_details","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-SimpleCrypt_algorithm_details skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">SimpleCrypt algorithm details</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This page explains in more detail the format used by the <a href="Simple_encryption.html" title="Simple encryption" class="mw-redirect">Simple_encryption</a> code. The encryption and decryption code works from a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qbytearray.html#">QByteArray</a></span> to a <b>QByteArray</b>. The options to use <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qstring.html#">QString</a></span> are just provided for convenience. The first two sections detail how the stings and byte arrays correspond for both the plaintext and the cyphertexts. Then, the format of the binary <b>QByteArray</b> cyphertext is detailed.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#String_plaintext_encoding"><span class="tocnumber">1</span> <span class="toctext">String plaintext encoding</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#String_cypher_text_format"><span class="tocnumber">2</span> <span class="toctext">String cypher text format</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Binary_cypher_text_format"><span class="tocnumber">3</span> <span class="toctext">Binary cypher text format</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Header"><span class="tocnumber">3.1</span> <span class="toctext">Header</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Payload"><span class="tocnumber">3.2</span> <span class="toctext">Payload</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Decrypted_payload"><span class="tocnumber">3.3</span> <span class="toctext">Decrypted payload</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Compression"><span class="tocnumber">3.4</span> <span class="toctext">Compression</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Result"><span class="tocnumber">3.5</span> <span class="toctext">Result</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="String_plaintext_encoding">String plaintext encoding</span></h2>
+<p>If a <b>QString</b> is used as the plaintext to encrypt, this string is encoded to a <b>QByteArray</b> by using the UTF8 codec. If a <b>QString</b> is requested as the result if a decryption action, the binary plaintext resulting from the decryption is interpretted using the same codec to construct a <b>QString</b>.
+</p>
+<h2><span class="mw-headline" id="String_cypher_text_format">String cypher text format</span></h2>
+<p><i><b>SimpleCrypt</b></i> can work with both <b>QString</b> and <b>QByteArray</b> cypher texts. The <b>QString</b> format is build on top of the <b>QByteArray</b> format. The <b>QString</b> is constructed from the <b>QByteArray</b> by creating a base64 encoded version of the binary cypher text, and using the ASCII codec to create a <b>QString</b> from this.
+</p><p>For decryption, the reverse happens. The <b>QString</b> is translated into a binary format using the ASCII codec, and then the resulting <b>QByteArray</b> is decoded using the base64 codec into a binary cyper text.
+</p>
+<h2><span class="mw-headline" id="Binary_cypher_text_format">Binary cypher text format</span></h2>
+<p>The binary cypher text (represented in a <b>QByteArray</b>), consists of a header and a payload section:
+</p>
+<table border="1" class="wikitable">
+<tr>
+<th> bytes
+</th>
+<th> description
+</th></tr>
+<tr>
+<td> 0-1
+</td>
+<td> Header
+</td></tr>
+<tr>
+<td> 2-N
+</td>
+<td> Payload. This section is encrypted.
+</td></tr></table>
+<h3><span class="mw-headline" id="Header">Header</span></h3>
+<p>The header of the cypher text contains two fields: a version number, and a field with flags.
+</p>
+<table border="1" class="wikitable">
+<tr>
+<th> bytes
+</th>
+<th> description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> Version
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> Flags
+</td></tr></table>
+<h4><span class="mw-headline" id="Version">Version</span></h4>
+<p>The version number is a char. <i>The current version number is 2</i>.
+</p>
+<h4><span class="mw-headline" id="Flags">Flags</span></h4>
+<p>The flags is a single byte bitfield. Each bit represents a flag that describes how the payload is to be interpreted.
+</p>
+<table border="1" class="wikitable">
+<tr>
+<th> bit
+</th>
+<th> value
+</th>
+<th> description
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> 0x01
+</td>
+<td> Compression. If set, compression has been applied to the plaintext before encryption
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> 0x02
+</td>
+<td> Protection Checksum. If set, a CRC16-CCITT checksum, encoded in a quint16, has been used to protect data integrity.
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> 0x04
+</td>
+<td> Protection Hash. If set, an SHA-1 cryptograhpic hash (20 bytes long) has been used to protect data integrity.
+</td></tr></table>
+<p>Bits 1 and 2 should not be set at the same time. If bit 1 has been set, bit 2 is ignored.
+</p><p>Bits 3 to 7 are reserved for future use.
+</p>
+<h3><span class="mw-headline" id="Payload">Payload</span></h3>
+<p>The payload data block's contents are encrypted with a eight byte (quint64) key. They key is split up in eight chars, which are used consecutively starting again from key char 0 after key char 7 has been used. The <b>QByteArray</b> is encrypted by replacing each byte in the array with the value of that byte itself, XOR-ed with the key char, XOR-ed with the result of this operation for the previous byte in the <b>QByteArray</b> or 0 for byte 0 of the array. This operation can be reversed by XOR-ing the resulting cypher text byte again with both bytes that were used for the encryption phase.
+</p><p>This results in the following encryption schema:
+</p>
+<table border="1" class="wikitable">
+<tr>
+<th> byte
+</th>
+<th> key byte
+</th>
+<th> XOR value 2
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> 0
+</td>
+<td> the value 0
+</td></tr>
+<tr>
+<td> 1
+</td>
+<td> 1
+</td>
+<td> the result of this operation for byte 0
+</td></tr>
+<tr>
+<td> 2
+</td>
+<td> 2
+</td>
+<td> the result of this operation for byte 1
+</td></tr>
+<tr>
+<td> …
+</td>
+<td> …
+</td>
+<td> …
+</td></tr>
+<tr>
+<td> 7
+</td>
+<td> 7
+</td>
+<td> the result of this operation for byte 6
+</td></tr>
+<tr>
+<td> 8
+</td>
+<td> 0
+</td>
+<td> the result of this operation for byte 7
+</td></tr>
+<tr>
+<td> 9
+</td>
+<td> 1
+</td>
+<td> the result of this operation for byte 8
+</td></tr>
+<tr>
+<td> …
+</td>
+<td> …
+</td>
+<td> …
+</td></tr>
+<tr>
+<td> N
+</td>
+<td> N mod 8
+</td>
+<td> the result of this operation for byte N-1
+</td></tr></table>
+<p>The idea is that using the result of the previous byte as part of the key for this byte makes it impossible to use a simple attack that analyzes the cyphertext as 8 separate cyphertexts, each with its own 1-byte key. This is an attack possible on the basic vigenere-type cipher.
+</p>
+<h3><span class="mw-headline" id="Decrypted_payload">Decrypted payload</span></h3>
+<p>Once the payload data has been decrypted, it may need further processing before the plaintext is available and verified. What processing is needed, depends on the flags that are set in the header of the cyphertext.
+</p><p>In case the Protection Checksum flag has been set, the layout of the decrypted payload looks like this:
+</p>
+<table border="1" class="wikitable">
+<tr>
+<th> bytes
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> A random one byte number. This number is ignored after decryption.
+</td></tr>
+<tr>
+<td> 1-2
+</td>
+<td> A quint16 containing a CRC16-CCITT checksum value of bytes 3-N.
+</td></tr>
+<tr>
+<td> 3-N
+</td>
+<td> (Compressed) plaintext.
+</td></tr></table>
+<p>In case the Protection Hash flag has been set, the layout of the decrypted payload looks like this:
+</p>
+<table border="1" class="wikitable">
+<tr>
+<th> bytes
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> A random one byte number. This number is ignored after decryption.
+</td></tr>
+<tr>
+<td> 1-20
+</td>
+<td> A 20 byte SHA-1 crypographic hash of bytes 21-N.
+</td></tr>
+<tr>
+<td> 21-N
+</td>
+<td> (Compressed) plaintext.
+</td></tr></table>
+<p>On decryption, the checksum or hash value must be checked by recalculating it for the (compressed) plaintext, and comparing that value with the data in the corresponding bytes of the decrypted payload. If they do not match, an error flag is set, and the decryption algorithm must return an empty byte array. If a wrong key is used, it is very unlikely that a checksum will still match. It is far more unlikely that the SHA-1 hash will still match. Note that the random leading number is not used for calculating the checksum or the SHA-1 hash.
+</p><p>If neither of the Protection flags were set, the layout is simply:
+</p>
+<table border="1" class="wikitable">
+<tr>
+<th> bytes
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td> 0
+</td>
+<td> A random one byte number. This number is ignored after decryption.
+</td></tr>
+<tr>
+<td> 1-N
+</td>
+<td> (Compressed) plaintext.
+</td></tr></table>
+<h4><span class="mw-headline" id="Rationale_for_using_a_leading_random_number">Rationale for using a leading random number</span></h4>
+<p>The <i><b>SimpleCrypt</b></i> algorithm uses the result of the encryption of the previous character as part of the encryption of the current character. That results in a situation that even if you have the same character at byte 0 and byte 7 of the plaintext, they will be most likely be encrypted to a different cyphertext. That makes it much harder to figure out the key used in the encryption if the attacker has the opportunity to feed in his own plaintext and can then see the resulting cyphertext. For byte 0 of the bytestream however, this is not possible. A (known) 0 value is used instead of the value of the previous byte. That leads to a weakness, especially if no Protection flags and no compression are used. The number of characters that are likely to be at the beginning of a password is not so big, thus reducing the amount of possibilities. That leads to an effective reduction in the key strength of several bits. Note that that is a loss of about an order of magnitude in strength.
+</p><p>Putting a random number in front of the string makes it effectively impossible to use such heuristics to reduce the key strength, because there is no predictor for the random number in front (though, the situation is less than ideal, because of the use of the pseudo-random number generator. Achieving true randomness is <i>very</i> hard and well outside of the scope in <i><b>SimpleCrypt</b></i>.)
+</p><p>Note that also the use of either of the Protection modes and the use of compression add to the security of the cypher, as both decrease the predictability of the plaintext.
+</p>
+<h3><span class="mw-headline" id="Compression">Compression</span></h3>
+<p>If the Compression flag is set, the data in the examples above is compressed using <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qbytearray.html#qCompress">QByteArray::qCompress()</a></span>. The used compression level is 9 (maximum). On decryption, the data must then be uncompressed using <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qbytearray.html#qUncompress">QByteArray::qUncompress()</a></span>.
+</p>
+<h3><span class="mw-headline" id="Result">Result</span></h3>
+<p>The resulting binary plaintext is the data retreived from the decrypted payload or, if used, by the (de) compression step above.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.024 seconds
+Real time usage: 0.030 seconds
+Preprocessor visited node count: 91/1000000
+Preprocessor generated node count: 215/1000000
+Post‐expand include size: 411/2097152 bytes
+Template argument size: 122/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1979-0!*!0!!en!*!* and timestamp 20151105070053 and revision id 19722
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexb435.html?title=SimpleCrypt_algorithm_details&amp;oldid=19722">http://wiki.qt.io/index.php?title=SimpleCrypt_algorithm_details&amp;oldid=19722</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Snippets.html" title="Category:Snippets">Snippets</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=91942d89e0cb45c7&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="SimpleCrypt_algorithm_details.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_SimpleCrypt_algorithm_details.html?title=Talk:SimpleCrypt_algorithm_details&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="SimpleCrypt_algorithm_details.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index5c8d.html?title=SimpleCrypt_algorithm_details&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexf759.html?title=SimpleCrypt_algorithm_details&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/SimpleCrypt_algorithm_details.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/SimpleCrypt_algorithm_details.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="indexb435.html?title=SimpleCrypt_algorithm_details&amp;oldid=19722" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index65a3.html?title=SimpleCrypt_algorithm_details&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 21 October 2015, at 12:30.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,383 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":201});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=SimpleCrypt_algorithm_details&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:02:43 GMT -->
+</html>

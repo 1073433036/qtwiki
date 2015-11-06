@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Threads_Events_QObjects/ko by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:32:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Threads Events QObjects/ko - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Threads_Events_QObjects/ko","wgTitle":"Threads Events QObjects/ko","wgCurRevisionId":16120,"wgRevisionId":16120,"wgArticleId":2055,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Threads_Events_QObjects/ko","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Threads_Events_QObjects_ko skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Threads Events QObjects/ko</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="../Threads_Events_QObjects.html" title="Threads Events QObjects">Threads Events QObjects</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../index7029.html?title=Threads_Events_QObjects/ko&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table><a href="../Threads_Events_QObjects.html" title="Threads Events QObjects">English</a> <a href="../Threads_Events_QObjects_Russian.html" title="Threads Events QObjects Russian" class="mw-redirect">Русский</a> <a href="../Threads_Events_QObjects_Chinese.html" title="Threads Events QObjects Chinese" class="mw-redirect">中文</a>
+<p><i>STILL WORKING ON</i>
+원본 영문버젼의 내용이 업데이트가 되었는지 확인해 이 문서도 함께 갱신되어야 합니다(번역기준으로 원본의 문서리비젼: Last edit: March, 13, 2012)
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.EC.93.B0.EB.A0.88.EB.93.9C.2C_.EC.9D.B4.EB.B2.A4.ED.8A.B8.2C_.EA.B7.B8.EB.A6.AC.EA.B3.A0_QObject.EA.B0.9D.EC.B2.B4.28Threads.2C_Events_and_QObjects.29"><span class="tocnumber">1</span> <span class="toctext">쓰레드, 이벤트, 그리고 QObject객체(Threads, Events and QObjects)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.EA.B2.BD.EA.B3.A0_:_.EB.B2.A0.ED.83.80.EB.B2.84.EC.A0.BC.EC.9E.85.EB.8B.88.EB.8B.A4"><span class="tocnumber">1.1</span> <span class="toctext">경고&#160;: 베타버젼입니다</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#.EC.84.9C.EB.A1.A0"><span class="tocnumber">2</span> <span class="toctext">서론</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#.ED.95.84.EC.9A.94.EC.82.AC.ED.95.AD"><span class="tocnumber">2.1</span> <span class="toctext">필요사항</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#.EC.9D.B4.EB.B2.A4.ED.8A.B8.EC.99.80_.EC.9D.B4.EB.B2.A4.ED.8A.B8_.EB.A3.A8.ED.94.84"><span class="tocnumber">3</span> <span class="toctext">이벤트와 이벤트 루프</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id=".EC.93.B0.EB.A0.88.EB.93.9C.2C_.EC.9D.B4.EB.B2.A4.ED.8A.B8.2C_.EA.B7.B8.EB.A6.AC.EA.B3.A0_QObject.EA.B0.9D.EC.B2.B4.28Threads.2C_Events_and_QObjects.29">쓰레드, 이벤트, 그리고 QObject객체(Threads, Events and QObjects)</span></h1>
+<h2><span class="mw-headline" id=".EA.B2.BD.EA.B3.A0_:_.EB.B2.A0.ED.83.80.EB.B2.84.EC.A0.BC.EC.9E.85.EB.8B.88.EB.8B.A4">경고&#160;: 베타버젼입니다</span></h2>
+<p>이 문서는 거의 다 작업되었느나, 아직까지는 좀 더 다듬어야 합니다. 이 문서에 대한 논의는 <a rel="nofollow" class="external text" href="http://developer.qt.nokia.com/forums/viewthread/2423/">여기</a> 에서 진행되고 있습니다.
+</p>
+<h1><span class="mw-headline" id=".EC.84.9C.EB.A1.A0">서론</span></h1>
+<blockquote>어! 잘못하고 있는데요!. — Bradley T. Hughes
+</blockquote>
+<p>"#qt IRC channel":<a rel="nofollow" class="external free" href="irc://irc.freenode.net/#qt">irc://irc.freenode.net/#qt</a> 에서 가장 많이 논의되는 주제중 하나가 쓰레딩과 관련한 것이다. 많은 사람들이 채널에 들어와 자신들의 문제를 "다른 쓰레드에서 행되는 코드"를 가지고 해결하려하고 이것에 대해 질문한다.
+</p><p>이 사람들의 코드를 들여다 보고 빨리 알아 챌 수 있는 문제들중 열에 아홉은 우선 쓰레드를 쓰고보자는 식으로 접근하고 나서 병렬 프로그래밍의 끝없는 해악에 빠져버린다는 것이다.
+</p><p>쓰레드의 생성과 실행이 Qt 에서 쉬워진 고로, 프로그래밍 스타일(특히, 비동기 네트워크 프로그래밍이나, Qt 의 시그널 슬롯 아키텍쳐)에 대한 지식 없이 혹은 다른 툴킷이나 언어를 사용할때 생긴 버릇 등과 버무려져 사람들은 종종 잘못된 길로 들어서게 되는 경우가 많다. 더군다나, Qt 의 쓰레드관련 지원은 양날의 검과도 같다. 멀티쓰레딩의 구현이 아주 쉽게 되었지만, 꼭 알고 사용해야 하는 사항들이 상당수 추가되어 있기 때문이다(특히 QObject 객체들과 상호작용을 하게 되는 경우).
+</p><p>이 문서는 쓰레드를 어떻게 쓰는지, 적합한 locking방법은 무엇인지, 병렬성(parallelism)의 활용은 어떻게 하는 것인지, 확장성 있는 프로그램을 작성하는 방법은 무엇인지를 말하기 위한 것이 <b>아니다</b>. 이 주제들에 대한 많은 책/문서들이 이미 많다(이를 테면 이 <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/threads.html">page</a> 와 같은 문서들). 대신, 이 작은 문서를 통해, 사용자들로 하여금 Qt 4 에서의 쓰레딩을 소개하여 가장 일반적인 문제점들을 짚고, 견고한 동시에 나은 구조를 가지는 코드를 개발할 수 있도록 돕고자 한다.
+</p>
+<h2><span class="mw-headline" id=".ED.95.84.EC.9A.94.EC.82.AC.ED.95.AD">필요사항</span></h2>
+<blockquote>이렇게 생각해봐요. 쓰레드는 소금과 같지만, 파스타 같지는 않죠. 소금은 당신도 좋아하고, 나도 좋아하고, 우리 모두 좋아하지만, 사실 파스타를 더 많이 먹죠.
+<p>— 래리 맥보이(Larry McVoy)
+</p>
+</blockquote>
+<p>쓰레드 프로그래밍에 대한 범용 소개문서로, 다음과 같은 사전 지식을 필요로 한다.
+</p>
+<ul>
+<li> C++ 기초 (사실, C++ 뿐만 아니라 많은 다른 언어들과 상관이 있다);
+</li>
+<li> Qt 기초: QObjects, signals 및 slots, 이벤트 핸들링);
+</li>
+<li> 쓰레드가 무엇이며, 쓰레드,프로세스 및 운영체제간의 상호관계;
+</li>
+<li> 적어도 하나 이상의 주요한 운영체제에서, 쓰레드를 어떻게 시작하고 멈추는지 그리고 쓰레드가 끝날 때 까지 기다리는 방법;
+</li>
+<li> 뮤텍스(mutex), 세마포어(semaphore) 및 대기조건(wait condition)을 사용하여 쓰레드 안전하고 재진입이 가능한 함수, 자료구조, 클래스를 만드는 법;
+</li>
+</ul>
+<p>본 문서에서는 Qt 의 <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/threads-reentrancy.html">명명규칙(naming convention)</a> 인 다음의 사항을 따를것이다.
+</p>
+<ul>
+<li> <b>재진입</b> 한번에 최대 하나의 스레드에서 동일 인스턴스에 접근하는 경우를 가정하여, 하나 이상의 쓰레드로 부터 어떤 클래스의 인스턴스를 사용하는 것이 안전하다면, 그 클래스 재진입이 가능한 클래스이다. 각각의 호출에 고유한 데이터만을 참조한 다면, 하나 이상의 쓰레드에서 동시에 호출되어도 안전한 함수 역시 재진입 가능 함수이다. 다시 말해, 사용자는 이 클래스/함수에서 모든 인스턴스/공유데이터에 대한 접근을 어떠한 <i>외부 락킹 메커니즘(external locking mechanism)</i> 을 사용해 <i>직렬화(serialize)</i> 해야만 한다는 것을 의미한다.
+</li>
+<li> <b>쓰레드안전</b> 만일, 하나 이상의 쓰레드에서 동시에 인스턴스들을 사용하는 것이 안전하다면, 그 인스턴스의 클래스는 쓰레드 안전하다. 어떤 함수가, 호출을 통해 공유데이터를 참조하더라도, 한번에 하나 이상의 쓰레드에서 실행해도 안전하다면, 그 함수는 쓰레드 안전하다. 
+</li>
+</ul>
+<h1><span class="mw-headline" id=".EC.9D.B4.EB.B2.A4.ED.8A.B8.EC.99.80_.EC.9D.B4.EB.B2.A4.ED.8A.B8_.EB.A3.A8.ED.94.84">이벤트와 이벤트 루프</span></h1>
+<p>이벤트 구동방식의 툴킷으로, 이벤트들과 이벤트의 전송은 Qt 아키텍쳐에 있어 가장 중요한 역할을 담당하고 있다. 이 문서에서는 이 주제와 관련하여 자세한 언급은 하지 않도록 한다( <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/eventsandfilters.html">여기</a> , 그리고 <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/qq/qq11-events.html">여기</a> 를 참조하여, Qt 이벤트 시스템에 대한 좀 더 자세한 정보를 참조).
+</p><p>Qt 에서 <b>이벤트</b> 는 현재 발생하는 사건에 대한 어떤 내용을 담고 있다. 이벤트와 시그널의 주요한 차이는 이벤트는 응용프로그램내의 특정 객체를 "대상" 으로 하고 있는 것과 달리, 시그널은 "주변으로" 퍼져나간다(emitted된다). 코드의 관점에서 보면, 어떤 객체를 위한 모든 이벤트는 <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qevent.html">QEvent</a> 의 파생클래스이며, 모든 QObject 파생클래스들은 QObject::event() 가상함수를 오버라이딩하여 자신의 인스턴스들을 대상으로 들어오는 이벤트들을 핸들링할 수 있다.
+</p><p>이벤트는 응용프로그램의 내부 및 왜부에서 모두 발생할 수 있다. 예를 들자면,
+</p>
+<ul>
+<li> QKeyEvent 와 QMouseEvent 객체들은 키보드 및 마우스 상호작용을 표현하며, 윈도우 메니저로 부터 수신된다.
+</li>
+<li> QTimerEvent 객체들은 는 자신의 타이머가 동작할 때 어떤 QObject 로 보내지며, (대개는) 운영체제로 부터 오는 경우가 많다.
+</li>
+<li> QChildEvent 객체는 자식이 추가/삭제되는 경우 QObject 로 보내지며, Qt 응용프로그램 내부에서 온다.
+</li>
+</ul>
+<p>이벤트와 관련하여 중요한 점은 발생하는 즉시 전달되지 않는 다는 점이다. 대신, <b>이벤트 큐(event queue)</b> 에 추가되어 나중에 전달된다. 전달자의 역할을 하는 디스패쳐는 스스로 이 이벤트큐에 대해 순회하며 각각의 추가된 이벤트들을 전달 대상 객체로 전송하며, 이를 <b>이벤트 루프(event loop)</b> 라 한다. 개념적으로 이벤트 루프는 이렇다(Qt Quarterly 문서에 대한 위 링크를 참조)
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw1">while</span> <span class="br0">&#40;</span>is_active<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">!</span>event_queue_is_empty<span class="br0">&#41;</span>
+ dispatch_next_event<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+wait_for_more_events<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QCoreApplication</span><span class="sy0">::</span><span class="me2">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>code<span class="sy0">&gt;</span> 을 실행하면 <span class="kw5">Qt</span> 의 메인 이벤트 루프로 들어간다. 이 호출은 <span class="sy0">&lt;</span>code<span class="sy0">&gt;</span><span class="kw5">QCoreApplication</span><span class="sy0">::</span><span class="kw3">exit</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>code<span class="sy0">&gt;</span> 혹은 <span class="sy0">&lt;</span>code<span class="sy0">&gt;</span><span class="kw5">QCoreApplication</span><span class="sy0">::</span><span class="me2">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">&lt;</span>code<span class="sy0">&gt;</span> 이 호출되면 루프가 종료된다.
+&#160;
+<span class="st0">&quot;wait_for_more_events()&quot;</span> 함수는 이벤트가 생성되기 전까지는 리턴되지 않는다<span class="br0">&#40;</span>이것은 소위 CPU 자원을 잡아먹는 <span class="st0">&quot;바쁜 대기&quot;</span> 는 아니다<span class="br0">&#41;</span>. 이를 놓고 생각해 볼 때<span class="sy0">,</span> 특정 시점에 이벤트들을 생성할 수 있는 모든 것은 <span class="st0">''</span>외부<span class="st0">''</span> 에 있다<span class="br0">&#40;</span> 모든 내부 이벤트들에 대한 전달<span class="br0">&#40;</span>dispatching<span class="br0">&#41;</span>은 이제 종료되어 이벤트 큐에는 더이상 전달할 지연 이벤트들이 없기 때문이다<span class="br0">&#41;</span>. 따라서<span class="sy0">,</span> 이벤트 루프는 다음에 의해 깨어날 수 있다.
+&#160;
+<span class="sy0">*</span> 윈도우 매니저의 동작<span class="br0">&#40;</span>키<span class="sy0">/</span>마우스 누름<span class="sy0">,</span> 윈도우 상호작용 …등<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="sy0">*</span> 소켓 동작<span class="br0">&#40;</span>읽어들여야 할 데이터가 수신되었거나<span class="sy0">,</span> 대기없이 쓰기동작이 가능해 졌거나<span class="sy0">,</span> 새로운 접속요청이 들어오거나…등<span class="br0">&#41;</span>
+<span class="sy0">*</span> 타이머 <span class="br0">&#40;</span>즉<span class="sy0">,</span> 타이머가 걸리면<span class="br0">&#41;</span>
+<span class="sy0">*</span> 다른 쓰레드로 부터 큐에 추가<span class="br0">&#40;</span>posted<span class="br0">&#41;</span>된 이벤트들
+&#160;
+UNIX계열의 시스템에서는 윈도우 메니저 동작<span class="br0">&#40;</span>즉 X11<span class="br0">&#41;</span>은 응용프로그램으로 소켓을 통해 이루어진다<span class="br0">&#40;</span>Unix Domain 혹은 TCP<span class="sy0">/</span>IP<span class="br0">&#41;</span><span class="sy0">,</span> 따라서 클라이언트는 이를 사용해 X 서버와 통신할 수 있다. 만일<span class="sy0">,</span> 쓰레드간 이벤트 포스팅<span class="br0">&#40;</span>event posting<span class="br0">&#41;</span>을 내부 socketpair<span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>를 통해 구현하려 한다면<span class="sy0">,</span> 이벤트 루프를 깨울 수 있는 활동은 다음의 <span class="nu0">2</span>가지로 압축된다.
+&#160;
+<span class="sy0">*</span> 소켓
+<span class="sy0">*</span> 타이머
+&#160;
+이 것들은 <span class="st0">''</span><span class="st0">'select(2)'</span><span class="st0">''</span> 시스템 호출이 하는 것과 정확히 일치한다. 일련의 디스크립터들을 지켜보면서 어떤 동작이 발생하거나 타임아웃<span class="br0">&#40;</span>설정가능한 타임아웃<span class="br0">&#41;</span>이 발생하는지를 한동안 주시하고 있는 것이다. <span class="kw5">Qt</span> 가 필요로 하는 것은 select 가 반환해주는 내용을 옳바른 <span class="kw5">QEvent</span> 파생클래스로 바꾸어 이벤트 큐에 넣는 것이다. 이제<span class="sy0">,</span> 이벤트 루프에 어떤 것들이 있는지 알겠는가? <span class="sy0">:</span><span class="br0">&#41;</span>
+&#160;
+<span class="sy0">==</span> 이벤트 루프 구동에 필요한 것들은? <span class="sy0">==</span>
+&#160;
+정말 많다. 하지만<span class="sy0">,</span> 전체적인 그림을 그려볼 수 있다면<span class="sy0">,</span> 어떤 클래스들이 있어야 하는지 추정할 수 있을 것이다.
+&#160;
+<span class="sy0">*</span> <span class="st0">''</span><span class="st0">'위젯 페인팅(Widgets painting) 및 상호작용(interaction)'</span><span class="st0">''</span> <span class="sy0">:</span> <span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">paintEvent</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 는 <span class="kw5">QPaintEvent</span> 객체를 전달될 때 호출되는 함수 이며<span class="sy0">,</span> 이는 <span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">update</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 을 호출함으로 생성된다<span class="br0">&#40;</span>즉 <span class="st0">'내부적으로'</span> 생성된다<span class="br0">&#41;</span>. 이처럼 다른 모든 종류의 상호작용<span class="br0">&#40;</span>키보드<span class="sy0">,</span> 마우스 등<span class="br0">&#41;</span>도 이벤트 루프가 있어야 전달될 수 있다.
+<span class="sy0">*</span> <span class="st0">''</span><span class="st0">'타이머(Timer)'</span><span class="st0">''</span><span class="sy0">:</span> 간단히 말해<span class="sy0">,</span> select<span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span> 혹은 이와 유사한 호출에서 타임아웃이 발생하면 이 이벤트가 발생한다. 따라서<span class="sy0">,</span> <span class="kw5">Qt</span> 로 하여금 이러한 호출을 우리를 대신해 이벤트 루프로 반환하도록만 하면 된다.
+<span class="sy0">*</span> <span class="st0">''</span><span class="st0">'네트워킹(Networking)'</span><span class="st0">''</span> <span class="sy0">:</span> 모든 저수준 <span class="kw5">Qt</span> 네트워킹 클래스들<span class="br0">&#40;</span><span class="kw5">QTcpSocket</span><span class="sy0">,</span> <span class="kw5">QUdpSocket</span><span class="sy0">,</span> <span class="kw5">QTcpServer</span><span class="sy0">,</span> 등<span class="br0">&#41;</span>은 비동기적으로 설계되었다. <span class="me1">read</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 를 호출하면 읽어들일 수 있는 만큼만 읽고 반환된다. <span class="me1">write</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 역시 나중에 쓰기동작을 예약만한다. 유의할 점은 동기 메소드<span class="br0">&#40;</span>synchronous method<span class="br0">&#41;</span>들이 제공된다는 점이다<span class="br0">&#40;</span>waitFor<span class="sy0">*</span> 계열의 메소드들<span class="br0">&#41;</span>. 하지만<span class="sy0">,</span> 이것들을 사용하게 되면<span class="sy0">,</span> 대기시 이벤트 루프가 먹통이 되기 때문에 곤란하다. <span class="me1">QNetworkAcessManager</span>와 같은 고수준 클래스들은 그 어떤 동기 API를 제공하지 않으며<span class="sy0">,</span> 이벤트 루프를 필요로 한다. 
+&#160;
+<span class="sy0">==</span> 이벤트 루프의 블록킹 <span class="sy0">==</span>
+&#160;
+왜 <span class="st0">''</span><span class="st0">'절대로 이벤트 루프를 블록킹하면 안되는지'</span><span class="st0">''</span> 에 대해 논의하기 전에<span class="sy0">,</span> 이 <span class="st0">&quot;블록킹&quot;</span> 의 의미에 대해 알아보기로 하자. 만일 어떤 버튼 위젯이 있는 클릭했을 때 시그널을 발생하도록 되어있다고 치자. 이 시그널에 연결된 다수의 작업을 진행하는 작업 객체의 슬롯이 있다면<span class="sy0">,</span> 버튼을 누르고 나면<span class="sy0">,</span> 스택 트레이스는 다음과 같은 것이다<span class="br0">&#40;</span>스택은 아래 방향으로 증가한다고 가정하자<span class="br0">&#41;</span>.
+&#160;
+<span class="co2"># main(int, char ''')</span>
+<span class="co2"># QApplication::exec();</span>
+<span class="co2"># […]</span>
+<span class="co2"># QWidget::event(QEvent ''')</span>
+<span class="co2"># Button::mousePressEvent(QMouseEvent''')</span>
+<span class="co2"># Button::clicked()</span>
+<span class="co2"># […]</span>
+<span class="co2"># Worker::doWork() </span>
+&#160;
+&#160;
+보통<span class="sy0">,</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> 함수에서 <span class="kw5">QApplication</span><span class="sy0">::</span><span class="me2">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> 을 호출하여 이벤트 루프가 시작된다<span class="br0">&#40;</span><span class="nu0">2</span>행<span class="br0">&#41;</span>. 윈도우 매니저가 마우스 클릭을 보내주면<span class="sy0">,</span> <span class="kw5">Qt</span> 커널이 이를 받아서 <span class="kw5">QMouseEvent</span> 로 변환해 <span class="kw5">QApplication</span><span class="sy0">::</span><span class="me2">notify</span><span class="br0">&#40;</span><span class="br0">&#41;</span>함수<span class="br0">&#40;</span>위 코드에서는 보이지 않음<span class="br0">&#41;</span>를 통해 위젯의 event<span class="br0">&#40;</span><span class="br0">&#41;</span> 메소드로 전달한다<span class="br0">&#40;</span><span class="nu0">4</span>행<span class="br0">&#41;</span>. 버튼 클래스의 구현이 event<span class="br0">&#40;</span><span class="br0">&#41;</span>를 따로 오버라이드 하지는 않았기 때문에<span class="sy0">,</span> 이 이벤트는 <span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">event</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 에 의해 검출되어 실제 마우스 클릭임을 인식하고<span class="sy0">,</span> 좀 더 구분된 이벤트 핸들러인 Button<span class="sy0">::</span><span class="me2">mousePressEvent</span><span class="br0">&#40;</span><span class="br0">&#41;</span>를 호출한다<span class="br0">&#40;</span><span class="nu0">5</span>행<span class="br0">&#41;</span>. 버튼 클래스는 이 메소드를 오버라이드 하고 있으며<span class="sy0">,</span> 내부에서 Button<span class="sy0">::</span><span class="me2">clicked</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 시그널을 발생시키며<span class="sy0">,</span> 최종적으로 작업 객체클래스의 Worker<span class="sy0">::</span><span class="me2">doWork</span> 슬롯이 호출된다<span class="br0">&#40;</span><span class="nu0">7</span>행<span class="br0">&#41;</span>
+&#160;
+작업 객체가 바쁘게 작업을 진행하고 있는 동안<span class="sy0">,</span> 이벤트 루프에는 무슨일이 생길까? 알 수 있을것이다. 아무일도 안생긴다<span class="sy0">!</span> 마우스 눌림 이벤트를 전달하고 나서 이벤트 핸들러가 반환될 때까지만을 기다리면서 멈추어 있다. 어쩔 수 없이 <span class="st0">''</span><span class="st0">'이벤트 루프를 블록킹'</span><span class="st0">''</span> 한 것이다.즉<span class="sy0">,</span> doWork<span class="br0">&#40;</span><span class="br0">&#41;</span> 슬롯이 반환되어 스택이 위쪽으로 줄어들어 이벤트 루프까지 간 다음 지연된 이벤트를 처리하게 되기 전까지는 그 어떤 이벤트도 더이상 전송되지 않는다.
+&#160;
+이벤트 전송이 멈추게 되면<span class="sy0">,</span> <span class="st0">''</span><span class="st0">'모든 위젯이 화면 갱신을 멈추며'</span><span class="st0">''</span> <span class="br0">&#40;</span><span class="kw5">QPaintEvent</span> 객체는 여전히 큐에 머물게 된다<span class="br0">&#41;</span><span class="sy0">,</span> <span class="st0">''</span><span class="st0">'타이머는 발생되지 않으며'</span><span class="st0">''</span><span class="sy0">,</span> <span class="st0">''</span><span class="st0">'네트워크 통신도 느려지고, 수신/전송 큐가 차다가, 시간이 지나면 멈추게 된다'</span><span class="st0">''</span>. 더구나 대부분의 윈도우 매니저들은 사용자의 응용프로그램이 더이상 이벤트를 처리하지 않는 것을 검출하여 사용자에게 <span class="sy0">*</span>응용프로그램이 응답하지 않음<span class="st0">&quot;을 알려준다. 이 때문에 이벤트에 반응하여 가능한 최대한 빨리 이벤트 루프로 반환되도록 하는 것이 중요하다. 
+&#160;
+== 이벤트 강제 디스패칭(Forcing event dispatching) ==
+그럼, 오랜 시간이 걸리는 작업을 하면서도 이벤트 루프가 블록킹되지 않도록 하려면 어떻게 해야 할까? 한가지 가능한 해답은 이 작업을 다른 쓰레드로 옮기는 것이다. 다음 섹션에서 어떻게 하면 되는지 알게 될 것이다. 또 다른 방법은 강제로 이벤트 루프가 실행되도록 하는 것이다. 이는 (반복적으로) QCoreApplication::processEvents() 를 블록킹하고 있는 작업 내에서 호출하는 것이다. 이 함수는 이벤트 큐에 있는 모든 이벤트를 처리하고 난 다음에서야 호출자(즉, 작업 객체의 작업 함수)로 반환된다.
+&#160;
+또 다른 방법은 [http://doc.qt.nokia.com/latest/qeventloop.html QEventLoop] 클래스를 사용하여 강제로 이벤트 루프로 재진입하는 것이다. QEventLoop::exec() 를 호출하여, QEventLoop::quit() 슬롯에 시그널을 연결하여 동작을 중간에 멈추게 할 수 있다.</span></pre></div></div>
+<p>QNetworkAccessManager qnam;
+QNetworkReply <b>reply = qnam.get(QNetworkRequest(QUrl(…)));</b>
+QEventLoop loop;
+QObject::connect(reply, SIGNAL (finished()), &amp;loop, SLOT (quit()));
+loop.exec();
+/<b> reply has finished, use it */</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QNetworkReply</span> 는 블록킹 API 를 제공하지 않으며<span class="sy0">,</span> 이벤트 루프가 돌고 있어야만 동작을 한다. 임시로 만든 <span class="kw5">QEventLoop</span> 로 들어간 후<span class="sy0">,</span> 응답이 완료되면<span class="sy0">,</span> 이 이벤트 루프가 종료된다.
+&#160;
+이벤트 루프로 재진입할 때는 <span class="st0">&quot;샛길로 빠지는&quot;</span> 경우를 조심해야 한다. 원치 않는 재귀 호출이 일어나기 때문이다. 만일<span class="sy0">,</span> <span class="kw5">QCoreApplication</span><span class="sy0">::</span><span class="me2">processEvents</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 를 doWork<span class="br0">&#40;</span><span class="br0">&#41;</span> 슬롯 내에서 호출하면<span class="sy0">,</span> 사용자는 버튼을 또 누를 수 있게 될 것이고<span class="sy0">,</span> 그렇게 되면 doWork<span class="br0">&#40;</span><span class="br0">&#41;</span> 슬롯이 <span class="st0">''</span><span class="st0">'또 다시'</span><span class="st0">''</span> 호출되기 때문이다.
+&#160;
+<span class="co2"># main(int, char''')</span>
+<span class="co2"># QApplication::exec()</span>
+<span class="co2"># […]</span>
+<span class="co2"># QWidget::event(QEvent ''')</span>
+<span class="co2"># Button::mousePressEvent(QMouseEvent''') </span>
+<span class="co2"># Button::clicked() </span>
+<span class="co2"># […]</span>
+<span class="co2"># Worker::doWork() // '''맨 처음의 내부 호출'''</span>
+<span class="co2"># QCoreApplication::processEvents() // '''수동으로 이벤트를 전달하게 되어..'''</span>
+<span class="co2"># […]</span>
+<span class="co2"># QWidget::event(QEvent * ) // '''다른 마우스 클릭이 버튼으로 또 전달 된다'''</span>
+<span class="co2"># Button::mousePressEvent(QMouseEvent *) </span>
+<span class="co2"># Button::clicked() // '''clicked() 시그널이 또 발생하고..'''</span>
+<span class="co2"># […]</span>
+<span class="co2"># Worker::doWork() // '''아앗! 슬롯으로 또 들어와 버린다!'''</span>
+&#160;
+이 문제에 대한 아주 간단한 해결방법은 <span class="kw5">QEventLoop</span><span class="sy0">::</span><span class="me2">ExcludeUserInputEvents</span> 값을 <span class="kw5">QCoreApplication</span><span class="sy0">::</span><span class="me2">processEvents</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 로 전달하는 것이다. 이렇게 하면<span class="sy0">,</span> 사용자의 입력과 관련한 이벤트들은 전달되지 않는다<span class="br0">&#40;</span>그냥 큐에 남아있는다<span class="br0">&#41;</span>.
+&#160;
+다행스럽게도<span class="sy0">,</span> 이와 같은 문제가 <span class="st0">''</span><span class="st0">'이벤트 제거'</span><span class="st0">''</span><span class="br0">&#40;</span><span class="kw5">QObject</span><span class="sy0">::</span><span class="me2">deleteLater</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>를 위해 이벤트 큐에 들어간 이벤트에 대해서는 적용되지 <span class="st0">''</span><span class="st0">'않는다'</span><span class="st0">''</span> 는 것이다<span class="br0">&#40;</span>다행스럽게도 삭제가 이루어질 것이다<span class="br0">&#41;</span>.</pre></div></div>
+<p>QObject *object = new QObject;
+object-&gt;deleteLater();
+QDialog dialog;
+dialog.exec();
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">''</span><span class="st0">'will not'</span><span class="st0">''</span> make object a dangling pointer <span class="br0">&#40;</span>the event loop entered by <span class="kw5">QDialog</span><span class="sy0">::</span><span class="me2">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span> is more nested than the deleteLater call<span class="br0">&#41;</span>. <span class="me1">The</span> same thing applies to local event loops started with <span class="kw5">QEventLoop</span>. <span class="me1">The</span> only notable exception I<span class="st0">'ve found to this rule (as of Qt 4.7.3) is that if deleteLater is called when NO event loop is running, then the first event loop entered will pick up the event and delete the object. This is pretty much reasonable, since Qt does not know about any &quot;outer&quot; loop that will eventually perform the deletion, and therefore deletes the object immediately.
+위 코드는 길잃은 포인터(dangling pointer) 문제를 유발하지 '</span><span class="st0">''</span>않는다<span class="st0">''</span><span class="st0">'(QDialog::exec()에 의해 들어간 이벤트 루프는 deleteLater 호출 보다 더 안쪽에 있다). 유사한 내용이 QEventLoop 로 시작된 임시 이빈트 루프에도 적용될 수 있다. 눈여겨 볼 점은 (Qt 4.7.3버젼 기준) 이벤트 루프가 실행되지 않늘 때 deleteLater 를 호출하게 되면, 맨 처음 이벤트 루프로 들어갈 때 이 이벤트가 수집되어 객체를 삭제한다는 것이다. Qt 가 그 어떤 최종적으로 삭제를 수행하는 &quot;외부&quot; 루프에 대해 모르기 때문에 객체의 삭제는 곧바로 일어나게 되므로, 꽤 논리적이라 할 수 있다.
+&#160;
+.
+&#160;
+= Qt 쓰레드 클래스들 =
+&#160;
+&lt;blockquote&gt;컴퓨터는 상태기계이다. 쓰레드는 상태기계를 프로그래밍 할 줄 모르는 사람들을 위한 것이다.
+— 앤론 콕스(Alan Cox)
+&lt;/blockquote&gt;
+Qt 는 많은 세월동안 쓰레드를 지원해 왔다(2000년 10월 22일 릴리즈된 Qt 2.2 부터 QThread 클래스가 등장하였다). 4.0 이 릴리즈되면서는 모든 플랫폼에서 쓰레드 지원이 이루어졌다(하지만, 이 기능은 끌 수가 있다. [http://doc.qt.nokia.com/latest/fine-tuning-features.html 여기] 를 참조). Qt 는 이제 쓰레드와 관련한 몇가지 클래스를 더 지원하고 있다. 개괄 부터 시작해 보자.
+&#160;
+== QThread ==
+&#160;
+[http://doc.qt.nokia.com/latest/qthread.html QThread] 는, Qt 쓰레드 지원의 핵심이 되는 저수준 클래스이다. QThread 객체는 하나의 쓰레드 실행을 표현한다. Qt 가 cross-platform 이기 때문에, QThread 는 모든 플랫폼 종속적인 코드들을 숨긴 상태로 서로 다른 운영체제의 사용이 가능하다.
+&#160;
+QThread를 사용해 코드를 어떤 쓰레드에서 실행하려면, 먼저 이 클래스를 상속 받아 QThread::run() 메소드를 오버라이드해야 한다.</span></pre></div></div>
+<p>class Thread&#160;: public QThread {
+protected:
+</p>
+<pre>void run() {
+/* 여기 사용자의 실행코드가 들어간다. */
+}
+</pre>
+<p>};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">그런 다음 아래와 같이</pre></div></div>
+<p>Thread <b>t = new Thread;</b>
+t-&gt;start(); // start(), not run()!
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">하여 새로운 쓰레드를 시작할 수 있다. <span class="kw5">Qt</span> <span class="nu16">4.4</span> 부터는 <span class="kw5">QThread</span> 가 더이상 가상 클래스가 아님에 유의하자. 가상 메소드 <span class="kw5">QThread</span><span class="sy0">::</span><span class="me2">run</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 은 내부적으로 <span class="kw5">QThread</span><span class="sy0">::</span><span class="me2">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 을 호출하여 <span class="st0">''</span>쓰레드의 이벤트 루프<span class="st0">''</span> 를 시작하도록 되었다. 
+&#160;
+<span class="sy0">==</span> <span class="kw5">QRunnable</span> 과 <span class="kw5">QThreadPool</span> <span class="sy0">==</span>
+<span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/latest/qrunnable.html QRunnable] 은 경량의 추상 클래스이며 &quot;실행 한 다음 잊어 버리기&quot; 방식으로 임의 작업을 시작하는 데 사용될 수 있다. 이를 위해서 모든 QRunnable 의 파생클래스는 run() 순수 가상 메소드를 오버라이딩 해야 한다.</span></pre></div></div>
+<p>class Task&#160;: public QRunnable {
+public:
+</p>
+<pre>void run() {
+/<b> 사용자의 실행할 구현이 여기에 온다 */</b>
+}
+</pre>
+<p>};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">실제로 <span class="kw5">QRunnable</span> 객체를 실행하기 위해서는<span class="sy0">,</span> 쓰레드의 풀<span class="br0">&#40;</span>pool<span class="br0">&#41;</span>을 관리하는 <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/latest/qthreadpool.html QThreadPool] 클래스를 사용해야 한다. QThreadPool::start(runnable) 식으로 호출하여 QRunnable 객체를 QThreadPool의 실행큐에 집어 넣는다. 어떤 쓰레드라도 사용가능한 상태가 되자마자, 이 QRunnable 객체는 쓰레드로 전달되어 실행된다. 모든 Qt 응용프로그램은 전역 쓰레드 풀을 가지고 있으며, QThreadPool::globalInstance() 을 호출해 이를 얻을 수 있지만, 언제라도 QThread 인스턴스를 직접 만들어 명시적으로 사용할 수 도 있다.</span>
+&#160;
+주의 할 점은 <span class="kw5">QRunnable</span> 은 <span class="kw5">QObject</span> 파생 클래스가 아니므로 시그널<span class="sy0">/</span>슬롯을 사용할 수 없고<span class="sy0">,</span> 다른 컴포넌트와 무언가를 주고 받기 위해서는 저수준 쓰레딩 프리미티브<span class="br0">&#40;</span>결과를 수집하기 위한 뮤텍스에 의해 보호되는 큐와 같은..<span class="br0">&#41;</span>을 사용해 직접 통신코드를 구현해야 한다.
+&#160;
+<span class="sy0">==</span> QtConcurrent <span class="sy0">==</span>
+&#160;
+<span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/latest/threads-qtconcurrent.html QtConcurrent] 은 고수준 API 로서, QThreadPool 위에 구현되었으며, 대부분의 [http://en.wikipedia.org/wiki/Map_(higher-order_function map]), [http://en.wikipedia.org/wiki/Fold_(higher-order_function reduce]), 및 [http://en.wikipedia.org/wiki/Filter_(higher-order_function filter]) 과 같은 병렬 컴퓨팅 패턴을 다루는 데 있어 유용하다. 이 역시, QtConcurrent::run() 메소드를 통해서 다른 쓰레드에서 임의 함수를 쉽게 실행 할 수 있다.</span>
+&#160;
+<span class="kw5">QThread</span> 나 <span class="kw5">QRunnable</span> 과는 달리 QtConcurrent 는 그 어떤 저수준 동기화 객체를 사용할 필요가 없다. 대신<span class="sy0">,</span> 모든 QtConcurrent 메소드들은 <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/latest/qfuture.html QFuture] 을 반환하는데, 이를 사용하여 작업 상황(진행 상태)를 질의할 수 있으며, 진행 중인 작업을 pause/resume/cancel 할 수 있다. 또한 이것은 작업의 ''결과'' 도 포함하고 있다.</span>
+&#160;
+<span class="sy0">==</span> 기능 비교 <span class="sy0">==</span>
+&#160;
+<span class="br0">&#123;</span><span class="sy0">|</span>
+<span class="sy0">!</span>
+<span class="sy0">!</span><span class="kw5">QThread</span>
+<span class="sy0">!</span><span class="kw5">QRunnable</span>
+<span class="sy0">!</span>QtConcurrent<span class="sy0">&lt;</span>ref<span class="sy0">&gt;</span>QtConcurrent<span class="sy0">::</span><span class="me2">run</span> 은 예외. <span class="kw5">QRunnable</span> 을 사용해 구현되었으므로 장<span class="sy0">/</span>단점이 있다.
+<span class="sy0">&lt;/</span>ref<span class="sy0">&gt;</span>
+<span class="sy0">|-</span>
+<span class="sy0">|</span>고수준 API
+<span class="sy0">|</span>✘
+<span class="sy0">|</span>✘
+<span class="sy0">|</span>✔
+<span class="sy0">|-</span>
+<span class="sy0">|</span>Job 지향
+<span class="sy0">|</span>✘
+<span class="sy0">|</span>✔
+<span class="sy0">|</span>✔
+<span class="sy0">|-</span>
+<span class="sy0">|</span>pause<span class="sy0">/</span>resume<span class="sy0">/</span>cancel 기본 지원
+<span class="sy0">|</span>✘
+<span class="sy0">|</span>✘
+<span class="sy0">|</span>✔
+<span class="sy0">|-</span>
+<span class="sy0">|</span>서로 다른 우선순위에서 실행 가능
+<span class="sy0">|</span>✔
+<span class="sy0">|</span>✘
+<span class="sy0">|</span>✘
+<span class="sy0">|-</span>
+<span class="sy0">|</span>이벤트 루프를 실행 가능
+<span class="sy0">|</span>✔
+<span class="sy0">|</span>✘
+<span class="sy0">|</span>✘
+<span class="sy0">|</span><span class="br0">&#125;</span>
+&#160;
+<span class="sy0">=</span> 쓰레드와 <span class="kw5">QObject</span> 객체 <span class="sy0">=</span>
+&#160;
+<span class="sy0">==</span> 쓰레드 별 이벤트 루프 <span class="sy0">==</span>
+&#160;
+지금까지 우리는 <span class="st0">&quot;''소위'' 이벤트 루프 라는 것&quot;</span> 에 대해 얘기 했었다. <span class="kw5">Qt</span> 응용프로그램에는 오직 하나의 이벤트 루프만이 있는 것처럼 여겨지는 경우가 많다. 하지만<span class="sy0">,</span> 실제로는 아니다. <span class="kw5">QThread</span> 객체는 자기 자신만의 이벤트 루프를 자신의 쓰레드에서 실행한다. 그러므로 <span class="st0">''</span><span class="st0">'메인 이벤트 루프'</span><span class="st0">''</span> 라고 하는 것만이 main<span class="br0">&#40;</span><span class="br0">&#41;</span>이 호출되면서 생성된것이고<span class="sy0">,</span> <span class="kw5">QCoreApplication</span><span class="sy0">::</span><span class="me2">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 에 의해서 시작된다고 할 수 있다. 이는 다른 말로 <span class="st0">''</span><span class="st0">'GUI 쓰레드'</span><span class="st0">''</span> 라고도 하는데<span class="sy0">,</span> 이는 GUI 와 관련한 작업이 허용되는 유일한 쓰레드이기 때문이다. 쓰레드별 이벤트 루프는 <span class="kw5">QThread</span><span class="sy0">::</span><span class="me2">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> 에 의해 실행된다.</pre></div></div>
+<p>class Thread&#160;: public QThread {
+protected:
+</p>
+<pre>void run() {
+/* … 초기화 작업 … */
+</pre>
+<p>exec();
+</p>
+<pre>}
+</pre>
+<p>};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">앞서 언급한 바<span class="sy0">,</span> <span class="kw5">Qt</span> <span class="nu16">4.4</span> 부터는 <span class="kw5">QThread</span><span class="sy0">::</span><span class="me2">run</span><span class="br0">&#40;</span><span class="br0">&#41;</span>가 더 이상 순수 가상 메소드가 아니라 <span class="kw5">QThread</span><span class="sy0">::</span><span class="me2">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 을 실행하는 보통 메소드가 되었다.
+&#160;
+<span class="me1">A</span> thread event loop delivers events <span class="kw1">for</span> all QObjects that are <span class="st0">''</span><span class="st0">'living'</span><span class="st0">''</span> in that thread<span class="sy0">;</span> <span class="kw1">this</span> includes<span class="sy0">,</span> by <span class="kw1">default</span><span class="sy0">,</span> all objects that are created into that thread<span class="sy0">,</span> or that were moved to that thread <span class="br0">&#40;</span>more info about <span class="kw1">this</span> later<span class="br0">&#41;</span>. <span class="me1">We</span> also say that the <span class="st0">''</span><span class="st0">'thread affinity'</span><span class="st0">''</span> of a <span class="kw5">QObject</span> is a certain thread<span class="sy0">,</span> meaning that the object is living in that thread. <span class="me1">This</span> applies to objects which are built in the constructor of a <span class="kw5">QThread</span> object<span class="sy0">:</span>
+쓰레드의 이벤트 루프는 이벤트를 그 쓰레드에서 <span class="st0">''</span><span class="st0">'운용되는(혹은 살아가는)'</span><span class="st0">''</span> 모든 <span class="kw5">QObject</span> 객체들에 전달된다. 여기에는 디폴트로 그 쓰레드에서 생성된 모든 객체와 다른 쓰레드에서 생성되었다가 옮겨진 객체가 포함된다<span class="br0">&#40;</span>옮겨지는 경우에 대해서는 아래에서 좀 더 상세한 정보를 다룬다<span class="br0">&#41;</span>. 어떤 <span class="kw5">QObject</span> 객체의 <span class="st0">''</span><span class="st0">'쓰레드 친화도(thread affinity)'</span><span class="st0">''</span> 가 특정 쓰레드다.. 라고 하기도 하는데<span class="sy0">,</span> 이는 이 객체가 그 쓰레드에서 살아가고 있다는 것을 의미한다. 이는 <span class="kw5">QThread</span> 객체의 생성자에서 생성된 객체들에 적용된다.</pre></div></div>
+<p>class MyThread&#160;: public QThread
+{
+public:
+</p>
+<pre>MyThread()
+{
+otherObj = new QObject;
+}
+</pre>
+<p>private:
+</p>
+<pre>QObject obj;
+QObject *otherObj;
+QScopedPointer&lt;QObject&gt; yetAnotherObj;
+</pre>
+<p>};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">What<span class="st0">'s the thread affinity of obj, otherObj, yetAnotherObj after we create a MyThread object? We must look at the thread that created them: it'</span>s the thread that ran the MyThread constructor. <span class="me1">Therefore</span><span class="sy0">,</span> all three objects are <span class="st0">''</span><span class="st0">'not'</span><span class="st0">''</span> living in the MyThread thread<span class="sy0">,</span> but in the thread that created the MyThread instance <span class="br0">&#40;</span>which<span class="sy0">,</span> by the way<span class="sy0">,</span> is where the instance is living as well<span class="br0">&#41;</span>.
+위에서<span class="sy0">,</span> MyThread 객체를 생성한 다음 obj<span class="sy0">,</span> otherObj<span class="sy0">,</span> 및 yetAnotherObj 객체 각각의 쓰레드 친화도라는 것이 어떤 의미일까? 각각을 생성하고 있는 쓰레드에 주목해야 한다. 이는 MyThread 생성자를 실행하는 가 된다. 따라서<span class="sy0">,</span> 이 <span class="nu0">3</span>개의 객체는 모두 MyThread 쓰레드에서 <span class="st0">''</span><span class="st0">'살아가지 않는다'</span><span class="st0">''</span><span class="sy0">,</span> 대신 MyThread 인스턴스를 생성한 쓰레드에서 <span class="st0">''</span><span class="st0">'살아간다'</span><span class="st0">''</span> <span class="br0">&#40;</span>그런데<span class="sy0">,</span> 이 MyThread 객체 자체도 자신을 생성한 쓰레드에서 살아간다고 할 수 있다<span class="sy0">!</span><span class="br0">&#41;</span>.
+&#160;
+<span class="me1">We</span> can query anytime the thread affinity of a <span class="kw5">QObject</span> by calling <span class="kw5">QObject</span><span class="sy0">::</span><span class="me2">thread</span><span class="br0">&#40;</span><span class="br0">&#41;</span>. <span class="me1">Notice</span> that QObjects created before a <span class="kw5">QCoreApplication</span> object have <span class="st0">''</span><span class="st0">'no thread affinity'</span><span class="st0">''</span><span class="sy0">,</span> and therefore no event dispatching will be done <span class="kw1">for</span> them <span class="br0">&#40;</span>in other words<span class="sy0">,</span> <span class="kw5">QCoreApplication</span> builds up the <span class="kw5">QThread</span> object that represents the main thread<span class="br0">&#41;</span>.
+어떤 <span class="kw5">QObject</span> 객체의 쓰레드 친화도는 언제라도 <span class="kw5">QObject</span><span class="sy0">::</span><span class="me2">thread</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 를 호출하여 질의할 수 있다. <span class="kw5">QCoreApplication</span> 객체보다 앞서 생성된 그 어떤 <span class="kw5">QObject</span> 객체들은 <span class="st0">''</span><span class="st0">'그 어떤 쓰레드 친화도도 없다'</span><span class="st0">''</span>. 그리고<span class="sy0">,</span> 이런 이유로 이들 객체에는 그 어떤 이벤트도 전달되지 않는다<span class="br0">&#40;</span>다시 말해<span class="sy0">,</span> <span class="kw5">QCoreApplication</span> 은 메인 쓰레드를 담당하는 <span class="kw5">QThread</span> 객체를 직접 구축한다<span class="br0">&#41;</span>.
+&#160;
+<span class="br0">&#91;</span><span class="br0">&#91;</span>Image<span class="sy0">:</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/images/threadsandobjects.png|http://doc.qt.nokia.com/4.7/images/threadsandobjects.png]]</span>
+&#160;
+We can use the thread<span class="sy0">-</span>safe <span class="kw5">QCoreApplication</span><span class="sy0">::</span><span class="me2">postEvent</span><span class="br0">&#40;</span><span class="br0">&#41;</span> method <span class="kw1">for</span> posting an event <span class="kw1">for</span> a certain object. <span class="me1">This</span> will enqueue the event in the event loop of the thread the object is living in<span class="sy0">;</span> therefore<span class="sy0">,</span> the event will not be dispatched unless that thread has a running event loop.
+쓰레드 안전한 <span class="kw5">QCoreApplication</span><span class="sy0">::</span><span class="me2">postEvent</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 를 사용해 이벤트를 임의 객체의 이벤트 규에 추가<span class="br0">&#40;</span>posting<span class="br0">&#41;</span>할 수 있다. 이렇게 하면 이벤트를 객체가 살아가는 쓰레드의 이벤트 루프에 집어넣게 된다. 하지만<span class="sy0">,</span> 쓰레드가 이벤트 루프를 실행하고 있지 않다면 이벤트는 전달되지 않을 것이다.
+&#160;
+<span class="me1">It</span> is very important to understand that <span class="kw5">QObject</span> and all of its subclasses <span class="st0">''</span><span class="st0">'are not thread-safe'</span><span class="st0">''</span> <span class="br0">&#40;</span>although they can be reentrant<span class="br0">&#41;</span><span class="sy0">;</span> therefore<span class="sy0">,</span> you can not access a <span class="kw5">QObject</span> from more than one thread at the same <span class="kw3">time</span><span class="sy0">,</span> unless you serialize all accesses to the object<span class="st0">'s internal data (for instance, by protecting it with a mutex). Remember that the object may be handling events dispatched by the event loop of the thread it is living in while you'</span>re accessing it from another thread<span class="sy0">!</span> For the same reason<span class="sy0">,</span> you can<span class="st0">'t delete a QObject from another thread, but you must use QObject::deleteLater(), which will post an event that will ultimately cause its deletion by the thread the object is living in.
+Object 및 이의 파생클래스들은 *쓰레드 안전하지 않다*는 점을 반드시 이해하여야 한다. 따라서, 객체의 내부 데이터로의 접근을 직렬화 하지 않는다면(이를 테면, 뮤텍스로 보호하는 …), 하나 이상의 쓰레드로 부터 QObject 객체로 접근해서는 안된다. 다른 쓰레드로 부터 객체에 접근하는 동안 객체가 자신이 살아가는 쓰레드의 이벤트 루프에 의해 전달된 이벤트를 처리할 수 도 있음을 반드시 기억해야 한다! 같은 이유로 객체가 살아가는 쓰레드 이외의 다른 쓰레드에서 객체를 할당해제 할 수 없다. 이를 위해서는 QObject::deleteLater() 을 호출해서 객체가 살아가는 쓰레드로 할당 해제에 관한 이벤트를 큐에 집어넣고(posting), 최종적으로 자신의 쓰레드에서 할당해제가 이루어지도록 해야만 한다.
+&#160;
+Moreover, QWidget and all of its subclasses, along with other GUI-related classes (even not QObject-based, like QPixmap) '</span><span class="st0">''</span>are not reentrant<span class="st0">''</span><span class="st0">' either: they can be used exclusively from the GUI thread.
+더구나, QWidget 및 이의 모든 파생클래스는, 다른 GUI 관련 클래스들(심지어 QObject 기반이 아닌 QPixmap과 같은 클래스들)과 마찬가지로 '</span><span class="st0">''</span>재진입가능하지 않다<span class="st0">''</span><span class="st0">'. 이들은 오직 GUI 쓰레드에서만 배타적으로 사용되어져야만 한다.
+&#160;
+We can change a QObject'</span>s affinity by calling <span class="kw5">QObject</span><span class="sy0">::</span><span class="me2">moveToThread</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="kw1">this</span> will change the affinity of the object and of its children. <span class="me1">Since</span> <span class="kw5">QObject</span> is not thread<span class="sy0">-</span>safe<span class="sy0">,</span> we must use it from the thread the object is living in<span class="sy0">;</span> that is<span class="sy0">,</span> you can only <span class="st0">''</span><span class="st0">'push'</span><span class="st0">''</span> objects from the thread they<span class="st0">'re living in to other threads, and not '</span><span class="st0">''</span>pull<span class="st0">''</span><span class="st0">' them or move them around from other threads. Moreover, Qt requires that the child of a QObject must live in the same thread where the parent is living. This implies that:
+QObject의 진화도는 QObject::moveToThread() 를 호출하여 수정할 수 있다. 이렇게 하면, 객체 자신 뿐 아니라, 자식들 까지 자신이 살아갈 쓰레드를 바꾸게 된다. 즉, 이 객체들을 자신이 살아가는 쓰레드로 부터 전혀 다른 쓰레드로 '</span><span class="st0">''</span>집어넣는<span class="st0">''</span><span class="st0">' 것이지만, 그 반대로 다른 쓰레드로 부터 '</span><span class="st0">''</span>끌어오는<span class="sy0">*</span>일은 불가능 하다. 더구나 <span class="kw5">Qt</span> 는 <span class="kw5">QObject</span> 의 자식들이 부모가 살아가는 쓰레드와 동일한 쓰레드에서 살아가도록 하는 것을 요구한다. 이는 암묵적으로 다음을 의미한다<span class="sy0">:</span>
+&#160;
+<span class="st0">''</span><span class="st0">' you can'</span>t use <span class="kw5">QObject</span><span class="sy0">::</span><span class="me2">moveToThread</span><span class="br0">&#40;</span><span class="br0">&#41;</span> on a object which has a parent<span class="sy0">;</span>
+<span class="sy0">*</span> you must not create objects in a <span class="kw5">QThread</span> <span class="kw2">using</span> the <span class="kw5">QThread</span> object itself as their parent<span class="sy0">:</span>
+<span class="sy0">*</span> <span class="kw5">QObject</span><span class="sy0">::</span><span class="me2">moveToThread</span><span class="br0">&#40;</span><span class="br0">&#41;</span>를 부모를 가지고 있는 객체에 대해 사용할 수 없다<span class="sy0">;</span>
+<span class="sy0">*</span> <span class="kw5">QThread</span> 객체 자신을 부모로 하는 객체를 <span class="kw5">QThread</span> 내에서 만들 수 없다.</pre></div></div>
+<p>class Thread&#160;: public QThread {
+</p>
+<pre>void run() {
+QObject obj = new QObject(this); // 잘못된것[[Image:|Image:]]!
+}
+</pre>
+<p>};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">This is because the <span class="st0">''</span><span class="st0">'QThread object is living in another thread'</span><span class="st0">''</span><span class="sy0">,</span> namely<span class="sy0">,</span> the one in which it was created.
+그 이유는 <span class="st0">''</span><span class="st0">'QThread 객체는 다른 쓰레드에서 살아가고 있기 때문*이다. 즉 자신을 생성한 쓰레드말이다.
+&#160;
+Qt also requires that all objects living in a thread are deleted before the QThread object that represents the thread is destroyed; this can be easily done by creating all the objects living in that thread on the QThread::run() method'</span>s stack.
+<span class="kw5">Qt</span> 에서는 <span class="kw5">QThread</span> 객체가 파괴된기 전에 이 객체가 나타내는 쓰레드에서 살아가던 모든 객체들이 파괴되는 것을 요구한다. 이는 <span class="kw5">QThread</span><span class="sy0">::</span><span class="me2">run</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 메소드의 스택에서 그 쓰레드에서 살아가는 모든 객체들을 생성하기만 하면 쉽게 구현된다. 
+&#160;
+<span class="sy0">==</span> 쓰레드간의 시그널과 슬롯 <span class="sy0">==</span>
+Given these premises<span class="sy0">,</span> how <span class="kw1">do</span> we call methods on QObjects living in other threads? <span class="kw5">Qt</span> offers a very nice and clean solution<span class="sy0">:</span> we post an event in that thread<span class="st0">'s event queue, and the handling of that event will consist in invoking the method we'</span>re interested in <span class="br0">&#40;</span><span class="kw1">this</span> of course requires that the thread has a running event loop<span class="br0">&#41;</span>. <span class="me1">This</span> facility is built around the method introspection provided by moc<span class="sy0">:</span> therefore<span class="sy0">,</span> only <span class="kw2">signals</span><span class="sy0">,</span> <span class="kw2">slots</span> and methods marked with the Q_INVOKABLE macro are invokable from other threads.
+어떻게 하면 다른 쓰레드에서 살아가는 <span class="kw5">QObject</span> 객체들의 메소드를 호출할 수 있을까? <span class="kw5">Qt</span> 는 깔끔한 해결책을 제공하고 있다. 즉<span class="sy0">,</span> 처리되기 원하는 쓰레드의 이벤트 큐에 이벤트를 추가하고<span class="br0">&#40;</span>posting<span class="br0">&#41;</span><span class="sy0">,</span> 그 쓰레드에서 이벤트가 처리될 때 원하는 메소드가 호출되도록 하는 것이다<span class="br0">&#40;</span>이렇게 하려면 물론<span class="sy0">,</span> 해당 쓰레드의 <span class="kw5">QThread</span>가 이벤트 루프를 실행하고 있어야만 한다<span class="br0">&#41;</span>. 이는 moc 에 의해 자동 생성되는 메소드로 구현되기 때문에<span class="sy0">,</span> 오직 시그날과 슬롯 및 Q_INVOKABLE 매크로로 표기된 메소들만이 다른 쓰레드에서 호출가능하게 된다<span class="br0">&#40;</span>역자주<span class="sy0">:</span> <span class="kw5">Qt</span> <span class="nu0">4</span>.<span class="me1">x</span>기준으로 QMetaCallEvent 라는 유형의 이벤트가 사용되고 있다<span class="br0">&#41;</span>.
+&#160;
+<span class="me1">The</span> <span class="kw5">QMetaObject</span><span class="sy0">::</span><span class="me2">invokeMethod</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">static</span> method does all the work <span class="kw1">for</span> us<span class="sy0">:</span>
+<span class="kw5">QMetaObject</span><span class="sy0">::</span><span class="me2">invokeMethod</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 정적 메소드는 이런일을 가능하게 해 준다.</pre></div></div>
+<p>QMetaObject::invokeMethod(object, "methodName",
+</p>
+<pre>Qt::QueuedConnection,
+Q_ARG(type1, arg1),
+Q_ARG(type2, arg2));
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Notice that since the arguments need to be copied in the event which is built behind the scenes<span class="sy0">,</span> their types need to provide a <span class="kw2">public</span> constructor<span class="sy0">,</span> a <span class="kw2">public</span> destructor and a <span class="kw2">public</span> copy constructor<span class="sy0">,</span> and must be registered within <span class="kw5">Qt</span> type <span class="kw3">system</span> by <span class="kw2">using</span> the qRegisterMetaType<span class="br0">&#40;</span><span class="br0">&#41;</span> function.
+이벤트가 처리되는 과정에서 암시적으로 위 함수의 인자들이 복사되어질 필요가 있음에 유의하자. 따라서<span class="sy0">,</span> 이 인자들의 형<span class="br0">&#40;</span>type<span class="br0">&#41;</span>은<span class="sy0">,</span> <span class="kw5">Qt</span>의 형 체계<span class="br0">&#40;</span>type <span class="kw3">system</span><span class="br0">&#41;</span>하에서<span class="sy0">,</span> qRegisterMetaType<span class="br0">&#40;</span><span class="br0">&#41;</span>을 사용해 공용 복사생성자<span class="sy0">,</span> 공용 소멸자 및 공용 복사생성자가 반드시 등록되어져 있어야 한다.
+&#160;
+<span class="me1">Signals</span> and <span class="kw2">slots</span> across threads work in a similar way. <span class="me1">When</span> we <span class="kw2">connect</span> a <span class="kw4">signal</span> to a slot<span class="sy0">,</span> the fifth argument of <span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span> is used to specify the connection type<span class="sy0">:</span>
+쓰레드간 시그널 슬롯 역시 이와 유사한 방식으로 동작한다. 어떤 시그널을 슬롯에 연결할 때<span class="sy0">,</span> <span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span> 함수의 <span class="nu0">5</span> 번째 인자는 연결유형<span class="br0">&#40;</span>connection type<span class="br0">&#41;</span>의 지정에 사용된다. 
+&#160;
+<span class="st0">''</span><span class="st0">' a '</span><span class="st0">''</span>direct connection<span class="st0">''</span><span class="st0">' means that the slot is always invoked directly by the thread the signal is emitted from;
+* a '</span><span class="st0">''</span>queued connection<span class="st0">''</span><span class="st0">' means that an event is posted in the event queue of the thread the receiver is living in, which will be picked up by the event loop and will cause the slot invocation sometime later;
+* a '</span><span class="st0">''</span>blocking queued connection<span class="st0">''</span><span class="st0">' is like a queued connection, but the sender thread blocks until the event is picked up by the event loop of the thread the receiver is living in, the slot is invoked, and it returns;
+* an '</span><span class="st0">''</span>automatic connection<span class="st0">''</span><span class="st0">' ('</span><span class="st0">'the default'</span><span class="st0">') means that if the thread the receiver is living in is the same as the current thread, a direct connection is used; otherwise, a queued connection is used.
+* '</span><span class="st0">''</span>직접 연결<span class="br0">&#40;</span>direct connection<span class="br0">&#41;</span><span class="st0">''</span><span class="st0">' 은 시그널이 발생되어진 쓰레드에서 항상 직접 슬롯을 호출하는 것을 의미한다(슬롯의 실행쓰레드는 시그널 발생 쓰레드)
+* '</span><span class="st0">''</span>큐 연결<span class="br0">&#40;</span>queued connection<span class="br0">&#41;</span><span class="st0">''</span><span class="st0">' 은 수신측 쓰레드의 이벤트 큐에 이벤트가 추가되고 나중에 이벤트 루프에서 빠질 때 슬롯이 호출되는 것을 의미한다(슬롯의 실행쓰레드는 슬롯 객체의 이벤트 루프가 실행되는 쓰레드)
+* '</span><span class="st0">''</span>블록킹 큐 연결<span class="br0">&#40;</span>blocking queued connection<span class="br0">&#41;</span><span class="st0">''</span><span class="st0">' 은 '</span><span class="st0">''</span>큐 연결<span class="sy0">*</span>유형과 유사하지만<span class="sy0">,</span> 시그널 발생측이 슬롯의 호출종료시까지 블록킹되는 것이 다르다<span class="br0">&#40;</span>슬롯의 실행쓰레드는 슬롯 객체의 이벤트 루프가 실행되는 쓰레드<span class="br0">&#41;</span>
+<span class="st0">''</span><span class="st0">' '</span><span class="st0">''</span>자동 연결<span class="br0">&#40;</span>automatic connection<span class="br0">&#41;</span><span class="st0">''</span><span class="st0">' (_디폴트_값임!) 은 슬롯이 시그널 발생측과 같은 쓰레드면 직접 연결되고, 그 외의 경우에는 큐 연결이 사용된다(슬롯의 실행쓰레드는 시그널 발생시 결정된다)
+&#160;
+In every case, keep in mind '</span><span class="st0">'the thread the emitting object is living in'</span><span class="st0">' has no importance at all! In case of an automatic connection, Qt looks at the thread that invoked the signal and compares it with the thread the receiver is living in to determine which connection type it has to use. In particular, the [http://doc.qt.nokia.com/4.7/threads-qobject.html current Qt documentation] (4.7.1) '</span><span class="st0">''</span>is simply wrong<span class="st0">''</span><span class="st0">' when it states:
+그 어떤 경우에라도 유념해야 할 사항은 _시그널을 발생시키는 객체가 살고 있는 쓰레드_는 전혀 중요하지 않다는 점이다! 자동 연결의 경우에도, Qt 는 시그널을 실행하는 쓰레드를 기준으로 이를 수신측 객채가 살고 있는 쓰레드와 비교하여 어떤 연결 유형을 쓸 것인지를 결정한다. [http://doc.qt.nokia.com/4.7/threads-qobject.html current Qt documentation] (4.7.1) 문서에 나와 있는 내용은 잘못되어있으므로 주의해야 한다.
+&#160;
+'</span><span class="st0">'Auto Connection (default) The behavior is the same as the Direct Connection, if the emitter and receiver are in the same thread. The behavior is the same as the Queued Connection, if the emitter and receiver are in different threads.'</span><span class="st0">'
+'</span><span class="st0">'자동 연결(auto connection, 기본값)유형의 동작은 시그널 발생측과 수신측이 동일 쓰레드이면(즉, 쓰레드 친화도가 동일하다면) 직접 연결(direct connection)의 동작과 동일하지만, 다른 쓰레드라면 큐 연결(queued connection)과 같아진다'</span><span class="st0">'
+&#160;
+because the emitter object'</span>s thread affinity does not matter. <span class="me1">For</span> instance<span class="sy0">:</span>
+위의 문장이 잘못된 이유는<span class="sy0">,</span> 시그널 발생 객체의 쓰레드 친화도는 동작의 차이와는 아무 상관이 없기 때문이다<span class="sy0">,</span> 예를 들면<span class="sy0">,</span></pre></div></div>
+<p>class Thread&#160;: public QThread
+{
+</p>
+<pre>Q_OBJECT
+</pre>
+<p>signals:
+</p>
+<pre>void aSignal();
+</pre>
+<p>protected:
+</p>
+<pre>void run() {
+emit aSignal();
+}
+</pre>
+<p>};
+</p><p>/* … */
+Thread thread;
+Object obj;
+QObject::connect(&amp;thread, SIGNAL (aSignal()), &amp;obj, SLOT (aSlot()));
+thread.start();
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">The <span class="kw4">signal</span> aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span> will be emitted by the <span class="kw1">new</span> thread <span class="br0">&#40;</span>represented by the Thread object<span class="br0">&#41;</span><span class="sy0">;</span> since it is not the thread the Object object is living in <span class="br0">&#40;</span>which<span class="sy0">,</span> by the way<span class="sy0">,</span> <span class="st0">''</span><span class="st0">'is the same thread the Thread object is living in'</span><span class="st0">''</span><span class="sy0">,</span> just to stress that the sender<span class="st0">'s thread affinity doesn'</span>t matter<span class="br0">&#41;</span><span class="sy0">,</span> a <span class="st0">''</span><span class="st0">'queued connection'</span><span class="st0">''</span> will be used.
+위에서 aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span> 시그널은 Thread 객체로 표현되는 새로운 쓰레드에서 발생하게 된다. 이 쓰레드 자체는 Object형의 obj객체가 살아가는 쓰레드가 아니다<span class="br0">&#40;</span>한편<span class="sy0">,</span> thread 객체의 쓰레드 친화도와는 상관이 없다는 점을 강조하자면 이 쓰레드는 Thread형의 thread 객체가 살아가는 쓰레드이며<span class="sy0">,</span> 이는 친화도를 가지는 쓰레드와는 다르다<span class="br0">&#41;</span>. 따라서<span class="sy0">,</span> <span class="st0">''</span><span class="st0">'큐 연결(queued connection)'</span><span class="st0">''</span> 이 사용된다.
+&#160;
+<span class="me1">Another</span> common pitfall is the following one<span class="sy0">:</span>
+또 다른 범하기 쉬운 오류는 다음과 같은 것이다.</pre></div></div>
+<p>class Thread&#160;: public QThread
+{
+</p>
+<pre>Q_OBJECT
+</pre>
+<p>slots:
+</p>
+<pre>void aSlot() {
+/* … */
+}
+</pre>
+<p>protected:
+</p>
+<pre>void run() {
+/<b> … */</b>
+}
+</pre>
+<p>};
+</p><p>/<b> … */</b>
+Thread thread;
+Object obj;
+QObject::connect(&amp;obj, SIGNAL (aSignal()), &amp;thread, SLOT (aSlot()));
+thread.start();
+obj.emitSignal();
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">When <span class="st0">&quot;obj&quot;</span> emits its aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">signal</span><span class="sy0">,</span> which kind of connection will be used? You should<span class="st0">'ve guessed it: a '</span><span class="st0">''</span>direct connection<span class="st0">''</span><span class="st0">'. That'</span>s because the Thread object is living in the thread that emits the <span class="kw4">signal</span>. <span class="me1">In</span> the aSlot<span class="br0">&#40;</span><span class="br0">&#41;</span> slot we could then access some Thread<span class="st0">'s member variable while they'</span>re being accessed by the run<span class="br0">&#40;</span><span class="br0">&#41;</span> method<span class="sy0">,</span> which is running concurrently<span class="sy0">:</span> <span class="kw1">this</span> is the perfect recipe <span class="kw1">for</span> disaster.
+<span class="st0">&quot;obj&quot;</span>가 aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span> 시그널을 발생시킬 때 어떤 종류의 연결이 사용되게 될까? 한번 맞추어 보기 바란다.
+바로 <span class="st0">''</span><span class="st0">'직접 연결(direct connection)'</span><span class="st0">''</span> 이다. 그 이유는 Thread 객체는 시그널을 발생시키는 쓰레드에서 살아고 있기 때문이다. 이 경우<span class="sy0">,</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> 메모드에 의해 Thread의 멤버변수에 대한 접근이 이루어지는 동안 <span class="sy0">,</span> aSlot<span class="br0">&#40;</span><span class="br0">&#41;</span> 슬롯에서도 역시 동일 변수들에 대한 접근이 이루어지게 될 수도 있게 되며<span class="sy0">,</span> 이런 식으로 작업하면 큰 재앙으로 곧잘 이어지게 된다.
+&#160;
+<span class="me1">Yet</span> another example<span class="sy0">,</span> probably the <span class="st0">''</span>most important<span class="st0">''</span> one<span class="sy0">:</span>
+또 다른 다음 예는 어쩌면 <span class="st0">''</span>가장 중요한<span class="st0">''</span> 것일지도 모르겠다.</pre></div></div>
+<p>class Thread&#160;: public QThread
+{
+</p>
+<pre>Q_OBJECT
+</pre>
+<p>slots:
+</p>
+<pre>void aSlot() {
+/* … */
+}
+</pre>
+<p>protected:
+</p>
+<pre>void run() {
+QObject <b>obj = new Object;</b>
+connect(obj, SIGNAL (aSignal()), this, SLOT (aSlot()));
+/<b> … */</b>
+}
+</pre>
+<p>};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In <span class="kw1">this</span> <span class="kw1">case</span> a <span class="st0">''</span><span class="st0">'queued connection'</span><span class="st0">''</span> is used<span class="sy0">,</span> therefore you<span class="st0">'re required to run an event loop in the thread the Thread object is living in.
+이 경우, '</span><span class="st0">''</span>큐 연결<span class="br0">&#40;</span>queued connection<span class="br0">&#41;</span><span class="st0">''</span><span class="st0">' 이 사용되는데, 그 이유는 Thread 객체가 살아가는 쓰레드(Thread가 표현하는 쓰레드, 즉 run()의 쓰레드와는 다르다)에 있는 이벤트 루프에 의해서 연결이 처리되기 때문이다.
+&#160;
+A solution you'</span>ll often found in forums<span class="sy0">,</span> blog posts etc. <span class="me1">is</span> to add a moveToThread<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span> to the Thread constructor<span class="sy0">:</span>
+계시판<span class="sy0">,</span> 블로그 글 등에서 종종 볼 수 있는 답변들 가운데에는 Thread 의 생성자에 moveToThread<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span> 를 추가하라는 것이 많이 있다.</pre></div></div>
+<p>class Thread&#160;: public QThread {
+</p>
+<pre>Q_OBJECT
+</pre>
+<p>public:
+</p>
+<pre>Thread() {
+moveToThread(this); // WRONG
+}
+</pre>
+<p>/* … */
+};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">which indeed <span class="st0">''</span>will work<span class="st0">''</span> <span class="br0">&#40;</span>because now the affinity of the Thread object changed<span class="br0">&#41;</span><span class="sy0">,</span> but it<span class="st0">'s a very bad design. What'</span>s wrong here is that we<span class="st0">'re misunderstanding the purpose of a thread object (the QThread subclass): '</span><span class="st0">'QThread objects are not threads'</span><span class="st0">'; they'</span>re control objects around a thread<span class="sy0">,</span> therefore meant to be used from another thread <span class="br0">&#40;</span>usually<span class="sy0">,</span> the one they<span class="st0">'re living in).
+위와 같이 해도 사실은 '</span><span class="st0">'동작을 한다'</span><span class="st0">'. (왜냐하면 Thread 객체의 쓰레드 친화도가 변경되기 때문이다). 하지만, 이는 잘못된 설계이다. 이런 방식의 문제는 thread객체(즉 QThread 파생클래스의 객체)의 목적을 잘못 이해하고 있다는 데 있다. '</span><span class="st0">'QThread 객체들은 쓰레드가 아니다'</span><span class="st0">'. 이들은 쓰레드를 감싸고 있는 객체들을 제어하기 위한 것이며, 다른 쓰레드(대개 그 객체가 살아가는 쓰레드)로 부터 사용되어질 목적으로 존재한다.
+&#160;
+'</span><span class="st0">''</span>A good way to achieve the same result<span class="st0">''</span><span class="st0">' is splitting the &quot;working&quot; part from the &quot;controller&quot; part, that is, writing a QObject subclass and using QObject::moveToThread() to change its affinity:
+'</span><span class="st0">''</span>옳바른 결과를 얻기 위한 바람직한 방법<span class="sy0">*</span>은 <span class="st0">&quot;제어부&quot;</span>로 부터 <span class="st0">&quot;동작부&quot;</span>를 떼어네어서 <span class="kw5">QObject</span>의 파생클래스를 작성하고<span class="sy0">,</span> <span class="kw5">QObject</span><span class="sy0">::</span><span class="me2">moveToThread</span><span class="br0">&#40;</span><span class="br0">&#41;</span> 를 호출하여 쓰레드 친화도를 변경하는 것이다.</pre></div></div>
+<p>class Worker&#160;: public QObject
+{
+</p>
+<pre>Q_OBJECT
+</pre>
+<p>public slots:
+</p>
+<pre>void doWork() {
+/<b> … */</b>
+}
+</pre>
+<p>};
+</p><p>/<b> … */</b>
+QThread *thread = new QThread;
+Worker <b>worker = new Worker;</b>
+connect(obj, SIGNAL (workReady()), worker, SLOT (doWork()));
+worker-&gt;moveToThread(thread);
+thread-&gt;start();
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">==</span> 해야 할 것과 하지말아야 할 것 <span class="sy0">==</span>
+<span class="sy0">===</span> 허용되는 것들… <span class="sy0">===</span>
+<span class="st0">''</span><span class="st0">' … add signals to a QThread subclass. It'</span>s perfectly safe and they<span class="st0">'ll do the &quot;right thing&quot; (see above; the sender'</span>s thread affinity does not matter<span class="br0">&#41;</span>.
+<span class="sy0">*</span> <span class="kw5">QThread</span>의 서브클래스에 시그널 추가하기 <span class="sy0">:</span> 이는 완벽히 안전하면서도 <span class="st0">&quot;제대로&quot;</span> 일을 한다고 할 수 있다. <span class="br0">&#40;</span>위를 보면 시그널 전송부의 쓰레드 친화도는 아무런 문제가 되지 않는 것을 알 수 있다<span class="br0">&#41;</span>.
+&#160;
+<span class="sy0">===</span> 할 수는 있지만<span class="sy0">,</span> 피해야 하는 것. <span class="sy0">===</span>
+&#160;
+<span class="sy0">*</span> … use moveToThread<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span>.
+<span class="sy0">*</span> … force the connection type<span class="sy0">:</span> <span class="kw1">this</span> usually means that you<span class="st0">'re doing something wrong, like mixing the control interface of QThread with the program logic (which should stay in a separate object which lives in that thread).
+* … add slots to a QThread subclass: they'</span>ll be invoked from the <span class="st0">&quot;wrong&quot;</span> thread<span class="sy0">,</span> that is<span class="sy0">,</span> not the one the <span class="kw5">QThread</span> object is managing<span class="sy0">,</span> but the one that object is living in<span class="sy0">,</span> forcing you to specify a direct connection and<span class="sy0">/</span>or to use moveToThread<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span>.
+<span class="sy0">*</span> … use <span class="kw5">QThread</span><span class="sy0">::</span><span class="me2">terminate</span>.
+<span class="sy0">*</span> moveToThread<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span> 사용하기
+<span class="sy0">*</span> 시그널 슬롯의 연결시 연결 유형 강제 적용하기 <span class="sy0">:</span> 이런 구현은 <span class="kw5">QThread</span> 의 제어 인터페이스와 프로그램의 로직을 섞는 것과 같은<span class="br0">&#40;</span>로직은 자신이 살고 있는 쓰레드와는 다른 별도의 객체에 존재하는 것이 바람직하다<span class="br0">&#41;</span> 오류를 범하는 경우가 많다.
+<span class="sy0">*</span> <span class="kw5">QThread</span> 서브클래스에 슬롯 추가하기 <span class="sy0">:</span> 호출되면 안되는 쓰레드로 부터 슬롯 호출이 이루어지게 될 수 있다. 이 허용되지 않는 쓰레드는 QThraed 객체가 관리하는 쓰레드가 아닌 다른 객체가 살아가는 쓰레드이며<span class="sy0">,</span> <span class="kw5">QThread</span>가 표현하는 쓰레드에서 호출이 이루어지게 하기 위해 직접 연결<span class="br0">&#40;</span>direct connection<span class="br0">&#41;</span>을 지정하게 되거나<span class="sy0">,</span> moveToThread<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span> 를 사용하게 되고 만다.
+<span class="sy0">*</span> <span class="kw5">QThread</span><span class="sy0">::</span><span class="me2">terminate</span> 사용하기
+&#160;
+<span class="sy0">===</span> 절대 하면 안되는 것들 <span class="sy0">===</span>
+&#160;
+<span class="sy0">*</span> … quit your program when threads are still running. <span class="me1">Use</span> <span class="kw5">QThread</span><span class="sy0">::</span><span class="me2">wait</span> to wait <span class="kw1">for</span> their termination.
+<span class="sy0">*</span> … destroy a <span class="kw5">QThread</span> <span class="kw1">while</span> the thread that it<span class="st0">'s managing is still running. If you want some kind of &quot;self-destruction&quot;, you can connect the finished() signal with the deleteLater() slot.
+* 쓰레드가 구동하고 있는 중 프로그램을 종료하는 행위&#160;: QThread::wait 을 사용해 종료를 대기해야 만 한다.
+* 자신이 관리하고 있는 쓰레드가 아직 구동중일때 이 쓰레드를 관리하던 QThread 객체를 파괴하는 행위&#160;: &quot;자동 파괴&quot;와 같은 기능을 원한다면, QThread::finished() 시그널을 QObject::deleteLater() 슬롯과 연결만 하면 된다. 
+&#160;
+= 언제 쓰레드를 써야만 할 까? =
+&#160;
+== 쓸 수 있는 API가 블록킹 유형의 것들 밖에 없을 때 ==
+&#160;
+If you need to use a library or other code that doesn'</span>t offer a non<span class="sy0">-</span>blocking API <span class="br0">&#40;</span>by means of <span class="kw2">signals</span> and <span class="kw2">slots</span><span class="sy0">,</span> or events<span class="sy0">,</span> or callbacks<span class="sy0">,</span> etc.<span class="br0">&#41;</span><span class="sy0">,</span> then the only viable solution in order to avoid freezing the event loop is to spawn a process or a thread. <span class="me1">Since</span> creating a <span class="kw1">new</span> worker process<span class="sy0">,</span> having it doing the job and communicating back the results is definetely harder and more expensive than just starting a thread<span class="sy0">,</span> the latter is the most common choice.
+사용하고자 하는 라이브러리나 다른 이의 코드가 <span class="br0">&#40;</span>시그널<span class="sy0">/</span>슬롯<span class="sy0">,</span> 이벤트<span class="sy0">,</span> 혹은 콜백등의<span class="br0">&#41;</span> 논블록킹 API 를 제공하지 않는다면<span class="sy0">,</span> 이벤트 루프의 동작 중단을 방지하기 위한 유일한 방안은 프로세스 혹은 쓰레드를 만드는 것이다. 새로운 작업 프로세스의 생성은<span class="sy0">,</span> 작업 지시와 통보등의 방법에 있어 쓰레드를 생성하는 방법보다 훨씬 어렵고 비용도 비싸므로<span class="sy0">,</span> 가능한 쓰레드를 사용하는 편이 나을 수 있다.
+&#160;
+<span class="me1">A</span> good example of such an API is <span class="st0">''</span><span class="st0">'address resolution'</span><span class="st0">''</span> <span class="br0">&#40;</span>just to show you that we<span class="st0">'re not talking about 3rd-party crappy API. This is something included in every C library out there), which is the process of taking an host name and converting it into an address. This process involves a query to a (usually remote) system — the Domain Name System, or DNS. While, usually, the response is almost instantaneous, the remote servers might fail, some packet might get lost, the network connection might break, and so on; in short, it might take dozens of seconds before we get a reply from our query.
+이런 종류의 API 중 가장 좋은 예는 '</span><span class="st0">''</span>주소 확인<span class="br0">&#40;</span>address resolution<span class="br0">&#41;</span><span class="st0">''</span><span class="st0">' API 이다(3rdparty 라이브러리로 나온 것이 아니라도, 모든 C 라이브러리에 포함되어 있다). 이 API 는 호스트 이름을 가져다 주소 값으로 변환해 준다. 그 일련의 과정은 대개 원격지에 있는 시스템(Domain Name System 즉 DNS)에 대한 질의로 이루어진다. 응답이 거의 순간적으로 오기는 하겠지만, 원격지 서버가 응답을 못하거나 패킷유실이 이루어지거나, 네트워크 연결이 끊어지는 듯듯의 사고 가 있을 수 있다. 어쨌든 질의에 대한 응답이 오기 까지는 몇초정도가 걸린다.
+&#160;
+The only standard API available on UNIX systems is '</span><span class="st0">'blocking'</span><span class="st0">' (not only the old-fashioned gethostbyname(3), but also the newer and better getservbyname(3) and getaddrinfo(3)). [http://doc.qt.nokia.com/latest/qhostinfo.html QHostInfo], the Qt class that handles host name lookups, uses a QThreadPool to enable the queries to run in the background (see [http://qt.gitorious.com/qt/qt/blobs/master/src/network/kernel/qhostinfo.cpp here]&#160;; if thread support is turned off, it switches back to a blocking API).
+UNIX 시스템에 존재하는 표준 API는 '</span><span class="st0">'블록킹'</span><span class="st0">' 방식이다(오래된 gethostbyname(3) 이 아니더라도, 새로운 getservbyname(3) 이나 getaddrinfo(3) 도 마찬가지다). Qt 클래스인 [http://doc.qt.nokia.com/latest/qhostinfo.html QHostInfo] 은 호스트명칭의 검색에 있어, QThreadPool 을 사용하여 백그라운드로 이를 처리한다( [http://qt.gitorious.com/qt/qt/blobs/master/src/network/kernel/qhostinfo.cpp 여기] 를 확인).
+&#160;
+Other simple examples are '</span><span class="st0">''</span>image loading<span class="st0">''</span><span class="st0">' and '</span><span class="st0">''</span>scaling<span class="st0">''</span><span class="st0">'. [http://doc.qt.nokia.com/latest/qimagereader.html QImageReader] and [http://doc.qt.nokia.com/latest/qimage.html QImage] only offer blocking methods to read an image from a device, or to scale an image to a different resolution. If you'</span>re dealing with very large images<span class="sy0">,</span> these processes can take up to <span class="br0">&#40;</span>tens of<span class="br0">&#41;</span> seconds.
+또 다른 간단한 예는 <span class="st0">''</span><span class="st0">'이미지 로딩'</span><span class="st0">''</span> 이나 <span class="st0">''</span><span class="st0">'스케일링(scaling)'</span><span class="st0">''</span> 이다. <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/latest/qimagereader.html QImageReader] 와 [http://doc.qt.nokia.com/latest/qimage.html QImage] 는 디바이스로 부터 이미지를 읽어들이는 블록킹 메소드만 제공한다. 아주 큰 이미지들을 다루거나 하게 되면, 이들 기능들은 수십초 이상의 시간이 걸리게 될 것이다.</span>
+&#160;
+<span class="sy0">==</span> CPU의 갯수에 따라 구현 규모를 조정하고자 할 때 <span class="sy0">==</span>
+&#160;
+Threads allow your program to take advantage from multiprocessor systems. <span class="me1">Since</span> each thread is scheduled independently by the operating <span class="kw3">system</span><span class="sy0">,</span> <span class="kw1">if</span> your application is running on such a machine the scheduler is likely to run each thread on a different processor <span class="st0">''</span><span class="st0">'at the same time'</span><span class="st0">''</span>.
+쓰레드는 사용자의 프로그램으로 하여금 다중프로세서 시스템의 이점을 활용할 수 있게 해준다. 각각의 쓰레드가 운영체제에 의해 독립적으로 스케쥴링되므로<span class="sy0">,</span> 응용프로그램이 이러한 다중 프로세서 시스템에서 구동된다면<span class="sy0">,</span> 스케쥴러는 각 쓰레드를 독립적인 프로세서에서 <span class="st0">''</span><span class="st0">'동시에'</span><span class="st0">''</span> 구동될 수 있게된다.
+&#160;
+<span class="me1">For</span> instance<span class="sy0">,</span> consider an application that generates thumbnails from a set of images. <span class="me1">A</span> <span class="st0">''</span><span class="st0">'thread farm'</span><span class="st0">''</span> of <span class="st0">''</span>n<span class="st0">''</span> threads <span class="br0">&#40;</span>that is<span class="sy0">,</span> a thread pool with a fixed number of threads<span class="br0">&#41;</span><span class="sy0">,</span> one per each CPU available in the <span class="kw3">system</span> <span class="br0">&#40;</span>see also <span class="kw5">QThread</span><span class="sy0">::</span><span class="me2">idealThreadCount</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">,</span> can spread the work of scaling down the images into thumbnails on all the threads<span class="sy0">,</span> effectively gaining an almost linear speedup with the number of the processors <span class="br0">&#40;</span><span class="kw1">for</span> simplicity<span class="st0">'s sake, we consider the CPU being the bottleneck).
+예를 들어, 일련의 이미지들에 대한 썸네일을 생성하는 응용프로그램이 있다하자. '</span><span class="st0">'n'</span><span class="st0">' 개의 쓰레드로 구성된 '</span><span class="st0">''</span>쓰레드 팜<span class="br0">&#40;</span>thread farm<span class="br0">&#41;</span><span class="st0">''</span><span class="st0">' (즉, 고정된 갯수의 쓰레드로 구성된 쓰레드 풀) 은 시스템에 존재하는 CPU 하나당 하나씩의 쓰레드를 가지며(QThread::idealThreadCount() 를 참조), 이미지를 썸네일로 스케일 다운하는 작업을 모든 쓰레드에 분산시켜 작업할 수 있게 할 수 있다. 이런식으로 프로세서 갯수에 대해 거의 선형적인 승능향상을 얻게 된다(단순화하기 위해 CPU 자체가 병목임을 가정하면).
+&#160;
+== 다른 작업에 방해받지 않기를 원할 때 ==
+&#160;
+음. 예를 들어 설명한다.
+&#160;
+This is quite an advanced topic, so feel free to skip it for now. A nice example of this use case comes from QNetworkAccessManager usage inside WebKit. WebKit is a modern browser engine, that is, a set of classes to lay out and display web pages. The Qt widget that uses WebKit is QWebView.
+이 주제는 조금 난해할 수도 있으므로, 일단 넘어가도 상관은 없다. 이 경우에 대한 가장 좋은 예는 QNetworkAccessManager가 WebKit 에서 어떻게 사용되는지와 관련해서 이다. WebKit 은 최신의 브라우저 엔지이며, 웹페이지를 배치하고 표시하는 일련의 클래스들이다. WebKit 을 사용한는 Qt widget 은 QWebView 이다.
+&#160;
+QNetworkAccessManager is a Qt class that deals with HTTP requests and responses for all purposes, we can consider it to be the networking engine of a web browser. Its current design does not make use of any worker threads; all networking is handled in the same thread QNetworkAccessManager and its QNetworkReplys are living in.
+QNetworkAccessmanager 는 모든 HTTP 요청과 응답을 처리하는 Qt 클래스이다, 웹 브라우저의 네트워킹 엔진을 생각해 볼 수 있겠다. 현재의 설계는 그 어떤 작업 쓰레드도 사용하고 있지 않고 있다. 모든 네트워크 작업은 QNetworkAccessManager 와 이의 QNetworkReply 객체들이 살아가고 있는 쓰레드와 동일한 쓰레드에서 처리된다.
+&#160;
+While not using threads for networking is a very good idea, it has also a major drawback: if you don'</span>t read data from the socket as soon as possible<span class="sy0">,</span> the kernel buffers will fill up<span class="sy0">,</span> packets will begin to be dropped<span class="sy0">,</span> and the transfer speed will decrease considerably.
+네트워킹과 관련하여 쓰레드를 사용하지 않는 것 자체는 매우 좋은 생각이지만<span class="sy0">,</span> 치명적인 단점이 있다. 소켓으로 부터 데이터를 최대한 빨리 읽지 않게 되면<span class="sy0">,</span> 커널 버퍼가 차게 되어 패킷이 드랍되며<span class="sy0">,</span> 전송속도가 극단적으로 줄어들 수 있다는 점이다.
+&#160;
+<span class="me1">Socket</span> activity <span class="br0">&#40;</span>i.<span class="me1">e</span>.<span class="sy0">,</span> availability of some data to read from a socket<span class="br0">&#41;</span> is managed by <span class="kw5">Qt</span><span class="st0">'s event loop. Blocking the event loop will therefore lead to a loss of transfer performance, because nobody will be notified that there are data to read (and thus nobody will read them).
+소켓의 동작(소켓으로 부터 읽어들일 데이터의 존재여부)은 Qt 의 이벤트 루프에 의해서 관리된다. 이벤트 루프를 블록킹하게 되면, 읽어야할 데이터 거기 있다는 사실을 아무도 통지 받지 못헤게 되므로, 전송 성능이 떨어진다.
+&#160;
+But what could block the event loop? The sad answer is: WebKit itself! As soon as some data are received, WebKit uses them to start laying out the web page. Unfortunately, the layout process is quite complicated and expensive, therefore it blocks the event loop for a (short) while, enough to impact on ongoing transfers (broadband connections play their role here, filling up kernel buffers in a small fraction of second).
+하지만, 이벤트 루프를 누가 블록킹하게 되는 것일까? 슬프지만, 그 답은 WebKit 바로 자기 자신이다. 일련의 데이터를 수신하게 되면, WebKit 은 이를 사용해 웹 페이지를 구성하기 시작한다. 불운하게도, 이 구성 과정은 매우 복잡하고 비용도 크기 때문에 드문 드문 이벤트 루프를 블록킹하게 되고, 결국 추가적으로 들어오는 전송에 영향을 점점 더 많이 주기 시작한다.
+&#160;
+To sum it up, what happens is something like this:
+요약하자면, 다음과 같은 일들이 벌어진다고 할 수 있다.
+&#160;
+* WebKit issues a request;
+* some data from the reply begin to arrive;
+* WebKit starts to lay out the web page using the incoming data, blocking the event loop;
+* without a running event loop, data are received by the OS, but not read from QNetworkAccessManager sockets;
+* kernel buffers will fill up, and the transfer will slow down.
+* WebKit 이 요청을 발생시킨다.
+* 응답으로 일련의 데이터가 도착한다.
+* WebKit 이 웹 페이지를 들어온 데이터를 사용해 구성하기 시작하면서 이벤트 루프가 블록킹된다.
+* 이벤트 루프가 돌지 않게 되면서 OS에 의해 수신되 데이터가 QNetworkAccessManager 의 소켓으로 부터 읽혀지지 않게된다.
+* 커널 버퍼가 차게되어 전송이 느려진다.
+&#160;
+The overall page loading time is therefore worsened by this self-induced transfer slowness.
+전체적인 페이지 로딩 속도는 결국 자기 자신으로 인해 발생한 전송 속도 저하로 느려지게 된다.
+&#160;
+Notice that since QNetworkAccessManagers and QNetworkReplys are QObjects, they'</span>re not thread<span class="sy0">-</span>safe<span class="sy0">,</span> therefore you can<span class="st0">'t just move them to another thread and continue using them from your thread, because they may be accessed at the same time by two threads: yours and the one they'</span>re living in<span class="sy0">,</span> due to events that will be dispatched to them by the latter thread<span class="st0">'s event loop.
+QNetworkAccessManager 와 QNetworkReply 객체들은 모두 QObject 들이다. 이들은 쓰레드 안전(thread safe)하지 않다. 따라서 단순히 이 객체들을 다른 쓰레드로 옮긴 다음 현재 쓰고 있던 쓰레드에서 사용할 수 는 없다. 왜냐하면, 후자 쓰레드의 이벤트 루프에 의해 전달되어진 이벤트로 인해, 두개의 쓰레드로 부터 동시에 사용될 수도 있기 때문이다.
+&#160;
+As of Qt 4.8, QNetworkAccessManager now handles HTTP requests in a separate thread by default, so the result of unresponsive GUI and OS buffers filling up too quickly should be cured.
+Qt 4.8 버젼부터 QNetworkAccessManager는 HTTP 요청을, 기본적으로, 독립적인 쓰레드에서 처리하도록 수정되었다. 따라서 GUI가 무응답하거나, OS 버퍼가 너무 빨리 차 버리는 문제가 해결되었다.
+&#160;
+= 쓰레드를 사용하지 않는편이 좋은 경우는? =
+&#160;
+&lt;blockquote&gt;쓰레드를 사용하려고 생각하고 있다면, 당신의 작업이 너무 방만하기 때문일것이오.
+— 롭 파이크(Rob Pike)
+&lt;/blockquote&gt;
+== 타이머 ==
+&#160;
+This is perhaps the worst form of thread abuse. If we have to invoke a method repeatedly (for instance, every second), many people end up with something like this:
+쓰레드 남용의 가장 심각한 유형에 대해 알아보자. 만일 어떤 메소드를 반복적으로 수행해야 한다면(예를 들어, 매 초마다), 대다수 사람들은 다음과 같은 구현을 떠올 릴 것이다.</span></pre></div></div>
+<p>// 아주 잘못 된 것
+while (condition) {
+</p>
+<pre>doWork();
+sleep(1); // C라이브러리의 sleep(3)함수
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Then they figure out that <span class="kw1">this</span> is <span class="st0">''</span><span class="st0">'blocking the event loop'</span><span class="st0">''</span><span class="sy0">,</span> therefore decide to bring in threads<span class="sy0">:</span>
+그리고 나서<span class="sy0">,</span> 이 구현은 <span class="sy0">*</span>이벤트 루프를 블록킹<span class="sy0">*</span>하고 있다는 것을 곧 깨닫고<span class="sy0">,</span> 다음과 같이 쓰레드를 도입하기로 마음먹게 된다.</pre></div></div>
+<p>// 잘못된 것
+class Thread&#160;: public QThread {
+protected:
+</p>
+<pre>void run() {
+while (condition) {
+// "condition" 은 volatile 이나 mutex 보호가 필요할지도 모른다.
+// 다른 쓰레드에서 이를 변경할 수 도 있기 때문이다(!)
+doWork();
+sleep(1); // 이것은 QThread::sleep() 이다.
+}
+}
+</pre>
+<p>};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">A much <span class="st0">''</span><span class="st0">'better and simpler way'</span><span class="st0">''</span> of achieving the same result is simply <span class="kw2">using</span> timers<span class="sy0">,</span> i.<span class="me1">e</span>. <span class="me1">a</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/latest/qtimer.html QTimer] object with a 1s timeout, and make the doWork() method a slot:</span>
+이러한 작업을 하는 데 있어 <span class="st0">''</span><span class="st0">'훨씬 더 낳고 간단한 방법*은 타이머(즉, [http://doc.qt.nokia.com/latest/qtimer.html QTimer] )객체를 1초의 타임아웃을 주고 doWork()메소드를 슬롯으로 하여 사용하는 것이다.</span></pre></div></div>
+<p>class Worker&#160;: public QObject
+{
+</p>
+<pre>Q_OBJECT
+</pre>
+<p>public:
+</p>
+<pre>Worker() {
+connect(&amp;timer, SIGNAL (timeout()), this, SLOT (doWork()));
+timer.start(1000);
+}
+</pre>
+<p>private slots:
+</p>
+<pre>void doWork() {
+/<b> … */</b>
+}
+</pre>
+<p>private:
+</p>
+<pre>QTimer timer;
+</pre>
+<p>};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">All we need is a running event loop<span class="sy0">,</span> then the doWork<span class="br0">&#40;</span><span class="br0">&#41;</span> method will be invoked each second.
+이제 필요한 것은 이벤트 루프를 실행하기만 하면 된다. 그러면 doWork<span class="br0">&#40;</span><span class="br0">&#41;</span> 메소드는 매 초마다 호출 될 것이다.
+&#160;
+&#160;
+<span class="sy0">==</span> 네트워킹과 상태기계<span class="br0">&#40;</span>state machines<span class="br0">&#41;</span> <span class="sy0">==</span>
+A very common design pattern when dealing with network operations is the following one<span class="sy0">:</span>
+네트워크 동작과 관련하여 가장 일반적인 설계 패턴은 다음과 같은 것이다.</pre></div></div>
+<p>socket-&gt;connect(host);
+socket-&gt;waitForConnected();
+</p><p>data = getData();
+socket-&gt;write(data);
+socket-&gt;waitForBytesWritten();
+</p><p>socket-&gt;waitForReadyRead();
+socket-&gt;read(response);
+</p><p>reply = process(response);
+</p><p>socket-&gt;write(reply);
+socket-&gt;waitForBytesWritten();
+/<b> … 기타 등등 … */</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Needless to say<span class="sy0">,</span> the various waitFor<span class="st0">''</span><span class="st0">'() calls block the caller without returning to the event loop, freezing the UI and so on. Notice that the above snippet does not take into account any error handling, otherwise it would have been even more cumbersome. What is very wrong in this design is that we'</span>re forgetting that <span class="st0">''</span><span class="st0">'networking is asynchronous by design'</span><span class="st0">''</span><span class="sy0">,</span> and <span class="kw1">if</span> we build a synchronous processing around we<span class="st0">'re shooting ourselves in the foot. To solve this problem, many people simple move this code into a different thread.
+더 말할 필요도 없이, 다양한 waitFor*()에 대한 호출로 인해 호출측은 이벤트 루프로 부터 리턴되지 않게 되며, UI가 동작을 멈추게 된다. 위와 같은 코드는 오류처리는 고려하지도 않았다. 그것마저 했다면 더 멍청한 상태로 빠졌을 지 모른다. 이 설계에 있어서 가장 잘못된 점은 '</span><span class="st0">''</span>네트워킹은 원래가 비동기적<span class="sy0">*</span>이라는 사실을 망각한 채 동기처리로 구현하여 제살 깎아먹기를 했다는 점이다. 이 문제를 해결하기 위해서 많은 사람들은 단순히 위의 코드를 다른 쓰레드로 옮겨간다.
+&#160;
+<span class="me1">Another</span> more abstract example<span class="sy0">:</span>
+또 다른 개념적인 예를 들어보겠다.</pre></div></div>
+<p>result = process_one_thing();
+</p><p>if (result-&gt;something())
+</p>
+<pre>process_this();
+</pre>
+<p>else
+</p>
+<pre>process_that();
+</pre>
+<p>wait_for_user_input();
+input = read_user_input();
+process_user_input(input);
+/<b> … */</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Which has more or less the same pitfalls of the networking example.
+이 네트워킹 예제에서는 앞서와 유사한 단점이 존재한다.
+&#160;
+<span class="me1">Let</span><span class="st0">'s take a step back and consider from an higher point of view what we'</span>re building here<span class="sy0">:</span> we want to create a <span class="st0">''</span><span class="st0">'state machine'</span><span class="st0">''</span> that reacts on inputs of some sort and acts consequently. <span class="me1">For</span> instance<span class="sy0">,</span> with the networking example<span class="sy0">,</span> we might want to build something like <span class="kw1">this</span><span class="sy0">:</span>
+한발 물러서서 구현되고 있는 것을 넓은 시각으로 바라보자. 여기서 우리는 일련의 입력에 따라 반응하고<span class="sy0">,</span> 그에 따라 행동하는 <span class="sy0">*</span>상태기계<span class="br0">&#40;</span>state machine<span class="br0">&#41;</span><span class="st0">''</span><span class="st0">'을 구축하려고 하는 것이 아닐까? 예를들어 이 네트워킹 예제에서는 우리는 다음과 같은 것을 사실은 만들고 있는 것이다.
+&#160;
+'</span><span class="st0">''</span> 휴지상태<span class="br0">&#40;</span>Idle<span class="br0">&#41;</span> → 연결중<span class="br0">&#40;</span>Connecting<span class="br0">&#41;</span> <span class="br0">&#40;</span>connectToHost<span class="br0">&#40;</span><span class="br0">&#41;</span>가 호출될 때<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="sy0">*</span> 연결중<span class="br0">&#40;</span>Connecting<span class="br0">&#41;</span> → 연결완료<span class="br0">&#40;</span>Connected<span class="br0">&#41;</span> <span class="br0">&#40;</span>connected<span class="br0">&#40;</span><span class="br0">&#41;</span> 시그널이 발생할 때<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="sy0">*</span> 연결완료<span class="br0">&#40;</span>Connected<span class="br0">&#41;</span> → 로그인 정보 전송<span class="br0">&#40;</span>LoginDataSent<span class="br0">&#41;</span> <span class="br0">&#40;</span>서버에 로그인 정보를 전송할 때<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="sy0">*</span> 로그인 정보 전송<span class="br0">&#40;</span>LoginDataSent<span class="br0">&#41;</span> → 로그인<span class="br0">&#40;</span>LoggedIn<span class="br0">&#41;</span> <span class="br0">&#40;</span>서버로 부터 ACK 응답을 받을 때<span class="br0">&#41;</span>
+<span class="sy0">*</span> 로그인 정보 전송<span class="br0">&#40;</span>LoginDataSent<span class="br0">&#41;</span> → 로그인 오류<span class="br0">&#40;</span>LoginError<span class="br0">&#41;</span> <span class="br0">&#40;</span>서버로 부터 NACK 응답을 받을 때<span class="br0">&#41;</span>
+&#160;
+기타 등등이다.
+&#160;
+<span class="me1">Now</span><span class="sy0">,</span> there are several ways to build a state machine <span class="br0">&#40;</span>and <span class="kw5">Qt</span> even offers a <span class="kw2">class</span> <span class="kw1">for</span> that<span class="sy0">:</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/qstatemachine.html QStateMachine] ), the simplest one being an enum (i.e. an integer) used to remember the current state. We can rewrite the above snippets like this:</span>
+상태기계를 구축하는 몇가지 방법<span class="br0">&#40;</span><span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/qstatemachine.html QStateMachine] 라는 전용의 클래스를 제공하고도 있다)이 있기는 하지만 그 중 가장 간단한 enum (즉 정수형 값)을 사용하여 현재의 상태를 저장하도록 하여 위 예제코드를 다음과 같이 구현해 볼 수 있다.</span></pre></div></div>
+<p>class Object&#160;: public QObject
+{
+</p>
+<pre>Q_OBJECT
+</pre>
+<p>enum State {
+</p>
+<pre>State1, State2, State3 /* and so on */
+};
+</pre>
+<pre>State state;
+</pre>
+<p>public:
+</p>
+<pre>Object()&#160;: state(State1)
+{
+connect(source, SIGNAL (ready()), this, SLOT (doWork()));
+}
+</pre>
+<p>private slots:
+</p>
+<pre>void doWork() {
+switch (state) {
+case State1:
+/<b> … */</b>
+state = State2;
+break;
+case State2:
+/<b> … */</b>
+state = State3;
+break;
+/<b> etc. */</b>
+}
+}
+</pre>
+<p>};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">What the <span class="st0">&quot;source&quot;</span> object and its <span class="st0">&quot;ready()&quot;</span> <span class="kw4">signal</span> are? Exactly what we want them to be<span class="sy0">:</span> <span class="kw1">for</span> instance<span class="sy0">,</span> in the networking example<span class="sy0">,</span> we might want to <span class="kw2">connect</span> the socket<span class="st0">'s QAbstractSocket::connected() and the QIODevice::readyRead() signals to our slot. Of course, we can also easily add more slots if that suits better in our case (like a slot to manage error situations, which are notified by the QAbstractSocket::error() signal). This is a true asynchronous, signal-driven design!
+&quot;source&quot;객체와 이의 &quot;ready()&quot; 시그널은 무엇이 될 수 있을까? 우리의 예제로 치자면, 소켓의 QAbstractSocket::connected() 와 우리가 구현한 슬롯에 대한 QIODevice::readyRead() 시그널과 같은 것으로 생각해 볼 수 있다. 물론, 경우에 많기만 한다면 더 많은 슬롯을 쉽게 추가할 수 도 있다(QAbstractSocket::error()시그널에 의해 통지 받는, 오류 상황을 관리하기 위한 슬롯). 이것이 진정한 비동기 시그널 주도 설계라 할 수 있다!
+&#160;
+== 몇개의 덩어리로 나뉠 수 있는 작업들 ==
+&#160;
+Suppose that we have a long computation which can'</span>t be easily moved to another thread <span class="br0">&#40;</span>or that it can<span class="st0">'t be moved at all, because for instance it '</span><span class="st0">'must run'</span><span class="st0">' in the GUI thread). If '</span><span class="st0">''</span>we can split the computation in small chunks<span class="st0">''</span><span class="st0">', we can return to the event loop, let it dispatch events, and make it invoke the method that processes the next chunk. This can be easily done if we remember how queued connections are implemented: an event is posted in the event loop of the thread the receiver object is living in; when the event is delivered, the corresponding slot is invoked.
+어떤 이유에서 단순히 다른 쓰레드로 옮길 수 없는 큰 계산 루틴이 있다고 가정해 보자(또는 GUI쓰레드에서만 실행되어야 하기 때문에 전혀 옮길 수 없다고 가정해 보자). 만일 '</span><span class="st0">''</span>계산을 작은 덩어리들로 나눌 수 있다면<span class="st0">''</span><span class="st0">', 이벤트 루프로 그 때 그 때 리턴할 수 있다. 이는 큐 연결이 어떻게 구현되어 있는지를 상기한다면, 쉽게 구성될 수 있는 내용이다. 이벤트 수신 객체가 살아가는 쓰레드의 이벤트 루프에 어떤 이벤트를 날리고, 그 이벤트가 처리될 때 상응하는 슬롯이 호출되도록 하면 된다.
+&#160;
+We can use QMetaObject::invokeMethod() to achieve the same result by specifying Qt::QueuedConnection as the type of the invocation; this just requires the method to be invokable, therefore it must be either a slot or marked with the Q_INVOKABLE macro. If we also want to pass parameters to the method, they need to be registered within the Qt metatype system using qRegisterMetaType(). The following snippet shows this pattern:
+QMetaObject::invokeMethod() 를 사용해 Qt::QueuedConnection 을 호출 방법으로 지정함으로써 동일한 결과를 얻을 수 도 있다. 이는 해당 메소드가 Q_INVOKABLE 지정되었거나 슬롯이어야만 한다. 만일 메소드에 인자를 전달해야 한다면, 그 인자의 형은 qRegisterMetaTyp() 을 사용해 Qt 의 메타타입 시스템에 등록해야 한다. 아래의 예제코드는 이러한 형태를 나타내어 준다.</span></pre></div></div>
+<p>class Worker&#160;: public QObject
+{
+</p>
+<pre>Q_OBJECT
+</pre>
+<p>public slots:
+</p>
+<pre>void startProcessing()
+{
+processItem(0);
+}
+</pre>
+<p>void processItem(int index)
+</p>
+<pre>{
+/* process items[index] … */
+</pre>
+<pre>if (index &lt; numberOfItems)
+QMetaObject::invokeMethod(this,
+"processItem",
+Qt::QueuedConnection,
+Q_ARG(int, index + 1));
+</pre>
+<pre>}
+</pre>
+<p>};
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Since there are no threads involved<span class="sy0">,</span> it<span class="st0">'s easy to pause/resume/cancel such a computation and collect the results back.
+쓰레드가 사용되어야만 할 이유가 없기 때문에, 중단/재개/취소등과 같은 계산의 동작과 결과의 취합이 용이해 진다.
+&#160;
+= 몇몇 예제들 =
+== MD5 해시 ==
+= 참고문허 =
+'</span><span class="st0">''</span> Bradley T. <span class="me1">Hughes</span><span class="sy0">:</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//labs.qt.nokia.com/2010/06/17/youre-doing-it-wrong/ You’re doing it wrong…], Qt Labs blogs, 2010-06-17</span>
+<span class="sy0">*</span> Bradley T. <span class="me1">Hughes</span><span class="sy0">:</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//labs.qt.nokia.com/2006/12/04/threading-without-the-headache/ Threading without the headache], Qt Labs blogs, 2006-12-04</span>
+<span class="br0">&#91;</span><span class="br0">&#91;</span>Category<span class="sy0">:</span>Developing with <span class="kw5">Qt</span><span class="br0">&#93;</span><span class="br0">&#93;</span>
+&#160;
+<span class="sy0">&lt;</span>references <span class="sy0">/&gt;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.563 seconds
+Real time usage: 0.573 seconds
+Preprocessor visited node count: 106/1000000
+Preprocessor generated node count: 552/1000000
+Post‐expand include size: 1312/2097152 bytes
+Template argument size: 423/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:2055-0!*!0!!en!*!* and timestamp 20151104110711 and revision id 16120
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../indexfc07.html?title=Threads_Events_QObjects/ko&amp;oldid=16120">http://wiki.qt.io/index.php?title=Threads_Events_QObjects/ko&amp;oldid=16120</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=e197eeb46916abe3&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="ko.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_Threads_Events_QObjects/ko.html?title=Talk:Threads_Events_QObjects/ko&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="ko.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../index7029.html?title=Threads_Events_QObjects/ko&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../index349d.html?title=Threads_Events_QObjects/ko&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/Threads_Events_QObjects/ko.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/Threads_Events_QObjects/ko.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../indexf414.html?title=Threads_Events_QObjects/ko&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../indexfc07.html?title=Threads_Events_QObjects/ko&amp;oldid=16120" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../indexf9b2.html?title=Threads_Events_QObjects/ko&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:38.</li>
+											<li id="footer-info-viewcount">This page has been accessed 2,405 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":199});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Threads_Events_QObjects/ko by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:32:37 GMT -->
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&oldid=18790 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:17:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Building Qt for Embedded Linux - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building_Qt_for_Embedded_Linux","wgTitle":"Building Qt for Embedded Linux","wgCurRevisionId":18790,"wgRevisionId":18790,"wgArticleId":146,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["HowTo","HowTo::Qt Embedded"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building_Qt_for_Embedded_Linux","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building_Qt_for_Embedded_Linux skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Building Qt for Embedded Linux</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 06:21, 9 July 2015 by <a href="http://wiki.qt.io/index.php?title=User:NetZwerg&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:NetZwerg (page does not exist)">NetZwerg</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/User_talk:NetZwerg" title="User talk:NetZwerg">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/NetZwerg" title="Special:Contributions/NetZwerg">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&amp;diff=prev&amp;oldid=18790" title="Building Qt for Embedded Linux">diff</a>) <a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&amp;direction=prev&amp;oldid=18790" title="Building Qt for Embedded Linux">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> This article is for Qt 4 only. For Qt 5, see <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/embedded-linux.html">Qt documentation on embedded linux</a>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Pre-requisites"><span class="tocnumber">2</span> <span class="toctext">Pre-requisites</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#The_Host_Build"><span class="tocnumber">3</span> <span class="toctext">The Host Build</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Configuring_the_Host_Build"><span class="tocnumber">3.1</span> <span class="toctext">Configuring the Host Build</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#The_build_itself"><span class="tocnumber">3.2</span> <span class="toctext">The build itself</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#The_Target_Build"><span class="tocnumber">4</span> <span class="toctext">The Target Build</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Cleaning_the_Previous_Build"><span class="tocnumber">4.1</span> <span class="toctext">Cleaning the Previous Build</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Preparing_a_mkspec"><span class="tocnumber">4.2</span> <span class="toctext">Preparing a mkspec</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Configuring_the_target_build"><span class="tocnumber">4.3</span> <span class="toctext">Configuring the target build</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Building_and_installing"><span class="tocnumber">4.4</span> <span class="toctext">Building and installing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Summary"><span class="tocnumber">5</span> <span class="toctext">Summary</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>To get a reasonable Qt for Embedded Linux development environment setup it is necessary to build Qt twice:
+</p>
+<ol>
+<li> For the host system (your own workstation) where the development will be done. We will refer to this as the host build.
+</li>
+<li> For the target system (the embedded board) where we will deploy the applications. We will refer to this as the target build.
+</li>
+</ol>
+<p>The host system configuration is not so very different from a standard Qt/X11 installation and uses your normal tool chain so we will describe this configuration first.
+</p><p>The target build configuration however is a little different. We must build in on the host machine but in such a way that the applications generated with it are able to execute on the embedded platform being targeted. This requires us to use our cross-compiling toolchain so a little more effort is required here - although not much so don't worry.&#160;:-)
+</p>
+<h2><span class="mw-headline" id="Pre-requisites">Pre-requisites</span></h2>
+<p>Before we begin please make sure that you have a working cross-compiling toolchain. This will either be supplied with your device's SDK or you can <a href="http://wiki.qt.io/Qt_for_Embedded_Linux_Pre-requisites" title="Qt for Embedded Linux Pre-requisites"> build your own</a>.
+</p><p>If you are using a commercial license then please also ensure that a valid license file is located at $HOME/.qt-license
+</p>
+<h2><span class="mw-headline" id="The_Host_Build">The Host Build</span></h2>
+<h3><span class="mw-headline" id="Configuring_the_Host_Build">Configuring the Host Build</span></h3>
+<p>Firstly you need the latest and greatest version of the Qt source, so go and download the Qt-everywhere package from the Nokia website (or from your customer portal if you are a commercial customer). Once you have the tarball, extract it somewhere convenient for your normal user e.g. $HOME/development/qt-4.7.2, say. Change into the Qt source directory and configure Qt for an embedded host build with something along the lines of:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">.<span class="sy0">/</span>configure <span class="sy0">-</span>prefix <span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>qt<span class="sy0">-</span>embedded<span class="sy0">-</span>4.7.2
+      <span class="sy0">-</span>embedded <span class="sy0">-</span>qt<span class="sy0">-</span>gfx<span class="sy0">-</span>linuxfb <span class="sy0">-</span>qt<span class="sy0">-</span>gfx<span class="sy0">-</span>qvfb
+      <span class="sy0">-</span>qt<span class="sy0">-</span>gfx<span class="sy0">-</span>vnc <span class="sy0">-</span>no<span class="sy0">-</span>largefile<span class="sy0">-</span>exceptions <span class="sy0">-</span>no<span class="sy0">-</span>accessibility \
+      <span class="sy0">-</span>no<span class="sy0">-</span>qt3support <span class="sy0">-</span>qt<span class="sy0">-</span>zlib <span class="sy0">-</span>no<span class="sy0">-</span>gif <span class="sy0">-</span>no<span class="sy0">-</span>libtiff \
+      <span class="sy0">-</span>qt<span class="sy0">-</span>libpng <span class="sy0">-</span>no<span class="sy0">-</span>libmng <span class="sy0">-</span>qt<span class="sy0">-</span>libjpeg \
+      <span class="sy0">-</span>openssl <span class="sy0">-</span>no<span class="sy0">-</span>nis <span class="sy0">-</span>no<span class="sy0">-</span>cups <span class="sy0">-</span>depths <span class="nu0">8</span><span class="sy0">,</span><span class="nu0">16</span><span class="sy0">,</span><span class="nu0">18</span><span class="sy0">,</span><span class="nu0">32</span> \  
+      <span class="sy0">-</span>qt<span class="sy0">-</span>kbd<span class="sy0">-</span>tty <span class="sy0">-</span>qt<span class="sy0">-</span>kbd<span class="sy0">-</span>qvfb <span class="sy0">-</span>qt<span class="sy0">-</span>kbd<span class="sy0">-</span>linuxinput \
+      <span class="sy0">-</span>qt<span class="sy0">-</span>mouse<span class="sy0">-</span>linuxinput <span class="sy0">-</span>qt<span class="sy0">-</span>mouse<span class="sy0">-</span>qvfb <span class="sy0">-</span>qt<span class="sy0">-</span>mouse<span class="sy0">-</span>pc \  
+      <span class="sy0">-</span>commercial <span class="sy0">-</span>confirm<span class="sy0">-</span>license <span class="sy0">-</span>silent</pre></div></div>
+<p>The above configure line tells Qt to configure itself for an embedded build using your normal system tool chain. However, some of these options warrant further explanation.
+</p>
+<ul>
+<li> -prefix &lt;path&gt;- The host build of Qt-Embedded will be installed under this prefix. Please make sure that this is something different than your system Qt install prefix so that we do not clobber anything from that!
+</li>
+<li> -embedded- Enable support for the embedded options. This includes the QWS window system into the build and enables so other embedded related options.
+</li>
+<li> -qt-gfx-linuxfb- Enable the linux framebuffer driver so that the app can be tested full screen on the host (outside of X11)
+</li>
+<li> -qt-gfx-qvfb- Enable support for testing applications in the qvfb (virtual framebuffer application which is part of Qt/X11)
+</li>
+<li> -qt-gfx-vnc- Enabled support for exporting application display over VNC
+</li>
+<li> -depths 8,16,18,32- Include support for these colour depths. These are just some common options. Please refer to your board's documentation to see what it actually supports. Setting the same option here will allow you to see an accurate representation of your app even when running it on the host machine.
+</li>
+<li> -qt-kdb-tty- Enable support for the tty keyboard driver
+</li>
+<li> -qt-kbd-qvfb- Enable keyboard support with qvfb
+</li>
+<li> -qt-kbd-linuxinput- Enable a keyboard linux input in the QtGui library.
+</li>
+<li> -qt-mouse-linuxinput- Enable a mouse linux input in the QtGui library.
+</li>
+<li> -qt-mouse-qvfb- Enable mouse support with qvfb
+</li>
+<li> -confirm-license- Lazy option to save agreeing to license agreement during configure process (you can go drink tea instead)
+</li>
+</ul>
+<p>The other options should be fairly self-explanatory, but see ./configure —help for more detail. You can of course specify additional options to configure or remove some of the ones listed in the above example depending upon your requirements.
+</p><p>The configure process can take a few minutes as it must first compile the qmake application and some other supporting utilities.
+</p>
+<h3><span class="mw-headline" id="The_build_itself">The build itself</span></h3>
+<p>This bit is simple. Just issue the command make -j&lt;no of parallel jobs&gt;. The argument to give to the -j flag is down to personal choice. A good general guide is to use the number of available CPU cores + 1. So on a single core machine you might use:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make <span class="sy0">-</span>j2</pre></div></div>
+<p>or on a quad-core machine:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make <span class="sy0">-</span>j5</pre></div></div>
+<p>If you wish to leave some CPU cores free for other taks whilst building then reduce the number.
+</p><p>Depending upon the speed and load of your machine the build can take of the order of a few tens of minutes on a modern PC. This is a good time to get yourself a cup of tea and a biscuit or <a rel="nofollow" class="external text" href="http://developer.qt.nokia.com/forums/viewthread/3085/!">do something else</a>
+</p><p>Once the build has completed it is time to install Qt. You may need to su to root to do this part depending upon what prefix you configured the build with above. As the appropriate user do:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make install</pre></div></div>
+<p>Congratulations you should now have a working Qt for Embedded Linux host build. We'll see how to use it shortly, but first we need to build a version of Qt for our target device.
+</p>
+<h2><span class="mw-headline" id="The_Target_Build">The Target Build</span></h2>
+<h3><span class="mw-headline" id="Cleaning_the_Previous_Build">Cleaning the Previous Build</span></h3>
+<p>We already have a Qt build directory from the above Host System steps. We can re-use this for our target build. We just need to remove the previous configuration. As your normal user once more, cd into the Qt build directory and issue:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make confclean</pre></div></div>
+<p>This will remove all build files and the previous configuration.
+</p>
+<h3><span class="mw-headline" id="Preparing_a_mkspec">Preparing a mkspec</span></h3>
+<p>Before we can redo the configuration for the target system, we will need a new set of mkspecs that tells qmake which tool chain it should reference when it creates the makefiles. The contents of the mkspecs files will vary depending upon the architecture and other details of your target device. Qt ships with some example mkspecs that you can either use directly or as inspiration for your own. Take a look in the mkspecs/qws directory under your Qt source directory. If you are able to use one of these then great make a note of its name. If not then we need to roll our own custom mkspec.
+</p><p>If you need to make your own custom mkspec file then make a copy of the closest match from the existing mkspecs form the mkspec/qws sub-directory and name it something appropriate. In this example we will create a mkspec to go along with the cross-compiling toolchain that we made <a href="http://wiki.qt.io/Qt_for_Embedded_Linux_Pre-requisites" title="Qt for Embedded Linux Pre-requisites"> earlier</a>.
+</p><p>The mkspec consists of 2 files:
+</p>
+<ol>
+<li> qmake.conf- This is a list of qmake variable assignments that tells qmake what flags to pass through to the compiler, which compiler to use etc.
+</li>
+<li> qplatformdefs.h - This is a header file with various platform-specific #includes and #defines. Often this just refers to an existing qplatformdefs.h file from another generic mkspec.
+</li>
+</ol>
+<p>For our example we are using our 486-based toolchain. A typical qmake.conf file for this may looki like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#</span>
+<span class="co2"># qmake configuration for linux-g++ modified to use 486 compliant compiler</span>
+<span class="co2">#</span>
+&#160;
+MAKEFILE_GENERATOR <span class="sy0">=</span> UNIX
+TEMPLATE <span class="sy0">=</span> app
+CONFIG <span class="st0">''</span><span class="sy0">=</span> qt warn_on release link_prl
+QT<span class="st0">''</span><span class="sy0">=</span> core gui network
+QMAKE_INCREMENTAL_STYLE <span class="sy0">=</span> sublib
+&#160;
+QMAKE_CC <span class="sy0">=</span> i486<span class="sy0">-</span>pc<span class="sy0">-</span>linux<span class="sy0">-</span>gnu<span class="sy0">-</span>gcc
+QMAKE_LEX <span class="sy0">=</span> flex
+QMAKE_LEXFLAGS <span class="sy0">=</span>
+QMAKE_YACC <span class="sy0">=</span> yacc
+QMAKE_YACCFLAGS <span class="sy0">=</span> <span class="sy0">-</span>d
+QMAKE_CFLAGS <span class="sy0">=</span> <span class="sy0">-</span>pipe
+QMAKE_CFLAGS_WARN_ON <span class="sy0">=</span> <span class="sy0">-</span>Wall <span class="sy0">-</span>W
+QMAKE_CFLAGS_WARN_OFF <span class="sy0">=</span>
+QMAKE_CFLAGS_RELEASE <span class="sy0">=</span> <span class="sy0">-</span>O2
+QMAKE_CFLAGS_DEBUG <span class="sy0">=</span> <span class="sy0">-</span>g
+QMAKE_CFLAGS_SHLIB <span class="sy0">=</span> <span class="sy0">-</span>fPIC
+QMAKE_CFLAGS_YACC <span class="sy0">=</span> <span class="sy0">-</span>Wno<span class="sy0">-</span>unused <span class="sy0">-</span>Wno<span class="sy0">-</span>parentheses
+QMAKE_CFLAGS_THREAD <span class="sy0">=</span> <span class="sy0">-</span>D_REENTRANT
+QMAKE_CFLAGS_HIDESYMS <span class="sy0">=</span> <span class="sy0">-</span>fvisibility<span class="sy0">=</span>hidden
+&#160;
+QMAKE_CXX <span class="sy0">=</span> i486<span class="sy0">-</span>pc<span class="sy0">-</span>linux<span class="sy0">-</span>gnu<span class="sy0">-</span>g<span class="sy0">++</span>
+QMAKE_CXXFLAGS <span class="sy0">=</span> $$QMAKE_CFLAGS
+QMAKE_CXXFLAGS_WARN_ON <span class="sy0">=</span> $$QMAKE_CFLAGS_WARN_ON
+QMAKE_CXXFLAGS_WARN_OFF <span class="sy0">=</span> $$QMAKE_CFLAGS_WARN_OFF
+QMAKE_CXXFLAGS_RELEASE <span class="sy0">=</span> $$QMAKE_CFLAGS_RELEASE
+QMAKE_CXXFLAGS_DEBUG <span class="sy0">=</span> $$QMAKE_CFLAGS_DEBUG
+QMAKE_CXXFLAGS_SHLIB <span class="sy0">=</span> $$QMAKE_CFLAGS_SHLIB
+QMAKE_CXXFLAGS_YACC <span class="sy0">=</span> $$QMAKE_CFLAGS_YACC
+QMAKE_CXXFLAGS_THREAD <span class="sy0">=</span> $$QMAKE_CFLAGS_THREAD
+QMAKE_CXXFLAGS_HIDESYMS <span class="sy0">=</span> $$QMAKE_CFLAGS_HIDESYMS <span class="sy0">-</span>fvisibility<span class="sy0">-</span>inlines<span class="sy0">-</span>hidden
+&#160;
+QMAKE_INCDIR <span class="sy0">=</span> <span class="sy0">/</span>usr<span class="sy0">/</span>i486<span class="sy0">-</span>pc<span class="sy0">-</span>linux<span class="sy0">-</span>gnu<span class="sy0">/</span>usr<span class="sy0">/</span>include
+QMAKE_LIBDIR <span class="sy0">=</span> <span class="sy0">/</span>usr<span class="sy0">/</span>i486<span class="sy0">-</span>pc<span class="sy0">-</span>linux<span class="sy0">-</span>gnu<span class="sy0">/</span>usr<span class="sy0">/</span>lib
+QMAKE_INCDIR_X11 <span class="sy0">=</span>
+QMAKE_LIBDIR_X11 <span class="sy0">=</span>
+QMAKE_INCDIR_QT <span class="sy0">=</span> $$<span class="br0">&#91;</span>QT_INSTALL_HEADERS<span class="br0">&#93;</span>
+QMAKE_LIBDIR_QT <span class="sy0">=</span> $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span>
+QMAKE_INCDIR_OPENGL <span class="sy0">=</span>
+QMAKE_LIBDIR_OPENGL <span class="sy0">=</span>
+QMAKE_INCDIR_QTOPIA <span class="sy0">=</span> $<span class="br0">&#40;</span>QPEDIR<span class="br0">&#41;</span><span class="sy0">/</span>include
+QMAKE_LIBDIR_QTOPIA <span class="sy0">=</span> $<span class="br0">&#40;</span>QPEDIR<span class="br0">&#41;</span><span class="sy0">/</span>lib
+&#160;
+QMAKE_LINK <span class="sy0">=</span> i486<span class="sy0">-</span>pc<span class="sy0">-</span>linux<span class="sy0">-</span>gnu<span class="sy0">-</span>g<span class="sy0">++</span>
+QMAKE_LINK_SHLIB <span class="sy0">=</span> i486<span class="sy0">-</span>pc<span class="sy0">-</span>linux<span class="sy0">-</span>gnu<span class="sy0">-</span>g<span class="sy0">++</span>
+QMAKE_LFLAGS <span class="sy0">=</span>
+QMAKE_LFLAGS_RELEASE <span class="sy0">=</span>
+QMAKE_LFLAGS_DEBUG <span class="sy0">=</span>
+QMAKE_LFLAGS_SHLIB <span class="sy0">=</span> <span class="sy0">-</span>shared
+QMAKE_LFLAGS_PLUGIN <span class="sy0">=</span> $$QMAKE_LFLAGS_SHLIB
+QMAKE_LFLAGS_SONAME <span class="sy0">=</span> <span class="sy0">-</span>Wl<span class="sy0">,-</span>soname<span class="sy0">,</span>
+QMAKE_LFLAGS_THREAD <span class="sy0">=</span>
+QMAKE_RPATH <span class="sy0">=</span> <span class="sy0">-</span>Wl<span class="sy0">,-</span>rpath<span class="sy0">,</span>
+&#160;
+QMAKE_LIBS <span class="sy0">=</span>
+QMAKE_LIBS_DYNLOAD <span class="sy0">=</span> <span class="sy0">-</span>ldl
+QMAKE_LIBS_X11 <span class="sy0">=</span>
+QMAKE_LIBS_X11SM <span class="sy0">=</span>
+QMAKE_LIBS_QT <span class="sy0">=</span> <span class="sy0">-</span>lqte
+QMAKE_LIBS_QT_THREAD <span class="sy0">=</span> <span class="sy0">-</span>lqte<span class="sy0">-</span>mt
+QMAKE_LIBS_QT_OPENGL <span class="sy0">=</span> <span class="sy0">-</span>lqgl
+QMAKE_LIBS_QTOPIA <span class="sy0">=</span> <span class="sy0">-</span>lqpe <span class="sy0">-</span>lqtopia
+QMAKE_LIBS_THREAD <span class="sy0">=</span> <span class="sy0">-</span>lpthread
+QMAKE_LIBS_OPENGL <span class="sy0">=</span>
+&#160;
+QMAKE_MOC <span class="sy0">=</span> $$<span class="br0">&#91;</span>QT_INSTALL_BINS<span class="br0">&#93;</span><span class="sy0">/</span>moc
+QMAKE_UIC <span class="sy0">=</span> $$<span class="br0">&#91;</span>QT_INSTALL_BINS<span class="br0">&#93;</span><span class="sy0">/</span>uic
+&#160;
+QMAKE_AR <span class="sy0">=</span> i486<span class="sy0">-</span>pc<span class="sy0">-</span>linux<span class="sy0">-</span>gnu<span class="sy0">-</span>ar cqs
+QMAKE_RANLIB <span class="sy0">=</span>
+&#160;
+QMAKE_TAR <span class="sy0">=</span> tar <span class="sy0">-</span>cf
+QMAKE_GZIP <span class="sy0">=</span> gzip –<span class="nu17">9f</span>
+&#160;
+QMAKE_COPY <span class="sy0">=</span> cp <span class="sy0">-</span>f
+QMAKE_MOVE <span class="sy0">=</span> mv <span class="sy0">-</span>f
+QMAKE_DEL_FILE <span class="sy0">=</span> rm <span class="sy0">-</span>f
+QMAKE_DEL_DIR <span class="sy0">=</span> rmdir
+QMAKE_CHK_DIR_EXISTS <span class="sy0">=</span> test <span class="sy0">-</span>d
+QMAKE_MKDIR <span class="sy0">=</span> mkdir <span class="sy0">-</span>p
+include<span class="br0">&#40;</span>..<span class="sy0">/</span>..<span class="sy0">/</span>common<span class="sy0">/</span>unix.<span class="me1">conf</span><span class="br0">&#41;</span>
+load<span class="br0">&#40;</span>qt_config<span class="br0">&#41;</span></pre></div></div>
+<p>The corresponding qplatformdefs.h file is much simpler and just refers to an existing generic one:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &quot;../../linux-g+''/qplatformdefs.h&quot;</span></pre></div></div>
+<p>To complete this custom mkspec, place the above files into a directory called linux-i486-g<i>+ within the mkspecs/qws directory.</i>
+</p>
+<h3><span class="mw-headline" id="Configuring_the_target_build">Configuring the target build</span></h3>
+<p>We are now ready to configure Qt to use our mkspec and hence use our cross-compiling toolchain. We do so with the following command:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> .<span class="sy0">/</span>configure <span class="sy0">-</span>xplatform qws<span class="sy0">/</span>linux<span class="sy0">-</span>i486<span class="sy0">-</span>g<span class="sy0">++</span> <span class="sy0">-</span>embedded x86 
+        <span class="sy0">-</span>prefix <span class="sy0">/</span>usr<span class="sy0">/</span>i486<span class="sy0">-</span>pc<span class="sy0">-</span>linux<span class="sy0">-</span>gnu<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>qt<span class="sy0">-</span>embedded
+        <span class="sy0">-</span>qt<span class="sy0">-</span>gfx<span class="sy0">-</span>linuxfb <span class="sy0">-</span>qt<span class="sy0">-</span>gfx<span class="sy0">-</span>vnc
+        <span class="sy0">-</span>no<span class="sy0">-</span>largefile <span class="sy0">-</span>exceptions <span class="sy0">-</span>no<span class="sy0">-</span>accessibility <span class="sy0">-</span>no<span class="sy0">-</span>qt3support <span class="sy0">-</span>no<span class="sy0">-</span>sse2 <span class="sy0">-</span>qt<span class="sy0">-</span>zlib <span class="sy0">-</span>no<span class="sy0">-</span>gif <span class="sy0">-</span>no<span class="sy0">-</span>libtiff
+        <span class="sy0">-</span>qt<span class="sy0">-</span>libpng <span class="sy0">-</span>no<span class="sy0">-</span>libmng <span class="sy0">-</span>qt<span class="sy0">-</span>libjpeg <span class="sy0">-</span>openssl <span class="sy0">-</span>no<span class="sy0">-</span>nis <span class="sy0">-</span>no<span class="sy0">-</span>cups <span class="sy0">-</span>depths <span class="nu0">16</span>
+        <span class="sy0">-</span>qt<span class="sy0">-</span>kbd<span class="sy0">-</span>linuxinput <span class="sy0">-</span>nomake demos <span class="sy0">-</span>nomake examples
+        <span class="sy0">-</span>qt<span class="sy0">-</span>mouse<span class="sy0">-</span>linuxinput <span class="sy0">-</span>qt<span class="sy0">-</span>mouse<span class="sy0">-</span>tslib
+        <span class="sy0">-</span>confirm<span class="sy0">-</span>license</pre></div></div>
+<p>We have some different options here now compared to the earlier host configuration. Notably all references to the qvfb support are gone. This is because the virtual framebuffer application is purely a development and testing tool. It is not designed with security in mind so you should never deploy it on the target.
+</p><p>Here is some information on the other new options that appear:
+</p>
+<ul>
+<li> -xplatform &lt;mkspec files to use&gt;- Cross compile for the target platform using the environment specified in the mkspec files
+</li>
+<li> -embedded &lt;target CPU architecture&gt;- The CPU architecture of the target platform
+</li>
+<li> -prefix &lt;path&gt;- The path to install the cross-compiled Qt to. This should be within your sysroot on your host machine to make things easier.
+</li>
+<li> -qt-mouse-tslib- Enable touch screen support via the generic tslib touch screen library
+</li>
+<li> -I&lt;path&gt;- Extra include directory to search (in this case for tslib headers)
+</li>
+<li> -L&lt;path&gt;- Extra library directory to search (in this case for tslib headers)
+</li>
+</ul>
+<h3><span class="mw-headline" id="Building_and_installing">Building and installing</span></h3>
+<p>To build and then install the cross-compiled target version of Qt, you can follow the same instructions as for the host build. In short:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make <span class="sy0">-</span>j<span class="sy0">&lt;</span>number of jobs<span class="sy0">&gt;</span>
+su<span class="sy0">-</span> <span class="br0">&#40;</span><span class="kw1">if</span> you need root access to be able to install<span class="br0">&#41;</span>
+make install</pre></div></div>
+<p>And that's it! You now have everything needed to start writing, testing and running Qt applications for embedded devices on both your development machien and on the device itself (after a suitable deployment).
+</p>
+<h2><span class="mw-headline" id="Summary">Summary</span></h2>
+<p>In this tutorial you have learned how to:
+</p>
+<ul>
+<li> Configure, build and install Qt for Embedded Linux as a host build
+</li>
+<li> Prepare custom mkspecs suitable for your target device
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.171 seconds
+Real time usage: 0.177 seconds
+Preprocessor visited node count: 130/1000000
+Preprocessor generated node count: 254/1000000
+Post‐expand include size: 327/2097152 bytes
+Template argument size: 123/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:146-0!*!0!!en!*!* and timestamp 20151104114353 and revision id 18790
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&amp;oldid=18790">http://wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&amp;oldid=18790</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/Category:HowTo" title="Category:HowTo">HowTo</a></li><li><a href="http://wiki.qt.io/index.php?title=Category:HowTo::Qt_Embedded&amp;action=edit&amp;redlink=1" class="new" title="Category:HowTo::Qt Embedded (page does not exist)">HowTo::Qt Embedded</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Building+Qt+for+Embedded+Linux" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Building_Qt_for_Embedded_Linux"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Building_Qt_for_Embedded_Linux&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Building_Qt_for_Embedded_Linux" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Building_Qt_for_Embedded_Linux" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Building_Qt_for_Embedded_Linux" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&amp;oldid=18790&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&amp;oldid=18790" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 9 July 2015, at 06:21.</li>
+											<li id="footer-info-viewcount">This page has been accessed 7,240 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":333});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_for_Embedded_Linux&oldid=18790 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:17:27 GMT -->
+</html>

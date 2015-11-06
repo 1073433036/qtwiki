@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Threads_Events_QObjects by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:56:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Threads Events QObjects - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="loadc8c8.css?debug=false&amp;lang=en&amp;modules=ext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Threads_Events_QObjects","wgTitle":"Threads Events QObjects","wgCurRevisionId":18170,"wgRevisionId":18170,"wgArticleId":2052,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Threads_Events_QObjects","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Threads_Events_QObjects skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Threads Events QObjects</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 20px;border: 1px solid #C00; border-left: 10px solid #C00; background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> The article is almost done, but it needs a bit of polishing and some good examples. Any review or contribution is welcome! Discussion about this article happens <a rel="nofollow" class="external text" href="http://forum.qt.io/viewthread/2423/">in this thread</a>.
+</td></tr></table>
+<div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<a href="Threads_Events_QObjects/bg.html" title="Threads Events QObjects/bg">Bg</a>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<a href="Threads_Events_QObjects/ko.html" title="Threads Events QObjects/ko">Ko</a>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<a href="Threads_Events_QObjects/ru.html" title="Threads Events QObjects/ru">Ru</a>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<a href="Threads_Events_QObjects/zh.html" title="Threads Events QObjects/zh">Zh</a>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Prerequisites"><span class="tocnumber">1.1</span> <span class="toctext">Prerequisites</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Events_and_the_event_loop"><span class="tocnumber">2</span> <span class="toctext">Events and the event loop</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#What_requires_a_running_event_loop.3F"><span class="tocnumber">2.1</span> <span class="toctext">What requires a running event loop?</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Blocking_the_event_loop"><span class="tocnumber">2.2</span> <span class="toctext">Blocking the event loop</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Forcing_event_dispatching"><span class="tocnumber">2.3</span> <span class="toctext">Forcing event dispatching</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Qt_thread_classes"><span class="tocnumber">3</span> <span class="toctext">Qt thread classes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#QThread"><span class="tocnumber">3.1</span> <span class="toctext">QThread</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#QRunnable_and_QThreadPool"><span class="tocnumber">3.2</span> <span class="toctext">QRunnable and QThreadPool</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#QtConcurrent"><span class="tocnumber">3.3</span> <span class="toctext">QtConcurrent</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Feature_comparison"><span class="tocnumber">3.4</span> <span class="toctext">Feature comparison</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Threads_and_QObjects"><span class="tocnumber">4</span> <span class="toctext">Threads and QObjects</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Per-thread_event_loop"><span class="tocnumber">4.1</span> <span class="toctext">Per-thread event loop</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Signals_and_slots_across_threads"><span class="tocnumber">4.2</span> <span class="toctext">Signals and slots across threads</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#DOs_and_DON.27Ts"><span class="tocnumber">4.3</span> <span class="toctext">DOs and DON'Ts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#When_should_I_use_threads.3F"><span class="tocnumber">5</span> <span class="toctext">When should I use threads?</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#When_you_have_to_use_a_blocking_API"><span class="tocnumber">5.1</span> <span class="toctext">When you have to use a blocking API</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#When_you_want_to_scale_with_the_number_of_CPUs"><span class="tocnumber">5.2</span> <span class="toctext">When you want to scale with the number of CPUs</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#When_you_don.27t_want_to_be_possibly_blocked_by_others"><span class="tocnumber">5.3</span> <span class="toctext">When you don't want to be possibly blocked by others</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#When_shouldn.27t_I_use_threads.3F"><span class="tocnumber">6</span> <span class="toctext">When shouldn't I use threads?</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#Timers"><span class="tocnumber">6.1</span> <span class="toctext">Timers</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Networking_.2F_state_machines"><span class="tocnumber">6.2</span> <span class="toctext">Networking / state machines</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Jobs_splittable_in_chunks"><span class="tocnumber">6.3</span> <span class="toctext">Jobs splittable in chunks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Introduction">Introduction</span></h1>
+<blockquote>You're doing it wrong. — Bradley T. Hughes
+</blockquote>
+<p>One of the most popular topics on the "#qt IRC channel":<a rel="nofollow" class="external free" href="irc://irc.freenode.net/#qt">irc://irc.freenode.net/#qt</a> is threading: many people join the channel and ask how they should solve their problem with some code running in a different thread.
+</p><p>Nine times out of ten, a quick inspection of their code shows that the biggest problem is the very fact they're using threads in the first place, and they're falling in one of the endless pitfalls of parallel programming.
+</p><p>The ease of creating and running threads in Qt, combined with some lack of knowledge about programming styles (especially asynchronous network programming, combined with Qt's signals and slots architecture) and/or habits developed when using other tookits or languages, usually leads to people shooting themselves in the foot. Moreover, threading support in Qt is a double-edged sword: while it makes it very simple for you to do multithread programming, it adds a certain number of features (especially when it comes to interaction with QObjects) you must be aware of.
+</p><p>The purpose of this document is <b>not</b> to teach you how to use threads, do proper locking, exploit parallelism, nor write scalable programs; there are many good books about these topics; for instance, take a look to the recommended reading list <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/threads.html">on this page</a>. Instead, this small article is meant to be a guide to introduce users to threading in Qt 4, in order to avoid the most common pitfalls and help them to develop code that is at the same time more robust and with a better structure.
+</p>
+<h2><span class="mw-headline" id="Prerequisites">Prerequisites</span></h2>
+<blockquote>Think of it this way: threads are like salt, not like pasta.
+<p>You like salt, I like salt, we all like salt. But we eat more pasta.
+— Larry McVoy
+</p>
+</blockquote>
+<p>Not being a general-purpose introduction to (threads) programming, we expect you to have some previous knowledge about:
+</p>
+<ul>
+<li> C++ basics (though most suggestions do apply to other languages as well);
+</li>
+<li> Qt basics: QObjects, signals and slots, event handling;
+</li>
+<li> what a thread is and what the relationships are between threads, processes and the operating system;
+</li>
+<li> how to start and stop a thread, and wait for it to finish, under (at least) one major operating system;
+</li>
+<li> how to use mutexes, semaphores and wait conditions to create thread-safe/reentrant functions, data structures, classes.
+</li>
+</ul>
+<p>In this document we'll follow the Qt <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/threads-reentrancy.html">naming conventions</a>, which are:
+</p>
+<ul>
+<li> <b>Reentrant</b> A class is reentrant if it's safe to use its instances from more than one thread, provided that at most one thread is accessing the same instance at the same time. A function is reentrant if it's safe to invoke it from more than one thread at the same, provided that each invocation references unique data. In other words, this means that users of that class/function must <i>serialize</i> all accesses to instances/shared data by means of some <i>external locking mechanism</i>.
+</li>
+<li> <b>Thread-safe</b> A class is thread-safe if it's safe to use its instances from more than one thread at the same time. A function is thread-safe if it's safe to invoke it from more than one thread at the same time even if the invocations reference shared data.
+</li>
+</ul>
+<h1><span class="mw-headline" id="Events_and_the_event_loop">Events and the event loop</span></h1>
+<p>Being an event-driven toolkit, events and event delivery play a central role in Qt architecture. In this article we'll not give a comprehensive coverage about this topic; we'll instead focus on some thread-related key concepts (see <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/eventsandfilters.html">here</a> and <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/qq/qq11-events.html">here</a> for more information about the Qt event system).
+</p><p>An <b>event</b> in Qt is an object which represents something interesting that happened; the main difference between an event and a signal is that events are <i>targeted</i> to a specific object in our application (which decides what to do with that event), while signals are emitted "in the wild". From a code point of view, all events are instances of some subclass of <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qevent.html">QEvent</a>, and all QObject-derived classes can override the QObject::event() virtual method in order to handle events targeted to their instances.
+</p><p>Events can be generated from both inside and outside the application; for instance:
+</p>
+<ul>
+<li> QKeyEvent and QMouseEvent objects represent some kind of keyboard and mouse interaction, and they come from the window manager;
+</li>
+<li> QTimerEvent objects are sent to a QObject when one of its timers fires, and they (usually) come from the operating system;
+</li>
+<li> QChildEvent objects are sent to a QObject when a child is added or removed, and they come from inside your Qt application.
+</li>
+</ul>
+<p>The important thing about events is that they're not delivered as soon as they're generated; they're instead queued up in an <b>event queue</b> and sent sometime later. The dispatcher itself loops around the event queue and sends queued events to their target objects, and therefore it is called the <b>event loop</b>. Conceptually, this is how an event loop looks (see the Qt Quarterly article linked above):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw1">while</span> <span class="br0">&#40;</span>is_active<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">!</span>event_queue_is_empty<span class="br0">&#41;</span>
+ dispatch_next_event<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+wait_for_more_events<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>We enter Qt's main event loop by running QCoreApplication::exec(); this call blocks until QCoreApplication::exit() or QCoreApplication::quit() are called, terminating the loop.
+</p><p>The "wait_for_more_events()" function blocks (that is, it's not a busy wait) until some event is generated. If we think about it, all that can generate events at that point is some <i>external</i> source (dispatching for all internal events is now complete and there were no more pending events in the event queue to delivery). Therefore, the event loop can be woken up by:
+</p>
+<ul>
+<li> window manager activity (key/mouse presses, interaction with the windows, etc.);
+</li>
+<li> sockets activity (there's some data available to read, or a socket is writable without blocking, there's a new incoming connection, etc.);
+</li>
+<li> timers (i.e. a timer fired);
+</li>
+<li> events posted from other threads (see later).
+</li>
+</ul>
+<p>In a UNIX-like system, window manager activity (i.e. X11) is notified to applications via sockets (Unix Domain or TCP/IP), since clients use them to communicate with the X server. If we decide to implement cross-thread event posting with an internal socketpair(2), all that is left is being woken up by activity on:
+</p>
+<ul>
+<li> sockets;
+</li>
+<li> timers;
+</li>
+</ul>
+<p>which is exactly what the <b>select(2)</b> system call does: it watches over a set of descriptors for activity <i>and</i> it times out (with a configurable timeout) if there's no activity for a certain while. All Qt needs to do is converting what select returns into an object of the right QEvent subclass and queue it up in the event queue. Now you know what's inside an event loop&#160;:)
+</p>
+<h2><span class="mw-headline" id="What_requires_a_running_event_loop.3F">What requires a running event loop?</span></h2>
+<p>This isn't an exhaustive list, but if you have the overall picture, you should be able to guess which classes require a running event loop.
+</p>
+<ul>
+<li> <b>Widgets painting and interaction</b>: QWidget::paintEvent() will be called when delivering QPaintEvent objects, which are generated both by calling QWidget::update() (i.e. internally) or by the window manager (for instance, because a hidden window was shown). The same thing holds for all kinds of interaction (keyboard, mouse, etc.): the corresponding events will require an event loop to be dispatched.
+</li>
+<li> <b>Timers</b>: long story short, they're fired when select(2) or similar calls time out, therefore you need to let Qt do those calls for you by returning to the event loop.
+</li>
+<li> <b>Networking</b>: all low-level Qt networking classes (QTcpSocket, QUdpSocket, QTcpServer, etc.) are asynchronous by design. When you call read(), they just return already available data; when you call write(), they schedule the writing for later. It's only when you return to the event loop the actual reading/writing takes place. Notice that they do offer synchronous methods (the waitFor* family of methods), but their use is discouraged because they block the event loop while waiting. High-level classes, like QNetworkAccessManager, simply do not offer any synchronous API and require an event loop.
+</li>
+</ul>
+<h2><span class="mw-headline" id="Blocking_the_event_loop">Blocking the event loop</span></h2>
+<p>Before discussing why <b>you should never ever block the event loop</b>, let's try to figure out what this "blocking" means. Suppose you have a Button widget which emits a signal when clicked; connected to this signal there's a slot of our Worker object, which does a lot of work. After you click the button, the stack trace will look like this (the stack grows downwards):
+</p>
+<ol>
+<li> main(int, char <b>)</b>
+</li>
+<li> QApplication::exec()
+</li>
+<li> […]
+</li>
+<li> QWidget::event(QEvent <b>)</b>
+</li>
+<li> Button::mousePressEvent(QMouseEvent<b>)</b>
+</li>
+<li> Button::clicked()
+</li>
+<li> […]
+</li>
+<li> Worker::doWork() 
+</li>
+</ol>
+<p>In main() we started the event loop, as usual, by calling QApplication::exec() (line 2). The window manager sent us the mouse click, which was picked up by the Qt kernel, converted in a QMouseEvent and sent to our widget's event() method (line 4) by QApplication::notify() (not shown here). Since Button didn't override event(), the base class implementation (QWidget) is called. QWidget::event() detects the event is actually a mouse click and calls the specialized event handler, that is, Button::mousePressEvent() (line 5). We overrode this method to emit the Button::clicked() signal (line 6), which invokes the Worker::doWork slot of our worker object (line 7).
+</p><p>While the worker is busy working, what's the event loop doing? You should've guessed it: nothing! It dispatched the mouse press event and it's blocked waiting for the event handler to return. We managed to <b>block the event loop</b>, which means that no event is sent any more, until we return from the doWork() slot, up the stack, to the event loop, and let it process pending events. 
+</p><p>With the event delivery stuck, <b>widgets won't update themselves</b> (QPaintEvent objects will sit in the queue), <b>no further interaction with widgets is possible</b> (for the same reason), <b>timers won't fire</b> and <b>networking communications will slow down and stop</b>. Moreover, many window managers will detect that your application is not handling events any more and <b>tell the user that your application isn't responding</b>. That's why is so important to quickly react to events and return to the event loop as soon as possible!
+</p>
+<h2><span class="mw-headline" id="Forcing_event_dispatching">Forcing event dispatching</span></h2>
+<p>So, what do we do if we have a long task to run and don't want to block the event loop? One possible answer is to move the task into another thread: in the next sections we'll see how to do that. We also have the option to manually force the event loop to run, by (repeatedly) calling QCoreApplication::processEvents() inside our blocking task. QCoreApplication::processEvents() will process all the events in the event queue and return to the caller. 
+</p><p>Another available option we can use to forcibly reenter the event loop is the <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qeventloop.html">QEventLoop</a> class. By calling QEventLoop::exec() we reenter the event loop, and we can connect signals to the QEventLoop::quit() slot to make it quit. For instance:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QNetworkAccessManager</span> qnam<span class="sy0">;</span>
+<span class="kw5">QNetworkReply</span> <span class="sy0">*</span>reply <span class="sy0">=</span> qnam.<span class="me1">get</span><span class="br0">&#40;</span><span class="kw5">QNetworkRequest</span><span class="br0">&#40;</span><span class="kw5">QUrl</span><span class="br0">&#40;</span>…<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw5">QEventLoop</span> loop<span class="sy0">;</span>
+<span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span>reply<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>finished<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>loop<span class="sy0">,</span> SLOT <span class="br0">&#40;</span>quit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+loop.<span class="me1">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="coMULTI">/* reply has finished, use it */</span></pre></div></div>
+<p>QNetworkReply doesn't offer a blocking API and requires an event loop to be running. We enter a local QEventLoop, and when the reply has finished, the local event loop quits.
+</p><p>Be very careful when reentering the event loop "by other paths": it can lead to unwanted recursions! Let's go back to the Button example. If we call QCoreApplication::processEvents() inside the doWork() slot, and the user clicks again on the button, the doWork() slot will be invoked <b>again</b>:
+</p>
+<ol>
+<li> main(int, char<b>)</b>
+</li>
+<li> QApplication::exec()
+</li>
+<li> […]
+</li>
+<li> QWidget::event(QEvent <b>)</b>
+</li>
+<li> Button::mousePressEvent(QMouseEvent<b>) </b>
+</li>
+<li> Button::clicked() 
+</li>
+<li> […]
+</li>
+<li> Worker::doWork() // <b>first, inner invocation</b>
+</li>
+<li> QCoreApplication::processEvents() // <b>we manually dispatch events and…</b>
+</li>
+<li> […]
+</li>
+<li> QWidget::event(QEvent * ) // <b>another mouse click is sent to the Button…</b>
+</li>
+<li> Button::mousePressEvent(QMouseEvent *) 
+</li>
+<li> Button::clicked() // <b>which emits clicked() again…</b>
+</li>
+<li> […]
+</li>
+<li> Worker::doWork() // <b>DANG! we've recursed into our slot.</b>
+</li>
+</ol>
+<p>A quick and easy workaround for this is passing QEventLoop::ExcludeUserInputEvents to QCoreApplication::processEvents(), which tells the event loop to not dispatch any user input event (the events will simply stay in the queue).
+</p><p>Luckily, the same thing does <b>not</b> apply to <b>deletion events</b> (the ones posted in the event queue by QObject::deleteLater()). In fact, they are handled in a special way by Qt, and are processed only if the running event loop has a smaller degree of "nesting" (w.r.t. event loops) than the one where deleteLater was called. For instance:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QObject</span> <span class="sy0">*</span>object <span class="sy0">=</span> <span class="kw1">new</span> QObject<span class="sy0">;</span>
+object<span class="sy0">-&gt;</span><span class="me3">deleteLater</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw5">QDialog</span> dialog<span class="sy0">;</span>
+dialog.<span class="me1">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p><b>will not</b> make object a dangling pointer (the event loop entered by QDialog::exec() is more nested than the deleteLater call). The same thing applies to local event loops started with QEventLoop. The only notable exception I've found to this rule (as of Qt 4.7.3) is that if deleteLater is called when NO event loop is running, then the first event loop entered will pick up the event and delete the object. This is pretty much reasonable, since Qt does not know about any "outer" loop that will eventually perform the deletion, and therefore deletes the object immediately.
+</p><p>.
+</p>
+<h1><span class="mw-headline" id="Qt_thread_classes">Qt thread classes</span></h1>
+<blockquote>A computer is a state machine. Threads are for people who can't program state machines.
+<p>— Alan Cox
+</p>
+</blockquote>
+<p>Qt has had thread support for many years (Qt 2.2, released on 22 Sept 2000, introduced the QThread class.), and with the 4.0 release thread support is enabled by default on all supported platforms (although it can be turned off, see <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/fine-tuning-features.html">here</a> for more details). Qt now offers several classes for dealing with threads; let's start with an overview.
+</p>
+<h2><span class="mw-headline" id="QThread">QThread</span></h2>
+<p><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qthread.html">QThread</a> is the central, low-level class for thread support in Qt. A QThread object represents one thread of execution. Due to the cross-platform nature of Qt, QThread manages to hide all the platform-specific code that is needed to use threads on different operating systems.
+</p><p>In order to use a QThread to run some code in a thread, we can subclass it and override the QThread::run() method:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="coMULTI">/* your thread implementation goes here */</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Then we can use
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Thread <span class="sy0">*</span>t <span class="sy0">=</span> <span class="kw1">new</span> Thread<span class="sy0">;</span>
+t<span class="sy0">-&gt;</span><span class="me3">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// start(), not run()!</span></pre></div></div>
+<p>to actually start the new thread. Note that since Qt 4.4 QThread is no longer an abstract class; now the virtual method QThread::run() instead simply calls QThread::exec();, which starts the <i>thread's event loop</i> (more info on this later).
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="QRunnable_and_QThreadPool">QRunnable and QThreadPool</span></h2>
+<p><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qrunnable.html">QRunnable</a> is a lightweight abstract class that can be used to start a task in another thread in a "run and forget" fashion. In order to do so, all we have to do is subclass QRunnable and implement its run() pure virtual method:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Task <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QRunnable</span> <span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="coMULTI">/* your runnable implementation goes here */</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>To actually run a QRunnable object we use the <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qthreadpool.html">QThreadPool</a> class, which manages a pool of threads. By calling QThreadPool::start(runnable) we put a QRunnable in a QThreadPool's runqueue; as soon as a thread becomes available, the QRunnable will be picked up and run into that thread. All Qt applications have a global thread pool available by calling QThreadPool::globalInstance(), but one can always create a private QThreadPool instance and manage it explicitely.
+</p><p>Notice that, not being a QObject, QRunnable has no built-in means of explicitely communicating something to other components; you have to code that by hand, using low-level threading primitives (like a mutex-guarded queue for collecting results, etc.).
+</p>
+<h2><span class="mw-headline" id="QtConcurrent">QtConcurrent</span></h2>
+<p><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/threads-qtconcurrent.html">QtConcurrent</a> is a higher-level API, built on top of QThreadPool, useful to deal with the most common parallel computation patterns: <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Map_(higher-order_function">map)</a>, <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Fold_(higher-order_function">reduce)</a>, and <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Filter_(higher-order_function">filter)</a>&#160;; it also offers a QtConcurrent::run() method that can be used to easily run a function in another thread.
+</p><p>Unlike QThread and QRunnable, QtConcurrent does not require us to use low-level synchronization primitives: all QtConcurrent methods instead return a <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qfuture.html">QFuture</a> object, which can be used to query the computation status (its progress), to pause/resume/cancel the computation, and that also contains its <i>results</i>. The <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qfuturewatcher.html">QFutureWatcher</a> class can be used to monitor a QFuture progress and interact with it by means of signals and slots (notice that QFuture, being a value-based class, doesn't inherit QObject).
+</p>
+<h2><span class="mw-headline" id="Feature_comparison">Feature comparison</span></h2>
+<table>
+<tr>
+<th>
+</th>
+<th>QThread
+</th>
+<th>QRunnable
+</th>
+<th>QtConcurrent<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup>
+</th></tr>
+<tr>
+<td>High level API
+</td>
+<td>✘
+</td>
+<td>✘
+</td>
+<td>✔
+</td></tr>
+<tr>
+<td>Job-oriented
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>✔
+</td></tr>
+<tr>
+<td>Builtin support for pause/resume/cancel
+</td>
+<td>✘
+</td>
+<td>✘
+</td>
+<td>✔
+</td></tr>
+<tr>
+<td>Can run at a different priority
+</td>
+<td>✔
+</td>
+<td>✘
+</td>
+<td>✘
+</td></tr>
+<tr>
+<td>Can run an event loop
+</td>
+<td>✔
+</td>
+<td>✘
+</td>
+<td>✘
+</td></tr></table>
+<h1><span class="mw-headline" id="Threads_and_QObjects">Threads and QObjects</span></h1>
+<h2><span class="mw-headline" id="Per-thread_event_loop">Per-thread event loop</span></h2>
+<p>So far we've always talked about "<i>the</i> event loop", taking somehow per granted that there's only one event loop in a Qt application. This is not the case: QThread objects can start thread-local event loops running in the threads they represent. Therefore, we say that the <b>main event loop</b> is the one created by the thread which invoked main(), and started with QCoreApplication::exec() (which <i>must</i> be called from that thread). This is also called the <b>GUI thread</b>, because it's the only thread in which GUI-related operations are allowed. A QThread local event loop can be started instead by calling QThread::exec() (inside its run() method):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="coMULTI">/* … initialize … */</span>
+&#160;
+exec<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="st0">''</span><span class="st0">'
+ }
+};</span></pre></div></div>
+<p>As we mentioned before, since Qt 4.4 QThread::run() is no longer a pure virtual method; instead, it calls QThread::exec(). Exactly like QCoreApplication, QThread has also the QThread::quit() and QThread::exit() methods to stop the event loop.
+</p><p>A thread event loop delivers events for all QObjects that are <b>living</b> in that thread; this includes, by default, all objects that are created into that thread, or that were moved to that thread (more info about this later). We also say that the <b>thread affinity</b> of a QObject is a certain thread, meaning that the object is living in that thread. This applies to objects which are built in the constructor of a QThread object:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> MyThread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span>
+<span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ MyThread<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ otherObj <span class="sy0">=</span> <span class="kw1">new</span> QObject<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ <span class="kw5">QObject</span> obj<span class="sy0">;</span>
+ <span class="kw5">QObject</span> <span class="sy0">*</span>otherObj<span class="sy0">;</span>
+ QScopedPointer<span class="sy0">&lt;</span><span class="kw5">QObject</span><span class="sy0">&gt;</span> yetAnotherObj<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>What's the thread affinity of obj, otherObj, yetAnotherObj after we create a MyThread object? We must look at the thread that created them: it's the thread that ran the MyThread constructor. Therefore, all three objects are <b>not</b> living in the MyThread thread, but in the thread that created the MyThread instance (which, by the way, is where the instance is living as well).
+</p><p>We can query anytime the thread affinity of a QObject by calling QObject::thread(). Notice that QObjects created before a QCoreApplication object have <b>no thread affinity</b>, and therefore no event dispatching will be done for them (in other words, QCoreApplication builds up the QThread object that represents the main thread).
+</p><p><img src="http://doc.qt.nokia.com/4.7/images/threadsandobjects.png" alt="threadsandobjects.png" />
+</p><p>We can use the thread-safe QCoreApplication::postEvent() method for posting an event for a certain object. This will enqueue the event in the event loop of the thread the object is living in; therefore, the event will not be dispatched unless that thread has a running event loop.
+</p><p>It is very important to understand that QObject and all of its subclasses <b>are not thread-safe</b> (although they can be reentrant); therefore, you can not access a QObject from more than one thread at the same time, unless you serialize all accesses to the object's internal data (for instance, by protecting it with a mutex). Remember that the object may be handling events dispatched by the event loop of the thread it is living in while you're accessing it from another thread! For the same reason, you can't delete a QObject from another thread, but you must use QObject::deleteLater(), which will post an event that will ultimately cause its deletion by the thread the object is living in.
+</p><p>Moreover, QWidget and all of its subclasses, along with other GUI-related classes (even not QObject-based, like QPixmap) <b>are not reentrant</b> either: they can be used exclusively from the GUI thread.
+</p><p>We can change a QObject's affinity by calling QObject::moveToThread(); this will change the affinity of the object and of its children. Since QObject is not thread-safe, we must use it from the thread the object is living in; that is, you can only <b>push</b> objects from the thread they're living in to other threads, and not <b>pull</b> them or move them around from other threads. Moreover, Qt requires that the child of a QObject must live in the same thread where the parent is living. This implies that:
+</p>
+<ul>
+<li> you can't use QObject::moveToThread() on a object which has a parent;
+</li>
+<li> you must not create objects in a QThread using the QThread object itself as their parent:
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw5">QObject</span> <span class="sy0">*</span>obj <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QObject</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// WRONG[[Image:|Image:]]!</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>This is because the <b>QThread object is living in another thread</b>, namely, the one in which it was created.
+</p><p>Qt also requires that all objects living in a thread are deleted before the QThread object that represents the thread is destroyed; this can be easily done by creating all the objects living in that thread on the QThread::run() method's stack.
+</p>
+<h2><span class="mw-headline" id="Signals_and_slots_across_threads">Signals and slots across threads</span></h2>
+<p>Given these premises, how do we call methods on QObjects living in other threads? Qt offers a very nice and clean solution: we post an event in that thread's event queue, and the handling of that event will consist in invoking the method we're interested in (this of course requires that the thread has a running event loop). This facility is built around the method introspection provided by moc: therefore, only signals, slots and methods marked with the Q_INVOKABLE macro are invokable from other threads.
+</p><p>The QMetaObject::invokeMethod() static method does all the work for us:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QMetaObject</span><span class="sy0">::</span><span class="me2">invokeMethod</span><span class="br0">&#40;</span>object<span class="sy0">,</span> <span class="st0">&quot;methodName&quot;</span><span class="sy0">,</span>
+ <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">QueuedConnection</span><span class="sy0">,</span>
+ Q_ARG<span class="br0">&#40;</span>type1<span class="sy0">,</span> arg1<span class="br0">&#41;</span><span class="sy0">,</span>
+ Q_ARG<span class="br0">&#40;</span>type2<span class="sy0">,</span> arg2<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Notice that since the arguments need to be copied in the event which is built behind the scenes, their types need to provide a public constructor, a public destructor and a public copy constructor, and must be registered within Qt type system by using the qRegisterMetaType() function.
+</p><p>Signals and slots across threads work in a similar way. When we connect a signal to a slot, the fifth argument of QObject::connect is used to specify the connection type:
+</p>
+<ul>
+<li> a <b>direct connection</b> means that the slot is always invoked directly by the thread the signal is emitted from;
+</li>
+<li> a <b>queued connection</b> means that an event is posted in the event queue of the thread the receiver is living in, which will be picked up by the event loop and will cause the slot invocation sometime later;
+</li>
+<li> a <b>blocking queued connection</b> is like a queued connection, but the sender thread blocks until the event is picked up by the event loop of the thread the receiver is living in, the slot is invoked, and it returns;
+</li>
+<li> an <b>automatic connection</b> (<i>the default</i>) means that if the thread the receiver is living in is the same as the current thread, a direct connection is used; otherwise, a queued connection is used.
+</li>
+</ul>
+<p>In every case, keep in mind <i>the thread the emitting object is living in</i> has no importance at all! In case of an automatic connection, Qt looks at the thread that invoked the signal and compares it with the thread the receiver is living in to determine which connection type it has to use. In particular, the <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/threads-qobject.html">current Qt documentation</a> <b>is simply wrong</b> when it states:
+</p><p><i>Auto Connection (default) The behavior is the same as the Direct Connection, if the emitter and receiver are in the same thread. The behavior is the same as the Queued Connection, if the emitter and receiver are in different threads.</i>
+</p><p>because the emitter object's thread affinity does not matter. For instance:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">signals</span><span class="sy0">:</span>
+ <span class="kw4">void</span> aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ emit aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="coMULTI">/* … */</span>
+Thread thread<span class="sy0">;</span>
+Object obj<span class="sy0">;</span>
+<span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>thread<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>obj<span class="sy0">,</span> SLOT <span class="br0">&#40;</span>aSlot<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+thread.<span class="me1">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>The signal aSignal() will be emitted by the new thread (represented by the Thread object); since it is not the thread the Object object is living in (which, by the way, <b>is the same thread the Thread object is living in</b>, just to stress that the sender's thread affinity doesn't matter), a <b>queued connection</b> will be used.
+</p><p>Another common pitfall is the following one:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> aSlot<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="coMULTI">/* … */</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="sy0">/</span><span class="st0">''</span><span class="st0">' … */
+ }
+};
+&#160;
+/'</span><span class="st0">''</span> … <span class="sy0">*/</span>
+Thread thread<span class="sy0">;</span>
+Object obj<span class="sy0">;</span>
+<span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>obj<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>thread<span class="sy0">,</span> SLOT <span class="br0">&#40;</span>aSlot<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+thread.<span class="me1">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+obj.<span class="me1">emitSignal</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>When "obj" emits its aSignal() signal, which kind of connection will be used? You should've guessed it: a <b>direct connection</b>. That's because the Thread object is living in the thread that emits the signal. In the aSlot() slot we could then access some Thread's member variable while they're being accessed by the run() method, which is running concurrently: this is the perfect recipe for disaster.
+</p><p>Yet another example, probably the <i>most important</i> one:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> aSlot<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="coMULTI">/* … */</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw5">QObject</span> <span class="sy0">*</span>obj <span class="sy0">=</span> <span class="kw1">new</span> Object<span class="sy0">;</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span>obj<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>aSlot<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="coMULTI">/* … */</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>In this case a <b>queued connection</b> is used, therefore you're required to run an event loop in the thread the Thread object is living in.
+</p><p>A solution you'll often found in forums, blog posts etc. is to add a moveToThread(this) to the Thread constructor:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ Thread<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ moveToThread<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// WRONG</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="coMULTI">/* … */</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>which indeed <i>will work</i> (because now the affinity of the Thread object changed), but it's a very bad design. What's wrong here is that we're misunderstanding the purpose of a thread object (the QThread subclass): <i>QThread objects are not threads</i>; they're control objects around a thread, therefore meant to be used from another thread (usually, the one they're living in).
+</p><p><b>A good way to achieve the same result</b> is splitting the "working" part from the "controller" part, that is, writing a QObject subclass and using QObject::moveToThread() to change its affinity:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Worker <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> doWork<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="coMULTI">/* … */</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="coMULTI">/* … */</span>
+<span class="kw5">QThread</span> <span class="sy0">*</span>thread <span class="sy0">=</span> <span class="kw1">new</span> QThread<span class="sy0">;</span>
+Worker <span class="sy0">*</span>worker <span class="sy0">=</span> <span class="kw1">new</span> Worker<span class="sy0">;</span>
+<span class="kw2">connect</span><span class="br0">&#40;</span>obj<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>workReady<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> worker<span class="sy0">,</span> SLOT <span class="br0">&#40;</span>doWork<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+worker<span class="sy0">-&gt;</span><span class="me3">moveToThread</span><span class="br0">&#40;</span>thread<span class="br0">&#41;</span><span class="sy0">;</span>
+thread<span class="sy0">-&gt;</span><span class="me3">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h2><span class="mw-headline" id="DOs_and_DON.27Ts">DOs and DON'Ts</span></h2>
+<h3><span class="mw-headline" id="You_can.E2.80.A6">You can…</span></h3>
+<p><b> … add signals to a QThread subclass. It's perfectly safe and they'll do the "right thing" (see above; the sender's thread affinity does not matter).</b>
+</p>
+<h3><span class="mw-headline" id="You_shouldn.27t_.E2.80.A6">You shouldn't …</span></h3>
+<ul>
+<li> … use moveToThread(this).
+</li>
+<li> … force the connection type: this usually means that you're doing something wrong, like mixing the control interface of QThread with the program logic (which should stay in a separate object which lives in that thread).
+</li>
+<li> … add slots to a QThread subclass: they'll be invoked from the "wrong" thread, that is, not the one the QThread object is managing, but the one that object is living in, forcing you to specify a direct connection and/or to use moveToThread(this).
+</li>
+<li> … use QThread::terminate.
+</li>
+</ul>
+<h3><span class="mw-headline" id="You_must_not.E2.80.A6">You must not…</span></h3>
+<ul>
+<li> … quit your program when threads are still running. Use QThread::wait to wait for their termination.
+</li>
+<li> … destroy a QThread while the thread that it's managing is still running. If you want some kind of "self-destruction", you can connect the finished() signal with the deleteLater() slot.
+</li>
+</ul>
+<h1><span class="mw-headline" id="When_should_I_use_threads.3F">When should I use threads?</span></h1>
+<h2><span class="mw-headline" id="When_you_have_to_use_a_blocking_API">When you have to use a blocking API</span></h2>
+<p>If you need to use a library or other code that doesn't offer a non-blocking API (by means of signals and slots, or events, or callbacks, etc.), then the only viable solution in order to avoid freezing the event loop is to spawn a process or a thread. Since creating a new worker process, having it doing the job and communicating back the results is definetely harder and more expensive than just starting a thread, the latter is the most common choice.
+</p><p>A good example of such an API is <b>address resolution</b> (just to show you that we're not talking about 3rd-party crappy API. This is something included in every C library out there), which is the process of taking an host name and converting it into an address. This process involves a query to a (usually remote) system — the Domain Name System, or DNS. While, usually, the response is almost instantaneous, the remote servers might fail, some packet might get lost, the network connection might break, and so on; in short, it might take dozens of seconds before we get a reply from our query.
+</p><p>The only standard API available on UNIX systems is <i>blocking</i> (not only the old-fashioned gethostbyname(3), but also the newer and better getservbyname(3) and getaddrinfo(3)). <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qhostinfo.html">QHostInfo</a>, the Qt class that handles host name lookups, uses a QThreadPool to enable the queries to run in the background (see <a rel="nofollow" class="external text" href="http://code.qt.io/cgit/qt/qt.git/tree/src/network/kernel/qhostinfo.cpp">here</a>&#160;; if thread support is turned off, it switches back to a blocking API).
+</p><p>Other simple examples are <b>image loading</b> and <b>scaling</b>. <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qimagereader.html">QImageReader</a> and <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qimage.html">QImage</a> only offer blocking methods to read an image from a device, or to scale an image to a different resolution. If you're dealing with very large images, these processes can take up to (tens of) seconds.
+</p>
+<h2><span class="mw-headline" id="When_you_want_to_scale_with_the_number_of_CPUs">When you want to scale with the number of CPUs</span></h2>
+<p>Threads allow your program to take advantage from multiprocessor systems. Since each thread is scheduled independently by the operating system, if your application is running on such a machine the scheduler is likely to run each thread on a different processor <b>at the same time</b>.
+</p><p>For instance, consider an application that generates thumbnails from a set of images. A <b>thread farm</b> of <i>n</i> threads (that is, a thread pool with a fixed number of threads), one per each CPU available in the system (see also QThread::idealThreadCount() ), can spread the work of scaling down the images into thumbnails on all the threads, effectively gaining an almost linear speedup with the number of the processors (for simplicity's sake, we consider the CPU being the bottleneck).
+</p>
+<h2><span class="mw-headline" id="When_you_don.27t_want_to_be_possibly_blocked_by_others">When you don't want to be possibly blocked by others</span></h2>
+<p>MEH. BETTER START WITH AN EXAMPLE.
+</p><p>This is quite an advanced topic, so feel free to skip it for now. A nice example of this use case comes from QNetworkAccessManager usage inside WebKit. WebKit is a modern browser engine, that is, a set of classes to lay out and display web pages. The Qt widget that uses WebKit is QWebView.
+</p><p>QNetworkAccessManager is a Qt class that deals with HTTP requests and responses for all purposes, we can consider it to be the networking engine of a web browser. Before Qt 4.8, it does not make use of any worker threads; all networking is handled in the same thread QNetworkAccessManager and its QNetworkReplys are living in.
+</p><p>While not using threads for networking is a very good idea, it has also a major drawback: if you don't read data from the socket as soon as possible, the kernel buffers will fill up, packets will begin to be dropped, and the transfer speed will decrease considerably.
+</p><p>Socket activity (i.e., availability of some data to read from a socket) is managed by Qt's event loop. Blocking the event loop will therefore lead to a loss of transfer performance, because nobody will be notified that there are data to read (and thus nobody will read them).
+</p><p>But what could block the event loop? The sad answer is: WebKit itself! As soon as some data are received, WebKit uses them to start laying out the web page. Unfortunately, the layout process is quite complicated and expensive, therefore it blocks the event loop for a (short) while, enough to impact on ongoing transfers (broadband connections play their role here, filling up kernel buffers in a small fraction of second).
+</p><p>To sum it up, what happens is something like this:
+</p>
+<ul>
+<li> WebKit issues a request;
+</li>
+<li> some data from the reply begin to arrive;
+</li>
+<li> WebKit starts to lay out the web page using the incoming data, blocking the event loop;
+</li>
+<li> without a running event loop, data are received by the OS, but not read from QNetworkAccessManager sockets;
+</li>
+<li> kernel buffers will fill up, and the transfer will slow down.
+</li>
+</ul>
+<p>The overall page loading time is therefore worsened by this self-induced transfer slowness.
+</p><p>Notice that since QNetworkAccessManagers and QNetworkReplys are QObjects, they're not thread-safe, therefore you can't just move them to another thread and continue using them from your thread, because they may be accessed at the same time by two threads: yours and the one they're living in, due to events that will be dispatched to them by the latter thread's event loop.
+</p><p>As of Qt 4.8, QNetworkAccessManager now handles HTTP requests in a separate thread by default, so the result of unresponsive GUI and OS buffers filling up too quickly should be cured.
+</p>
+<h1><span class="mw-headline" id="When_shouldn.27t_I_use_threads.3F">When shouldn't I use threads?</span></h1>
+<blockquote>If you think you need threads then your processes are too fat.
+<p>— Rob Pike
+</p>
+</blockquote>
+<h2><span class="mw-headline" id="Timers">Timers</span></h2>
+<p>This is perhaps the worst form of thread abuse. If we have to invoke a method repeatedly (for instance, every second), many people end up with something like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// VERY WRONG</span>
+<span class="kw1">while</span> <span class="br0">&#40;</span>condition<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ doWork<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ sleep<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// this is sleep(3) from the C library</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Then they figure out that this is <b>blocking the event loop</b>, therefore decide to bring in threads:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// WRONG</span>
+<span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">while</span> <span class="br0">&#40;</span>condition<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="co1">// notice that &quot;condition&quot; may also need volatiness and mutex protection</span>
+ <span class="co1">// if we modify it from other threads (!)</span>
+ doWork<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ sleep<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// this is QThread::sleep()</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>A much <b>better and simpler way</b> of achieving the same result is simply using timers, i.e. a <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qtimer.html">QTimer</a> object with a 1s timeout, and make the doWork() method a slot:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Worker <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ Worker<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>timer<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>timeout<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>doWork<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ timer.<span class="me1">start</span><span class="br0">&#40;</span><span class="nu0">1000</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw2">private</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> doWork<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="coMULTI">/* … */</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ <span class="kw5">QTimer</span> timer<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>All we need is a running event loop, then the doWork() method will be invoked each second.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Networking_.2F_state_machines">Networking / state machines</span></h2>
+<p>A very common design pattern when dealing with network operations is the following one:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">socket<span class="sy0">-&gt;</span><span class="kw2">connect</span><span class="br0">&#40;</span>host<span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">waitForConnected</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+data <span class="sy0">=</span> getData<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">write</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">waitForBytesWritten</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+socket<span class="sy0">-&gt;</span><span class="me3">waitForReadyRead</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">read</span><span class="br0">&#40;</span>response<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+reply <span class="sy0">=</span> process<span class="br0">&#40;</span>response<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+socket<span class="sy0">-&gt;</span><span class="me3">write</span><span class="br0">&#40;</span>reply<span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">waitForBytesWritten</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="coMULTI">/* … and so on … */</span></pre></div></div>
+<p>Needless to say, the various waitFor<b>() calls block the caller without returning to the event loop, freezing the UI and so on. Notice that the above snippet does not take into account any error handling, otherwise it would have been even more cumbersome. What is very wrong in this design is that we're forgetting that </b>networking is asynchronous by design<b>, and if we build a synchronous processing around we're shooting ourselves in the foot. To solve this problem, many people simple move this code into a different thread.</b>
+</p><p>Another more abstract example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">result <span class="sy0">=</span> process_one_thing<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw1">if</span> <span class="br0">&#40;</span>result<span class="sy0">-&gt;</span><span class="me3">something</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+ process_this<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw1">else</span>
+ process_that<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+wait_for_user_input<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+input <span class="sy0">=</span> read_user_input<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+process_user_input<span class="br0">&#40;</span>input<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="coMULTI">/* … */</span></pre></div></div>
+<p>Which has more or less the same pitfalls of the networking example.
+</p><p>Let's take a step back and consider from an higher point of view what we're building here: we want to create a <b>state machine</b> that reacts on inputs of some sort and acts consequently. For instance, with the networking example, we might want to build something like this:
+</p>
+<ul>
+<li> Idle → Connecting (when calling connectToHost());
+</li>
+<li> Connecting → Connected (when connected() is emitted);
+</li>
+<li> Connected → LoginDataSent (when we send the login data to the server);
+</li>
+<li> LoginDataSent → LoggedIn (the server replied with an ACK)
+</li>
+<li> LoginDataSent → LoginError (the server replied with a NACK)
+</li>
+</ul>
+<p>and so forth.
+</p><p>Now, there are several ways to build a state machine (and Qt even offers a class for that: <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qstatemachine.html">QStateMachine</a> ), the simplest one being an enum (i.e. an integer) used to remember the current state. We can rewrite the above snippets like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Object <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">enum</span> State <span class="br0">&#123;</span>
+ State1<span class="sy0">,</span> State2<span class="sy0">,</span> State3 <span class="coMULTI">/* and so on */</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ State state<span class="sy0">;</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ Object<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">:</span> state<span class="br0">&#40;</span>State1<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span>source<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>ready<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>doWork<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw2">private</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> doWork<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">switch</span> <span class="br0">&#40;</span>state<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">case</span> State1<span class="sy0">:</span>
+ <span class="coMULTI">/* … */</span>
+ state <span class="sy0">=</span> State2<span class="sy0">;</span>
+ break<span class="sy0">;</span>
+ <span class="kw1">case</span> State2<span class="sy0">:</span>
+ <span class="coMULTI">/* … */</span>
+ state <span class="sy0">=</span> State3<span class="sy0">;</span>
+ break<span class="sy0">;</span>
+ <span class="coMULTI">/* etc. */</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>What the "source" object and its "ready()" signal are? Exactly what we want them to be: for instance, in the networking example, we might want to connect the socket's QAbstractSocket::connected() and the QIODevice::readyRead() signals to our slot. Of course, we can also easily add more slots if that suits better in our case (like a slot to manage error situations, which are notified by the QAbstractSocket::error() signal). This is a true asynchronous, signal-driven design!
+</p>
+<h2><span class="mw-headline" id="Jobs_splittable_in_chunks">Jobs splittable in chunks</span></h2>
+<p>Suppose that we have a long computation which can't be easily moved to another thread (or that it can't be moved at all, because for instance it <i>must run</i> in the GUI thread). If <b>we can split the computation in small chunks</b>, we can return to the event loop, let it dispatch events, and make it invoke the method that processes the next chunk. This can be easily done if we remember how queued connections are implemented: an event is posted in the event loop of the thread the receiver object is living in; when the event is delivered, the corresponding slot is invoked.
+</p><p>We can use QMetaObject::invokeMethod() to achieve the same result by specifying Qt::QueuedConnection as the type of the invocation; this just requires the method to be invokable, therefore it must be either a slot or marked with the Q_INVOKABLE macro. If we also want to pass parameters to the method, they need to be registered within the Qt metatype system using qRegisterMetaType(). The following snippet shows this pattern:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Worker <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+<span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> startProcessing<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ processItem<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> processItem<span class="br0">&#40;</span><span class="kw4">int</span> index<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="coMULTI">/* process items[index] … */</span>
+&#160;
+ <span class="kw1">if</span> <span class="br0">&#40;</span>index <span class="sy0">&lt;</span> numberOfItems<span class="br0">&#41;</span>
+ <span class="kw5">QMetaObject</span><span class="sy0">::</span><span class="me2">invokeMethod</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span>
+ <span class="st0">&quot;processItem&quot;</span><span class="sy0">,</span>
+ <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">QueuedConnection</span><span class="sy0">,</span>
+ Q_ARG<span class="br0">&#40;</span><span class="kw4">int</span><span class="sy0">,</span> index <span class="sy0">+</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Since there are no threads involved, it's easy to pause/resume/cancel such a computation and collect the results back.
+</p>
+<h1><span class="mw-headline" id="References">References</span></h1>
+<p><b> Bradley T. Hughes: <a rel="nofollow" class="external text" href="http://blog.qt.io/blog/2010/06/17/youre-doing-it-wrong/">You’re doing it wrong…</a>, Qt Labs blogs, 2010-06-17</b>
+</p>
+<ul>
+<li> Bradley T. Hughes: <a rel="nofollow" class="external text" href="http://blog.qt.io/blog/2006/12/04/threading-without-the-headache/">Threading without the headache</a>, Qt Labs blogs, 2006-12-04
+</li>
+</ul>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Except QtConcurrent::run, which is implemented using QRunnable and therefore shares its pros and cons.</span>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.507 seconds
+Real time usage: 0.539 seconds
+Preprocessor visited node count: 433/1000000
+Preprocessor generated node count: 1251/1000000
+Post‐expand include size: 2737/2097152 bytes
+Template argument size: 214/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:2052-0!*!0!!en!*!* and timestamp 20151104080353 and revision id 18170
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexfaf6.html?title=Threads_Events_QObjects&amp;oldid=18170">http://wiki.qt.io/index.php?title=Threads_Events_QObjects&amp;oldid=18170</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=fe8688e349cdbd8c&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Threads_Events_QObjects.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Threads_Events_QObjects.html?title=Talk:Threads_Events_QObjects&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Threads_Events_QObjects.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index65be.html?title=Threads_Events_QObjects&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index62dc.html?title=Threads_Events_QObjects&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Threads_Events_QObjects.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Threads_Events_QObjects.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexd4de.html?title=Threads_Events_QObjects&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexfaf6.html?title=Threads_Events_QObjects&amp;oldid=18170" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index2cd0.html?title=Threads_Events_QObjects&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 June 2015, at 18:42.</li>
+											<li id="footer-info-viewcount">This page has been accessed 20,814 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":231});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Threads_Events_QObjects by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:56:35 GMT -->
+</html>

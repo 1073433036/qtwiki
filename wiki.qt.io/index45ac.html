@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&oldid=18910 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:18:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>How to remotely debug Qt applications - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_remotely_debug_Qt_applications","wgTitle":"How to remotely debug Qt applications","wgCurRevisionId":18910,"wgRevisionId":18910,"wgArticleId":4026,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_remotely_debug_Qt_applications","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_to_remotely_debug_Qt_applications skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">How to remotely debug Qt applications</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 06:36, 29 July 2015 by <a href="http://wiki.qt.io/index.php?title=User:NetZwerg&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:NetZwerg (page does not exist)">NetZwerg</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/User_talk:NetZwerg" title="User talk:NetZwerg">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/NetZwerg" title="Special:Contributions/NetZwerg">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&amp;diff=prev&amp;oldid=18910" title="How to remotely debug Qt applications">diff</a>) <a href="http://wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&amp;direction=prev&amp;oldid=18910" title="How to remotely debug Qt applications">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Master"><span class="tocnumber">1.1</span> <span class="toctext">Master</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Target"><span class="tocnumber">1.2</span> <span class="toctext">Target</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Setting_up_the_virtual_machines"><span class="tocnumber">2</span> <span class="toctext">Setting up the virtual machines</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#download_needed_files"><span class="tocnumber">2.1</span> <span class="toctext">download needed files</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Install_Virtualbox"><span class="tocnumber">2.2</span> <span class="toctext">Install Virtualbox</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Create_the_virtual_machines.2C_with_a_virtual_network_between_them"><span class="tocnumber">2.3</span> <span class="toctext">Create the virtual machines, with a virtual network between them</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Install_Ubuntu_on_both_virtual_machines"><span class="tocnumber">2.4</span> <span class="toctext">Install Ubuntu on both virtual machines</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Clone_the_master_virual_machine_to_create_the_target"><span class="tocnumber">2.5</span> <span class="toctext">Clone the master virual machine to create the target</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Testing_the_Virtual_Lan_connection"><span class="tocnumber">2.6</span> <span class="toctext">Testing the Virtual Lan connection</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Install_Qt_on_the_master_PC"><span class="tocnumber">3</span> <span class="toctext">Install Qt on the master PC</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#remote_debug_the_application"><span class="tocnumber">4</span> <span class="toctext">remote debug the application</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Create_a_new_project_on_the_master"><span class="tocnumber">4.1</span> <span class="toctext">Create a new project on the master</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Connect_to_the_target"><span class="tocnumber">4.2</span> <span class="toctext">Connect to the target</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Deploy_to_the_target"><span class="tocnumber">4.3</span> <span class="toctext">Deploy to the target</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<table style="center; margin: -1px auto 20px;border: 1px solid #C00; border-left: 10px solid #C00; background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> This guide is not finished, the remote deploy step throws an error.
+</td></tr></table>
+<p>This is a guide to write a Qt program on one virtual PC, and deploy and debug it on another virtual PC. As a first step, both virtual PC's are running linux. this guide assumes a windows 7 host system, but this should work on each platform that can run Virtualbox.
+</p>
+<h3><span class="mw-headline" id="Master">Master</span></h3>
+<p>This PC will be running the Qt IDE. This is where you will write the Qt program.
+</p>
+<h3><span class="mw-headline" id="Target">Target</span></h3>
+<p>This PC will be the target. This is where the Qt program will run. This PC has almost nothing installed, no IDE, no compilers, just a runtime
+</p>
+<h2><span class="mw-headline" id="Setting_up_the_virtual_machines">Setting up the virtual machines</span></h2>
+<h3><span class="mw-headline" id="download_needed_files">download needed files</span></h3>
+<p>Download Virtual box and VirtualBox Extension Pack from this site: <a rel="nofollow" class="external free" href="http://dlc-cdn.sun.com/virtualbox/4.3.28/index.html">http://dlc-cdn.sun.com/virtualbox/4.3.28/index.html</a>  This tutorial has been tested with virtualbox 4.3.28. Next download Ubuntu from this site: <a rel="nofollow" class="external free" href="http://www.ubuntu.com/download/desktop">http://www.ubuntu.com/download/desktop</a> This tutorial has been tested with 15.04 32bit.
+</p>
+<h3><span class="mw-headline" id="Install_Virtualbox">Install Virtualbox</span></h3>
+<p>In windows, open VirtualBox-4.3.28-100309-Win.exe, and accept the defaults. Also accept the 4 prompts about device software installation. Then install Oracle_VM_VirtualBox_Extension_Pack-4.3.28-100309.vbox-extpack by double-clicking the file. Then click  install, scroll down the PUEL, and click 'I agree'
+</p>
+<h3><span class="mw-headline" id="Create_the_virtual_machines.2C_with_a_virtual_network_between_them">Create the virtual machines, with a virtual network between them</span></h3>
+<p>Start Virtualbox, click file-preferences-general. Set the default Machine Folder to a spacious location. Next click machine-new, set the name to Ubuntu-master, type linux, version Ubuntu (32 bit), next Set memory size to 1024MB, next, create a virtual hard drive now, create, VDI, next, Dynamically allocated, next, select size: 50BG. Select Ubuntu master, then click Settings-storage-CD icon-choose a virtual CD/DVD file... Then browse to ubuntu-15.04-desktop-i386.iso, and click open. Select Network, Adapter2, enable adapter, attached to internal network, name "virtualLAN". click OK. Select Ubuntu-master, click machine-clone. New machine name: Ubuntu-target, next clone type=Full clone, clone
+</p>
+<h3><span class="mw-headline" id="Install_Ubuntu_on_both_virtual_machines">Install Ubuntu on both virtual machines</span></h3>
+<p>Start Virtualbox, Select 'ubuntu-master', click run. In a new window 'Ubuntu-master [running]', ubuntu should boot from CD. On my PC, the installer does not react to the mouseclicks, so use the tab, space and return keys to make the selections.  Choose "Install Ubuntu". Select "Download updates while installing" and select "Install this third-party software". Choose "Erase disk and install ubuntu", and "Install Now", and "Continue". Next select your location, and choose "Continue". Next choose a keyboard layout and "Continue". Next choose a name and password. Choose "Master" as the computer name, and select "log in automatically", and choose "Continue", after some time, choose "Restart Now". After some time the desktop is loaded.
+</p>
+<h4><span class="mw-headline" id="Internet_connection">Internet connection</span></h4>
+<p>Open a terminal (click top-left, search terminal). Check your internet connection with the following command:
+</p>
+<pre>$ ping www.google.com
+</pre>
+<p>...64 bytes from ... time ..ms
+</p>
+<pre>$ route
+</pre>
+<p>Destination Gateway
+... default 10.0.2.2
+</p><p>Next click on the top-left networking icon, and choose "Connection information". Wired connection 1 is active, and has the default route 10.0.2.2
+</p>
+<h4><span class="mw-headline" id="VirtualLAN_connection">VirtualLAN connection</span></h4>
+<p>Click on the top-left networking icon, and choose "Edit connections" Select Wired connection 2, and choose edit. Select IPv4 Settings, and enter the following information:
+Method: Manual
+Addresses: 192.168.107.1
+Netmask: 255.255.255.0
+Gateway: 0.0.0.0
+DNS servers: &lt;empty&gt;
+search domains: &lt;empty&gt;
+Next press "save"
+Click on the top-left networking icon, and choose "Wired connection 2 disconnect", and then "Wirend connection 2". Now the new settings for wired connection 2 are active.
+</p>
+<h3><span class="mw-headline" id="Clone_the_master_virual_machine_to_create_the_target">Clone the master virual machine to create the target</span></h3>
+<p>Shut down the master virtual PC. Next goto Virtual Box, and select ubuntu-master. Now choose Machine-clone, and set the name to ubuntu-target. Also enable "Reinitialize the MAC address of all network cards", and choose next. Choose "Linked clone", and clone
+<a rel="nofollow" class="external free" href="http://www.sysprobs.com/linked-clone-virtualbox-how-to-clone-virtual-machine">http://www.sysprobs.com/linked-clone-virtualbox-how-to-clone-virtual-machine</a>
+</p>
+<h4><span class="mw-headline" id="Setting_up_the_target_machine">Setting up the target machine</span></h4>
+<p>Start Virtualbox, Select 'ubuntu-target', click run. After some time the desktop is loaded. Click system settings-Details. Change the device name from "Master" to "Target". Next logout and login, to let the new machine name take effect.
+Click on the top-left networking icon, and choose "Edit connections" Select Wired connection 2, and choose edit. Select IPv4 Settings, and enter the following information:
+Method: Manual
+Addresses: 192.168.107.2
+Netmask: 255.255.255.0
+Gateway: 0.0.0.0
+DNS servers: &lt;empty&gt;
+search domains: &lt;empty&gt;
+Next press "save"
+Click on the top-left networking icon, and choose "Wired connection 2 disconnect", and then "Wirend connection 2". Now the new settings for wired connection 2 are active.
+</p>
+<h3><span class="mw-headline" id="Testing_the_Virtual_Lan_connection">Testing the Virtual Lan connection</span></h3>
+<p>Start both the ubuntu-master and the ubuntu-target machine.  On the master, enter the following command to ping the target:
+$ ping 192.168.107.2
+On the slave, enter the following command to ping the master:
+$ping 192.168.107.1
+</p>
+<h2><span class="mw-headline" id="Install_Qt_on_the_master_PC">Install Qt on the master PC</span></h2>
+<p>Start ubuntu software center. Search for qt-sdk, select it, and press install. next type in your password. After some time Qtcreator is installed.
+</p>
+<h2><span class="mw-headline" id="remote_debug_the_application">remote debug the application</span></h2>
+<p>Start both the master and the target virtual machine. 
+</p>
+<h3><span class="mw-headline" id="Create_a_new_project_on_the_master">Create a new project on the master</span></h3>
+<p>On the master start Qt Creator. Select new project-applications-QT Widgets Application-choose. Pick a name and a location, and click next. select the kit "Desktop", and click next. Choose the names for the classed etc, and press next. Choose &lt;None&gt; for version control, and press finish.
+</p>
+<h3><span class="mw-headline" id="Connect_to_the_target">Connect to the target</span></h3>
+<p>In Qt Creator, Click on projects at the left side. Then click Manage Kits... This will open the options screen. Then select devices, and click Add... Generic Linux Device, start wizzard. Enter the following settings:
+Name: ubuntu-target
+IP: 192.168.107.2
+User: &lt;your username&gt;
+authentication type: password
+password: &lt;your password&gt;
+choose next and finish. Now the error "SSH connection failure: Connection refused" comes up. Click close
+</p><p>on ubuntu-target, start ubuntu software center. Search for openssh-server, and install it.
+</p><p>on ubuntu-master, select ubuntu-target, and click test. Now the device test succeeds. Click close and OK.
+</p>
+<h3><span class="mw-headline" id="Deploy_to_the_target">Deploy to the target</span></h3>
+<p>In Qt Creator on ubuntu-master, click projects, Manage Kits... This will open the options screen. Now click Build &amp; Run, Kits, Add. Enter the following settings:
+name: ubuntu-target
+Device type: generic linux device
+Device: ubuntu-target
+Sysroot: &lt;empty&gt;
+Compiler GCC (x86 32 bit in /usr/bin)
+Debugger: System GDB
+Qt version: Qt 5.4.1
+Click OK
+In projects-untiteld-Build &amp; Run click add Kit-ubuntu-target.
+In Qt creator click the little arrow next to debug, and select ubuntu-target debug. Now click the green arrow with the bug on top (Start Debugging)
+Launching gives the error "Initial setup failed: Application finished with exit code 1"
+</p><p>Application output shows the following error:
+"
+Cannot exec&#160;: no such file or directory
+"
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.039 seconds
+Real time usage: 0.059 seconds
+Preprocessor visited node count: 175/1000000
+Preprocessor generated node count: 693/1000000
+Post‐expand include size: 2863/2097152 bytes
+Template argument size: 67/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:4026-0!*!*!!en!*!* and timestamp 20151105005313 and revision id 18910
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&amp;oldid=18910">http://wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&amp;oldid=18910</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:HowTo" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=How+to+remotely+debug+Qt+applications" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/How_to_remotely_debug_Qt_applications"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:How_to_remotely_debug_Qt_applications&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/How_to_remotely_debug_Qt_applications" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/How_to_remotely_debug_Qt_applications" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/How_to_remotely_debug_Qt_applications" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&amp;oldid=18910&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&amp;oldid=18910" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 29 July 2015, at 06:36.</li>
+											<li id="footer-info-viewcount">This page has been accessed 633 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":1274});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_remotely_debug_Qt_applications&oldid=18910 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:18:29 GMT -->
+</html>

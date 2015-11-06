@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/QML_Hello_World_Tutorial/es by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:07:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>QML Hello World Tutorial/es - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"QML_Hello_World_Tutorial/es","wgTitle":"QML Hello World Tutorial/es","wgCurRevisionId":14323,"wgRevisionId":14323,"wgArticleId":1397,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Spanish","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"QML_Hello_World_Tutorial/es","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-QML_Hello_World_Tutorial_es skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">QML Hello World Tutorial/es</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../indexd31c.html?title=QML_Hello_World_Tutorial/es&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Tutorial_.22Hola_Mundo.22_con_QML"><span class="tocnumber">1</span> <span class="toctext">Tutorial "Hola Mundo" con QML</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Tipos_B.C3.A1sicos"><span class="tocnumber">1.1</span> <span class="toctext">Tipos Básicos</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Componentes_QML"><span class="tocnumber">1.2</span> <span class="toctext">Componentes QML</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Tutorial_.22Hola_Mundo.22_con_QML">Tutorial "Hola Mundo" con QML</span></h1>
+<p>Este tutorial provee una introducción a QML, el lenguage de marcado de Qt Quick. Este tutorial no cubre todo; sólo hace énfasis en enseñar principios clave, las funciones se presentan tan pronto sea necesario.
+</p><p>A través de los distintos pasos de este tutorial aprenderemos acerca de los tipos básicos de QML, crearemos nuestros propios componentes QML con propiedades y signals, y crearemos una animación simpmle con la ayuda de estados y transicionnes.
+</p><p>El capítulo uno comienza con un programa mínimo de "Hola mundo" y en los siguientes capítulos presentaremos nuevos conceptos.
+</p><p>El código fuente del tutorial está ubicado en el directorio $QTDIR/examples/declarative/tutorials/helloworld.
+</p><p>Capítulos del tutorial:
+</p>
+<ol>
+<li> Tipos Básicos
+</li>
+<li> Componentes QML
+</li>
+<li> Estados y Transiciones
+</li>
+</ol>
+<h2><span class="mw-headline" id="Tipos_B.C3.A1sicos">Tipos Básicos</span></h2>
+<p>El primer programa con QML es un simple "Hola mundo" que introduce algunos conceptos básicos de QML. La imagen de abajo muestra una captura de pantalla de este programa.
+</p><p><a href="../index2046.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/declarative-tutorial1.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/declarative-tutorial1.png">http://doc.qt.nokia.com/4.7/images/declarative-tutorial1.png</a>
+</p><p>El código QML para esta aplicación es el siguiente:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> page
+ width<span class="sy0">:</span> <span class="nu0">500</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">200</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;lightgray&quot;</span>
+&#160;
+Text <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> helloText
+ text<span class="sy0">:</span> <span class="st0">&quot;Hello world!&quot;</span>
+ y<span class="sy0">:</span> <span class="nu0">30</span>
+ anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> page.<span class="me1">horizontalCenter</span>
+ font.<span class="me1">pointSize</span><span class="sy0">:</span> <span class="nu0">24</span><span class="sy0">;</span> font.<span class="me1">bold</span><span class="sy0">:</span> <span class="kw2">true</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Revisi.C3.B3n_l.C3.ADnea_a_l.C3.ADnea">Revisión línea a línea</span></h3>
+<h3><span class="mw-headline" id="Importar">Importar</span></h3>
+<p>Primero importamos los tipos necesarios para este ejemplo. Muchos archivos QML importarán los tipos básicos de QML (como <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a> o <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-image.html">Image</a>) utilizando:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span><span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+<span class="sy0">===</span> Elemento Rectangle <span class="sy0">===</span></pre></div></div>
+<p>Rectangle {
+</p>
+<pre>id: page
+width: 500; height: 200
+</pre>
+ color: "lightgray"<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Declaramos nuestro elemento raíz el cuál será de tipo <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/qml-rectangle.html Rectangle] (Rectángulo), uno de los tipos básicos de QML. Le asignamos un id con el cuál podremos referirnos a él posteriormente, en este caso le llamaremos page (página). También establecemos sus propiedades de ancho, alto y color mediante las palabras clave width, height y color.</span>
+El elemento <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/qml-rectangle.html Rectangle] tiene muchas otras propiedades (como posición en X y en Y) pero por ahora dejaremos que conserven sus valores por defecto.</span>
+&#160;
+<span class="sy0">===</span> Elemento Text <span class="sy0">===</span>
+&#160;
+Definimos un elemento tipo <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/qml-text.html Text] (Texto), el cuál será hijo del elemento Rectangle raiz y que mostrará el texto &quot;Hello world!&quot; La propiedad Y es utilizada para posicionar el texto de manera vertical a 30 pixeles por debajo de la parte superior de su padre.</span>
+Las propiedades font.<span class="me1">pointSize</span> <span class="br0">&#40;</span>Tamaño de fuente<span class="br0">&#41;</span> y font.<span class="me1">bold</span> <span class="br0">&#40;</span>Negritas<span class="br0">&#41;</span> están relacionadas con el tipo Font y es por ello que usan una notación con puntos <span class="br0">&#40;</span>Tipo.<span class="me1">propiedad</span><span class="br0">&#41;</span>.
+<span class="me1">La</span> propiedad anchors.<span class="me1">horizontalCenter</span> <span class="br0">&#40;</span>anclas.<span class="me1">CentroHorizontal</span><span class="br0">&#41;</span> se refiere al centro horizontal de un elemento. <span class="me1">En</span> este caso<span class="sy0">,</span> especificamos que nuestro elemento helloText debe estar centrado horizontalmente en el elemento page. <span class="me1">Consulte</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/qml-anchor-layout.html#anchor-layout Anchor-based Layout] (Organización basada en anclas)</span>
+Las propiedades font.<span class="me1">pointSize</span> y font.<span class="me1">bold</span> properties están realacionadas con la fuente y utilizan la <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/qdeclarativeintroduction.html#dot-properties notación de punto].</span>
+&#160;
+<span class="sy0">===</span> Viendo el ejemplo <span class="sy0">===</span>
+&#160;
+Para ver el ejemplo<span class="sy0">,</span> ejecuta la herramienta <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/qmlviewer.html(localizada QML Viewer] en el directorio bin) con el nombre del archivo como primer argumento. Por ejemplo, para ejecutar el ejemplo desde la localización de la instalación, debes escribir:</span></pre></div></div>bin/qml $QTDIR/examples/declarative/tutorials/helloworld/tutorial.qml&lt;/code&gt;
+<h2><span class="mw-headline" id="Componentes_QML">Componentes QML</span></h2>
+<p>Ahora agregaremos un selector de color a nuestra aplicación que servirá para cambiar el color de nuestro texto. La aplicación de esta sección del ejemplo se verá como en la siguiente imagen.
+</p><p><a href="../indexc313.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/declarative-tutorial2.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/declarative-tutorial2.png">http://doc.qt.nokia.com/4.7/images/declarative-tutorial2.png</a>
+</p><p>El selector de color está hecho de seis celdas de distintos colores. Para evitar escribir el código varias veces, primero creamos un nuevo componente llamaco Cell (Celda/Casilla). Los componentes proveen maneras de definir un nuevo tipo que puede ser reutilizado en otros archivos QML. Un componente de QML es como una caja negra que interactua con el mundo exterior a través de propiedades, señales y slots y que generalmente está definido en su propio archivo QML (Para más detalles puedes ver Defining new Components (Definiendo nuevos componentes))
+El nombre del componente siempre debe comenzar con una letra mayúscula.
+</p><p>El código del componente Cell (Cell.qml) es el siguiente:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Item <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> container
+ property alias cellColor<span class="sy0">:</span> rectangle.<span class="me1">color</span>
+ <span class="kw4">signal</span> clicked<span class="br0">&#40;</span>color cellColor<span class="br0">&#41;</span>
+&#160;
+width<span class="sy0">:</span> <span class="nu0">40</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">25</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> rectangle
+ border.<span class="me1">color</span><span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ onClicked<span class="sy0">:</span> container.<span class="me1">clicked</span><span class="br0">&#40;</span>container.<span class="me1">cellColor</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Revisi.C3.B3n_L.C3.ADnea_a_L.C3.ADnea_2">Revisión Línea a Línea</span></h3>
+<h3><span class="mw-headline" id="El_componente_Cell_.28Celda.29">El componente Cell (Celda)</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Item <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> container
+ property alias cellColor<span class="sy0">:</span> rectangle.<span class="me1">color</span>
+ <span class="kw4">signal</span> clicked<span class="br0">&#40;</span>color cellColor<span class="br0">&#41;</span>
+&#160;
+width<span class="sy0">:</span> <span class="nu0">40</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">25</span></pre></div></div>
+<p>El elemento raíz de nuestro componente será de tipo <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-item.html">Item</a> (Elemento) y su id será container. El tipo Item es el elemento más básico de QML y es frecuentemente utilizado como contenedor para otros elementos.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> property alias cellColor<span class="sy0">:</span> rectangle.<span class="me1">color</span><span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+Declaramos una propiedad llamada cellColor. <span class="me1">Est</span>á propiedad será accesible desde fuera del componente y por lo tanto nos permitirá instanciar celdas de distintos colores. <span class="me1">Esta</span> propiedas es sólo un alias de una propiedad existente<span class="sy0">:</span> El color del rectángulo que compone la celda. <span class="br0">&#40;</span>Par más información puedes ver <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/qml-extending-types.html#adding-new-properties Agregar Nuevas Propiedades]).</span></pre></div></div> signal clicked(color cellColor)&lt;/code&gt;
+<p>Definimos una señal de nombre clicked (presionado) para nuestro componente y que tendrá un parámetro de tipo color, llamado color. Usaremos esta señal para cambiar el color del texto desde nuestro archivo main.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> rectangle
+ border.<span class="me1">color</span><span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+<span class="br0">&#125;</span></pre></div></div>
+<p>Definimos un elemento rectángulo que será hijo de nuestro elemento container y definimos sus propiedades.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ onClicked<span class="sy0">:</span> container.<span class="me1">clicked</span><span class="br0">&#40;</span>container.<span class="me1">cellColor</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Nuestro elemento Cell es básicamente un rectángulo de color igual a rectangle.id
+La propiedad anchors.fill es una manera conveniente de establecer el tamaño de un elemento. En este caso el elemento rectangle tendrá el mismo tamaño que su padre. (consulte <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-anchor-layout.html#anchor-layout">Layout basado en anclas</a>)
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ onClicked<span class="sy0">:</span> container.<span class="me1">clicked</span><span class="br0">&#40;</span>container.<span class="me1">cellColor</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Con el fin de cambiar el color del texto cuando presionemos una celda, creamos un elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> (Área de Mouse/Ratón) que tendrá el mismo tamaño que su padre.
+</p><p>El <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> define una señal clicked esta señal se emita, queremos emitir nuestra propia señal clicked con el color del container como parámetro.
+</p>
+<h3><span class="mw-headline" id="El_archivo_main_de_QML">El archivo main de QML</span></h3>
+<p>En nuestro archivo de QML, usaremos nuestro componente Cell para crear el selector de color:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> page
+ width<span class="sy0">:</span> <span class="nu0">500</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">200</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;lightgray&quot;</span>
+&#160;
+Text <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> helloText
+ text<span class="sy0">:</span> <span class="st0">&quot;Hello world!&quot;</span>
+ y<span class="sy0">:</span> <span class="nu0">30</span>
+ anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> page.<span class="me1">horizontalCenter</span>
+ font.<span class="me1">pointSize</span><span class="sy0">:</span> <span class="nu0">24</span><span class="sy0">;</span> font.<span class="me1">bold</span><span class="sy0">:</span> <span class="kw2">true</span>
+ <span class="br0">&#125;</span>
+&#160;
+Grid <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> colorPicker
+ x<span class="sy0">:</span> <span class="nu0">4</span><span class="sy0">;</span> anchors.<span class="me1">bottom</span><span class="sy0">:</span> page.<span class="me1">bottom</span><span class="sy0">;</span> anchors.<span class="me1">bottomMargin</span><span class="sy0">:</span> <span class="nu0">4</span>
+ rows<span class="sy0">:</span> <span class="nu0">2</span><span class="sy0">;</span> columns<span class="sy0">:</span> <span class="nu0">3</span><span class="sy0">;</span> spacing<span class="sy0">:</span> <span class="nu0">3</span>
+&#160;
+Cell <span class="br0">&#123;</span> cellColor<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span><span class="sy0">;</span> onClicked<span class="sy0">:</span> helloText.<span class="me1">color</span> <span class="sy0">=</span> cellColor <span class="br0">&#125;</span>
+ Cell <span class="br0">&#123;</span> cellColor<span class="sy0">:</span> <span class="st0">&quot;green&quot;</span><span class="sy0">;</span> onClicked<span class="sy0">:</span> helloText.<span class="me1">color</span> <span class="sy0">=</span> cellColor <span class="br0">&#125;</span>
+ Cell <span class="br0">&#123;</span> cellColor<span class="sy0">:</span> <span class="st0">&quot;blue&quot;</span><span class="sy0">;</span> onClicked<span class="sy0">:</span> helloText.<span class="me1">color</span> <span class="sy0">=</span> cellColor <span class="br0">&#125;</span>
+ Cell <span class="br0">&#123;</span> cellColor<span class="sy0">:</span> <span class="st0">&quot;yellow&quot;</span><span class="sy0">;</span> onClicked<span class="sy0">:</span> helloText.<span class="me1">color</span> <span class="sy0">=</span> cellColor <span class="br0">&#125;</span>
+ Cell <span class="br0">&#123;</span> cellColor<span class="sy0">:</span> <span class="st0">&quot;steelblue&quot;</span><span class="sy0">;</span> onClicked<span class="sy0">:</span> helloText.<span class="me1">color</span> <span class="sy0">=</span> cellColor <span class="br0">&#125;</span>
+ Cell <span class="br0">&#123;</span> cellColor<span class="sy0">:</span> <span class="st0">&quot;black&quot;</span><span class="sy0">;</span> onClicked<span class="sy0">:</span> helloText.<span class="me1">color</span> <span class="sy0">=</span> cellColor <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Creamos nuestro selector de color colocando 6 Cells de distinto color en un elemento Grid (tabla/rejllla).
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Cell <span class="br0">&#123;</span> cellColor<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span><span class="sy0">;</span> onClicked<span class="sy0">:</span> helloText.<span class="me1">color</span> <span class="sy0">=</span> cellColor <span class="br0">&#125;</span><span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+Cuando la señal clicked de alguna Cell se disparé<span class="sy0">,</span> estableceremos el color del texto que pasamos como parámetro al color del rectángulo que emite la señal.
+<span class="me1">Podemos</span> reaccionar ante la emisión de cualquier señal de nuestros componentes a través de la propiedad <span class="st0">&quot;onNombreDeSeñal&quot;</span>.
+&#160;
+<span class="sy0">==</span> Estados y Transiciones <span class="sy0">==</span>
+&#160;
+Ahora haremos este ejemplo un poco más dinámico mediante states <span class="br0">&#40;</span>estados<span class="br0">&#41;</span> y transitions <span class="br0">&#40;</span>transiciones<span class="br0">&#41;</span>. <span class="me1">Haremos</span> que nuestro texto se mueva hacia abajo<span class="sy0">,</span> gire <span class="nu0">180</span> grados y cambie su color a rojo al ser presionado.
+&#160;
+<span class="me1">La</span> aplicación final se verá como en la siguiente imagen.
+&#160;
+<span class="br0">&#91;</span><span class="br0">&#91;</span>Image<span class="sy0">:</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7/images/declarative-tutorial3_animation.gif|http://doc.qt.nokia.com/4.7/images/declarative-tutorial3_animation.gif]]</span>
+&#160;
+Para ello es necesario cambiar el código de main.<span class="me1">qml</span> que quedará de la siguiente forma<span class="sy0">:</span></pre></div></div> import Qt 4.7
+<p>Rectangle {
+</p>
+<pre>id: page
+width: 500; height: 200
+color: "lightgray"
+</pre>
+<p>Text {
+</p>
+<pre>id: helloText
+text: "Hello world!"
+y: 30
+anchors.horizontalCenter: page.horizontalCenter
+font.pointSize: 24; font.bold: true
+</pre>
+<p>MouseArea { id: mouseArea; anchors.fill: parent }
+</p><p>states: State {
+</p>
+<pre>name: "down"; when: mouseArea.pressed == true
+PropertyChanges { target: helloText; y: 160; rotation: 180; color: "red" }
+}
+</pre>
+<p>transitions: Transition {
+</p>
+<pre>from: ""; to: "down"; reversible: true
+ParallelAnimation {
+NumberAnimation { properties: "y,rotation"; duration: 500; easing.type: Easing.InOutQuad }
+ColorAnimation { duration: 500 }
+}
+}
+}
+</pre>
+<p>Grid {
+</p>
+<pre>id: colorPicker
+x: 4; anchors.bottom: page.bottom; anchors.bottomMargin: 4
+rows: 2; columns: 3; spacing: 3
+</pre>
+<p>Cell { cellColor: "red"; onClicked: helloText.color = cellColor }
+</p>
+<pre>Cell { cellColor: "green"; onClicked: helloText.color = cellColor }
+Cell { cellColor: "blue"; onClicked: helloText.color = cellColor }
+Cell { cellColor: "yellow"; onClicked: helloText.color = cellColor }
+Cell { cellColor: "steelblue"; onClicked: helloText.color = cellColor }
+Cell { cellColor: "black"; onClicked: helloText.color = cellColor }
+}
+</pre>
+ }<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">En la línea <span class="nu0">17</span> creamos un nuevo estado llamado down <span class="br0">&#40;</span>presionado<span class="br0">&#41;</span> para nuestro elemento texto. <span class="me1">Este</span> evento será activado cuándo la MouseArea esté presionada y desactivado cuando se deje de presionar.
+<span class="me1">El</span> estado down incluye un conjunto de cambios a las propiedades de nuestro estado por defecto definido implicitamente <span class="br0">&#40;</span>es decir<span class="sy0">,</span> como fue inicialmente definido<span class="br0">&#41;</span>. <span class="me1">Especificamente</span><span class="sy0">,</span> establecemos la propiedad y de text a <span class="nu0">160</span><span class="sy0">,</span> su rotación a <span class="nu0">180</span> y el color a rojo.
+&#160;
+<span class="me1">Ya</span> que no queremos que los cambios de propiedades cambien inmediatamente sino que lo hagan lentamente a través de una animación<span class="sy0">,</span> definimos una transición entre nuestros dos estados <span class="br0">&#40;</span>línea <span class="nu0">22</span><span class="br0">&#41;</span>. <span class="me1">from</span> y to definen los estados inicial y final de la transición. <span class="me1">En</span> este caso queremos que la transición ocurra del estado por defecto al estado down.
+&#160;
+<span class="me1">Debido</span> a que queremos que la misma transición se ejecute en reversa al regresar del estado down al estado por defecto<span class="sy0">,</span> establecemos la propiedad reversible a <span class="kw2">true</span> <span class="br0">&#40;</span>verdadero<span class="br0">&#41;</span>. <span class="me1">Esto</span> es equivalente a escribir dos transiciones por separado<span class="sy0">,</span> una para cada estado como origen y destino.
+&#160;
+<span class="me1">El</span> elemento ParallelAnimation <span class="br0">&#40;</span>Animación paralela<span class="br0">&#41;</span> se asegura que los dos tipos de animación <span class="br0">&#40;</span>propiedades numéricas y el color<span class="br0">&#41;</span> comiencen al mismo tiempo. <span class="me1">Tambi</span>én es posible que cambien una después de la otra utilizando el elemento SequentialAnimation <span class="br0">&#40;</span>Animación secuencial<span class="br0">&#41;</span>.</pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.238 seconds
+Real time usage: 0.255 seconds
+Preprocessor visited node count: 139/1000000
+Preprocessor generated node count: 344/1000000
+Post‐expand include size: 1316/2097152 bytes
+Template argument size: 424/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1397-0!*!0!!en!2!* and timestamp 20151105071014 and revision id 14323
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../indexfb8a.html?title=QML_Hello_World_Tutorial/es&amp;oldid=14323">http://wiki.qt.io/index.php?title=QML_Hello_World_Tutorial/es&amp;oldid=14323</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="../Category_Spanish.html" title="Category:Spanish">Spanish</a></li><li><a href="../Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=4ea9096b8e645090&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="es.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_QML_Hello_World_Tutorial/es.html?title=Talk:QML_Hello_World_Tutorial/es&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="es.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../indexd31c.html?title=QML_Hello_World_Tutorial/es&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../index33c2.html?title=QML_Hello_World_Tutorial/es&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/QML_Hello_World_Tutorial/es.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/QML_Hello_World_Tutorial/es.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../index33c6.html?title=QML_Hello_World_Tutorial/es&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../indexfb8a.html?title=QML_Hello_World_Tutorial/es&amp;oldid=14323" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../index3934.html?title=QML_Hello_World_Tutorial/es&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 16 March 2015, at 16:02.</li>
+											<li id="footer-info-viewcount">This page has been accessed 463 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":567});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/QML_Hello_World_Tutorial/es by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:07:13 GMT -->
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Native_Build_of_Qt5_on_a_raspberry_pi by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:54:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Native Build of Qt5 on a Raspberry Pi - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="Native_Build_of_Qt5_on_a_Raspberry_Pi.html" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Native_Build_of_Qt5_on_a_Raspberry_Pi","wgTitle":"Native Build of Qt5 on a Raspberry Pi","wgCurRevisionId":18196,"wgRevisionId":18196,"wgArticleId":1160,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Native_Build_of_Qt5_on_a_Raspberry_Pi","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Native_Build_of_Qt5_on_a_raspberry_pi","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-bash {line-height: normal;}
+.source-bash li, .source-bash pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for bash
+ * CSS class: source-bash, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.bash.source-bash .de1, .bash.source-bash .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.bash.source-bash  {font-family:monospace;}
+.bash.source-bash .imp {font-weight: bold; color: red;}
+.bash.source-bash li, .bash.source-bash .li1 {font-weight: normal; vertical-align:top;}
+.bash.source-bash .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.bash.source-bash .li2 {font-weight: bold; vertical-align:top;}
+.bash.source-bash .kw1 {color: #000000; font-weight: bold;}
+.bash.source-bash .kw2 {color: #c20cb9; font-weight: bold;}
+.bash.source-bash .kw3 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .co0 {color: #666666; font-style: italic;}
+.bash.source-bash .co1 {color: #800000;}
+.bash.source-bash .co2 {color: #cc0000; font-style: italic;}
+.bash.source-bash .co3 {color: #000000; font-weight: bold;}
+.bash.source-bash .co4 {color: #666666;}
+.bash.source-bash .es1 {color: #000099; font-weight: bold;}
+.bash.source-bash .es2 {color: #007800;}
+.bash.source-bash .es3 {color: #007800;}
+.bash.source-bash .es4 {color: #007800;}
+.bash.source-bash .es5 {color: #780078;}
+.bash.source-bash .es_h {color: #000099; font-weight: bold;}
+.bash.source-bash .br0 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .sy0 {color: #000000; font-weight: bold;}
+.bash.source-bash .st0 {color: #ff0000;}
+.bash.source-bash .st_h {color: #ff0000;}
+.bash.source-bash .nu0 {color: #000000;}
+.bash.source-bash .re0 {color: #007800;}
+.bash.source-bash .re1 {color: #007800;}
+.bash.source-bash .re2 {color: #007800;}
+.bash.source-bash .re4 {color: #007800;}
+.bash.source-bash .re5 {color: #660033;}
+.bash.source-bash .ln-xtra, .bash.source-bash li.ln-xtra, .bash.source-bash div.ln-xtra {background-color: #ffc;}
+.bash.source-bash span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-diff {line-height: normal;}
+.source-diff li, .source-diff pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for diff
+ * CSS class: source-diff, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.diff.source-diff .de1, .diff.source-diff .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.diff.source-diff  {font-family:monospace;}
+.diff.source-diff .imp {font-weight: bold; color: red;}
+.diff.source-diff li, .diff.source-diff .li1 {font-weight: normal; vertical-align:top;}
+.diff.source-diff .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.diff.source-diff .li2 {font-weight: bold; vertical-align:top;}
+.diff.source-diff .kw1 {color: #aaaaaa; font-style: italic;}
+.diff.source-diff .re0 {color: #440088;}
+.diff.source-diff .re1 {color: #991111;}
+.diff.source-diff .re2 {color: #00b000;}
+.diff.source-diff .re3 {color: #888822;}
+.diff.source-diff .re4 {color: #888822;}
+.diff.source-diff .re5 {color: #0011dd;}
+.diff.source-diff .re6 {color: #440088;}
+.diff.source-diff .re7 {color: #991111;}
+.diff.source-diff .re8 {color: #00b000;}
+.diff.source-diff .re9 {color: #888822;}
+.diff.source-diff .ln-xtra, .diff.source-diff li.ln-xtra, .diff.source-diff div.ln-xtra {background-color: #ffc;}
+.diff.source-diff span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Native_Build_of_Qt5_on_a_Raspberry_Pi skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Native Build of Qt5 on a Raspberry Pi</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub">(Redirected from <a href="index2365.html?title=Native_Build_of_Qt5_on_a_raspberry_pi&amp;redirect=no" title="Native Build of Qt5 on a raspberry pi">Native Build of Qt5 on a raspberry pi</a>)</div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Merge with Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi<br /><small>Please <b><a rel="nofollow" class="external text" href="indexbabb.html?title=Native_Build_of_Qt5_on_a_Raspberry_Pi&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<p>There are many tutorials online for building Qt5 on the Raspberry Pi, but all or most of those tutorials are for using a desktop machine to cross compile the binaries for the Raspberry Pi. You will not be able to run qmake and make on the Raspberry Pi itself if you cross compile. This tutorial is meant to show you how to natively compile Qt 5 on the Raspberry Pi so that you can use qmake and make on the Raspberry Pi itself without cross compiling or relying on an external desktop. A more recent set of instructions for building Qt5 from a source tarball on a Raspberry Pi 2 is available <a href="Native_Build_of_Qt_5.4.html" title="Native Build of Qt 5.4.1 on a Raspberry Pi">here</a>.
+</p><p>First start off by obtaining either the latest version of Raspbian or the May 23rd version (the one I used for this tutorial). You will need at least an 8GB SD card because the space required is a bit over 4GB. Also make sure you are using the Model B or B+ with 512MB RAM. The early Raspberry Pis were shipped with 256 MB RAM which isn't sufficient and will result in an gcc error.
+</p><p>Turn on your Raspberry Pi and log in. Make sure you have it connected properly to the internet and that you have a power supply that is at least 1A. You may also want to overclock your Pi. I overclocked mine at 900 MHz and it took 38 hours to compile and the temperature was a steady 51 C - 54 C (with case, no heat-sinks, no fans).
+</p><p>Install packages needed for compiling:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">sudo</span> <span class="kw2">apt-get update</span>
+<span class="kw2">sudo</span> <span class="kw2">apt-get upgrade</span>
+<span class="kw2">sudo</span> <span class="kw2">apt-get install</span> libfontconfig1-dev libdbus-<span class="nu0">1</span>-dev libfreetype6-dev libudev-dev libicu-dev libsqlite3-dev
+libxslt1-dev libssl-dev libasound2-dev libavcodec-dev libavformat-dev libswscale-dev libgstreamer0.10-dev
+libgstreamer-plugins-base0.10-dev gstreamer-tools gstreamer0.10-plugins-good gstreamer0.10-plugins-bad
+libraspberrypi-dev libpulse-dev libx11-dev libglib2.0-dev libcups2-dev freetds-dev libsqlite0-dev libpq-dev
+libiodbc2-dev libmysqlclient-dev firebird-dev libpng12-dev libjpeg62-dev libgst-dev libxext-dev libxcb1 libxcb1-dev
+libx11-xcb1 libx11-xcb-dev libxcb-keysyms1 libxcb-keysyms1-dev libxcb-image0 libxcb-image0-dev libxcb-shm0
+libxcb-shm0-dev libxcb-icccm4 libxcb-icccm4-dev libxcb-sync0 libxcb-sync0-dev libxcb-render-util0
+libxcb-render-util0-dev libxcb-xfixes0-dev libxrender-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-glx0-dev
+libxi-dev libdrm-dev</pre></div></div>
+<p>Then make your build directory:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">mkdir</span> ~<span class="sy0">/</span>opt
+<span class="kw3">cd</span> ~<span class="sy0">/</span>opt</pre></div></div>
+<p>Retrieve qt5 source code from git:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">git clone</span> git:<span class="sy0">//</span>code.qt.io<span class="sy0">/</span>qt<span class="sy0">/</span>qt5.git</pre></div></div>
+<p>Retrieve git sources for other components
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> qt5
+.<span class="sy0">/</span>init-repository</pre></div></div>
+<p>Do not apply any patches that are available out there. They are no longer necessary with the latest Qt5. The git source should compile with a few tricks in the configure parameters without any patches.
+</p><p>First make sure you are in the qt5 directory.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> ~<span class="sy0">/</span>opt<span class="sy0">/</span>qt5</pre></div></div>
+<p>In order to get the configure script to build all of the Makefiles correctly you will need to tweak your
+~/opt/qt5/qtbase/configure script. Use your favorite text editor (vim, nano, emacs) and change/add the following code in the
+~/opt/qt5/qtbase/configure script (search for QT_CFLAGS_DBUS):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="co0"># flags for raspberry pi build</span>
+<span class="co0"># flags for libdbus-1</span>
+<span class="re2">QT_CFLAGS_DBUS</span>=<span class="st0">&quot;-I/usr/include/dbus-1.0/ -I/usr/lib/arm-linux-gnueabihf/dbus-1.0/include/&quot;</span>
+<span class="re2">QT_LIBS_DBUS</span>=-ldbus-<span class="nu0">1</span>
+&#160;
+<span class="co0"># flags for Glib (X11 only)</span>
+<span class="re2">QT_CFLAGS_GLIB</span>=<span class="st0">&quot;-I/usr/include/glib-2.0/ -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include/&quot;</span>
+<span class="re2">QT_LIBS_GLIB</span>=-lglib-<span class="nu0">2.0</span>
+&#160;
+<span class="re2">QT_CFLAGS_PULSEAUDIO</span>=<span class="st0">&quot;-I/usr/include/glib-2.0/ -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include/&quot;</span>
+<span class="re2">QT_LIBS_PULSEAUDIO</span>=<span class="st0">&quot;-lpulse -lpulse-mainloop-glib&quot;</span>
+&#160;
+<span class="co0"># flags for GStreamer (X11 only)</span>
+<span class="re2">QT_CFLAGS_GSTREAMER</span>=<span class="st0">&quot;-I/usr/include/gstreamer-0.10/ -I/usr/include/glib-2.0/ -I/usr/lib/arm-linux-
+gnueabihf/glib-2.0/include/ -I/usr/include/libxml2/&quot;</span>
+<span class="re2">QT_LIBS_GSTREAMER</span>=</pre></div></div>
+<p>Then before closing the file search for QT_CFLAGS_FONTCONFIG in the configure script. It should be below the above entries, you need to change the one in the else statement to this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="re2">QT_CFLAGS_FONTCONFIG</span>=-I<span class="sy0">/</span>usr<span class="sy0">/</span>include<span class="sy0">/</span>freetype2<span class="sy0">/</span></pre></div></div>
+<p>If the above changes are hard to follow then you can use the following patch file:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="diff source-diff"><pre class="de1"><span class="re0">1030,1031c1030,1031</span>
+<span class="re1">&lt; QT_CFLAGS_DBUS=</span>
+<span class="re1">&lt; QT_LIBS_DBUS=</span>
+—
+<span class="re2">&gt; QT_CFLAGS_DBUS=&quot;-I/usr/include/dbus-1.0/ -I/usr/lib/arm-linux-gnueabihf/dbus-1.0/include/&quot;</span>
+<span class="re2">&gt; QT_LIBS_DBUS=-ldbus-1</span>
+<span class="re0">1034,1035c1034,1038</span>
+<span class="re1">&lt; QT_CFLAGS_GLIB=</span>
+<span class="re1">&lt; QT_LIBS_GLIB=</span>
+—
+<span class="re2">&gt; QT_CFLAGS_GLIB=&quot;-I/usr/include/glib-2.0/ -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include/&quot;</span>
+<span class="re2">&gt; QT_LIBS_GLIB=-lglib-2.0</span>
+<span class="re2">&gt;</span>
+<span class="re2">&gt; QT_CFLAGS_PULSEAUDIO=&quot;-I/usr/include/glib-2.0/ -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include/&quot;</span>
+<span class="re2">&gt; QT_LIBS_PULSEAUDIO=&quot;-lpulse -lpulse-mainloop-glib&quot;</span>
+<span class="re0">1038c1041</span>
+<span class="re1">&lt; QT_CFLAGS_GSTREAMER=</span>
+—
+<span class="re2">&gt; QT_CFLAGS_GSTREAMER=&quot;-I/usr/include/gstreamer-0.10/ -I/usr/include/glib-2.0/ -I/usr/lib/arm-linux-</span>
+gnueabihf/glib-<span class="nu0">2.0</span>/include/ -I/usr/include/libxml2/&quot;
+<span class="re0">5123c5126</span>
+<span class="re1">&lt; QT_CFLAGS_FONTCONFIG=</span>
+—
+<span class="re2">&gt; QT_CFLAGS_FONTCONFIG=-I/usr/include/freetype2/</span></pre></div></div>
+<p>In order to properly run configure for Qt5 on the Raspberry Pi, you need to point the CROSS_COMPILE variable to the native compiler located at /usr/bin/g+<i>. The CROSS_COMPILE parameter is the path to the compiler (without the g). If you do not do this properly it will complain that it is not being cross compiled.</i>
+</p><p>All output is stored in the file called ‘output’ in case something goes wrong. At the end of the output file it should say you can run ‘make’, if not look for errors at the end of the output.
+</p><p>Do not be concerned with some things not building due to missing packages, there will be errors for those. If it does not mention that you can run make then check the last error, it is generally the show-stopper.
+Run configure:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">.<span class="sy0">/</span>configure <span class="re5">-v</span> <span class="re5">-opengl</span> es2 <span class="re5">-device</span> linux-rasp-pi-g<span class="st_h">''</span>+ <span class="re5">-device-option</span> <span class="re2">CROSS_COMPILE</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>bin<span class="sy0">/</span> <span class="re5">-opensource</span>
+<span class="re5">-confirm-license</span> <span class="re5">-optimized-qmake</span> <span class="re5">-reduce-exports</span> <span class="re5">-release</span> <span class="re5">-qt-pcre</span> <span class="re5">-make</span> libs <span class="re5">-prefix</span> <span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>qt5 <span class="sy0">&amp;&gt;</span> output</pre></div></div>
+<p>Check the output file to see that it is building the components you need (towards the end of the output it will have Yes next to the Qt Components that will be built) and it should say that you can now run 'make'.
+</p><p>Example from 'output' file:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">…
+Build options<span class="sy0">:</span>
+ Configuration ………. <span class="me1">accessibility</span> accessibility<span class="sy0">-</span>atspi<span class="sy0">-</span>bridge alsa audio<span class="sy0">-</span>backend c<span class="sy0">+</span><span class="st0">''</span><span class="nu0">11</span> clock<span class="sy0">-</span>gettime
+clock<span class="sy0">-</span>monotonic concurrent cross_compile cups dbus egl eglfs evdev eventfd fontconfig full<span class="sy0">-</span>config getaddrinfo
+getifaddrs glib gstreamer iconv icu inotify ipv6ifname large<span class="sy0">-</span>config largefile libudev linuxfb medium<span class="sy0">-</span>config
+minimal<span class="sy0">-</span>config mremap neon nis no<span class="sy0">-</span>pkg<span class="sy0">-</span>config opengl opengles2 openssl pcre png precompile_header pulseaudio
+qpa qpa reduce_exports reduce_relocations release rpath shared small<span class="sy0">-</span>config system<span class="sy0">-</span>freetype system<span class="sy0">-</span>jpeg
+system<span class="sy0">-</span>png system<span class="sy0">-</span>zlib v8 v8snapshot xcb xcb<span class="sy0">-</span>glx xcb<span class="sy0">-</span>render xcb<span class="sy0">-</span>xlib xinput2 xkbcommon<span class="sy0">-</span>qt xlib xrender
+ Build parts ………… libs
+ Mode ………………. <span class="me1">release</span>
+ Using C<span class="st0">''</span><span class="sy0">+</span><span class="nu0">11</span> ………… yes
+ Using PCH ………….. <span class="me1">yes</span>
+ Target compiler supports<span class="sy0">:</span>
+ iWMMXt<span class="sy0">/</span>Neon ………. <span class="me1">no</span><span class="sy0">/</span>yes
+&#160;
+<span class="kw5">Qt</span> modules and options<span class="sy0">:</span>
+ <span class="kw5">Qt</span> D<span class="sy0">-</span>Bus …………… yes <span class="br0">&#40;</span>loading dbus<span class="sy0">-</span><span class="nu0">1</span> at runtime<span class="br0">&#41;</span>
+ <span class="kw5">Qt</span> Concurrent ………. <span class="me1">yes</span>
+ <span class="kw5">Qt</span> GUI …………….. <span class="me1">yes</span>
+ <span class="kw5">Qt</span> Widgets …………. <span class="me1">yes</span>
+ JavaScriptCore JIT ….. <span class="me1">yes</span> <span class="br0">&#40;</span>To be decided by JavaScriptCore<span class="br0">&#41;</span>
+ QML debugging ………. <span class="me1">yes</span>
+ Use <span class="kw3">system</span> proxies ….. <span class="me1">no</span>
+&#160;
+Support enabled <span class="kw1">for</span><span class="sy0">:</span>
+ Accessibility ………. <span class="me1">yes</span>
+ ALSA ………………. <span class="me1">yes</span>
+ CUPS ………………. <span class="me1">yes</span>
+ FontConfig …………. <span class="me1">yes</span>
+ Iconv ……………… yes
+ ICU ……………….. <span class="me1">yes</span>
+ Image formats<span class="sy0">:</span>
+ GIF ……………… yes <span class="br0">&#40;</span>plugin<span class="sy0">,</span> <span class="kw2">using</span> <span class="kw3">system</span> library<span class="br0">&#41;</span>
+ JPEG …………….. <span class="me1">yes</span> <span class="br0">&#40;</span>plugin<span class="sy0">,</span> <span class="kw2">using</span> <span class="kw3">system</span> library<span class="br0">&#41;</span>
+ PNG ……………… yes <span class="br0">&#40;</span>in <span class="kw5">QtGui</span><span class="sy0">,</span> <span class="kw2">using</span> <span class="kw3">system</span> library<span class="br0">&#41;</span>
+ Glib ………………. <span class="me1">yes</span>
+ GStreamer ………….. <span class="me1">yes</span>
+ GTK theme ………….. <span class="me1">no</span>
+ Large File …………. <span class="me1">yes</span>
+ libudev ……………. <span class="me1">yes</span>
+ Networking<span class="sy0">:</span>
+ getaddrinfo ………. <span class="me1">yes</span>
+ getifaddrs ……….. <span class="me1">yes</span>
+ IPv6 ifname ………. <span class="me1">yes</span>
+ OpenSSL ………….. <span class="me1">yes</span> <span class="br0">&#40;</span>loading libraries at run<span class="sy0">-</span><span class="kw3">time</span><span class="br0">&#41;</span>
+ NIS ……………….. <span class="me1">yes</span>
+ OpenGL …………….. <span class="me1">yes</span> <span class="br0">&#40;</span>OpenGL ES <span class="nu0">2</span>.<span class="me1">x</span><span class="br0">&#41;</span>
+ OpenVG …………….. <span class="me1">no</span>
+ PCRE ………………. <span class="me1">yes</span> <span class="br0">&#40;</span>bundled copy<span class="br0">&#41;</span>
+ pkg<span class="sy0">-</span>config …………. <span class="me1">no</span>
+ PulseAudio …………. <span class="me1">yes</span>
+ QPA backends<span class="sy0">:</span>
+ DirectFB …………. <span class="me1">no</span>
+ EGLFS ……………. <span class="me1">yes</span>
+ KMS ……………… no
+ LinuxFB ………….. <span class="me1">yes</span>
+ XCB ……………… yes <span class="br0">&#40;</span><span class="kw3">system</span> library<span class="br0">&#41;</span>
+ MIT<span class="sy0">-</span>SHM ………… yes
+ Xcursor ………… yes <span class="br0">&#40;</span>loaded at runtime<span class="br0">&#41;</span>
+ Xfixes …………. <span class="me1">yes</span> <span class="br0">&#40;</span>loaded at runtime<span class="br0">&#41;</span>
+ Xi …………….. <span class="me1">no</span>
+ Xi2 ……………. <span class="me1">yes</span>
+ Xinerama ……….. <span class="me1">yes</span> <span class="br0">&#40;</span>loaded at runtime<span class="br0">&#41;</span>
+ Xrandr …………. <span class="me1">yes</span> <span class="br0">&#40;</span>loaded at runtime<span class="br0">&#41;</span>
+ Xrender ………… yes
+ XKB ……………. <span class="me1">no</span>
+ XShape …………. <span class="me1">yes</span>
+ XSync ………….. <span class="me1">yes</span>
+ XVideo …………. <span class="me1">yes</span>
+ Session management ….. <span class="me1">yes</span>
+ SQL drivers<span class="sy0">:</span>
+ DB2 ……………… no
+ InterBase ………… no
+ MySQL ……………. <span class="me1">yes</span> <span class="br0">&#40;</span>plugin<span class="br0">&#41;</span>
+ OCI ……………… no
+ ODBC …………….. <span class="me1">yes</span> <span class="br0">&#40;</span>plugin<span class="br0">&#41;</span>
+ PostgreSQL ……….. <span class="me1">yes</span> <span class="br0">&#40;</span>plugin<span class="br0">&#41;</span>
+ SQLite <span class="nu0">2</span> …………. <span class="me1">yes</span> <span class="br0">&#40;</span>plugin<span class="br0">&#41;</span>
+ SQLite …………… yes <span class="br0">&#40;</span>plugin<span class="sy0">,</span> <span class="kw2">using</span> bundled copy<span class="br0">&#41;</span>
+ TDS ……………… yes <span class="br0">&#40;</span>plugin<span class="br0">&#41;</span>
+ udev ………………. <span class="me1">yes</span>
+ xkbcommon ………….. <span class="me1">yes</span> <span class="br0">&#40;</span>bundled copy<span class="br0">&#41;</span>
+ zlib ………………. <span class="me1">yes</span> <span class="br0">&#40;</span><span class="kw3">system</span> library<span class="br0">&#41;</span>
+&#160;
+NOTE<span class="sy0">:</span> libxkbcommon 0.2.0 <span class="br0">&#40;</span>or higher<span class="br0">&#41;</span> not found on the <span class="kw3">system</span><span class="sy0">,</span> will use
+the bundled version from 3rd party directory.
+&#160;
+<span class="kw5">Qt</span> is now configured <span class="kw1">for</span> building. <span class="me1">Just</span> run <span class="st0">'make'</span>.
+<span class="me1">Once</span> everything is built<span class="sy0">,</span> you must run <span class="st0">'make install'</span>.
+<span class="kw5">Qt</span> will be installed into <span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>qt5
+&#160;
+Prior to reconfiguration<span class="sy0">,</span> make sure you <span class="kw3">remove</span> any leftovers from
+the previous build.</pre></div></div>
+<p>Note, the compilation will take about two days to compile overclocked at 900 MHz. If you are logged in remotely consider using byobu or screen so that you can detach your session.
+</p><p>Then you need to run make as follows (check for errors in the output_make file):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">make</span> <span class="sy0">&amp;&gt;</span> output_make</pre></div></div>
+<p>If that is good then run make install (check for errors in the output_make_install file):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">sudo</span> <span class="kw2">make</span> <span class="kw2">install</span> <span class="sy0">&amp;&gt;</span> output_make_install</pre></div></div>
+<p>After this you need to add some lines to your .bashrc file:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">export</span> <span class="re2">LD_LIBRARY_PATH</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>qt5<span class="sy0">/</span>lib<span class="sy0">/</span>
+<span class="kw3">export</span> <span class="re2">PATH</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>bin:<span class="sy0">/</span>usr<span class="sy0">/</span>bin:<span class="sy0">/</span>bin:<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>games:<span class="sy0">/</span>usr<span class="sy0">/</span>games:<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>qt5<span class="sy0">/</span>bin</pre></div></div>
+<p>You need to source your .bashrc file to set-up the above environment variables:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">source</span> ~<span class="sy0">/</span>.bashrc</pre></div></div>
+<p>Then run this and check that it points to /usr/local/qt5/bin/qmake
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">which</span> qmake</pre></div></div>
+<p>Example output:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1">pi<span class="sy0">@</span>raspberrypi ~<span class="sy0">/</span>opt<span class="sy0">/</span>qt5 $ <span class="kw2">which</span> qmake
+<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>qt5<span class="sy0">/</span>bin<span class="sy0">/</span>qmake</pre></div></div>
+<p>After this you should be able to compile the sample applications and run them. Try the OpenGL Cube (I have not tested this in X windows, only from the console):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">cp</span> -r~<span class="sy0">/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span>qtbase<span class="sy0">/</span>examples<span class="sy0">/</span>opengl<span class="sy0">/</span>cube ~<span class="sy0">/</span>
+<span class="kw3">cd</span>~<span class="sy0">/</span>cube
+qmake
+<span class="kw2">make</span>
+.<span class="sy0">/</span>cube</pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.225 seconds
+Real time usage: 0.249 seconds
+Preprocessor visited node count: 165/1000000
+Preprocessor generated node count: 1007/1000000
+Post‐expand include size: 4008/2097152 bytes
+Template argument size: 468/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1160-0!*!0!*!*!*!* and timestamp 20151105073328 and revision id 18196
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index0092.html?title=Native_Build_of_Qt5_on_a_Raspberry_Pi&amp;oldid=18196">http://wiki.qt.io/index.php?title=Native_Build_of_Qt5_on_a_Raspberry_Pi&amp;oldid=18196</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=ef74b3521072d03c&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Native_Build_of_Qt5_on_a_Raspberry_Pi.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk"><span><a href="Talk_Native_Build_of_Qt5_on_a_Raspberry_Pi.html"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Native_Build_of_Qt5_on_a_Raspberry_Pi.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexbabb.html?title=Native_Build_of_Qt5_on_a_Raspberry_Pi&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index4b1b.html?title=Native_Build_of_Qt5_on_a_Raspberry_Pi&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Native_Build_of_Qt5_on_a_Raspberry_Pi.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Native_Build_of_Qt5_on_a_Raspberry_Pi.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index742f.html?title=Native_Build_of_Qt5_on_a_Raspberry_Pi&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index0092.html?title=Native_Build_of_Qt5_on_a_Raspberry_Pi&amp;oldid=18196" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexc44f.html?title=Native_Build_of_Qt5_on_a_Raspberry_Pi&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 June 2015, at 20:03.</li>
+											<li id="footer-info-viewcount">This page has been accessed 28,152 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":347});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Native_Build_of_Qt5_on_a_raspberry_pi by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:54:08 GMT -->
+</html>

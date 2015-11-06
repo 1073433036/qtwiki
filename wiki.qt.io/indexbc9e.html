@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Simple_encryption_with_SimpleCrypt&oldid=18008 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:02:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Simple encryption with SimpleCrypt - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Simple_encryption_with_SimpleCrypt","wgTitle":"Simple encryption with SimpleCrypt","wgCurRevisionId":18008,"wgRevisionId":18008,"wgArticleId":4033,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Snippets"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Simple_encryption_with_SimpleCrypt","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Simple_encryption_with_SimpleCrypt skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Simple encryption with SimpleCrypt</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 10:30, 16 June 2015 by <a href="http://wiki.qt.io/index.php?title=User:NetZwerg&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:NetZwerg (page does not exist)">NetZwerg</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/User_talk:NetZwerg" title="User talk:NetZwerg">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/NetZwerg" title="Special:Contributions/NetZwerg">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(diff) ← Older revision | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Sometimes, you have to store some information that you may want to protect against casual observation. Think about passwords for remote services, for instance. Strong cryptography is obviously the best solution, but it can be hard to use those in the right way, they tend to pull in more libraries, and frankly, it may just be overkill for the situation.
+</p>
+<ul>
+<li> Note: additional details are available in <a href="http://wiki.qt.io/SimpleCrypt_algorithm_details" title="SimpleCrypt algorithm details">SimpleCrypt_algorithm_details</a>
+</li>
+<li> Note: a usage example can be found here <a href="http://wiki.qt.io/Simple_Crypt_IO_Device" title="Simple Crypt IO Device">Simple_Crypt_IO_Device</a>
+</li>
+</ul>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#A_word_of_warning"><span class="tocnumber">1</span> <span class="toctext">A word of warning</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Introducing_SimpleCrypt"><span class="tocnumber">2</span> <span class="toctext">Introducing SimpleCrypt</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Selecting_a_suitable_key"><span class="tocnumber">2.1</span> <span class="toctext">Selecting a suitable key</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#SimpleCrypt_in_use"><span class="tocnumber">2.2</span> <span class="toctext">SimpleCrypt in use</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Compression"><span class="tocnumber">3</span> <span class="toctext">Compression</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#The_code"><span class="tocnumber">4</span> <span class="toctext">The code</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Details_on_the_algorithm"><span class="tocnumber">5</span> <span class="toctext">Details on the algorithm</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Future_extensions"><span class="tocnumber">6</span> <span class="toctext">Future extensions</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Versions"><span class="tocnumber">7</span> <span class="toctext">Versions</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="A_word_of_warning">A word of warning</span></h2>
+<table style="center; margin: -1px auto 20px;border: 1px solid #C00; border-left: 10px solid #C00; background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> The class presented in this article does <i>not</i> provide strong encryption!
+</td></tr></table>
+<p>It will protect your data from casual observers, but it will not stand up to dedicated hackers trying to break your secrets. I am not a cryptography expert. Use the code here at your own risk. I am not to be held responsible for any damages that may, directly or indirectly, happen because of your use of this code. Don't say you were not warned.
+</p>
+<h2><span class="mw-headline" id="Introducing_SimpleCrypt">Introducing SimpleCrypt</span></h2>
+<p>The idea of <i><b>SimpleCrypt</b></i> is to provide some basic cryptographic capabilities for simple encryption. Only symmetric encryption is supported (= same key for encryption and decryption required), and there is no API for streaming data in and out like you often see with more advanced cyphers. If you need stronger cryptography, streaming cyphers or asymmetric keys, take a look at <a rel="nofollow" class="external text" href="http://delta.affinix.com/qca/">QCA</a> instead.
+</p><p>The <i><b>SimpleCrypt</b></i> class takes a 64 bits key in the form of a quint64. If you use a fixed key build into your program, you can do something like this to initialize your <i><b>SimpleCrypt</b></i> object:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">  SimpleCrypt crypto<span class="br0">&#40;</span>Q_UINT64_C<span class="br0">&#40;</span><span class="nu12">0x0c2ad4a4acb9f023</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//some random number</span></pre></div></div>
+<p>But you can also use the <b>SimpleCrypt::setKey()</b> method to set the key.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">  SimpleCrypt crypto<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+  crypto.<span class="me1">setKey</span><span class="br0">&#40;</span><span class="nu12">0x0c2ad4a4acb9f023</span><span class="br0">&#41;</span></pre></div></div>
+<h3><span class="mw-headline" id="Selecting_a_suitable_key">Selecting a suitable key</span></h3>
+<p>To get such random numbers, you might use <a rel="nofollow" class="external text" href="https://www.random.org/integers/?num=10&amp;min=0&amp;max=65535&amp;col=5&amp;base=16&amp;format=html&amp;rnd=new">this service</a> and pick four of the 2 byte hexadecimals that you concatenate together as done above. That works better than trying to make up something semi-random yourself. Of course, you can also use other means to get to a quint64 key, such as using some hash of a password and reducing that to 64 bits.
+</p>
+<h3><span class="mw-headline" id="SimpleCrypt_in_use">SimpleCrypt in use</span></h3>
+<p>Once setup, you can use <i><b>SimpleCrypt</b></i> to actually encrypt or decrypt data. For the encrypt functions, both the <i>plaintext</i> that you input as the <i>cyphertext</i> that is being outputted can be either a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qstring.html#">QString</a></span> or a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qbytearray.html#">QByteArray</a></span>. The reverse applies to the decrypt functions. That results in four encrypt methods, and four corresponding decrypt methods:
+</p>
+<h5><span class="mw-headline" id="Encryption_methods">Encryption methods</span></h5>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">  <span class="kw5">QString</span> encryptToString<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span><span class="sy0">&amp;</span> plaintext<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw5">QString</span> encryptToString<span class="br0">&#40;</span><span class="kw5">QByteArray</span> plaintext<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw5">QByteArray</span> encryptToByteArray<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span><span class="sy0">&amp;</span> plaintext<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw5">QByteArray</span> encryptToByteArray<span class="br0">&#40;</span><span class="kw5">QByteArray</span> plaintext<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h5><span class="mw-headline" id="Decryption_methods">Decryption methods</span></h5>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">  <span class="kw5">QString</span> decryptToString<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span><span class="sy0">&amp;</span> plaintext<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw5">QString</span> decryptToString<span class="br0">&#40;</span><span class="kw5">QByteArray</span> plaintext<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw5">QByteArray</span> decryptToByteArray<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span><span class="sy0">&amp;</span> plaintext<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw5">QByteArray</span> decryptToByteArray<span class="br0">&#40;</span><span class="kw5">QByteArray</span> plaintext<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h4><span class="mw-headline" id="Use_with_QStrings">Use with QStrings</span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">  SimpleCrypt crypto<span class="br0">&#40;</span>Q_UINT64_C<span class="br0">&#40;</span><span class="nu12">0x0c2ad4a4acb9f023</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//some random number</span>
+  <span class="kw5">QString</span> testString<span class="br0">&#40;</span><span class="st0">&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+  <span class="co1">//Encryption</span>
+  <span class="kw5">QString</span> result <span class="sy0">=</span> crypto.<span class="me1">encryptToString</span><span class="br0">&#40;</span>testString<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+  <span class="co1">//Decryption</span>
+  <span class="kw5">QString</span> decrypted <span class="sy0">=</span> crypto.<span class="me1">decryptToString</span><span class="br0">&#40;</span>result<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> testString <span class="sy0">&lt;&lt;</span> endl <span class="sy0">&lt;&lt;</span> result <span class="sy0">&lt;&lt;</span> endl <span class="sy0">&lt;&lt;</span> decrypted<span class="sy0">;</span></pre></div></div>
+<p>The code above encrypts a <b>QString</b> to a <b>QString</b>, and then decrypts that string again to a new <b>QString</b>.
+</p>
+<h4><span class="mw-headline" id="Use_with_binary_data">Use with binary data</span></h4>
+<p>If you want to encrypt your own binary data, you might do something like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="co1">//setup our objects</span>
+  SimpleCrypt crypto<span class="br0">&#40;</span>Q_UINT64_C<span class="br0">&#40;</span><span class="nu12">0x0c2ad4a4acb9f023</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//some random number</span>
+  crypto.<span class="me1">setCompressionMode</span><span class="br0">&#40;</span>SimpleCrypt<span class="sy0">::</span><span class="me2">CompressionAlways</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//always compress the data, see section below</span>
+  crypto.<span class="me1">setIntegrityProtectionMode</span><span class="br0">&#40;</span>SimpleCrypt<span class="sy0">::</span><span class="me2">ProtectionHash</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//properly protect the integrity of the data</span>
+  <span class="kw5">QBuffer</span> buffer<span class="sy0">;</span>
+  buffer.<span class="me1">open</span><span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">::</span><span class="me2">WriteOnly</span><span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw5">QDataStream</span> s<span class="br0">&#40;</span><span class="sy0">&amp;</span>buffer<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="co1">//stream the data into our buffer</span>
+  s.<span class="me1">setVersion</span><span class="br0">&#40;</span><span class="kw5">QDataStream</span><span class="sy0">::</span><span class="me2">Qt_4_7</span><span class="br0">&#41;</span><span class="sy0">;</span>
+  s <span class="sy0">&lt;&lt;</span> myString<span class="sy0">;</span> <span class="co1">//stream in a string</span>
+  s <span class="sy0">&lt;&lt;</span> myUint16<span class="sy0">;</span> <span class="co1">//stream in an unsigned integer</span>
+  s <span class="sy0">&lt;&lt;</span> myImage<span class="sy0">;</span> <span class="co1">//stream in an image</span>
+  s <span class="sy0">&lt;&lt;</span> someMoreData<span class="sy0">;</span>
+  <span class="co1">// … etc.</span>
+&#160;
+  <span class="kw5">QByteArray</span> myCypherText <span class="sy0">=</span> crypto.<span class="me1">encryptToByteArray</span><span class="br0">&#40;</span>buffer.<span class="me1">data</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span>crypto.<span class="me1">lastError</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">==</span> SimpleCrypt<span class="sy0">::</span><span class="me2">ErrorNoError</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">// do something relevant with the cyphertext, such as storing it or sending it over a socket to another machine.</span>
+  <span class="br0">&#125;</span>
+  buffer.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Note the use of the data protection feature. I would recommend that you use at least the ProtectionChecksum level of protection (enabled by default) if you work with binary data, as streaming invalid binary data into your program can lead to big problems.
+</p><p>On the other end, you can now decrypt with this snippet:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">  SimpleCrypt crypto<span class="br0">&#40;</span>Q_UINT64_C<span class="br0">&#40;</span><span class="nu12">0x0c2ad4a4acb9f023</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//same random number: key should match encryption key</span>
+  <span class="kw5">QByteArray</span> plaintext <span class="sy0">=</span> crypto.<span class="me1">decryptToByteArray</span><span class="br0">&#40;</span>myCypherText<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>crypto.<span class="me1">lastError</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">==</span> SimpleCrypt<span class="sy0">::</span><span class="me2">ErrorNoError</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="co1">// check why we have an error, use the error code from crypto.lastError() for that</span>
+  return<span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  <span class="kw5">QBuffer</span> buffer<span class="br0">&#40;</span><span class="sy0">&amp;</span>plaintext<span class="br0">&#41;</span><span class="sy0">;</span>
+  buffer.<span class="me1">open</span><span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">::</span><span class="me2">ReadOnly</span><span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="kw5">QDataStream</span> s<span class="br0">&#40;</span><span class="sy0">&amp;</span>buffer<span class="br0">&#41;</span><span class="sy0">;</span>
+  s.<span class="me1">setVersion</span><span class="br0">&#40;</span><span class="kw5">QDataStream</span><span class="sy0">::</span><span class="me2">Qt_4_7</span><span class="br0">&#41;</span><span class="sy0">;</span>
+  s <span class="sy0">&gt;&gt;</span> myString<span class="sy0">;</span> <span class="co1">//stream in a string</span>
+  s <span class="sy0">&gt;&gt;</span> myUint16<span class="sy0">;</span> <span class="co1">//stream in an unsigned integer</span>
+  s <span class="sy0">&gt;&gt;</span> myImage<span class="sy0">;</span> <span class="co1">//stream in an image</span>
+  s <span class="sy0">&gt;&gt;</span> someMoreData<span class="sy0">;</span>
+  <span class="co1">//etc.</span>
+  buffer.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>The code above might crash if the integrity of the data is not guaranteed, for instance by the use of a wrong password. Using the highest level of protection is probably OK here, as we have quite a big blob of data already, so adding the overhead of adding a 20 byte SHA1 cryptographic hash is justifiable.
+</p>
+<h2><span class="mw-headline" id="Compression">Compression</span></h2>
+<p>For long strings, it can be beneficial to use compression before encryption. Not only does the length of the string decrease, the input will be a bit more random-looking too, resulting in a harder to break cyphertext (at least, in principle, see the warning at the top of this page.) However, for short strings, applying compression can lead to an <i>increase</i> in the string length.
+</p><p>SimpleCrypt supports three modes for compression before encryption. You can force to always use compression, to never use compression, or to automatically choose the shortest version (either the compressed one or the uncompressed one). The last option is the default option. Note that setting this only affects <i>encryption</i>. For decryption, SimpleCrypt automatically decompresses the data if compression was used for the encryption.
+</p>
+<h2><span class="mw-headline" id="The_code">The code</span></h2>
+<p>The source code of SimpleCrypt consists of two files: the header (.h) and the source (.cpp).
+</p><p><b>simplecrypt.h</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+Copyright (c) 2011, Andre Somers
+All rights reserved.
+&#160;
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the Rathenau Instituut, Andre Somers nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+&#160;
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL ANDRE SOMERS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR #######; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/</span>
+&#160;
+<span class="co2">#ifndef SIMPLECRYPT_H</span>
+<span class="co2">#define SIMPLECRYPT_H</span>
+<span class="co2">#include &lt;QString&gt;</span>
+<span class="co2">#include &lt;QVector&gt;</span>
+<span class="co2">#include &lt;QFlags&gt;</span>
+&#160;
+<span class="coMULTI">/**
+  @short Simple encryption and decryption of strings and byte arrays
+&#160;
+  This class provides a simple implementation of encryption and decryption
+  of strings and byte arrays.
+&#160;
+  @warning The encryption provided by this class is NOT strong encryption. It may
+  help to shield things from curious eyes, but it will NOT stand up to someone
+  determined to break the encryption. Don't say you were not warned.
+&#160;
+  The class uses a 64 bit key. Simply create an instance of the class, set the key,
+  and use the encryptToString() method to calculate an encrypted version of the input string.
+  To decrypt that string again, use an instance of SimpleCrypt initialized with
+  the same key, and call the decryptToString() method with the encrypted string. If the key
+  matches, the decrypted version of the string will be returned again.
+&#160;
+  If you do not provide a key, or if something else is wrong, the encryption and
+  decryption function will return an empty string or will return a string containing nonsense.
+  lastError() will return a value indicating if the method was succesful, and if not, why not.
+&#160;
+  SimpleCrypt is prepared for the case that the encryption and decryption
+  algorithm is changed in a later version, by prepending a version identifier to the cypertext.
+  */</span>
+<span class="kw2">class</span> SimpleCrypt
+<span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy4">:</span>
+    <span class="coMULTI">/**
+      CompressionMode describes if compression will be applied to the data to be
+      encrypted.
+      */</span>
+    <span class="kw2">enum</span> CompressionMode <span class="br0">&#123;</span>
+        CompressionAuto,    <span class="coMULTI">/*!&lt; Only apply compression if that results in a shorter plaintext. */</span>
+        CompressionAlways,  <span class="coMULTI">/*!&lt; Always apply compression. Note that for short inputs, a compression may result in longer data */</span>
+        CompressionNever    <span class="coMULTI">/*!&lt; Never apply compression. */</span>
+    <span class="br0">&#125;</span><span class="sy4">;</span>
+    <span class="coMULTI">/**
+      IntegrityProtectionMode describes measures taken to make it possible to detect problems with the data
+      or wrong decryption keys.
+&#160;
+      Measures involve adding a checksum or a cryptograhpic hash to the data to be encrypted. This
+      increases the length of the resulting cypertext, but makes it possible to check if the plaintext
+      appears to be valid after decryption.
+    */</span>
+    <span class="kw2">enum</span> IntegrityProtectionMode <span class="br0">&#123;</span>
+        ProtectionNone,    <span class="coMULTI">/*!&lt; The integerity of the encrypted data is not protected. It is not really possible to detect a wrong key, for instance. */</span>
+        ProtectionChecksum,<span class="coMULTI">/*!&lt; A simple checksum is used to verify that the data is in order. If not, an empty string is returned. */</span>
+        ProtectionHash     <span class="coMULTI">/*!&lt; A cryptographic hash is used to verify the integrity of the data. This method produces a much stronger, but longer check */</span>
+    <span class="br0">&#125;</span><span class="sy4">;</span>
+    <span class="coMULTI">/**
+      Error describes the type of error that occured.
+      */</span>
+    <span class="kw2">enum</span> Error <span class="br0">&#123;</span>
+        ErrorNoError,         <span class="coMULTI">/*!&lt; No error occurred. */</span>
+        ErrorNoKeySet,        <span class="coMULTI">/*!&lt; No key was set. You can not encrypt or decrypt without a valid key. */</span>
+        ErrorUnknownVersion,  <span class="coMULTI">/*!&lt; The version of this data is unknown, or the data is otherwise not valid. */</span>
+        ErrorIntegrityFailed, <span class="coMULTI">/*!&lt; The integrity check of the data failed. Perhaps the wrong key was used. */</span>
+    <span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+    <span class="coMULTI">/**
+      Constructor.
+&#160;
+      Constructs a SimpleCrypt instance without a valid key set on it.
+     */</span>
+    SimpleCrypt<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="coMULTI">/**
+      Constructor.
+&#160;
+      Constructs a SimpleCrypt instance and initializes it with the given @arg key.
+     */</span>
+    <span class="kw2">explicit</span> SimpleCrypt<span class="br0">&#40;</span>quint64 key<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="coMULTI">/**
+      (Re-) initializes the key with the given @arg key.
+      */</span>
+    <span class="kw4">void</span> setKey<span class="br0">&#40;</span>quint64 key<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="coMULTI">/**
+      Returns true if SimpleCrypt has been initialized with a key.
+      */</span>
+    <span class="kw4">bool</span> hasKey<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span><span class="kw1">return</span> <span class="sy3">!</span>m_keyParts.<span class="me1">isEmpty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span><span class="br0">&#125;</span>
+&#160;
+    <span class="coMULTI">/**
+      Sets the compression mode to use when encrypting data. The default mode is Auto.
+&#160;
+      Note that decryption is not influenced by this mode, as the decryption recognizes
+      what mode was used when encrypting.
+      */</span>
+    <span class="kw4">void</span> setCompressionMode<span class="br0">&#40;</span>CompressionMode mode<span class="br0">&#41;</span> <span class="br0">&#123;</span>m_compressionMode <span class="sy1">=</span> mode<span class="sy4">;</span><span class="br0">&#125;</span>
+    <span class="coMULTI">/**
+      Returns the CompressionMode that is currently in use.
+      */</span>
+    CompressionMode compressionMode<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span><span class="kw1">return</span> m_compressionMode<span class="sy4">;</span><span class="br0">&#125;</span>
+&#160;
+    <span class="coMULTI">/**
+      Sets the integrity mode to use when encrypting data. The default mode is Checksum.
+&#160;
+      Note that decryption is not influenced by this mode, as the decryption recognizes
+      what mode was used when encrypting.
+      */</span>
+    <span class="kw4">void</span> setIntegrityProtectionMode<span class="br0">&#40;</span>IntegrityProtectionMode mode<span class="br0">&#41;</span> <span class="br0">&#123;</span>m_protectionMode <span class="sy1">=</span> mode<span class="sy4">;</span><span class="br0">&#125;</span>
+    <span class="coMULTI">/**
+      Returns the IntegrityProtectionMode that is currently in use.
+      */</span>
+    IntegrityProtectionMode integrityProtectionMode<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span><span class="kw1">return</span> m_protectionMode<span class="sy4">;</span><span class="br0">&#125;</span>
+&#160;
+    <span class="coMULTI">/**
+      Returns the last error that occurred.
+      */</span>
+    Error lastError<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span><span class="kw1">return</span> m_lastError<span class="sy4">;</span><span class="br0">&#125;</span>
+&#160;
+    <span class="coMULTI">/**
+      Encrypts the @arg plaintext string with the key the class was initialized with, and returns
+      a cyphertext the result. The result is a base64 encoded version of the binary array that is the
+      actual result of the string, so it can be stored easily in a text format.
+      */</span>
+    QString encryptToString<span class="br0">&#40;</span><span class="kw4">const</span> QString<span class="sy3">&amp;</span> plaintext<span class="br0">&#41;</span> <span class="sy4">;</span>
+    <span class="coMULTI">/**
+      Encrypts the @arg plaintext QByteArray with the key the class was initialized with, and returns
+      a cyphertext the result. The result is a base64 encoded version of the binary array that is the
+      actual result of the encryption, so it can be stored easily in a text format.
+      */</span>
+    QString encryptToString<span class="br0">&#40;</span>QByteArray plaintext<span class="br0">&#41;</span> <span class="sy4">;</span>
+    <span class="coMULTI">/**
+      Encrypts the @arg plaintext string with the key the class was initialized with, and returns
+      a binary cyphertext in a QByteArray the result.
+&#160;
+      This method returns a byte array, that is useable for storing a binary format. If you need
+      a string you can store in a text file, use encryptToString() instead.
+      */</span>
+    QByteArray encryptToByteArray<span class="br0">&#40;</span><span class="kw4">const</span> QString<span class="sy3">&amp;</span> plaintext<span class="br0">&#41;</span> <span class="sy4">;</span>
+    <span class="coMULTI">/**
+      Encrypts the @arg plaintext QByteArray with the key the class was initialized with, and returns
+      a binary cyphertext in a QByteArray the result.
+&#160;
+      This method returns a byte array, that is useable for storing a binary format. If you need
+      a string you can store in a text file, use encryptToString() instead.
+      */</span>
+    QByteArray encryptToByteArray<span class="br0">&#40;</span>QByteArray plaintext<span class="br0">&#41;</span> <span class="sy4">;</span>
+&#160;
+    <span class="coMULTI">/**
+      Decrypts a cyphertext string encrypted with this class with the set key back to the
+      plain text version.
+&#160;
+      If an error occured, such as non-matching keys between encryption and decryption,
+      an empty string or a string containing nonsense may be returned.
+      */</span>
+    QString decryptToString<span class="br0">&#40;</span><span class="kw4">const</span> QString<span class="sy3">&amp;</span> cyphertext<span class="br0">&#41;</span> <span class="sy4">;</span>
+    <span class="coMULTI">/**
+      Decrypts a cyphertext string encrypted with this class with the set key back to the
+      plain text version.
+&#160;
+      If an error occured, such as non-matching keys between encryption and decryption,
+      an empty string or a string containing nonsense may be returned.
+      */</span>
+    QByteArray decryptToByteArray<span class="br0">&#40;</span><span class="kw4">const</span> QString<span class="sy3">&amp;</span> cyphertext<span class="br0">&#41;</span> <span class="sy4">;</span>
+    <span class="coMULTI">/**
+      Decrypts a cyphertext binary encrypted with this class with the set key back to the
+      plain text version.
+&#160;
+      If an error occured, such as non-matching keys between encryption and decryption,
+      an empty string or a string containing nonsense may be returned.
+      */</span>
+    QString decryptToString<span class="br0">&#40;</span>QByteArray cypher<span class="br0">&#41;</span> <span class="sy4">;</span>
+    <span class="coMULTI">/**
+      Decrypts a cyphertext binary encrypted with this class with the set key back to the
+      plain text version.
+&#160;
+      If an error occured, such as non-matching keys between encryption and decryption,
+      an empty string or a string containing nonsense may be returned.
+      */</span>
+    QByteArray decryptToByteArray<span class="br0">&#40;</span>QByteArray cypher<span class="br0">&#41;</span> <span class="sy4">;</span>
+&#160;
+    <span class="co1">//enum to describe options that have been used for the encryption. Currently only one, but</span>
+    <span class="co1">//that only leaves room for future extensions like adding a cryptographic hash...</span>
+    <span class="kw2">enum</span> CryptoFlag<span class="br0">&#123;</span>CryptoFlagNone <span class="sy1">=</span> <span class="nu0">0</span>,
+                    CryptoFlagCompression <span class="sy1">=</span> <span class="nu12">0x01</span>,
+                    CryptoFlagChecksum <span class="sy1">=</span> <span class="nu12">0x02</span>,
+                    CryptoFlagHash <span class="sy1">=</span> <span class="nu12">0x04</span>
+                   <span class="br0">&#125;</span><span class="sy4">;</span>
+    Q_DECLARE_FLAGS<span class="br0">&#40;</span>CryptoFlags, CryptoFlag<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw2">private</span><span class="sy4">:</span>
+&#160;
+    <span class="kw4">void</span> splitKey<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    quint64 m_key<span class="sy4">;</span>
+    QVector<span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> m_keyParts<span class="sy4">;</span>
+    CompressionMode m_compressionMode<span class="sy4">;</span>
+    IntegrityProtectionMode m_protectionMode<span class="sy4">;</span>
+    Error m_lastError<span class="sy4">;</span>
+<span class="br0">&#125;</span><span class="sy4">;</span>
+Q_DECLARE_OPERATORS_FOR_FLAGS<span class="br0">&#40;</span>SimpleCrypt<span class="sy4">::</span><span class="me2">CryptoFlags</span><span class="br0">&#41;</span>
+&#160;
+<span class="co2">#endif // SimpleCrypt_H</span></pre></div></div>
+<p><br />
+<b>simplecrypt.cpp</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+Copyright (c) 2011, Andre Somers
+All rights reserved.
+&#160;
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the Rathenau Instituut, Andre Somers nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+&#160;
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL ANDRE SOMERS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR #######; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/</span>
+<span class="co2">#include &quot;simplecrypt.h&quot;</span>
+<span class="co2">#include &lt;QByteArray&gt;</span>
+<span class="co2">#include &lt;QtDebug&gt;</span>
+<span class="co2">#include &lt;QtGlobal&gt;</span>
+<span class="co2">#include &lt;QDateTime&gt;</span>
+<span class="co2">#include &lt;QCryptographicHash&gt;</span>
+<span class="co2">#include &lt;QDataStream&gt;</span>
+&#160;
+SimpleCrypt<span class="sy4">::</span><span class="me2">SimpleCrypt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">:</span>
+    m_key<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>,
+    m_compressionMode<span class="br0">&#40;</span>CompressionAuto<span class="br0">&#41;</span>,
+    m_protectionMode<span class="br0">&#40;</span>ProtectionChecksum<span class="br0">&#41;</span>,
+    m_lastError<span class="br0">&#40;</span>ErrorNoError<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    qsrand<span class="br0">&#40;</span>uint<span class="br0">&#40;</span>QDateTime<span class="sy4">::</span><span class="me2">currentMSecsSinceEpoch</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <span class="nu12">0xFFFF</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+SimpleCrypt<span class="sy4">::</span><span class="me2">SimpleCrypt</span><span class="br0">&#40;</span>quint64 key<span class="br0">&#41;</span><span class="sy4">:</span>
+    m_key<span class="br0">&#40;</span>key<span class="br0">&#41;</span>,
+    m_compressionMode<span class="br0">&#40;</span>CompressionAuto<span class="br0">&#41;</span>,
+    m_protectionMode<span class="br0">&#40;</span>ProtectionChecksum<span class="br0">&#41;</span>,
+    m_lastError<span class="br0">&#40;</span>ErrorNoError<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    qsrand<span class="br0">&#40;</span>uint<span class="br0">&#40;</span>QDateTime<span class="sy4">::</span><span class="me2">currentMSecsSinceEpoch</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <span class="nu12">0xFFFF</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    splitKey<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> SimpleCrypt<span class="sy4">::</span><span class="me2">setKey</span><span class="br0">&#40;</span>quint64 key<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    m_key <span class="sy1">=</span> key<span class="sy4">;</span>
+    splitKey<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> SimpleCrypt<span class="sy4">::</span><span class="me2">splitKey</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    m_keyParts.<span class="me1">clear</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    m_keyParts.<span class="me1">resize</span><span class="br0">&#40;</span><span class="nu0">8</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        quint64 part <span class="sy1">=</span> m_key<span class="sy4">;</span>
+        <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j<span class="sy1">=</span>i<span class="sy4">;</span> j<span class="sy1">&gt;</span><span class="nu0">0</span><span class="sy4">;</span> j<span class="sy2">--</span><span class="br0">&#41;</span>
+            part <span class="sy1">=</span> part <span class="sy1">&gt;&gt;</span> <span class="nu0">8</span><span class="sy4">;</span>
+        part <span class="sy1">=</span> part <span class="sy3">&amp;</span> <span class="nu12">0xff</span><span class="sy4">;</span>
+        m_keyParts<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">static_cast</span><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">&#40;</span>part<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+QByteArray SimpleCrypt<span class="sy4">::</span><span class="me2">encryptToByteArray</span><span class="br0">&#40;</span><span class="kw4">const</span> QString<span class="sy3">&amp;</span> plaintext<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    QByteArray plaintextArray <span class="sy1">=</span> plaintext.<span class="me1">toUtf8</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">return</span> encryptToByteArray<span class="br0">&#40;</span>plaintextArray<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+QByteArray SimpleCrypt<span class="sy4">::</span><span class="me2">encryptToByteArray</span><span class="br0">&#40;</span>QByteArray plaintext<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>m_keyParts.<span class="me1">isEmpty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        qWarning<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;No key set.&quot;</span><span class="sy4">;</span>
+        m_lastError <span class="sy1">=</span> ErrorNoKeySet<span class="sy4">;</span>
+        <span class="kw1">return</span> QByteArray<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+&#160;
+    QByteArray ba <span class="sy1">=</span> plaintext<span class="sy4">;</span>
+&#160;
+    CryptoFlags flags <span class="sy1">=</span> CryptoFlagNone<span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>m_compressionMode <span class="sy1">==</span> CompressionAlways<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        ba <span class="sy1">=</span> qCompress<span class="br0">&#40;</span>ba, <span class="nu0">9</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//maximum compression</span>
+        flags <span class="sy3">|</span><span class="sy1">=</span> CryptoFlagCompression<span class="sy4">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>m_compressionMode <span class="sy1">==</span> CompressionAuto<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        QByteArray compressed <span class="sy1">=</span> qCompress<span class="br0">&#40;</span>ba, <span class="nu0">9</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>compressed.<span class="me1">count</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;</span> ba.<span class="me1">count</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            ba <span class="sy1">=</span> compressed<span class="sy4">;</span>
+            flags <span class="sy3">|</span><span class="sy1">=</span> CryptoFlagCompression<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    QByteArray integrityProtection<span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>m_protectionMode <span class="sy1">==</span> ProtectionChecksum<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        flags <span class="sy3">|</span><span class="sy1">=</span> CryptoFlagChecksum<span class="sy4">;</span>
+        QDataStream s<span class="br0">&#40;</span><span class="sy3">&amp;</span>integrityProtection, QIODevice<span class="sy4">::</span><span class="me2">WriteOnly</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        s <span class="sy1">&lt;&lt;</span> qChecksum<span class="br0">&#40;</span>ba.<span class="me1">constData</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, ba.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>m_protectionMode <span class="sy1">==</span> ProtectionHash<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        flags <span class="sy3">|</span><span class="sy1">=</span> CryptoFlagHash<span class="sy4">;</span>
+        QCryptographicHash hash<span class="br0">&#40;</span>QCryptographicHash<span class="sy4">::</span><span class="me2">Sha1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        hash.<span class="me1">addData</span><span class="br0">&#40;</span>ba<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+        integrityProtection <span class="sy2">+</span><span class="sy1">=</span> hash.<span class="me1">result</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    <span class="co1">//prepend a random char to the string</span>
+    <span class="kw4">char</span> randomChar <span class="sy1">=</span> <span class="kw4">char</span><span class="br0">&#40;</span>qrand<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <span class="nu12">0xFF</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    ba <span class="sy1">=</span> randomChar <span class="sy2">+</span> integrityProtection <span class="sy2">+</span> ba<span class="sy4">;</span>
+&#160;
+    <span class="kw4">int</span> pos<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">char</span> lastChar<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw4">int</span> cnt <span class="sy1">=</span> ba.<span class="me1">count</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">while</span> <span class="br0">&#40;</span>pos <span class="sy1">&lt;</span> cnt<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        ba<span class="br0">&#91;</span>pos<span class="br0">&#93;</span> <span class="sy1">=</span> ba.<span class="me1">at</span><span class="br0">&#40;</span>pos<span class="br0">&#41;</span> <span class="sy3">^</span> m_keyParts.<span class="me1">at</span><span class="br0">&#40;</span>pos <span class="sy2">%</span> <span class="nu0">8</span><span class="br0">&#41;</span> <span class="sy3">^</span> lastChar<span class="sy4">;</span>
+        lastChar <span class="sy1">=</span> ba.<span class="me1">at</span><span class="br0">&#40;</span>pos<span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="sy2">++</span>pos<span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    QByteArray resultArray<span class="sy4">;</span>
+    resultArray.<span class="me1">append</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#40;</span><span class="nu12">0x03</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>  <span class="co1">//version for future updates to algorithm</span>
+    resultArray.<span class="me1">append</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#40;</span>flags<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//encryption flags</span>
+    resultArray.<span class="me1">append</span><span class="br0">&#40;</span>ba<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    m_lastError <span class="sy1">=</span> ErrorNoError<span class="sy4">;</span>
+    <span class="kw1">return</span> resultArray<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+QString SimpleCrypt<span class="sy4">::</span><span class="me2">encryptToString</span><span class="br0">&#40;</span><span class="kw4">const</span> QString<span class="sy3">&amp;</span> plaintext<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    QByteArray plaintextArray <span class="sy1">=</span> plaintext.<span class="me1">toUtf8</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    QByteArray cypher <span class="sy1">=</span> encryptToByteArray<span class="br0">&#40;</span>plaintextArray<span class="br0">&#41;</span><span class="sy4">;</span>
+    QString cypherString <span class="sy1">=</span> QString<span class="sy4">::</span><span class="me2">fromLatin1</span><span class="br0">&#40;</span>cypher.<span class="me1">toBase64</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">return</span> cypherString<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+QString SimpleCrypt<span class="sy4">::</span><span class="me2">encryptToString</span><span class="br0">&#40;</span>QByteArray plaintext<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    QByteArray cypher <span class="sy1">=</span> encryptToByteArray<span class="br0">&#40;</span>plaintext<span class="br0">&#41;</span><span class="sy4">;</span>
+    QString cypherString <span class="sy1">=</span> QString<span class="sy4">::</span><span class="me2">fromLatin1</span><span class="br0">&#40;</span>cypher.<span class="me1">toBase64</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">return</span> cypherString<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+QString SimpleCrypt<span class="sy4">::</span><span class="me2">decryptToString</span><span class="br0">&#40;</span><span class="kw4">const</span> QString <span class="sy3">&amp;</span>cyphertext<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    QByteArray cyphertextArray <span class="sy1">=</span> QByteArray<span class="sy4">::</span><span class="me2">fromBase64</span><span class="br0">&#40;</span>cyphertext.<span class="me1">toLatin1</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    QByteArray plaintextArray <span class="sy1">=</span> decryptToByteArray<span class="br0">&#40;</span>cyphertextArray<span class="br0">&#41;</span><span class="sy4">;</span>
+    QString plaintext <span class="sy1">=</span> QString<span class="sy4">::</span><span class="me2">fromUtf8</span><span class="br0">&#40;</span>plaintextArray, plaintextArray.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">return</span> plaintext<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+QString SimpleCrypt<span class="sy4">::</span><span class="me2">decryptToString</span><span class="br0">&#40;</span>QByteArray cypher<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    QByteArray ba <span class="sy1">=</span> decryptToByteArray<span class="br0">&#40;</span>cypher<span class="br0">&#41;</span><span class="sy4">;</span>
+    QString plaintext <span class="sy1">=</span> QString<span class="sy4">::</span><span class="me2">fromUtf8</span><span class="br0">&#40;</span>ba, ba.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">return</span> plaintext<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+QByteArray SimpleCrypt<span class="sy4">::</span><span class="me2">decryptToByteArray</span><span class="br0">&#40;</span><span class="kw4">const</span> QString<span class="sy3">&amp;</span> cyphertext<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    QByteArray cyphertextArray <span class="sy1">=</span> QByteArray<span class="sy4">::</span><span class="me2">fromBase64</span><span class="br0">&#40;</span>cyphertext.<span class="me1">toLatin1</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    QByteArray ba <span class="sy1">=</span> decryptToByteArray<span class="br0">&#40;</span>cyphertextArray<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">return</span> ba<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+QByteArray SimpleCrypt<span class="sy4">::</span><span class="me2">decryptToByteArray</span><span class="br0">&#40;</span>QByteArray cypher<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>m_keyParts.<span class="me1">isEmpty</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        qWarning<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;No key set.&quot;</span><span class="sy4">;</span>
+        m_lastError <span class="sy1">=</span> ErrorNoKeySet<span class="sy4">;</span>
+        <span class="kw1">return</span> QByteArray<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    QByteArray ba <span class="sy1">=</span> cypher<span class="sy4">;</span>
+&#160;
+    <span class="kw1">if</span><span class="br0">&#40;</span> cypher.<span class="me1">count</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;</span> <span class="nu0">3</span> <span class="br0">&#41;</span>
+        <span class="kw1">return</span> QByteArray<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw4">char</span> version <span class="sy1">=</span> ba.<span class="me1">at</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>version <span class="sy3">!</span><span class="sy1">=</span><span class="nu0">3</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>  <span class="co1">//we only work with version 3</span>
+        m_lastError <span class="sy1">=</span> ErrorUnknownVersion<span class="sy4">;</span>
+        qWarning<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;Invalid version or not a cyphertext.&quot;</span><span class="sy4">;</span>
+        <span class="kw1">return</span> QByteArray<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    CryptoFlags flags <span class="sy1">=</span> CryptoFlags<span class="br0">&#40;</span>ba.<span class="me1">at</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    ba <span class="sy1">=</span> ba.<span class="me1">mid</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> pos<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> cnt<span class="br0">&#40;</span>ba.<span class="me1">count</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">char</span> lastChar <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">while</span> <span class="br0">&#40;</span>pos <span class="sy1">&lt;</span> cnt<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw4">char</span> currentChar <span class="sy1">=</span> ba<span class="br0">&#91;</span>pos<span class="br0">&#93;</span><span class="sy4">;</span>
+        ba<span class="br0">&#91;</span>pos<span class="br0">&#93;</span> <span class="sy1">=</span> ba.<span class="me1">at</span><span class="br0">&#40;</span>pos<span class="br0">&#41;</span> <span class="sy3">^</span> lastChar <span class="sy3">^</span> m_keyParts.<span class="me1">at</span><span class="br0">&#40;</span>pos <span class="sy2">%</span> <span class="nu0">8</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        lastChar <span class="sy1">=</span> currentChar<span class="sy4">;</span>
+        <span class="sy2">++</span>pos<span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    ba <span class="sy1">=</span> ba.<span class="me1">mid</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//chop off the random number at the start</span>
+&#160;
+    <span class="kw4">bool</span> integrityOk<span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>flags.<span class="me1">testFlag</span><span class="br0">&#40;</span>CryptoFlagChecksum<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>ba.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;</span> <span class="nu0">2</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            m_lastError <span class="sy1">=</span> ErrorIntegrityFailed<span class="sy4">;</span>
+            <span class="kw1">return</span> QByteArray<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        quint16 storedChecksum<span class="sy4">;</span>
+        <span class="br0">&#123;</span>
+            QDataStream s<span class="br0">&#40;</span><span class="sy3">&amp;</span>ba, QIODevice<span class="sy4">::</span><span class="me2">ReadOnly</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            s <span class="sy1">&gt;&gt;</span> storedChecksum<span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        ba <span class="sy1">=</span> ba.<span class="me1">mid</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        quint16 checksum <span class="sy1">=</span> qChecksum<span class="br0">&#40;</span>ba.<span class="me1">constData</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, ba.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        integrityOk <span class="sy1">=</span> <span class="br0">&#40;</span>checksum <span class="sy1">==</span> storedChecksum<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>flags.<span class="me1">testFlag</span><span class="br0">&#40;</span>CryptoFlagHash<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>ba.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">&lt;</span> <span class="nu0">20</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            m_lastError <span class="sy1">=</span> ErrorIntegrityFailed<span class="sy4">;</span>
+            <span class="kw1">return</span> QByteArray<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        QByteArray storedHash <span class="sy1">=</span> ba.<span class="me1">left</span><span class="br0">&#40;</span><span class="nu0">20</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        ba <span class="sy1">=</span> ba.<span class="me1">mid</span><span class="br0">&#40;</span><span class="nu0">20</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        QCryptographicHash hash<span class="br0">&#40;</span>QCryptographicHash<span class="sy4">::</span><span class="me2">Sha1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        hash.<span class="me1">addData</span><span class="br0">&#40;</span>ba<span class="br0">&#41;</span><span class="sy4">;</span>
+        integrityOk <span class="sy1">=</span> <span class="br0">&#40;</span>hash.<span class="me1">result</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy1">==</span> storedHash<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>integrityOk<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        m_lastError <span class="sy1">=</span> ErrorIntegrityFailed<span class="sy4">;</span>
+        <span class="kw1">return</span> QByteArray<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>flags.<span class="me1">testFlag</span><span class="br0">&#40;</span>CryptoFlagCompression<span class="br0">&#41;</span><span class="br0">&#41;</span>
+        ba <span class="sy1">=</span> qUncompress<span class="br0">&#40;</span>ba<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    m_lastError <span class="sy1">=</span> ErrorNoError<span class="sy4">;</span>
+    <span class="kw1">return</span> ba<span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>You can copy/paste the code above into your own <b>simplecrypt.h</b> and <b>simplecrypt.cpp</b> files to use it.
+</p>
+<h2><span class="mw-headline" id="Details_on_the_algorithm">Details on the algorithm</span></h2>
+<p>The algorithm and data format used in this class, have been detailed on a <a href="http://wiki.qt.io/SimpleCrypt_algorithm_details" title="SimpleCrypt algorithm details"> separate page</a>. On that page, you can find byte-for-byte descriptions of how the cyphertext is constructed from the plain text.
+</p>
+<h2><span class="mw-headline" id="Future_extensions">Future extensions</span></h2>
+<p>I, or somebody else, may choose to extend SimpleCrypt in the future, or fix a weakness of some kind. To make that possible without losing the option to read your older encrypted data, the generated cyphertext contains a version number. The idea is that future versions of this code will have a higher version number, but will keep supporting the decryption of cyphertexts with a lower version number. The current version number is 2. Note that these version numbers need not coincide with code version numbers, as a change in the code does not always result in a change in the actual encryption.
+</p>
+<h2><span class="mw-headline" id="Versions">Versions</span></h2>
+<p>The latest version of the code is 3.1
+</p>
+<ul>
+<li> Version 3.1
+<ul>
+<li> The code is now compatible with Qt5 and higher
+</li>
+</ul>
+</li>
+<li> Version 3
+<ul>
+<li> Fixed embarrassing mistake with only using 4 out of 8 of the key bytes. Thanks to Gerolf for noticing!
+</li>
+</ul>
+</li>
+<li> Version 2
+<ul>
+<li> Renamed flags to avoid clashes
+</li>
+<li> Upped version number to 2, but did not retain backwards compatibility
+</li>
+<li> Added optional data integrity protection using either a checksum or a cryptographic hash
+</li>
+<li> Added error reporting (making is necessary to make the encryption and decryption functions non-const)
+</li>
+</ul>
+</li>
+<li> Version 1
+<ul>
+<li> This marks the first public release.
+</li>
+</ul>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.191 seconds
+Real time usage: 0.201 seconds
+Preprocessor visited node count: 163/1000000
+Preprocessor generated node count: 349/1000000
+Post‐expand include size: 430/2097152 bytes
+Template argument size: 109/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:4033-0!*!0!!en!*!* and timestamp 20151104140805 and revision id 18008
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Simple_encryption_with_SimpleCrypt&amp;oldid=18008">http://wiki.qt.io/index.php?title=Simple_encryption_with_SimpleCrypt&amp;oldid=18008</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:Snippets" title="Category:Snippets">Snippets</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Simple+encryption+with+SimpleCrypt" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Simple_encryption_with_SimpleCrypt"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Simple_encryption_with_SimpleCrypt&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Simple_encryption_with_SimpleCrypt" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Simple_encryption_with_SimpleCrypt&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Simple_encryption_with_SimpleCrypt&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Simple_encryption_with_SimpleCrypt" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Simple_encryption_with_SimpleCrypt" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Simple_encryption_with_SimpleCrypt&amp;oldid=18008&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Simple_encryption_with_SimpleCrypt&amp;oldid=18008" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Simple_encryption_with_SimpleCrypt&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 16 June 2015, at 10:30.</li>
+											<li id="footer-info-viewcount">This page has been accessed 4,411 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":271});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Simple_encryption_with_SimpleCrypt&oldid=18008 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:02:43 GMT -->
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/ReportingBugsInQt by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:04:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Reporting Bugs - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="Reporting_Bugs.html" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Reporting_Bugs","wgTitle":"Reporting Bugs","wgCurRevisionId":19355,"wgRevisionId":19355,"wgArticleId":1913,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Reporting_Bugs","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"ReportingBugsInQt","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Reporting_Bugs skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Reporting Bugs</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub">(Redirected from <a href="index44eb.html?title=ReportingBugsInQt&amp;redirect=no" title="ReportingBugsInQt">ReportingBugsInQt</a>)</div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexbced.html?title=Reporting_Bugs&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Reporting_bugs_in_Qt"><span class="tocnumber">1</span> <span class="toctext">Reporting bugs in Qt</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Step_by_step"><span class="tocnumber">1.1</span> <span class="toctext">Step by step</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#In_short"><span class="tocnumber">1.2</span> <span class="toctext">In short</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Bugs_with_security-sensitive_information"><span class="tocnumber">1.3</span> <span class="toctext">Bugs with security-sensitive information</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Reporting_bugs_as_a_commercial_customer"><span class="tocnumber">1.4</span> <span class="toctext">Reporting bugs as a commercial customer</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Tips_for_dealing_with_difficult_bugs"><span class="tocnumber">1.5</span> <span class="toctext">Tips for dealing with difficult bugs</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Bugs_that_occur_in_a_specific_environment"><span class="tocnumber">1.6</span> <span class="toctext">Bugs that occur in a specific environment</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Feature_requests_.28named_Suggestions_in_JIRA.29"><span class="tocnumber">1.7</span> <span class="toctext">Feature requests (named Suggestions in JIRA)</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Reporting_bugs_in_Qt">Reporting bugs in Qt</span></h1>
+<p>Bugs in Qt can be reported at the <a rel="nofollow" class="external text" href="http://bugreports.qt.io/">bug tracker</a>. The quality of the bug report can dramatically impact how likely it is that the bug will be fixed. A prerequisite for this is that a number of people (for example developers, code reviewers, QA and release managers) are able to quickly understand and verify the issue by reading the report and potentially running a code example. This page describes how to report bugs, and tips for making high quality reports.
+</p>
+<h2><span class="mw-headline" id="Step_by_step">Step by step</span></h2>
+<p>Here is a nutshell description of how to report a bug:
+</p>
+<ol>
+<li> Visit <a rel="nofollow" class="external text" href="http://bugreports.qt.io/">bugreports.qt.io</a>
+</li>
+<li> If it's your first time, create an account (which is separate from your DevNet account). Make sure to supply a valid email address; Qt developers sometimes need to ask for more details regarding a bug, and this is the only way they can reach you. Your email address will not be exposed; it is only possible to contact you by commenting on your reports (or commenting on bugs you're watching).
+</li>
+<li> Use the "Quick Search" field in the top right to try to find any similar bugs. If you find one, then…
+<ul>
+<li> Leave a comment with any additional info you have.
+</li>
+<li> Click "Vote" — You will usually have a higher chance of having your bug fixed by voting on an already existing bug than creating a new one.
+</li>
+<li> Add yourself as a watcher, if you want to track the progress of the bug via email.
+</li>
+</ul>
+</li>
+<li> If you don't find a bug report which matches your issue, then click "Create New Issues", and fill out the fields.
+</li>
+</ol>
+<h3><span class="mw-headline" id="Summary">Summary</span></h3>
+<ul>
+<li> Enter a short but descriptive text explaining the bug in a sentence.
+</li>
+<li> This should include an overall overview over how the bug happens without going into too much detail. They key is to think about what other people might search for.
+<ul>
+<li> Bad example: "QLineEdit always goes wrong"
+</li>
+<li> Too long: "QLineEdit crashes in paintEvent at the for loop which draws characters. This happens if I use an input method based on XIM and then set it to Arabic, which also switches to right-to-left mode. Then I try to type something, and it crashes." A long text like this one should be put in the description instead; the summary should be kept short.
+</li>
+<li> Good example: "QLineEdit crashes in paintEvent when using an input method in right-to-left mode."
+</li>
+<li> If you are sure the bug affects only one platform, prefix it by the platform and a colon: "Windows: QLineEdit crashes in paintEvent when using an input method in right-to-left mode."
+</li>
+<li> If the bug is a <i>regression</i>, that is, it worked in a previous version of Qt, indicate this as follows: "[REG 4.8.6-&gt;5.3.1] Windows: QLineEdit crashes in paintEvent when using an input method in right-to-left mode."
+</li>
+</ul>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Affects_Version">Affects Version</span></h3>
+<ul>
+<li> Select the Qt version where you're able to reproduce the bug. If this is not the current minor version, please also verify against the current minor version to check whether the bug has been fixed in the meantime.
+</li>
+</ul>
+<h3><span class="mw-headline" id="Components">Components</span></h3>
+<ul>
+<li> Select the component which best fits the location of the bug.
+</li>
+<li> You can select more than one component by selecting one after the other from the drop-down menu. For example, if a widget problem is specific to Windows, you should select "Platform: Windows" and "Widgets".
+</li>
+</ul>
+<h3><span class="mw-headline" id="Description">Description</span></h3>
+<ul>
+<li> A longer text describing, step by step, the minimum amount of actions required to reproduce the bug. 
+</li>
+<li> A good form to follow is this:
+<ol>
+<li> What did you do? This ideally takes the form of short bullet points. However, try to be as precise as possible when describing something like a touch gesture.
+</li>
+<li> What did you expect to happen?
+</li>
+<li> What happened instead?
+</li>
+</ol>
+</li>
+<li> If the bug is a crash, a vital piece of information in crash reports is the stacktrace. Retrieving a stracktrace is platform specific, however, all of them require that Qt be built with debug symbols. If you compiled Qt yourself, then make sure you supplied "-debug" during configure time. If you're using binaries, then make sure you've installed the corresponding debug packages. Paste the stacktrace in the description if it's not terribly long (surround it by <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="br0">&#123;</span>noformat<span class="br0">&#125;</span>My stack trace<span class="br0">&#123;</span>noformat<span class="br0">&#125;</span></pre></div></div> to make it stand out from the rest), else attach it as a text file (use the suffix .txt so that it can be conveniently viewed by clicking). In Qt Creator, a verbose stack trace can be created by right-clicking on the stack window of the debugger and choosing <i>Create full backtrace</i> .
+</li>
+<li> Finally, please supply any more details that you may have in this field. For instance "This bug only occurs if I have compositing enabled", or "This is a regression from 4.6.1".
+</li>
+<li> Example:
+<ul>
+<li> Launch attached example qtbug32777.zip
+</li>
+<li> Click on File Menu
+</li>
+<li> Choose item "Open"
+</li>
+<li> Note: Mouse cursor turns green
+</li>
+<li> EXPECTED: File dialog opens
+</li>
+<li> ACTUAL: Application crashes
+</li>
+</ul>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Environment">Environment</span></h3>
+<ul>
+<li> Input as detailed description of your operating system, window manager, compiler, and any other pertinent information needed to reproduce the bug.
+</li>
+<li> Also put the exact name of the package you used as well as the contents of the .tag file in the package if there is one. If using Git, please give the branch name and the commit ID.
+</li>
+<li> If you tested several platforms, it helps to add this information as well ("Windows: reproduced, Linux/KDE: not reproduced, OS X: reproduced"). As mentioned above, if you are sure the bug affects only one platform, it should be mentioned in the summary.
+</li>
+<li> Starting from version 5.3.0, there is a command line tool <i>qtdiag</i>, which outputs detailed information about operating system, compiler and graphics configuration. Particularly for bugs related to graphics, it is recommended to redirect its output into a file and attach that to the bug report, or add the output as a comment enclosed in {noformat} tags.
+</li>
+</ul>
+<h3><span class="mw-headline" id="Attachment">Attachment</span></h3>
+<ul>
+<li> This often neglected field is perhaps one of the most important. Here is where you can make a simple application that reproduces the bug and attach it.
+</li>
+<li> Ideally, that should be an archive consisting of a <i>main.cpp</i> and a <i>.pro</i> file that expands a directory whose name indicates the bug number and optionally some identifier (for example, <i>qtbug32765_printbug.zip</i> expanding a directory <i>qtbug32765_printbug</i>). The stand-alone main.cpp file should have the bare minimum amount of code needed to reproduce the bug. An application that reproduces the bug is the single most useful piece of information for a developer to try to identify and fix a bug. Qt Creator's <i>Other Project</i> / <i>Code Snippet</i> wizard is a useful tool to create such examples. Remember that the application (referred to as the test case) should follow the SSCCE rule:
+<ul>
+<li> <b>Short</b> – Make it as short as possible. It is much easier to spot a problem in short code.
+</li>
+<li> <b>Self Contained</b> – Make sure you do not rely on any external libraries or files other than Qt. If you need extra nonstandard headers, copy paste what you need (but not more than you need) into the main.cpp file. If you need moc, you can put #include "main.moc" at the end of the file to force moc to include the metacode directly into your file.
+</li>
+<li> <b>Correct</b> – Make sure your application compiles and is correct code. For example, dereferencing a zero-pointer in the example code, is clearly not a bug in Qt.
+</li>
+<li> <b>Example</b> – Make sure that the application actually demonstrates the problem you are trying to solve.
+</li>
+<li> Avoid Qt Designer forms
+</li>
+<li> The example should output the version of Qt it uses (set <i>QT_VERSION_STR</i> as window title or output it via <i>qDebug()</i>).
+</li>
+<li> Particularly if it is a regression, the example should compile with Qt 4 and Qt 5.
+</li>
+<li> Avoid the use of <i>#ifdef</i> to show workarounds. Use simple command line options instead:
+</li>
+</ul>
+</li>
+</ul>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw1">if</span> <span class="br0">&#40;</span>QCoreApplications<span class="sy0">::</span><span class="me2">arguments</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">contains</span><span class="br0">&#40;</span><span class="st0">&quot;-w&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> …</pre></div></div>
+<ul>
+<li> A unit test (of the kind you can find in the $QTDIR/tests/auto folder in the Git repository) is even better than a simple example, since we can add it to our automated tests to make sure this bug doesn't regress later.
+</li>
+<li> A screenshot, or longer stacktrace is also incredibly useful.
+</li>
+</ul>
+<h3><span class="mw-headline" id="Source_Req_ID">Source Req ID</span></h3>
+<ul>
+<li> Leave blank
+</li>
+</ul>
+<h3><span class="mw-headline" id="Followed_By">Followed By</span></h3>
+<ul>
+<li> Not needed
+</li>
+</ul>
+<h3><span class="mw-headline" id="Then_click_.22Create.22">Then click "Create"</span></h3>
+<p>You can now either start hacking on Qt to find a solution and file a merge request, or wait until a Troll prioritizes, schedules, and fixes the bug for a release.
+</p>
+<h2><span class="mw-headline" id="In_short">In short</span></h2>
+<p>Always provide as much information as possible together with your bug report. The more the better. Also, please specify if a bug is a regression or not. If it is, then specify what version it worked in last. Finally, supplying a testcase main.cpp is a sure-fire way to land in the "fasttrack" of bug resolution and into the hearts of the Trolls. Also, providing a testcase is a great means of preventing the same bug from cropping up in the future as a regression.
+</p><p>By creating a high quality bug report, you will gain priority over those less descriptive, and your chances of a speedy resolution increased. If after all your hard work we still reject your bug, then please don't take it personally. Instead, add a comment in the report and explain your situation so that we can re-evaluate it. After all, we also make mistakes.
+</p>
+<h2><span class="mw-headline" id="Bugs_with_security-sensitive_information">Bugs with security-sensitive information</span></h2>
+<p>If you found a security problem, do <i>not</i> create a bug report on JIRA, but send email to security@qt-project(dot)org.
+</p>
+<h2><span class="mw-headline" id="Reporting_bugs_as_a_commercial_customer">Reporting bugs as a commercial customer</span></h2>
+<p>qt.io is a community resource, and may not always provide the experience you expect as a paying customer. If the problem you want to report has a high priority for you, you should use the <a rel="nofollow" class="external text" href="https://account.qt.io/support">Support Center</a> accessible from your Qt Account to report it. The support team can help you with many of the steps detailed on this page, suggest workarounds, and will create a JIRA task on your behalf and tag it appropriately.
+</p>
+<h2><span class="mw-headline" id="Tips_for_dealing_with_difficult_bugs">Tips for dealing with difficult bugs</span></h2>
+<p>Some bugs may be hard to reproduce, for example, it may happen only occasionally, it cannot be reproduced in a small example, or it only happens in a specific environment. However, for the Qt developers to be able to help you, it is still important that they are analyzed in enough detail so that the developer is able to see the problem for himself. This section describes some tips for dealing with such bugs.
+</p>
+<h2><span class="mw-headline" id="Bugs_that_occur_in_a_specific_environment">Bugs that occur in a specific environment</span></h2>
+<p>This type of bug often follows this pattern:
+</p>
+<ol>
+<li> You identify a bug on your computer.
+</li>
+<li> You manage to create a test case for it and submit that to <a rel="nofollow" class="external text" href="http://bugreports.qt.io/">http://bugreports.qt.io/.</a>
+</li>
+<li> A developer from Qt tries the example, but claims that he can not reproduce it.
+</li>
+<li> He/she may also close the bug with "Cannot reproduce" or "Need more info".
+</li>
+</ol>
+<p><b>At this point, it important not to lose hope.</b> These bugs are tricky, and solving them typically requires a lot of back and forth communication, since the bug can only be reproduced on the reporter's system.
+</p><p>You should start by asking for pointers in the comment field. A typical question would be: "Where would be a good place in the code to start debugging or place some debug print statements?" Most developers should respond favorably to this, and suggest places to look at in detail, or specific variables that you can check for consistency while the code runs. This, in turn, may lead to additional questions being asked, which hopefully leads to either the bug being identified, or the Qt developer being able to reproduce the problem on his machine using the new information.
+</p>
+<h3><span class="mw-headline" id="Bugs_that_cannot_be_reproduced_in_a_small_example">Bugs that cannot be reproduced in a small example</span></h3>
+Typical for this type of bug is that in your big application, the bug can be easily triggered by enabling a certain attribute, for example <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">widget<span class="sy0">-&gt;</span><span class="me3">setAttribute</span><span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">WA_NativeWindow</span><span class="br0">&#41;</span></pre></div></div> However, when you try to reproduce the same thing in a small example, the bug cannot be seen anymore.
+<p>One effective way of dealing with such bugs is the divide-and-conquer method. This method consists of a series of steps, where at each step, you remove a part of your program. Each time you remove something, you need to verify that the bug can still be reproduced, and if it can't you have to go back to the previous step and choose a different part to remove.
+</p><p>Start by removing code that is likely to be irrelevant to be bug, for example if the bug is a rendering bug, you should quite safely be able to remove networking code. Similarly, if your program has 20 QPushButtons, but only one is required to demonstrate the problem, remove the other 19.
+</p><p>Eventually, your program may reach a point where you are not able to remove any more code without the bug disappearing. Such a program is an excellent candidate for a test case that you can submit to the bug report. This whole process can take quite some time, but is sometimes the only way of isolating the real cause of a bug.
+</p>
+<h3><span class="mw-headline" id="Bugs_that_only_happen_occasionally">Bugs that only happen occasionally</span></h3>
+<p>These are usually the hardest types of bugs. The key here is to be prepared when the bug does happen. This can mean several things, for example, if the bug is a crash, make sure that you are always running in a debugger so that you can look at the stack when the crash happens. If there is a behavioral bug, for example a visual problem or corrupt data, try to put debug prints in various key locations, printing the value of variables that may be relevant to the problem, and make sure you always log those values. Then, when the problem happens, you can see at which point the variables started to go wrong.
+</p><p>Like the bugs that only happen in a certain environment, this is something that you can ask about in the bug comment field and most developers should give you some hints about which places and variables may be important to your type of problem. The Qt mailing lists are also a good place to ask, as well as the #qt-labs channel on the Freenode IRC network. (For a full list of IRC channels of interest to Qt developers, see <a href="OnlineCommunities.html" title="OnlineCommunities" class="mw-redirect">OnlineCommunities</a>.)
+</p>
+<h3><span class="mw-headline" id="Things_that_used_to_work_.28regressions.29">Things that used to work (regressions)</span></h3>
+<p>If you have a bug in Qt that is difficult to produce a test case for, but you know that the feature worked in the past, bisecting can be of a great help to pinpoint the problem. Bisection is a process in the Git version control tool that allows you to iteratively search for the exact commit that broke a given feature. A full description of the git-bisect process will not be given here, but this will give you an idea of the process involved:
+</p>
+<ol>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git bisect start</pre></div></div>
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git bisect good v4.6.2</pre></div></div> (Mark the previous version you know about where the feature worked)
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git bisect bad</pre></div></div> (Mark the current commit as broken)
+</li>
+<li> Git should produce something like: Bisecting: 675 revisions left to test after this (roughly 7 steps)
+</li>
+<li> Compile Qt as well as your application, and test if the bug is present.
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git bisect <span class="sy0">&lt;</span>good<span class="sy0">|</span>bad<span class="sy0">&gt;</span></pre></div></div> (Good or bad depending on the outcome of the bug test)
+</li>
+<li> Repeat the previuos two steps.
+</li>
+<li> Eventually, git-bisect will tell you which commit introduced the problem. Include this commit in your bug report.
+</li>
+</ol>
+<p>For more information on bisecting, please see the <a rel="nofollow" class="external text" href="http://www.kernel.org/pub/software/scm/git/docs/git-bisect.html">git-bisect man page.</a>
+</p>
+<h2><span class="mw-headline" id="Feature_requests_.28named_Suggestions_in_JIRA.29">Feature requests (named Suggestions in JIRA)</span></h2>
+<p>Feature requests are a bit different from bugs. They often (but not always) have a wider scope than bugs. For example, "Port Qt to platform X" is a feature request that sounds simple, but has a huge scope.
+</p><p>The important thing to remember when submitting feature requests, particularly those with a big scope, is to be specific in the description:
+</p>
+<ul>
+<li> Bad example: Please add QWidget::nudgeWidget().
+</li>
+<li> Good example: Please add a function to QWidget that will make the window shake for a short period of time, like when the user enters a bad password. The function can be called something like nudgeWidget().
+</li>
+</ul>
+<p>In the second example, it is much clearer to the developer what the feature request actually means, since the meaning of "nudge" is ambiguous (it could also mean blink the colors of the window, like some advertisement popups do when browsing the Internet).
+</p><p>Another very important piece of information in feature requests is to attach use cases. Use cases are concrete examples on situations where the feature will be used. For instance, the widget shaking in response to a bad password in the example above, is one such use case.
+</p><p>Even though the use case may be crystal clear to the reporter, it may not be to the developer, so it is better to be explicit about it. If you have several distinct use cases, feel free to list more than one. That makes it more obvious that the feature can be useful for many people.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.150 seconds
+Real time usage: 0.176 seconds
+Preprocessor visited node count: 258/1000000
+Preprocessor generated node count: 887/1000000
+Post‐expand include size: 3307/2097152 bytes
+Template argument size: 411/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1913-0!*!0!!en!*!* and timestamp 20151105013607 and revision id 19355
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index47a6.html?title=Reporting_Bugs&amp;oldid=19355">http://wiki.qt.io/index.php?title=Reporting_Bugs&amp;oldid=19355</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=89f644b03ca07a03&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Reporting_Bugs.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Reporting_Bugs.html?title=Talk:Reporting_Bugs&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Reporting_Bugs.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexbced.html?title=Reporting_Bugs&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexe7ec.html?title=Reporting_Bugs&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Reporting_Bugs.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Reporting_Bugs.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexe82b.html?title=Reporting_Bugs&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index47a6.html?title=Reporting_Bugs&amp;oldid=19355" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index4ca6.html?title=Reporting_Bugs&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:26.</li>
+											<li id="footer-info-viewcount">This page has been accessed 3,865 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":480});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/ReportingBugsInQt by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:04:43 GMT -->
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Setting_up_Qt_Creator_for_QNX_Neutrino_OS&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:02:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Setting up Qt Creator for QNX Neutrino OS - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Setting_up_Qt_Creator_for_QNX_Neutrino_OS","wgTitle":"Setting up Qt Creator for QNX Neutrino OS","wgCurRevisionId":18339,"wgRevisionId":18339,"wgArticleId":1957,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["QNX","HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Setting_up_Qt_Creator_for_QNX_Neutrino_OS","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Setting_up_Qt_Creator_for_QNX_Neutrino_OS skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Setting up Qt Creator for QNX Neutrino OS</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Getting_Started"><span class="tocnumber">2</span> <span class="toctext">Getting Started</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Setup_your_Qt_Creator_environment"><span class="tocnumber">3</span> <span class="toctext">Setup your Qt Creator environment</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Add_the_Qt_version"><span class="tocnumber">3.1</span> <span class="toctext">Add the Qt version</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Add_the_QCC_compiler"><span class="tocnumber">3.2</span> <span class="toctext">Add the QCC compiler</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Add_a_debugger"><span class="tocnumber">3.3</span> <span class="toctext">Add a debugger</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Add_QNX_Device"><span class="tocnumber">3.4</span> <span class="toctext">Add QNX Device</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Add_a_kit"><span class="tocnumber">3.5</span> <span class="toctext">Add a kit</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Compile_and_Deploy"><span class="tocnumber">4</span> <span class="toctext">Compile and Deploy</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Pointing_to_the_Qt_runtime_on_the_target"><span class="tocnumber">4.1</span> <span class="toctext">Pointing to the Qt runtime on the target</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Application_deployment"><span class="tocnumber">4.2</span> <span class="toctext">Application deployment</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Tools_provided_by_the_QNX_SDK"><span class="tocnumber">4.3</span> <span class="toctext">Tools provided by the QNX SDK</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Using_CMake_build_system"><span class="tocnumber">5</span> <span class="toctext">Using CMake build system</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<p>The QNX plugin is available in Qt Creator since the version 2.6. It provides support for application development for BlackBerry 10 smartphones as well as for QNX Neutrino OS on embedded devices.
+</p><p>You can download a recent Qt Creator release version via this <a rel="nofollow" class="external text" href="http://download.qt.io/development_releases/qtcreator/">link</a>.
+</p><p>The QNX plugin is under constant development. Many improvements and bug fixes did not make into the recently released 3.1 version. If you want to try a cutting-edge Qt Creator build that contains latest features and bug fixes in the QNX plugin, you can consider downloading a snapshot build via this <a rel="nofollow" class="external text" href="https://download.qt.io/snapshots/qtcreator/master/">link</a>.
+</p><p>A few generic topics on this page overlap with the <a href="QNX-App-development-and-deployment.html" title="QNX-App-development-and-deployment"> Qt application development and deployment on QNX</a> page which focuses on the command line use case.
+</p><p><i><b>Note:</b></i> The steps described in this page cover Qt Creator 3.1 feature level. If you are using a previous version, some steps might need to be done slightly different.
+</p>
+<h2><span class="mw-headline" id="Getting_Started">Getting Started</span></h2>
+<p>The following tools are required for development for the QNX platform using Qt Creator:
+</p>
+<ul>
+<li> Qt build for QNX installed on your target and on your development machine
+</li>
+<li> Qt Creator 3.1 (most steps should be valid for the version 2.6 and later as well) 
+</li>
+<li> QNX Software Development Platform (SDP) 6.6 (most steps should be valid for SDP 6.5 FP1 as well)
+</li>
+<li> QNX SDK for Apps and Media 1.0 if you use SDP 6.6. This is an optional package providing additional BlackBerry tools for easy deployment and installation of applications on a target.
+</li>
+</ul>
+<h2><span class="mw-headline" id="Setup_your_Qt_Creator_environment">Setup your Qt Creator environment</span></h2>
+<p>You first have to manually add your Qt for QNX as a new Qt version, configure the compiler, the debugger and create the kit. In the future Qt Creator releases, QNX plugin should be able to automatically setup all these tools by just selecting the path to the installed QNX SDP.
+</p>
+<h3><span class="mw-headline" id="Add_the_Qt_version">Add the Qt version</span></h3>
+<p>You add the Qt version by selecting <b>Tools -&gt; Options-&gt; Build &amp; Run &gt; Qt Versions -&gt; Add</b> and set the path to "qmake" in your Qt for QNX build. You also need to specify a path to the QNX SDP installation to let Qt Creator to validate the newly added Qt version:
+</p><p><img src="https://raw.githubusercontent.com/blackberry/Qt/master/screenshots/qnx/qtcreator-qnx-qt.png" alt="qtcreator-qnx-qt.png" />
+</p><p>This won't be required in the future releases of Qt Creator. If you are using a Qt for QNX installer with integrated Qt Creator build, the new Qt version for QNX will be detected automatically and added to this Qt Creator installation.
+</p>
+<h3><span class="mw-headline" id="Add_the_QCC_compiler">Add the QCC compiler</span></h3>
+<p>Select <b>Tools -&gt; Options-&gt; Build &amp; Run -&gt; Compiler-&gt; Add -&gt; QCC</b> and set the path to the qcc compiler (<b>&lt;qnx660_path&gt;/host/&lt;OS&gt;/x86/usr/bin/qcc</b>). Since qcc depends on some QNX specific environment variables, you need to specify the path to the QNX SDP installation as well:
+</p><p><img src="https://raw.githubusercontent.com/blackberry/Qt/master/screenshots/qnx/qtcreator-qnx-compiler.png" alt="qtcreator-qnx-compiler.png" />
+</p>
+<h3><span class="mw-headline" id="Add_a_debugger">Add a debugger</span></h3>
+<p>Select <b>Tools -&gt; Options-&gt; Run &amp; Build -&gt; Debugger</b> and set the path to the <b>ntoarmv7-gdb</b> debugger (<b>&lt;qnx660_path&gt;/host/&lt;OS&gt;/x86/usr/bin/ntoarmv7-gdb</b>) or <b>ntox86-gdb</b> if you're targeting x86:
+</p><p><img src="https://raw.githubusercontent.com/blackberry/Qt/master/screenshots/qnx/qtcreator-qnx-debugger.png" alt="qtcreator-qnx-debugger.png" />
+</p>
+<h3><span class="mw-headline" id="Add_QNX_Device">Add QNX Device</span></h3>
+<p>Select <b>Tools -&gt; Options-&gt; Devices -&gt; Add-&gt; QNX Device</b> to register your QNX device in Qt Creator.
+</p><p><img src="https://raw.githubusercontent.com/blackberry/Qt/master/screenshots/qnx/qtcreator-qnx-device.png" alt="qtcreator-qnx-device.png" />
+</p>
+<h3><span class="mw-headline" id="Add_a_kit">Add a kit</span></h3>
+<p>Select <b>Tools -&gt; Options-&gt; Build &amp; Run -&gt; Kits-&gt; Add</b> to add a new kit that uses the QNX device, the Qt version , the compiler and the debugger your setup during the steps above:
+</p><p><img src="https://raw.githubusercontent.com/blackberry/Qt/master/screenshots/qnx/qtcreator-qnx-kit.png" alt="qtcreator-qnx-kit.png" />
+</p>
+<h2><span class="mw-headline" id="Compile_and_Deploy">Compile and Deploy</span></h2>
+<p>Compiling and deploying applications for QNX is very similar to how it is done for "Remote Linux" devices, see the Qt Creator manual for more information via this <a rel="nofollow" class="external text" href="http://doc-snapshot.qt.io/qtcreator-3.1/creator-deployment-qnx.html">link</a>.
+</p>
+<h3><span class="mw-headline" id="Pointing_to_the_Qt_runtime_on_the_target">Pointing to the Qt runtime on the target</span></h3>
+<p>When running the application on the QNX device, you might need to specify the path to where the Qt runtime is installed on the device. This is done in the "Run Settings" of your project in Qt Creator. The application will not start if this is not done, check the logs to find out if this is the case.
+</p><p>A Qt application can be pointed to the location of the Qt runtime by a few environment variables. Set the following environment variables:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">LD_LIBRARY_PATH<span class="sy0">=/&lt;</span>qt_installation_path<span class="sy0">&gt;/</span>lib
+QML_IMPORT_PATH<span class="sy0">=</span> <span class="sy0">/&lt;</span>qt_installation_path<span class="sy0">&gt;/</span>imports
+QML2_IMPORT_PATH<span class="sy0">=</span> <span class="sy0">/&lt;</span>qt_installation_path<span class="sy0">&gt;/</span>qml
+QT_PLUGIN_PATH<span class="sy0">=/&lt;</span>qt_installation_path<span class="sy0">&gt;/</span>plugins
+QQNX_PHYSICAL_SCREEN_SIZE<span class="sy0">=</span><span class="st0">&quot;150,90&quot;</span></pre></div></div>
+<p><i><b>Note:</b></i> If your target already uses some of those variables system-wide, make sure if append or prepend the new values
+</p><p>The <b>QQNX_PHYSICAL_SCREEN_SIZE</b> environment variable is QNX specific and defines the height and width of the app's display area on the screen in millimeters:
+</p><p><img src="https://raw.githubusercontent.com/blackberry/Qt/master/screenshots/qnx/qtcreator-qnx-environment.png" alt="qtcreator-qnx-environment.png" />
+</p><p>If your build does not use fontconfig you also need to point where to find the Qt fonts:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">export QT_QPA_FONTDIR<span class="sy0">=/&lt;</span>qt_installation_path<span class="sy0">&gt;/</span>lib<span class="sy0">/</span>fonts</pre></div></div>
+<h3><span class="mw-headline" id="Application_deployment">Application deployment</span></h3>
+<p>The simplest way to deploy an app on a target is to copy its binaries into a remote folder. Qt Creator does all this for your. You just need to make sure that the destination folder is correct and is writable.
+</p><p>If your .pro file does not already contain specific deployment instructions for the QNX platform or contains instructions specific for another platform, make sure a valid target path is set as following:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#</span>
+<span class="co2"># /tmp is mapped to a RAM drive on many devices. This means your app will be deleted after the next reboot.</span>
+<span class="co2">#</span>
+qnx <span class="br0">&#123;</span>
+ target.<span class="me1">path</span> <span class="sy0">=</span> <span class="sy0">/</span>tmp<span class="sy0">/</span>$$<span class="br0">&#123;</span>TARGET<span class="br0">&#125;</span><span class="sy0">/</span>bin
+ INSTALLS <span class="sy0">+=</span> target
+<span class="br0">&#125;</span></pre></div></div>
+<p><i><b>Note:</b></i> Most Qt examples already contain deployment instructions in their .pro files, e.g.:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">target.<span class="me1">path</span> <span class="sy0">=</span> $$<span class="br0">&#91;</span>QT_INSTALL_EXAMPLES<span class="br0">&#93;</span><span class="sy0">/</span>quick<span class="sy0">/</span>example_xyz</pre></div></div>
+<p>Put the above "qnx" instructions below such a line.
+</p>
+<h3><span class="mw-headline" id="Tools_provided_by_the_QNX_SDK">Tools provided by the QNX SDK</span></h3>
+<p>If you use <b>QNX SDK for Apps and Media</b>, you can use the additional BlackBerry tools to package your application as a BAR file. This is pretty similar to the packaging of BlackBerry 10 applications. See <a rel="nofollow" class="external text" href="http://www.qnx.com/developers/docs/660/topic/com.qnx.doc.qnxcar2.qt.guide/topic/packaging.html?cp=1_5_3_2">this article</a> in the QNX developer documentation for more details.
+</p><p>The installation of the application packaged in a BAR file on the target is explained in <a rel="nofollow" class="external text" href="http://www.qnx.com/developers/docs/660/topic/com.qnx.doc.appsandmedia.lifecycle/topic/install_task.html">this</a> article.
+</p>
+<h2><span class="mw-headline" id="Using_CMake_build_system">Using CMake build system</span></h2>
+<p>Qt Creator provides a CMake plugin to manage CMake based projects. The plugin is currently not fully functional when you want to deploy and run your application on remote targets in general by default. If you develop for QNX using CMake and Qt Creator please follow the below instructions to fix this.
+</p>
+<ul>
+<li> When you create a new CMake project using the Qt Creator, the CMake wizard won't provide any CMake generator for QNX kits. This is a known issue in QtCreator 3.1 that should be fixed in the 3.1.1 patch release. Please download a recent 3.1.1 snapshot build <a rel="nofollow" class="external text" href="https://download.qt.io/snapshots/qtcreator/3.1.1/">here</a> to skip this issue.
+</li>
+</ul>
+<ul>
+<li> The default CMakeList.txt file generated by Qt Creator in the root folder of your CMake project doesn't cover the QNX platform. You either have to use an appropriate cmake toolchain file for QNX or add the following configuration lines in CMakeList.txt specifying QNX SDP 6.6 toolchain:
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">SET <span class="br0">&#40;</span>CMAKE_SYSTEM_NAME QNX<span class="br0">&#41;</span>
+SET <span class="br0">&#40;</span>CMAKE_SYSTEM_VERSION 6.6.0<span class="br0">&#41;</span>
+SET <span class="br0">&#40;</span>CMAKE_SYSTEM_PROCESSOR armv7<span class="br0">&#41;</span> <span class="co2"># or SET (CMAKE_SYSTEM_PROCESSOR x86)</span>
+SET <span class="br0">&#40;</span>TOOLCHAIN QNX<span class="br0">&#41;</span>
+&#160;
+IF <span class="br0">&#40;</span>CMAKE_HOST_WIN32<span class="br0">&#41;</span>
+ SET <span class="br0">&#40;</span>HOST_EXECUTABLE_SUFFIX <span class="st0">&quot;.exe&quot;</span><span class="br0">&#41;</span>
+ENDIF <span class="br0">&#40;</span>CMAKE_HOST_WIN32<span class="br0">&#41;</span>
+&#160;
+FIND_PATH<span class="br0">&#40;</span>QNX_HOST
+ NAME usr<span class="sy0">/</span>bin<span class="sy0">/</span>qcc$<span class="br0">&#123;</span>HOST_EXECUTABLE_SUFFIX<span class="br0">&#125;</span>
+ PATHS $ENV<span class="br0">&#123;</span>QNX_HOST<span class="br0">&#125;</span> <span class="sy0">&lt;</span>path_to_your_qnx_host<span class="sy0">&gt;</span>
+ NO_CMAKE_PATH
+ NO_CMAKE_ENVIRONMENT_PATH
+<span class="br0">&#41;</span>
+&#160;
+FIND_PATH<span class="br0">&#40;</span>QNX_TARGET
+ NAME usr<span class="sy0">/</span>include<span class="sy0">/</span>qnx_errno.<span class="me1">h</span>
+ PATHS $ENV<span class="br0">&#123;</span>QNX_TARGET<span class="br0">&#125;</span> <span class="sy0">&lt;</span>path_to_your_qnx_target<span class="sy0">&gt;</span>
+ NO_CMAKE_PATH
+ NO_CMAKE_ENVIRONMENT_PATH
+<span class="br0">&#41;</span>
+&#160;
+SET <span class="br0">&#40;</span>CMAKE_C_COMPILER $<span class="br0">&#123;</span>QNX_HOST<span class="br0">&#125;</span><span class="sy0">/</span>usr<span class="sy0">/</span>bin<span class="sy0">/</span>nto$<span class="br0">&#123;</span>CMAKE_SYSTEM_PROCESSOR<span class="br0">&#125;</span><span class="sy0">-</span>gcc$<span class="br0">&#123;</span>HOST_EXECUTABLE_SUFFIX<span class="br0">&#125;</span><span class="br0">&#41;</span>
+SET <span class="br0">&#40;</span>CMAKE_CXX_COMPILER $<span class="br0">&#123;</span>QNX_HOST<span class="br0">&#125;</span><span class="sy0">/</span>usr<span class="sy0">/</span>bin<span class="sy0">/</span>nto$<span class="br0">&#123;</span>CMAKE_SYSTEM_PROCESSOR<span class="br0">&#125;</span><span class="sy0">-</span>c<span class="sy0">++</span>$<span class="br0">&#123;</span>HOST_EXECUTABLE_SUFFIX<span class="br0">&#125;</span><span class="br0">&#41;</span></pre></div></div>
+<ul>
+<li> In order to deploy the application binary into your QNX target with QtCreator, you should add a QtCreatorDeployment.txt file in the root directory of your CMake project and specify the location where your binary should de deployed, e.g.:
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">/</span>account<span class="sy0">/</span>devuser<span class="sy0">/</span>me<span class="sy0">/</span>myApp</pre></div></div>
+<p>or another writable folder on your target.
+</p><p><i><b>Note:</b></i> If your need to deploy additional files, your should specify them as well in the QtCreatorDeployment.txt as explained in the <a rel="nofollow" class="external text" href="http://doc.qt.io/qtcreator-3.0/creator-project-cmake.html">documentation</a>.
+</p>
+<ul>
+<li> The CMake plugin in Qt Creator does not support running remote executables yet, and the run configuration provides only the option to run a local executable. Thus, you need to manually add the necessary steps to run a custom executable on the target via ssh. For a QNX project, you can simply add a new <b>Run custom remote command</b> deploy step and specify the path to your executable in the target machine to run it during the deployment step.
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.129 seconds
+Real time usage: 0.134 seconds
+Preprocessor visited node count: 190/1000000
+Preprocessor generated node count: 767/1000000
+Post‐expand include size: 2718/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1957-0!*!0!!en!*!* and timestamp 20151105101400 and revision id 18339
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexeb1f.html?title=Setting_up_Qt_Creator_for_QNX_Neutrino_OS&amp;oldid=18339">http://wiki.qt.io/index.php?title=Setting_up_Qt_Creator_for_QNX_Neutrino_OS&amp;oldid=18339</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_QNX.html" title="Category:QNX">QNX</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="indexa386.php?title=Special:QtLogin&amp;returnto=Setting+up+Qt+Creator+for+QNX+Neutrino+OS" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Setting_up_Qt_Creator_for_QNX_Neutrino_OS.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="indexd581.php?title=Talk:Setting_up_Qt_Creator_for_QNX_Neutrino_OS&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Setting_up_Qt_Creator_for_QNX_Neutrino_OS.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index6b43.html?title=Setting_up_Qt_Creator_for_QNX_Neutrino_OS&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index6ffb.html?title=Setting_up_Qt_Creator_for_QNX_Neutrino_OS&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Setting_up_Qt_Creator_for_QNX_Neutrino_OS.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Setting_up_Qt_Creator_for_QNX_Neutrino_OS.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="indexeb1f.html?title=Setting_up_Qt_Creator_for_QNX_Neutrino_OS&amp;oldid=18339" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index4250.html?title=Setting_up_Qt_Creator_for_QNX_Neutrino_OS&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 June 2015, at 10:49.</li>
+											<li id="footer-info-viewcount">This page has been accessed 2,851 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":162});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Setting_up_Qt_Creator_for_QNX_Neutrino_OS&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:02:54 GMT -->
+</html>

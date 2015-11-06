@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Custom_IO_Device by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 09:59:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Custom IO Device - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Custom_IO_Device","wgTitle":"Custom IO Device","wgCurRevisionId":15296,"wgRevisionId":15296,"wgArticleId":675,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Snippets"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Custom_IO_Device","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Custom_IO_Device skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Custom IO Device</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+<b>English</b> | <a href="Custom_IO_Device_German.html" title="Custom IO Device German" class="mw-redirect">German</a>
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Writing_a_Custom_I.2FO_Device"><span class="tocnumber">1</span> <span class="toctext">Writing a Custom I/O Device</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Usage:"><span class="tocnumber">1.1</span> <span class="toctext">Usage:</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#The_Custom_I.2FO_Device"><span class="tocnumber">1.2</span> <span class="toctext">The Custom I/O Device</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Source_Code"><span class="tocnumber">1.3</span> <span class="toctext">Source Code</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Writing_a_Custom_I.2FO_Device">Writing a Custom I/O Device</span></h1>
+<p>This is a port of the article in <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qiodevice.html">Qt Quarterly 12 about writing a custom QIODevice</a>
+</p>
+<ul>
+<li> Note: a more complex example can be found here <a href="Simple_Crypt_IO_Device.html" title="Simple Crypt IO Device">Simple_Crypt_IO_Device</a>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Usage:">Usage:</span></h2>
+<p>The following code snippet shows how we would use the custom I/O device to encrypt data and store the result in a file:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QFile</span> file<span class="br0">&#40;</span><span class="st0">&quot;output.dat&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ CryptDevice cryptDevice<span class="br0">&#40;</span><span class="sy0">&amp;</span>file<span class="br0">&#41;</span>
+ <span class="kw5">QTextStream</span> out<span class="br0">&#40;</span><span class="sy0">&amp;</span>cryptDevice<span class="br0">&#41;</span><span class="sy0">;</span>
+ cryptDevice.<span class="me1">open</span><span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">::</span><span class="me2">WriteOnly</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ out <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Hello World&quot;</span><span class="sy0">;</span></pre></div></div>
+<p>And on the possible usage (in our example code in git <a rel="nofollow" class="external autonumber" href="http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/devnet-examples.git/tree/">[1]</a>)
+</p><p><br /> 
+</p>
+<h3><span class="mw-headline" id="Encryption">Encryption</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QByteArray</span> dataArray<span class="sy0">;</span>
+&#160;
+<span class="kw5">QBuffer</span> bufferUsedLikeAFile<span class="br0">&#40;</span><span class="sy0">&amp;</span>dataArray<span class="br0">&#41;</span><span class="sy0">;</span>
+ CryptDevice deviceFilter<span class="br0">&#40;</span><span class="sy0">&amp;</span>bufferUsedLikeAFile<span class="br0">&#41;</span><span class="sy0">;</span>
+ deviceFilter.<span class="me1">open</span><span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">::</span><span class="me2">WriteOnly</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QTextStream</span> stream<span class="br0">&#40;</span><span class="sy0">&amp;</span>deviceFilter<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QString</span> szText <span class="sy0">=</span> rawText<span class="sy0">-&gt;</span><span class="me3">toPlainText</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ stream <span class="sy0">&lt;&lt;</span> szText<span class="sy0">;</span></pre></div></div>
+<p><br /> 
+</p>
+<h3><span class="mw-headline" id="Decryption">Decryption</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QBuffer</span> bufferUsedLikeAFile<span class="br0">&#40;</span><span class="sy0">&amp;</span>dataArray<span class="br0">&#41;</span><span class="sy0">;</span>
+ CryptDevice deviceFilter<span class="br0">&#40;</span><span class="sy0">&amp;</span>bufferUsedLikeAFile<span class="br0">&#41;</span><span class="sy0">;</span>
+ deviceFilter.<span class="me1">open</span><span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">::</span><span class="me2">ReadOnly</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QTextStream</span> stream<span class="br0">&#40;</span><span class="sy0">&amp;</span>deviceFilter<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QString</span> szText <span class="sy0">=</span> stream.<span class="me1">readAll</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ decryptedText<span class="sy0">-&gt;</span><span class="me3">setPlainText</span><span class="br0">&#40;</span>szText<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Example image of the test app:
+</p><p><img src="https://lh3.googleusercontent.com/_m1PNLlZctqY/TYpctkjGvTI/AAAAAAAAAFI/BjZnvJhatRY/s800/CustomIoDevice.jpg" alt="CustomIoDevice.jpg" />
+</p>
+<h2><span class="mw-headline" id="The_Custom_I.2FO_Device">The Custom I/O Device</span></h2>
+<p>Writing a custom QIODevice class in Qt 4 involves inheriting QIODevice and then reimplementing a set of virtual functions.
+</p><p>There is a big difference regarding writing a custom IO device compared to Qt 3: you only have to rewrite 2 functions:
+</p>
+<ul>
+<li> qint64 QIODevice::readData ( char * data, qint64 maxSize )
+</li>
+<li> qint64 QIODevice::writeData ( const char * data, qint64 maxSize )
+</li>
+</ul>
+<p>Our CryptDevice class will be a sequential I/O device. Whether it's synchronous or asynchronous depends on the underlying QIODevice.
+</p>
+<h2><span class="mw-headline" id="Source_Code">Source Code</span></h2>
+<p>The class definition looks like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> CryptDevice <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QIODevice</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ CryptDevice<span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">*</span> deviceToUse<span class="sy0">,</span> <span class="kw5">QObject</span><span class="sy0">*</span> parent <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">bool</span> open<span class="br0">&#40;</span>OpenMode mode<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> close<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">bool</span> isSequential<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+<span class="kw2">protected</span><span class="sy0">:</span>
+ qint64 readData<span class="br0">&#40;</span><span class="kw4">char</span><span class="sy0">*</span> data<span class="sy0">,</span> qint64 maxSize<span class="br0">&#41;</span><span class="sy0">;</span>
+ qint64 writeData<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> data<span class="sy0">,</span> qint64 maxSize<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw2">private</span><span class="sy0">:</span>
+ <span class="kw5">QIODevice</span><span class="sy0">*</span> underlyingDevice<span class="sy0">;</span>
+ Q_DISABLE_COPY<span class="br0">&#40;</span>CryptDevice<span class="br0">&#41;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>The constructor definition is pretty straightforward
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">CryptDevice<span class="sy0">::</span><span class="me2">CryptDevice</span><span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">*</span> deviceToUse<span class="sy0">,</span> <span class="kw5">QObject</span><span class="sy0">*</span> parent<span class="br0">&#41;</span> <span class="sy0">:</span>
+ <span class="kw5">QIODevice</span><span class="br0">&#40;</span>parent<span class="br0">&#41;</span><span class="sy0">,</span>
+ underlyingDevice<span class="br0">&#40;</span>deviceToUse<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>As our device should be sequential, we re-implement isSequential
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">bool</span> CryptDevice<span class="sy0">::</span><span class="me2">isSequential</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">return</span> true<span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+In <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">open<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>, we open the underlying device if it's not already open and set the device state to <i>mode</i>.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">bool</span> CryptDevice<span class="sy0">::</span><span class="me2">open</span><span class="br0">&#40;</span>OpenMode mode<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw4">bool</span> underlyingOk<span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>underlyingDevice<span class="sy0">-&gt;</span><span class="me3">isOpen</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+ underlyingOk <span class="sy0">=</span> <span class="br0">&#40;</span>underlyingDevice<span class="sy0">-&gt;</span><span class="me3">openMode</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">!=</span> mode<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">else</span>
+ underlyingOk <span class="sy0">=</span> underlyingDevice<span class="sy0">-&gt;</span><span class="me3">open</span><span class="br0">&#40;</span>mode<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw1">if</span> <span class="br0">&#40;</span>underlyingOk<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ setOpenMode<span class="br0">&#40;</span>mode<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">return</span> true<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="kw1">return</span> false<span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Closing is trivial.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">void</span> CryptDevice<span class="sy0">::</span><span class="me2">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ underlyingDevice<span class="sy0">-&gt;</span><span class="me3">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ setOpenMode<span class="br0">&#40;</span>NotOpen<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+When reading a block, we call <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">read<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> on the underlying device. At the end, we XOR each byte read from the device with the magic constant 0x5E.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qint64 CryptDevice<span class="sy0">::</span><span class="me2">readData</span><span class="br0">&#40;</span><span class="kw4">char</span><span class="sy0">*</span> data<span class="sy0">,</span> qint64 maxSize<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ qint64 deviceRead <span class="sy0">=</span> underlyingDevice<span class="sy0">-&gt;</span><span class="me3">read</span><span class="br0">&#40;</span>data<span class="sy0">,</span> maxSize<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>deviceRead <span class="sy0">==</span> –<span class="nu0">1</span><span class="br0">&#41;</span>
+ <span class="kw1">return</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span>
+ <span class="kw1">for</span> <span class="br0">&#40;</span>qint64 i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> deviceRead<span class="sy0">;</span> <span class="sy0">+</span><span class="st0">''</span>i<span class="br0">&#41;</span>
+ data<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">=</span> data<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">^</span> <span class="nu12">0x5E</span><span class="sy0">;</span>
+&#160;
+ <span class="kw1">return</span> deviceRead<span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+When writing a block, we create a temporary buffer with the XOR'd data. A more efficient implementation would use a 4096-byte buffer on the stack and call <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">write<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> multiple times if size is larger than the buffer. 
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qint64 CryptDevice<span class="sy0">::</span><span class="me2">writeData</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> data<span class="sy0">,</span> qint64 maxSize<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw5">QByteArray</span> buffer<span class="br0">&#40;</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span>maxSize<span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span>maxSize<span class="sy0">;</span><span class="st0">''</span><span class="sy0">+</span>i<span class="br0">&#41;</span>
+ buffer<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">=</span> data<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">^</span> <span class="nu12">0x5E</span><span class="sy0">;</span>
+ <span class="kw1">return</span> underlyingDevice<span class="sy0">-&gt;</span><span class="me3">write</span><span class="br0">&#40;</span>buffer.<span class="me1">data</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span> maxSize<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.256 seconds
+Real time usage: 0.259 seconds
+Preprocessor visited node count: 80/1000000
+Preprocessor generated node count: 288/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:675-0!*!0!!en!*!* and timestamp 20151105070743 and revision id 15296
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexf688.html?title=Custom_IO_Device&amp;oldid=15296">http://wiki.qt.io/index.php?title=Custom_IO_Device&amp;oldid=15296</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Snippets.html" title="Category:Snippets">Snippets</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=28582f99f2027a54&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Custom_IO_Device.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Custom_IO_Device.html?title=Talk:Custom_IO_Device&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Custom_IO_Device.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexa8ed.html?title=Custom_IO_Device&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexb7d4.html?title=Custom_IO_Device&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Custom_IO_Device.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Custom_IO_Device.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexb7f8.html?title=Custom_IO_Device&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexf688.html?title=Custom_IO_Device&amp;oldid=15296" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexe93b.html?title=Custom_IO_Device&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 30 March 2015, at 12:10.</li>
+											<li id="footer-info-viewcount">This page has been accessed 919 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":491});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Custom_IO_Device by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 09:59:26 GMT -->
+</html>

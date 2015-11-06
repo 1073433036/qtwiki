@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&oldid=18581 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:20:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Improving Qt's SSL Support - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Improving_Qt's_SSL_Support","wgTitle":"Improving Qt's SSL Support","wgCurRevisionId":18581,"wgRevisionId":18581,"wgArticleId":1052,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing Qt::Network","Developing Qt::Bugs"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Improving_Qt's_SSL_Support","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Improving_Qt_s_SSL_Support skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Improving Qt's SSL Support</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 19:54, 28 June 2015 by <a href="http://wiki.qt.io/User:Wieland" title="User:Wieland" class="mw-userlink">Wieland</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/User_talk:Wieland" title="User talk:Wieland">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Wieland" title="Special:Contributions/Wieland">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&amp;diff=prev&amp;oldid=18581" title="Improving Qt's SSL Support">diff</a>) <a href="http://wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&amp;direction=prev&amp;oldid=18581" title="Improving Qt's SSL Support">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Qt has pretty good support for SSL that is sufficient for a lot of common uses, but the SSL support is missing a number of features that exist in applications such as Firefox, Internet Explorer or Opera. In addition, whilst Qt uses OpenSSL for the underlying implementation of SSL, it only provides an API for using a small subset of the available facilities.
+</p><p>I've been doing some work to enhance the SSL support in Qt, and have been asked to put together this page which is a cross between a TODO list, a set of links to existing solutions, and a pie-in-the-sky wishlist.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Areas_for_Improvement"><span class="tocnumber">1</span> <span class="toctext">Areas for Improvement</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Areas_for_performance_improvement"><span class="tocnumber">2</span> <span class="toctext">Areas for performance improvement</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Work_Underway"><span class="tocnumber">3</span> <span class="toctext">Work Underway</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#.28OCSP.29_Online_Certificate_Status_Protocol_Support"><span class="tocnumber">3.1</span> <span class="toctext">(OCSP) Online Certificate Status Protocol Support</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Notification_when_the_Certificate_for_a_Site_Changes"><span class="tocnumber">3.2</span> <span class="toctext">Notification when the Certificate for a Site Changes</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Support_for_TLS_extensions_and_supplemental_data"><span class="tocnumber">3.3</span> <span class="toctext">Support for TLS extensions and supplemental data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Solved_Issues"><span class="tocnumber">4</span> <span class="toctext">Solved Issues</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#OpenSSL_on_OS_X"><span class="tocnumber">5</span> <span class="toctext">OpenSSL on OS X</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#To_Do_Lists"><span class="tocnumber">6</span> <span class="toctext">To Do Lists</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Areas_for_Improvement">Areas for Improvement</span></h2>
+<p>There are a number of missing facilities in Qt's SSL support right now; here's a rough list cross-referenced with the QT-BUG tracking number:
+</p>
+<ul>
+<li> Improved certificate handling
+<ul>
+<li> No support for creating certificates, <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-20279">QTBUG-20279</a> See gitorious.org/qt-certificate-addon for an addon that offers this.
+</li>
+<li> No support of EV (extended validation) certificates, <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-12815">QTBUG-12815</a>
+</li>
+</ul>
+</li>
+<li> Improved TLS handshake support
+<ul>
+<li> Provide a generic mechanism for setting and retrieving TLS extensions in the client hello and server hello provided during the handshake process
+</li>
+<li> Add the ability to retrieve and set the supplemental data handshake message
+</li>
+<li> Add the ability to propagate errors encountered during the handshake to applications
+</li>
+</ul>
+</li>
+<li> OCSP and related issues
+<ul>
+<li> No support for OCSP (online certificate status protocol), <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-12812">QTBUG-12812</a>
+</li>
+<li> No support for TLS certificate status extension AKA OCSP stapling (asking the server to check OCSP himself and send us the response (sic)), <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-17158">QTBUG-17158</a>
+</li>
+</ul>
+</li>
+<li> General API limitations
+<ul>
+<li> No DNS pinning (though there is a DNS cache minimising this issue), <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-12814">QTBUG-12814</a>
+</li>
+<li> No API for the SSL context, <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-14983">QTBUG-14983</a>
+</li>
+<li> No support for TLS Renegotiation Information (securing TLS renegotiation), <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-18305">QTBUG-18305</a>
+</li>
+</ul>
+</li>
+<li> Additional protocols
+<ul>
+<li> No support for HSTS (HTTP strict transport security, means the server tells a client to connect to the https version directly rather than to the http version), <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-18030">QTBUG-18030</a>
+</li>
+</ul>
+</li>
+<li> Internal cleanups
+<ul>
+<li> typedef for STACK vs STACK_
+</li>
+<li> Specify supported openssl versions
+</li>
+<li> Consider changing the way QSslConfiguration works as the deep copy stuff is unexpected
+</li>
+<li> Centralise the code for setting up a CA store (used for both connecting and verify)
+</li>
+</ul>
+</li>
+</ul>
+<p>It should be noted that most of these issues only affect a tiny minority of possible uses. That said, wouldn't it be nice if we had support for them in Qt with a nice API?
+</p>
+<h2><span class="mw-headline" id="Areas_for_performance_improvement">Areas for performance improvement</span></h2>
+<ul>
+<li> support the "abbreviated handshake" (as used by Google) to reduce round trip time, <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-15452">QTBUG-15452</a>
+</li>
+<li> do not use a tcp socket internally to send ssl data, <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-14160">QTBUG-14160</a>
+</li>
+<li> Once the extra layer (above) is removed check if ensuring we always disable the Nagle algorithm helps our performance.
+</li>
+</ul>
+<h2><span class="mw-headline" id="Work_Underway">Work Underway</span></h2>
+<p>This would be a depressing page if it wasn't for the fact that these issues are being addressed. So, let's look at the areas where progress is already being made:
+</p>
+<h3><span class="mw-headline" id=".28OCSP.29_Online_Certificate_Status_Protocol_Support">(OCSP) Online Certificate Status Protocol Support</span></h3>
+<p>I've implemented the basic facilities required for OCSP support in Qt, specifically accessors for the AIA field of the certificate, and classes to generate and validate OCSP requests/responses. Still remaining is the integration of this code into the QNetworkAccessManager and QSslSocket classes, and a cache of the results. As of Nov 2011 after a hiatus while I worked on some other areas, I have got this building against Qt 5.
+</p><p>The code is currently in my personal clone at <a rel="nofollow" class="external free" href="https://qt.gitorious.org/~rich/qt/richs-qtbase/commits/ocsp-support">https://qt.gitorious.org/~rich/qt/richs-qtbase/commits/ocsp-support</a>
+</p>
+<h3><span class="mw-headline" id="Notification_when_the_Certificate_for_a_Site_Changes">Notification when the Certificate for a Site Changes</span></h3>
+<p>I wrote a proof of concept for this that showed up some API limitations that prevent a production quality implementation. This looks like something that can be addressed in a future release without major issues. I've written up the details of the implementation and the its limitations at <a rel="nofollow" class="external free" href="http://www.kdedevelopers.org/node/4434">http://www.kdedevelopers.org/node/4434</a>
+</p>
+<h3><span class="mw-headline" id="Support_for_TLS_extensions_and_supplemental_data">Support for TLS extensions and supplemental data</span></h3>
+<p>Work is being tracked in the issue tracker and a Wiki is being used to work through implementation and API design issues: <a href="http://wiki.qt.io/Improving_TLS_handshake_support" title="Improving TLS handshake support">Improving_TLS_handshake_support</a>
+</p>
+<h2><span class="mw-headline" id="Solved_Issues">Solved Issues</span></h2>
+<p>This section is for areas that have been put to bed:
+</p>
+<ul>
+<li> enable SSL session sharing, <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-14983">QTBUG-14983</a> [resolved]
+</li>
+<li> limit SSL message size to fit into one TCP packet, <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-16716">QTBUG-16716</a> / <a rel="nofollow" class="external text" href="https://bugreports.qt.io/browse/QTBUG-28764">QTBUG-28764</a> [invalid]
+</li>
+<li> Qt uses shell globs for wildcards rather than the newer more restrictive policies. <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-4455">QTBUG-4455</a> [resolved]
+</li>
+<li> No support for SNI (server name indication) extension, <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-1352">QTBUG-1352</a> [resolved] This has been implemented by Daniel Black and David Faure and is now merged into Qt master.
+</li>
+<li> [performance] on Linux, load root certs on demand, and not all on startup (if supported by the system via openssl's c_rehash script), <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-14016">QTBUG-14016</a> [resolved]
+</li>
+<li> No simple API for only enabling SSL3 and TLS1 while disabling SSL2, <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-12338">QTBUG-12338</a> and <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-15220">QTBUG-15220</a> [resolved]
+</li>
+<li> The way the subject and issuer info is extracted from the x509 cert is buggy and slow. This function should be replaced with something using the openssl functions to get the elements of the subject using the tag name directly. This was addressed by the following merge <a rel="nofollow" class="external text" href="https://qt.gitorious.org/qt/qt/merge_requests/922">MR 922</a>. There are some remaining API issues, that are covered above.
+</li>
+<li> QSslCertificate does not provide an API to dump a certificate as text. Now merged in master, see <a rel="nofollow" class="external free" href="https://qt.gitorious.org/qt/qtbase/merge_requests/2">https://qt.gitorious.org/qt/qtbase/merge_requests/2</a>
+</li>
+<li> API provides no access to duplicate fields in certificate issuer and subject. [ Qt5 MR 5 <a rel="nofollow" class="external free" href="https://qt.gitorious.org/qt/qtbase/merge_requests/5">https://qt.gitorious.org/qt/qtbase/merge_requests/5</a> ] [resolved]
+</li>
+<li> No accessor for unusual (but legal) fields in certificate issuer and subject. See MR <a rel="nofollow" class="external free" href="https://qt.gitorious.org/qt/qtbase/merge_requests/18">https://qt.gitorious.org/qt/qtbase/merge_requests/18</a> [resolved]
+</li>
+<li> No way to check that a certificate chain is valid unless you're connecting to a site using it. [ see <a rel="nofollow" class="external free" href="https://qt.gitorious.org/qt/qtbase/merge_requests/11">https://qt.gitorious.org/qt/qtbase/merge_requests/11</a> ] [resolved]
+</li>
+<li> API doesn't allow to use opaque keys as QSslKey (needed by PKCS#11 and HSM) [ Qt5 MR 48 <a rel="nofollow" class="external free" href="https://qt.gitorious.org/qt/qtbase/merge_requests/48">https://qt.gitorious.org/qt/qtbase/merge_requests/48</a> ]
+</li>
+<li> No API for enabling or disabling compression which is required to connect to some buggy servers (eg. the on <a rel="nofollow" class="external text" href="https://bugs.kde.org/show_bug.cgi?id=275524">KDE bug 275524</a> ) there are probably other servers as broken as this one around. Only newish openssl's support this which means that we'll probably hit an increasing number of such problems. See [ Qt5 MR 68 MR <a rel="nofollow" class="external free" href="https://qt.gitorious.org/qt/qtbase/merge_requests/68">https://qt.gitorious.org/qt/qtbase/merge_requests/68</a> ] [resolved] [backported to 4.8]
+</li>
+<li> QSslCertificate does not provide access to the extensions a certificate contains. Resolved through gerrit change I5c5d9513: SSL certificates: add functionality to read extensions
+</li>
+<li> Consider removing symbian support code [removed]
+</li>
+<li> No support for intermediate certificates when acting as a server socket, <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-13281">QTBUG-13281</a> [resolved]
+</li>
+<li> SSL Context API There appears to be active work from Nokia on this issue, as can be seen from the task tracker in <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-14983">QTBUG-14983</a>. This will also allow sharing of the SSL context between requests removing the need for round trips and SSL negotiation each time. [resolved] Note that the API is internal.
+</li>
+</ul>
+<h2><span class="mw-headline" id="OpenSSL_on_OS_X">OpenSSL on OS X</span></h2>
+<p>OS X has the oldest versions of OpenSSL in use on any platform, so it's setting the lower limit on what we can rely on:
+</p>
+<table>
+<tr>
+<th>OS X version
+</th>
+<th>OpenSSL version
+</th>
+<th>OpenSSL build date
+</th></tr>
+<tr>
+<td>10.10.3
+</td>
+<td>0.9.8zd
+</td>
+<td>8 Jan 2015
+</td></tr>
+<tr>
+<td>10.9.2
+</td>
+<td>0.9.8y
+</td>
+<td>5 Feb 2013
+</td></tr>
+<tr>
+<td>10.8.4
+</td>
+<td>0.9.8x
+</td>
+<td>10 May 2012
+</td></tr>
+<tr>
+<td>10.8.3
+</td>
+<td>0.9.8r
+</td>
+<td>8 Feb 2011
+</td></tr>
+<tr>
+<td>10.8.2
+</td>
+<td>0.9.8r
+</td>
+<td>8 Feb 2011
+</td></tr>
+<tr>
+<td>10.7.4
+</td>
+<td>0.9.8r
+</td>
+<td>8 Feb 2011
+</td></tr>
+<tr>
+<td>10.6.8 v1.1
+</td>
+<td>0.9.8x
+</td>
+<td>10 May 2012
+</td></tr>
+<tr>
+<td>10.6.0
+</td>
+<td>0.9.8k
+</td>
+<td>25 Mar 2009
+</td></tr>
+<tr>
+<td>10.5.8
+</td>
+<td>0.9.7l
+</td>
+<td>28 Sep 2006
+</td></tr></table>
+<h2><span class="mw-headline" id="To_Do_Lists">To Do Lists</span></h2>
+<p>Rich Moore:
+</p>
+<ul>
+<li> Certificate change notifier
+</li>
+<li> EV certificates
+</li>
+<li> OCSP
+</li>
+</ul>
+<p>Peter:
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.017 seconds
+Real time usage: 0.019 seconds
+Preprocessor visited node count: 35/1000000
+Preprocessor generated node count: 40/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1052-0!*!0!!en!*!* and timestamp 20151105100529 and revision id 18581
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&amp;oldid=18581">http://wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&amp;oldid=18581</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/Category:Developing_Qt::Network" title="Category:Developing Qt::Network">Developing Qt::Network</a></li><li><a href="http://wiki.qt.io/Category:Developing_Qt::Bugs" title="Category:Developing Qt::Bugs">Developing Qt::Bugs</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Improving+Qt%27s+SSL+Support" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Improving_Qt%27s_SSL_Support"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Improving_Qt%27s_SSL_Support&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Improving_Qt%27s_SSL_Support" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Improving_Qt%27s_SSL_Support" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Improving_Qt%27s_SSL_Support" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&amp;oldid=18581&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&amp;oldid=18581" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 June 2015, at 19:54.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,253 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":323});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Improving_Qt%27s_SSL_Support&oldid=18581 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:20:31 GMT -->
+</html>

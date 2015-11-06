@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/How_to_create_a_multi_language_application/el by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:33:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>How to create a multi language application/el - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_create_a_multi_language_application/el","wgTitle":"How to create a multi language application/el","wgCurRevisionId":15944,"wgRevisionId":15944,"wgArticleId":936,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","HowTo","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_create_a_multi_language_application/el","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_to_create_a_multi_language_application_el skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">How to create a multi language application/el</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="../How_to_create_a_multi_language_application.html" title="How to create a multi language application">How to create a multi language application</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../index1cb3.html?title=How_to_create_a_multi_language_application/el&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><b>Ελληνικά</b> <a href="../How_to_create_a_multi_language_application_German.html" title="How to create a multi language application German" class="mw-redirect">German</a> <a href="../How_to_create_a_multi_language_application.html" title="How to create a multi language application">English</a>
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.CE.A0.CF.8E.CF.82_.CE.BD.CE.B1_.CE.B4.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AE.CF.83.CE.B5.CF.84.CE.B5_.CE.BC.CE.B9.CE.B1_.CF.80.CE.BF.CE.BB.CF.85.CE.B3.CE.BB.CF.89.CF.83.CF.83.CE.B9.CE.BA.CE.AE_.CE.B5.CF.86.CE.B1.CF.81.CE.BC.CE.BF.CE.B3.CE.AE_.CE.BC.CE.B5_.CE.B4.CF.85.CE.BD.CE.B1.CF.84.CF.8C.CF.84.CE.B7.CF.84.CE.B1_.CE.B5.CE.BD.CE.B1.CE.BB.CE.BB.CE.B1.CE.B3.CE.AE.CF.82_.CE.B3.CE.BB.CF.8E.CF.83.CF.83.CE.B1.CF.82_.CE.BA.CE.B1.CF.84.CE.AC_.CF.84.CE.BF_.CF.87.CF.81.CF.8C.CE.BD.CE.BF_.CE.B5.CE.BA.CF.84.CE.AD.CE.BB.CE.B5.CF.83.CE.B7.CF.82.3B"><span class="tocnumber">1</span> <span class="toctext">Πώς να δημιουργήσετε μια πολυγλωσσική εφαρμογή με δυνατότητα εναλλαγής γλώσσας κατά το χρόνο εκτέλεσης;</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.CE.94.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AE.CF.83.CF.84.CE.B5_.CE.BC.CE.AF.CE.B1_standard_.CE.B5.CF.86.CE.B1.CF.81.CE.BC.CE.BF.CE.B3.CE.AE.2C_.CE.B4.CE.B7.CE.BB.CE.B1.CE.B4.CE.AE_.CE.BC.CE.B5_main_window"><span class="tocnumber">1.1</span> <span class="toctext">Δημιουργήστε μία standard εφαρμογή, δηλαδή με main window</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.CE.97_.CE.B4.CE.BF.CE.BC.CE.AE_.CE.B1.CF.81.CF.87.CE.B5.CE.AF.CF.89.CE.BD_.CF.84.CE.B7.CF.82_.CE.B5.CF.86.CE.B1.CF.81.CE.BC.CE.BF.CE.B3.CE.AE.CF.82:"><span class="tocnumber">1.2</span> <span class="toctext">Η δομή αρχείων της εφαρμογής:</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.CE.9F.CF.81.CE.B9.CF.83.CE.BC.CF.8C.CF.82_.CE.BA.CE.BB.CE.AC.CF.83.CE.B7.CF.82"><span class="tocnumber">1.3</span> <span class="toctext">Ορισμός κλάσης</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.CE.94.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AF.CE.B1_.CF.84.CF.89.CE.BD_language_.CE.BC.CE.B5.CE.BD.CE.BF.CF.8D"><span class="tocnumber">1.4</span> <span class="toctext">Δημιουργία των language μενού</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.CE.91.CE.BB.CE.BB.CE.B1.CE.B3.CE.AE_.CE.B3.CE.BB.CF.8E.CF.83.CF.83.CE.B1.CF.82"><span class="tocnumber">1.5</span> <span class="toctext">Αλλαγή γλώσσας</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.CE.A0.CF.81.CE.BF.CF.83.CE.B8.CE.AE.CE.BA.CE.B7_.CE.BC.CE.B5.CF.84.CE.B1.CF.86.CF.81.CE.AC.CF.83.CE.B5.CF.89.CE.BD_.CF.83.CF.84.CE.BF_project"><span class="tocnumber">1.6</span> <span class="toctext">Προσθήκη μεταφράσεων στο project</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id=".CE.A0.CF.8E.CF.82_.CE.BD.CE.B1_.CE.B4.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AE.CF.83.CE.B5.CF.84.CE.B5_.CE.BC.CE.B9.CE.B1_.CF.80.CE.BF.CE.BB.CF.85.CE.B3.CE.BB.CF.89.CF.83.CF.83.CE.B9.CE.BA.CE.AE_.CE.B5.CF.86.CE.B1.CF.81.CE.BC.CE.BF.CE.B3.CE.AE_.CE.BC.CE.B5_.CE.B4.CF.85.CE.BD.CE.B1.CF.84.CF.8C.CF.84.CE.B7.CF.84.CE.B1_.CE.B5.CE.BD.CE.B1.CE.BB.CE.BB.CE.B1.CE.B3.CE.AE.CF.82_.CE.B3.CE.BB.CF.8E.CF.83.CF.83.CE.B1.CF.82_.CE.BA.CE.B1.CF.84.CE.AC_.CF.84.CE.BF_.CF.87.CF.81.CF.8C.CE.BD.CE.BF_.CE.B5.CE.BA.CF.84.CE.AD.CE.BB.CE.B5.CF.83.CE.B7.CF.82.3B">Πώς να δημιουργήσετε μια πολυγλωσσική εφαρμογή με δυνατότητα εναλλαγής γλώσσας κατά το χρόνο εκτέλεσης;</span></h1>
+<h2><span class="mw-headline" id=".CE.94.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AE.CF.83.CF.84.CE.B5_.CE.BC.CE.AF.CE.B1_standard_.CE.B5.CF.86.CE.B1.CF.81.CE.BC.CE.BF.CE.B3.CE.AE.2C_.CE.B4.CE.B7.CE.BB.CE.B1.CE.B4.CE.AE_.CE.BC.CE.B5_main_window">Δημιουργήστε μία standard εφαρμογή, δηλαδή με main window</span></h2>
+<p><a href="../index7498-2.html?title=Special:Upload&amp;wpDestFile=Http://lh3.ggpht.com/_m1PNLlZctqY/TRELoZ10m5I/AAAAAAAAAC0/qskj_psAyCI/s800/LanguageApp.png" class="new" title="File:Http://lh3.ggpht.com/ m1PNLlZctqY/TRELoZ10m5I/AAAAAAAAAC0/qskj psAyCI/s800/LanguageApp.png">Hauptfenster der Applikation</a>
+Στο παράδειγμα αυτό, δημιουργούμε ένα main window με ένα μενού Language και κάποια widget. Εάν ο χρήστης άνοιξε το μενού language, υπάρχει μια επιλογή γλώσσας, η οποία δημιουργείται κατά την έναρξη της εφαρμογής, και εξαρτάται από τα υπάρχοντα γλωσσικά αρχεία.
+<a href="../index570d.html?title=Special:Upload&amp;wpDestFile=Http://lh3.ggpht.com/_m1PNLlZctqY/TRELoozTsDI/AAAAAAAAAC4/AWTMerfK-ME/s800/LanguageAppMenu.png" class="new" title="File:Http://lh3.ggpht.com/ m1PNLlZctqY/TRELoozTsDI/AAAAAAAAAC4/AWTMerfK-ME/s800/LanguageAppMenu.png">Hauptfenster der Applikation mit Sprachmenü</a>
+</p>
+<h2><span class="mw-headline" id=".CE.97_.CE.B4.CE.BF.CE.BC.CE.AE_.CE.B1.CF.81.CF.87.CE.B5.CE.AF.CF.89.CE.BD_.CF.84.CE.B7.CF.82_.CE.B5.CF.86.CE.B1.CF.81.CE.BC.CE.BF.CE.B3.CE.AE.CF.82:">Η δομή αρχείων της εφαρμογής:</span></h2>
+<ul>
+<li> &lt;Κατάλογος εφαρμογής&gt;
+<ul>
+<li> binaries
+</li>
+</ul>
+</li>
+<li> &lt;Κατάλογος εφαρμογής&gt;/languages
+<ul>
+<li> Για κάθε εγκατεστημένη γλώσσα, υπάρχει ένα (προαιρετικό) αρχείο εικόνας μεγέθους 16x16 pixel με μία σημαία (π.χ. de.png)
+</li>
+<li> Τα μεταφρασμένα αρχεία κειμένου της εφαρμογής (TranslationExample_<b>.qm, όπου</b> μπορεί να είναι be de, en, …)
+</li>
+<li> τα αρχεία μετάφρασης του Qt (qt_<b>.qm)</b>
+</li>
+</ul>
+</li>
+</ul>
+<h2><span class="mw-headline" id=".CE.9F.CF.81.CE.B9.CF.83.CE.BC.CF.8C.CF.82_.CE.BA.CE.BB.CE.AC.CF.83.CE.B7.CF.82">Ορισμός κλάσης</span></h2>
+<p>Στην κλάση MainWindow, η virtual method <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qwidget.html#changeEvent">changeEvent(QEvent<b>)</a> γίνεται overwritten. Για κάθε αρχείο μετάφρασης που απαιτείται, ένα <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qtranslator.html">QTranslator</a> στιγμιότυπο δημιουργείται (στο συγκεκριμένο παράδειγμα 2, ένα για τα application texts, ένα για το qt). Η τρέχουσα γλώσσα αποθηκεύεται για να suppress events, εάν ο χρήστης προσπαθήσει να φορτώσει την ίδια γλώσσα δύο φορές.</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> MainWindow <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QMainWindow</span>
+<span class="br0">&#123;</span>
+ …
+&#160;
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="coMULTI">/** this event is called, when a new translator is loaded or the system language is changed
+ */</span>
+ <span class="kw4">void</span> changeEvent<span class="br0">&#40;</span><span class="kw5">QEvent</span><span class="st0">''</span><span class="st0">');
+&#160;
+protected slots:
+ /** this slot is called by the language menu actions
+ */
+ void slotLanguageChanged(QAction'</span><span class="st0">''</span> action<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ <span class="coMULTI">/** loads a language by the given language shortcur (e.g. de, en, …)
+ */</span>
+ <span class="kw4">void</span> loadLanguage<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span><span class="sy0">&amp;</span> rLanguage<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="sy0">/</span><span class="st0">''</span><span class="st0">'* creates the language menu dynamically from the content of m_langPath
+ */
+ void createLanguageMenu(void);
+&#160;
+ Ui::MainWindow ui; /&lt; ui definition from designer*/
+ QTranslator m_translator; /*'</span><span class="st0">''</span><span class="sy0">&lt;</span> contains the translations <span class="kw1">for</span> <span class="kw1">this</span> application<span class="sy0">*/</span>
+ <span class="kw5">QTranslator</span> m_translatorQt<span class="sy0">;</span> <span class="coMULTI">/*'''&lt; contains the translations for qt*/</span>
+ <span class="kw5">QString</span> m_currLang<span class="sy0">;</span> <span class="coMULTI">/*'''&lt; contains the currently loaded language*/</span>
+ <span class="kw5">QString</span> m_langPath<span class="sy0">;</span> <span class="coMULTI">/*'''&lt; Path of language files. This is always fixed to /languages.*/</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<h2><span class="mw-headline" id=".CE.94.CE.B7.CE.BC.CE.B9.CE.BF.CF.85.CF.81.CE.B3.CE.AF.CE.B1_.CF.84.CF.89.CE.BD_language_.CE.BC.CE.B5.CE.BD.CE.BF.CF.8D">Δημιουργία των language μενού</span></h2>
+<p>Το language μενού δημιουργείται δυναμικά κατά την έναρξη της εφαρμογής, ανάλογα με τα υπάρχοντα αρχεία μετάφρασης. Το πλεονέκτημα αυτής της λύσης είναι ότι μπορείτε να δώσετε οποιαδήποτε μετάφραση στην πορεία και απλά θα δουλεύει μετά από μια επανεκκίνηση. Στο συγκεκριμένο παράδειγμα, όλα τα αρχεία κειμένου βρίσκονται στον υποκατάλογο "languages". Είναι δυνατόν να τοποθετηθούν κάποια εικονίδια εκεί (language.png) για χρήση ως εικονίδιο του μενού (π.χ. μία σημαία).
+</p><p>Κάθε γλώσσα αντιπροσωπεύετα από ένα <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qaction.html">QAction</a> αντικείμενο το οποίο προστίθεται σε ένα <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qactiongroup.html">QActionGroup</a>. Αυτό γίνεται ώστε να διασφαλισθεί το ότι μόνο ένας υποδοχέας (slot) χρειάζεται για όλες τις γλώσσες:
+</p>
+<ul>
+<li> <b>connect(langGroup, SIGNAL (triggered(QAction *)), this, SLOT (slotLanguageChanged(QAction *)));</b>
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// we create the menu entries dynamically, dependant on the existing translations.</span>
+<span class="kw4">void</span> MainWindow<span class="sy0">::</span><span class="me2">createLanguageMenu</span><span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw5">QActionGroup</span><span class="sy0">*</span> langGroup <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QActionGroup</span><span class="br0">&#40;</span>ui.<span class="me1">menuLanguage</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ langGroup<span class="sy0">-&gt;</span><span class="me3">setExclusive</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">connect</span><span class="br0">&#40;</span>langGroup<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>triggered<span class="br0">&#40;</span><span class="kw5">QAction</span> <span class="sy0">*</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>slotLanguageChanged<span class="br0">&#40;</span><span class="kw5">QAction</span> <span class="sy0">*</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// format systems language</span>
+ <span class="kw5">QString</span> defaultLocale <span class="sy0">=</span> <span class="kw5">QLocale</span><span class="sy0">::</span><span class="kw3">system</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">name</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// e.g. &quot;de_DE&quot;</span>
+ defaultLocale.<span class="me1">truncate</span><span class="br0">&#40;</span>defaultLocale.<span class="me1">lastIndexOf</span><span class="br0">&#40;</span><span class="st0">''</span><span class="st0">''</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// e.g. &quot;de&quot;</span>
+&#160;
+ m_langPath <span class="sy0">=</span> <span class="kw5">QApplication</span><span class="sy0">::</span><span class="me2">applicationDirPath</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ m_langPath.<span class="me1">append</span><span class="br0">&#40;</span><span class="st0">&quot;/languages&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QDir</span> dir<span class="br0">&#40;</span>m_langPath<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QStringList</span> fileNames <span class="sy0">=</span> dir.<span class="me1">entryList</span><span class="br0">&#40;</span><span class="kw5">QStringList</span><span class="br0">&#40;</span><span class="st0">&quot;TranslationExample''*.qm&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> fileNames.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="sy0">+</span><span class="st0">''</span>i<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="co1">// get locale extracted by filename</span>
+ <span class="kw5">QString</span> locale<span class="sy0">;</span>
+ locale <span class="sy0">=</span> fileNames<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">;</span> <span class="co1">// &quot;TranslationExample_de.qm&quot;</span>
+ locale.<span class="me1">truncate</span><span class="br0">&#40;</span>locale.<span class="me1">lastIndexOf</span><span class="br0">&#40;</span><span class="st0">'.'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// &quot;TranslationExample_de&quot;</span>
+ locale.<span class="kw3">remove</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> locale.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">''</span><span class="st0">''</span><span class="br0">&#41;</span> <span class="sy0">+</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// &quot;de&quot;</span>
+&#160;
+ <span class="kw5">QString</span> lang <span class="sy0">=</span> <span class="kw5">QLocale</span><span class="sy0">::</span><span class="me2">languageToString</span><span class="br0">&#40;</span><span class="kw5">QLocale</span><span class="br0">&#40;</span>locale<span class="br0">&#41;</span>.<span class="me1">language</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QIcon</span> ico<span class="br0">&#40;</span><span class="kw5">QString</span><span class="br0">&#40;</span><span class="st0">&quot;%1/%2.png&quot;</span><span class="br0">&#41;</span>.<span class="me1">arg</span><span class="br0">&#40;</span>m_langPath<span class="br0">&#41;</span>.<span class="me1">arg</span><span class="br0">&#40;</span>locale<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw5">QAction</span> <span class="sy0">*</span>action <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QAction</span><span class="br0">&#40;</span>ico<span class="sy0">,</span> lang<span class="sy0">,</span> <span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ action<span class="sy0">-&gt;</span><span class="me3">setCheckable</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ action<span class="sy0">-&gt;</span><span class="me3">setData</span><span class="br0">&#40;</span>locale<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ ui.<span class="me1">menuLanguage</span><span class="sy0">-&gt;</span><span class="me3">addAction</span><span class="br0">&#40;</span>action<span class="br0">&#41;</span><span class="sy0">;</span>
+ langGroup<span class="sy0">-&gt;</span><span class="me3">addAction</span><span class="br0">&#40;</span>action<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="co1">// set default translators and language checked</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>defaultLocale <span class="sy0">==</span> locale<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ action<span class="sy0">-&gt;</span><span class="me3">setChecked</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id=".CE.91.CE.BB.CE.BB.CE.B1.CE.B3.CE.AE_.CE.B3.CE.BB.CF.8E.CF.83.CF.83.CE.B1.CF.82">Αλλαγή γλώσσας</span></h2>
+<p>Εάν η γλώσσα πρέπει να αλλαχθεί, η απαιτούμενη γλώσσα-στόχος εξάγεται από το <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qaction.html">QAction</a> αντικείμενο και οι υπάρχουσες μεταφράσεις απομακρύνονται (<a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qapplication.html#removeTranslator">QApplication::removeTranslator</a> ). Μετά από αυτό, τα νέα γλωσσικά αρχεία φορτώνονται, και εάν αυτό γίνει επιτυχώς, ο μεταφραστής εγκαθίσταται και πάλι (<a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qapplication.html#installTranslator">QApplication::installTranslator</a> ). Αυτό γίνεται για να διασφαλισθεί ότι ένα <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qevent.html#Type-enum">QEvent::LanguageChange</a> event εκπέμπεται (emitted) από το αντικείμενο της εφαρμογής. Εάν η εφαρμογή απλά περιέχει μόνο ένα top level window, το οποίο δημιουργείται εξ' ολοκλήρου από τον designer, είναι επίσης εφικτό να διαβαστούν απλά τα νέα αρχεία μετάφρασης και να κληθεί το <b>ui.retranslateUi(this)</b> απευθείας.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// Called every time, when a menu entry of the language menu is called</span>
+<span class="kw4">void</span> MainWindow<span class="sy0">::</span><span class="me2">slotLanguageChanged</span><span class="br0">&#40;</span><span class="kw5">QAction</span><span class="sy0">*</span> action<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span><span class="nu0">0</span> <span class="sy0">!=</span> action<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="co1">// load the language dependant on the action content</span>
+ loadLanguage<span class="br0">&#40;</span>action<span class="sy0">-&gt;</span><span class="me3">data</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ setWindowIcon<span class="br0">&#40;</span>action<span class="sy0">-&gt;</span><span class="me3">icon</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> switchTranslator<span class="br0">&#40;</span><span class="kw5">QTranslator</span><span class="sy0">&amp;</span> translator<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw5">QString</span><span class="sy0">&amp;</span> filename<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="co1">// remove the old translator</span>
+ qApp<span class="sy0">-&gt;</span><span class="me3">removeTranslator</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>translator<span class="sy0">;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="co1">// load the new translator</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span>translator.<span class="me1">load</span><span class="br0">&#40;</span>filename<span class="br0">&#41;</span><span class="br0">&#41;</span>
+ qApp<span class="sy0">-&gt;</span><span class="me3">installTranslator</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>translator<span class="sy0">;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> MainWindow<span class="sy0">::</span><span class="me2">loadLanguage</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span><span class="sy0">&amp;</span> rLanguage<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span>m_currLang <span class="sy0">!=</span> rLanguage<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ m_currLang <span class="sy0">=</span> rLanguage<span class="sy0">;</span>
+ <span class="kw5">QLocale</span> locale <span class="sy0">=</span> <span class="kw5">QLocale</span><span class="br0">&#40;</span>m_currLang<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QLocale</span><span class="sy0">::</span><span class="me2">setDefault</span><span class="br0">&#40;</span>locale<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QString</span> languageName <span class="sy0">=</span> <span class="kw5">QLocale</span><span class="sy0">::</span><span class="me2">languageToString</span><span class="br0">&#40;</span>locale.<span class="me1">language</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ switchTranslator<span class="br0">&#40;</span>m_translator<span class="sy0">,</span> <span class="kw5">QString</span><span class="br0">&#40;</span><span class="st0">&quot;TranslationExample''%1.qm&quot;</span><span class="br0">&#41;</span>.<span class="me1">arg</span><span class="br0">&#40;</span>rLanguage<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ switchTranslator<span class="br0">&#40;</span>m_translatorQt<span class="sy0">,</span> <span class="kw5">QString</span><span class="br0">&#40;</span><span class="st0">&quot;qt_%1.qm&quot;</span><span class="br0">&#41;</span>.<span class="me1">arg</span><span class="br0">&#40;</span>rLanguage<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ ui.<span class="me1">statusBar</span><span class="sy0">-&gt;</span><span class="me3">showMessage</span><span class="br0">&#40;</span>tr<span class="br0">&#40;</span><span class="st0">&quot;Current Language changed to&#160;%1&quot;</span><span class="br0">&#41;</span>.<span class="me1">arg</span><span class="br0">&#40;</span>languageName<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qevent.html#Type-enum">QEvent::LanguageChange</a> θα καλείται πάντα, εάν ένα αντικείμενο μετάφρασης είναι εγκατεστημένο στο αντικείμενο της εφαρμογής
+</li>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qevent.html#Type-enum">QEvent::LocaleChange</a> καλείται, όταν η γλώσσα του συστήματος αλλάζει
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">void</span> MainWindow<span class="sy0">::</span><span class="me2">changeEvent</span><span class="br0">&#40;</span><span class="kw5">QEvent</span><span class="sy0">*</span> event<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span><span class="nu0">0</span> <span class="sy0">!=</span> event<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="kw1">switch</span><span class="br0">&#40;</span>event<span class="sy0">-&gt;</span><span class="me3">type</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="co1">// this event is send if a translator is loaded</span>
+ <span class="kw1">case</span> <span class="kw5">QEvent</span><span class="sy0">::</span><span class="me2">LanguageChange</span><span class="sy0">:</span>
+ ui.<span class="me1">retranslateUi</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ break<span class="sy0">;</span>
+ <span class="co1">// this event is send, if the system, language changes</span>
+ <span class="kw1">case</span> <span class="kw5">QEvent</span><span class="sy0">::</span><span class="me2">LocaleChange</span><span class="sy0">:</span>
+ <span class="br0">&#123;</span>
+ <span class="kw5">QString</span> locale <span class="sy0">=</span> <span class="kw5">QLocale</span><span class="sy0">::</span><span class="kw3">system</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">name</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ locale.<span class="me1">truncate</span><span class="br0">&#40;</span>locale.<span class="me1">lastIndexOf</span><span class="br0">&#40;</span><span class="st0">'_'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ loadLanguage<span class="br0">&#40;</span>locale<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ break<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+ <span class="kw5">QMainWindow</span><span class="sy0">::</span><span class="me2">changeEvent</span><span class="br0">&#40;</span>event<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id=".CE.A0.CF.81.CE.BF.CF.83.CE.B8.CE.AE.CE.BA.CE.B7_.CE.BC.CE.B5.CF.84.CE.B1.CF.86.CF.81.CE.AC.CF.83.CE.B5.CF.89.CE.BD_.CF.83.CF.84.CE.BF_project">Προσθήκη μεταφράσεων στο project</span></h2>
+<p>Στο <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qmake-manual.html">QMake</a> σας project αρχείο, η ακόλουθη μεταβλητή <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qmake-variable-reference.html#translations"><b>TRANSLATIONS</b></a> πρέπει να προστεθεί και πρέπει να περιέχει όλα τα αρχεία συστήματος που θέλετε να δημιουργήσετε αρχικά.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">TRANSLATIONS <span class="sy0">=</span> languages<span class="sy0">/</span>TranslationExample_en.<span class="me1">ts</span>  languages<span class="sy0">/</span>TranslationExample_de.<span class="me1">ts</span></pre></div></div>
+<p>Καλώντας την <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/linguist-manager.html#lupdate">lupdate</a>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">lupdate <span class="sy0">-</span>verbose TranslationExample.<span class="me1">pro</span></pre></div></div>
+<p>Δημιουργείτε τα γλωσσικά αρχεία (<b>.ts), τα οποία μεταφράζετε χρησιμοποιώντας το εργαλείο <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/linguist-manual.html">Qt Linguist</a> </b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">linguist languages<span class="sy0">/</span>TranslationExample_en.<span class="me1">ts</span> languages<span class="sy0">/</span>TranslationExample_de.<span class="me1">ts</span></pre></div></div>
+<p>Μετά από αυτό, καλείτε την <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/linguist-manager.html#lrelease">lrelease</a> για να δημιουργήσετε τα binary γλωσσικά αρχεία (<b>.qm):</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">lrelease TranslationExample.<span class="me1">pro</span></pre></div></div>
+<h3><span class="mw-headline" id=".CE.A3.CF.84.CE.BF.CF.87.CE.B5.CF.8D.CE.BF.CE.BD.CF.84.CE.B1.CF.82_.CF.84.CE.BF_Symbian">Στοχεύοντας το Symbian</span></h3>
+<p>Σε περίπτωση που η εφαρμογή σας έχει ως στόχο και το Symbian, τότε πρέπει να προστεθεί και ένας ακόμα ειδικός κανόνας στο .pro αρχείο ώστε να τοποθετήσει τα .qm αρχεία μαζί με το εκτελέσιμο αρχείο. Οπότε η προσθήκη είναι η εξής:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">symbian<span class="sy0">:</span> <span class="br0">&#123;</span>
+addFiles.<span class="me1">sources</span> <span class="sy0">=</span> TranslationExample_en.<span class="me1">qm</span> TranslationExample_de.<span class="me1">qm</span>
+addFiles.<span class="me1">path</span> <span class="sy0">=</span> .
+<span class="me1">DEPLOYMENT</span><span class="st0">''</span><span class="sy0">=</span> addFiles
+<span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.190 seconds
+Real time usage: 0.205 seconds
+Preprocessor visited node count: 124/1000000
+Preprocessor generated node count: 288/1000000
+Post‐expand include size: 1388/2097152 bytes
+Template argument size: 442/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:936-0!*!0!!en!2!* and timestamp 20151104124302 and revision id 15944
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../index33cf.html?title=How_to_create_a_multi_language_application/el&amp;oldid=15944">http://wiki.qt.io/index.php?title=How_to_create_a_multi_language_application/el&amp;oldid=15944</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="../Category_HowTo.html" title="Category:HowTo">HowTo</a></li><li><a href="../Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=fe7ca87b048e62ff&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="el.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_How_to_create_a_multi_language_application/el.html?title=Talk:How_to_create_a_multi_language_application/el&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="el.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../index1cb3.html?title=How_to_create_a_multi_language_application/el&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../index96a3.html?title=How_to_create_a_multi_language_application/el&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/How_to_create_a_multi_language_application/el.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/How_to_create_a_multi_language_application/el.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../index44f5.html?title=How_to_create_a_multi_language_application/el&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../index33cf.html?title=How_to_create_a_multi_language_application/el&amp;oldid=15944" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../index25db.html?title=How_to_create_a_multi_language_application/el&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:22.</li>
+											<li id="footer-info-viewcount">This page has been accessed 599 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":194});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/How_to_create_a_multi_language_application/el by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:33:21 GMT -->
+</html>

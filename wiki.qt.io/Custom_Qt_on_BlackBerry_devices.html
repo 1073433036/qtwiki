@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Custom_Qt_on_BlackBerry_devices by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:27:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Custom Qt on BlackBerry devices - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Custom_Qt_on_BlackBerry_devices","wgTitle":"Custom Qt on BlackBerry devices","wgCurRevisionId":16503,"wgRevisionId":16503,"wgArticleId":678,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["BlackBerry","HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Custom_Qt_on_BlackBerry_devices","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Custom_Qt_on_BlackBerry_devices skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Custom Qt on BlackBerry devices</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p><p><br />
+</p><p>This document describes approaches how to use a custom Qt build to BlackBerry 10 devices and use it for application development in Qt Creator or on the command line. See <a href="Qt-Creator-with-BlackBerry-10.html" title="Qt-Creator-with-BlackBerry-10" class="mw-redirect"> Using Qt Creator for Qt Development on BlackBerry 10</a> for overall description of using Qt Creator with BlackBerry 10 and <a href="Deployment_on_BlackBerry.html" title="Deployment on BlackBerry"> Deployment on BlackBerry </a> article for more details about deployment .
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Extending_the_built-in_Qt_4.8"><span class="tocnumber">1</span> <span class="toctext">Extending the built-in Qt 4.8</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Adding_a_custom_Qt_build_to_Qt_Creator"><span class="tocnumber">2</span> <span class="toctext">Adding a custom Qt build to Qt Creator</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Embedding_a_custom_Qt_build_into_a_BlackBerry_10_application_package"><span class="tocnumber">3</span> <span class="toctext">Embedding a custom Qt build into a BlackBerry 10 application package</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Handling_symbolic_links"><span class="tocnumber">3.1</span> <span class="toctext">Handling symbolic links</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Sharing_a_Qt5_runtime_on_a_device_between_apps_for_development_purposes."><span class="tocnumber">4</span> <span class="toctext">Sharing a Qt5 runtime on a device between apps for development purposes.</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Using_the_new_make_targets_and_save_time_on_command_line:-.29"><span class="tocnumber">5</span> <span class="toctext">Using the new make targets and save time on command line:-)</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Extending_the_built-in_Qt_4.8">Extending the built-in Qt 4.8</span></h2>
+<p>BlackBerry 10 devices have built-in Qt 4.8 located in the <b>/usr/lib/qt4/</b> folder. There is no need to setup anything in tooling if you use Qt4. Just create a new project and use a kit representing BlackBerry 10 with Qt4. Qt Creator 3.0 and later detects Qt4 in the BlackBerry 10 NDK and creates appropriate kits automatically. If you use an older version of Qt Creator you might need to create kits manually.
+</p><p>In an exceptional case you might decide to use a custom version of Qt4, you can use the remaining part of this page as a guidance. The major point to be aware of is that Qt4 uses the environment variable QML_IMPORT_PATH to point to the QML plugins and modules, instead of QML2_IMPORT_PATH in Qt5.
+</p>
+<h2><span class="mw-headline" id="Adding_a_custom_Qt_build_to_Qt_Creator">Adding a custom Qt build to Qt Creator</span></h2>
+<p>The below sections covers Qt5, but it is generally the same for any other Qt build. First, <a href="Building-Qt5-for-Blackberry-2.html" title="Building-Qt5-for-Blackberry" class="mw-redirect"> build Qt5 for your BlackBerry 10 device</a>. Further, we will assume that your Qt5 build is installed in "$HOME/development/qnx/qt5" folder and and you used the BlackBerry 10 NDK target 10.2.0.1155 stored in "/opt/bbndk" folder.
+</p><p>Here are the steps how to add this build to Qt Creator:
+</p>
+<ul>
+<li> Setup the "Qt Version":
+<ul>
+<li> Go to "Tools -&gt; Options…-&gt; Build &amp; Run -&gt; Qt Versions" tab
+</li>
+<li> Press "Add" button
+</li>
+<li> Browse <b>qmake</b> binary in your Qt5 build, e.g. <b>$HOME/development/qnx/qt5/qtbase/bin/qmake</b>
+</li>
+<li> Add a sensible name in the "Version name" field
+</li>
+<li> In the section "BlackBerry Native SDK", choose the directory with contains "host_<b>" and "target_</b>" folders which has been used for building Qt5 e.g. the <b>/opt/bbndk</b> folder.
+</li>
+<li> Press "OK" or "Apply" button
+</li>
+</ul>
+</li>
+<li> Setup a kit for your Qt5 in Qt Creator:
+<ul>
+<li> Go to "Tools-&gt; Options… -&gt; Build &amp; Run-&gt; Kits" tab
+</li>
+<li> Press "Add" button to create a new kit, fill its field as:
+<ul>
+<li> Name - specify a sensible name for your kit. Consider reusing the name you gave to the "Qt Version" as above
+</li>
+<li> Select in " BlackBerry Device" in "Device type"
+</li>
+<li> Device - select a BlackBerry 10 device or simulator from the list which you previously connected and configured in Qt Creator
+</li>
+<li> In "Sysroot", se the path to the sysroot folder which starts with the "qnx6" folder within the "target_<b>" folder that you have used for building Qt5 e.g. "/opt/bbndk/target_10_2_0_1155/qnx6/" folder</b>
+</li>
+</ul>
+</li>
+<li> Select "GCC BlacckBerry 10" compiler in the "Compiler" section that matches the one for BlackBerry 10 NDK Target used for building Qt5, e.g. "GCC BlackBerry 10 (target_10_2_0_1155)"
+<ul>
+<li> The "Debugger" can keep the default value for for the "System GDB at /usr/bin/gdb" or also set to the debugger provided in the BlackBerry 10 NDK Target used for building Qt5
+</li>
+<li> Select the Qt5 build you added on the previous previous steps in "Qt-Version"
+</li>
+<li> The section "Qt mkspec" can stay empty when developing on a BlackBerry 10 device or should be be set to "blackberry-x86-qcc" when developing for BlackBerry 10 Simulator
+</li>
+</ul>
+</li>
+<li> Press "OK" or "Apply" button
+</li>
+</ul>
+</li>
+</ul>
+<p>Now you can create a new project using "File -&gt; New File or Project…-&gt; Applications -&gt; Qt Quick 2 Application (Built-in Types)" or "BlackBerry Qt 5 GUI Application" project template. In "Kit Selection" wizard page, select the kit registered above. When asked whether to create a BAR file descriptor, press "Yes".
+</p>
+<h2><span class="mw-headline" id="Embedding_a_custom_Qt_build_into_a_BlackBerry_10_application_package">Embedding a custom Qt build into a BlackBerry 10 application package</span></h2>
+<p>The <b>bar-descriptor.xml</b> file generated in the example at the end of the last section should contain the following or similar lines:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">&lt;</span>env var<span class="sy0">=</span><span class="st0">&quot;QML2_IMPORT_PATH&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;app/native/imports&quot;</span><span class="sy0">/&gt;</span>
+ <span class="sy0">&lt;</span>env var<span class="sy0">=</span><span class="st0">&quot;QT_PLUGIN_PATH&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;app/native/plugins&quot;</span><span class="sy0">/&gt;</span>
+ <span class="sy0">&lt;</span>env var<span class="sy0">=</span><span class="st0">&quot;LD_LIBRARY_PATH&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;app/native/lib&quot;</span><span class="sy0">/&gt;</span>
+&#160;
+<span class="sy0">&lt;</span>asset path<span class="sy0">=</span><span class="st0">&quot;QT_INSTALL_LIBS&quot;</span><span class="sy0">&gt;</span>lib<span class="sy0">&lt;/</span>asset<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>asset path<span class="sy0">=</span><span class="st0">&quot;QT_INSTALL_PLUGINS&quot;</span><span class="sy0">&gt;</span>plugins<span class="sy0">&lt;/</span>asset<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>asset path<span class="sy0">=</span><span class="st0">&quot;QT_INSTALL_QML&quot;</span><span class="sy0">&gt;</span>imports<span class="sy0">&lt;/</span>asset<span class="sy0">&gt;</span></pre></div></div>
+<p>The first block sets the environment variables which are set by the navigator before launching the app. This make the application use the Qt run-time bundled into the application package instead of the system one. The deployment of the according artifacts is defined in the second section. See <a href="Deployment_on_BlackBerry.html" title="Deployment on BlackBerry"> Deployment on BlackBerry</a> for details about handling assets relevant to Qt application development on BlackBerry 10.
+</p><p>Ideally, the environment variables should have more values to cover all possible use cases so that you do not need to touch them frequently in the future:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&lt;</span>env var<span class="sy0">=</span><span class="st0">&quot;LD_LIBRARY_PATH&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;app/native/runtime/qt/lib:/accounts/devuser/qt/lib:$LD_LIBRARY_PATH&quot;</span><span class="sy0">/&gt;</span>
+<span class="sy0">&lt;</span>env var<span class="sy0">=</span><span class="st0">&quot;QT_PLUGIN_PATH&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;app/native/runtime/qt/plugins:/accounts/devuser/qt/plugins:$QT_PLUGIN_PATH&quot;</span><span class="sy0">/&gt;</span>
+<span class="sy0">&lt;</span>env var<span class="sy0">=</span><span class="st0">&quot;QML2_IMPORT_PATH&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;app/native/runtime/qt/qml:/accounts/devuser/qt/qml:$QML2_IMPORT_PATH&quot;</span><span class="sy0">/&gt;</span></pre></div></div>
+<p>This has a few modifications compared to the previous one:
+</p>
+<ol>
+<li> It uses "app/native/runtime/qt/" instead of "app/native/" for hosting the Qt runtime. This provides more flexibility, since you might want to install your own libs, Qt plugins or QML modules. You could then use "app/native/" for this and so make sure they do no collide with Qt itself
+</li>
+<li> It adds "/accounts/devuser/qt/". This path can contain a Qt runtime which you deploy for development purposes as described later on this page.
+</li>
+<li> It retains the values which might have been set in the platform in the future
+</li>
+</ol>
+<p>This way of setting Qt runtime variables will be used in all templates provided for BlackBerry 10.
+</p>
+<h3><span class="mw-headline" id="Handling_symbolic_links">Handling symbolic links</span></h3>
+<p>When you let Qt Creator run the application on the device, it will first create the application package and upload it to the device. The package will be around 60MB, and now includes the Qt runtime. It may take around a minute to deploy and launch the application on a device. If you look up the actual size of the related binaries in the Qt build you will see that they are actually much smaller, around 15MB. The problem with an over-sized Qt package is that the line <b>&lt;asset path="QT_INSTALL_LIBS"&gt;lib&lt;/asset&gt;</b> tells the <b>blackberry-nativepackager</b> tool to take the entire <b>libs</b> folder and package it as an asset. This folder usually contains symbolic links to lib names with compatible versions. For security reasons, the <b>blackberry-nativepackager</b> tool adds all symbolic links in a folder as actual files. Due to this, each Qt library is copied multiple times which significantly increases of the package size.
+</p><p>Regardless how big Qt5 build is, deploying it each time wastes time in development. There is a method to significantly increase the deployment speed by using an approach when all apps in development mode (the <b>-devMode</b> option in the <b>blackberry-nativepackager</b> tool) can access the home folder of the <b>devuser</b>. See another section about this on this page.
+</p><p>The only sensible way to reduce the size to a minimum is to manually package only those libraries which are needed. In addition to the explicit listing of the used libraries only, you can also exclude the Qt libraries you don't use to decrease the package size. For that, you can use the <i>&lt;exclude&gt;</i> element to specify the libraries to be excluded as shown in the example below: 
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">&lt;</span>asset path<span class="sy0">=</span><span class="st0">&quot;QT_INSTALL_LIBS&quot;</span><span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>exclude name<span class="sy0">=</span><span class="st0">&quot;libQt5Xml.so.5.1.0&quot;</span><span class="sy0">/&gt;</span>
+ <span class="sy0">&lt;</span>exclude name<span class="sy0">=</span><span class="st0">&quot;libQt5QuickParticles.so.5.1.0&quot;</span><span class="sy0">/&gt;</span>
+ <span class="sy0">&lt;</span>exclude name<span class="sy0">=</span><span class="st0">&quot;libQt5Test.so.5.1.0&quot;</span><span class="sy0">/&gt;</span>
+ …
+ lib
+ <span class="sy0">&lt;/</span>asset<span class="sy0">&gt;</span></pre></div></div>
+<p>Similarly, you can explicitly list only those libraries that you are using:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> …
+ <span class="sy0">&lt;</span>asset path<span class="sy0">=</span><span class="st0">&quot;%QT_INSTALL_LIBS%/libQt5Core.so.5.2.0&quot;</span><span class="sy0">&gt;</span>lib<span class="sy0">/</span>libQt5Core.<span class="me1">so</span>.5<span class="sy0">&lt;/</span>asset<span class="sy0">&gt;</span>
+ …</pre></div></div>
+<p><i><b>Note:</b></i> you can use the <b>ntoarm-readelf</b> command line to find out what libraries your application depends i.e. which should be included in the assets. Just make sure that you inspect the dependencies recursively (i.e. even for the dependent libraries)- readelf tool just reports direct dependencies only.
+</p><p>When you use a custom Qt build in an application, it is easy to make a mistake which will lead to a missing part of the Qt runtime. In such a case, your application will shortly popup on the screen and then disappear again. Check the <a href="BlackBerry_Hints_n_Tips.html" title="BlackBerry Hints n Tips"> BlackBerry Hints and Tips </a> to learn who to check the logs and find out what happened.
+</p>
+<h2><span class="mw-headline" id="Sharing_a_Qt5_runtime_on_a_device_between_apps_for_development_purposes.">Sharing a Qt5 runtime on a device between apps for development purposes.</span></h2>
+<p>The approach uses the fact the apps in development mode call access the home folder of the "devuser", see <a href="Deployment_on_BlackBerry.html" title="Deployment on BlackBerry"> Deployment on BlackBerry </a> article for more details. This is an attractive possibility saving a lot of time, since you do not add your custom Qt build each time you deploy your app. If you are working on Qt, you can also use this method to deploy a experimental version of Qt for testing. The only thing to keep in mind that this approach does not work with final, signed packages since they cannot access the <b>devuser</b> account anymore. Basically, this approach is a help to reduce app deployment time during the application development. When you are preparing an application to be submitted to BlackBerry World, you need to switch back to "Embedding a custom Qt5 build into a BlackBerry 10 application package" approach otherwise your application will not start.
+</p><p>The basic idea is to copy the Qt runtime binary artifacts into a subfolder in <b>/accounts/devuser/</b> on the device, and set relevant environment variables, e.g. <b>LD_LIBRARY_PATH</b>, to point to that Qt installation.
+</p><p><b>Note</b>: a build of Qt 4.8 is pre-integrated in each BlackBerry 10 firmware and NDK release. You should not waste your time for adding another Qt 4.8 build unless you have a very good reason for this.
+</p><p>The first step is to copying the Qt runtime onto the device. You start with establishing an SSH connection to the device. See <a href="BlackBerry_Hints_n_Tips.html" title="BlackBerry Hints n Tips"> BlackBerry Hints and Tips</a> to learn how to do this.
+</p><p>Lets assume that <b>$QTDIR</b> points to the root folder of a cross-compiled Qt5 build for BlackBerry 10 and we are going to use the folder <b>/accounts/devuser/qt</b>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">&gt;</span> ssh <span class="sy0">-</span>i <span class="sy0">/</span>path<span class="sy0">/</span>to<span class="sy0">/</span><span class="kw2">private</span><span class="sy0">/</span>key devuser@<span class="sy0">&lt;</span>device<span class="sy0">-</span>IP<span class="sy0">-</span>address<span class="sy0">&gt;</span> <span class="st0">&quot;mkdir -p /accounts/devuser/qt&quot;</span>
+ <span class="sy0">&gt;</span> cd $QTDIR
+ <span class="sy0">&gt;</span> tar cpf<span class="sy0">-</span> lib plugins qml <span class="sy0">|</span> ssh <span class="sy0">-</span>i <span class="sy0">/</span>path<span class="sy0">/</span>to<span class="sy0">/</span><span class="kw2">private</span><span class="sy0">/</span>key devuser@<span class="sy0">&lt;</span>device<span class="sy0">-</span>IP<span class="sy0">-</span>address<span class="sy0">&gt;</span> tar xp <span class="sy0">-</span>C <span class="sy0">/</span>accounts<span class="sy0">/</span>devuser<span class="sy0">/</span>qt<span class="sy0">/</span></pre></div></div>
+<p><i>If you have a <b>Qt4</b> build you need to copy the <b>imports</b> folder instead of the <b>qml</b> as above.</i>
+</p><p>Make sure that <b>/path/to/private/key&gt;</b> is the private key part from the public key you used to initiate the SSH daemon on the device with <b>blackberry-connect</b> as outlined in <a href="BlackBerry_Hints_n_Tips.html" title="BlackBerry Hints n Tips"> BlackBerry Hints and Tips</a> .
+</p><p>Deploying will be even faster if you strip the libraries before copying them. Note that this removes debug symbols from the Qt libraries as well. On a BlackBerry 10 device this can be done with:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&gt;</span> cd $QTDIR
+<span class="sy0">&gt;</span> find <span class="sy0">-</span>L . <span class="sy0">-</span>name <span class="st0">&quot;'''.so'''&quot;</span> <span class="sy0">|</span> xargs ntoarm<span class="sy0">-</span>strip</pre></div></div>
+<p>Use <b>ntox86-strip</b> for the simulator target. On PlayBook, you can do:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&gt;</span> cd $QTDIR
+<span class="sy0">&gt;</span> find <span class="sy0">-</span>L . <span class="sy0">-</span>name <span class="st0">&quot;'''.so'''&quot;</span> <span class="sy0">|</span> xargs arm<span class="sy0">-</span>unknown<span class="sy0">-</span>nto<span class="sy0">-</span>qnx6.5.0<span class="sy0">-</span>strip</pre></div></div>
+<p>The second and the last step is to check the BAR application descriptor file and to verify that Qt runtime environment variables are set to use it. See the according section on this page about this.
+</p><p>QtCreator 3.1 will integrate all these steps in the IDE and so support sharing a Qt5 runtime from the active BlackBerry kit on a device between apps for development purposes.
+</p>
+<h2><span class="mw-headline" id="Using_the_new_make_targets_and_save_time_on_command_line:-.29">Using the new make targets and save time on command line:-)</span></h2>
+<p>The recently posted NDK overlay (see <a href="Qt5-on-BlackBerry10.html" title="Qt5-on-BlackBerry10" class="mw-redirect">Qt5 on BlackBerry10</a>) contains an experimental version of an add-on to make specs which significantly improves the work with a custom Qt5 build on the command line. This add-on automatically adds new make targets for packaging, deployment, signing and even deployment of a Qt runtime for development purposes as mentioned in the previous section. Here is a short summary of the provided commands which is also shown if you type "make bbhelp":
+</p><p>It wraps command line tools included in the NDK and adds several new make targets. A few environment variables need to be set by the user to pass device and user specific information to the scripts used by the make targets:
+</p>
+<ul>
+<li> DEBUG_TOKEN must be set to a full path to a debug token to be used to package the project app in development mode.
+</li>
+<li> DEVICE_IP must be set to the &lt;IP address&gt; of the device.
+</li>
+<li> DEVICE_PASSWORD must be set to the device password.
+</li>
+<li> BAR_DESCRIPTOR may be set to the name of the BAR (BlackBerry Application Archive) descriptor file to be used.
+</li>
+<li> KEYSTORE_PASSWORD must be set to the developer certificate password.
+</li>
+<li> CSK_PASSWORD must be set to the bb id token password.
+</li>
+</ul>
+<p>The following additional make targets are provided:
+</p>
+<ul>
+<li> deploy_qt: deploys Qt runtime into /accounts/devuser/qt/ on the device.
+</li>
+<li> bar: packages the assets and binary artifacts from the Qt project into a BAR file ready to be deployed to a device device.
+</li>
+<li> bar_qt: same as the "bar" target, but adds Qt runtime to the BAR file.
+</li>
+<li> bar_signed: same as "bar", but additionally signs the BAR file for distribution.
+</li>
+<li> bar_qt_signed: same as "bar_qt", but additionally signs the BAR file for distribution.
+</li>
+<li> deploy: deploys an existing .bar file to a device.
+</li>
+<li> bbhelp: displays this message.
+</li>
+</ul>
+<p>Example Usage:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">&gt;</span> make deploy_qt bar deploy</pre></div></div>
+<p>This deploys Qt, creates a BAR file referring to it and deploys it to the device as specified by the environment variables "DEVICE_IP" and "DEVICE_PASSWORD"
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">&gt;</span> make bar_qt deploy</pre></div></div>
+<p>This creates a BAR file with application artifacts and the Qt runtime and deploys it to the device as specified by the environment variables "DEVICE_IP" and "DEVICE_PASSWORD".
+</p><p>The "bar_qt" make target automatically adds the Qt runtime from the Qt5 build in the overlay by adding it to the bottom of the BAR application descriptor file. This be in conflict with the Qt5 runtime you might had specified using QtCreator or even not be able to parse QtCreator specific variables used in 3.0 and earlier:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">&lt;</span>asset path<span class="sy0">=</span><span class="st0">&quot;QT_INSTALL_LIBS&quot;</span><span class="sy0">&gt;</span>lib<span class="sy0">&lt;/</span>asset<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>asset path<span class="sy0">=</span><span class="st0">&quot;QT_INSTALL_PLUGINS&quot;</span><span class="sy0">&gt;</span>plugins<span class="sy0">&lt;/</span>asset<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>asset path<span class="sy0">=</span><span class="st0">&quot;QT_INSTALL_QML&quot;</span><span class="sy0">&gt;</span>imports<span class="sy0">&lt;/</span>asset<span class="sy0">&gt;</span></pre></div></div>
+<p>The best way to fix this is to use delete related asset lines the BAR application descriptor file, deploy Qt on the central place with "make deploy_qt" or from QtCreator 3.1 and later and use the values for Qt runtime environment variables as described earlier on this page.
+</p><p>A version of this add-on is currently in the review for a submission as a new feature in Qt 5.4.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.191 seconds
+Real time usage: 0.194 seconds
+Preprocessor visited node count: 95/1000000
+Preprocessor generated node count: 228/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:678-0!*!0!!en!*!* and timestamp 20151104154009 and revision id 16503
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexed7d.html?title=Custom_Qt_on_BlackBerry_devices&amp;oldid=16503">http://wiki.qt.io/index.php?title=Custom_Qt_on_BlackBerry_devices&amp;oldid=16503</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_BlackBerry.html" title="Category:BlackBerry">BlackBerry</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=b9172227e0fbf9c5&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Custom_Qt_on_BlackBerry_devices.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Custom_Qt_on_BlackBerry_devices.html?title=Talk:Custom_Qt_on_BlackBerry_devices&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Custom_Qt_on_BlackBerry_devices.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexa4d3.html?title=Custom_Qt_on_BlackBerry_devices&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexc1f4-2.html?title=Custom_Qt_on_BlackBerry_devices&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Custom_Qt_on_BlackBerry_devices.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Custom_Qt_on_BlackBerry_devices.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index6785.html?title=Custom_Qt_on_BlackBerry_devices&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexed7d.html?title=Custom_Qt_on_BlackBerry_devices&amp;oldid=16503" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index8f9d.html?title=Custom_Qt_on_BlackBerry_devices&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 3 May 2015, at 16:16.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,489 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":309});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Custom_Qt_on_BlackBerry_devices by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:27:34 GMT -->
+</html>

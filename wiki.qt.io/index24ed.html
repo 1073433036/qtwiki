@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_Desktop_for_Windows_with_MinGW&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:10:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Building Qt Desktop for Windows with MinGW - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building_Qt_Desktop_for_Windows_with_MinGW","wgTitle":"Building Qt Desktop for Windows with MinGW","wgCurRevisionId":18201,"wgRevisionId":18201,"wgArticleId":137,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building_Qt_Desktop_for_Windows_with_MinGW","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building_Qt_Desktop_for_Windows_with_MinGW skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Building Qt Desktop for Windows with MinGW</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<p>This chapter will describe some steps to build Qt using a windows host and the MinGW Toolchain. Since there is a 32bit and a 64bit MinGW that can be used to build your Desktop Qt you have to decide if you wanted to build Qt Libraries targetting a x86 (32bit) or a x64 (64bit) machine. Besides there is a possibility to cross build Qt on a 64bit host for a 32bit target and vice versa.
+</p><p>Please look through the prerequisites before you start your work in order to make a definite step building your own Qt. Remark, this guidance here is only for your information. Any hints and comments you can read here are provided to help you to make your own steps with opensource software. There are many more possibilities to do the work. The below build process is only tested with Qt 4.7.4 on a windows 7 x64 host.
+</p><p>Even so this guide has been created some time ago it is still applicable for Qt4. Only a few adaptations are required concerning the references to MinGW compilers. This has been tested on 64 bit windows 7 system for Qt 4.8.4 source building Qt for 64 bit targets. MinGW version was 4.7.2.
+</p><p>Additional questions may be posted <a rel="nofollow" class="external text" href="http://forum.qt.io/viewthread/19152/">here</a>.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Do_I_need_to_build_Qt.3F"><span class="tocnumber">1</span> <span class="toctext">Do I need to build Qt?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Required_Toolchains"><span class="tocnumber">2</span> <span class="toctext">Required Toolchains</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Prerequisites"><span class="tocnumber">3</span> <span class="toctext">Prerequisites</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Build_Qt_with_MinGW_for_a_x86_target"><span class="tocnumber">4</span> <span class="toctext">Build Qt with MinGW for a x86 target</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Required_toolchain"><span class="tocnumber">4.1</span> <span class="toctext">Required toolchain</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Filesystem_setup"><span class="tocnumber">4.2</span> <span class="toctext">Filesystem setup</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Configure_your_build_tree"><span class="tocnumber">4.3</span> <span class="toctext">Configure your build tree</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Build_Qt"><span class="tocnumber">4.4</span> <span class="toctext">Build Qt</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Installing_the_libraries."><span class="tocnumber">4.5</span> <span class="toctext">Installing the libraries.</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Build_Qt_with_MinGW_for_a_x64_.28x86_64.29_target"><span class="tocnumber">5</span> <span class="toctext">Build Qt with MinGW for a x64 (x86_64) target</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Required_toolchain_2"><span class="tocnumber">5.1</span> <span class="toctext">Required toolchain</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Filesystem_setup_2"><span class="tocnumber">5.2</span> <span class="toctext">Filesystem setup</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Configure_your_build_tree_2"><span class="tocnumber">5.3</span> <span class="toctext">Configure your build tree</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Build_Qt_2"><span class="tocnumber">5.4</span> <span class="toctext">Build Qt</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Installing_the_libraries._2"><span class="tocnumber">5.5</span> <span class="toctext">Installing the libraries.</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Building_a_cross_Qt_for_x86_host_and_x64_target"><span class="tocnumber">6</span> <span class="toctext">Building a cross Qt for x86 host and x64 target</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Links_and_references"><span class="tocnumber">7</span> <span class="toctext">Links and references</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Do_I_need_to_build_Qt.3F">Do I need to build Qt?</span></h2>
+<p>Perhaps not. The official Qt SDK installer will work just fine. Follow these steps only if you want to learn how to make a cutom build or if you aim a x64 target.
+</p>
+<h2><span class="mw-headline" id="Required_Toolchains">Required Toolchains</span></h2>
+<p>To build Qt on your own windows desktop pc there is no wizzard needed. The main thing you want check is to choose the right toolsets that are able to build Qt from bottom up. Since there are many packages to find on the web you have to manage what package is chosen with caution.
+</p><p>The following list will give an overview on the packages you need for your personal build of Qt opensource.
+</p>
+<ul>
+<li> The Qt Opensource Source Package with all the sourcecode
+</li>
+<li> a MinGW toolchain
+</li>
+<li> or a MinGW64 toolchain
+</li>
+<li> a Perl installation
+</li>
+<li> a tool to replace text in the makefiles (for the install step only)
+</li>
+<li> a mingw32-make replacement to use all the cpu cores for building
+</li>
+<li> an application to unzip the tarfiles like <a rel="nofollow" class="external text" href="http://www.7-zip.org/">7zip</a>. 
+</li>
+</ul>
+<p>To work with the newly created Qt you need also:
+</p>
+<ul>
+<li> QtCreator 2.5 (or similiar, build process will be provided as well later)
+</li>
+</ul>
+<h1><span class="mw-headline" id="Prerequisites">Prerequisites</span></h1>
+<p>Although the build processes are very similar, please note that the <i>cmd.exe</i> shell build environment is slightly different for the <i>PATH</i> variable to find the right compiler toolchain. However, these tools are needed for both the build processes, 32 and 64bit:
+</p>
+<ul>
+<li> Qt source code from <a rel="nofollow" class="external text" href="http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-4.7.4.tar.gz">here</a>
+</li>
+<li> Active Perl from <a rel="nofollow" class="external text" href="http://downloads.activestate.com/ActivePerl/releases/5.14.2.1402/">here</a>. You need <i>ActivePerl-5.14.2.1402-MSWin32-x64-295342.msi". Any other perl might work too, this is the tested version. </i>
+</li>
+<li> jom.exe prebuilt from <a rel="nofollow" class="external text" href="http://releases.qt.io/jom/jom.zip">here</a>.
+</li>
+<li> fart.exe prebuilt from <a rel="nofollow" class="external text" href="http://sourceforge.net/projects/fart-it/files/fart-it/1.99b/">here</a>. You need "fart199b_win32.zip". 
+</li>
+</ul>
+<h1><span class="mw-headline" id="Build_Qt_with_MinGW_for_a_x86_target">Build Qt with MinGW for a x86 target</span></h1>
+<p>This chapter describes on how to build the Qt opensource for a 32bit windows target.
+</p>
+<h2><span class="mw-headline" id="Required_toolchain">Required toolchain</span></h2>
+<ul>
+<li> MinGW from the Qt SDK, this is shipped i.e. with the SDK <a rel="nofollow" class="external text" href="http://qt.io/download">Installer</a>. The toolchain itself runs on 32bit and 64bit windows. 
+</li>
+<li> The SDK sourcecode used for this tutorial is Qt 4.7.4 (qt-everywhere-opensource-src-4.7.4.zip) and can be found <a rel="nofollow" class="external text" href="ftp://ftp.qt.nokia.com/qt/source/qt-everywhere-opensource-src-4.7.4.zip">here</a>.
+</li>
+</ul>
+<h2><span class="mw-headline" id="Filesystem_setup">Filesystem setup</span></h2>
+<p>Prepare your filesystem for your own build process. There is a batchfile that can build everything automatically. As soon as there will be a place to download you will be noted.
+</p><p>Prepare a tree that contains the tools and the source trees (replace the c:with whatever drive you need). It is recommended not to expand your computers path environment with the tools. Everything will take place in a single cmd.exe windows shell that has a path that fits your needs.
+</p><p>For filesystem setup open windows explorer and create the following folders:
+</p>
+<ul>
+<li> set the root to c:–4.7.4 copy the mingw contents of the sdk into c:–4.7.4\mingw32_x86
+</li>
+<li> unzip the contents of the qt tar into c:–4.7.4\qt-everywhere-opensource-src-4.7.4
+</li>
+<li> install or copy Perl into c:–4.7.4\tools\Perl
+</li>
+<li> copy jom.exe into c:–4.7.4\tools\jom
+</li>
+<li> copy fart.exe into c:–4.7.4\tools\fart
+</li>
+<li> create a build directory for Qt under c:–4.7.4\4.7.4-qt-x86-build
+</li>
+</ul>
+<ul>
+<li> step into this build directory and create a file "<i>configure.cache</i>" with the following content (you may want to change for your needs):
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">-</span>platform win32<span class="sy0">-</span>g<span class="sy0">++</span> <span class="sy0">-</span>opensource
+ <span class="sy0">-</span>debug <span class="sy0">-</span>debug<span class="sy0">-</span>and<span class="sy0">-</span>release
+ <span class="sy0">-</span>no<span class="sy0">-</span>phonon
+ <span class="sy0">-</span>fast
+ <span class="sy0">-</span>nomake examples
+ <span class="sy0">-</span>nomake demos
+ <span class="sy0">-</span>no<span class="sy0">-</span>dsp
+ <span class="sy0">-</span>no<span class="sy0">-</span>vcproj
+ <span class="sy0">-</span>no<span class="sy0">-</span>cetest
+ <span class="sy0">-</span>no<span class="sy0">-</span>s60
+ <span class="sy0">-</span>qt<span class="sy0">-</span>sql<span class="sy0">-</span>odbc <span class="sy0">-</span>qt<span class="sy0">-</span>sql<span class="sy0">-</span>sqlite <span class="sy0">-</span>plugin<span class="sy0">-</span>sql<span class="sy0">-</span>odbc <span class="sy0">-</span>plugin<span class="sy0">-</span>sql<span class="sy0">-</span>sqlite
+ <span class="sy0">-</span>no<span class="sy0">-</span>qt3support <span class="sy0">-</span>no<span class="sy0">-</span>opengl <span class="sy0">-</span>no<span class="sy0">-</span>openvg <span class="sy0">-</span>no<span class="sy0">-</span>incredibuild<span class="sy0">-</span>xge</pre></div></div>
+<h2><span class="mw-headline" id="Configure_your_build_tree">Configure your build tree</span></h2>
+<ul>
+<li> If you are using MinGW (32bit) toolchain&#160;: Open a cmd.exe windows shell, <i>cd</i> into <i>c:–4.7.4\4.7.4-qt-x86-build</i> and type:
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">set PATH<span class="sy0">=</span>C<span class="sy0">:</span>–4.7.4\mingw32_x86\bin<span class="sy0">;</span>C<span class="sy0">:</span>–4.7.4\tools\Perl64\bin<span class="sy0">;</span>C<span class="sy0">:</span>–4.7.4\tools\jom<span class="sy0">;</span>C<span class="sy0">:</span>–4.7.4\tools\fart<span class="sy0">;</span>
+set PATH<span class="sy0">=</span>PATH<span class="sy0">;</span>c<span class="sy0">:</span><span class="nu0">32</span><span class="sy0">;</span>
+set LANG<span class="sy0">=</span>en
+c<span class="sy0">:</span>–4.7.4\qt<span class="sy0">-</span>everywhere<span class="sy0">-</span>opensource<span class="sy0">-</span>src<span class="sy0">-</span>4.7.4\configure.<span class="me1">exe</span> <span class="sy0">-</span>redo</pre></div></div>
+<ul>
+<li> If you are using MinGW-w64 (32bit) toolchain:
+<ul>
+<li> and, if you want to use Cmd-shell (cmd.exe windows shell), then <i>cd</i> into <i>c:5_windows_32bit</i> and type:
+</li>
+</ul>
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">set PATH<span class="sy0">=</span>C<span class="sy0">:-</span>w64
+\32bit\bin<span class="sy0">;</span>C<span class="sy0">:-</span>perl\64bit\perl\bin<span class="sy0">;</span>C<span class="sy0">:</span>_tools\jom<span class="sy0">;</span>C<span class="sy0">:</span>_tools\fart<span class="sy0">;</span>
+set PATH<span class="sy0">=</span>PATH<span class="sy0">;</span>C<span class="sy0">:</span><span class="nu0">32</span><span class="sy0">;</span>
+set LANG<span class="sy0">=</span>en
+C<span class="sy0">:</span>–4.7.4\qt<span class="sy0">-</span>everywhere<span class="sy0">-</span>opensource<span class="sy0">-</span>src<span class="sy0">-</span>4.7.4\configure.<span class="me1">exe</span> <span class="sy0">-</span>redo</pre></div></div>
+<ul>
+<li>and, if you want to use <a href="MSYS2.html" title="MSYS2">MSYS2</a>-shell, for 64bit (and 32bit) support based development, then follow this wiki page: <a href="MinGW-64-bit.html" title="MinGW-64-bit">MinGW-64-bit</a>
+</li>
+</ul>
+<p>After accepting the opensource license the configure command will then prepare qmake and the makefiles needed for the buildprocess.
+</p>
+<h2><span class="mw-headline" id="Build_Qt">Build Qt</span></h2>
+Instead of mingw32-make we use jom. It is capable of distributing the work over a bunch of cpus being engaged by a Windows operating system. Type:<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">jom <span class="sy0">/</span>W <span class="sy0">/</span>S <span class="sy0">-</span>j4</pre></div></div>or other commandline parameters if they fit better for you. After that the build process of Qt starts and you want to have a coffee or two.
+<p>jom should finish with some warnings but without any error and you will have a pretty new build of the Qt Desktop library. Keep the shell open to make the next steps.
+</p>
+<h2><span class="mw-headline" id="Installing_the_libraries.">Installing the libraries.</span></h2>
+<p>Installing the newly built libs is not straightforward because there is no "<i>make install</i>" way for the MinGW host. To install the Qt libraries and the tools of it there is some work to be done before.
+</p><p>All the makefiles have "install" rules that install exactly to the folder that was used to build the whole library in. So installing into that folder doesn't make very much sense. All of the objectfiles still remain, and if you don't want to rebuild everything in the near future it is just a waste of diskspace. Installing for MinGW needs these <i>install</i> rules to be changed a bit.
+</p><p>For that purpose you copied the <i>fart.exe</i> tool to the tools folder. <i>fart.exe</i> can be used like <i>sed</i> to find and replace text in textfiles. In the already open <i>cmd.exe</i> shell where you built the libs in you want to type the following:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">fart <span class="sy0">-</span>c <span class="sy0">-</span>i <span class="sy0">-</span>r Makefile<span class="sy0">*</span> $<span class="br0">&#40;</span>INSTALL_ROOT<span class="br0">&#41;</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x86<span class="sy0">-</span>build $<span class="br0">&#40;</span>INSTALL_ROOT<span class="br0">&#41;</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x86
+set INSTALL_ROOT<span class="sy0">=</span></pre></div></div>
+<p>Please note that after <i>INSTALL_ROOT=</i> must not be any character, not even a blank.
+</p><p>This command will change
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$<span class="br0">&#40;</span>INSTALL_ROOT<span class="br0">&#41;</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x86<span class="sy0">-</span>build</pre></div></div>
+<p>into
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$<span class="br0">&#40;</span>INSTALL_ROOT<span class="br0">&#41;</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x86</pre></div></div>
+<p>in every makefile and will set the shell variable to an empty string. Someone also could remove the variable at all, but that's on your decision.
+</p><p>After this jom can make the installation into c:–4.7.4\4.7.4-qt-x86:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">jom <span class="sy0">/</span>W <span class="sy0">/</span>S <span class="sy0">-</span>j4 install</pre></div></div>
+<p>Since it is late now, someone probably wants to have a beer or two and wait for the installation to complete. After this there are some steps to do manually:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">copy C<span class="sy0">:</span>–4.7.4\mingw32_x86\bin\mingwm10.<span class="me1">dll</span> C<span class="sy0">:</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x86\bin
+copy C<span class="sy0">:</span>–4.7.4\mingw32_x86\bin\libgcc_s_dw2<span class="sy0">-</span><span class="nu0">1</span>.<span class="me1">dll</span> C<span class="sy0">:</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x86\bin</pre></div></div>
+<p>Create a config file that tells qmake about its new installation path. Create a textfile C:–4.7.4\4.7.4-qt-x86\bin\qt.conf:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="br0">&#91;</span>Paths<span class="br0">&#93;</span>
+Prefix<span class="sy0">=</span>C<span class="sy0">:/</span>qt<span class="sy0">-</span>4.7.4<span class="sy0">/</span>4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x86
+Translations <span class="sy0">=</span> translations</pre></div></div>
+<p>For now there is a dazzling new installation of your personal Qt build that can be found on your harddisk under C:–4.7.4\4.7.4-qt-x86. Go ahead and delete the build directory if you don't need it any more. If you want to be able to debug into the Qt sourcecode you might want to keep the sourcetree alive.
+</p>
+<h1><span class="mw-headline" id="Build_Qt_with_MinGW_for_a_x64_.28x86_64.29_target">Build Qt with MinGW for a x64 (x86_64) target</span></h1>
+<p>This chapter describes on how to build the Qt opensource for a 64bit windows target.
+</p>
+<h2><span class="mw-headline" id="Required_toolchain_2">Required toolchain</span></h2>
+<ul>
+<li> Information about the MinGW-w64 can be found on <a rel="nofollow" class="external text" href="MinGW-2.html">the wiki on MinGW</a> and in this wiki page <a href="MinGW-64-bit.html" title="MinGW-64-bit">MinGW-64-bit</a>. The recommended download site of MinGW-builds provides the different flavors of the compiler. Developers of MinGW-builds have moved onto its newer successor project, <a href="MSYS2.html" title="MSYS2">MSYS2</a>, a complete opensource development solution/system, based on MinGW-w64 compilers/toolchains and MSYS. The MinGW-builds project is still supported.
+</li>
+</ul>
+<h2><span class="mw-headline" id="Filesystem_setup_2">Filesystem setup</span></h2>
+<p>Prepare your filesystem for your own build process. There is a batchfile that can build everything automatically. As soon as there will be a place to download you will be noted.
+</p><p>Prepare a tree that contains the tools and the source trees (replace the c:with whatever drive you need). It is recommended not to expand your computers path environment with the tools. Everything will take place in a single cmd.exe windows shell that has a path that fits your needs.
+</p><p>For filesystem setup open windows explorer and create the following folders:
+</p>
+<ul>
+<li> set the root to c:–4.7.4 copy the mingw contents of the zip into c:–4.7.4\mingw64_x64
+</li>
+<li> unzip the contents of the qt tar into c:–4.7.4\qt-everywhere-opensource-src-4.7.4
+</li>
+<li> install or copy Perl into c:–4.7.4\tools\Perl
+</li>
+<li> copy jom.exe into c:–4.7.4\tools\jom
+</li>
+<li> copy fart.exe into c:–4.7.4\tools\fart
+</li>
+<li> create a build directory for Qt under c:–4.7.4\4.7.4-qt-x64-build
+</li>
+</ul>
+<ul>
+<li> step into this build directory and create a file "<i>configure.cache</i>" with the following content (you may want to change for your needs):
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">-</span>platform win32<span class="sy0">-</span>g<span class="sy0">++</span> <span class="sy0">-</span>opensource
+<span class="sy0">-</span>debug <span class="sy0">-</span>debug<span class="sy0">-</span>and<span class="sy0">-</span>release
+<span class="sy0">-</span>no<span class="sy0">-</span>phonon
+<span class="sy0">-</span>fast
+<span class="sy0">-</span>nomake examples
+<span class="sy0">-</span>nomake demos
+<span class="sy0">-</span>no<span class="sy0">-</span>dsp
+<span class="sy0">-</span>no<span class="sy0">-</span>vcproj
+<span class="sy0">-</span>no<span class="sy0">-</span>cetest
+<span class="sy0">-</span>no<span class="sy0">-</span>s60
+<span class="sy0">-</span>qt<span class="sy0">-</span>sql<span class="sy0">-</span>odbc <span class="sy0">-</span>qt<span class="sy0">-</span>sql<span class="sy0">-</span>sqlite <span class="sy0">-</span>plugin<span class="sy0">-</span>sql<span class="sy0">-</span>odbc <span class="sy0">-</span>plugin<span class="sy0">-</span>sql<span class="sy0">-</span>SQLite
+<span class="sy0">-</span>no<span class="sy0">-</span>qt3support <span class="sy0">-</span>no<span class="sy0">-</span>opengl <span class="sy0">-</span>no<span class="sy0">-</span>openvg <span class="sy0">-</span>no<span class="sy0">-</span>incredibuild<span class="sy0">-</span>xge</pre></div></div>
+<p>Do not be irritated when looking at the win32-g++ makespec. This makespec is also capable of building 64bit Qt. The <i>PATH</i>&lt;/s&gt; shell variable does currently only contain the path to MinGW64. So there will be no confusion about the compilers:
+</p>
+<h2><span class="mw-headline" id="Configure_your_build_tree_2">Configure your build tree</span></h2>
+<ul>
+<li> Open a cmd.exe windows shell (Cmd-shell), <i>cd</i> into <i>c:–4.7.4\4.7.4-qt-x64-build</i> and type:
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">set PATH<span class="sy0">=</span>C<span class="sy0">:</span>–4.7.4\mingw64_x64\bin<span class="sy0">;</span>C<span class="sy0">:</span>–4.7.4\tools\Perl64\bin<span class="sy0">;</span>C<span class="sy0">:</span>–4.7.4\tools\jom<span class="sy0">;</span>C<span class="sy0">:</span>–4.7.4\tools\fart<span class="sy0">;</span>
+set PATH<span class="sy0">=</span>PATH<span class="sy0">;</span>c<span class="sy0">:</span><span class="nu0">32</span><span class="sy0">;</span>
+set LANG<span class="sy0">=</span>en
+c<span class="sy0">:</span>–4.7.4\qt<span class="sy0">-</span>everywhere<span class="sy0">-</span>opensource<span class="sy0">-</span>src<span class="sy0">-</span>4.7.4\configure.<span class="me1">exe</span> <span class="sy0">-</span>redo</pre></div></div>
+<ul>
+<li> If you are using MinGW-w64 (64bit) toolchain:
+<ul>
+<li> and, if you want to use Cmd-shell (cmd.exe windows shell), then <i>cd</i> into <i>c:5_windows_64bit</i> and type:
+</li>
+</ul>
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">set PATH<span class="sy0">=</span>C<span class="sy0">:-</span>w64\64bit\bin<span class="sy0">;</span>C<span class="sy0">:-</span>perl\64bit\perl\bin<span class="sy0">;</span>C<span class="sy0">:</span>_tools\jom<span class="sy0">;</span>C<span class="sy0">:</span>_tools\fart<span class="sy0">;</span>
+set PATH<span class="sy0">=</span>PATH<span class="sy0">;</span>C<span class="sy0">:</span><span class="nu0">32</span><span class="sy0">;</span>
+set LANG<span class="sy0">=</span>en
+C<span class="sy0">:</span>–4.7.4\qt<span class="sy0">-</span>everywhere<span class="sy0">-</span>opensource<span class="sy0">-</span>src<span class="sy0">-</span>4.7.4\configure.<span class="me1">exe</span> <span class="sy0">-</span>redo</pre></div></div>
+<ul>
+<li> and, if you want to use <a href="MSYS2.html" title="MSYS2">MSYS2</a>-shell, for 64bit (and 32bit) support based development, then follow this wiki page: <a href="MinGW-64-bit.html" title="MinGW-64-bit">MinGW-64-bit</a>
+</li>
+</ul>
+<p>After accepting the opensource license the configure command will then prepare qmake and the makefiles needed for the buildprocess.
+</p>
+<h2><span class="mw-headline" id="Build_Qt_2">Build Qt</span></h2>
+<p>Instead of mingw32-make we use jom. It is capable of distributing the work over a bunch of cpus being engaged by a Windows operating system. Type:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">jom <span class="sy0">/</span>W <span class="sy0">/</span>S <span class="sy0">-</span>j4</pre></div></div>
+<p>or other commandline parameters if they fit better for you. After that the build process of Qt starts and you want to have a coffee or two.
+</p><p>jom should finish with some warnings but without any error and you will have a pretty new build of the Qt Desktop library. Keep the shell open to make the next steps.
+</p>
+<h2><span class="mw-headline" id="Installing_the_libraries._2">Installing the libraries.</span></h2>
+<p>Installing the newly built libs is not straightforward because there is no "<i>make install</i>" way for the MinGW host. To install the Qt libraries and the tools of it there is some work to be done before.
+</p><p>All the makefiles have "install" rules that install exactly to the folder that was used to build the whole library in. So installing into that folder doesn't make very much sense. All of the objectfiles still remain, and if you don't want to rebuild everything in the near future it is just a waste of diskspace. Installing for MinGW needs these <i>install</i> rules to be changed a bit.
+</p><p>For that purpose you copied the <i>fart.exe</i> tool to the tools folder. <i>fart.exe</i> can be used like <i>sed</i> to find and replace text in textfiles. In the already open <i>cmd.exe</i> shell where you built the libs in you want to type the following:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">fart <span class="sy0">-</span>c <span class="sy0">-</span>i <span class="sy0">-</span>r Makefile<span class="sy0">*</span> $<span class="br0">&#40;</span>INSTALL_ROOT<span class="br0">&#41;</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x64<span class="sy0">-</span>build $<span class="br0">&#40;</span>INSTALL_ROOT<span class="br0">&#41;</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x64
+set INSTALL_ROOT<span class="sy0">=</span></pre></div></div>
+<p>Please note that after <i>INSTALL_ROOT=</i> must not be any character, not even a blank.
+</p><p>This command will change
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$<span class="br0">&#40;</span>INSTALL_ROOT<span class="br0">&#41;</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x64<span class="sy0">-</span>build</pre></div></div>
+<p>into
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$<span class="br0">&#40;</span>INSTALL_ROOT<span class="br0">&#41;</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x64</pre></div></div>
+<p>in every makefile and will set the shell variable to an empty string. Someone also could remove the variable at all, but that's on your decision.
+</p>
+After this jom can make the installation into c:–4.7.4\4.7.4-qt-x64:<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">jom <span class="sy0">/</span>W <span class="sy0">/</span>S <span class="sy0">-</span>j4 install</pre></div></div>
+<p>Since it is late now, someone probably wants to have a beer or two and wait for the installation to complete. After this there are some steps to do manually:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">copy C<span class="sy0">:</span>–4.7.4\mingw64_x64\bin\libgcc_s_sjlj<span class="sy0">-</span><span class="nu0">1</span>.<span class="me1">dll</span> C<span class="sy0">:</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x64\bin</pre></div></div>
+<p>The dual-target MinGW compiler adds an additional required dll to be copied. Following this guide step by step starting qmake will bring up an error message about missing libwinpthread-1.dll.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">copy C<span class="sy0">:</span>–4.7.4\mingw64_x64\bin\libwinpthread<span class="sy0">-</span><span class="nu0">1</span>.<span class="me1">dll</span> C<span class="sy0">:</span>–4.7.4\4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x64\bin</pre></div></div>
+<p>Create a config file that tells qmake about its new installation path. Create a textfile C:–4.7.4\4.7.4-qt-x64\bin\qt.conf:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="br0">&#91;</span>Paths<span class="br0">&#93;</span>
+Prefix<span class="sy0">=</span>C<span class="sy0">:/</span>qt<span class="sy0">-</span>4.7.4<span class="sy0">/</span>4.7.4<span class="sy0">-</span>qt<span class="sy0">-</span>x64
+Translations <span class="sy0">=</span> translations</pre></div></div>
+<p>For now there is a dazzling new installation of your personal Qt build that can be found on your harddisk under C:–4.7.4\4.7.4-qt-x64. Go ahead and delete the build directory if you don't need it any more. If you want to be able to debug into the Qt sourcecode you might want to keep the sourcetree alive.
+</p>
+<h1><span class="mw-headline" id="Building_a_cross_Qt_for_x86_host_and_x64_target">Building a cross Qt for x86 host and x64 target</span></h1>
+<p>Coming soon… You may visit this wiki page: <a href="MinGW-64-bit.html" title="MinGW-64-bit">MinGW-64-bit</a>
+</p>
+<h1><span class="mw-headline" id="Links_and_references">Links and references</span></h1>
+<ul>
+<li> <a rel="nofollow" class="external free" href="http://code.google.com/p/qt-msvc-installer/wiki/RelocationTricks">http://code.google.com/p/qt-msvc-installer/wiki/RelocationTricks</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="http://stackoverflow.com/questions/4699311/how-to-install-qt-on-windows-after-building">http://stackoverflow.com/questions/4699311/how-to-install-qt-on-windows-after-building</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="http://www.mixxx.org/wiki/doku.php/compiling_on_windows">http://www.mixxx.org/wiki/doku.php/compiling_on_windows</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="http://en.wikipedia.org/wiki/Batch_file">http://en.wikipedia.org/wiki/Batch_file</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="Building_Qt_Documentation.html">http://wiki.qt.io/Building_Qt_Documentation</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="http://pinyotae.blogspot.de/2010/11/building-64-bit-qt-47-using-mingw-w64.html">http://pinyotae.blogspot.de/2010/11/building-64-bit-qt-47-using-mingw-w64.html</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-4.7.4.tar.gz">http://get.qt.nokia.com/qt/source/qt-everywhere-opensource-src-4.7.4.tar.gz</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="http://qt.io/faq/answer/how_can_i_set_up_my_environment_for_building_qt_qt_applications_with_mingw">http://qt.io/faq/answer/how_can_i_set_up_my_environment_for_building_qt_qt_applications_with_mingw</a>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.412 seconds
+Real time usage: 0.433 seconds
+Preprocessor visited node count: 353/1000000
+Preprocessor generated node count: 1083/1000000
+Post‐expand include size: 2743/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:137-0!*!0!!en!*!* and timestamp 20151104112451 and revision id 18201
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index029a.html?title=Building_Qt_Desktop_for_Windows_with_MinGW&amp;oldid=18201">http://wiki.qt.io/index.php?title=Building_Qt_Desktop_for_Windows_with_MinGW&amp;oldid=18201</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=806a762b50b4b96d&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Building_Qt_Desktop_for_Windows_with_MinGW.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Building_Qt_Desktop_for_Windows_with_MinGW.html?title=Talk:Building_Qt_Desktop_for_Windows_with_MinGW&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Building_Qt_Desktop_for_Windows_with_MinGW.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index8a5f.html?title=Building_Qt_Desktop_for_Windows_with_MinGW&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexf418.html?title=Building_Qt_Desktop_for_Windows_with_MinGW&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Building_Qt_Desktop_for_Windows_with_MinGW.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Building_Qt_Desktop_for_Windows_with_MinGW.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index029a.html?title=Building_Qt_Desktop_for_Windows_with_MinGW&amp;oldid=18201" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index2469.html?title=Building_Qt_Desktop_for_Windows_with_MinGW&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 June 2015, at 20:17.</li>
+											<li id="footer-info-viewcount">This page has been accessed 9,055 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":193});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_Desktop_for_Windows_with_MinGW&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:10:20 GMT -->
+</html>

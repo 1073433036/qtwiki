@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_5_from_Git/ru&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Building Qt 5 from Git/ru - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building_Qt_5_from_Git/ru","wgTitle":"Building Qt 5 from Git/ru","wgCurRevisionId":18045,"wgRevisionId":18045,"wgArticleId":160,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","HowTo","Developing with Qt::Qt 5"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building_Qt_5_from_Git/ru","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building_Qt_5_from_Git_ru skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Building Qt 5 from Git/ru</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="Building_Qt_5_from_Git.html" title="Building Qt 5 from Git">Building Qt 5 from Git</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexdd4f.html?title=Building_Qt_5_from_Git/ru&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><b>Русский</b> <a href="Building-Qt-5-from-Git.html" title="Building-Qt-5-from-Git" class="mw-redirect">English</a> <a href="Building-Qt-5-from-Git-SimplifiedChinese.html" title="Building-Qt-5-from-Git-SimplifiedChinese" class="mw-redirect">简体中文</a> <a href="Building-Qt-5-from-Git-Bulgarian.html" title="Building-Qt-5-from-Git-Bulgarian" class="mw-redirect">Български</a> <a href="Building-Qt-5-from-Git-French.html" title="Building-Qt-5-from-Git-French" class="mw-redirect">Français</a>
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.D0.A1.D0.B1.D0.BE.D1.80.D0.BA.D0.B0_Qt_5_.D0.B8.D0.B7_Git"><span class="tocnumber">1</span> <span class="toctext">Сборка Qt 5 из Git</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5"><span class="tocnumber">1.1</span> <span class="toctext">Введение</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.D0.A2.D1.80.D0.B5.D0.B1.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BA_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B5"><span class="tocnumber">1.2</span> <span class="toctext">Требования к системе</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.B4.D0.B0"><span class="tocnumber">1.3</span> <span class="toctext">Получение исходного кода</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B8_.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B0"><span class="tocnumber">1.4</span> <span class="toctext">Конфигурирование и сборка</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.28Linux_.2F_Mac_OS_X.29"><span class="tocnumber">1.5</span> <span class="toctext">Установка (Linux / Mac OS X)</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#.D0.9E.D1.87.D0.B8.D1.81.D1.82.D0.BA.D0.B0"><span class="tocnumber">1.6</span> <span class="toctext">Очистка</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9"><span class="tocnumber">1.7</span> <span class="toctext">Получение обновлений</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D1.8B.D1.85_.D0.BE.D1.82.D0.B2.D0.B5.D1.82.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_.D0.BF.D0.BE.D0.B4.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F.D1.85"><span class="tocnumber">1.8</span> <span class="toctext">Использование основных ответвлений в подмодулях</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#.D0.98.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B"><span class="tocnumber">1.9</span> <span class="toctext">Известные проблемы</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#.D0.92.D0.BE.D0.BF.D1.80.D0.BE.D1.81.D1.8B_.D0.B8_.D0.BA.D0.BE.D0.BC.D0.BC.D0.B5.D0.BD.D1.82.D0.B0.D1.80.D0.B8.D0.B8"><span class="tocnumber">1.10</span> <span class="toctext">Вопросы и комментарии</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id=".D0.A1.D0.B1.D0.BE.D1.80.D0.BA.D0.B0_Qt_5_.D0.B8.D0.B7_Git">Сборка Qt 5 из Git</span></h1>
+<h2><span class="mw-headline" id=".D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5">Введение</span></h2>
+<p>В этой статье мы попытаемся дать некоторые объяснения касательно получения модулей Qt 5 из git и способы последующей их сборки. Не стесняйтесь обновлять эту статью, некоторые вещи изменяются во время разработки. Обсуждение проблем и их решения можно найти в ветке форума <a rel="nofollow" class="external free" href="http://developer.qt.nokia.com/forums/viewthread/7018">http://developer.qt.nokia.com/forums/viewthread/7018</a> (на английском).
+</p>
+<h2><span class="mw-headline" id=".D0.A2.D1.80.D0.B5.D0.B1.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BA_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B5">Требования к системе</span></h2>
+<p>Вам очевидно потребуется git (<b>&gt;= 1.6.x</b>) для получения пакетов.
+</p><p>Чтобы правильно сконфигурировать и собрать Qt 5 из исходных текстов, вам будут необходимы Perl (<b>&gt;=5.14</b>) и Python (<b>&gt;=2.6.x</b>), а так-же рабочий компилятор.
+</p><p>Для включения поддержки SSL в QT посмотрите: <a rel="nofollow" class="external free" href="http://doc.qt.io/qt-5.0/qtnetwork/ssl.html">http://doc.qt.io/qt-5.0/qtnetwork/ssl.html</a>
+</p>
+<h3><span class="mw-headline" id="Linux.2FX11">Linux/X11</span></h3>
+<h4><span class="mw-headline" id=".D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D1.8B_.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B8">Основы сборки</span></h4>
+<p><i>Ubuntu/Debian:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo apt<span class="sy0">-</span>get install build<span class="sy0">-</span>essential perl python git</pre></div></div>
+<p><a rel="nofollow" class="external text" href="http://xcb.freedesktop.org/">Libxcb</a> <i>[xcb.freedesktop.org]</i>: теперь является бэкэндом оконной системы по умолчанию для платформ на основе X11/Xorg, и поэтому вы должны установить libxcb и его сопроводительные пакеты. Qt5 может быть собран с любой libxcb версией, доступной в дистрибутивных пакетах (но вы можете дополнительно использовать v1.8 или выше, чтобы распараллелить поддержку рендеринга).
+<a rel="nofollow" class="external text" href="http://code.qt.io/qt/qtbase/blobs/master/src/plugins/platforms/xcb/README">src/plugins/platforms/xcb/README</a> <i>[code.qt.io]</i>: перечисляет требуемые пакеты.
+</p>
+<h4><span class="mw-headline" id="Libxcb">Libxcb</span></h4>
+<p><i>Ubuntu/Debian:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo apt<span class="sy0">-</span>get install <span class="st0">&quot;^libxcb.*&quot;</span> libx11<span class="sy0">-</span>xcb<span class="sy0">-</span>dev libglu1<span class="sy0">-</span>mesa<span class="sy0">-</span>dev libxrender<span class="sy0">-</span>dev</pre></div></div>
+<p><i>Fedora 16 и выше:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">su <span class="sy0">-</span> <span class="sy0">-</span>c <span class="st0">&quot;yum install libxcb libxcb-devel xcb-util xcb-util-devel&quot;</span></pre></div></div>
+<p><i>Fedora 17+</i> (xcb-util-renderutil в настоящее время доступно в обновлениях тестового репозитария, но пока работает не устойчиво):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">su <span class="sy0">-</span> <span class="sy0">-</span>c <span class="st0">&quot;yum —enablerepo=updates-testing install libxcb libxcb-devel xcb-util xcb-util-devel xcb-util-'''-devel&quot;</span></pre></div></div>
+<p>Команда установки perl-version для Fedora
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">su <span class="sy0">-</span> <span class="sy0">-</span>c <span class="st0">&quot;yum install perl-version&quot;</span></pre></div></div>
+<p><i>ArchLinux:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo pacman <span class="sy0">-</span>S —needed libxcb xcb<span class="sy0">-</span>proto xcb<span class="sy0">-</span>util xcb<span class="sy0">-</span>util<span class="sy0">-</span>image xcb<span class="sy0">-</span>util<span class="sy0">-</span>wm</pre></div></div>
+<p>На Linux Chakra, кроме пакетов, упомянутых для ArchLinux, вы должны дополнительно установить пакет xcb-util-keysyms. Этот пакет доступен из CCR.
+</p><p><i>Mandriva/ROSA/Unity:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">urpmi <span class="st0">'pkgconfig(xcb)'</span> <span class="st0">'pkgconfig(xcb-icccm)'</span> <span class="st0">'pkgconfig(xcb-image)'</span> <span class="st0">'pkgconfig(xcb-renderutil)'</span>
+      <span class="st0">'pkgconfig(xcb-keysyms)'</span> <span class="st0">'pkgconfig(xrender)'</span></pre></div></div>
+<h4><span class="mw-headline" id=".D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_OpenGL">Поддержка OpenGL</span></h4>
+<p>Для QtQuick2 настоятельно рекомендуется графический драйвер с собственной поддержкой OpenGL 2.0.
+</p>
+<h4><span class="mw-headline" id="QtJsonDb">QtJsonDb</span></h4>
+<p>QtJsonDb зависит от libedit:
+</p><p><i>Ubuntu/Debian:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo apt<span class="sy0">-</span>get install libedit<span class="sy0">-</span>dev</pre></div></div>
+<p><i>Mandriva/ROSA/Unity:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">urpmi <span class="st0">'pkgconfig(libedit)'</span></pre></div></div>
+<h4><span class="mw-headline" id="Qt_WebKit">Qt WebKit</span></h4>
+<p>Перед тем как компилировать webkit, вам потребуется установить следующие зависимые пакеты:
+</p><p><i>Ubuntu/Debian:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo apt<span class="sy0">-</span>get install flex bison gperf libicu<span class="sy0">-</span>dev libxslt<span class="sy0">-</span>dev</pre></div></div>
+<p><i>Fedora:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">su<span class="sy0">-</span> <span class="sy0">-</span>c <span class="st0">&quot;yum install gperf&quot;</span></pre></div></div>
+<p><i>Mandriva/ROSA/Unity:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">urpmi gperf</pre></div></div>
+<h4><span class="mw-headline" id="QtWayland_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D0.B8">QtWayland зависимости</span></h4>
+<p>Для сборки модуля QtWayland, должны быть установлены библиотеки разработки <a rel="nofollow" class="external text" href="http://wayland.freedesktop.org/">Wayland</a> <i>[wayland.freedesktop.org]</i>: (<b>libxcomposite-dev</b> и <b>libwayland-dev</b>).
+</p>
+<h3><span class="mw-headline" id="Mac_OS_X">Mac OS X</span></h3>
+<p>XCode и GIT должно быть достаточно.
+</p>
+<h3><span class="mw-headline" id="Windows">Windows</span></h3>
+<h4><span class="mw-headline" id=".D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_Windows">Графические драйверы Windows</span></h4>
+<p>Для работы QML2 потребуются драйвера OpenGL (Nvidia, и т.д.), с поддержкой OpenGL 2.1 или выше для вашей видеокарты. По умолчанию, в Windows установлены драйвера с поддержкой OpenGL 1.1, которой будет недостаточно.
+</p><p>Альтернативой может служить, <a rel="nofollow" class="external text" href="http://code.google.com/p/angleproject/">ANGLE-library</a> <i>[code.google.com]</i>, которая обеспечивает, Open GL ES 2.0, переводящая вызовы Open_GL в <i>Direct X</i>. Чтобы создать её, вы должны проделать следующее:
+</p>
+<ol>
+<li> установить <a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/directx/default.aspx">Direct X SDK</a> <i>[msdn.microsoft.com]</i>:
+</li>
+<li> получить и скомпилировать ANGLE (из SVN репозитория) как описано на этой <a rel="nofollow" class="external text" href="http://code.google.com/p/angleproject/wiki/DevSetup">странице</a> <i>[code.google.com]</i>:
+</li>
+<li> Примечание: При сборке для 64х битных систем, деактивируйте опцию <i>WarnAsError</i> в каждом файле проекта (поскольку в противном случае предупреждения о целочисленных преобразованиях повредят сборку).
+</li>
+<li> При конфигурировании Qt передайте в параметры командной строки <i>-opengl es2 -angle &lt;path&gt;</i>
+</li>
+</ol>
+<h4><span class="mw-headline" id=".D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.82.D0.BE.D1.80.D1.8B_.D0.BD.D0.B0_Windows">Поддерживаемые компиляторы на Windows</span></h4>
+<ul>
+<li> <i>Windows SDK 7.1 с Visual Studio 2010</i> (предпочтительно). С 16.03.2012, при установке SDK потребуется установка пакетов в следующем порядке (см. readme.html предоставленный пакетом обновления):
+</li>
+</ul>
+<ol>
+<li> Установка Visual Studio 2010
+</li>
+<li> Установка Windows SDK 7.1
+</li>
+<li> Установка Visual Studio 2010 SP1
+</li>
+<li> Установка Visual C++ 2010 SP1 Обновление компилятора для Windows SDK 7.1
+</li>
+</ol>
+<ul>
+<li> <i>Windows SDK 7 с Visual Studio 2008</i>
+</li>
+<li> <i>Windows Kit 8 with Visual Studio 2012</i>
+</li>
+<li> <a rel="nofollow" class="external text" href="http://www.mingw.org/">MinGW</a> <i>[mingw.org]</i> или <a rel="nofollow" class="external text" href="http://tdm-gcc.tdragon.net/">TDM MinGW (64bit)</a> <i>[tdm-gcc.tdragon.net]</i> с <i>g++</i> версии 4.6 или выше (поддерживается не всеми модулями)
+</li>
+</ul>
+<h4><span class="mw-headline" id=".D0.A1.D1.80.D0.B5.D0.B4.D0.B0_.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B8_Windows">Среда сборки Windows</span></h4>
+<p>Мы рекомендуем создать файл командной строки, который предоставит среду сборки (см. <a rel="nofollow" class="external text" href="http://code.qt.io/qt-creator/qt-creator/blobs/master/README">Qt Creator README</a> <i>[code.qt.io]</i>). В этой среде <i>Python</i> (например, <i>Active Python 2.7</i> или старше) и <i>Perl</i> (например, <i>Active State Perl 5.12</i> или старше) должны быть указаны в переменной среды <i>PATH</i>.
+<br />
+Скачать Perl: <a rel="nofollow" class="external free" href="http://www.activestate.com/activeperl/downloads">http://www.activestate.com/activeperl/downloads</a> <i>[activestate.com]</i>
+<br />
+Скачать Python: <a rel="nofollow" class="external free" href="http://www.python.org/download/releases/">http://www.python.org/download/releases/</a> <i>[python.org]</i>
+<br />
+Скачать Ruby:<a rel="nofollow" class="external free" href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a> <i>[rubyinstaller.org]</i>
+</p><p><b>Подсказка</b>: Удостоверьтесь, что <i>Perl</i> описан в пути <i>PATH</i> перед <i>git</i>, так как последний имеет устаревшую версию (<i>Perl</i> 5. 8), и может прервать работу сценария.
+</p><p><b>Многопроцессорная сборка</b>: При использовании <i>nmake</i>, может быть установлена переменная окружения <i>CL</i> (опция компилятора Visual Studio) <i>set CL=/MP</i>, давая компилятору команду использовать все ядра. Альтернативно, может использоваться инструмент <a rel="nofollow" class="external text" href="Jom.html">jom</a> <i>[wiki.qt.io]</i>. Однако, надо отметить, что у него есть проблемы с взаимозависимостями модуля, которые могут прервать сборку.
+</p>
+<h4><span class="mw-headline" id="ICU_.D0.BD.D0.B0_Windows">ICU на Windows</span></h4>
+<p>Qt 5 может использовать библиотеку <a rel="nofollow" class="external text" href="http://site.icu-project.org/">ICU</a> <i>[site.icu-project.org]</i> для UNICODE и поддержки глобализации. Это <b>требуется</b> для создания QtWebKit.
+</p><p>Во время компиляции <i>include</i> и <i>lib</i> папки установки ICU должны быть добавлены к <i>INCLUDE</i> и <i>LIB</i> переменным окружения после вызова сценария установки SDK Windows.
+</p><p>Во время выполнения ICU должны быть найдены DLL библиотеки. Это может быть достигнуто, с помощью копирования DLL в папку приложения или добавления папки <i>bin</i> установленного ICU в переменную окружения <i>PATH</i>.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id=".D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.B4.D0.B0">Получение исходного кода</span></h2>
+<p>Сначала клонируйте верхний уровень git репозитария Qt 5:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git clone git<span class="sy0">:</span><span class="co1">//code.qt.io/qt/qt5.git qt5</span></pre></div></div>
+<p>или (если вы находитесь за межсетевым экраном можно использовать https протокол):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git clone https<span class="sy0">:</span><span class="co1">//code.qt.io/qt/qt5.git qt5</span></pre></div></div>
+<p>После прочтения <a rel="nofollow" class="external text" href="http://code.qt.io/qt/qt5/blobs/master/README">README</a> <i>[code.qt.io]</i> - файла, мы инициализируем репозиторий, используя сценарий <i>init-repository</i>, который клонирует различные подмодули Qt5. Соответствующие опции:
+<br />
+</p>
+<ul>
+<li> <i>--no-webkit</i>: позволяет не загружать qtwebkit, при передаче этой опции. Этот модуль довольно большой, компиляция занимает много времени и часто является источником ошибок. Таким образом, рекомендуется загружать и собирать его, только если намереваетесь использовать. В дальнейшем вы всегда можете повторно выполнить init-repository, чтобы добавить этот подмодуль.
+</li>
+<li> <i>--http</i>: передайте эту опцию, если находитесь позади брандмауэра.
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd qt5
+perl init<span class="sy0">-</span>repository</pre></div></div>
+<p>Если вы планируете участвовать в развитии Qt, вы должны определить <a href="Gerrit_Introduction.html" title="Gerrit Introduction"> codereview-username </a> свое имя пользователя, это необходимо для того чтобы отделить особенности вашей версии:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">perl init<span class="sy0">-</span>repository —codereview<span class="sy0">-</span>username <span class="sy0">&lt;</span>Jira<span class="sy0">/</span>Gerrit username<span class="sy0">&gt;</span></pre></div></div>
+<h2><span class="mw-headline" id=".D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B8_.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B0">Конфигурирование и сборка</span></h2>
+<p>Установите путь так, чтобы использовать инструменты Qt5, а не старые Qt4 и прочие, которые могут присутствовать в системе:
+</p><p><i>Для Linux/Mac OS X:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">unset QTDIR
+export PATH<span class="sy0">=</span><span class="st0">&quot;$PWD/qtbase/bin:$PWD/qtrepotools/bin:$PATH&quot;</span></pre></div></div>
+<p><i>Для Windows:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">set QTDIR<span class="sy0">=</span>
+set PATH<span class="sy0">=%</span>CD<span class="sy0">%</span>\qtbase\bin<span class="sy0">;%</span>CD<span class="sy0">%</span>\qtrepotools\bin<span class="sy0">;%</span>PATH<span class="sy0">%</span></pre></div></div>
+<p>Теперь сконфигурируйте сборку (из директории верхнего уровня). Отключение тестов <i>tests</i> и примеров <i>examples</i> значительно ускорит компиляцию:
+</p><p><i>Для Linux/Mac OS X:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">.<span class="sy0">/</span>configure <span class="sy0">-</span>developer<span class="sy0">-</span>build <span class="sy0">-</span>opensource <span class="sy0">-</span>nomake examples <span class="sy0">-</span>nomake tests</pre></div></div>
+<p><i>Для Windows:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">configure <span class="sy0">-</span>developer<span class="sy0">-</span>build <span class="sy0">-</span>opensource <span class="sy0">-</span>nomake examples <span class="sy0">-</span>nomake tests</pre></div></div>
+<ul>
+<li> <i>-developer-build</i> - эта опция экспортирует больше символов, чем в традиционной сборке Qt, что позволяет большему количеству классов и функций быть протестированными модулем. Это также значение по умолчанию для сборки отладочной версии и установки двоичных файлов в текущем каталоге, и позволяет избежать потребности в 'make install'.
+</li>
+<li> <i>-opensource</i> - устанавливает лицензию LGPL 2.1.
+</li>
+<li> <i>-nomake examples</i> и <i>-nomake tests</i> - исключение из сборки тестов и примеров. В дальнейшем вы всегда можете собрать их отдельно.
+</li>
+</ul>
+<p><b>Подсказка 1:</b> На Linux вы должны также передать параметр <i>-no-gtkstyle</i>. Это вызвано тем, что в ряде систем (по крайней мере, SUSE и Gentoo) <i>pkg-config —cflags gtk+–2.0</i> фактически возвращает пути, которые включают в систему Qt4.x-include каталоги.
+</p><p><b>Подсказка 2:</b> Можете добавить <i>-confirm-license</i>, чтобы принять лицензию и избавиться от вопроса о ее принятии.
+</p><p><b>Подсказка 3:</b> На Windows вы не в состоянии осуществить сборку, если <i>sh.exe</i> находится в <i>PATH</i> (например, из-за установленного <i>git</i> или <i>msys</i>). Такая ошибка обозначается в сообщениях <i>qt5-srcqtbasebinqmake.exe: command not found</i> и подобных. В этом случае удостоверьтесь, что <i>sh.exe</i> не указан в переменной <i>PATH</i>. Вы должны будете вновь сконфигурировать сборку, в случае если вы его удалили.
+</p><p>Запускаем сборку, вызывая <i>build</i> perl сценарий:
+</p><p><i>Для Linux:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">.<span class="sy0">/</span>build <span class="sy0">-</span>j <span class="nu0">3</span></pre></div></div>
+<p>Для Windows (MSVC):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">perl build</pre></div></div>
+<p>Или просто соберите определенный модуль, например, <i>declarative</i>, и модули, от которых он зависит:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make module<span class="sy0">-</span>qtdeclarative</pre></div></div>
+<p><b>Подсказка 1:</b> <i>build</i> сценарий используется для сборки всей конфигурации. Для сборки модулей из каталогов с исходниками, вы можете выполнять команду <i>make</i>. Это тоже работает.
+<b>Подсказка 2:</b> <i>jom</i>, низкоуровневая замена nmake на Windows, она пока не правильно работает для высокоуровневых сборок. Однако, вы можете использовать его для (пере-)создания отдельных подмодулей.
+</p>
+<h3><span class="mw-headline" id=".D0.A1.D0.B1.D0.BE.D1.80.D0.BA.D0.B0_QtWebKit">Сборка QtWebKit</span></h3>
+<p><i>Linux, Mac</i>
+</p><p>Для сборки потребуются инструменты <i>bison</i>, <i>flex</i> и <i>gperf</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd qtwebkit
+export WEBKITOUTPUTDIR<span class="sy0">=</span><span class="st0">&quot;$PWD/WebKitBuild&quot;</span>
+perl Tools<span class="sy0">/</span>Scripts<span class="sy0">/</span>build<span class="sy0">-</span>webkit <span class="sy0">--</span>qt <span class="sy0">--</span>qmake<span class="sy0">=</span><span class="st0">&quot;$PWD/../qtbase/bin/qmake&quot;</span> <span class="sy0">--</span>install<span class="sy0">-</span>libs<span class="sy0">=&lt;</span>install dir<span class="sy0">&gt;</span> <span class="sy0">--</span>debug 
+     <span class="sy0">--</span>makeargs<span class="sy0">=</span><span class="st0">&quot;$MAKEFLAGS&quot;</span></pre></div></div>
+<p><i>Windows</i>
+</p><p>На сайте  <a rel="nofollow" class="external text" href="http://trac.webkit.org/wiki/BuildingQtOnWindows">WebKit.org</a> <i>[trac.webkit.org]</i> вы найдете инструкции для создания WebKit на Windows. Кроме того потребуются библиотеки <a rel="nofollow" class="external text" href="http://site.icu-project.org/">ICU</a> <i>[site.icu-project.org]</i> и <a rel="nofollow" class="external text" href="http://sourceware.org/pthreads-win32">phtreads-win32</a> <i>[sourceware.org]</i>. После распаковки пакета (в папку <i>c:</i>), необходимо сделать следующее:
+</p>
+<ul>
+<li> Добавить <i>c:\phtreads\pthreads.2</i> в переменную окружения <i>INCLUDE</i>
+</li>
+<li> Добавить <i>c:\phtreads\Pre-built.2\lib\x64</i> или <i>c:\phtreads\Pre-built.2\lib\x86</i> в переменную окружения LIB
+</li>
+<li> Добавить <i>c:\phtreads\Pre-built.2\dll\x64</i> или <i>c:\phtreads\Pre-built.2\dllx86</i> в переменную окружения PATH
+</li>
+</ul>
+<p>Инструменты <i>bison</i>, <i>flex</i> и <i>gperf</i>, которые требуются для сборки, предусмотрительно размещены в папке <i>gnuwin32\bin</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">set PATH<span class="sy0">=%</span>PATH<span class="sy0">%;%</span>CD<span class="sy0">%</span>\gnuwin32\bin
+cd qtwebkit
+set WEBKITOUTPUTDIR<span class="sy0">=%</span>CD<span class="sy0">%</span>\WebKitBuild
+perl Tools\Scripts\build<span class="sy0">-</span>webkit <span class="sy0">--</span>qt <span class="sy0">--</span>qmake<span class="sy0">=</span><span class="st0">&quot;%CD%<span class="es1">\\</span>..<span class="es1">\\</span>qtbase<span class="es1">\\</span>bin<span class="es1">\\</span>qmake.exe&quot;</span> <span class="sy0">--</span>install<span class="sy0">-</span>libs<span class="sy0">=&lt;</span>install dir<span class="sy0">&gt;</span> 
+     <span class="sy0">--</span>release <span class="sy0">--</span>makeargs<span class="sy0">=</span><span class="st0">&quot;%MAKEFLAGS%&quot;</span></pre></div></div>
+<h2><span class="mw-headline" id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.28Linux_.2F_Mac_OS_X.29">Установка (Linux / Mac OS X)</span></h2>
+<p><b>Примечание:</b> Установка будет необходима только если вы не использовали опции <i>-developer-build</i> или <i>-prefix "%PWD%/qtbase"</i>. В противном случае вы можете просто пользоваться Qt из каталога сборки.
+</p><p>Для установки, выполните
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make install</pre></div></div>
+<p>Но если вы желаете провести установку в нестандартный каталог, для того чтобы протестировать Qt5, вам необходимо описать где будет находиться каталог bin вашей установки в переменной PATH. Также вы должны или удостовериться, что не имеете переменнной среды QTDIR, или опишите в этой переменной путь установки перед тем как будете выполнять <i>make install</i>. Например, при установке в /opt/qt5 (это предполагает, использование <i>bash</i>; для csh-подобных оболочек вы должны будете сначала выполнить setenv эквиваленты):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">PATH<span class="sy0">=/</span>opt<span class="sy0">/</span>qt5<span class="sy0">:</span>$PATH QTDIR<span class="sy0">=/</span>opt<span class="sy0">/</span>qt5 make install</pre></div></div>
+<h2><span class="mw-headline" id=".D0.9E.D1.87.D0.B8.D1.81.D1.82.D0.BA.D0.B0">Очистка</span></h2>
+<p>Для получения <b>действительно</b> чистого дерева используйте:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git submodule <span class="kw2">foreach</span> <span class="sy0">--</span>recursive <span class="st0">'git clean -dfx'</span></pre></div></div>
+<p>с некоторых пор, confclean, больше не работает из верхнего уровня репозитария.
+</p>
+<h2><span class="mw-headline" id=".D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9">Получение обновлений</span></h2>
+<p>Чтобы обновить qt5.git репозитарий, а также подмодули до последних известных протестированных версий, выполните
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git pull
+git submodule update <span class="sy0">--</span>recursive</pre></div></div>
+<p>Если вы планируете делать ночные сборки, рассмотрите использование сценария <i>qt5_tool</i>, который находится в <i>qtrepotools/bin</i>. Этот сценарий предоставляет возможность обновления репозитария, очистки и сборки. Например, 
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qt5_tool <span class="sy0">-</span>u <span class="sy0">-</span>c <span class="sy0">-</span>b</pre></div></div> 
+<p>может использоваться, чтобы очистить, обновить и собрать. А 
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qt5_tool <span class="sy0">-</span>p <span class="sy0">-</span>c<span class="sy0">-</span> b</pre></div></div> 
+<p>используется для того чтобы получить все головные модули и их основные ответвления.
+</p>
+<ul>
+<li> <b>Подсказка 1:</b> <i>git submodule update</i> делает "жесткий" сброс подмодулей, потенциально избавляя от любых нежелательных изменений которые вы сделали! Если это произошло с вами (и вы не работали с персональными ответвлениями), <i>git reflog</i>, ваш друг….
+</li>
+<li> <b>Подсказка 2:</b> При создании сценариев для обновлений на Windows отметьте, что <i>git clean</i> часто сбоит, если какой либо процесс блокирует файл или папку.
+</li>
+</ul>
+<h2><span class="mw-headline" id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D1.8B.D1.85_.D0.BE.D1.82.D0.B2.D0.B5.D1.82.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_.D0.BF.D0.BE.D0.B4.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F.D1.85">Использование основных ответвлений в подмодулях</span></h2>
+<p>По умолчанию <i>checkout</i> не будет содержать последние основные ответвления каждого отдельного репозитария подмодуля, но содержит комбинацию версий, которые зависят друг от друга. Если требуется получить абсолютно последний материал, можете сделать например так:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd qtdeclarative
+git fetch
+git checkout master origin<span class="sy0">/</span>master</pre></div></div>
+<p>или используйте qt5_tool, чтобы обновить все репозитарии:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">.<span class="sy0">/</span>qtrepotools<span class="sy0">/</span>bin<span class="sy0">/</span>qt5_tool <span class="sy0">-</span>p</pre></div></div>
+<p>Однако, всегда есть шанс, что компиляция перестанет работать из-за несовместимых версий подмодулей! В таком случае, вы можете спросить у других людей, активно работающих над модулем, как разрешить эти несовместимости.
+</p>
+<h2><span class="mw-headline" id=".D0.98.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B">Известные проблемы</span></h2>
+<h3><span class="mw-headline" id="Linux">Linux</span></h3>
+<h4><span class="mw-headline" id=".D1.81.D0.B1.D0.BE.D0.B9_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.B8_.D1.81_.22No_QPA_platform_plugin_enabled.21_.22_.28Linux.29">сбой конфигурации с "No QPA platform plugin enabled! " (Linux)</span></h4>
+<p>Вам необходимо установить libxcb, и его зависимые пакеты, см. 'Системные требования'.
+</p>
+<h4><span class="mw-headline" id="qmlscene_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B5_.22Cannot_create_platform_GL_context.2C_none_of_GLX.2C_EGL.2C_DRI2_is_enabled.22_.28Linux.29">qmlscene сообщение об ошибке "Cannot create platform GL context, none of GLX, EGL, DRI2 is enabled" (Linux)</span></h4>
+<p>Попытайтесь установить libx11-xcb-dev пакет:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo apt<span class="sy0">-</span>get install libx11<span class="sy0">-</span>xcb<span class="sy0">-</span>dev</pre></div></div>
+<p>впоследствии вы должны повторно выполнить configure qtbase/src/plugins/platforms/xcb с опцией force для перекомпиляции.
+</p>
+<h4><span class="mw-headline" id="WebKit_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B1.D0.B8.D1.80.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D1.80.D0.B8_.D0.BD.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D1.8E.D1.89.D0.B5.D0.BC_ICU">WebKit не собирается при недостающем ICU</span></h4>
+<p>В настоящее время не конфигурируется проверка времени для ICU, так установите его через диспетчер пакетов.
+</p>
+<h4><span class="mw-headline" id=".D0.B4.D0.BB.D1.8F_Ubuntu.2FDebian:">для Ubuntu/Debian:</span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo apt<span class="sy0">-</span>get install libicu<span class="sy0">-</span>dev</pre></div></div>
+<h4><span class="mw-headline" id=".D0.B4.D0.BB.D1.8F_Fedora:">для Fedora:</span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">yum search ICU</pre></div></div>
+<p>Альтернативно можете собрать Qt без webkit, удалив или переименовав qtwebkit, qtwebkit-examples-and-demos каталоги. -no-webkit опция конфигуратора еще не работает: <a rel="nofollow" class="external free" href="https://bugreports.qt.io/browse/QTBUG-20577">https://bugreports.qt.io/browse/QTBUG-20577</a>
+</p>
+<h3><span class="mw-headline" id="Windows_2">Windows</span></h3>
+<h4><span class="mw-headline" id="qdeclarative_.D0.BD.D0.B5_.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D0.B8.D1.80.D1.83.D0.B5.D1.82.D1.81.D1.8F_.D0.B8.D0.B7-.D0.B7.D0.B0_.D0.B1.D0.B5.D0.B7_.D0.B2.D0.B5.D1.81.D1.82.D0.B8_.D0.BF.D1.80.D0.BE.D0.BF.D0.B0.D0.B2.D1.88.D0.B8.D1.85_v8.lib_.28Windows.29">qdeclarative не компилируется из-за без вести пропавших v8.lib (Windows)</span></h4>
+<p>Компиляция v8 в qtbase требует Python. Удостоверьтесь что python.exe прописан в переменной окружения&#160;% PATH% перейдите в каталог qtjsbackend, выполните qmake &amp;&amp; nmake.
+</p>
+<h4><span class="mw-headline" id=".D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.81_.D0.BE.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.BE.D0.B9_OpenGL_.28Windows.29">Проблема с отладкой OpenGL (Windows)</span></h4>
+Установите переменную окружения <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT_QPA_VERBOSE<span class="sy0">=</span>gl<span class="sy0">:</span><span class="nu0">1</span></pre></div></div> и запустите приложение с установленным <a rel="nofollow" class="external text" href="http://technet.microsoft.com/en-us/sysinternals/bb896647">DebugView</a>. Журнал покажет требуемый по сравнению с полученной версией OpenGL. Если в логах журнала обнаружится что у него только OpenGL 1.1, то QML2 не будет работать. Обратите внимание на то, что <i>qmlscene</i> не будет сообщать об ошибках не поддерживаемых версий OpenGL.
+<h2><span class="mw-headline" id=".D0.92.D0.BE.D0.BF.D1.80.D0.BE.D1.81.D1.8B_.D0.B8_.D0.BA.D0.BE.D0.BC.D0.BC.D0.B5.D0.BD.D1.82.D0.B0.D1.80.D0.B8.D0.B8">Вопросы и комментарии</span></h2>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.717 seconds
+Real time usage: 0.727 seconds
+Preprocessor visited node count: 490/1000000
+Preprocessor generated node count: 960/1000000
+Post‐expand include size: 1308/2097152 bytes
+Template argument size: 422/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:160-0!*!0!!en!*!* and timestamp 20151104105514 and revision id 18045
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index94ae.html?title=Building_Qt_5_from_Git/ru&amp;oldid=18045">http://wiki.qt.io/index.php?title=Building_Qt_5_from_Git/ru&amp;oldid=18045</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li><li><a href="Category_Developing_with_Qt__Qt_5.html" title="Category:Developing with Qt::Qt 5">Developing with Qt::Qt 5</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=bba5eab557ac0b54&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Building_Qt_5_from_Git/ru.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Building_Qt_5_from_Git/ru.html?title=Talk:Building_Qt_5_from_Git/ru&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Building_Qt_5_from_Git/ru.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexdd4f.html?title=Building_Qt_5_from_Git/ru&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index3ec0.html?title=Building_Qt_5_from_Git/ru&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Building_Qt_5_from_Git/ru.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Building_Qt_5_from_Git/ru.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index94ae.html?title=Building_Qt_5_from_Git/ru&amp;oldid=18045" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index3caf.html?title=Building_Qt_5_from_Git/ru&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 June 2015, at 13:44.</li>
+											<li id="footer-info-viewcount">This page has been accessed 5,346 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":209});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_5_from_Git/ru&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:11 GMT -->
+</html>

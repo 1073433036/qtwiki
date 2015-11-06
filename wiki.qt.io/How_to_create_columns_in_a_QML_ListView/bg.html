@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/How_to_create_columns_in_a_QML_ListView/bg by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:33:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>How to create columns in a QML ListView/bg - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_create_columns_in_a_QML_ListView/bg","wgTitle":"How to create columns in a QML ListView/bg","wgCurRevisionId":15946,"wgRevisionId":15946,"wgArticleId":2470,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Learning","HowTo","Snippets","Developing with Qt::Qt Quick","Developing with Qt::Qt Quick::QML","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_create_columns_in_a_QML_ListView/bg","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_to_create_columns_in_a_QML_ListView_bg skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">How to create columns in a QML ListView/bg</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="../How_to_create_columns_in_a_QML_ListView.html" title="How to create columns in a QML ListView">How to create columns in a QML ListView</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../indexd05f.html?title=How_to_create_columns_in_a_QML_ListView/bg&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><br />
+<b>Български</b> <a href="../How_to_create_columns_in_a_QML_ListView.html" title="How to create columns in a QML ListView">English</a> <a rel="nofollow" class="external text" href="http://qt-devnet.developpez.com/tutoriels/qt-quick/qml/creation-colonnes-dans-listview/">French</a> <a href="../How_to_create_columns_in_a_QML_ListView_Japanese.html" title="How to create columns in a QML ListView Japanese" class="mw-redirect">日本語</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.D0.9A.D0.B0.D0.BA_.D0.B4.D0.B0_.D1.81.D1.8A.D0.B7.D0.B4.D0.B0.D0.B4.D0.B5.D0.BC_QML_ListView_.D1.81_.D0.BA.D0.BE.D0.BB.D0.BE.D0.BD.D0.B8"><span class="tocnumber">1</span> <span class="toctext">Как да създадем QML ListView с колони</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.D0.9F.D1.80.D0.B5.D1.81.D0.BC.D1.8F.D1.82.D0.B0.D0.BD.D0.B5_.D1.88.D0.B8.D1.80.D0.B8.D0.BD.D0.B0.D1.82.D0.B0_.D0.BD.D0.B0_.D1.82.D0.B5.D0.BA.D1.81.D1.82.D0.B0."><span class="tocnumber">1.1</span> <span class="toctext">Пресмятане ширината на текста.</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.D0.A1.D1.8A.D0.B7.D0.B4.D0.B0.D0.B2.D0.B0.D0.BD.D0.B5_.D0.BD.D0.B0_.D0.BA.D0.BE.D0.BB.D0.BE.D0.BD.D0.B8_.D0.B2_ListView"><span class="tocnumber">1.2</span> <span class="toctext">Създаване на колони в ListView</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id=".D0.9A.D0.B0.D0.BA_.D0.B4.D0.B0_.D1.81.D1.8A.D0.B7.D0.B4.D0.B0.D0.B4.D0.B5.D0.BC_QML_ListView_.D1.81_.D0.BA.D0.BE.D0.BB.D0.BE.D0.BD.D0.B8">Как да създадем QML ListView с колони</span></h1>
+<p>Ето един начин за създаване на <i>ListView</i> с множество колони, които зависят от размера на данните в колоната.
+</p><p>Нормално <i>ListView</i> изглежда така:
+</p><p><a href="../index0d0e.html?title=Special:Upload&amp;wpDestFile=Http://lh4.ggpht.com/_U9jn31652gY/TPlwteOB05I/AAAAAAAAAA0/lJOcCa-qlYA/qmlTable1.png" class="new" title="File:Http://lh4.ggpht.com/ U9jn31652gY/TPlwteOB05I/AAAAAAAAAA0/lJOcCa-qlYA/qmlTable1.png">Стандартно ListView</a>
+</p><p>Колоните могат да се създадат като се слагат фиксирани ширини на елементите в редовете.
+</p><p><a href="../indexfbf9.html?title=Special:Upload&amp;wpDestFile=Http://lh5.ggpht.com/_U9jn31652gY/TPlyiLef8QI/AAAAAAAAABE/K7uJVMzmi9w/qmlTable2.png" class="new" title="File:Http://lh5.ggpht.com/ U9jn31652gY/TPlyiLef8QI/AAAAAAAAABE/K7uJVMzmi9w/qmlTable2.png">ListView с колони</a>
+</p>
+<h2><span class="mw-headline" id=".D0.9F.D1.80.D0.B5.D1.81.D0.BC.D1.8F.D1.82.D0.B0.D0.BD.D0.B5_.D1.88.D0.B8.D1.80.D0.B8.D0.BD.D0.B0.D1.82.D0.B0_.D0.BD.D0.B0_.D1.82.D0.B5.D0.BA.D1.81.D1.82.D0.B0.">Пресмятане ширината на текста.</span></h2>
+<p>В QML няма изчисления с фонтове. За това, ще използваме елемента <i>Text</i>. Динамично създаваме един текстов елемент и взимаме неговата дължина:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="co1">// Създаване на временен Text</span>
+ var textElement <span class="sy0">=</span> <span class="kw5">Qt</span>.<span class="me1">createQmlObject</span><span class="br0">&#40;</span><span class="st0">'import Qt 4.7; Text { text: &quot;'</span> <span class="sy0">+</span> text <span class="sy0">+</span> <span class="st0">'&quot;}'</span><span class="sy0">,</span>
+ parent<span class="sy0">,</span> <span class="st0">&quot;calcTextWidth&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Използваме textElement.width за да вземем дължината на теста</span>
+&#160;
+<span class="co1">// Унищожаваме временният елемент</span>
+ textElement.<span class="me1">destroy</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>
+<h2><span class="mw-headline" id=".D0.A1.D1.8A.D0.B7.D0.B4.D0.B0.D0.B2.D0.B0.D0.BD.D0.B5_.D0.BD.D0.B0_.D0.BA.D0.BE.D0.BB.D0.BE.D0.BD.D0.B8_.D0.B2_ListView">Създаване на колони в ListView</span></h2>
+<p>Ширините на колоните се изчисляват от JavaScript функция, запазват се в таблица с ключове имената на елементите в модела и се използват от делегата на ListView-то.
+</p>
+<h3><span class="mw-headline" id="main.qml">main.qml</span></h3>
+<p>Проста програма за демонстрация. <i>Rectangle</i> елемента се използва просто като контейнер за консистентност на цветовете, използвани в колоните. Забележете, че свойството <i>columnWidths</i> се използва за съхранение изчислените дължини. То се пресмята при зареждане на програмата.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+import <span class="st0">&quot;ColumnHelper.js&quot;</span> as ColumnHelper
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> <span class="nu0">620</span>
+ height<span class="sy0">:</span> <span class="nu0">200</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;#bebebe&quot;</span>
+&#160;
+ListView <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> list
+ property variant columnWidths<span class="sy0">:</span> ColumnHelper.<span class="me1">calcColumnWidths</span><span class="br0">&#40;</span>model<span class="sy0">,</span> list<span class="br0">&#41;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ model<span class="sy0">:</span> MovieModel <span class="br0">&#123;</span> <span class="br0">&#125;</span>
+ delegate<span class="sy0">:</span> MovieItem <span class="br0">&#123;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="ColumnHelper.js">ColumnHelper.js</span></h3>
+<p>Проста JavaScript функция се използва за да се намери максималната дължина на елемент от всяка колона. Функцията връща тези стойности като таблица с ключове имената на колоните:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var columns <span class="sy0">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
+&#160;
+function calcColumnWidths<span class="br0">&#40;</span>model<span class="sy0">,</span> parent<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">for</span> <span class="br0">&#40;</span>var i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> model.<span class="me1">count</span><span class="sy0">;</span> <span class="sy0">+</span><span class="st0">''</span>i<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ var data <span class="sy0">=</span> model.<span class="me1">get</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span>
+ <span class="kw1">for</span> <span class="br0">&#40;</span>var key in data<span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>columns<span class="br0">&#91;</span>key<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ columns<span class="br0">&#91;</span>key<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="nu0">0</span>
+ <span class="br0">&#125;</span>
+&#160;
+ var textElement <span class="sy0">=</span> <span class="kw5">Qt</span>.<span class="me1">createQmlObject</span><span class="br0">&#40;</span>
+ <span class="st0">'import Qt 4.7;'</span>
+<span class="st0">''</span> <span class="st0">'Text {'</span>
+ <span class="sy0">+</span> <span class="st0">' text: &quot;'</span> <span class="sy0">+</span> data<span class="br0">&#91;</span>key<span class="br0">&#93;</span> <span class="sy0">+</span> <span class="st0">'&quot; '</span>
+ <span class="sy0">+</span> <span class="st0">'}'</span><span class="sy0">,</span>
+ parent<span class="sy0">,</span> <span class="st0">&quot;calcColumnWidths&quot;</span><span class="br0">&#41;</span>
+&#160;
+columns<span class="br0">&#91;</span>key<span class="br0">&#93;</span> <span class="sy0">=</span> Math.<span class="me1">max</span><span class="br0">&#40;</span>textElement.<span class="me1">width</span><span class="sy0">,</span> columns<span class="br0">&#91;</span>key<span class="br0">&#93;</span><span class="br0">&#41;</span>
+ textElement.<span class="me1">destroy</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="kw1">return</span> columns
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="MovieItem.qml">MovieItem.qml</span></h3>
+<p>Това е делегата за ListView-то. Свойството <i>columnWidths</i> на листа се използва за да се пресметнат дължините на колоните:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Component <span class="br0">&#123;</span>
+ Item <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> item
+ width<span class="sy0">:</span> parent.<span class="me1">width</span> <span class="sy0">-</span> <span class="nu0">15</span>
+ height<span class="sy0">:</span> row.<span class="me1">height</span>
+&#160;
+function altColor<span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ var colors <span class="sy0">=</span> <span class="br0">&#91;</span> <span class="st0">&quot;#bebebe&quot;</span><span class="sy0">,</span> <span class="st0">&quot;#b7b7b7&quot;</span> <span class="br0">&#93;</span><span class="sy0">;</span>
+ <span class="kw1">return</span> colors<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> background
+ width<span class="sy0">:</span> parent.<span class="me1">width</span> <span class="sy0">+</span> <span class="nu0">15</span>
+ height<span class="sy0">:</span> parent.<span class="me1">height</span>
+ color<span class="sy0">:</span> altColor<span class="br0">&#40;</span>index<span class="sy0">%</span><span class="nu19">2</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+&#160;
+Row <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> row
+ width<span class="sy0">:</span> parent.<span class="me1">width</span>
+ spacing<span class="sy0">:</span> <span class="nu0">5</span>
+ Item <span class="br0">&#123;</span>
+ <span class="co1">// Indent a little</span>
+ width<span class="sy0">:</span> <span class="nu0">5</span>
+ height<span class="sy0">:</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+ Text <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> list.<span class="me1">columnWidths</span><span class="br0">&#91;</span><span class="st0">'title'</span><span class="br0">&#93;</span>
+ text<span class="sy0">:</span> model.<span class="me1">title</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;blue&quot;</span>
+ <span class="br0">&#125;</span>
+ Loader <span class="br0">&#123;</span> sourceComponent<span class="sy0">:</span> columnSeparator<span class="sy0">;</span> height<span class="sy0">:</span> parent.<span class="me1">height</span> <span class="br0">&#125;</span>
+ Text <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> list.<span class="me1">columnWidths</span><span class="br0">&#91;</span><span class="st0">'year'</span><span class="br0">&#93;</span>
+ text<span class="sy0">:</span> model.<span class="me1">year</span>
+ <span class="br0">&#125;</span>
+ Loader <span class="br0">&#123;</span> sourceComponent<span class="sy0">:</span> columnSeparator<span class="sy0">;</span> height<span class="sy0">:</span> parent.<span class="me1">height</span> <span class="br0">&#125;</span>
+ Text <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> list.<span class="me1">columnWidths</span><span class="br0">&#91;</span><span class="st0">'rank'</span><span class="br0">&#93;</span>
+ text<span class="sy0">:</span> model.<span class="me1">rank</span>
+ <span class="br0">&#125;</span>
+ Loader <span class="br0">&#123;</span> sourceComponent<span class="sy0">:</span> columnSeparator<span class="sy0">;</span> height<span class="sy0">:</span> parent.<span class="me1">height</span> <span class="br0">&#125;</span>
+ Text <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> list.<span class="me1">columnWidths</span><span class="br0">&#91;</span><span class="st0">'votes'</span><span class="br0">&#93;</span>
+ text<span class="sy0">:</span> model.<span class="me1">votes</span>
+ <span class="br0">&#125;</span>
+ Loader <span class="br0">&#123;</span> sourceComponent<span class="sy0">:</span> columnSeparator<span class="sy0">;</span> height<span class="sy0">:</span> parent.<span class="me1">height</span> <span class="br0">&#125;</span>
+ Text <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> list.<span class="me1">columnWidths</span><span class="br0">&#91;</span><span class="st0">'composer'</span><span class="br0">&#93;</span>
+ text<span class="sy0">:</span> model.<span class="me1">composer</span>&#160;? model.<span class="me1">composer</span> <span class="sy0">:</span> <span class="st0">&quot;&quot;</span>
+ <span class="br0">&#125;</span>
+&#160;
+Component <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> columnSeparator
+ Rectangle <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> <span class="nu0">1</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;black&quot;</span>
+ opacity<span class="sy0">:</span> <span class="nu16">0.3</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="MovieModel.qml">MovieModel.qml</span></h3>
+<p>Информацията е любезно предоставена от Международната филмова база данни (<a rel="nofollow" class="external free" href="http://www.imdb.com/">http://www.imdb.com</a>) .
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+ListModel <span class="br0">&#123;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">532564</span>
+ rank<span class="sy0">:</span> <span class="nu16">9.2</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;The Shawshank Redemption&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1994</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Newman, Thomas&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">419312</span>
+ rank<span class="sy0">:</span> <span class="nu16">9.1</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;The Godfather&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1972</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Rota, Nino&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">251290</span>
+ rank<span class="sy0">:</span> <span class="nu16">9.0</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;The Godfather: Part II&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1974</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Rota, Nino&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">225000</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.9</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;Inception&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">2010</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Zimmer, Hans&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">165033</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.9</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;Il buono, il brutto, il cattivo.&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1966</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Morricone, Ennio&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">426752</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.9</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;Pulp Fiction&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1994</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">282473</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.9</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;Schindler's List&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1993</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Williams, John&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">122919</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.9</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;12 Angry Men&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1957</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Hopkins, Kenyon&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">219739</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.8</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;One Flew Over the Cuckoo's Nest&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1975</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Nitzsche, Jack&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">476112</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.8</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;The Dark Knight&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">2008</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Zimmer, Hans&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">283354</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.8</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;Star Wars: Episode V - The Empire Strikes Back&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1980</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Williams, John&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">371790</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.8</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;The Lord of the Rings: The Return of the King&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">2003</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Shore, Howard&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">98799</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.8</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;Shichinin no samurai&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1954</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Hayasaka, Fumio&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">326619</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.7</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;Star Wars&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1977</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Williams, John&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">234582</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.7</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;Goodfellas&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1990</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ votes<span class="sy0">:</span> <span class="nu0">170874</span>
+ rank<span class="sy0">:</span> <span class="nu16">8.7</span>
+ title<span class="sy0">:</span> <span class="st0">&quot;Casablanca&quot;</span>
+ year<span class="sy0">:</span> <span class="nu0">1942</span>
+ composer<span class="sy0">:</span> <span class="st0">&quot;Steiner, Max&quot;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.108 seconds
+Real time usage: 0.125 seconds
+Preprocessor visited node count: 84/1000000
+Preprocessor generated node count: 204/1000000
+Post‐expand include size: 1376/2097152 bytes
+Template argument size: 439/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:2470-0!*!0!!en!2!* and timestamp 20151105041942 and revision id 15946
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../index4f64.html?title=How_to_create_columns_in_a_QML_ListView/bg&amp;oldid=15946">http://wiki.qt.io/index.php?title=How_to_create_columns_in_a_QML_ListView/bg&amp;oldid=15946</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="../Category_Learning.html" title="Category:Learning">Learning</a></li><li><a href="../Category_HowTo.html" title="Category:HowTo">HowTo</a></li><li><a href="../Category_Snippets.html" title="Category:Snippets">Snippets</a></li><li><a href="../Category_Developing_with_Qt__Qt_Quick.html" title="Category:Developing with Qt::Qt Quick">Developing with Qt::Qt Quick</a></li><li><a href="../Category_Developing_with_Qt__Qt_Quick__QML.html" title="Category:Developing with Qt::Qt Quick::QML">Developing with Qt::Qt Quick::QML</a></li><li><a href="../Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=f5021970d3dcf404&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="bg.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_How_to_create_columns_in_a_QML_ListView/bg.html?title=Talk:How_to_create_columns_in_a_QML_ListView/bg&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="bg.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../indexd05f.html?title=How_to_create_columns_in_a_QML_ListView/bg&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../index9f2c.html?title=How_to_create_columns_in_a_QML_ListView/bg&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/How_to_create_columns_in_a_QML_ListView/bg.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/How_to_create_columns_in_a_QML_ListView/bg.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../index46a9.html?title=How_to_create_columns_in_a_QML_ListView/bg&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../index4f64.html?title=How_to_create_columns_in_a_QML_ListView/bg&amp;oldid=15946" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../indexb2a4.html?title=How_to_create_columns_in_a_QML_ListView/bg&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:23.</li>
+											<li id="footer-info-viewcount">This page has been accessed 530 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":313});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/How_to_create_columns_in_a_QML_ListView/bg by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:34:05 GMT -->
+</html>

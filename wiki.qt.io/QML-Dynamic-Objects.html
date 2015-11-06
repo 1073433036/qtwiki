@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/QML-Dynamic-Objects by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:49:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>QML Dynamic Objects - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="QML_Dynamic_Objects.html" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"QML_Dynamic_Objects","wgTitle":"QML Dynamic Objects","wgCurRevisionId":19275,"wgRevisionId":19275,"wgArticleId":1383,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing with Qt::Qt Quick","HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"QML_Dynamic_Objects","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"QML-Dynamic-Objects","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-QML_Dynamic_Objects skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">QML Dynamic Objects</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub">(Redirected from <a href="indexfc8b.html?title=QML-Dynamic-Objects&amp;redirect=no" title="QML-Dynamic-Objects">QML-Dynamic-Objects</a>)</div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Needs update to QtQuick 2<br /><small>Please <b><a rel="nofollow" class="external text" href="index89b4.html?title=QML_Dynamic_Objects&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Creation_of_Dynamic_QML_Objects"><span class="tocnumber">2</span> <span class="toctext">Creation of Dynamic QML Objects</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Communication_with_Dynamic_Objects"><span class="tocnumber">3</span> <span class="toctext">Communication with Dynamic Objects</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Dynamic_Objects_Behavior_.E2.80.93_Nested_Objects"><span class="tocnumber">4</span> <span class="toctext">Dynamic Objects Behavior – Nested Objects</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Destroying_Dynamic_Objects"><span class="tocnumber">5</span> <span class="toctext">Destroying Dynamic Objects</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>QML has a rich set of programmatic techniques for controlling visualization, for example making objects appear and disappear from the scene. These techniques can be classified in three groups.
+</p>
+<ol>
+<li> The techniques from the first group control a QML object property to hide and/or change how and object is rendered. For example, the <i>opacity</i> property is often used by developers to visually reflect the state of an item. We can use properties <i>visible, z,</i> and <i>color:transparent</i> in similar ways. Using these techniques objects are neither created nor destroyed, therefore there is little impact on memory usage.
+</li>
+<li> The second group applies transformations to objects: Move an object off the screen (assign negative values to <i>x,y</i> coordinates) or change the object's shape. For instance, we may control object visualization through <i>width</i> and <i>height</i> properties. Again, minimal memory impact.
+</li>
+<li> The third group includes mechanisms based on dynamic loading of QML objects. These are QML constructs <i>Loader</i> and dynamic creation of objects. These techniques will impact memory usage.
+</li>
+</ol>
+<p>There is no "right" and "wrong" here. Hidden objects continue to consume memory, but on the other hand they're easily accessible through their <i>IDs</i>.
+</p><p>This article discusses <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qdeclarativedynamicobjects.html">dynamic creation of objects</a>. More information about <i>Loader</i> utilization is <a rel="nofollow" class="external text" href="QML-Application-Structuring-Approaches.html">here</a>.
+</p><p>Before we dig into the details, have a look at some examples of how these groups behave in the real world:
+</p><p>First and second group
+</p><p><a href="File_Overlapping.html" class="image" title="Overlapping"><img alt="Overlapping" src="images/2/2c/Overlapping.jpg" width="458" height="297" /></a>
+</p><p>Third group
+</p><p><a href="File_Loader.html" class="image" title="Loader"><img alt="Loader" src="images/2/28/Loader.jpg" width="384" height="253" /></a>
+</p><p>The next snippet illustrates how <i>width</i> and <i>height</i> properties could be used to control visibility:
+</p><p><i>dynamicWidth.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+Item <span class="br0">&#123;</span>
+ Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>top
+ <span class="co1">// width: 360</span>
+ <span class="co1">// height: 360</span>
+ color<span class="sy0">:</span><span class="st0">&quot;red&quot;</span>
+ <span class="br0">&#125;</span>
+ Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>control
+ width<span class="sy0">:</span><span class="nu0">30</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">30</span><span class="sy0">;</span>color<span class="sy0">:</span><span class="st0">&quot;blue&quot;</span>
+ MouseArea <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+ top.<span class="me1">width</span><span class="sy0">=</span><span class="nu0">100</span><span class="sy0">;</span> top.<span class="me1">height</span><span class="sy0">=</span><span class="nu0">100</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span> <span class="co1">//end Rectangle control</span>
+<span class="br0">&#125;</span><span class="co1">// end Item</span></pre></div></div>
+<p>You guessed already that top rectangle is constructed when QML file is loaded, but not visualized. It is because its <i>width</i> and <i>height</i> properties are not defined. We determine them later in <i>MouseArea</i> script block.
+</p>
+<h2><span class="mw-headline" id="Creation_of_Dynamic_QML_Objects">Creation of Dynamic QML Objects</span></h2>
+<p>The process of dynamic creating QML objects consists of two steps. Firstly, an object is created and secondly a newly created object is loaded. The process is performed in a JavaScript context only. In other words, we have some JavaScript methods, which could be invoked in a script block.
+</p><p>The dynamic object is normally formatted as a QML file or we may want to get it as a string. Our considerations are limited to the second case. For this case steps of creating and loading are combined in one step. The signature of the respective JavaScript method is as <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativedynamicobjects.html#creating-an-object-from-a-string-of-qml">follows</a>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">Qt</span>.<span class="me1">createQmlObject</span><span class="br0">&#40;</span>QML string<span class="sy0">,</span> parent ID<span class="sy0">,</span> filename<span class="br0">&#41;</span></pre></div></div>
+<p>The first argument in the method invocation is a string formatted as a QML file, for example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="st0">'Import QtQuick 1.1; Rectangle {width:100; height:100; color:&quot;blue&quot;}'</span></pre></div></div>
+<p>We use single quotes for the QML string to avoid conflict with double quotes in color property definition.
+</p><p>The second argument is the <i>ID</i> of the QML item in which context the new object is created and loaded. That means that newly created object has as parent this context item. In invocation the context item <i>ID</i> is supplied as a variable name (no quotes are needed).
+</p><p>The third argument is a string used as a file name in error reporting in the Qt Creator IDE. For example if an error is encountered in loaded QML string it is reported as one in the file with <i>filename</i> name. In invocation <i>filename</i> as a string has to be surrounded by double quotes.
+</p><p>The function <i>createQmlObject()</i> is a method of the global <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-qt.html#createQmlObject-method">QML Qt object</a>.
+</p><p>Formally it is described as:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">object <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">createQmlObject</span> <span class="br0">&#40;</span> string qml<span class="sy0">,</span> object parent<span class="sy0">,</span> string filepath<span class="br0">&#41;</span></pre></div></div>
+<p>If you are tempted to use a <i>Loader</i> element from the QML string it will probably not work. It is because loading of an external file needs some time, but the method <i>createQmlObject()</i> returns not waiting for such operations. Here is a complete example of <i>createQmlObject()</i> method utilization:
+</p><p><i>dynamicObject.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+ Item <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> container
+ width<span class="sy0">:</span> <span class="nu0">500</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span>
+ Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>second<span class="sy0">;</span> width<span class="sy0">:</span><span class="nu0">50</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">50</span><span class="sy0">;</span>x<span class="sy0">:</span><span class="nu0">70</span><span class="sy0">;</span>color<span class="sy0">:</span><span class="st0">'green'</span><span class="sy0">;</span>
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>var dynamicObject <span class="sy0">=</span> <span class="kw5">Qt</span>.<span class="me1">createQmlObject</span><span class="br0">&#40;</span>
+ <span class="st0">'import QtQuick 1.1;Rectangle{id:sample;width:40; height:40;color:&quot;blue&quot;;}'</span><span class="sy0">,</span>
+ container<span class="sy0">,</span><span class="st0">'firstObject'</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span> <span class="co1">//end second</span>
+ MouseArea <span class="br0">&#123;</span>id<span class="sy0">:</span>mouse1
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent<span class="sy0">;</span>
+ onClicked<span class="sy0">:</span><span class="br0">&#123;</span>
+ var anotherObject <span class="sy0">=</span><span class="kw5">Qt</span>.<span class="me1">createQmlObject</span><span class="br0">&#40;</span>
+ <span class="st0">'import QtQuick 1.1;Rectangle{id:example;width:40; height:40;x:80;y:40;color:&quot;pink&quot;;}'</span><span class="sy0">,</span>
+ container<span class="sy0">,</span><span class="st0">'secondObject'</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span><span class="co1">//end onClicked</span>
+ <span class="br0">&#125;</span><span class="co1">//end mouse1</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Practically it is inconvenient to supply a long QML string in <i>createQmlObject()</i> call. We could define a string property and assign to it QML string as property value. This is demonstrated in the following example:
+</p><p><i>dynamicObjectTop.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Item <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> container
+ width<span class="sy0">:</span> <span class="nu0">500</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">200</span><span class="sy0">;</span>
+ property string test<span class="sy0">:</span><span class="st0">&quot;import QtQuick 1.1;
+ Rectangle {id:abc; color:\;red\;; width: 40; height: 20;x:100;y:50}&quot;</span>
+ Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>second<span class="sy0">;</span> width<span class="sy0">:</span><span class="nu0">50</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">50</span><span class="sy0">;</span>x<span class="sy0">:</span><span class="nu0">70</span><span class="sy0">;</span>color<span class="sy0">:</span><span class="st0">'green'</span><span class="sy0">;</span>
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>
+ var dynamicObject <span class="sy0">=</span> <span class="kw5">Qt</span>.<span class="me1">createQmlObject</span><span class="br0">&#40;</span>test<span class="sy0">,</span>container<span class="sy0">,</span><span class="st0">'firstObject'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span> <span class="co1">//end second</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="Communication_with_Dynamic_Objects">Communication with Dynamic Objects</span></h2>
+<p>The dynamically created QML object is not accessible through its <i>ID</i>. We need other mechanisms for communication with dynamic objects and these are signals and QML signal objects <i>connect ()</i> method. By communication we mean exchange of information between the caller (main QML file) and the callee (dynamically created QML file) and in both directions.
+</p><p>The next snippet shows that a property defined at the caller top level is visible (directly accessible) in the QML dynamic object:
+</p><p><a href="File_Property.html" class="image" title="property"><img alt="property" src="images/9/94/Property.jpg" width="429" height="219" /></a>
+</p><p><i>dynamicObjectProperty.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+Item <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> container
+ width<span class="sy0">:</span> <span class="nu0">500</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">200</span><span class="sy0">;</span>
+ property <span class="kw4">bool</span> caller<span class="sy0">:</span><span class="kw2">false</span> <span class="co1">//This property is visible in the dynamic object</span>
+ property string test<span class="sy0">:</span><span class="st0">&quot;import QtQuick 1.1;
+ Rectangle {id:abc; color:<span class="es1">\&quot;</span>red<span class="es1">\&quot;</span>; width: 40; height: 20;x:100;y:50
+ Component.onCompleted:
+ {caller=true; console.log('New value to the property caller was assigned')}
+ }&quot;</span>
+ Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>second<span class="sy0">;</span> width<span class="sy0">:</span><span class="nu0">50</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">50</span><span class="sy0">;</span>x<span class="sy0">:</span><span class="nu0">70</span><span class="sy0">;</span>color<span class="sy0">:</span><span class="st0">'green'</span><span class="sy0">;</span>
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>
+ var dynamicObject <span class="sy0">=</span> <span class="kw5">Qt</span>.<span class="me1">createQmlObject</span><span class="br0">&#40;</span>test<span class="sy0">,</span>container<span class="sy0">,</span><span class="st0">'firstObject'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;The value of caller was changed in the dynamic object&quot;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span> <span class="co1">//end second</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>In case we want to pass some information from QML string to the main file we define a signal, then connect it to a JavaScript method defined in the main QML file and finally emit the signal (in QML string):
+</p><p><a href="File_Signal.html" class="image" title="signal"><img alt="signal" src="images/3/32/Signal.jpg" width="466" height="219" /></a>
+</p><p><i>dynamicObjectConnect.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+Item <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> container
+ width<span class="sy0">:</span> <span class="nu0">500</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">200</span><span class="sy0">;</span>
+ <span class="kw4">signal</span> forward <span class="co1">//This signal activates fun2() defined in QML string</span>
+ onForward<span class="sy0">:</span>console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;forward signal is emitted in main QML&quot;</span><span class="br0">&#41;</span>
+ Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>dummy
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>
+ forward<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ function fun1<span class="br0">&#40;</span>argument1<span class="br0">&#41;</span><span class="br0">&#123;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;A function fun1()in the main QML file is invoked&quot;</span><span class="br0">&#41;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;Returned parameter from the QML string = &quot;</span><span class="sy0">,</span> argument1<span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ property string test<span class="sy0">:</span><span class="st0">&quot;import QtQuick 1.1;
+ Rectangle {id:abc;
+ property string fromCallee:'This value is send signal argument'
+ //Signal send when emitted activates fun1() defined in main QML
+ signal send(string pass);
+ onSend:{console.log('Signal send has been emitted');}
+ color:\;red\;; width: 40; height: 20;x:100;y:50
+ Component.onCompleted:{
+ send.connect(fun1);send(fromCallee);forward.connect(fun2);
+ }
+ function fun2(){console.log('The function fun2() is activated from main QML')}
+ }
+ &quot;</span>
+ Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>second<span class="sy0">;</span> width<span class="sy0">:</span><span class="nu0">50</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">50</span><span class="sy0">;</span>x<span class="sy0">:</span><span class="nu0">70</span><span class="sy0">;</span>color<span class="sy0">:</span><span class="st0">&quot;green&quot;</span><span class="sy0">;</span>
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>
+ var dynamicObject <span class="sy0">=</span> <span class="kw5">Qt</span>.<span class="me1">createQmlObject</span><span class="br0">&#40;</span>test<span class="sy0">,</span>container<span class="sy0">,</span><span class="st0">'firstObject'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span> <span class="co1">//end second</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>In the QML string we define the signal <i>send</i>, which invokes function <i>fun1()</i> defined in main QML. A parameter is passed also. And vice versa: in the main QML the signal <i>forward</i> is defined and emitted. It calls function <i>fun2()</i> defined in QML string.
+</p>
+<h2><span class="mw-headline" id="Dynamic_Objects_Behavior_.E2.80.93_Nested_Objects">Dynamic Objects Behavior – Nested Objects</span></h2>
+<p>Let us create an application with the following functionality: <br />
+1. The user enters some text in a QML <i>TextInput</i> element; <br />
+2. The entered text is displayed in a window; <br />
+3. The user is asked to confirm the entered text in a dialog window;
+</p><p><a href="File_Input.html" class="image" title="input"><img alt="input" src="images/5/57/Input.jpg" width="429" height="178" /></a>
+</p><p>The new point here is that from a dynamic object we want to create and load a next dynamic object.
+</p><p><i>dynamicUseCase.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+Item <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> container
+ width<span class="sy0">:</span> <span class="nu0">550</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">500</span><span class="sy0">;</span>
+ property string test<span class="sy0">:</span><span class="st0">&quot;import QtQuick 1.1;
+ Rectangle {id:abc;
+ color:\;lightsteelblue\;; width: 200; height: 100;x:origin.x;y:origin.y+50;
+ Text {id:data;
+ width:abc.width; height:abc.height;
+ // width:200;height:40;
+ text:input.text
+ // 'Your input is echoed here. Multiline text is supported.';
+ wrapMode:Text.WordWrap;
+ }
+ MouseArea {id:callNested;
+ anchors.fill:parent;
+ onClicked:{var nextDynamic=Qt.createQmlObject(another,
+ container,'NextObject');
+ }
+ }
+ property string another:\;import QtQuick 1.0;
+ Rectangle{id:nested;x:abc.x+220;y:abc.y;width:180;
+ height:40;color:'pink';
+ Text {id:dialog;
+ width:nested.width; height:nested.height;
+ text:'Do you accept entered data?'
+ }
+ }
+ \;
+ }&quot;</span>
+ Rectangle<span class="br0">&#123;</span>id<span class="sy0">:</span>origin
+ width<span class="sy0">:</span><span class="nu0">300</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">30</span><span class="sy0">;</span>y<span class="sy0">:</span><span class="nu0">100</span><span class="sy0">;</span>x<span class="sy0">:</span><span class="nu0">100</span>
+ color<span class="sy0">:</span><span class="st0">&quot;lightblue&quot;</span>
+ <span class="br0">&#125;</span>
+ TextInput <span class="br0">&#123;</span>
+ id<span class="sy0">:</span>input
+ x<span class="sy0">:</span>origin.<span class="me1">x</span><span class="sy0">+</span><span class="nu0">5</span><span class="sy0">;</span>y<span class="sy0">:</span>origin.<span class="me1">y</span><span class="sy0">+</span><span class="nu0">5</span><span class="sy0">;</span>
+ color<span class="sy0">:</span><span class="st0">&quot;red&quot;</span>
+ text<span class="sy0">:</span><span class="st0">&quot;Enter your text here&quot;</span>
+ onAccepted<span class="sy0">:</span><span class="br0">&#123;</span>
+ var dynamicObject <span class="sy0">=</span> <span class="kw5">Qt</span>.<span class="me1">createQmlObject</span><span class="br0">&#40;</span>test<span class="sy0">,</span>container<span class="sy0">,</span><span class="st0">&quot;First Dynamic Object&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="co1">// release(dynamicObject);</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="coMULTI">/*******************************************************
+//This section experiments with destroy() method
+//Uncomment this section and call to release()in onAccepted script block
+&#160;
+function release(objectToDelete){
+ console.log(&quot;A dynamic object is deleted&quot;);
+ objectToDelete.destroy(9000);
+ }
+********************************************************
+}</span></pre></div></div>
+<p>Some fragments of the above code need more explanation as they implement several rules of QML dynamic objects. In the first place, a dynamic QML object (rectangle <i>abc</i>) could contain a nested QML string – rectangle <i>nested</i>. As you see, the nested objects are in the same name space and this is used when we design the application layout – it is applied bounding of properties values. Moreover, the nested objects are executed in the context of the main QML file and they use properties from the main application space.
+</p><p>To invoke the first dynamic object (rectangle <i>abc</i>) we use <i>onAccepted</i> signal generated after you enter the text in the QML <i>TextInput</i> field and hit <i>&lt;Enter&gt;.</i> The entered text is displayed in the rectangle <i>abc</i>. When you click on this rectangle, following <i>onClicked</i> signal, the nested object (rectangle <i>nested</i>) is rendered.
+</p>
+<h2><span class="mw-headline" id="Destroying_Dynamic_Objects">Destroying Dynamic Objects</span></h2>
+<p>Analyzing the above code samples you probably asked yourself already how one could close dynamically created QML objects. To release (delete) a dynamically created QML object you could use <i>destroy()</i> method from within a JavaScript context. The method is called as member of newly created dynamic object. For example, considering our last code snippet, we call: <i>dynamicObject.destroy()</i>. The <i>destroy()</i> method has a parameter that supplies the time delay before the dynamic object will be destroyed. It is measured in milliseconds with a default value of zero.
+In the file <i>dynamicUseCase.qml</i> you have an commented section (at the file bottom) that experiments with <i>destroy()</i> method. Uncomment this section and call to <i>release()</i> function in <i>onAccepted</i> script block.
+</p><p><i>Notes</i>:
+</p>
+1. The <i>.qml</i> files used in the discussions above could be downloaded from   <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">http<span class="sy0">:</span><span class="co1">//bit.ly/1a3zHkt.</span></pre></div></div>
+<p>2. The code samples were tested in a desktop environment – Windows 7, Qt Creator 2.4.1 (based on Qt 4.7.4).
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.235 seconds
+Real time usage: 1.340 seconds
+Preprocessor visited node count: 219/1000000
+Preprocessor generated node count: 887/1000000
+Post‐expand include size: 3430/2097152 bytes
+Template argument size: 394/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1383-0!*!0!!en!2!* and timestamp 20151104124119 and revision id 19275
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index2b2c.html?title=QML_Dynamic_Objects&amp;oldid=19275">http://wiki.qt.io/index.php?title=QML_Dynamic_Objects&amp;oldid=19275</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Developing_with_Qt__Qt_Quick.html" title="Category:Developing with Qt::Qt Quick">Developing with Qt::Qt Quick</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=32161d281477927d&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="QML_Dynamic_Objects.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_QML_Dynamic_Objects.html?title=Talk:QML_Dynamic_Objects&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="QML_Dynamic_Objects.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index89b4.html?title=QML_Dynamic_Objects&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index6fc3.html?title=QML_Dynamic_Objects&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/QML_Dynamic_Objects.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/QML_Dynamic_Objects.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexf2f9.html?title=QML_Dynamic_Objects&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index2b2c.html?title=QML_Dynamic_Objects&amp;oldid=19275" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index5959.html?title=QML_Dynamic_Objects&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:23.</li>
+											<li id="footer-info-viewcount">This page has been accessed 4,915 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":206});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/QML-Dynamic-Objects by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:49:25 GMT -->
+</html>

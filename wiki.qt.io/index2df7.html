@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&oldid=14017 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:04:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Building-Qt-Creator-Packages - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building-Qt-Creator-Packages","wgTitle":"Building-Qt-Creator-Packages","wgCurRevisionId":14017,"wgRevisionId":14017,"wgArticleId":164,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Tools::QtCreator"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building-Qt-Creator-Packages","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building-Qt-Creator-Packages skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Building-Qt-Creator-Packages</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 07:52, 16 March 2015 by <a href="http://wiki.qt.io/index.php?title=User:Ziller&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Ziller (page does not exist)">Ziller</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:Ziller&amp;action=edit&amp;redlink=1" class="new" title="User talk:Ziller (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Ziller" title="Special:Contributions/Ziller">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&amp;diff=prev&amp;oldid=14017" title="Building-Qt-Creator-Packages">diff</a>) <a href="http://wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&amp;direction=prev&amp;oldid=14017" title="Building-Qt-Creator-Packages">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#General_Building_of_Qt_Creator"><span class="tocnumber">1</span> <span class="toctext">General Building of Qt Creator</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Things_affecting_the_build.2Finstall"><span class="tocnumber">2</span> <span class="toctext">Things affecting the build/install</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Environment_Variables"><span class="tocnumber">2.1</span> <span class="toctext">Environment Variables</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Qmake_Variables"><span class="tocnumber">2.2</span> <span class="toctext">Qmake Variables</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#C_Defines"><span class="tocnumber">2.3</span> <span class="toctext">C Defines</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Install_Settings"><span class="tocnumber">2.4</span> <span class="toctext">Install Settings</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="General_Building_of_Qt_Creator">General Building of Qt Creator</span></h2>
+<ol>
+<li> It is recommended to build in a shadow build directory
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qmake <span class="st0">&quot;$SOURCES/qtcreator.pro&quot;</span> CONFIG<span class="sy0">+=</span>release <span class="st0">&quot;DEFINES+=IDE_REVISION=$GIT_COMMIT&quot;</span> <span class="st0">&quot;QTC_PREFIX=/qt-creator-x.y.z&quot;</span></pre></div></div>
+</li>
+</ol>
+<p>where <tt>$GIT_COMMIT</tt> should be the sha1 of the commit that you build, and where the <tt>QTC_PREFIX</tt> is the directory prefix used for the 7zips that are created by the bindist target (see below).
+</p>
+<ol>
+<li> set the following environment variables:
+<ol>
+<li> <tt>INSTALL_ROOT</tt>: changes the location for the install dir when doing <tt>make install</tt>, e.g. <tt>$BUILDDIR/install/qtcreator</tt> (not used on Mac)
+</li>
+<li> <tt>INSTALL_EDITION</tt>: can be set to e.g. <tt>-opensource</tt>, used for 7z and dmg file names, <tt>$${PLATFORM}$(INSTALL_EDITION)-$${QTCREATOR_VERSION}$(INSTALL_POSTFIX)</tt>
+</li>
+<li> <tt>INSTALL_POSTFIX</tt>: used for 7z and dmg file names, <tt>$${PLATFORM}$(INSTALL_EDITION)-$${QTCREATOR_VERSION}$(INSTALL_POSTFIX)</tt>
+</li>
+</ol>
+</li>
+<li> <tt>make</tt>
+</li>
+<li> <tt>make docs</tt>
+</li>
+<li> <tt>make install</tt> (don't use on Mac)
+</li>
+<li> <tt>make install_docs</tt> (don't use on Mac)
+</li>
+<li> <tt>make deployqt</tt>
+</li>
+</ol>
+<p>After these calls the <tt>INSTALL_ROOT</tt> (Windows/Linux) or <tt>$BUILDDIR/bin/Qt Creator.app</tt> (Mac) contains a distributable binary build.
+</p><p>To add "external" executables (jom, qtcreatorcdbext64) that we deploy for Windows builds to your install, call <tt>make deployartifacts</tt>
+</p><p>To create a 7zip with the binary build, call <tt>make bindist</tt>
+</p><p>That packages the files with a directory starting with the <tt>QTC_PREFIX</tt> you set in the qmake call.
+</p><p>To create a 7zip that can be used for installers, that directly contains the files without additional directory prefix (i.e. directly bin/, lib/, and so on), call <tt>make bindist_installer</tt>
+</p><p>To create actual Qt Creator-only installers, you need to have the installer framework binaries installed, then
+</p>
+<ol>
+<li> set the following additional environment variable:
+<ol>
+<li> <tt>IFW_PATH</tt>: location where <tt>make installer</tt> looks for the installer framework binaries (i.e. its bin/ and lib/ directories)
+</li>
+</ol>
+</li>
+<li> <tt>make bindist_installer installer</tt>
+</li>
+</ol>
+<p>To create a disk image (dmg) with the <tt>Qt Creator.app</tt> on Mac, call <tt>make dmg</tt>
+</p>
+<h2><span class="mw-headline" id="Things_affecting_the_build.2Finstall">Things affecting the build/install</span></h2>
+<h3><span class="mw-headline" id="Environment_Variables">Environment Variables</span></h3>
+<table>
+<tr>
+<td>INSTALL_ROOT
+</td>
+<td>Changes the location for the install dir when doing <tt>make install</tt>, e.g. <tt>$BUILDDIR/install/qtcreator</tt> (not used on Mac), installation is done into <tt>$(INSTALL_ROOT)$$QTC_PREFIX</tt>
+</td></tr>
+<tr>
+<td>INSTALL_BASENAME
+</td>
+<td>Sets the base name used for the files created by make bindist, bindist_installer, dmg and dmg_installer. Defaults to <tt>qt-creator-$${PLATFORM}$(INSTALL_EDITION)-$${QTCREATOR_VERSION}$(INSTALL_POSTFIX)</tt>
+</td></tr>
+<tr>
+<td>INSTALL_EDITION
+</td>
+<td>Can be set to e.g. <tt>-opensource</tt>, used for default INSTALL_BASENAME
+</td></tr>
+<tr>
+<td>INSTALL_POSTFIX
+</td>
+<td>Used for default INSTALL_BASENAME
+</td></tr>
+<tr>
+<td>IFW_PATH
+</td>
+<td>Location where <tt>make installer</tt> looks for the installer framework binaries (i.e. its bin/ and lib/ directories)
+</td></tr>
+<tr>
+<td>INSTALLER_ARCHIVE
+</td>
+<td>This overwrites the default value of the 7z filename which is used by the bindist_installer step, including file extension.
+</td></tr></table>
+<h3><span class="mw-headline" id="Qmake_Variables">Qmake Variables</span></h3>
+<table>
+<tr>
+<td>QTC_PREFIX
+</td>
+<td>directory prefix for the install directory <tt>make install</tt> and for what is packaged with <tt>make bindist</tt>, must start with a <tt>/</tt>, e.g. <tt>/qt-creator-x.y.z</tt>, installation is done into <tt>$(INSTALL_ROOT)$$QTC_PREFIX</tt>
+</td></tr>
+<tr>
+<td>IDE_PACKAGE_MODE
+</td>
+<td>Disables building the HellWorld and UpdateInfo plugins (which are built but marked experimental otherwise)
+</td></tr>
+<tr>
+<td>UPDATEINFO_ENABLE
+</td>
+<td>Enables the UpdateInfo plugin and enables it for the build (usually it is marked as experimental)
+</td></tr>
+<tr>
+<td>QT_PRIVATE_HEADERS
+</td>
+<td>Set to QTDIR/include where private headers are installed, if your Qt version doesn't have them in its standard include directory
+</td></tr></table>
+<h3><span class="mw-headline" id="C_Defines">C Defines</span></h3>
+<table>
+<tr>
+<td>IDE_VERSION_DESCRIPTION
+</td>
+<td>Text description for the Qt Creator version, shown in parenthesis after the version number in the About dialog. For example used to show "Qt Creator 2.4.82 (2.5.0-beta)" (IDE_VERSION_DESCRIPTION="2.5.0-beta" in that case)
+</td></tr>
+<tr>
+<td>IDE_REVISION
+</td>
+<td>String to show as revision in About dialog. Should be set to the git sha that the Qt Creator was built from.
+</td></tr>
+<tr>
+<td>IDE_SETTINGSVARIANT
+</td>
+<td>Changes the directory where Qt Creator looks for user settings and resources. E.g. <tt>~/.config/IDE_SETTINGSVARIANT/qtcreator.ini</tt> on Linux. Defaults to "QtProject".
+</td></tr></table>
+<h3><span class="mw-headline" id="Install_Settings">Install Settings</span></h3>
+<p>Qt Creator reads the QtCreator.ini, qtversion.xml and toolchains.xml from its installation directory as "install settings". (The directory is <tt>share/qtcreator/IDE_SETTINGSVARIANT/</tt> on Windows and Linux, <tt>Qt Creator.app/Contents/Resources/IDE_SETTINGSVARIANT/</tt> on Mac.)
+</p><p>The qt versions from the qtversion.xml and tool chains from toolchains.xml are added as "autodetected" to Qt Creator. The settings file (.ini) is used for QSettings::SystemScope. An installer can give any Qt Creator setting a default value by writing into this .ini file.
+</p><p>The following special settings (or specially notable settings) are also read by Qt Creator:
+</p>
+<table>
+<tr>
+<td> ExampleManifests
+</td>
+<td> Array of strings. Paths to manifest xml files that describe examples to show in Qt Creator's example browser.
+</td></tr>
+<tr>
+<td> Plugins/Ignored
+</td>
+<td> QStringList (i.e. string containing of comma-separated values). Names of plugins that should not be loaded by default (even though they are installed and not marked experimental).
+</td></tr>
+<tr>
+<td> Plugins/ForceEnabled
+</td>
+<td> QStringList (i.e. string containing of comma-separated values). Names of plugins that should be loaded even though they would not be loaded by default (e.g. because they are marked as experimental).
+</td></tr>
+<tr>
+<td> Help/InstalledDocumentation
+</td>
+<td> QStringList (i.e. string containing of comma-separated values). Paths to qch (documentation) files and directories containing qch files that should be registered with Qt Creator
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.029 seconds
+Real time usage: 0.032 seconds
+Preprocessor visited node count: 32/1000000
+Preprocessor generated node count: 48/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:164-0!*!*!!en!*!* and timestamp 20151104172708 and revision id 14017
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&amp;oldid=14017">http://wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&amp;oldid=14017</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:Tools::QtCreator" title="Category:Tools::QtCreator">Tools::QtCreator</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Building-Qt-Creator-Packages" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Building-Qt-Creator-Packages"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Building-Qt-Creator-Packages&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Building-Qt-Creator-Packages" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Building-Qt-Creator-Packages" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Building-Qt-Creator-Packages" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&amp;oldid=14017&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&amp;oldid=14017" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 16 March 2015, at 07:52.</li>
+											<li id="footer-info-viewcount">This page has been accessed 2,049 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":516});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building-Qt-Creator-Packages&oldid=14017 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:04:20 GMT -->
+</html>

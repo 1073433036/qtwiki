@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&oldid=19216 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Building Qt for Symbian 3 Devices - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building_Qt_for_Symbian_3_Devices","wgTitle":"Building Qt for Symbian 3 Devices","wgCurRevisionId":19216,"wgRevisionId":19216,"wgArticleId":148,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Outdated pages","Articles needing cleanup","Developing Qt::Symbian"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building_Qt_for_Symbian_3_Devices","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building_Qt_for_Symbian_3_Devices skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Building Qt for Symbian 3 Devices</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 13:20, 23 August 2015 by <a href="http://wiki.qt.io/index.php?title=User:AutoSpider&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:AutoSpider (page does not exist)">AutoSpider</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:AutoSpider&amp;action=edit&amp;redlink=1" class="new" title="User talk:AutoSpider (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/AutoSpider" title="Special:Contributions/AutoSpider">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&amp;diff=prev&amp;oldid=19216" title="Building Qt for Symbian 3 Devices">diff</a>) <a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&amp;direction=prev&amp;oldid=19216" title="Building Qt for Symbian 3 Devices">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 20px;border: 1px solid #C00; border-left: 10px solid #C00; background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>IMPORTANT:</b> The content of this page is outdated. Reason: The Symbian platform is no longer supported.<br /><small>If you have checked or updated this page and found the content to be suitable, please remove this notice.</small>
+</td></tr></table>
+<table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="http://wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="http://wiki.qt.io/Updated_pages" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Building_Qt_for_Symbian.5E3_devices"><span class="tocnumber">1</span> <span class="toctext">Building Qt for Symbian^3 devices</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Environment_setup"><span class="tocnumber">1.1</span> <span class="toctext">Environment setup</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Building_Qt"><span class="tocnumber">1.2</span> <span class="toctext">Building Qt</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Installing_Qt_libraries_to_device"><span class="tocnumber">1.3</span> <span class="toctext">Installing Qt libraries to device</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Building_applications"><span class="tocnumber">1.4</span> <span class="toctext">Building applications</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Building_Qt_for_Symbian.5E3_devices">Building Qt for Symbian^3 devices</span></h1>
+<p>This guide provides information required to set up environment and build Qt libraries that can be installed on a Symbian^3 device. The produced libraries will not be binary compatible with any official Qt releases, so any applications you wish to run must be also built against these libraries.
+</p>
+<h2><span class="mw-headline" id="Environment_setup">Environment setup</span></h2>
+<h3><span class="mw-headline" id="The_following_tools_are_needed_for_building_a_Qt_package:">The following tools are needed for building a Qt package:</span></h3>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://www.symlab.org/wiki/index.php/Kits_Q&amp;As#How_do_I_install_Perl_on_my_C.2B.2B_development_PC.3F">ActiveState Perl 5.6.1 (build 638) or newer</a> - Required by Qt and Symbian toolchains.
+</li>
+<li> <a rel="nofollow" class="external text" href="http://www.symlab.org/wiki/index.php/Kits_Q&amp;As#How_do_I_install_Python_on_my_C.2B.2B_development_PC.3F">ActiveState Python 2.6.x or newer</a> - Required by Symbian toolchain.
+</li>
+<li> <a rel="nofollow" class="external text" href="http://www.symlab.org/wiki/index.php/Product_Development_Toolkit_Quick_Start">PDT 1.7 or newer</a> - Needed for Raptor (sbsv2) toolchain. Also includes Carbide IDE and other assorted tools.
+</li>
+<li> <a rel="nofollow" class="external text" href="http://www.symlab.org/wiki/index.php/How_to_Download_a_PDK">PDK 3.0.3 or newer</a> - Symbian platform.
+<ul>
+<li> Note: Installing some parts of the PDK require "SYMBIAN FOUNDATION RESEARCH &amp; DEVELOPMENT LICENSE", but those parts are not needed to build Qt so you don't need to worry about missing them.
+</li>
+</ul>
+</li>
+<li> The recommended compiler for building Qt libraries is <a rel="nofollow" class="external text" href="http://www.symlab.org/wiki/index.php/ARM_Real_View_Compilation_Tools_(RVCT)"><i>Quick_Start RVCT 2.2 (build 686 or newer)</i></a><i> - which is not available free of charge.</i>
+</li>
+</ul>
+<p>'<b><i> Alternatively, </i><a rel="nofollow" class="external text" href="http://www.symlab.org/wiki/index.php/ARM_Real_View_Compilation_Tools">(RVCT)_Quick_Start RVCT 4.0 (build 821 or newer)</a> can be used. Unlike version 2.2, version 4.0 is available free of charge for small organizations.</b>
+</p>
+<ul>
+<li> The desired version of Qt source code - Available e.g. via <a rel="nofollow" class="external text" href="http://qt.gitorious.org/+qt-developers/qt/releases">Gitorius</a> or "ftp":<a rel="nofollow" class="external free" href="ftp://ftp.qt.nokia.com/qt/source/">ftp://ftp.qt.nokia.com/qt/source/</a> (e.g. qt-everywhere-opensource-src-4.7.1.zip).
+</li>
+</ul>
+<h3><span class="mw-headline" id="Required_environment_variables:">Required environment variables:</span></h3>
+<ul>
+<li> EPOCROOT environment variable must point to PDK root. E.g. <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">set EPOCROOT<span class="sy0">=</span>C<span class="sy0">:</span>PDK3.0.3</pre></div></div>
+</li>
+<li> Depending on compiler you are using:
+<ul>
+<li> RVCT22BIN, RVCT22INC, and RVCT22LIB. These need to point to <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">bin</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">inc</pre></div></div> (or <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">include</pre></div></div>), and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">lib</pre></div></div> directories under your RVCT 2.2 installation. Normally these are set by RVCT 2.2 installer.
+</li>
+<li> RVCT40BIN, RVCT40INC, and RVCT40LIB are the corresponding variables for RVCT 4.0.
+</li>
+</ul>
+</li>
+<li> PATH environment variable must contain the following paths in the beginning to ensure correct tools are used.
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">lt<span class="sy0">;</span>Qt source rootgt<span class="sy0">;</span>bin</pre></div></div> for qmake and Qt tools.
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">lt<span class="sy0">;</span>PDT installation rootgt<span class="sy0">;</span>Raptorwin32mingwbin</pre></div></div> for Mingw make.
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">lt<span class="sy0">;</span>PDT installation rootgt<span class="sy0">;</span>Raptorbin</pre></div></div> for sbs tool.
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">EPOCROOT<span class="sy0">%</span>epoc32tools</pre></div></div> for required Symbian tools.
+</li>
+</ul>
+</li>
+</ul>
+<p>Here are sample commands you can edit to match your environment and save as <i>setenv.bat</i> to set up your Qt building environment:
+</p><p><br />
+Change to your Qt source root directory:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> C<span class="sy0">:</span>
+ cd</pre></div></div>
+<p>Set up the environment variables:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> SET EPOCROOT<span class="sy0">=</span>C<span class="sy0">:</span>.0.3 SET RVCT22BIN<span class="sy0">=</span>C<span class="sy0">:</span>_22\bin
+ SET RVCT22INC<span class="sy0">=</span>C<span class="sy0">:</span>_22\inc
+ SET RVCT22LIB<span class="sy0">=</span>C<span class="sy0">:</span>_22\lib
+ SET PATH<span class="sy0">=%</span>CD<span class="sy0">%;</span>C<span class="sy0">:</span>_1.7\Raptor\win32\mingw\bin<span class="sy0">;</span>C<span class="sy0">:</span>_1.7\Raptor\bin<span class="sy0">;%</span>EPOCROOT<span class="sy0">%</span>epoc32\tools<span class="sy0">;%</span>PATH<span class="sy0">%</span></pre></div></div>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Signing_certificate">Signing certificate</span></h3>
+<p>A signing certificate is needed if you are not satisfied with the default self-signable set of supported capabilities for Qt libraries (i.e. LocalServices, NetworkServices, ReadUserData, UserEnvironment, and WriteUserData). The capabilities Qt libraries require depends on the capabilities of the applications you plan on running against the Qt libraries you build; the Qt libraries need at least all of the capabilities the application has. The best certificate to use would be a manufacturer's RnD certificate, but unless you are working for a device manufacturer, you probably won't have access to such a certificate. The next best thing is a Symbian developer certificate. See <a rel="nofollow" class="external text" href="https://www.symbiansigned.com/app/page">here</a> for details about acquiring a developer certificate.
+</p>
+<h2><span class="mw-headline" id="Building_Qt">Building Qt</span></h2>
+<h3><span class="mw-headline" id="Configure_Qt">Configure Qt</span></h3>
+<p>Give the following command in your Qt source root directory to configure Qt:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">configure <span class="sy0">-</span>platform win32<span class="sy0">-</span>g<span class="sy0">++</span> <span class="sy0">-</span>xplatform symbian<span class="sy0">-</span>sbsv2 <span class="sy0">-</span>openvg <span class="sy0">-</span>graphicssystem openvg <span class="sy0">-</span>no<span class="sy0">-</span>usedeffiles <span class="sy0">-</span>nomake demos <span class="sy0">-</span>nomake examples <span class="sy0">-</span>qtlibinfix OfMyOwn <span class="sy0">-</span>make make</pre></div></div>
+<ul>
+<li> <b>Note:</b> If you do not need Webkit, you can reduce the build time around 50 by adding "-no-webkit" parameter to configure.
+</li>
+</ul>
+<h3><span class="mw-headline" id="Build_Qt_.26_QtWebkit">Build Qt &amp; QtWebkit</span></h3>
+<p>Depending on your chosen compiler, select one of commands below to compile Qt and give it at the Qt source root directory:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make release<span class="sy0">-</span>armv6
+make release<span class="sy0">-</span>armv6<span class="sy0">-</span>rvct4.0</pre></div></div>
+<h2><span class="mw-headline" id="Installing_Qt_libraries_to_device">Installing Qt libraries to device</span></h2>
+<p>By default Qt libraries are built with "All -Tcb" capabilities, which requires a certificate normally only available for device manufacturers to sign. Depending on what kind of certificate you have available, you might need to patch the capabilities of the Qt libraries. To create Qt installation packages, run the following commands:
+</p><p>If you are content with default set of self-signable capabilities and do not have any extra certificate:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd src\s60installs
+make sis QT_SIS_OPTIONS<span class="sy0">=-</span>i
+&#160;
+cd ..<span class="me1">rdparty</span>\webkit\WebCore
+make sis QT_SIS_OPTIONS<span class="sy0">=-</span>i</pre></div></div>
+<p>If you have a manufacturer RnD certificate and a RnD device:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd src\s60installs
+make sis QT_SIS_OPTIONS<span class="sy0">=-</span>i QT_SIS_CERTIFICATE<span class="sy0">=&lt;</span>certificate file<span class="sy0">&gt;</span> QT_SIS_KEY<span class="sy0">=&lt;</span>certificate key file<span class="sy0">&gt;</span>
+&#160;
+cd ..<span class="me1">rdparty</span>\webkit\WebCore
+make sis QT_SIS_OPTIONS<span class="sy0">=-</span>i QT_SIS_CERTIFICATE<span class="sy0">=&lt;</span>certificate file<span class="sy0">&gt;</span> QT_SIS_KEY<span class="sy0">=&lt;</span>certificate key file<span class="sy0">&gt;</span></pre></div></div>
+<p>If you are using developer certificate with maximum non-manufacturer capabilities:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd src\s60installs
+patch_capabilities.<span class="me1">pl</span> QtOfMyOwn_template.<span class="me1">pkg</span> release<span class="sy0">-</span>armv6 <span class="st0">&quot;ALL -Tcb -AllFiles -DRM&quot;</span>
+make sis QT_SIS_OPTIONS<span class="sy0">=-</span>i QT_SIS_CERTIFICATE<span class="sy0">=&lt;</span>certificate file<span class="sy0">&gt;</span> QT_SIS_KEY<span class="sy0">=&lt;</span>certificate key file<span class="sy0">&gt;</span>
+&#160;
+cd ..<span class="me1">rdparty</span>\webkit\WebCore
+patch_capabilities.<span class="me1">pl</span> QtWebKitOfMyOwn_template.<span class="me1">pkg</span> release<span class="sy0">-</span>armv6 <span class="st0">&quot;ALL -Tcb -AllFiles -DRM&quot;</span>
+make sis QT_SIS_OPTIONS<span class="sy0">=-</span>i QT_SIS_CERTIFICATE<span class="sy0">=&lt;</span>certificate file<span class="sy0">&gt;</span> QT_SIS_KEY<span class="sy0">=&lt;</span>certificate key file<span class="sy0">&gt;</span></pre></div></div>
+<ul>
+<li> <b>Note 1:</b> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT_SIS_OPTIONS<span class="sy0">=-</span>i</pre></div></div> is simply a convenience parameter that causes automatic installation to a connected device after package is created.
+</li>
+</ul>
+<ul>
+<li> <b>Note 2:</b> Infixing Qml plugins is broken in Qt 4.7.0 and 4.7.1 releases, so if the device already has Qt 4.7.x pre-installed, you will need to edit the .pkg files and remove all lines with qmldir on them before creating the package or you won't be able to install it due to same files already having been installed by existing package. You can also expect qml plugins not working properly with infixed Qt in these releases.
+</li>
+</ul>
+<h2><span class="mw-headline" id="Building_applications">Building applications</span></h2>
+<p>Build your own applications normally using the same make target that you used to build the Qt and use same "make sis" options. E.g. for RVCT 2.2 build using self-signed certificate, use the following commands:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd <span class="sy0">&lt;</span>your app dir<span class="sy0">&gt;</span>
+qmake
+make release<span class="sy0">-</span>armv6
+make sis QT_SIS_OPTIONS<span class="sy0">=-</span>i</pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.360 seconds
+Real time usage: 0.373 seconds
+Preprocessor visited node count: 226/1000000
+Preprocessor generated node count: 524/1000000
+Post‐expand include size: 2192/2097152 bytes
+Template argument size: 707/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:148-0!*!0!!en!*!* and timestamp 20151104114035 and revision id 19216
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&amp;oldid=19216">http://wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&amp;oldid=19216</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/index.php?title=Category:Outdated_pages&amp;action=edit&amp;redlink=1" class="new" title="Category:Outdated pages (page does not exist)">Outdated pages</a></li><li><a href="http://wiki.qt.io/Category:Articles_needing_cleanup" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="http://wiki.qt.io/index.php?title=Category:Developing_Qt::Symbian&amp;action=edit&amp;redlink=1" class="new" title="Category:Developing Qt::Symbian (page does not exist)">Developing Qt::Symbian</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Building+Qt+for+Symbian+3+Devices" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Building_Qt_for_Symbian_3_Devices"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Building_Qt_for_Symbian_3_Devices&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Building_Qt_for_Symbian_3_Devices" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Building_Qt_for_Symbian_3_Devices" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Building_Qt_for_Symbian_3_Devices" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&amp;oldid=19216&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&amp;oldid=19216" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:20.</li>
+											<li id="footer-info-viewcount">This page has been accessed 920 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":246});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_for_Symbian_3_Devices&oldid=19216 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:50 GMT -->
+</html>

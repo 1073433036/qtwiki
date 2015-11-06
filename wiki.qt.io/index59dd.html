@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=API_Design_Principles/ja&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:54:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>API Design Principles/ja - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"API_Design_Principles/ja","wgTitle":"API Design Principles/ja","wgCurRevisionId":19207,"wgRevisionId":19207,"wgArticleId":34,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing Qt::Guidelines"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"API_Design_Principles/ja","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-API_Design_Principles_ja skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">API Design Principles/ja</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="API_Design_Principles.html" title="API Design Principles">API Design Principles</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="index3d38.html?title=API_Design_Principles/ja&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table><a href="API-Design-Principles.html" title="API-Design-Principles" class="mw-redirect">English</a> <a href="API-Design-Principles-Russia.html?title=API-Design-Principles-Russia&amp;action=edit&amp;redlink=1" class="new" title="API-Design-Principles-Russia (page does not exist)">Русский</a> <b>日本語</b>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#API_.E8.A8.AD.E8.A8.88.E3.81.AE.E5.8E.9F.E7.90.86.E5.8E.9F.E5.89.87"><span class="tocnumber">1</span> <span class="toctext">API 設計の原理原則</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E8.89.AF.E3.81.84_API_.E3.81.AE.EF.BC.96.E3.81.A4.E3.81.AE.E7.89.B9.E5.BE.B4"><span class="tocnumber">1.1</span> <span class="toctext">良い API の６つの特徴</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E9.9D.99.E7.9A.84.E3.81.AA.E3.83.9D.E3.83.AA.E3.83.A2.E3.83.BC.E3.83.95.E3.82.A3.E3.82.BA.E3.83.A0"><span class="tocnumber">1.2</span> <span class="toctext">静的なポリモーフィズム</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.E3.83.97.E3.83.AD.E3.83.91.E3.83.86.E3.82.A3.E3.81.AB.E5.9F.BA.E3.81.A5.E3.81.8F_API"><span class="tocnumber">1.3</span> <span class="toctext">プロパティに基づく API</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="API_.E8.A8.AD.E8.A8.88.E3.81.AE.E5.8E.9F.E7.90.86.E5.8E.9F.E5.89.87">API 設計の原理原則</span></h1>
+<p>Qt が好評を得ている理由の１つが、首尾一貫した、簡単に学べる、非常に強力な API です。Qt の API を設計する上でこれまで蓄積してきたノウハウをこの記事で解説したいと思います。多くのガイドラインは普遍的なもので、中には慣例的なものもあります。我々がこのガイドラインに従う第一の理由は、既存の API の一貫性を保つためです。
+</p><p>基本的にこのガイドラインはパブリックな API に対するものですが、同様のテクニックをプライベートな API に対しても適用することを推奨しています。
+</p><p>Jasmin Blanchette による <a rel="nofollow" class="external text" href="http://chaos.troll.no/~shausman/api-design/api-design.pdf">Little Manual of API Design (PDF)</a> も合わせて読むと良いでしょう。
+</p>
+<h2><span class="mw-headline" id=".E8.89.AF.E3.81.84_API_.E3.81.AE.EF.BC.96.E3.81.A4.E3.81.AE.E7.89.B9.E5.BE.B4">良い API の６つの特徴</span></h2>
+<p>プログラマーにとって API とは、エンドユーザーにとっての GUI のようなものです。API が人間のプログラマーによって使われるという事実を強調する場合、API の 'P' は "Program" ではなく "Programmer" を意味します。
+</p><p><a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/qq/qq13-apis.html">Qt Quarterly 13 の API design に関する記事</a> で、Matthias は API は最小限かつ完全で、明確でシンプルなセマンティックを持ち、直感的で、簡単に覚ることができ、可読なコードを導くべきだという彼の考えを示しました。
+</p>
+<ul>
+<li> <b>最小限であれ</b>: 最小限の API とは、クラス数を可能な限り少なくし、クラスのパブリックなメンバも可能な限り少なくするということです。これにより、理解が容易になり、覚えやすく、デバッグがしやすく、API の変更もしやすくなります。
+</li>
+</ul>
+<ul>
+<li> <b>完全であれ</b>: 完全な API とは必要な機能を備えているということです。最小限であることとは相反することがあります。メンバ関数が誤ったクラスにある場合には、その関数にたどり着く可能性が低くなります。
+</li>
+</ul>
+<ul>
+<li> <b>明確でシンプルなセマンティックであれ</b>: 一般的な設計と同様に、「驚き最小の原則」に従うべきです。一般的なものは簡単に対応できるようにします。一般的ではないものも対応できるようにすべきですが、それにはフォーカスしません。個々の問題への対処: 解決策を必要以上に一般化しないようにしましょう (例えば、Qt 3の QMimeSourceFactory は、QImageLoader と呼ばれる異なるAPI を持つものにすることもできました)。
+</li>
+</ul>
+<ul>
+<li> <b>直感的であれ</b>: コンピューター上の全てのものと同様に、API も直感的であるべきです。何が直感的であるかは経験やバックグランドによって異なります。それなりに経験のあるユーザーがドキュメントを読まずともはじめることができ、API を知らないプログラマーでも書かれたコードを理解することができる場合は API は直感的と言えるでしょう。
+</li>
+</ul>
+<ul>
+<li> <b>覚えやすくあれ</b>: API を簡単に覚えられるようにするには、首尾一貫した正確な名前をつけることです。理解できるパターンやコンセプトを採用し、省略はさけましょう。
+</li>
+</ul>
+<ul>
+<li> <b>可読なコードを導け</b>: コードは１度しか書かれませんが、何度も読まれ(デバッグされ、変更され)ます。読みやすいコードは書くのには時間がかかることもありますが、プロダクトのライフサイクルにおいては時間の節約になります。
+</li>
+</ul>
+<p>最後に、様々なユーザーが様々な部分の API を使用することを心に留めてください。Qt のクラスのインスタンスを単に使用するのも直感的であるべきですが、ユーザーが派生クラス化をする前にそのドキュメントを読むことを想定してください。
+</p>
+<h2><span class="mw-headline" id=".E9.9D.99.E7.9A.84.E3.81.AA.E3.83.9D.E3.83.AA.E3.83.A2.E3.83.BC.E3.83.95.E3.82.A3.E3.82.BA.E3.83.A0">静的なポリモーフィズム</span></h2>
+<p>同じようなクラスは同じような API を持つべきです。これは、実行時のポリモーフィズムが利用できる場所では、継承により実現することができます。しかし、ポリモーフィズムは設計時にも起こります。例えば QProgressBar の QSlider への変更や QString の QByteArray への変更など、API が似ていることでこれらの変更がとても簡単にできることがわかるでしょう。我々はこれを "静的なポリモーフィズム" と呼んでいます。
+</p><p>静的なポリモーフィズムにより API やプログラミングのパターンを覚えるのも簡単になります。関係するクラス群が同じような API を持つということは、それぞれのクラスが完璧な API をそれぞれ持つよりも結果として良い場合があります。
+</p><p>Qt ではやむを得ない場合を除き、実際の継承よりもこの静的なポリモーフィズムを採用することを好んでいます。これにより、Qt のパブリックなクラス数を少なく保つことができ、Qt の初心者でもドキュメントを見て使用方法を簡単に理解することができるようになります。
+</p><p><b>良い例</b>: QDialogButtonBox と QMessageBox は "QAbstractButtonBox" のようなクラスを継承することなくボタンに関する同じような API (addButton(), setStandardButtons() など)を持ちます。
+</p><p><b>悪い例</b>: QAbstractSocket は QTcpSocket と QUdpSocket により継承されていますが、この２つのクラスでは動作が大きく異なります。QAbstractSocket のポインタを有効に使用した(できた)例は見たことがありません。
+</p><p><b>難しい例</b>: QBoxLayout は QHBoxLayout と QVBoxLayout の基底クラスです。利点: QBoxLayout を使用し、ツールバーで setOrientation() を呼ぶことで Horizontal/Vertical の設定ができる。欠点: 余計なクラスで、ユーザーは ((QBoxLayout *)hbox)-&gt;setOrientation(Qt::Vertical) とする事もできるが、あまり意味がない。
+</p>
+<h2><span class="mw-headline" id=".E3.83.97.E3.83.AD.E3.83.91.E3.83.86.E3.82.A3.E3.81.AB.E5.9F.BA.E3.81.A5.E3.81.8F_API">プロパティに基づく API</span></h2>
+<p>新しい Qt のクラスは "プロパティに基づく API" を持つ傾向にあります。QTimer を例に見てみましょう。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QTimer</span> timer<span class="sy0">;</span>
+ timer.<span class="me1">setInterval</span><span class="br0">&#40;</span><span class="nu0">1000</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ timer.<span class="me1">setSingleShot</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ timer.<span class="me1">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p><i>プロパティ</i> はそのオブジェクトの状態の一部となる概念的な属性を意味します。Q_PROPERTY かどうかはここでは関係ありません。使用可能な場合、プロパティの設定は順序に依存すべきではありません。つまり、個々のプロパティは直交であるべきです。例えば、上記の例は以下のようにも書くことができます。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QTimer</span> timer<span class="sy0">;</span>
+ timer.<span class="me1">setSingleShot</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ timer.<span class="me1">setInterval</span><span class="br0">&#40;</span><span class="nu0">1000</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ timer.<span class="me1">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p><i>簡単に</i> 以下のように記述することも可能です。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">timer.<span class="me1">start</span><span class="br0">&#40;</span><span class="nu0">1000</span><span class="br0">&#41;</span><span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+同じことを <span class="kw5">QRegExp</span> でも見てみましょう。</pre></div></div>
+<pre>QRegExp regExp;
+regExp.setCaseSensitive(Qt::CaseInsensitive);
+regExp.setPattern("<b>.</b>");
+regExp.setPatternSyntax(Qt::WildcardSyntax);
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">このような API の実装では、内部のオブジェクトが遅延するように生成することがポイントです。例えば、<span class="kw5">QRegExp</span> の場合、パターンシンタックスが何になるかがわかる前に、 setPattern<span class="br0">&#40;</span><span class="br0">&#41;</span> で指定された <span class="st0">&quot;'''.'''&quot;</span>のパターンをコンパイルしてしまうのは時期尚早です。
+&#160;
+プロパティは連続して指定されることがあります。この場合は注意深く先に進める必要があります。現在のスタイルによって決まる <span class="st0">&quot;デフォルトのアイコンサイズ&quot;</span> と <span class="kw5">QToolButton</span> の <span class="st0">&quot;iconSize&quot;</span> プロパティの例を見てみましょう。</pre></div></div>
+<pre>toolButton-&gt;iconSize(); // 現在のスタイルのデフォルトを返す
+toolButton-&gt;setStyle(otherStyle);
+toolButton-&gt;iconSize(); // otherStyle のデフォルトを返す
+toolButton-&gt;setIconSize(QSize(52, 52));
+toolButton-&gt;iconSize(); // (52, 52) を返す
+toolButton-&gt;setStyle(yetAnotherStyle);
+toolButton-&gt;iconSize(); // (52, 52) を返す
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">一度 iconSize を設定すると、この設定が有効になり、スタイルの変更では設定が変わりません。これは <span class="st0">''</span><span class="st0">'良いことです'</span><span class="st0">''</span> 。プロパティをリセットできるようにしておくと便利な場合もあり、これには２つのアプローチがあります。
+&#160;
+<span class="sy0">*</span> 特別な値 <span class="br0">&#40;</span><span class="kw5">QSize</span><span class="br0">&#40;</span><span class="br0">&#41;</span> や –<span class="nu0">1</span>、<span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">Alignment</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span> など<span class="br0">&#41;</span> を <span class="st0">&quot;リセット&quot;</span> の意味で渡す
+&#160;
+<span class="sy0">*</span> resetFoo<span class="br0">&#40;</span><span class="br0">&#41;</span> や unsetFoo<span class="br0">&#40;</span><span class="br0">&#41;</span> などの関数を明示的に用意する
+&#160;
+iconSize の場合は <span class="br0">&#40;</span><span class="kw5">QSize</span><span class="br0">&#40;</span>–<span class="nu0">1</span><span class="sy0">,</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span> を意味する<span class="br0">&#41;</span> <span class="kw5">QSize</span><span class="br0">&#40;</span><span class="br0">&#41;</span> を <span class="st0">&quot;リセット&quot;</span> の意味とすることで十分でしょう。
+&#160;
+取得関数が設定されたものと異なるものを返す場合があります。例えば widget<span class="sy0">-&gt;</span><span class="me3">setEnabled</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span> を実行した場合でも widget<span class="sy0">-&gt;</span><span class="me3">isEnabled</span><span class="br0">&#40;</span><span class="br0">&#41;</span> が <span class="kw2">false</span> を返すことがあり得ます。これは親が無効な場合です。通常はこれがチェックしたい点 <span class="br0">&#40;</span>親が無効な場合は子ウィジェットもグレーアウトされるべきで、そのウィジェット自身も無効として振る舞うべきであると同時に、この設定は内部では保持されており、実際は <span class="st0">&quot;有効&quot;</span> であり、親が再度有効になるのを待っているということを<span class="br0">&#41;</span> なので、問題はありません。ただし、この動作はドキュメントに正確に記載されるべきですが。
+&#160;
+<span class="sy0">==</span> C<span class="sy0">++</span> 固有の問題 <span class="sy0">==</span>
+&#160;
+<span class="sy0">===</span> 値かオブジェクトか <span class="sy0">===</span>
+&#160;
+<span class="sy0">===</span> ポインタか参照か <span class="sy0">===</span>
+&#160;
+出力パラメーターには、ポインタと参照ではどちらがベストでしょうか？</pre></div></div>
+<pre>void getHsv(int *h, int *s, int *v) const
+void getHsv(int &amp;h, int &amp;s, int &amp;v) const
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ほとんどの C<span class="sy0">++</span> の本では可能な場合は参照が推奨されています。一般的な観点では、ポインタよりも参照の方が <span class="st0">&quot;より安全でより適切&quot;</span> とされています。これに反して、<span class="kw5">Qt</span> ではポインタを選択する傾向にあります。これはユーザーのコードがより読みやすくなるからです。それでは比較してみましょう。</pre></div></div>
+<pre>color.getHsv(&amp;h, &amp;s, &amp;v);
+color.getHsv(h, s, v);
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">h、s、v がこの関数呼び出しで変更される可能性が高いことが明らかなのは最初の行だけでしょう。
+&#160;
+<span class="sy0">===</span> バーチャル関数 <span class="sy0">===</span>
+&#160;
+C<span class="sy0">++</span> ではメンバ関数をバーチャルで宣言する基本的な目的は、派生クラスでその関数をオーバーロードし、その振る舞いをカスタマイズできるようにすることです。その関数をバーチャルにする目的はその関数の既にある呼び出しで、代わりに自分のコードを実行するためです。ある関数を外部から呼び出すコードがどこにもない場合には、その関数をバーチャルとして宣言することに慎重になるべきです。</pre></div></div>
+<pre>// Qt 3 の QTextEdit: バーチャルである理由がないメンバ関数の一覧
+virtual void resetFormat();
+virtual void setUndoDepth( int d );
+virtual void setFormat( QTextFormat <b>f, int flags );</b>
+virtual void ensureCursorVisible();
+virtual void placeCursor( const QPoint &amp;pos;, QTextCursorc = 0 );
+virtual void moveCursor( CursorAction action, bool select );
+virtual void doKeyboardAction( KeyboardAction action );
+virtual void removeSelectedText( int selNum = 0 );
+virtual void removeSelection( int selNum = 0 );
+virtual void setCurrentFont( const QFont &amp;f );
+virtual void setOverwriteMode( bool b ) { overWrite = b; }
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QTextEdit</span> を <span class="kw5">Qt</span> <span class="nu0">3</span> から <span class="kw5">Qt</span> <span class="nu0">4</span> に移植した際に、ほとんどのバーチャル関数は削除されました。面白いことに<span class="br0">&#40;</span><span class="sy0">-</span>期待はしていませんでしたが<span class="sy0">-</span> 予期していなかったわけではないのですが<span class="br0">&#41;</span>、大きな問題はありませんでした。なぜか？それは <span class="kw5">Qt</span> <span class="nu0">3</span> では <span class="kw5">QTextEdit</span> のためにはポリモーフィズムが使われていなかったからです。<span class="kw5">Qt</span> <span class="nu0">3</span> の中ではこれらの関数は呼び出していませんでした。呼び出していたのはユーザーです。端的に言うと、<span class="kw5">QTextEdit</span> の派生クラスを作成する理由は無く、ユーザーがこれらの関数を呼び出さない限り、これらの関数を再実装する理由も無かったのです。<span class="kw5">Qt</span> の外のアプリケーションでポリモーフィズムが必要な場合は、自分でポリモーフィズムを追加することができたのです。
+&#160;
+<span class="sy0">====</span> バーチャル関数を避ける <span class="sy0">====</span>
+<span class="kw5">Qt</span> では我々は様々な理由によりバーチャル関数の数を最小限にするように努めました。バーチャル関数の呼び出しは、制御不能なノードが呼び出しグラフの中に入るため<span class="br0">&#40;</span>出力が予測不可能になり<span class="br0">&#41;</span>、バグの修正を困難にします。以下のように、再実装したバーチャル関数の中でとんでもない処理をする人もいます。
+&#160;
+<span class="st0">''</span><span class="st0">' イベントの送信
+&#160;
+* シグナルの発生
+&#160;
+* (例えばモーダルなファイルダイアログを開くなどによる) イベントループの実行
+&#160;
+* (例えば &quot;delete this&quot; となるような) オブジェクト自体の破棄
+&#160;
+これ以外にも、バーチャル関数の過度の使用を避ける理由は山ほどあります。
+&#160;
+* バイナリコンパチビリティを保ちながらのバーチャル関数の追加、移動、削除ができない
+&#160;
+* バーチャル関数は簡単にはオーバーロードできない
+&#160;
+* ほとんど全てのバーチャル関数の呼び出しはコンパイラによる最適化やインライン化ができない
+&#160;
+* 関数呼び出しに v-table のルックアップが必要になり、通常の関数に比べ２〜３倍遅くなる
+&#160;
+* バーチャル関数を持つクラスでは値としてのコピーが難しくなる(可能だが、とても厄介で非推奨)
+&#160;
+バーチャル関数を持たないクラスほどバグが少なく、一般的にメンテナンス性が高いことが経験的に分かっています。
+&#160;
+経験則では、我々がツールキットとして、そして主なユーザーとして、関数を呼び出すような場合でない限り、その関数はおそらく非バーチャルであるべきです。
+&#160;
+==== バーチャル vs コピー可能 ====
+&#160;
+ポリモーフィックなオブジェクトと値型のクラスは良いお友達ではありません。
+&#160;
+バーチャル関数を持つクラスのデストラクタはバーチャルでなければなりません。これは派生クラスのデータが破棄されることなしに、基底クラスが破棄されることによって起こるメモリリークを防ぐためです。
+&#160;
+あるクラスのコピーや代入を可能にしたり、値による比較をしたい場合には、コピーコンストラクタと代入演算子、等価演算子が必要でしょう。</span></pre></div></div>
+<pre>class CopyClass {
+public:
+CopyClass();
+CopyClass(const CopyClass &amp;other;);
+~CopyClass();
+CopyClass &amp;operator;=(const CopyClass &amp;other;);
+bool operator==(const CopyClass &amp;other;) const;
+bool operator!=(const CopyClass &amp;other;) const;
+</pre>
+<p>virtual void setValue(int v);
+</p>
+<pre>};
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">このクラスの派生クラスを作成すると、思いもよらないことがあなたのコードで起こります。一般的に、バーチャル関数とバーチャルなデストラクタを持たない場合はユーザーは派生クラスを作成しポリモーフィズムを使用することはできません。しかし、バーチャル関数やバーチャルなデストラクタを追加した場合、それがそのまま派生クラスを作成する理由となり、状況は複雑になります。 <span class="st0">''</span>バーチャル修飾子で宣言するのはとても簡単です。<span class="st0">''</span> しかし、混乱と破滅<span class="br0">&#40;</span>可読性の低いコード<span class="br0">&#41;</span>に陥るでしょう。以下の例で考えてみましょう。</pre></div></div>
+<pre>class OtherClass {
+public:
+const CopyClass &amp;instance;() const; // これは何を返すのか？何を代入すべきか？
+};
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="br0">&#40;</span>このセクションは工事中です<span class="br0">&#41;</span>
+&#160;
+<span class="sy0">===</span> <span class="kw4">const</span> について <span class="sy0">===</span>
+&#160;
+C<span class="sy0">++</span> にはあるものが変わらない<span class="sy0">/</span>副作用が無いことを表すための <span class="st0">&quot;const&quot;</span> というキーワードがあります。これは単純な値、ポインタ、ポインタが示すものに対して有効で、さらにオブジェクトの状態を変えない関数の特別な属性として使われます。
+&#160;
+<span class="kw4">const</span> がついたもの自体にはそれほど大きな価値がありません。<span class="st0">&quot;const&quot;</span> キーワードさえ持っていないプログラミング言語もたくさんあります。しかしこのことがそのまま不要であるという理由にはなりません。実際、C<span class="sy0">++</span> のソースコードから、関数の <span class="kw4">const</span> のオーバーロードを消し、<span class="st0">&quot;const&quot;</span> キーワードを全て検索して削除してみてもほとんどのものは、コンパイル、動作ともに問題ないでしょう。しかし、実用性を考えると、<span class="st0">&quot;const&quot;</span> の使用はとても重要です。
+&#160;
+<span class="kw5">Qt</span> の API 設計の中で、<span class="st0">&quot;const&quot;</span> が適切に使用されているものをいくつか見てみましょう。
+&#160;
+<span class="sy0">====</span> 引き数の <span class="kw4">const</span> ポインタ <span class="sy0">====</span>
+&#160;
+ポインタを引き数として取る <span class="kw4">const</span> 関数はほぼ全て <span class="kw4">const</span> ポインタを引き数に取ります。
+&#160;
+ある関数が実際に <span class="kw4">const</span> と宣言されている場合、副作用やそのオブジェクトの目に見える状態を変えることはありません。それにも関わらず <span class="kw4">const</span> ではない引き数が必要な場合はあるのでしょうか。<span class="kw4">const</span> 関数は他の <span class="kw4">const</span> 関数から呼ばれることが多く、それを考えると、<span class="kw4">const</span> ではないポインタが渡されることはほとんどありません<span class="br0">&#40;</span><span class="kw2">const_cast</span> を使わない場合。我々はできる限り <span class="kw2">const_cast</span> の使用を控えています<span class="br0">&#41;</span>。
+&#160;
+変更前<span class="sy0">:</span></pre></div></div>
+<pre>bool QWidget::isVisibleTo(QWidget *ancestor) const;
+bool QWidget::isEnabledTo(QWidget *ancestor) const;
+QPoint QWidget::mapFrom(QWidget *ancestor, const QPoint &amp;pos;) const;
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QWidget</span> には <span class="kw4">const</span> ではないポインタを引き数に取る <span class="kw4">const</span> 関数がたくさんあります。これらの関数は引き数で渡された widget を変更することは可能ですが、自分自身は変更できません。このような関数は <span class="kw2">const_cast</span> と一緒になっています。これらの関数は <span class="kw4">const</span> ポインタを引き数に取る方がいいでしょう。
+&#160;
+変更後<span class="sy0">:</span></pre></div></div>
+<pre>bool QWidget::isVisibleTo(const QWidget *ancestor) const;
+bool QWidget::isEnabledTo(const QWidget *ancestor) const;
+QPoint QWidget::mapFrom(const QWidget *ancestor, const QPoint &amp;pos;) const;
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QGraphicsItem</span> ではこのような変更をしました。しかし、<span class="kw5">QWidget</span> の変更は <span class="kw5">Qt</span> <span class="nu0">5</span> まで待つ必要があります。</pre></div></div>
+<pre>bool isVisibleTo(const QGraphicsItem *parent) const;
+QPointF mapFromItem (const QGraphicsItem *item, const QPointF &amp;point;) const;
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">====</span> 戻り値の <span class="kw4">const</span> <span class="sy0">====</span>
+&#160;
+関数呼び出しの戻り値で、参照を返さないものは R<span class="sy0">-</span>value と呼ばれます。
+&#160;
+クラスではない R<span class="sy0">-</span>value は常に cv 非修飾型です。文法的には <span class="st0">&quot;const&quot;</span> をつけることが可能であっても、アクセス権に関するものは何も変更しないため、あまり意味はありません。
+&#160;
+最近のほとんどのコンパイラではこのようなコードのコンパイル時に警告が表示されるでしょう。
+&#160;
+クラス型の R<span class="sy0">-</span>value に <span class="st0">&quot;const&quot;</span> を追加した場合、<span class="kw4">const</span> ではないメンバ関数へアクセスすることや、そのメンバを直接操作することは禁止されています。
+&#160;
+<span class="st0">&quot;const&quot;</span> を追加しなければそういったアクセスもできますが、それが必要となるケースはごく稀です。なぜならば、加えた変更も R<span class="sy0">-</span>value オブジェクトの有効期間の終了と共に消えてしまうからです。
+&#160;
+サンプル<span class="sy0">:</span></pre></div></div>
+<pre>struct Foo
+{
+void setValue(int v) { value = v; }
+int value;
+};
+</pre>
+<p>Foo foo()
+</p>
+<pre>{
+return Foo();
+}
+</pre>
+<p>const Foo cfoo()
+</p>
+<pre>{
+return Foo();
+}
+</pre>
+<p>int main()
+</p>
+<pre>{
+// 以下の文はコンパイルは通ります。foo() は const ではない R-value のため
+// (一般的に L-value を必要とする)代入はできませんが、
+// メンバへのアクセスは L-value となります。
+foo().value = 1; // OK だが、一時オブジェクトは文の最後で破棄されます。
+</pre>
+<p>// 以下の文はコンパイルは通ります。foo() は const ではない R-value のため
+</p>
+<pre>// 代入はできないが、(const でなくても) メンバ関数を呼ぶことはできます。
+foo().setValue(1); // OK だが、一時オブジェクトは文の最後で破棄されます。
+</pre>
+<p>// 以下の文はコンパイルが_通りません_。foo() は const なメンバを持つ
+</p>
+<pre>// const な R-value のため、メンバアクセスでの代入はできません。
+cfoo().value = 1; // NG
+</pre>
+<p>// 以下の文はコンパイルが_通りません_。foo() は const なメンバを持つ
+</p>
+<pre>// const な R-value のため、const ではないメンバ関数を呼び出せません。
+cfoo().setValue(1); // NG
+}
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">====</span> 戻り値<span class="sy0">:</span> ポインタ vs <span class="kw4">const</span> ポインタ <span class="sy0">====</span>
+&#160;
+<span class="kw4">const</span> 関数がポインタを返すか、<span class="kw4">const</span> ポインタを返すかについてですが、ほとんどの人が C<span class="sy0">++</span> での <span class="st0">&quot;const の正しさ&quot;</span> のコンセプトが破綻していると感じるところです。問題は自分の状態を変更しない <span class="kw4">const</span> 関数が <span class="kw4">const</span> ではないメンバのポインタを返すことで起こります。<span class="kw1">this</span> ポインタを返す単純な例でもオブジェクトの目に見える状態は変わりませんし、その影響範囲の状態も変わりません。しかし、プログラマーは間接的にオブジェクトのデータを変更することができます。
+&#160;
+以下のサンプルで <span class="kw4">const</span> ではないポインタを返す <span class="kw4">const</span> 関数を使用した、数ある <span class="kw4">const</span> の抜け道の１つを見てみましょう。</pre></div></div>
+<pre>QVariant CustomWidget::inputMethodQuery(Qt::InputMethodQuery query) const
+{
+moveBy(10, 10); // コンパイルできない！
+window()-&gt;childAt(mapTo(window(), rect().center()))-&gt;moveBy(10, 10); // コンパイルできる！
+}
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">const</span> ポインタを返す関数では<span class="br0">&#40;</span>期待どおりかどうかは別として<span class="br0">&#41;</span> <span class="kw1">this</span> に対する副作用を少なくともある程度の範囲において防いでいます。しかし、<span class="kw4">const</span> ポインタやそのリストを返したいと思うのはどのような関数でしょうか？<span class="kw4">const</span> の正しいアプローチを取った場合、メンバの１つへのポインタ<span class="br0">&#40;</span>もしくはその配列<span class="br0">&#41;</span>を返す全ての <span class="kw4">const</span> 関数は、<span class="kw4">const</span> ポインタを返さなければいけません。しかし残念なことに現実的には API が使いづらくなります。</pre></div></div>
+<pre>QGraphicsScene scene;
+// … シーンの構築
+</pre>
+<p>foreach (const QGraphicsItem <b>item, scene.items()) {</b>
+</p>
+<pre>item-&gt;setPos(qrand()&#160;% 500, qrand()&#160;% 500); // item が const ポインタなのでコンパイルできない！
+}
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QGraphicsScene</span><span class="sy0">::</span><span class="me2">items</span><span class="br0">&#40;</span><span class="br0">&#41;</span> は <span class="kw4">const</span> 関数のため、<span class="kw4">const</span> ポインタの配列を返すべきだということになるかもしれません。
+&#160;
+<span class="kw5">Qt</span> では、我々はほとんど全てで <span class="kw4">const</span> ではないパターンを使用しています。つまり、実用的なアプローチを選択しました。<span class="kw4">const</span> ではないポインタを返し、その不正使用により起こりうる問題よりも、<span class="kw4">const</span> ポインタを返すことによって起こりうる <span class="kw2">const_cast</span> の過度の利用の方が深刻だと考えたのです。
+&#160;
+<span class="sy0">====</span> 戻り値<span class="sy0">:</span> 値か <span class="kw4">const</span> 参照か <span class="sy0">====</span>
+戻り値のためのオブジェクトのコピーを保持している場合、<span class="kw4">const</span> 参照を返すのが最も速いアプローチです。しかし、これは我々が後でそのクラスのリファクタリングをする際には足かせとなります。 <span class="br0">&#40;</span>d<span class="sy0">-</span>ポインタを使用する方法により、<span class="kw5">Qt</span> のクラスのメモリ表現をいつでも変えることができます。しかし、バイナリ互換を保ったまま関数のシグネチャを <span class="st0">&quot;const QFoo &amp;&quot;</span> から <span class="st0">&quot;QFoo&quot;</span> へ変更することはできません。<span class="br0">&#41;</span> このため、処理速度が本当に求められる場合でリファクタリングの問題が無い場合<span class="br0">&#40;</span>例えば <span class="kw5">QList</span><span class="sy0">::</span><span class="me2">at</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>を除いて、一般的には <span class="st0">&quot;const QFoo &amp;&quot;</span> ではなく <span class="st0">&quot;QFoo&quot;</span> を返すようにしています。
+&#160;
+<span class="sy0">====</span> <span class="kw4">const</span> vs オブジェクトの状態 <span class="sy0">====</span>
+<span class="kw4">const</span> の正当性は C<span class="sy0">++</span> に置ける vi<span class="sy0">/</span>emacs 議論であり、このトピックはいくつかの分野で破綻しています<span class="br0">&#40;</span>例えばポインタベースの関数<span class="br0">&#41;</span>。
+&#160;
+しかし、<span class="kw4">const</span> 関数はクラスの目に見える状態を変えないというのが一般的なルールです。状態とは <span class="st0">&quot;自分と自分の責任の範囲&quot;</span> を意味します。これは <span class="kw4">const</span> ではない関数がそのプライベートなメンバデータを変えることを意味するものではありません。また、<span class="kw4">const</span> 関数でそれをできないわけでもありません。しかし、その関数はアクティブで、目に見える副作用を持ちます。<span class="kw4">const</span> 関数は通常は目に見える副作用は行いません。</pre></div></div>
+<pre>QSize size = widget-&gt;sizeHint(); // const
+widget-&gt;move(10, 10); // const ではない
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">デリゲートは何か別のものの上に描画をするためのものです。デリゲートの状態にはその責任が含まれるため、描画対象の状態を含みます。描画には副作用があり、描画を行う対象の見た目<span class="br0">&#40;</span>とそれに伴い、状態<span class="br0">&#41;</span>を変更します。このため、paint<span class="br0">&#40;</span><span class="br0">&#41;</span> を <span class="kw4">const</span> とするのは間違っています。全てのビューの paint<span class="br0">&#40;</span><span class="br0">&#41;</span> や <span class="kw5">QIcon</span> の paint<span class="br0">&#40;</span><span class="br0">&#41;</span> も同様です。ある関数の <span class="kw4">const</span> 性を明らかに破る目的ではない限り、<span class="kw4">const</span> 関数の中で <span class="kw5">QIcon</span><span class="sy0">::</span><span class="me2">paint</span><span class="br0">&#40;</span><span class="br0">&#41;</span> を呼ぶ人はいないでしょう。また、その場合は <span class="kw2">const_cast</span> による明示的なキャストの方がいいでしょう。</pre></div></div>
+<pre>// QAbstractItemDelegate::paint は const
+void QAbstractItemDelegate::paint(QPainterpainter, const QStyleOptionViewItem &amp;option;, const QModelIndex &amp;index;) const
+</pre>
+<pre>// QGraphicsItem::paint は const ではない
+void QGraphicsItem::paint(QPainter<b> painter, const QStyleOptionGraphicsItem </b>option, QWidget <b>widget = 0)</b>
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">==</span> API のセマンティックとドキュメント <span class="sy0">==</span>
+<span class="sy0">-</span><span class="nu0">1</span> を関数に渡した場合にどうすべきかなど…。
+&#160;
+警告、致命的なエラーなど
+&#160;
+API には品質の保証が必要です。１番最初のものは決して正しくありません。API のテストをしなければなりません。この API を使用しているコードを見ることでユースケースを作成し、そのコードが可読かどうかを確認してください。
+&#160;
+他には、他の人にその API をドキュメントのあり／なしで使ってもらい、そのクラスのドキュメント<span class="br0">&#40;</span>クラスの概要と個々の関数<span class="br0">&#41;</span>を書く方法があります。
+&#160;
+<span class="kw4">const</span> キーワードはあなたのためには <span class="st0">&quot;なにもしてくれません&quot;</span> 。１つの関数に <span class="kw4">const</span><span class="sy0">/</span><span class="kw4">const</span> ではないバージョンのオーバーロードを持つよりは、削除することを検討して下さい。
+&#160;
+<span class="sy0">==</span> 命名の美学 <span class="sy0">==</span>
+命名はおそらく API の設計における最重要課題です。そのクラスはなんと呼ばれるべきですか？メンバ関数はなんと呼ばれるべきですか？
+&#160;
+<span class="sy0">===</span> 一般的な命名規則 <span class="sy0">===</span>
+どんな種類の名前にも上手く適用できる規則がいくつかあります。まずはじめに、前述の通り、省略はしてはいけません。これは <span class="st0">&quot;previous&quot;</span> を <span class="st0">&quot;prev&quot;</span> とするような明らかな場合でも、ユーザーがどの場合は省略形なのかを覚えなければならないため、長期的にはこれは良くありません。
+&#160;
+API 自体に矛盾があるのは当然よくありません。例えば、<span class="kw5">Qt</span> <span class="nu0">3</span> には activatePreviousWindow<span class="br0">&#40;</span><span class="br0">&#41;</span> と fetchPrev<span class="br0">&#40;</span><span class="br0">&#41;</span> がありました。<span class="st0">&quot;省略は無し&quot;</span> というルールにより矛盾のない API の実現が単純になります。
+&#160;
+もう１つのクラスを設計する際の重要で、それでいて繊細なルールは派生クラスのために名前空間を綺麗にするべきだということです。<span class="kw5">Qt</span> <span class="nu0">3</span> はこの原理に従っていないところもありました。分かりやすく説明するため、<span class="kw5">QToolButton</span> を例にとります。<span class="kw5">Qt</span> <span class="nu0">3</span> の <span class="kw5">QToolButton</span> で name<span class="br0">&#40;</span><span class="br0">&#41;</span>、caption<span class="br0">&#40;</span><span class="br0">&#41;</span>、text<span class="br0">&#40;</span><span class="br0">&#41;</span>、textLabel<span class="br0">&#40;</span><span class="br0">&#41;</span> を呼んだ場合、何を期待しますか？ <span class="kw5">Qt</span> Designer 上で <span class="kw5">QToolButton</span> で色々試してみてください。
+&#160;
+<span class="sy0">*</span> name プロパティは <span class="kw5">QObject</span> から継承したもので、デバッグやテストの際に使用される内部のオブジェクト名を表します。
+&#160;
+<span class="sy0">*</span> caption プロパティは <span class="kw5">QWidget</span> から継承したもので、ウィンドウのタイトルを表しますが、<span class="kw5">QToolButton</span> は基本的には子ウィジェットとして使われるため実質的には意味がありません。
+&#160;
+<span class="sy0">*</span> text プロパティは QButton から継承したもので、useTextLabel が <span class="kw2">true</span> でない場合にボタン上に表示されます。
+&#160;
+<span class="sy0">*</span> textLabel プロパティは <span class="kw5">QToolButton</span> で定義され、useTextLabel が <span class="kw2">true</span> の場合に表示されます。
+&#160;
+可読性の観点から、name は <span class="kw5">Qt</span> <span class="nu0">4</span> では objectName となりました。caption は windowTitle となり、<span class="kw5">QToolButton</span> で text とは別にあった textLabel プロパティは無くなっています。
+&#160;
+良い名前が思い浮かばない場合には、ドキュメント化はとてもいい方法になりえます。そのアイテム<span class="br0">&#40;</span>クラス、関数、<span class="kw2">enum</span> の値など<span class="br0">&#41;</span>のドキュメントを作成してみて、最初にひらめいたの文章から決めるのです。正確な名前が見当たらない場合、そのアイテムがあるべきではないというサインの可能性があります。もし全ての方法に失敗し、それでもそのコンセプトに意味がある場合、新しい名前を発明しましょう。<span class="st0">&quot;widget&quot;</span> や <span class="st0">&quot;event&quot;</span>、<span class="st0">&quot;focus&quot;</span>、<span class="st0">&quot;buddy&quot;</span> などはこの結果生まれたものです。
+&#160;
+<span class="sy0">===</span> クラスの命名 <span class="sy0">===</span>
+個々のクラスに完璧な名前をつけるのではなく、クラスのグループが分かるようにしましょう。例えば <span class="kw5">Qt</span> <span class="nu0">4</span> に含まれる、モデルを利用するビュークラスは全て View で終わる名前<span class="br0">&#40;</span><span class="kw5">QListView</span>、<span class="kw5">QTableView</span>、<span class="kw5">QTreeView</span><span class="br0">&#41;</span>になっていて、対応するアイテムベースのクラスは Widget で終わる名前<span class="br0">&#40;</span><span class="kw5">QListWidget</span>、<span class="kw5">QTableWidget</span>、<span class="kw5">QTreeWidget</span><span class="br0">&#41;</span>になっています。
+&#160;
+<span class="sy0">===</span> Enum 型と値の命名 <span class="sy0">===</span>
+<span class="kw2">enum</span> を宣言する際、C<span class="sy0">++</span> では<span class="br0">&#40;</span>Java や C<span class="co2"># とは異なり)、型には関係なく enum 値が使われることを心に留めておかなければなりません。以下の例で一般的すぎる名前を enum 値につけた場合の危険性を見てみましょう。</span></pre></div></div>
+<pre>namespace Qt
+{
+enum Corner { TopLeft, BottomRight, … };
+enum CaseSensitivity { Insensitive, Sensitive };
+…
+};
+</pre>
+<pre>tabWidget-&gt;setCornerWidget(widget, Qt::TopLeft);
+str.indexOf("$(QTDIR)", Qt::Insensitive);
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">最後の行で、Insensitive は何を意味するのでしょう？我々の <span class="kw2">enum</span> 型の命名のガイドラインではそれぞれの <span class="kw2">enum</span> 値で、 <span class="kw2">enum</span> の型名の少なくとも１つの部分を繰り返すことになっています。</pre></div></div>
+<pre>namespace Qt
+{
+enum Corner { TopLeftCorner, BottomRightCorner, … };
+enum CaseSensitivity { CaseInsensitive,
+CaseSensitive };
+…
+};
+</pre>
+<pre>tabWidget-&gt;setCornerWidget(widget, Qt::TopLeftCorner);
+str.indexOf("$(QTDIR)", Qt::CaseInsensitive);
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">enum</span> の値を OR でまとめてフラグとして使用できる場合、その結果は <span class="kw4">int</span> に格納するのが伝統的な方法ですが、これは型安全ではありません。<span class="kw5">Qt</span> <span class="nu0">4</span> では T が <span class="kw2">enum</span> 型である <span class="kw5">QFlags</span><span class="sy0">&lt;</span>T<span class="sy0">&gt;</span> というテンプレートクラスを導入しました。<span class="kw5">Qt</span> では利便性を考え、このようなフラグ型の名前を <span class="kw4">typedef</span> してあるため、<span class="kw5">QFlags</span><span class="sy0">&lt;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">AlignmentFlag</span><span class="sy0">&gt;</span> の代わりに <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">Alignment</span> と書くことができます。
+&#160;
+慣例的に、<span class="kw2">enum</span> 型の名前には<span class="br0">&#40;</span>一度に１つのフラグしか持たないため<span class="br0">&#41;</span>単数形を使用していて、<span class="st0">&quot;flags&quot;</span> 型は複数形の名前にしてあります。例<span class="sy0">:</span></pre></div></div>
+<pre>enum RectangleEdge { LeftEdge, RightEdge, … };
+typedef QFlags&lt;RectangleEdge&gt; RectangleEdges;
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">&quot;flags&quot;</span> 型の名前が単数形の場合もあります。この場合、<span class="kw2">enum</span> 型は Flag で終わる名前にしています。</pre></div></div>
+<pre>enum AlignmentFlag { AlignLeft, AlignTop, … };
+typedef QFlags&lt;AlignmentFlag&gt; Alignment;
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">===</span> 関数と引数の命名方法 <span class="sy0">===</span>
+関数の命名の第一のルールは名前から副作用の有無が分かるようにすることです。<span class="kw5">Qt</span> <span class="nu0">3</span> では <span class="kw4">const</span> 関数 <span class="kw5">QString</span><span class="sy0">::</span><span class="me2">simplifyWhiteSpace</span><span class="br0">&#40;</span><span class="br0">&#41;</span> がこの規則を違反していました。この関数は名前の通り呼び出された文字列自体を変更するのではなく、<span class="kw5">QString</span> を返していたからです。この関数は <span class="kw5">Qt</span> <span class="nu0">4</span> では <span class="kw5">QString</span><span class="sy0">::</span><span class="me2">simplified</span><span class="br0">&#40;</span><span class="br0">&#41;</span> という名前に変更されています。
+&#160;
+引数の名前はその API を使用するコードには現れませんが、プログラマーにとっては重要な意味を持ちます。最近の IDE ではプログラマーがコードを書いている際に表示されることが多いため、引き数に適切な名前をつけ、ヘッダファイルと同じ名前をドキュメントでも使用することはとても大事なことです。
+&#160;
+<span class="sy0">===</span> <span class="kw4">bool</span> 型の取得関数、設定関数、プロパティの命名方法 <span class="sy0">===</span>
+<span class="kw4">bool</span> 型のプロパティに対する取得関数と設定関数の良い名前を探すことは常に難しい問題です。取得関数は checked<span class="br0">&#40;</span><span class="br0">&#41;</span> とすべきでしょうか？それとも isChecked<span class="br0">&#40;</span><span class="br0">&#41;</span> とすべきでしょうか。scrollBarsEnabled<span class="br0">&#40;</span><span class="br0">&#41;</span> と areScrollBarEnabled<span class="br0">&#40;</span><span class="br0">&#41;</span> ではどうでしょうか。
+&#160;
+<span class="kw5">Qt</span> <span class="nu0">4</span> では取得関数の命名に以下のガイドラインを使用しました。
+&#160;
+<span class="st0">''</span><span class="st0">' 形容詞は接頭語 is をつける
+'</span><span class="st0">''</span> isChecked<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="st0">''</span><span class="st0">''</span><span class="st0">''</span> isDown<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="st0">''</span><span class="st0">''</span><span class="st0">''</span> isEmpty<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="st0">''</span><span class="st0">''</span><span class="st0">''</span> isMovingEnabled<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+<span class="sy0">*</span> 複数形の名詞に対する形容詞の場合は is をつけない
+<span class="sy0">**</span> scrollBarsEnabled<span class="br0">&#40;</span><span class="br0">&#41;</span> であり、areScrollBarsEnabled<span class="br0">&#40;</span><span class="br0">&#41;</span> ではない
+&#160;
+<span class="sy0">*</span> 動詞の場合は接頭語をつけず、原型にする<span class="br0">&#40;</span>三単現の s はつけない<span class="br0">&#41;</span>
+<span class="sy0">**</span> acceptDrops<span class="br0">&#40;</span><span class="br0">&#41;</span> であり、acceptsDrops<span class="br0">&#40;</span><span class="br0">&#41;</span> ではない
+<span class="sy0">**</span> allColumnsShowFocus<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+<span class="sy0">*</span> 名詞の場合は通常は接頭語をつけない
+<span class="sy0">**</span> autoCompletion<span class="br0">&#40;</span><span class="br0">&#41;</span> であり、isAutoCompletion<span class="br0">&#40;</span><span class="br0">&#41;</span> ではない
+<span class="sy0">**</span> boundaryChecking<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+<span class="sy0">*</span> 接頭語をつけないことが適切ではない場合には、is をつける
+<span class="sy0">**</span> isOpenGLAvailable<span class="br0">&#40;</span><span class="br0">&#41;</span> であり、openGL<span class="br0">&#40;</span><span class="br0">&#41;</span> ではない
+<span class="sy0">**</span> isDialog<span class="br0">&#40;</span><span class="br0">&#41;</span> であり、dialog<span class="br0">&#40;</span><span class="br0">&#41;</span> ではない
+&#160;
+<span class="br0">&#40;</span>dialog<span class="br0">&#40;</span><span class="br0">&#41;</span> という名前の関数があった場合 何かしらの <span class="kw5">QDialog</span> を返すと思うでしょう。<span class="br0">&#41;</span>
+&#160;
+設定関数の名前は、取得関数から接頭語を除いて、名前の最初に set をつけています。<span class="br0">&#40;</span>例<span class="sy0">:</span> setDown<span class="br0">&#40;</span><span class="br0">&#41;</span> や setScrollBarsEnabled<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> プロパティの名前は取得関数から接頭語を除いたものです。
+&#160;
+<span class="sy0">==</span> 一般的な罠を回避する <span class="sy0">==</span>
+&#160;
+<span class="sy0">===</span> 利便性の罠 <span class="sy0">===</span>
+&#160;
+１つの間違ったコンセプトは、何かをするために必要なコードが短ければ短いほど、良い API であるということです。コードが書かれるが１度であったとしても、そのコードは何度も何度も読まれます。</pre></div></div>
+<pre>QSlider *slider = new QSlider(12, 18, 3, 13, Qt::Vertical,
+0, "volume");
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">これは以下に比べてとても読みにくい<span class="br0">&#40;</span>だけではなく書きにくい<span class="br0">&#41;</span>でしょう。</pre></div></div>
+<pre>QSlider <b>slider = new QSlider(Qt::Vertical);</b>
+slider-&gt;setRange(12, 18);
+slider-&gt;setPageStep(3);
+slider-&gt;setValue(13);
+slider-&gt;setObjectName("volume");
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">===</span> <span class="kw4">bool</span> 型の引数の罠 <span class="sy0">===</span>
+<span class="kw4">bool</span> 型の引数は頻繁に理解しづらいコードにつながります。特に既存の関数に <span class="kw4">bool</span> 型の引数を追加するのはほぼ例外なく間違いです。これにあてはまる <span class="kw5">Qt</span> での例は repaint<span class="br0">&#40;</span><span class="br0">&#41;</span> で、この関数は背景を消去するかどうかの指定のための <span class="kw4">bool</span> 型の引数をオプションでとります<span class="br0">&#40;</span>デフォルトは <span class="kw2">true</span><span class="br0">&#41;</span>。これにより、以下のようなコードが書かれます。</pre></div></div>
+<pre>widget-&gt;repaint(false);
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">初心者はこれを見て <span class="st0">&quot;再描画はされない&quot;</span> と思うかもしれません。
+&#160;
+無駄な拡張を防ぐために、関数を１つ追加する代わりに <span class="kw4">bool</span> 型の引数を追加したということは明らかですが、逆に無駄な拡張をもたらしています。<span class="kw5">Qt</span> ユーザーの中のどのくらいの人が以下の３つの行の本当の意味での違いを知っているでしょうか。</pre></div></div>
+<pre>widget-&gt;repaint();
+widget-&gt;repaint(true);
+widget-&gt;repaint(false);
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">API を以下のようにすることでいくらか改善されるでしょう。</pre></div></div>
+<pre>widget-&gt;repaint();
+widget-&gt;repaintWithoutErasing();
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">Qt</span> <span class="nu0">4</span> ではシンプルに、ウィジェットの背景を消去せずに描画するという選択自体を削除しました。<span class="kw5">Qt</span> <span class="nu0">4</span> ではダブルバッファリングをフレームワークとしてサポートしたため、この機能は無くなりました。
+&#160;
+さらにいくつかの例を示します。</pre></div></div>
+<pre>widget-&gt;setSizePolicy(QSizePolicy::Fixed,
+QSizePolicy::Expanding, true);
+textEdit-&gt;insert("Where's Waldo?", true, true, false);
+QRegExp rx("moc_<b>.c??", false, true);</b>
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">１つの代替案は <span class="kw4">bool</span> 型の引数を <span class="kw2">enum</span> 型に置き換えることです。<span class="kw5">Qt</span> <span class="nu0">4</span> では <span class="kw5">QString</span> の大文字小文字の区別に対してこれを適用しました。以下の２行を比較してみて下さい。</pre></div></div>
+<pre>str.replace("USER", user, false); // Qt 3
+str.replace("USER", user, Qt::CaseInsensitive); // Qt 4
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">===</span> ものまねの罠 <span class="sy0">===</span>
+&#160;
+<span class="sy0">==</span> ケーススタディ <span class="sy0">==</span>
+&#160;
+<span class="sy0">===</span> <span class="kw5">QProgressBar</span> <span class="sy0">===</span>
+&#160;
+このコンセプトを実際の例で見てみましょう。<span class="kw5">QProgressBar</span> の API を <span class="kw5">Qt</span> <span class="nu0">3</span> と <span class="kw5">Qt</span> <span class="nu0">4</span> で比較してみます。<span class="kw5">Qt</span> <span class="nu0">3</span> では以下のようになっていました。</pre></div></div>
+<pre>class QProgressBar&#160;: public QWidget
+{
+…
+public:
+int totalSteps() const;
+int progress() const;
+</pre>
+<p>const QString &amp;progressString;() const;
+</p>
+<pre>bool percentageVisible() const;
+void setPercentageVisible(bool);
+</pre>
+<p>void setCenterIndicator(bool on);
+</p>
+<pre>bool centerIndicator() const;
+</pre>
+<p>void setIndicatorFollowsStyle(bool);
+</p>
+<pre>bool indicatorFollowsStyle() const;
+</pre>
+<p>public slots:
+</p>
+<pre>void reset();
+virtual void setTotalSteps(int totalSteps);
+virtual void setProgress(int progress);
+void setProgress(int progress, int totalSteps);
+</pre>
+<p>protected:
+</p>
+<pre>virtual bool setIndicator(QString &amp;progressStr;,
+int progress,
+int totalSteps);
+…
+};
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">この API はとても複雑で一貫性に欠けています。例えば、名前からは reset<span class="br0">&#40;</span><span class="br0">&#41;</span> と setTotalSteps<span class="br0">&#40;</span><span class="br0">&#41;</span>、setProgress<span class="br0">&#40;</span><span class="br0">&#41;</span> が緊密に連携していることは読み取れません。
+&#160;
+この API を改善する上でカギとなる点は、<span class="kw5">QProgressBar</span> が <span class="kw5">Qt</span> <span class="nu0">4</span> の <span class="kw5">QAbstractSpinBox</span> クラスやその派生クラスの <span class="kw5">QSpinBox</span>、<span class="kw5">QSlider</span>、<span class="kw5">QDialog</span> に似ているということです。解決方法は progress や totalSteps を minimum や maximum、value で置き換え、valueChanged<span class="br0">&#40;</span><span class="br0">&#41;</span> シグナルを追加し、setRange<span class="br0">&#40;</span><span class="br0">&#41;</span> 関数を利便性を考えて追加することです。
+&#160;
+次のポイントは、progressString と percentage、indicator が同じものを指していることです。これは実際はプログレスバー上に表示されているテキストになります。通常はこのテキストはパーセントですが、setIndicator<span class="br0">&#40;</span><span class="br0">&#41;</span> 関数を使用することで様々なものが設定できます。新しい API は以下のようになります。</pre></div></div>
+<pre>virtual QString text() const;
+void setTextVisible(bool visible);
+bool isTextVisible() const;
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">デフォルトでは、このテキストはパーセントの表示です。これは text<span class="br0">&#40;</span><span class="br0">&#41;</span> を再実装することで変更可能です。
+&#160;
+<span class="kw5">Qt</span> <span class="nu0">3</span> の API にあった setCenterIndicator<span class="br0">&#40;</span><span class="br0">&#41;</span> と setIndicatorFollowsStyle<span class="br0">&#40;</span><span class="br0">&#41;</span> 関数はアライメントに関するものです。これらは setAlignment<span class="br0">&#40;</span><span class="br0">&#41;</span> という１つの関数に変更しました。</pre></div></div>
+<pre>void setAlignment(Qt::Alignment alignment);
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">プログラマーが setAlignment<span class="br0">&#40;</span><span class="br0">&#41;</span> を実行しない場合は、アライメントはスタイルによって決まります。Motif をベースにしたスタイルではテキストは中央に表示され、その他のスタイルでは右側に表示されます。
+&#160;
+改善後の <span class="kw5">QProgressBar</span> の API は以下の通りです。</pre></div></div>
+<pre>class QProgressBar&#160;: public QWidget
+{
+…
+public:
+void setMinimum(int minimum);
+int minimum() const;
+void setMaximum(int maximum);
+int maximum() const;
+void setRange(int minimum, int maximum);
+int value() const;
+</pre>
+<p>virtual QString text() const;
+</p>
+<pre>void setTextVisible(bool visible);
+bool isTextVisible() const;
+Qt::Alignment alignment() const;
+void setAlignment(Qt::Alignment alignment);
+</pre>
+<p>public slots:
+</p>
+<pre>void reset();
+void setValue(int value);
+</pre>
+<p>signals:
+</p>
+<pre>void valueChanged(int value);
+…
+};
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">===</span> <span class="kw5">QAbstractPrintDialog</span> と QAbstractPageSizeDialog <span class="sy0">===</span>
+&#160;
+<span class="kw5">Qt</span> <span class="nu16">4.0</span> では <span class="kw5">QAbstractPrintDialog</span> と QAbstractPageSizeDialog の２つのクラスが登場し、それぞれ <span class="kw5">QPrintDialog</span> と QPageSizeDialog の基底クラスとなっています。これは、QAbstractPrint<span class="sy0">-</span> や <span class="sy0">-</span>PageSizeDialog のポインタを引数で取り処理を行う <span class="kw5">Qt</span> の API がないため完全に無意味でした。qdoc をトリッキーに使用し、我々はこれらを隠しましたが、これらは不必要な抽象クラスの典型的な例でした。
+&#160;
+これは <span class="st0">''</span>良い<span class="st0">''</span> 抽象化が間違っているということではありませんが、ファクトリなどの仕組みで <span class="kw5">QPrintDialog</span> を変更する方法を用意すべきでした。<span class="co2">#ifdef QTOPIA_PRINTDIALOG というマクロが宣言されているのがなによりの証拠です。</span>
+&#160;
+<span class="sy0">===</span> <span class="kw5">QAbstractItemModel</span> <span class="sy0">===</span>
+<span class="kw5">Qt</span> <span class="nu0">4</span> のモデル／ビューの問題の詳細については様々なところで述べられていますが、一般化した教訓としては、<span class="st0">&quot;QAbstractFoo&quot;</span> は、考えうる全ての派生クラスから、単に和集合をとって作ればよいわけではないということです。このような <span class="st0">&quot;すべての可能性を抽象化&quot;</span> した基底クラスは決して良い解決法ではないということです。<span class="kw5">QAbstractItemModel</span> はこの間違いを犯しました。このクラスは QTreeOfTablesModel であり、結果的に API が複雑になり、これが <span class="st0">''</span>すべての素晴らしい派生クラスに継承されています<span class="st0">''</span> 。
+&#160;
+単に抽象化をしても API が自動的に良くなるわけではありません。
+&#160;
+<span class="sy0">===</span> <span class="kw5">QLayoutIterator</span> と QGLayoutIterator <span class="sy0">===</span>
+<span class="kw5">Qt</span> <span class="nu0">3</span> でカスタムレイアウトを作成するには <span class="kw5">QLayout</span> と QGLayoutIterator<span class="br0">&#40;</span><span class="st0">&quot;G&quot;</span> は generic からきています<span class="br0">&#41;</span>の両方の派生クラスが必要でした。QGLayoutIterator の派生クラスのインスタンスのポインタは <span class="kw5">QLayoutIterator</span> をラップしていたため、ユーザーは他のイテレータと同様に使用することができました。<span class="kw5">QLayoutIterator</span> により以下のようなコードを書くことができました。</pre></div></div>
+<pre>QLayoutIterator it = layout()-&gt;iterator();
+QLayoutItem **child;
+while ((child = it.current())&#160;!= 0) {
+if (child-&gt;widget() == myWidget) {
+it.takeCurrent();
+return;
+}
+++it;
+}
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">Qt</span> <span class="nu0">4</span> では QGLayoutIterator クラス<span class="br0">&#40;</span>と内部の Box と Grid の派生クラス<span class="br0">&#41;</span>をなくし、<span class="kw5">QLayout</span> の派生クラスで itemAt<span class="br0">&#40;</span><span class="br0">&#41;</span>、takeAt<span class="br0">&#40;</span><span class="br0">&#41;</span>、count<span class="br0">&#40;</span><span class="br0">&#41;</span> を実装するようにしました。
+&#160;
+<span class="sy0">===</span> QImageSink <span class="sy0">===</span>
+&#160;
+<span class="kw5">Qt</span> <span class="nu0">3</span> には画像を順番に読み込みアニメーションをするための一連のクラスがありました。QImageSource<span class="sy0">/</span>Sink<span class="sy0">/</span>QASyncIO<span class="sy0">/</span>QASyncImageIO クラスです。しかし、これらを使用するのは <span class="kw5">QLabel</span> でのアニメーションのみであったため、これらは結局やりすぎでした。
+&#160;
+ここから学んだことは、なんらかの漠然とした将来の可能性のために抽象化をするのは良くないということでした。はじめはシンプルにしましょう。そのような未来が来た場合でも、変更するシステムは複雑なものよりシンプルな方が対応も簡単でしょう。
+&#160;
+<span class="sy0">===</span> <span class="kw5">Qt</span> <span class="nu0">3</span> vs. <span class="kw5">Qt</span> <span class="nu0">4</span> その他？ <span class="sy0">===</span>
+&#160;
+<span class="sy0">===</span> <span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">setWindowModified</span><span class="br0">&#40;</span><span class="kw4">bool</span><span class="br0">&#41;</span> <span class="sy0">===</span>
+&#160;
+<span class="sy0">===</span> Q3URL vs. <span class="kw5">QUrl</span> <span class="sy0">===</span>
+&#160;
+<span class="sy0">===</span> <span class="kw5">Q3TextEdit</span> vs. <span class="kw5">QTextEdit</span> <span class="sy0">===</span>
+&#160;
+どのように仮想関数を無くしたのか
+&#160;
+<span class="sy0">===</span> <span class="kw5">Qt</span> のクリッピングの物語 <span class="sy0">===</span>
+&#160;
+クリップの矩形を設定した場合、実際は領域<span class="br0">&#40;</span>setClipRect<span class="br0">&#40;</span><span class="br0">&#41;</span> の代わりに setClipRegion<span class="br0">&#40;</span><span class="kw5">QRect</span><span class="br0">&#41;</span> であるべき<span class="br0">&#41;</span>を設定していること。</pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.706 seconds
+Real time usage: 0.712 seconds
+Preprocessor visited node count: 135/1000000
+Preprocessor generated node count: 768/1000000
+Post‐expand include size: 1304/2097152 bytes
+Template argument size: 421/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:34-0!*!0!!en!*!* and timestamp 20151105021214 and revision id 19207
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index25b4.html?title=API_Design_Principles/ja&amp;oldid=19207">http://wiki.qt.io/index.php?title=API_Design_Principles/ja&amp;oldid=19207</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Developing_Qt__Guidelines.html" title="Category:Developing Qt::Guidelines">Developing Qt::Guidelines</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=1bffd9ab0c4b9b98&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="API_Design_Principles/ja.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_API_Design_Principles/ja.html?title=Talk:API_Design_Principles/ja&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="API_Design_Principles/ja.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index3d38.html?title=API_Design_Principles/ja&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index6aee.html?title=API_Design_Principles/ja&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/API_Design_Principles/ja.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/API_Design_Principles/ja.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index25b4.html?title=API_Design_Principles/ja&amp;oldid=19207" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexd117.html?title=API_Design_Principles/ja&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:15.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,826 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":342});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=API_Design_Principles/ja&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:54:42 GMT -->
+</html>

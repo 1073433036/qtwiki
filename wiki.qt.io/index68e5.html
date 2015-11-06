@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Build_Qt_for_Tizen&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:02:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Build Qt for Tizen - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Build_Qt_for_Tizen","wgTitle":"Build Qt for Tizen","wgCurRevisionId":18384,"wgRevisionId":18384,"wgArticleId":112,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Build_Qt_for_Tizen","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Build_Qt_for_Tizen skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Build Qt for Tizen</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<p><i>Written by Jaroslaw Staniek (staniek at kde.org) and Tomasz Olszak.</i>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Tizen_Common_profile_.28base_of_IVI_profle.29"><span class="tocnumber">2</span> <span class="toctext">Tizen Common profile (base of IVI profle)</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Tizen_Mobile_profile"><span class="tocnumber">3</span> <span class="toctext">Tizen Mobile profile</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Qt_installation"><span class="tocnumber">4</span> <span class="toctext">Qt installation</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Tizen_Development_Tools_installation"><span class="tocnumber">5</span> <span class="toctext">Tizen Development Tools installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Bash_installation"><span class="tocnumber">5.1</span> <span class="toctext">Bash installation</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Gbs_installation"><span class="tocnumber">5.2</span> <span class="toctext">Gbs installation</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#tizenbuildtools_installation"><span class="tocnumber">5.3</span> <span class="toctext">tizenbuildtools installation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Tizen_SDK_installation"><span class="tocnumber">6</span> <span class="toctext">Tizen SDK installation</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Build_Tizen_plugin_for_Qt_Creator"><span class="tocnumber">7</span> <span class="toctext">Build Tizen plugin for Qt Creator</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Configure_Qt_Creator"><span class="tocnumber">8</span> <span class="toctext">Configure Qt Creator</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Tizen_Common_and_IVI"><span class="tocnumber">8.1</span> <span class="toctext">Tizen Common and IVI</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Tizen_Mobile"><span class="tocnumber">8.2</span> <span class="toctext">Tizen Mobile</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>This HOWTO explains full process of installation and configuration Qt SDK for Tizen, needed for developing software with Qt for Tizen smartphone (developer device <a rel="nofollow" class="external text" href="https://wiki.tizen.org/wiki/Reference_Device-PQ">RD-PQ</a> and emulator), Tizen <a rel="nofollow" class="external text" href="http://www.intel.com/content/www/us/en/nuc/overview.html">NUC</a> which is reference device for Tizen Common profile and Tizen IVI devices. This process applies to Qt for Tizen Alpha 7 and has been tested with Ubuntu 14.04 64bit. Other versions have not been tested (feedback is welcome). Version of Tizen SDK is 2.2.1. Version of Qt
+</p><p>While the process has been highly automatized, it consists of several steps.
+</p>
+<h2><span class="mw-headline" id="Tizen_Common_profile_.28base_of_IVI_profle.29">Tizen Common profile (base of IVI profle)</span></h2>
+<p>Following steps describe creating Tizen Common cross compilation tools. But you can also use the same steps for IVI (just change profile parameter passed to prepare_developer_tools script)
+</p><p>1. Install <a rel="nofollow" class="external text" href="Build-Qt-for-Tizen/index.html#e5129e03d708d7fbbe5e3e22b30f2d9a">tizen development tools</a>
+</p><p>2. Download and install Qt 5.4.0, see instructions in <a rel="nofollow" class="external text" href="Build-Qt-for-Tizen.html#e17f66a5cb160b4eb49231b706a325e1">Qt installation</a>
+</p><p>3. Download appropriate cross compilers:
+</p>
+<dl>
+<dd><ul>
+<li> Arm and i586 cross compilers are available from Tizen Mobile SDK (see <a rel="nofollow" class="external text" href="Build-Qt-for-Tizen/index.html#03671ee18b8489596b11f5b70d6ff721">Install Tizen SDK</a>)
+</li>
+<li> For x86_64 architecture you can use system compiler
+</li>
+</ul>
+</dd>
+</dl>
+<p>4. Create developer tools
+</p>
+<dl>
+<dd><ul>
+<li> for arm wayland
+</li>
+</ul>
+</dd>
+</dl>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd tizenbuildtools<span class="sy0">/</span>profiles
+.<span class="sy0">/</span>prepare_developer_tools <span class="sy0">-</span>b armv7l <span class="sy0">-</span>p common <span class="sy0">-</span>q <span class="sy0">/</span>home<span class="sy0">/</span>user<span class="sy0">/</span>Qt5.4.0<span class="sy0">/</span><span class="nu16">5.4</span><span class="sy0">/</span>gcc_64<span class="sy0">/</span>bin<span class="sy0">/</span>qmake</pre></div></div>
+<dl>
+<dd><ul>
+<li> for x86 wayland
+</li>
+</ul>
+</dd>
+</dl>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd tizenbuildtools<span class="sy0">/</span>profiles
+.<span class="sy0">/</span>prepare_developer_tools <span class="sy0">-</span>b i586 <span class="sy0">-</span>p common <span class="sy0">-</span>q <span class="sy0">/</span>home<span class="sy0">/</span>user<span class="sy0">/</span>Qt5.4.0<span class="sy0">/</span><span class="nu16">5.4</span><span class="sy0">/</span>gcc_64<span class="sy0">/</span>bin<span class="sy0">/</span>qmake</pre></div></div>
+<dl>
+<dd><ul>
+<li> for x86_64 wayland
+</li>
+</ul>
+</dd>
+</dl>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd tizenbuildtools<span class="sy0">/</span>profiles
+.<span class="sy0">/</span>prepare_developer_tools <span class="sy0">-</span>b x86_64 <span class="sy0">-</span>p common <span class="sy0">-</span>q <span class="sy0">/</span>home<span class="sy0">/</span>user<span class="sy0">/</span>Qt5.4.0<span class="sy0">/</span><span class="nu16">5.4</span><span class="sy0">/</span>gcc_64<span class="sy0">/</span>bin<span class="sy0">/</span>qmake</pre></div></div>
+<p>5. Configure Qt Creator remote access to <a rel="nofollow" class="external text" href="http://www.intel.com/content/www/us/en/nuc/overview.html">Intel NUC</a>
+</p>
+<h2><span class="mw-headline" id="Tizen_Mobile_profile">Tizen Mobile profile</span></h2>
+<p>1. Install <a rel="nofollow" class="external text" href="Build-Qt-for-Tizen/index.html#e5129e03d708d7fbbe5e3e22b30f2d9a">development tools</a>
+</p><p>2. Download and install Qt 5.4.0, see instructions in <a rel="nofollow" class="external text" href="Build-Qt-for-Tizen/index.html#e17f66a5cb160b4eb49231b706a325e1">Qt installation</a>
+</p><p>3. Download <a rel="nofollow" class="external text" href="Build-Qt-for-Tizen/index.html#03671ee18b8489596b11f5b70d6ff721">Tizen Mobile SDK</a>
+</p><p>4. Create developer tools
+</p>
+<dl>
+<dd><ul>
+<li> For arm mobile device ( <a rel="nofollow" class="external text" href="https://wiki.tizen.org/wiki/Reference_Device-PQ">RD-PQ</a>)
+</li>
+</ul>
+</dd>
+</dl>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd tizenbuildtools<span class="sy0">/</span>profiles
+.<span class="sy0">/</span>prepare_developer_tools <span class="sy0">-</span>b armv7l <span class="sy0">-</span>p mobile <span class="sy0">-</span>q <span class="sy0">/</span>home<span class="sy0">/</span>user<span class="sy0">/</span>Qt5.4.0<span class="sy0">/</span><span class="nu16">5.4</span><span class="sy0">/</span>gcc_64<span class="sy0">/</span>bin<span class="sy0">/</span>qmake</pre></div></div>
+<dl>
+<dd><ul>
+<li> for x86 mobile emulator (see -e switch)
+</li>
+</ul>
+</dd>
+</dl>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd tizenbuildtools<span class="sy0">/</span>profiles
+.<span class="sy0">/</span>prepare_developer_tools <span class="sy0">-</span>b i586 <span class="sy0">-</span>p mobile <span class="sy0">-</span>q <span class="sy0">/</span>home<span class="sy0">/</span>user<span class="sy0">/</span>Qt5.4.0<span class="sy0">/</span><span class="nu16">5.4</span><span class="sy0">/</span>gcc_64<span class="sy0">/</span>bin<span class="sy0">/</span>qmake <span class="sy0">-</span>e</pre></div></div>
+<p>5. Build <a rel="nofollow" class="external text" href="Build-Qt-for-Tizen/index.html#00b2d759558c279641a474b3190dc4c3">Qt Creator plugin</a>
+6. <a rel="nofollow" class="external text" href="Build-Qt-for-Tizen/index.html#dfa8292bf407276a9cc00706b52b7a8e">Configure Qt Creator</a>
+7. Please follow the steps described at <a href="Creating_Hello_World_Application.html?title=Creating_Hello_World_Application&amp;action=edit&amp;redlink=1" class="new" title="Creating Hello World Application (page does not exist)">Creating Hello World Application</a> to validate configuration
+</p>
+<h2><span class="mw-headline" id="Qt_installation">Qt installation</span></h2>
+<p>Download official Qt installer suitable for your architecture. 5.4.0 version is placed in following remote directory:
+<a rel="nofollow" class="external free" href="http://download.qt.io/official_releases/qt/5.4/5.4.0">http://download.qt.io/official_releases/qt/5.4/5.4.0</a>
+Make the binary executable (chmod u+x qt-opensource-linux-[x86|x64]–5.4.0.run), and install it in location writable by current user (write access is needed for tizen Qt Creator plugin)
+</p>
+<h2><span class="mw-headline" id="Tizen_Development_Tools_installation">Tizen Development Tools installation</span></h2>
+<h3><span class="mw-headline" id="Bash_installation">Bash installation</span></h3>
+<p>Be sure that you have bash as your shell. By default Ubuntu has dash. To change the shell to bash invoke:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo dpkg<span class="sy0">-</span>reconfigure dash
+&#160;
+<span class="co2">#can be cheked with &quot;file -L $SHELL&quot; should print &quot;:/bin/bash:&quot;</span></pre></div></div>
+<h3><span class="mw-headline" id="Gbs_installation">Gbs installation</span></h3>
+<p>Use command line for most of steps explained here. Install development tools (such as gbs) as specified at <a rel="nofollow" class="external free" href="https://source.tizen.org/documentation/developer-guide/installing-development-tools">https://source.tizen.org/documentation/developer-guide/installing-development-tools</a>. Please note version of the distribution should be correctly specified when adding repository, so for Ubuntu 13.04:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo vim <span class="sy0">/</span>etc<span class="sy0">/</span>apt<span class="sy0">/</span>sources.<span class="me1">list</span>.<span class="me1">d</span></pre></div></div>
+<p>In /etc/apt/sources.list.d/tizen.list add the folowing line to add repository (please note space before "/"):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">deb http<span class="sy0">:</span><span class="co1">//download.tizen.org/tools/latest-release/${YOUR_UBUNTU_VERSION} /</span></pre></div></div>
+<p>All most recent Ubuntu and debian) versions are supported. See <a rel="nofollow" class="external free" href="http://download.tizen.org/tools/latest-release">http://download.tizen.org/tools/latest-release</a>
+</p><p>Then:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo apt<span class="sy0">-</span>get update</pre></div></div>
+<p>and:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo apt<span class="sy0">-</span>get install gbs</pre></div></div>
+<p>this will show:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">The following extra packages will be installed<span class="sy0">:</span>
+ …..
+<span class="me1">The</span> following NEW packages will be installed<span class="sy0">:</span>
+ …..
+<span class="me1">Do</span> you want to <span class="kw1">continue</span> <span class="br0">&#91;</span>Y<span class="sy0">/</span>n<span class="br0">&#93;</span>?</pre></div></div>
+<p>Answer "y" here.
+</p><p>This can show:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">WARNING<span class="sy0">:</span> The following packages cannot be authenticated<span class="sy0">!</span>
+ ….
+<span class="me1">Install</span> these packages without verification <span class="br0">&#91;</span>y<span class="sy0">/</span>N<span class="br0">&#93;</span>?</pre></div></div>
+<p>Answer "y" here again.
+</p>
+<h3><span class="mw-headline" id="tizenbuildtools_installation">tizenbuildtools installation</span></h3>
+<p>Clone the tizenbuildtools git repository:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git clone <span class="sy0">-</span>b alpha7 git<span class="sy0">:</span><span class="co1">//gitorious.org/tizenbuildtools/tizenbuildtools.git</span>
+cd tizenbuildtools
+git checkout v_alpha7.0</pre></div></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Tizen_SDK_installation">Tizen SDK installation</span></h2>
+<p>Even while Qt developers prefer using Qt Creator (or their beloved text editor plus command line) over Tizen SDK's Eclipse-based Integrated development environment, at least two tools are still needed:
+</p>
+<ul>
+<li> <b>Tizen emulator</b> for running Qt applications in emulated environment on the PC workstation without a need to use Tizen device(s)
+</li>
+<li> <b>Compilation tools</b> for building software (Qt and applications) for both emulator and actual Tizen device(s).
+</li>
+</ul>
+<p>These tools are bundled and distributed in a single Tizen SDK so it should be installed first. To do so, perform following steps:
+</p>
+<ul>
+<li> Take look at <a rel="nofollow" class="external text" href="https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk">prerequisites</a>. Install required software for your OS.
+</li>
+<li> Download <a rel="nofollow" class="external text" href="https://developer.tizen.org/downloads/tizen-sdk#sdk-images">SDK Image</a> for Ubuntu® 64bits: tizen-sdk-image-2.2.x-ubuntu64.zip, about 1.4GB. It's useful for a kind of "offline installation", which is recommended.
+</li>
+<li> Download <a rel="nofollow" class="external text" href="https://developer.tizen.org/downloads/tizen-sdk#installmanager">Install Manager</a> for Ubuntu® 64bits: tizen-sdk-ubuntu64-v2.2.x.bin, about 4MB.
+</li>
+<li> Use the Install Manager as explained <a rel="nofollow" class="external text" href="https://developer.tizen.org/downloads/sdk/installing-tizen-sdk#sdk">here</a> to install previously downloaded "SDK Image".
+</li>
+</ul>
+<p>About 5 GB of free disk space is needed for these steps.
+</p><p><b>Result:</b> You should be able to:
+</p>
+<ul>
+<li> run the installed Tizen IDE by clicking "Applications &gt; Tizen SDK &gt; Tizen IDE" in the system menu
+</li>
+<li> run the installed Emulator Manager by clicking "Applications &gt; Tizen SDK &gt; Emulator Manager" in the system menu and then, create Tizen virtual machine that would be used in the development process
+</li>
+</ul>
+<p>If you want to develop for mobile profile (Tizen Mobile device or emulator) you need to <b>add author certificate</b>. The certificate generator tool is a cross-platform command line tool used to generate developer private keys and certificates from their intermediate CA certificates. The private keys and certificates are used for signing and verifying Tizen applications. To create and register certificate in the Tizen IDE as explained <a rel="nofollow" class="external text" href="https://developer.tizen.org/help/index.jsp?topic=/org.tizen.gettingstarted/html/dev_env/setting_author_certificate.htm">here</a>.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Build_Tizen_plugin_for_Qt_Creator">Build Tizen plugin for Qt Creator</span></h2>
+<p>After installing <a rel="nofollow" class="external text" href="Build-Qt-for-Tizen/edit/index.html#e17f66a5cb160b4eb49231b706a325e1">Qt SDK</a> (by default to $HOME/Qt5.4.0 directory), follow the README file placed in tizenbuildtools/README. After that start Qt Creator. The Tizen plugin should be available.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Configure_Qt_Creator">Configure Qt Creator</span></h2>
+<h3><span class="mw-headline" id="Tizen_Common_and_IVI">Tizen Common and IVI</span></h3>
+<p>Follow this steps to build,. deploy, debug and run Qt applications on Tizen Common or Tizen IVI (or other Tizen profiles where ssh server is available on device)
+</p>
+<h5><span class="mw-headline" id="Prepare_device">Prepare device</span></h5>
+<p>By default "app" user (used for development) doesn't have a password, so if you want to connect using ssh you need to set password:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ssh root@$<span class="br0">&#123;</span>device_ip<span class="br0">&#125;</span>
+<span class="co2">#password tizen</span>
+$<span class="sy0">&gt;</span> passwd app</pre></div></div>
+<p>and (if you want to log in without password) copy you public key:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#on your host</span>
+ssh<span class="sy0">-</span>copy<span class="sy0">-</span>id app@device_ip</pre></div></div>
+<p>Also you need to install Qt libraries on device:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#invoke on device from rot account</span>
+zypper in qt<span class="sy0">*</span></pre></div></div>
+<h5><span class="mw-headline" id="Connect_device_to_Qt_Creator">Connect device to Qt Creator</span></h5>
+<ol>
+<li> Go to Tools-Options
+</li>
+<li> In Build&amp;Run section
+<ol>
+<li> Add corresponding Qt version (like in mobile profile)
+</li>
+<li> Add New Kit
+<ol>
+<li> Set previously added Qt Version
+</li>
+<li> As compiler set cross compilers from Tizen SDK or host compiler in case if device and host architectures are the same
+</li>
+<li> The same with debugger
+</li>
+<li> As device type set Generic Linux Device
+</li>
+<li> Click manage button in device section to add Generic Linux Device, next click add, choose Generic Linux Device. In dialog box set name of a device (like Tizen NUC), device's IP, user name to log in using ssh and password or key authentication.
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="File_GenericLinuxDG.html" class="image" title="Qt Creator Generic Device configuration"><img alt="Qt Creator Generic Device configuration" src="images/3/36/GenericLinuxDG.png" width="917" height="574" /></a>
+</p>
+<dl>
+<dd><dl>
+<dd><dl>
+<dd>6. After adding the device Qt Creator will test if connection work.
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>3. Create new test project:
+</p>
+<ol>
+<li> File-&gt;New File or Project-&gt;Qt Quick Application
+</li>
+<li> Choose name and directory, then Next, check The kit you created before and click Finish.
+</li>
+<li> Edit <b>.pro file and add</b>
+</li>
+</ol>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">target.<span class="me1">path</span> <span class="sy0">=</span> <span class="sy0">/</span>home<span class="sy0">/</span>app<span class="sy0">/</span>temporary<span class="sy0">/</span>deploy</pre></div></div>
+<p>before
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">include<span class="br0">&#40;</span>deployment.<span class="me1">pri</span><span class="br0">&#41;</span></pre></div></div>
+<dl>
+<dd>4. It should be possible to build and run application on device from Qt Creator. If you have debugger set you should also be able to debug applications.
+</dd>
+</dl>
+<h3><span class="mw-headline" id="Tizen_Mobile">Tizen Mobile</span></h3>
+<p>All configuration steps listed below should be performed and in specified order.
+</p><p><b> Tizen configuration:</b>
+'<i><b> Run Emulator Manager by clicking "Applications &gt; Tizen SDK &gt; Emulator Manager" in the system menu and then use it to run the Emulator virtual machine you have created before. </b>Note: Always run Emulator before running Qt Creator, not the other way around.'</i>
+'<b><i> Run the installed Qt Creator</i></b>
+'<b><i> Click Tools -&gt; Options, and in the dialog select "Tizen" item</i></b>
+'<b><i> Near "Tizen SDK Path" click Browse button</i></b>
+'<b><i> Select Tizen SDK's instalation directory (default is $HOME/tizen-sdk), click OK; this will automatically fill several entries: SDK data directory, sdb executable, native-packaging executable</i></b>
+'<b><i> Near "Author certificate" click Browse button</i></b>
+'<b><i> Select author certificate, by default a file in $HOME/tizen-sdk-data/keystore/author/</i></b>
+'<b><i> Fill the "Author certificate password" field with password you have provided in the step "Configure Development Tools" before</i></b>
+</p>
+<ul>
+<li> Tizen emulator-related configuration:
+<ul>
+<li> In the Options dialog, select "Devices" item
+</li>
+<li> In the Device combo box select "tizen (default for Tizen Device)
+</li>
+<li> Change Name to Tizen Emulator to indicate the device 
+</li>
+<li> In the Options dialog, select "Build &amp; Run" item
+</li>
+<li> Click "Qt Versions" tab
+</li>
+<li> Click "Add" button
+</li>
+<li> Select qmake for working for tizen emulator builds. The path should be $HOME/dev/src/tizenbuildtools/emulator/qt5CrossCompileToolsBUILD_ARCHEmulator/bin/qmake. Please change $HOME/dev/src to your top level source code directory if you have picked different one in the beginning.
+</li>
+<li> Click "Apply" button on the bottom of the dialog to accept addition of the new Qt version.
+</li>
+<li> Click "Kits" tab
+</li>
+<li> Click "Add" button to add a new kit. It will be used for building and deploying apps to Tizen emulator.
+</li>
+<li> By default the new kit has name "Unnamed", change it in the "Name" text box to "Tizen Emulator"
+</li>
+<li> In "Device type" combo box select "Tizen Device"
+</li>
+<li> In "Compiler" combo box select "Tizen GCC (x86)"
+</li>
+<li> In "Qt Version" combo box select "Qt 5.4.0 (Tizen emulator)"
+</li>
+<li> Click "Apply" button on the bottom of the dialog to accept addition of the new kit.
+</li>
+</ul>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.358 seconds
+Real time usage: 0.680 seconds
+Preprocessor visited node count: 318/1000000
+Preprocessor generated node count: 1015/1000000
+Post‐expand include size: 2143/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:112-0!*!0!!en!2!* and timestamp 20151105114716 and revision id 18384
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index1e68.html?title=Build_Qt_for_Tizen&amp;oldid=18384">http://wiki.qt.io/index.php?title=Build_Qt_for_Tizen&amp;oldid=18384</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="index2937.php?title=Special:QtLogin&amp;returnto=Build+Qt+for+Tizen" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Build_Qt_for_Tizen.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index9da5.php?title=Talk:Build_Qt_for_Tizen&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Build_Qt_for_Tizen.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index819e.html?title=Build_Qt_for_Tizen&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index30ac.html?title=Build_Qt_for_Tizen&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Build_Qt_for_Tizen.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Build_Qt_for_Tizen.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index1e68.html?title=Build_Qt_for_Tizen&amp;oldid=18384" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index3379.html?title=Build_Qt_for_Tizen&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 June 2015, at 12:03.</li>
+											<li id="footer-info-viewcount">This page has been accessed 3,105 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":2654});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Build_Qt_for_Tizen&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:02:50 GMT -->
+</html>

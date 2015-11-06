@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Git_Introduction&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:50:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Git Introduction - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Git_Introduction","wgTitle":"Git Introduction","wgCurRevisionId":19241,"wgRevisionId":19241,"wgArticleId":864,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Git_Introduction","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-diff {line-height: normal;}
+.source-diff li, .source-diff pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for diff
+ * CSS class: source-diff, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.diff.source-diff .de1, .diff.source-diff .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.diff.source-diff  {font-family:monospace;}
+.diff.source-diff .imp {font-weight: bold; color: red;}
+.diff.source-diff li, .diff.source-diff .li1 {font-weight: normal; vertical-align:top;}
+.diff.source-diff .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.diff.source-diff .li2 {font-weight: bold; vertical-align:top;}
+.diff.source-diff .kw1 {color: #aaaaaa; font-style: italic;}
+.diff.source-diff .re0 {color: #440088;}
+.diff.source-diff .re1 {color: #991111;}
+.diff.source-diff .re2 {color: #00b000;}
+.diff.source-diff .re3 {color: #888822;}
+.diff.source-diff .re4 {color: #888822;}
+.diff.source-diff .re5 {color: #0011dd;}
+.diff.source-diff .re6 {color: #440088;}
+.diff.source-diff .re7 {color: #991111;}
+.diff.source-diff .re8 {color: #00b000;}
+.diff.source-diff .re9 {color: #888822;}
+.diff.source-diff .ln-xtra, .diff.source-diff li.ln-xtra, .diff.source-diff div.ln-xtra {background-color: #ffc;}
+.diff.source-diff span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Git_Introduction skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Git Introduction</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Setting_up_for_Git_and_Gerrit"><span class="tocnumber">1</span> <span class="toctext">Setting up for Git and Gerrit</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Git_Repositories"><span class="tocnumber">2</span> <span class="toctext">Git Repositories</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Inspecting_the_source_code"><span class="tocnumber">3</span> <span class="toctext">Inspecting the source code</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Making_changes"><span class="tocnumber">4</span> <span class="toctext">Making changes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Setting_up_for_changes"><span class="tocnumber">4.1</span> <span class="toctext">Setting up for changes</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Actually_making_the_changes"><span class="tocnumber">4.2</span> <span class="toctext">Actually making the changes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Common_operations_and_fixing_mistakes"><span class="tocnumber">5</span> <span class="toctext">Common operations and fixing mistakes</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Obtaining_updates"><span class="tocnumber">6</span> <span class="toctext">Obtaining updates</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Updating_your_branch_with_the_downloaded.2C_new_changes"><span class="tocnumber">6.1</span> <span class="toctext">Updating your branch with the downloaded, new changes</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Sending_your_feature_for_review"><span class="tocnumber">6.2</span> <span class="toctext">Sending your feature for review</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Conclusion"><span class="tocnumber">7</span> <span class="toctext">Conclusion</span></a></li>
+</ul>
+</div>
+
+<p>This document is a simple guide showing the procedures necessary to develop and maintain patches on top of Qt. It is not a replacement for the Git manual.
+</p>
+<h2><span class="mw-headline" id="Setting_up_for_Git_and_Gerrit">Setting up for Git and Gerrit</span></h2>
+<p><a href="Setting_up_Gerrit.html" title="Setting up Gerrit">Setting up Gerrit</a> explains how to configure git, and how to clone Qt repositories.
+</p>
+<h2><span class="mw-headline" id="Git_Repositories">Git Repositories</span></h2>
+<p>This section explains the concept of a Git repository.
+</p>
+<pre>
+$ git clone git://code.qt.io/qt/qt.git
+cd qt
+</pre>
+<p>This creates a new directory called "qt" and downloads the source code into it. It also downloads the entire history of all files in all versions, therefore creating an identical copy – called repository – of what is stored on the server. That is why the process is called cloning. The source of the clone is remembered as the "origin".
+</p><p>You can create new clones simply by copying the directory, for example onto a USB stick. The new directory will be self-contained, too.
+</p><p>Now that you have all the changes inside the repository, you can work 100% offline. An internet connection is necessary only when you need to fetch new source code changes or push upstream.
+</p>
+<h2><span class="mw-headline" id="Inspecting_the_source_code">Inspecting the source code</span></h2>
+<p>This section introduces the Git log, show and blame commands to find out the history of the project.
+</p><p>Run the log command to view recent changes:
+</p>
+<pre>
+$ git log
+</pre>
+<p>This command launches a pager program allowing you to scroll through the list of committed changes with the cursor and Page Up/Down keys. To return to the shell press the 'q' key.
+</p><p>The log command accepts options, such as -n to limit the number of changes. For example to list the last three changes run:
+</p>
+<pre>
+$ git log -n3
+</pre>
+<p>To limit the output of the log command, e.g., to show only changes that affect one or multiple files/directories, you can use the following options:
+</p>
+<pre>
+$ git log src/corelib/kernel
+$ git log src/gui/kernel/qwidget.cpp
+$ git log examples/examples.pro examples/painting/basicdrawing/main.cpp
+</pre>
+<p>There are various ways of limiting the output of the log command, beyond the ones described here. Refer to <a rel="nofollow" class="external text" href="http://www.kernel.org/pub/software/scm/git/docs/git-log.html">git log's documentation</a> or more details, particularly the "Commit Limiting" section.
+</p><p>Changes in Git are identified with a unique SHA1 checksum. The checksum is on the first line of the git log output. For example:
+</p>
+<pre>
+commit 211bea9838bcc2acd7f54b65468fe1be2d81b1e0
+Author: Denis Dzyubenko &lt;denis.dzyubenko@nokia.com&gt;
+Date: Fri Apr 24 14:18:17 2009 +0200
+
+Re-send network request properly when the socket is in Closing state.
+
+This fixes the &quot;QAbstractSocket::connectToHost() called when already
+connecting/connected to &lt;hostname&gt;&quot;. The issue was that we were trying
+to call connect on a socket that was in a Closing state. We have to
+wait for the disconnected signal before we try to connect again.
+
+Reviewed-by: Prasanth
+</pre>
+<p>You can inspect commits using the git show command with the commit id as argument. The following command shows the entire change above including a diff:
+</p>
+<pre>
+$ git show 211bea9838bcc2acd7f54b65468fe1be2d81b1e0
+</pre>
+<p>To see the last commit you made use show without any arguments:
+</p>
+<pre>
+$ git show
+</pre>
+<p>To inspect a whole series of commits, use:
+</p>
+<pre>
+$ git log -p
+</pre>
+<p>The git show and log commands allow you to inspect the history of the project or individual files. Sometimes it is also useful to inspect source code on a line-by-line basis, for example when you would like to find out who introduced a certain snippet of code. Git provides this functionality with the blame command:
+</p>
+<pre>
+$ git blame src/gui/kernel/qwidget.cpp
+</pre>
+<p>The output of this command - shown in a pager - is split into columns. The first column shows the commit id, followed by the author and date for each line.
+</p><p>Git specializes in tracking the content of files, the name of a file is less important than the source code it contains. Therefore git blame can automatically detect, for example, that a function was moved from one file to another.
+</p>
+<h2><span class="mw-headline" id="Making_changes">Making changes</span></h2>
+<h3><span class="mw-headline" id="Setting_up_for_changes">Setting up for changes</span></h3>
+<p>The previous sections explained how to clone the repository and how to find out the history of the project. This section finally shows how to create history, through the recording of changes in new commits and the tracking of commits in branches.
+</p><p>The first step is to identify on what branch of development we are working. In Git, branches are a very lightweight concept that allows identifying commits by name. Each commit has a reference to its parent commit(s), which forms the history. The Git branch command, without any arguments, displays the list of local branches as well as the branch currently checked out:
+</p>
+<pre>
+$ git branch
+* master
+</pre>
+<p>The output shows that we have only one local branch called "master" and the "*" indicates that it is the current branch. The name "master" in Git development usually describes the main line of development.
+</p><p>Besides your local branches Git also remembers the branches in the origin repository. The "-r" option shows them, prefixed with "origin":
+</p>
+<pre>
+$ git branch -r
+origin/4.5
+origin/HEAD-&gt; origin/master
+origin/master
+</pre>
+<p>For the purpose of developing a new feature we can create a new branch with the same command:
+</p>
+<pre>
+$ git branch my-feature origin/master
+</pre>
+<p>The "my-feature" branch is based on the origin's "master" branch, now visible in the list of branches:
+</p>
+<pre>
+$ git branch
+* master
+  my-feature
+</pre>
+<p>The git checkout command can also change the current branch:
+</p>
+<pre>
+$ git checkout my-feature
+Switched to branch &quot;my-feature&quot;
+$ git branch
+  master
+* my-feature
+</pre>
+<p>This will also update the files in your working directory to match the latest commit in the new current branch. New commits will be recorded in "my-feature" instead of the previous "master" branch.
+</p><p>You can have as many local branches as you like, they are very cheap. Each branch uses only few bytes of disk space. Please see the <a rel="nofollow" class="external text" href="http://git-scm.com/docs/git-branch">documentation of the git branch command</a> for instructions on how to delete branches.
+</p>
+<h3><span class="mw-headline" id="Actually_making_the_changes">Actually making the changes</span></h3>
+<p>Now we can go ahead and start making changes:
+</p>
+<pre>
+$ edit src/corelib/tools/qstring.cpp
+</pre>
+<p>The diff command shows us what we have changed:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="diff source-diff"><pre class="de1">$ git diff
+diff --git a/src/corelib/tools/qstring.cpp b/src/corelib/tools/qstring.cpp
+index <span class="re0">375d672</span>..d7345e6 <span class="nu0">100644</span>
+<span class="re3">--- a/src/corelib/tools/qstring.cpp</span>
+<span class="re4">+++ b/src/corelib/tools/qstring.cpp</span>
+<span class="re6">@@ –2855,6 +2855,20 @@ int QString::count<span class="br0">&#40;</span>const QRegExp&amp; rx<span class="br0">&#41;</span> const</span>
+ Same as size<span class="br0">&#40;</span><span class="br0">&#41;</span>.
+ */
+&#160;
+<span class="re8">+/*!</span>
+<span class="re8">+ 4.6</span>
+<span class="re8">+</span>
+<span class="re8">+ Returns this string in reverse order.</span>
+<span class="re8">+ */</span>
+<span class="re8">+QString QString::reversed<span class="br0">&#40;</span><span class="br0">&#41;</span> const</span>
+<span class="re8">+<span class="br0">&#123;</span></span>
+<span class="re8">+    QString result;</span>
+<span class="re8">+    result.resize<span class="br0">&#40;</span>d-&gt;size<span class="br0">&#41;</span>;</span>
+<span class="re8">+    for <span class="br0">&#40;</span>int i = <span class="nu0">0</span>; i &lt; d-&gt;size; ++i<span class="br0">&#41;</span></span>
+<span class="re8">+    result<span class="br0">&#91;</span>i<span class="br0">&#93;</span> = d-&gt;data<span class="br0">&#91;</span>d-&gt;size - <span class="nu0">1</span> - i<span class="br0">&#93;</span>;</span>
+<span class="re8">+    return result;</span>
+<span class="re8">+<span class="br0">&#125;</span></span>
+<span class="re8">+</span>
+&#160;
+ /*!
+ QString::SectionFlag
+diff --git a/src/corelib/tools/qstring.h b/src/corelib/tools/qstring.h
+index 1493dce..077bda9 <span class="nu0">100644</span>
+<span class="re3">--- a/src/corelib/tools/qstring.h</span>
+<span class="re4">+++ b/src/corelib/tools/qstring.h</span>
+<span class="re6">@@ –195,6 +195,8 @@ public:</span>
+ int count<span class="br0">&#40;</span>QChar c, Qt::CaseSensitivity cs = Qt::CaseSensitive<span class="br0">&#41;</span> const;
+ int count<span class="br0">&#40;</span>const QString &amp;s, Qt::CaseSensitivity cs = Qt::CaseSensitive<span class="br0">&#41;</span> const;
+&#160;
+<span class="re8">+QString reversed<span class="br0">&#40;</span><span class="br0">&#41;</span> const;</span>
+<span class="re8">+</span>
+ #ifndef QT_NO_REGEXP
+ int indexOf<span class="br0">&#40;</span>const QRegExp &amp;, int from = <span class="nu0">0</span><span class="br0">&#41;</span> const;
+ int lastIndexOf<span class="br0">&#40;</span>const QRegExp &amp;, int from = –<span class="nu0">1</span><span class="br0">&#41;</span> const;</pre></div></div>
+<p>The status command gives an overview of what "git commit" would do:
+</p>
+<pre>
+$ git status
+# On branch master
+# Changed but not updated:
+# (use &quot;git add &lt;file&gt;…&quot; to update what will be committed)
+# (use &quot;git checkout -- &lt;file&gt;…&quot; to discard changes in working directory)
+#
+# modified: src/corelib/tools/qstring.cpp
+# modified: src/corelib/tools/qstring.h
+#
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</pre>
+<p>Following the recommendation in the output we mark qstring.cpp and .h as files to be included in the next commit:
+</p>
+<pre>
+$ git add src/corelib/tools/qstring.cpp src/corelib/tools/qstring.h
+$ git status
+# On branch master
+# Changes to be committed:
+# (use &quot;git reset HEAD &lt;file&gt;…&quot; to unstage)
+#
+# modified: src/corelib/tools/qstring.cpp
+# modified: src/corelib/tools/qstring.h
+#
+# Untracked files not listed (use -u option to show untracked files)
+</pre>
+<p>And finally we create a new commit:
+</p>
+<pre>
+$ git commit -m &quot;Add a new reversed() function to QString&quot;
+[my-feature c8d9c54] Add a new reversed() function to QString
+</pre>
+<p>Normally Git will open a new text editor if you omit the -m parameter.
+</p><p>Marking files to be included in commits means adding them to Git's staging area. The staging area is a powerful concept, making it easy to work on multiple files simultaneously while still creating small incremental commits.
+</p><p>Use the <tt>git gui</tt> command for a comfortable way to create highly selective commits.
+</p>
+<h2><span class="mw-headline" id="Common_operations_and_fixing_mistakes">Common operations and fixing mistakes</span></h2>
+<p>This section gives recipes for fixing common mistakes and explains common operations such as reviewing your changes before committing using the diff command.
+</p><p>You can undo changes to a file before it is committed with the checkout command:
+</p>
+<pre>
+$ git checkout HEAD -- src/corelib/tools/qstring.cpp
+</pre>
+<p>If you have  accidentally marked a file for the next commit you can reset it like this:
+</p>
+<pre>
+$ git reset HEAD -- src/corelib/tools/qstring.cpp
+</pre>
+<p>This will exclude the file from the next commit and leave it in your working directory unchanged with your modifications intact.
+</p><p>After changing a file the git diff command shows the lines you have modified. The difference is calculated from the file in your working directory and the file when it was added to the staging area using git add.
+</p><p>If you want to show the difference between the file in the staging area and the last commit you have to pass an option to the diff command:
+</p>
+<pre>
+$ git diff --staged # --cached in old git versions
+</pre>
+<p>The diff command optionally takes directories and files as argument, to limit the output.
+</p><p>Files are renamed in Git by renaming them in your working directory using a command/tool of your choice. Once you've renamed a file you have to tell Git:
+</p>
+<pre>
+[ rename oldfile.cpp to newfile.cpp using a graphical file manager ]
+$ git rm oldfile.cpp
+$ git add newfile.cpp
+</pre>
+<p>Alternatively you can use the convenience mv command:
+</p>
+<pre>
+$ git mv oldfile.cpp newfile.cpp
+</pre>
+<p>One of Git's strengths is that it does not care how exactly you change your files. It is optimized to find out what changed after the fact. For example when copying a file in your source code it is enough to simply run "git add" with the new file. Git automatically finds out where the file was copied from.
+</p><p>To revise the latest commit use <tt>git commit --amend</tt>.
+If you want to amend a commit on top of which other commits exist, you need to use <tt>git rebase --interactive</tt>.
+</p>
+<h2><span class="mw-headline" id="Obtaining_updates">Obtaining updates</span></h2>
+<p>While developing code in your local clone of the project, the original repository evolves and sees new changes. First we update our mirror of the commits in the original repository using the fetch command:
+</p>
+<pre>
+$ git fetch
+remote: Counting objects: 3013, done.
+remote: Compressing objects: 100% (395/395), done.
+remote: Total 1730 (delta 1455), reused 1582 (delta 1332)
+Receiving objects: 100% (1730/1730), 1.13 MiB | 392 KiB/s, done.
+Resolving deltas: 100% (1455/1455), completed with 892 local objects.
+From git://code.qt.io/qt/qt.git
+be7384d..822114e master -&gt; origin/master
+</pre>
+<p>The output indicates that the "master" branch in the original gitorious.org repository has been updated with new commits and these commits are now available in the locally mirrored origin/master branch.
+</p><p>You can inspect the new changes using the log or show commands:
+</p>
+<pre>
+$ git log -p origin/master
+</pre>
+<p>The log command will include the diffs of the individual commits if you specify the -p argument.
+</p>
+<h3><span class="mw-headline" id="Updating_your_branch_with_the_downloaded.2C_new_changes">Updating your branch with the downloaded, new changes</span></h3>
+<p>To combine the new changes with our own local commits we use a technique called rebasing:
+</p>
+<pre>
+$ git checkout my-feature
+$ git rebase origin/master
+</pre>
+<p>After making "my-feature" the current branch, git rebase will first re-initialize the branch to be identical to origin/master, which includes the new commits. Then it will apply each of your commits, basing them on top of the newly initialized branch.
+</p>
+<h3><span class="mw-headline" id="Sending_your_feature_for_review">Sending your feature for review</span></h3>
+<p>When you decide that the work in your "my-feature" branch is complete then the next step is to make your changes available for upstream inclusion.
+</p><p>This is described in the <a href="Gerrit_Introduction.html" title="Gerrit Introduction">Gerrit Introduction</a>.
+</p>
+<h2><span class="mw-headline" id="Conclusion">Conclusion</span></h2>
+<p>We hope that this introductions helps you familiarize yourself with the use of Git. The official
+<a rel="nofollow" class="external text" href="http://git-scm.com/documentation">Git documentation web page</a> is a very good continuation point.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.031 seconds
+Real time usage: 0.035 seconds
+Preprocessor visited node count: 286/1000000
+Preprocessor generated node count: 588/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:864-0!*!0!!en!*!* and timestamp 20151104213904 and revision id 19241
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index0f39-2.html?title=Git_Introduction&amp;oldid=19241">http://wiki.qt.io/index.php?title=Git_Introduction&amp;oldid=19241</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=7ff7b4db64d47a62&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Git_Introduction.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Git_Introduction.html?title=Talk:Git_Introduction&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Git_Introduction.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index773a.html?title=Git_Introduction&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index0f8b.html?title=Git_Introduction&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Git_Introduction.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Git_Introduction.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index0f39-2.html?title=Git_Introduction&amp;oldid=19241" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index51db.html?title=Git_Introduction&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:21.</li>
+											<li id="footer-info-viewcount">This page has been accessed 2,533 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":249});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Git_Introduction&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:50:24 GMT -->
+</html>

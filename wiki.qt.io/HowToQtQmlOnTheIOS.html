@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/HowToQtQmlOnTheIOS by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:15:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>HowToQtQmlOnTheIOS - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"HowToQtQmlOnTheIOS","wgTitle":"HowToQtQmlOnTheIOS","wgCurRevisionId":18571,"wgRevisionId":18571,"wgArticleId":1027,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Delete","Developing with Qt"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"HowToQtQmlOnTheIOS","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-HowToQtQmlOnTheIOS skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">HowToQtQmlOnTheIOS</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 20px;border: 1px solid #C00; border-left: 10px solid #C00; background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> This article is nominated for deletion. Reason: Can't fix, encoding broken.<br /><small>Please raise your support/opposition to this nomination in the article's Discussion page.</small>
+</td></tr></table>
+<p><b>Korean</b>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Qt.2FQML_.EB.A5.BC_iOS_.EC.83.81.EC.97.90.EC.84.9C_.EA.B5.AC.EB.8F.99.EC.8B.9C.ED.82.A4.EB.8A.94_.EB.B0.A9.EB.B2.95"><span class="tocnumber">1</span> <span class="toctext">Qt/QML 를 iOS 상에서 구동시키는 방법</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.EC.A4.80.EB.B9.84_.ED.95.B4.EC.95.BC_.ED.95.A0_.EC.82.AC.ED.95.AD"><span class="tocnumber">1.1</span> <span class="toctext">준비 해야 할 사항</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Qt_4.8_.EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0"><span class="tocnumber">1.2</span> <span class="toctext">Qt 4.8 가져오기</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Qt.EC.9D.98_shadow_build"><span class="tocnumber">1.3</span> <span class="toctext">Qt의 shadow build</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Configure_.ED.8C.8C.EC.9D.BC_.EB.A7.8C.EB.93.A4.EA.B8.B0"><span class="tocnumber">1.4</span> <span class="toctext">Configure 파일 만들기</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.ED.95.B4.EB.8B.B9_.EC.85.80.EC.8A.A4.ED.81.AC.EB.A6.BD.ED.8A.B8_.EC.8B.A4.ED.96.89"><span class="tocnumber">1.5</span> <span class="toctext">해당 셀스크립트 실행</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#UIKit_plugin_compile_.ED.95.98.EA.B8.B0"><span class="tocnumber">1.6</span> <span class="toctext">UIKit plugin compile 하기</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.ED.95.B4.EB.8B.B9_.EC.85.80.EC.8A.A4.ED.81.AC.EB.A6.BD.ED.8A.B8_.EC.8B.A4.ED.96.89_2"><span class="tocnumber">1.7</span> <span class="toctext">해당 셀스크립트 실행</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#UIKit_plugin_compile_.ED.95.98.EA.B8.B0_2"><span class="tocnumber">1.8</span> <span class="toctext">UIKit plugin compile 하기</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Qt.2FQML_.EB.A5.BC_iOS_.EC.83.81.EC.97.90.EC.84.9C_.EA.B5.AC.EB.8F.99.EC.8B.9C.ED.82.A4.EB.8A.94_.EB.B0.A9.EB.B2.95">Qt/QML 를 iOS 상에서 구동시키는 방법</span></h1>
+<p>무엇보다도 먼저 이 글은 Eike Ziller의 Qt Labs Developer Blogs 의 글을 기반으로 쓰여 졌으며 그의 Original글은 ( <a rel="nofollow" class="external free" href="http://labs.qt.nokia.com/2011/08/09/update-on-uikit-lighthouse-platform">http://labs.qt.nokia.com/2011/08/09/update-on-uikit-lighthouse-platform</a> ) 을 통해 확인 할 수 있음을 알린다.
+Deeply thanks to Eike Ziller
+</p><p>이 글의 목적은 원본 글에서 나타나는 바와 같이 pre-Qt 4.8 이나 pre-Qt 5 에서 제공된 UIKit plugin의 기능을 사용하여 QML/Qt가 iOS device에 동작 혹은 Qt application 사용 가능함을 보여주는 데 있을 뿐이지, 현재 Qt가 공식적으로 iOS를 사용하는 device들을 지원함을 의미하지 않습니다. 특히 아래글은 iOS Device에서 QML-based GUI 를 사용하는 방법에 대해서 기술하고 있습니다.
+그리고 현재 cocoa (Mac support) plugin이 아닌 UIKit (iOS support) plugin은 모든 Qt class들의 성능을 보장하지 않습니다.
+</p><p>20011년 9월말 현재 Qt/QML 을 iOS 상에서 구동시킬 수 있는 방법은 다음과 같다고 알려져 있습니다.
+1) Qt-iPhone Project
+</p>
+<pre><a rel="nofollow" class="external free" href="http://www.qt-iphone.com/">http://www.qt-iphone.com</a>
+</pre>
+<p>2-1) Qt 4.8 lighthouse (QPA open source)
+</p>
+<pre><a rel="nofollow" class="external free" href="https://qt.gitorious.org/qt">https://qt.gitorious.org/qt</a>
+</pre>
+<p>2-2) Qt 4.8 lighthouse (QPA close source)
+3) Qt 5.0
+</p>
+<pre><a rel="nofollow" class="external free" href="https://qt.gitorious.org/qt/qt5">https://qt.gitorious.org/qt/qt5</a>
+</pre>
+<p>각 Plugin의 장단점과 제약 사항에 대해서는 이글의 범위에 벗어 나므로, 기회가 있을 때 다른 블로그 글을 통해 소개 드리도록 하겠습니다.
+제가 이 글을 통해 여러분에게 소개하려는 case는 2-1 Qt 4.8 lighthouse open source를 통한 방법입니다.
+그리고 위에 상태에 대한 원본글은 다음과 같습니다. 참조 바랍니다.
+</p><p>There is general work being done in Qt 4.8 to ensure that it is iOS-compatible when it is released. There are two plugins being developed for Qt on iOS, but only one of them is currently open source. The open source plugin (aka. proof-of-concept UIKit plugin) was developed at Nokia, is (currently) part of Qt 4.8 and was discussed in a QtLabs blog post (in February?). That plugin however is only able to run simple QML apps and does not support more advanced features like auto-rotation, multi-touch, OpenGL, retina displays &amp; widgets.
+The other plugin (aka. Qt iOS plugin) is currently closed source, supports full Qt GUI with widgets, multi-touch, multi-threaded OpenGL, shader effects, Qt3D, Qt Scenegraph &amp; parts of Qt Mobility. This is the plugin that was used to make some YouTube demo videos (in Oct/Nov last year) &amp; was shown on the iPad at QtCS.
+The Qt iOS plugin is currently being used to produce a trial-run application for submission to the Apple App Store, and more information etc. about that plugin will be made available once it has passed the App Store trial-run and can be considered for commercial application development.
+PS. The qt-iphone project is unrelated to these efforts and will most likely never be able to be used to run QML on iOS (if it is in fact still being developed). The purpose of that project is to be able to use Qt to write native UIKit applications. The purpose of Lighthouse (and the iOS plugins for it) is to be able to build and run standard Qt applications on iOS.
+</p>
+<h3><span class="mw-headline" id=".EC.A4.80.EB.B9.84_.ED.95.B4.EC.95.BC_.ED.95.A0_.EC.82.AC.ED.95.AD">준비 해야 할 사항</span></h3>
+<p>1) Mac OS X machine ( Lion 혹은 Snow Leopard )
+</p><p>2) XCode 설치 <a rel="nofollow" class="external free" href="http://developer.apple.com/technologies/tools/">http://developer.apple.com/technologies/tools/</a>
+</p><p>만일 OS 텐 라이언을 사용하고 계시다면 XCode 4, OS 텐 스노우 레오퍼드를 사용하고 계시다면 XCode 3를 설치하셔야 합니다.
+</p>
+<pre>이후 설명은 Mac OS X Lion + XCode 4를 사용하고 계시는 것을 기준으로 설명드립니다.
+</pre>
+<p>3) Qt SDK 설치 (optional) <a rel="nofollow" class="external free" href="http://qt.nokia.com/downloads/">http://qt.nokia.com/downloads/</a>
+</p><p>Repository에 존재하는 example이 아닌 Qt module을 만들거나 Template들을 가져오고자 할때 쓰입니다.
+</p><p>4) MacPorts 설치 (optional) <a rel="nofollow" class="external free" href="http://www.macports.org/">http://www.macports.org/</a>
+</p><p>Gitorious를 사용하기 위해 필요합니다. dmg 파일을 다운로드 받아 사용하시면 편합니다.
+</p>
+<h3><span class="mw-headline" id="Qt_4.8_.EA.B0.80.EC.A0.B8.EC.98.A4.EA.B8.B0">Qt 4.8 가져오기</span></h3>
+<p>Gitorious Tool은 아무 것이나 사용하셔도 됩니다.
+</p>
+<pre>Qt repository를 Cloning 해 줍니다.
+</pre>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">''</span><span class="st0">'# git clone git://gitorious.org/qt/qt.git qt'</span><span class="st0">''</span></pre></div></div>
+<pre>(Qt의 전체 소스를 가져오기 때문에 시간이 조금 걸립니다)
+</pre>
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">''</span><span class="st0">'# cd qt'</span><span class="st0">''</span></pre></div></div>
+<pre>원격 레포지토리를 로컬 레포지토리로 추가
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="co2"># git remote add qt git://gitorious.org/qt/qt.git</span>
+ <span class="co2"># git fetch qt</span>
+ <span class="co2"># git checkout -b my-local-Qt4.8 qt/4.8</span></pre></div></div>
+<p>위와 같이 하면 4.8의 소스 코드가 다운로드 됩니다.
+</p><p>자신의 branch를 확인해 보고 싶으시다면
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="co2"># git branch -a</span></pre></div></div>
+<pre>와 같이 해보면 됩니다. 정상적으로 되었다면 my-local-Qt4.8과 같이 본인이 만든 branch 이름 앞에 (*) 표시가 되어 있습니다.
+</pre>
+<h3><span class="mw-headline" id="Qt.EC.9D.98_shadow_build">Qt의 shadow build</span></h3>
+<p>일반적인 경우는 normal build를 해도 관계없지만 iOS용으로 Qt를 compile 하실 경우에는 shadow build를 추천드립니다.
+왜냐하면 xcode에서 device용과 simulator용을 구분하기 때문에 한 디렉터리에서 device용과 simulator용을 번갈아가며 컴파일하게 되면 어려운 점이 발생할 수 있습니다. 저의 경우를 예를 들자면 다음과 같이 디렉터리를 구성하였습니다.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">drwxr<span class="sy0">-</span>xr<span class="sy0">-</span>x <span class="nu0">21</span> HoTaeWang staff <span class="nu0">714</span> <span class="nu0">10</span> <span class="nu0">6</span> <span class="nu0">14</span><span class="sy0">:</span><span class="nu0">16</span> Qt<span class="sy0">-</span>BuildiOS<span class="sy0">-</span>device<span class="sy0">/</span>
+drwxr<span class="sy0">-</span>xr<span class="sy0">-</span>x <span class="nu0">21</span> HoTaeWang staff <span class="nu0">714</span> <span class="nu0">10</span> <span class="nu0">6</span> <span class="nu0">14</span><span class="sy0">:</span><span class="nu0">33</span> Qt<span class="sy0">-</span>BuildiOS<span class="sy0">-</span>simulator<span class="sy0">/</span>
+drwxr<span class="sy0">-</span>xr<span class="sy0">-</span>x <span class="nu0">36</span> HoTaeWang staff <span class="nu0">1224</span> <span class="nu0">10</span> <span class="nu0">6</span> <span class="nu0">14</span><span class="sy0">:</span><span class="nu0">27</span> qt<span class="sy0">/</span></pre></div></div>
+<h3><span class="mw-headline" id="Configure_.ED.8C.8C.EC.9D.BC_.EB.A7.8C.EB.93.A4.EA.B8.B0">Configure 파일 만들기</span></h3>
+<p>Qt-BuildiOS-device 폴더에는 다음과 같은 Qt-iOS-device.sh 셀스크립트를 만들었습니다.
+</p>
+<ol>
+<li>!/bin/sh
+</li>
+</ol>
+<p>../qt/configure -qpa -xplatform qpa/macx-iphonedevice-g++ -arch armv7 -no-neon -developer-build -release -opengl es2 -no-accessibility -no-qt3support -no-multimedia -no-phonon-backend -no-webkit -no-scripttools -no-openssl -no-sql-mysql -no-sql-odbc -no-cups -no-iconv -no-dbus -static -nomake tools -nomake demos -nomake docs -nomake examples -nomake translations
+</p>
+<h3><span class="mw-headline" id=".ED.95.B4.EB.8B.B9_.EC.85.80.EC.8A.A4.ED.81.AC.EB.A6.BD.ED.8A.B8_.EC.8B.A4.ED.96.89">해당 셀스크립트 실행</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># . ./Qt-iOS-device.sh</span>
+<span class="co2"># make -j4</span>
+<span class="sy0">-</span>j<span class="br0">&#40;</span>n<span class="br0">&#41;</span> option은 자신의 CPU의 성능에 따라 선택할 것</pre></div></div>
+<h3><span class="mw-headline" id="UIKit_plugin_compile_.ED.95.98.EA.B8.B0">UIKit plugin compile 하기</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># cd src/plugins/platforms/uikit</span>
+<span class="co2"># make</span></pre></div></div>
+<p>Qt-BuildiOS-simulator 폴더에는 다음과 같은 Qt-iOS-simulator.sh 셀스크립트를 만들었습니다.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#!/bin/sh</span>
+&#160;
+..<span class="sy0">/</span>qt<span class="sy0">/</span>configure <span class="sy0">-</span>qpa <span class="sy0">-</span>xplatform qpa<span class="sy0">/</span>macx<span class="sy0">-</span>iphonesimulator<span class="sy0">-</span>g<span class="sy0">++</span> <span class="sy0">-</span>arch i386 <span class="sy0">-</span>developer<span class="sy0">-</span>build <span class="sy0">-</span>release <span class="sy0">-</span>opengl es2 <span class="sy0">-</span>no<span class="sy0">-</span>accessibility <span class="sy0">-</span>no<span class="sy0">-</span>qt3support <span class="sy0">-</span>no<span class="sy0">-</span>multimedia <span class="sy0">-</span>no<span class="sy0">-</span>phonon<span class="sy0">-</span>backend <span class="sy0">-</span>no<span class="sy0">-</span>webkit <span class="sy0">-</span>no<span class="sy0">-</span>scripttools <span class="sy0">-</span>no<span class="sy0">-</span>openssl <span class="sy0">-</span>no<span class="sy0">-</span>sql<span class="sy0">-</span>mysql <span class="sy0">-</span>no<span class="sy0">-</span>sql<span class="sy0">-</span>odbc <span class="sy0">-</span>no<span class="sy0">-</span>cups <span class="sy0">-</span>no<span class="sy0">-</span>iconv <span class="sy0">-</span>no<span class="sy0">-</span>dbus <span class="sy0">-</span><span class="kw4">static</span> <span class="sy0">-</span>nomake tools <span class="sy0">-</span>nomake demos <span class="sy0">-</span>nomake docs <span class="sy0">-</span>nomake examples <span class="sy0">-</span>nomake translations</pre></div></div>
+<h3><span class="mw-headline" id=".ED.95.B4.EB.8B.B9_.EC.85.80.EC.8A.A4.ED.81.AC.EB.A6.BD.ED.8A.B8_.EC.8B.A4.ED.96.89_2">해당 셀스크립트 실행</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># . ./Qt-iOS-simulator.sh</span>
+<span class="co2"># make -j4</span>
+<span class="sy0">-</span>j<span class="br0">&#40;</span>n<span class="br0">&#41;</span> option은 자신의 CPU 성능에 따라 선택할 것</pre></div></div>
+<h3><span class="mw-headline" id="UIKit_plugin_compile_.ED.95.98.EA.B8.B0_2">UIKit plugin compile 하기</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># cd src/plugins/platforms/uikit</span>
+<span class="co2"># make</span></pre></div></div>
+<p>Qt와 UIKit plugin 까지 compile이 성공하였다면 Qt for iOS 세상에 들어올 준비가 모두 끝난 것이다.
+</p><p>다음으로 해야 할 일은 XCode 4를 실행 시키고
+qt/src/plugins/platforms/uikit/examples에서 XCode project를 열어 실행시키면 된다.
+XCode Toolbar에서 iPhone Simulator 4.3/iPad Simulator 4.3을 선택하고 Run Key를 누르면 아래와 같은 동영상을 확인 하실 수 있을 것이다.
+<a rel="nofollow" class="external free" href="https://www.youtube.com/watch?v=glv_E3KOYuA">https://www.youtube.com/watch?v=glv_E3KOYuA</a>
+</p><p>XCode 4의 다른 Project를 만들고 싶다면 <a rel="nofollow" class="external free" href="https://qt.gitorious.org/qt/qt/blobs/4.8/src/plugins/platforms/uikit/README">https://qt.gitorious.org/qt/qt/blobs/4.8/src/plugins/platforms/uikit/README</a>
+를 참조해서 새롭게 만들 수 있습니다.
+</p><p>긴글 읽어 주셔서 감사합니다.
+수정 해야 하거나 조금 더 가르침을 주실 사항이 있으시면 언제든지 comment나 e-mail 주십시요.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.178 seconds
+Real time usage: 0.186 seconds
+Preprocessor visited node count: 131/1000000
+Preprocessor generated node count: 288/1000000
+Post‐expand include size: 748/2097152 bytes
+Template argument size: 212/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1027-0!*!*!!en!*!* and timestamp 20151105020914 and revision id 18571
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index86d3-2.html?title=HowToQtQmlOnTheIOS&amp;oldid=18571">http://wiki.qt.io/index.php?title=HowToQtQmlOnTheIOS&amp;oldid=18571</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Delete.html?title=Category:Delete&amp;action=edit&amp;redlink=1" class="new" title="Category:Delete (page does not exist)">Delete</a></li><li><a href="Category_Developing_with_Qt.html" title="Category:Developing with Qt">Developing with Qt</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=407e48b771d0eae0&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="HowToQtQmlOnTheIOS.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_HowToQtQmlOnTheIOS.html?title=Talk:HowToQtQmlOnTheIOS&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="HowToQtQmlOnTheIOS.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexd77e.html?title=HowToQtQmlOnTheIOS&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index74bd.html?title=HowToQtQmlOnTheIOS&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/HowToQtQmlOnTheIOS.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/HowToQtQmlOnTheIOS.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index0fdf.html?title=HowToQtQmlOnTheIOS&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index86d3-2.html?title=HowToQtQmlOnTheIOS&amp;oldid=18571" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index6cb9.html?title=HowToQtQmlOnTheIOS&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 June 2015, at 19:42.</li>
+											<li id="footer-info-viewcount">This page has been accessed 795 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":293});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/HowToQtQmlOnTheIOS by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:15:39 GMT -->
+</html>

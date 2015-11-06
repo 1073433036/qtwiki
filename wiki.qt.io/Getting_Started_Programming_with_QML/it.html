@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Getting_Started_Programming_with_QML/it by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 07:58:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Getting Started Programming with QML/it - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Getting_Started_Programming_with_QML/it","wgTitle":"Getting Started Programming with QML/it","wgCurRevisionId":16536,"wgRevisionId":16536,"wgArticleId":1086,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Getting_Started_Programming_with_QML/it","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Getting_Started_Programming_with_QML_it skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Getting Started Programming with QML/it</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../indexb6c6.html?title=Getting_Started_Programming_with_QML/it&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduzione_Alla_Programmazione_Con_QML"><span class="tocnumber">1</span> <span class="toctext">Introduzione Alla Programmazione Con QML</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#QML_per_la_creazione_di_UI"><span class="tocnumber">1.1</span> <span class="toctext">QML per la creazione di UI</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Introduzione_Alla_Programmazione_Con_QML">Introduzione Alla Programmazione Con QML</span></h1>
+<p>Benvenuti nel mondo di QML, il linguaggio dichiarativo per la realizzazione di interfacce utente (UI, user interface).
+In questa guida introduttiva, costruiremo un semplice editor di testo utilizzando QML. Dopo aver letto questa guida, dovresti essere pronto per sviluppare le tue applicazioni usando QML e Qt C+<i>.</i>
+</p>
+<h2><span class="mw-headline" id="QML_per_la_creazione_di_UI">QML per la creazione di UI</span></h2>
+<p>L'applicazione che svilupperemo sarà un semplice editor di testo e permetterà di caricare, salvare e modificare del testo. Questa introduzione è divisa in due parti. La prima parte si occupa dello sviluppo del layout e dei comportamenti dei componenti dell'applicazione tramite il linguaggio QML. La seconda, invece, tratta dell'implementazione delle funzioni di caricamento e salvataggio utilizzando Qt C. Grazie al <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/metaobjects.html">Qt's Meta-Object System</a>, possiamo esporre le funzioni C<i>+ come proprietà usate da elementi del linguaggio QML. Usando QML e Qt C+</i>, possiamo separare efficacemente la logica del layout dalla logica riguardante le funzionalità dell'applicazione.
+</p><p>p=. <a href="../indexaa3f.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 editmenu.png">Immagine editor di testi</a>
+</p><p>Per eseguire il codice QML dell'esempio, è sufficiente passare come argomento allo strumento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qmlviewer.html">qmlviewer</a> i files QML. La seguente introduzione è pensata per quei lettori che hanno almeno una minima conoscenza della procedura per la compilazione di applicazioni in Qt.
+</p><p>Capitoli:
+</p>
+<ol>
+<li> Definizione di pulsanti e menu
+</li>
+<li> Implementare barra dei menu
+</li>
+<li> Costruire un editor di testo
+</li>
+<li> Decorare l'editor di testo
+</li>
+<li> Estendere QML attraverso Qt C<i>+</i>
+</li>
+</ol>
+<h3><span class="mw-headline" id="Definizione_di_pulsanti_e_menu">Definizione di pulsanti e menu</span></h3>
+<h4><span class="mw-headline" id="Componenti_base_-_Pulsante">Componenti base - Pulsante</span></h4>
+<p>Iniziamo il nostro editor di testi costruendo un pulsante. Un pulsante è costituito da un'area sensibile al mouse e da un'etichetta. I pulsanti eseguono un azione alla pressione da parte dell'utente.
+In QML, l'oggetto visuale di base è il <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a>. Il <i>Rectangle</i> ha le proprietà per controllare l'aspetto e la posizione degli elementi.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>simplebutton
+&#160;
+color<span class="sy0">:</span> <span class="st0">&quot;grey&quot;</span>
+ width<span class="sy0">:</span> <span class="nu0">400</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">400</span>
+&#160;
+Text <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonLabel
+ text<span class="sy0">:</span> <span class="st0">&quot;button label&quot;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span>parent
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Innanzitutto, la riga <i>import Qt 4.7</i> abilita il tool qmlviewer all'importazione di elementi QML. Questa linea deve essere presente in ogni file QML. Si noti che la versione dei moduli di Qt è inclusa nella dichiarazione.
+</p><p>Il <i>Rectangle</i> ha un identificatore univoco, <i>simplebutton</i>, che è associato alla proprietà <i>id</i>. Le properità del <i>Rectangle</i> sono specificate definendone prima il nome e, dopo il simbolo&#160;: (due punti), il valore. Nel codice di esempio, il colore <i>grey</i> è legato alla proprietà <i>color</i> del <i>Rectangle</i>. Stessa cosa per larghezza e altezza (<i>width</i> e <i>height</i>).
+</p><p>L'elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">Text</a> è un campo di testo non editabile. Lo chiameremo <i>buttonLabel</i>. Per impostare il contenuto del campo di testo, assoceremo un valore alla sua proprietà <i>text</i>. L'etichetta è contenuta all'interno del rectangle, e per centrarla in mezzo, colleghiamo gerarchicamente le <i>anchors</i> (ancore) dell’elemento <i>Text</i> al suo genitore, che nel nostro caso si chiama <i>simplebutton</i>.
+Ogni ancora può essere collegata alle ancore di altri elementi; in questo modo si semplifica la definizione della disposizione reciproca degli elementi.
+</p><p>Salveremo il tutto come <i>SimpleButton.qml</i>. Lanciando qmlviewer con il nome del file creato come argomento, verrà mostrato a schermo un rettangolo grigio con un'etichetta di testo.
+</p><p>p=. <a href="../indexe2e3.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_simplebutton.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 simplebutton.png">pulsante grigio con etichetta testo</a>
+</p><p>Per implementare l'evento click sul pulsante, possiamo usare la gestione degli eventi di QML. La gestione eventi di QML è molto simile al meccanismo <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/signalsandslots.html">signal e slot</a> di Qt. Un segnale sarà emesso e il relativo slot connesso sarà chiamato.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>simplebutton
+ …
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonMouseArea
+&#160;
+anchors.<span class="me1">fill</span><span class="sy0">:</span> parent <span class="co1">//ancora tutti i lati della MouseArea ai lati del rettangolo</span>
+ <span class="co1">//onClicked gestisce click del mouse validi</span>
+ onClicked<span class="sy0">:</span> console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Aggiungiamo un elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> nel nostro componente <i>simplebutton</i>. Gli elementi <i>MouseArea</i> descrivono l'area interattiva dove i movimenti del mouse sono rilevati. Per il nostro pulsante, ancoriamo l'intera <i>MouseArea</i> al suo genitore (<i>parent</i>), il <i>simplebutton</i>. La sintassi <i>anchors.fill</i> è un modo per accedere ad una specifica proprietà chiamata <i>fill</i> all'interno di un gruppo di proprietà denominate <i>anchors</i>. QML utilizza <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-anchor-layout.html">layouts basati su ancore</a>, dove gli elementi possono ancorarsi ad altri elementi, creando layout robusti e flessibili.
+</p><p>La <i>MouseArea</i> ha molti gestori di segnali che possono essere chiamati durante i movimenti del mouse all'interno dei limiti specificati. Uno di questi è <i>onClicked</i> ed è invocato ogni qualvolta viene cliccato un pulsante valido del mouse; il pulsante di default è quello sinistro. Possiamo legare azioni al gestore <i>onClicked</i>. Nel nostro esempio, <i>console.log()</i> visualizza testo ogni volta che viene cliccata la MouseArea. La funzione <i>console.log()</i> è uno strumento utile per scopi di debugging e, in generale, per visualizzare del testo in output.
+</p><p>Il codice in <i>SimpleButton.qml</i> è sufficiente per mostrare un bottone sullo schermo e visualizzare del testo ogni volta che viene cliccato con il mouse.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span>Button
+ …
+&#160;
+property color buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightblue&quot;</span>
+ property color onHoverColor<span class="sy0">:</span> <span class="st0">&quot;gold&quot;</span>
+ property color borderColor<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+&#160;
+<span class="kw4">signal</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ onButtonClick<span class="sy0">:</span> <span class="br0">&#123;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ onClicked<span class="sy0">:</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ hoverEnabled<span class="sy0">:</span> <span class="kw2">true</span>
+ onEntered<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> onHoverColor
+ onExited<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> borderColor
+ <span class="br0">&#125;</span>
+&#160;
+<span class="co1">// determina il colore del bottone utilizando l'operatore condizionale</span>
+ color<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="kw5">Qt</span>.<span class="me1">darker</span><span class="br0">&#40;</span>buttonColor<span class="sy0">,</span> <span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy0">:</span> buttonColor
+<span class="br0">&#125;</span></pre></div></div>
+<p>Un pulsante completamente funzionante è <i>Button.qml</i>. Il codice visualizzato in questo articolo omette alcune parti, denotate da "…", poiché sono già state introdotte nella sezione precedente o comunque sono irrilevanti ai fini della discussione di questo specifico codice.
+</p><p>Per dichiarare proprietà personalizzate si utilizza la sintassi: <i>proprietà tipo nome</i>. Nel codice, viene dichiarata la proprietà <i>buttonColor</i>, di tipo <i>color</i>, e vincolata al valore "<i>lightblue</i>". La proprietà <i>buttonColor</i> è utilizzata successivamente in un'operazione condizionale per determinare il colore di riempimento del bottone. Si noti che per assegnare dei valori alle proprietà è possibile utilizzare il segno uguale "="oppure il segno due punti ":". Le proprietà personalizzate permettono di rendere accessibili elementi interni all’elemento <i>Rectangle</i>, anche dall’esterno del suo campo di visibiltà. Esistono diversi <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativebasictypes.html">tipi QML</a> di base come <i>int</i>, <i>string</i>, <i>real</i>, ma anche un tipo generico chiamato <i>variant</i>.
+</p><p>Legando i gestori dei segnali <i>onEntered</i> ed <i>onExited</i> ai colori, il colore del bordo del pulsante diventa giallo quando il mouse si sposta sopra di esso e ritorna del colore pecedente quando il mouse esce dalla <i>MouseArea</i>.
+</p><p>Un segnale <i>buttonClick()</i> è dichiarato in <i>Button.qml</i> inserendo la parola chiave <i>signal</i> davanti al nome del segnale. Per ogni segnale vengono create automaticamente le relative funzioni di gestione, i cui nomi iniziano con il prefisso <i>on</i>. Come risultato si ha che il gestore di <i>buttonClick</i> è <i>onButtonClick</i>. All'<i>onButtonClick</i> è successivamente assegnata un'azione da svolgere. Nel nostro esempio, il gestore del mouse <i>onClicked</i> chiamerà semplicemente <i>onButtonClick</i>, il quale ha il compito di visualizzare del testo. <i>onButtonClick</i> permette ad oggetti esterni di accedere facilmente alla <i>MouseArea</i> del <i>Button</i>. Inoltre, gli elementi possono avere dichiarate più di una <i>MouseArea</i>, ed avere il segnale <i>buttonClick</i> permette di distinguere meglio i diversi gestori di segnali delle varie <i>MouseArea</i>.
+</p><p>Ora abbiamo le conoscenze essenziali per implementare in QML oggetti che possono gestire i principali movimenti del mouse. Abbiamo creato un'etichetta <i>Text</i> all'interno di un <i>Rectangle</i>, personalizzato le sue proprietà ed implementato dei comportamenti che rispondano ai movimenti del mouse. Questa idea di base della creazione di elementi all’interno di altri elementi, si ripresenterà nello sviluppo di tutta l'applicazione di esempio.
+</p><p>Il pulsante realizzato non è molto utile se non viene usato come componente per eseguire una qualche azione. Nella prossima sezione creeremo un menu contenente alcuni di questi pulsanti.
+</p><p>p=. <a href="../index9db7.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_button.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 button.png">Pulsante grigio chiaro con all'interno un'etichetta</a>
+</p>
+<h4><span class="mw-headline" id="Creazione_della_pagina_del_menu">Creazione della pagina del menu</span></h4>
+<p>Fino ad ora abbiamo visto come creare elementi ed assegnare comportamenti all'interno di file QML. In questa sezione, scopriremo come importare elementi QML e come riutilizzare alcuni componenti creati per costruire altri componenti.
+</p><p>Un menu mostra il contenuto di una lista i cui elementi hanno la capacità di compiere un'azione. In QML possiamo ottnere un menu in vari modi. Prima di tutto creeremo un menu contenente dei pulsanti a cui faremo eseguire azioni differenti. Il codice del menu è in <i>FileMenu.qml</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span> <span class="co1">//Importa il modulo Qt QML principale</span>
+import <span class="st0">&quot;folderName&quot;</span> <span class="co1">//Importa il contenuto della cartella</span>
+import <span class="st0">&quot;script.js&quot;</span> as Script <span class="co1">//Importa un file javascript e lo chiama Script</span></pre></div></div>
+<p>La sintassi riportata mostra come utilizzare la parola chiave <i>import</i>. Ciò è richiesto per utilizzare file <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/JavaScript">JavaScript</a> o QML che non sono nella stessa cartella. Siccome <i>Button.qml</i> si trova nella stessa cartella di <i>FileMenu.qml</i>, non è necessario importare esplicitamente il file <i>Button.qml</i> per poterlo usare, ma possiamo creare direttamente un elemento <i>Button</i> dichiarando <i>Button{}</i>, come è stato fatto per <i>Rectangle{}</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span> parent.<span class="me1">width</span><span class="sy0">/</span><span class="nu0">6</span>
+&#160;
+Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> loadButton
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightgrey&quot;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;Load&quot;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;grey&quot;</span>
+ id<span class="sy0">:</span> saveButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Save&quot;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> exitButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Exit&quot;</span>
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;darkgrey&quot;</span>
+&#160;
+onButtonClick<span class="sy0">:</span> <span class="kw5">Qt</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>In <i>FileMenu.qml</i> abbiamo dichiarato tre elementi <i>Button</i>. Essi sono definiti all'interno di un elemento di tipo <i>Row</i>, un elemento di posizionamento che ha lo scopo di collocare i suoi figli lungo una riga orizzontale. La dichiarazione di <i>Button</i> si trova nel file <i>Button.qml</i>, lo stesso che abbiamo utilizzato nella sezione precedente. Le impostazioni delle proprietà possono essere dichiarate all'interno della dichiarazione del pulsante; in questo modo si sovrascrivono le proprietà impostate in <i>Button.qml</i>. Quando cliccato, il pulsante chiamato <i>exitButton</i> chiuderà l'applicazione. Si noti che il gestore di segnale <i>onButtonClick</i> in <i>Button.qml</i> sarà chiamato in aggiunta al gestore <i>onButtonClick</i> in <i>exitButton</i>.
+</p><p>p=. <a href="../indexf003.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_filemenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 filemenu.png">Immagine menu File</a>
+</p><p>La dichiarazione dell'elemento di tipo <i>Row</i> è fatta all'interno di un <i>Rectangle</i>, creando un contenitore a forma di rettangolo per la riga di pulsanti. Il rettangolo aggiuntivo permette di aver un modo indiretto di organizzare la riga di pulsanti all'interno del menu.
+</p><p>La dichiarazione del menu di editing è molto simile a quella precedente. Questo menù è composto da pulsanti con le etichette <i>Copy</i>, <i>Paste</i> e <i>Select All</i>.
+</p><p>p=. <a href="../indexe0a4.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 editmenu.png">Immagine menu Edit</a>
+</p><p>Forti della conoscenza acquisita sull'importazione e sulla personalizzazione dei componenti, possiamo ora combinare queste pagine di menu per creare una singola barra dei menu, composta da pulsanti per selezionare il menu, e vedere come strutturare i dati usando QML.
+</p>
+<h3><span class="mw-headline" id="Implementare_la_barra_dei_menu">Implementare la barra dei menu</span></h3>
+<p>Il nostro editor di testi necessità di un modo per visualizzare i menu tramite una barra dei menu. La barra dei menu proporrà i diversi menu attraverso cui l'utente potrà navigare. Per il cambio del menu occorrerà una struttura più complessa della semplice visualizzazione su una riga. QML utilizza modelli e viste per gestire e visualizzare i dati strutturati.
+</p>
+<h4><span class="mw-headline" id="Usare_la_struttura_modello-vista">Usare la struttura modello-vista</span></h4>
+<p>QML dispone di diverse <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativemodels.html">viste</a> per visualizzare i <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativemodels.html">modelli</a>. La nostra barra dei menu visualizzerà i menu in una lista, con un'intestazione che mostrerà i nomi dei menu su una riga. L'elenco dei menu è dichiarato all'interno di un <i>VisualItemModel</i>. L'elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-visualitemmodel.html">VisualItemModel</a> contiene gli oggetti che hanno già delle viste, come l'oggetto <i>Rectangle</i> e gli altri elementi dell'interfaccia. Altri tipi di modelli, come l'elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-listmodel.html">ListModel</a>, necessitano di un delegato per visualizzare i propri dati.
+</p><p>Dichiariamo quindi due elementi visuali nel <i>menuListModel</i>, il <i>FileMenu</i> e <i>EditMenu</i>, li personalizziamo e li visualizziamo usando il <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-listview.html">ListView</a>. Il file <i>MenuBar.qml</i> contiene le dichiarazioni QML e un semplice menu di modifica è definito nel file <i>EditMenu.qml</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> VisualItemModel<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListModel
+ FileMenu<span class="br0">&#123;</span>
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ color<span class="sy0">:</span> fileColor
+ <span class="br0">&#125;</span>
+ EditMenu<span class="br0">&#123;</span>
+ color<span class="sy0">:</span> editColor
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>L'elemento <i>ListView</i> visualizza un modello attraverso il suo elemento delegato. Il delegato può definire che gli elementi del modello da visualizzare siano disposti in una riga o in una griglia. Il nostro <i>menuListModel</i> ha già degli oggetti visibili, quindi non abbiamo bisogno di dichiarare un delegato.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> ListView<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListView
+&#160;
+<span class="co1">//Le anchors sono settate per adattarsi alla finestra</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ anchors.<span class="me1">bottom</span><span class="sy0">:</span> parent.<span class="me1">bottom</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ height<span class="sy0">:</span> parent.<span class="me1">height</span>
+&#160;
+<span class="co1">//Il model contiene i dati</span>
+ model<span class="sy0">:</span> menuListModel
+&#160;
+<span class="co1">//Controlla il movimento del passaggio tra i menu</span>
+ snapMode<span class="sy0">:</span> ListView.<span class="me1">SnapOneItem</span>
+ orientation<span class="sy0">:</span> ListView.<span class="me1">Horizontal</span>
+ boundsBehavior<span class="sy0">:</span> Flickable.<span class="me1">StopAtBounds</span>
+ flickDeceleration<span class="sy0">:</span> <span class="nu0">5000</span>
+ highlightFollowsCurrentItem<span class="sy0">:</span> <span class="kw2">true</span>
+ highlightMoveDuration<span class="sy0">:</span><span class="nu0">240</span>
+ highlightRangeMode<span class="sy0">:</span> ListView.<span class="me1">StrictlyEnforceRange</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Inoltre, <i>ListView</i> eredita da <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-flickable.html">Flickable</a>, rendendo la lista reattiva al trascinamento del mouse ed a altre gestures. L'ultima parte di codice imposta la proprietà <i>Flickable</i> per creare dei movimenti di ribaltamento alla nostra vista. In particolare, la proprietà <i>highlightMoveDuration</i> cambia la durata della transizione: un valore più alto di <i>highlightMoveDuration</i> renderà il passaggio tra i menu più lento.
+</p><p>Il <i>ListView</i> gestisce gli elementi del modello attraverso un <i>index</i> (indice) e ogni elemento visuale nel modello è accessibile tramite questo indice, secondo l'ordine di dichiarazione. Cambiando il <i>currentIndex</i> cambieremo l'elemento evidenziato nella <i>Listview</i>. L'intestazione della barra dei menu semplifica questo effetto. Ci sono due pulsanti sulla stessa riga, quando cliccati entrambi cambiano il menu corrente. Il pulsante <i>fileButton</i> quando cliccato cambia il menu corrente con <i>FileMenu</i>; l'indice diventa 0 perchè <i>FileMenu</i> è il primo elemento dichiarato nel <i>menuListModel</i>. Analogamente il pulsante <i>editButton</i> sostituisce il menu corrente con <i>EditMenu</i>.
+</p><p>Il rettangolo dell'etichetta <i>labelList</i> ha un valore di z settato a 1, e sarà quindi visualizzata davanti alla barra dei menu. Gli oggetti con un valore di z maggiori saranno visualizzati in primo piano rispetto a quelli con un valore di z inferiore. Il valore di default di z è 0.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> labelList
+ …
+ z<span class="sy0">:</span> <span class="nu0">1</span>
+ Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span><span class="nu0">40</span>
+ Button<span class="br0">&#123;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;File&quot;</span>
+ id<span class="sy0">:</span> fileButton
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">0</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> editButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Edit&quot;</span>
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>La barra dei menu appena creata potrà essere sfogliata per accedere ai menu oppure si può semplicemente cliccare sui nomi dei menu. Il cambiamento dei menu è intuitivo e reattivo.
+</p><p>p=. <a href="../index9081.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor2_menubar.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor2 menubar.png">barra dei menu</a>
+</p>
+<h3><span class="mw-headline" id="Costruire_un_editor_di_testo">Costruire un editor di testo</span></h3>
+<h4><span class="mw-headline" id="Dichiarare_un.27area_di_testo">Dichiarare un'area di testo</span></h4>
+<p>Il nostro editor di testo non potrà mai essere un vero editor di testo finché non inseriremo un area di testo modificabile. L'elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-textedit.html">TextEdit</a> permette la dichiarazione di un componente per la modifica di testo multilinea. <i>TextEdit</i> è diverso dall'elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">Text</a>, che non consente all'utente di modificare direttamente il testo.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">TextEdit<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> textEditor
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ width<span class="sy0">:</span>parent.<span class="me1">width</span><span class="sy0">;</span> height<span class="sy0">:</span>parent.<span class="me1">height</span>
+ color<span class="sy0">:</span><span class="st0">&quot;midnightblue&quot;</span>
+ focus<span class="sy0">:</span> <span class="kw2">true</span>
+&#160;
+wrapMode<span class="sy0">:</span> TextEdit.<span class="me1">Wrap</span>
+&#160;
+onCursorRectangleChanged<span class="sy0">:</span> flickArea.<span class="me1">ensureVisible</span><span class="br0">&#40;</span>cursorRectangle<span class="br0">&#41;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>L'editor contiene proprietà per impostare il colore del testo e per farlo andare a capo. L'area di testo <i>TextEdit</i> è contenuta all'interno di un'area scorrevole che farà scorrere il testo se il cursore si trova al di fuori dell'area visibile. La funzione <i>ensureVisible()</i> controlla se il rettangolo del cursore è fuori dai confini visibili e, nel caso, sposta opportunamente l'area di testo. QML usa la sintassi Javascript per i suoi scripts, e, come accennato in precedenza, i file Javascript possono essere importati e utilizzati all'interno di un file QML.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> function ensureVisible®<span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>contentX <span class="sy0">&gt;=</span> r.<span class="me1">x</span><span class="br0">&#41;</span>
+ contentX <span class="sy0">=</span> r.<span class="me1">x</span><span class="sy0">;</span>
+ <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>contentX<span class="sy0">+</span>width <span class="sy0">&lt;=</span> r.<span class="me1">x</span><span class="sy0">+</span>r.<span class="me1">width</span><span class="br0">&#41;</span>
+ contentX <span class="sy0">=</span> r.<span class="me1">x</span><span class="sy0">+</span>r.<span class="me1">width</span><span class="sy0">-</span>width<span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>contentY <span class="sy0">&gt;=</span> r.<span class="me1">y</span><span class="br0">&#41;</span>
+ contentY <span class="sy0">=</span> r.<span class="me1">y</span><span class="sy0">;</span>
+ <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>contentY<span class="sy0">+</span>height <span class="sy0">&lt;=</span> r.<span class="me1">y</span><span class="sy0">+</span>r.<span class="me1">height</span><span class="br0">&#41;</span>
+ contentY <span class="sy0">=</span> r.<span class="me1">y</span><span class="sy0">+</span>r.<span class="me1">height</span><span class="sy0">-</span>height<span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h4><span class="mw-headline" id="Combinare_i_componenti_per_l.27editor_di_testi">Combinare i componenti per l'editor di testi</span></h4>
+<p>Ora siamo pronti per creare il layout del nostro editor di testo mediante QML. L'editor di testo ha due componenti: la barra dei menu e l'area di testo. QML ci permette di riutilizzare i componenti, rendendo il codice più semplice, attraverso l'importazione e la personalizzazione degli stessi quando necessario. Il nostro editor di testo divide la finestra in due parti, un terzo dello schermo è dedicato alla barra dei menu ed i rimanenti due terzi della schermata sono destinati alla visualizzazione dell'area di testo. La barra dei menu viene visualizzata in primo piano rispetto a qualsiasi altro elemento.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+&#160;
+id<span class="sy0">:</span> screen
+ width<span class="sy0">:</span> <span class="nu0">1000</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">1000</span>
+&#160;
+<span class="co1">//Lo schermo è diviso in MenuBar e TextArea. La MenuBar occupa 1/3 dello schermo</span>
+ property <span class="kw4">int</span> partition<span class="sy0">:</span> height<span class="sy0">/</span><span class="nu0">3</span>
+&#160;
+MenuBar<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>menuBar
+ height<span class="sy0">:</span> partition
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ z<span class="sy0">:</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+&#160;
+TextArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>textArea
+ anchors.<span class="me1">bottom</span><span class="sy0">:</span>parent.<span class="me1">bottom</span>
+ y<span class="sy0">:</span> partition
+ color<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+ height<span class="sy0">:</span> partition<span class="sy0">*</span><span class="nu0">2</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Tramite l'importazione di componenti riutilizzabili, il codice del nostro editor di testo appare molto più semplice. Possiamo quindi personalizzare l'applicazione principale, senza preoccuparci delle proprietà che abbiamo già definito prima. Usando questo approccio, i layout delll'applicazione ed i componenti dell'interfaccia grafica possono essere creati ed assemblati più facilmente.
+</p><p>p=. <a href="../indexbf8c.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor3_texteditor.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor3 texteditor.png">editor di testi</a>
+</p>
+<h3><span class="mw-headline" id="Decorare_l.27editor_di_testo">Decorare l'editor di testo</span></h3>
+<h4><span class="mw-headline" id="Implementare_un_interfaccia_a_scomparsa">Implementare un interfaccia a scomparsa</span></h4>
+<p>Il nostro editor di testo appare semplice, ma possiamo abbellirlo. Utilizzando QML possiamo dichiarare delle transizioni per animarlo. La nostra barra del menu occupa un terzo dello schermo, sarebbe carino se apparisse solo quando lo vogliamo.
+</p><p>A tale scopo possiamo aggiungere un elemento di interfaccia (<i>drawer</i>) che si occuperà di contrarre o espandere la barra dei menu quando viene cliccata. Nella nostra implementazione abbiamo un sottile rettangolo che risponde ai click del mouse. Il <i>drawer</i>, così come l'applicazione, ha due stati: aperto (<i>DRAWER_OPEN</i>) e chiuso (<i>DRAWER_CLOSED</i>). L'elemento <i>drawer</i> è una sottile striscia rettangolare al cui interno è presente un elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-image.html">immagine</a> che definisce un'icona a forma di freccia centrata all'interno dell'area. Il <i>drawer</i> assegna uno stato, con identificativo <i>screen</i>, all'intera applicazione ogni volta che l'utente clicca la <i>MouseArea</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>drawer
+ height<span class="sy0">:</span><span class="nu0">15</span>
+&#160;
+Image<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> arrowIcon
+ source<span class="sy0">:</span> <span class="st0">&quot;images/arrow.png&quot;</span>
+ anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> drawerMouseArea
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ onClicked<span class="sy0">:</span><span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>screen.<span class="me1">state</span>  <span class="st0">&quot;DRAWER_CLOSED&quot;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+                     screen.<span class="me1">state</span> <span class="sy0">=</span> <span class="st0">&quot;DRAWER_OPEN&quot;</span>
+                 <span class="br0">&#125;</span>
+                 <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>screen.<span class="me1">state</span>  <span class="st0">&quot;DRAWER_OPEN&quot;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+ screen.<span class="me1">state</span> <span class="sy0">=</span> <span class="st0">&quot;DRAWER_CLOSED&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ …
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Uno stato è semplicemente un'insieme di configurazioni predefinite e si dichiara tramite un elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-state.html">State</a>. Una lista di stati può essere collegata alla proprietà <i>states</i>. Nella nostra applicazione i due stati sono chiamati <i>DRAWER_CLOSED</i> e <i>DRAWER_OPEN</i>. La configurazione dei componenti è definita negli elementi <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-propertychanges.html">PropertyChanges</a>. Nello stato <i>DRAWER_OPEN</i> quattro elementi riceveranno modifiche alle loro proprietà. Il primo, la <i>menuBar</i>, cambia la proprietà y in 0. Similmente, la <i>textArea</i> si abbasserà in una nuova posizione quando lo stato è <i>DRAWER_OPEN</i>. La <i>textArea</i>, il <i>drawer</i> e la sua icona subiranno cambiamenti delle loro proprietà per adeguarsi allo stato corrente.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">states<span class="sy0">:</span><span class="br0">&#91;</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;DRAWER_OPEN&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">0</span><span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> y<span class="sy0">:</span> partition <span class="sy0">+</span> drawer.<span class="me1">height</span><span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> y<span class="sy0">:</span> partition<span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> arrowIcon<span class="sy0">;</span> rotation<span class="sy0">:</span> <span class="nu0">180</span><span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="sy0">,</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;DRAWER_CLOSED&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> y<span class="sy0">:-</span>height<span class="sy0">;</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> y<span class="sy0">:</span> drawer.<span class="me1">height</span><span class="sy0">;</span> height<span class="sy0">:</span> screen.<span class="me1">height</span><span class="sy0">-</span> drawer.<span class="me1">height</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> arrowIcon<span class="sy0">;</span> rotation<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>Le variazioni tra uno stato e l'altro sono brusche, perciò necessitano di transizioni più dolci. Le transizioni tra gli stati sono definite utilizzando l'elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-transition.html">Transition</a>, che può essere legato alla proprietà <i>transitions</i> di un elemento. il nostra editor di testo effettua transizioni quando lo stato diventa <i>DRAWER_OPEN</i> oppure <i>DRAWER_CLOSED</i>. È importante sottolineare che le transizioni necessitano di uno stato di partenza (<i>from</i>) e di uno di arrivo (<i>to</i>), tuttavia, nel nostro caso, possiamo utilizzare il simbolo jolly * per indicare che la transizione si applica a tutti i cambiamenti di stato.
+</p><p>Durante le transizioni possiamo assegnare delle animazioni ai cambiamenti di proprietà. La nostra <i>menuBar</i> cambia posizione da <i>y:0</i> a <i>y:-partition</i>: è possibile animare questa transizione utilizzando l'elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-numberanimation.html">NumberAnimation</a>. Definiamo che le proprietà dell'oggetto si animino per un certo periodo con un andamento definito da una certa curva. Una curva di andamento controlla la progressione dell'animazione, interpolando i comportamenti durante la variazione di stato. L'evoluzione della curva scelta è <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-propertyanimation.html#easing.type-prop">Easing.Out.Quint</a> che rallenta i movimenti verso la fine dell'animazione. E' possibile approfondire l'argomento leggendo l'articolo <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeanimation.html">QML’s Animation</a>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">transitions<span class="sy0">:</span> <span class="br0">&#91;</span>
+ Transition <span class="br0">&#123;</span>
+ to<span class="sy0">:</span> <span class="st0">&quot;*&quot;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y, height&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span>Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>Un altro modo per animare variazioni dei valori delle proprietà è dichiarando un elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-behavior.html">Behaviour</a>. Una transizione avviene solo durante cambi di stato e <i>Behaviour</i> può impostare un'animazione per una modifica generica della proprietà. Nell'editor di testo, l'icona freccia ha un <i>NumberAnimation</i> che anima la sua proprietà <i>rotation</i> ad ogni cambiamento.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In TextEditor.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Behavior<span class="br0">&#123;</span>
+ NumberAnimation<span class="br0">&#123;</span>property<span class="sy0">:</span> <span class="st0">&quot;rotation&quot;</span><span class="sy0">;</span>easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Grazie alla conoscenza di stati ed animazioni, siamo ora in grado di migliorare l'aspetto dei nostri componenti. In <i>Button.qml</i> possiamo aggiungere modifiche alle proprietà <i>scale</i> e <i>color</i> quando il bottone viene premuto. I tipi colore si animano utilizzando <i>ColorAnimation</i>, mentre i tipi numerici con <i>NumberAnimation</i>. La sintassi <i>on nomeProprietà</i> mostrata sotto semplifica il lavoro quando si lavora su di una singola proprietà.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In Button.<span class="me1">qml</span><span class="sy0">:</span>
+ …
+&#160;
+color<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="kw5">Qt</span>.<span class="me1">darker</span><span class="br0">&#40;</span>buttonColor<span class="sy0">,</span> <span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy0">:</span> buttonColor
+ Behavior on color <span class="br0">&#123;</span> ColorAnimation<span class="br0">&#123;</span> duration<span class="sy0">:</span> <span class="nu0">55</span><span class="br0">&#125;</span> <span class="br0">&#125;</span>
+&#160;
+scale<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="nu16">1.1</span> <span class="sy0">:</span> <span class="nu16">1.00</span>
+ Behavior on scale <span class="br0">&#123;</span> NumberAnimation<span class="br0">&#123;</span> duration<span class="sy0">:</span> <span class="nu0">55</span><span class="br0">&#125;</span> <span class="br0">&#125;</span></pre></div></div>
+<p>Inoltre, possiamo migliorare l'aspetto dei componenti QML aggiungendo effetti di colore, come sfumature ed effetti di trasparenza. Dichiarando un elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-gradient.html">Gradient</a> si sovrascrive la proprietà <i>color</i> dell'elemento. E' possibile definire un colore all'interno della sfumatura utilizzando l'elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-gradientstop.html">GradientStop</a>. La sfumatura è valorrizata utilizzando una scala tra <i>0,0</i> e <i>1,0</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In MenuBar.<span class="me1">qml</span>
+ gradient<span class="sy0">:</span> Gradient <span class="br0">&#123;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.0</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#8C8F8C&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.17</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#6A6D6A&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.98</span><span class="sy0">;</span>color<span class="sy0">:</span> <span class="st0">&quot;#3F3F3F&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">1.0</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#0e1B20&quot;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Il gradiente è usato dalla barra del menu per simulare l'effetto di profondità. Il primo colore inizia a 0.0 e l'ultimo termina a 1.0.
+</p>
+<h4><span class="mw-headline" id="Prossimi_passi">Prossimi passi</span></h4>
+<p>Abbiamo terminato di costruire l'interfaccia utente di un semplice editor di testo. Proseguendo, completata l’interfaccia utente, possiamo implementare la logica dell'applicazione utilizzando Qt e C++ standard. QML funziona bene come strumento di prototipazione, separando efficacemente la logica dell'applicazione dal progetto dell'interfaccia utente.
+</p><p>p=. <a href="../indexa644.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor4_texteditor.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor4 texteditor.png">Interfaccia editor quasi conclusa</a>
+</p>
+<h3><span class="mw-headline" id="Estendere_QML_attraverso_Qt_C.2B.2B">Estendere QML attraverso Qt C++</span></h3>
+<p>Ora che abbiamo completato il layout del nostro editor di testi, possiamo implementare le funzionalità in C+<i>. Usando il QML con C</i>+ abbiamo la possibilità di creare la logica della nostra applicazione attraverso Qt. Possiamo creare dei contenuti QML in un applicazione C++ usando le <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtbinding.html">classi dichiarative Qt</a> e visualizzando gli elementi QML usando la Graphic Scene. Altrimenti, possiamo esportare il nostro codice C++ in un plugin che potrà essere letto dal tool <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qmlviewer.html">qmlviewer</a>. Per la nostra applicazione implementiamo le funzioni di caricamento e salvataggio per poi esportarle come un plugin. In questo modo, dobbiamo solo caricare direttamente il file QML invece di eseguire un file eseguibile.
+</p>
+<h3><span class="mw-headline" id="Esporre_classi_C.2B.2B_in_QML">Esporre classi C++ in QML</span></h3>
+<p>Implementeremo il caricamento e salvataggio dei file attraverso Qt e C+<i>. Le classi e le funzioni C</i>+ possono essere usare in QML registrandole. Le classi hanno bisogno di essere compilate come plugin Qt e i file QML devo conoscere dove sono localizzati i plugin.
+</p><p>Per la nostra applicazione, dobbiamo creare i seguenti elementi:
+</p>
+<ol>
+<li> Una classe <i>Directory</i> che gestirà le operazioni legate alle directory
+</li>
+<li> Una classe <i>File</i> che sarà un <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html">QObject</a>, che simulerà la lista di files nella directory
+</li>
+<li> Una classe plugin che registrerà la classe per il contenuto QML
+</li>
+<li> Un progetto Qt che compilerà il plugin
+</li>
+<li> Un file <i>qmldir</i> che informerà il tool qmlviewerfile sulla locazione del plugin
+</li>
+</ol>
+<h4><span class="mw-headline" id="Costruire_il_plugin_Qt">Costruire il plugin Qt</span></h4>
+<p>Per costruire il plugin, abbiamo bisogno di specificarlo nel file di progetto Qt. Innanzitutto, i sorgenti,gli headers e i moduli devono essere aggiunti al nostro file di progetto. Tutti i file C++ e di progetto devono essere nella directory <i>filedialog</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> In cppPlugins.<span class="me1">pro</span><span class="sy0">:</span>
+&#160;
+TEMPLATE <span class="sy0">=</span> lib
+ CONFIG <span class="st0">''</span><span class="sy0">=</span> qt plugin
+ QT<span class="st0">''</span><span class="sy0">=</span> declarative
+&#160;
+DESTDIR <span class="st0">''</span><span class="sy0">=</span> ..<span class="sy0">/</span>plugins
+ OBJECTS_DIR <span class="sy0">=</span> tmp
+ MOC_DIR <span class="sy0">=</span> tmp
+&#160;
+ TARGET <span class="sy0">=</span> FileDialog
+&#160;
+ HEADERS<span class="st0">''</span><span class="sy0">=</span> directory.<span class="me1">h</span>  file.<span class="me1">h</span>  dialogPlugin.<span class="me1">h</span>
+&#160;
+SOURCES <span class="sy0">+=</span> directory.<span class="me1">cpp</span>  file.<span class="me1">cpp</span>  dialogPlugin.<span class="me1">cpp</span></pre></div></div>
+<p>In particolare, compiliamo Qt con i moduli dichiarativi e settiamolo come plugin, avremo bisogno di un lib template. Metteremo poi il plugin compilato nella sua directory padre.
+</p>
+<h4><span class="mw-headline" id="Registrare_una_classe_in_QML">Registrare una classe in QML</span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> In dialogPlugin.<span class="me1">h</span><span class="sy0">:</span>
+&#160;
+<span class="co2">#include &lt;QDeclarativeExtensionPlugin&gt;</span>
+&#160;
+<span class="kw2">class</span> DialogPlugin <span class="sy0">:</span> <span class="kw2">public</span> QDeclarativeExtensionPlugin
+ <span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw4">void</span> registerTypes<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>uri<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>La nostra classe plugin, <i>DialogPlugin</i> è una sottoclasse di <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeextensionplugin.html">QDeclarativeExtensionPlugin</a>. Dobbiamo implementare la funzione ereditata, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeextensionplugin.html#registerTypes">registerTypes()</a>. Il file <i>dialogPlugin.cpp</i> si prenta cosi:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> DialogPlugin.<span class="me1">cpp</span><span class="sy0">:</span>
+&#160;
+<span class="co2">#include &quot;dialogPlugin.h&quot;</span>
+ <span class="co2">#include &quot;directory.h&quot;</span>
+ <span class="co2">#include &quot;file.h&quot;</span>
+ <span class="co2">#include &lt;qdeclarative.h&gt;</span>
+&#160;
+<span class="kw4">void</span> DialogPlugin<span class="sy0">::</span><span class="me2">registerTypes</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="st0">''</span><span class="st0">'uri){
+&#160;
+ qmlRegisterType&lt;Directory&gt;(uri, 1, 0, &quot;Directory&quot;);
+ qmlRegisterType&lt;File&gt;(uri, 1, 0,&quot;File&quot;);
+ }
+&#160;
+ Q_EXPORT_PLUGIN2(FileDialog, DialogPlugin);</span></pre></div></div>
+<p>La funzione <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeextensionplugin.html#registerTypes">registerTypes()</a> registra le nostre classi File e Directory in QML. Questa funzione necessità di un nome per la classe per il suo template, un numero di versione maggiore e minore e un nome per la nostre classi.
+</p><p>Dovremmo esportare il plugin usando la macro <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtplugin.html#Q_EXPORT_PLUGIN2#q-export-plugin2">Q_EXPORT_PLUGIN2</a>. Notate nel nostro file dialogPlugin.h, abbiamo messo la macro <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html#Q_OBJECT">Q_OBJECT</a> macro all'inizo della classe. Dobbiamo quindi lanciare qmake sul progetto per generare i necessari codici meta-oggetto di Qt.
+</p>
+<h4><span class="mw-headline" id="Creare_propriet.C3.A0_QML_nella_classi_C.2B.2B">Creare proprietà QML nella classi C++</span></h4>
+<p>Possiamo creare degli elementi e delle proprietà QML usando C++ e il sistema meta-oggetto di Qt. Possiamo implementare delle proprietà usando gli slot e signal, per farli conoscere a Qt. Queste proprieta possono poi essere usate in QML.
+</p><p>Per l'editor di testi, abbiamo bisogno di abilitare il caricamento e salvataggio dei files. Tipicamente, queste funzionalità sono contenute in un file dialog. Fortunatamente, possiamo usare <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdir.html">QDir</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qfile.html">QFile</a> e <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtextstream.html">QTextStream</a> per implementare la lettura delle cartelle e i flussi di input/output.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Directory <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span><span class="br0">&#123;</span>
+&#160;
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw4">int</span> filesCount READ filesCount CONSTANT<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> filename READ filename WRITE setFilename NOTIFY filenameChanged<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> fileContent READ fileContent WRITE setFileContent NOTIFY fileContentChanged<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> files READ files CONSTANT <span class="br0">&#41;</span>
+&#160;
+ …</pre></div></div>
+<p>La classe Directory usa il sistema meta-oggetto di Qt per registrare le proprietà di cui ha bisogno per realizzare la gestione dei file. La classe Directory è esportata come plugin e usabile in QML come un elemento Directory. Ciascuna delle proprietà elencate che utilizza la macro <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html#Q_PROPERTY">Q_PROPERTY</a> è una proprietà QML.
+</p><p>Q_PROPERTY dichiara una proprietà, così come le sue funzioni di lettura e scrittura nel sistema meta-oggetto di Qt. Per esempio la proprietà <i>filename</i>, di tipo <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qstring.html">QString</a>, è leggibile usando la funzione <i>filename()</i> e scrivibile usando la funzione <i>setFilename()</i>. Inoltre. c'è un segnale associato alla proprietà <i>filename</i> chiamato <i>filenameChanged()</i>, che è emesso quando la proprietà cambia. Le funzioni di lettura e scrittura sono dichiarate pubbliche nel file header.
+</p><p>Allo stesso modo, abbiamo le altre proprietà dichiarate ai loro usi. La proprietà <i>filesCount</i> indica il numero di file in una directory. La proprietà filename è settata sul nome del file corrente selezionato e il caricamento/salvattaggio del contenuto del dile è memorizzato nella proprietà <i>fileContent</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Q_PROPERTY<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> files READ files CONSTANT <span class="br0">&#41;</span></pre></div></div>
+<p>La proprietà <i>files</i> list è una lista di tutti i file filtrati nella directory. La classe <i>Directory</i> è implementata per filtrare i file non validi; solo i file con estensione .txt sono validi. Inoltre, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qlist.html">QLists</a> può essere utilizzata nei file QML dichiarandoli come <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html">QDeclarativeListProperty</a> in C+<i>. L'oggetto template deve ereditare da un <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html">QObject</a>, quindi, la classe File deve anche ereditare da QObject. Nella classe </i>Directory<i>, l'elenco di oggetti File che è memorizzato in un Qlist chiamato </i>m_fileList<i>.</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> File <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span><span class="br0">&#123;</span>
+&#160;
+ <span class="kw2">Q_OBJECT</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> name READ name WRITE setName NOTIFY nameChanged<span class="br0">&#41;</span>
+&#160;
+ …
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Le proprietà possono quindi essere utilizzate in QML come parte del elemento della proprietà Directory. Notate che non abbiamo bisogno di creare un identificatore id nel nostro codice C.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Directory<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> directory
+&#160;
+ filesCount
+ filename
+ fileContent
+ files
+&#160;
+ files<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>.<span class="me1">name</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Siccome QML usa la sintassi e la struttura Javascript, possiamo scorrere l'elenco dei file e recuperare le sue proprietà. Per recuperare il nome del primo file, chiameremo <i>files[0].name</i>.
+</p><p>Le regolari funzioni C<i>+ sono accessibili anche da QML. Il caricamento e salvataggio implementati in C++ sono dichiarati usando la macro <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html#Q_INVOKABLE">Q_INVOKABLE</a>. Altrimenti, possiamo dichiarare le funzioni cme slot e saranno accessibili da QML.</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In Directory.<span class="me1">h</span><span class="sy0">:</span>
+&#160;
+ Q_INVOKABLE <span class="kw4">void</span> saveFile<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ Q_INVOKABLE <span class="kw4">void</span> loadFile<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>La classe <i>Directory</i> deve inoltre notificare agli altri oggetti ogni volta che cambia il contenuto della directory. Questa funzione viene eseguita utilizzando un segnale. Come accennato in precedenza, i segnali QML devono avere un gestore corrispondente con prefisso i loro nomi. Il segnale è chiamato <i>directoryChanged</i> e viene emesso quando c'è un aggiornamento delal directory. L'aggiornamento semplicemente ricarica il contenuto della directory e aggiorna la lista dei files validi nella directory. Gli oggetti QML possono essere notificati collegando un azione al segnale <i>onDirectoryChanged</i>.
+</p><p>La lista di proprietà deve essere ulteriormente esplorata. Questo perché le proprietà list utilizzano delle chiamate per accedere e modificare il contenuto dell'elenco. La proprietà list è di tipo <i>QDeclarativeListProperty&lt;File&gt;</i>. Ogni volta che si accede alla lista, la funzione di accesso deve restituire un <i>QDeclarativeListProperty&lt;File&gt;</i>. Il template File, ha bisogno di derivare da un QObject. Inoltre, per creare <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html">QDeclarativeListProperty</a>, la lista di accesso e modifica devono essere passati al construttore come puntatori a funzione. La lista, in questo caso QList, deve anche essere una lista di puntatori a files.
+</p><p>Il costruttore <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html">QDeclarativeListProperty</a> e l'implementazione della <i>Directory</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> QDeclarativeListProperty <span class="br0">&#40;</span> <span class="kw5">QObject</span><span class="st0">''</span><span class="st0">' object, void * data, AppendFunction append, CountFunction count = 0, AtFunction at = 0, ClearFunction clear = 0 )
+ QDeclarativeListProperty&lt;File&gt;( this, &amp;m_fileList, &amp;appendFiles, &amp;filesSize, &amp;fileAt, &amp;clearFilesPtr );</span></pre></div></div>
+<p>Il costruttore passa dei puntatori alla funzione che li accoda alla lista, conta la lista, recupera l'oggetto usando un indice e svuota la lista. Solo la funzione di accodamento è obbligatoria. Si noti che il puntatore a funzione deve corrispondere alla definizione di <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html#AppendFunction-typedef">AppendFunction</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html#CountFunction-typedef">CountFunction</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html#AtFunction-typedef">AtFunction</a>, o <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativelistproperty.html#ClearFunction-typedef">ClearFunction</a>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">void</span> appendFiles<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="sy0">,</span> File <span class="sy0">*</span> file<span class="br0">&#41;</span>
+ File<span class="sy0">*</span> fileAt<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="sy0">,</span> <span class="kw4">int</span> index<span class="br0">&#41;</span>
+ <span class="kw4">int</span> filesSize<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="br0">&#41;</span>
+ <span class="kw4">void</span> clearFilesPtr<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span>property<span class="br0">&#41;</span></pre></div></div>
+<p>Per semplificare la nostra file dialog, la classe Directory filtra i files di testo non validi, che non hanno estensione .txt. Se un file non ha estensione .txt, non sarà visibile nella nostra file dialog. Inoltre, l'applicazione consente di verificare che i file salvati hanno estensione. <i>Directory</i> utilizza <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtextstream.html">QTextStream</a> per leggere il file e per esportare il contenuto in un file.
+</p><p>Con il nostro elemento <i>Directory</i>, possiamo recuperare i file come lista, conoscere quanti file ci sono nella directory dell'applicazione, ottenere il nome del file e il suo contenuto come stringhe, e notificare se ci sono cambiamenti nel contenuto della directory.
+</p><p>Per compilare il plugin, lanciamo <i>qmake</i> sul file di progetto <i>cppPlugins.pro</i>, e lanciamo un <i>make</i> per compilare e trasferire il plugin nella directory dei plugins.
+</p>
+<h4><span class="mw-headline" id="Integrare_il_File_Dialog_nel_file_Menu">Integrare il File Dialog nel file Menu</span></h4>
+<p>Il nostro <i>FileMenu</i> deve visualizzare l'elemento <i>FileDialog</i>, contenente la lista di files in una directory, consentendo all'utente di selezionarne uno cliccando sulla lista. Abbiamo bisogno di assegnare i pulsanti del salvataggio e caricamento alle loro rispettive azioni. Il file FileMenu contiene un input di testo editabile per consentire all'utente di inserire il nome di un file attraverso la tastiera.
+</p><p>L'elemento Directory è usato nel file <i>FileMenu.qml</i> e notifica all'elemento <i>FileDialog</i> che la directory ha aggiornato il suo contenuto. Questa notifica è eseguita dal gestore del signal <i>onDirectoryChanged</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> In FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Directory<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>directory
+ filename<span class="sy0">:</span> textInput.<span class="me1">text</span>
+ onDirectoryChanged<span class="sy0">:</span> fileDialog.<span class="me1">notifyRefresh</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Mantenendo con la semplicità della nostra applicazione, il filedialog sarà sempre visibile e non visualizzaremo file di testo non validi, che non hanno un estensione .txt.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In FileDialog.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+<span class="kw4">signal</span> notifyRefresh<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ onNotifyRefresh<span class="sy0">:</span> dirView.<span class="me1">model</span> <span class="sy0">=</span> directory.<span class="me1">files</span></pre></div></div>
+<p>L'elemento <i>FileDialog</i> visualizza il contenuto della directory leggendo le sue proprietà chiamate files. I files sono usati come modelli dell'elemento <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-gridview.html">GridView</a>, che visualizza gli oggetti in una griglia in accordo con il suo delegato. Il delegato gestisce l'aspetto del modello e il nostro file dialog semplicemente crea una griglia con un testo centrato nel mezzo. Cliccando sul nome del file si visualizzerà un rettangolo per evidenziare il nome del file. Il FileDialog è notificato ogni volta che il segnale <i>notifyRefresh</i> è emesso, ricaricando i files nella directory.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> In FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> newButton
+ label<span class="sy0">:</span> <span class="st0">&quot;New&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ textArea.<span class="me1">textContent</span> <span class="sy0">=</span> <span class="st0">&quot;&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> loadButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Load&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ directory.<span class="me1">filename</span> <span class="sy0">=</span> textInput.<span class="me1">text</span>
+ directory.<span class="me1">loadFile</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ textArea.<span class="me1">textContent</span> <span class="sy0">=</span> directory.<span class="me1">fileContent</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> saveButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Save&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ directory.<span class="me1">fileContent</span> <span class="sy0">=</span> textArea.<span class="me1">textContent</span>
+ directory.<span class="me1">filename</span> <span class="sy0">=</span> textInput.<span class="me1">text</span>
+ directory.<span class="me1">saveFile</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> exitButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Exit&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ <span class="kw5">Qt</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Il nostro <i>FileMenu</i> può ora connette le sue rispettive azioni. Il <i>saveButton</i> trasferirà il testo dal <i>TextEdit</i> sulla proprietà <i>fileContent</i> della directory, poi copierà il nome dall' input textedit. Finalmente, il pulsante chiamerà la funzione <i>saveFile()</i>, salvando il file. Il pulsante <i>loadButton</i> ha una simile esecuzione. Inoltre, l'azione <i>New</i> svuoterà il contenuto del TextEdit.
+</p><p>Inoltre, i pulsanti <i>EditMenu</i> sono collegati alle funzioni di <i>TextEdit</i> per copiare, incollare e selezionare tutto il testo nell'editor di testo.
+</p><p>p=. <a href="../index1f73.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_filemenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 filemenu.png">editor di testo quasi completo</a>
+</p>
+<h3><span class="mw-headline" id="Completamento_Editor_di_testi">Completamento Editor di testi</span></h3>
+<p>p=. <a href="../index3e9b.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_newfile.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 newfile.png">editor di testi finito</a>
+</p><p>L'applicazione può funzionare come un semplice editor di testi, in grado di accettare il testo e salvarlo in un file. L'editor di testo può anche caricare un file e eseguire la manipolazione del testo.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.686 seconds
+Real time usage: 0.727 seconds
+Preprocessor visited node count: 367/1000000
+Preprocessor generated node count: 756/1000000
+Post‐expand include size: 1364/2097152 bytes
+Template argument size: 436/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1086-0!*!0!!en!2!* and timestamp 20151104134112 and revision id 16536
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../index293f.html?title=Getting_Started_Programming_with_QML/it&amp;oldid=16536">http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/it&amp;oldid=16536</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="../Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=c3e1320bdd4745d3&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="it.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_Getting_Started_Programming_with_QML/it.html?title=Talk:Getting_Started_Programming_with_QML/it&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="it.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../indexb6c6.html?title=Getting_Started_Programming_with_QML/it&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../index9e81.html?title=Getting_Started_Programming_with_QML/it&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/Getting_Started_Programming_with_QML/it.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/Getting_Started_Programming_with_QML/it.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../indexeb13.html?title=Getting_Started_Programming_with_QML/it&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../index293f.html?title=Getting_Started_Programming_with_QML/it&amp;oldid=16536" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../index24cb.html?title=Getting_Started_Programming_with_QML/it&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 4 May 2015, at 16:13.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,281 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":1307});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Getting_Started_Programming_with_QML/it by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 07:58:29 GMT -->
+</html>

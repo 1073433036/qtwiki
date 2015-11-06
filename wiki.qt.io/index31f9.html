@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&oldid=19233 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:49:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Creating a new module or tool for Qt - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_a_new_module_or_tool_for_Qt","wgTitle":"Creating a new module or tool for Qt","wgCurRevisionId":19233,"wgRevisionId":19233,"wgArticleId":3059,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing Qt"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_a_new_module_or_tool_for_Qt","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_a_new_module_or_tool_for_Qt skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Creating a new module or tool for Qt</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 13:21, 23 August 2015 by <a href="http://wiki.qt.io/index.php?title=User:AutoSpider&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:AutoSpider (page does not exist)">AutoSpider</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:AutoSpider&amp;action=edit&amp;redlink=1" class="new" title="User talk:AutoSpider (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/AutoSpider" title="Special:Contributions/AutoSpider">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&amp;diff=prev&amp;oldid=19233" title="Creating a new module or tool for Qt">diff</a>) <a href="http://wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&amp;direction=prev&amp;oldid=19233" title="Creating a new module or tool for Qt">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+<i><b>Warning: This page is significantly outdated in many details</b></i>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Getting_started_with_new_ideas_on_Qt_Project.27s_Playground."><span class="tocnumber">1</span> <span class="toctext">Getting started with new ideas on Qt Project's Playground.</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Moving_an_existing_project_to_the_Qt_Project."><span class="tocnumber">2</span> <span class="toctext">Moving an existing project to the Qt Project.</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Automated_testing_for_Playground_projects."><span class="tocnumber">3</span> <span class="toctext">Automated testing for Playground projects.</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Graduating_from_the_Playground."><span class="tocnumber">4</span> <span class="toctext">Graduating from the Playground.</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Guidelines_for_choosing_good_module_and_tool_names."><span class="tocnumber">5</span> <span class="toctext">Guidelines for choosing good module and tool names.</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Using_the_module_name_in_application_code_and_documentation."><span class="tocnumber">6</span> <span class="toctext">Using the module name in application code and documentation.</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#The_structure_of_a_new_module_repository."><span class="tocnumber">7</span> <span class="toctext">The structure of a new module repository.</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#The_qt_.3Cmodule.3E.pri_files."><span class="tocnumber">8</span> <span class="toctext">The qt_&lt;module&gt;.pri files.</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#The_sync.profile_script"><span class="tocnumber">9</span> <span class="toctext">The sync.profile script</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#modules"><span class="tocnumber">9.1</span> <span class="toctext">modules</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#moduleheaders"><span class="tocnumber">9.2</span> <span class="toctext">moduleheaders</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#classnames"><span class="tocnumber">9.3</span> <span class="toctext">classnames</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#mastercontent"><span class="tocnumber">9.4</span> <span class="toctext">mastercontent</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#modulepris"><span class="tocnumber">9.5</span> <span class="toctext">modulepris</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#dependencies"><span class="tocnumber">9.6</span> <span class="toctext">dependencies</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#other_fields"><span class="tocnumber">9.7</span> <span class="toctext">other fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Library_specific_.pro_files"><span class="tocnumber">10</span> <span class="toctext">Library specific .pro files</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Getting_a_module_repository_integrated_with_the_Qt_5_build_and_repository_system"><span class="tocnumber">11</span> <span class="toctext">Getting a module repository integrated with the Qt 5 build and repository system</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Getting_started_with_new_ideas_on_Qt_Project.27s_Playground.">Getting started with new ideas on Qt Project's Playground.</span></h2>
+<p>It's easy to kick off a new module or tool in the Qt project. With the approval of a Qt Maintainer, you can <a href="http://wiki.qt.io/Requesting_New_Repositories" title="Requesting New Repositories">request a new project</a> to be added to the Qt Playground area of codereview.qt-project.org. We want to keep the barrier low so please don't hesitate to get started with your new idea in the Playground even if you're not sure whether the project will lead into anything real.
+</p><p>Here are the steps:
+</p>
+<ol>
+<li> Write a short description of your project
+</li>
+<li> Choose a descriptive playground project name. The name should not include "Qt". For example "Extra Effects", "Mime Types". The reason for not including the Qt name is that the good descriptive Qt prefixed names are reserved for projects that are actual Qt modules or tools. The playground modules do not have the status of being closely associated with Qt yet.
+</li>
+<li> Send your request for a new Playground project (including project name and description) to the "Qt Development List":<a rel="nofollow" class="external free" href="mailto:development@qt-project.org">mailto:development@qt-project.org</a> mailing list 
+</li>
+<li> Get approval from one Qt maintainer for your new playground project on the mailing list
+</li>
+<li> After a Qt maintainer has confirmed the approval, create a task in the Qt Project bug tracker (<a rel="nofollow" class="external text" href="https://bugreports.qt.io/browse/QTQAINFRA/component/19470">QTQAINFRA</a> project, Gerrit component) requesting a new Gerrit project for you. Refer to the mailing list archives for the approval from a Qt Maintainer
+</li>
+<li> Keep calm and hack on
+</li>
+</ol>
+In your playground project, you use the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Playground</pre></div></div> QML import path. If your Playground project is called "Extra Effects", then it is imported by
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import Playground.<span class="me1">ExtraEffects</span> <span class="nu16">0.1</span></pre></div></div>
+<h2><span class="mw-headline" id="Moving_an_existing_project_to_the_Qt_Project.">Moving an existing project to the Qt Project.</span></h2>
+<p>If your project has already been started outside the Qt Project, it can still be moved to the Qt Project, either as a new Playground project or as a new Qt Add-On module or tool.
+</p><p>If you want to move your existing project to the Qt Project, then follow these steps:
+</p>
+<ol>
+<li> Send your request for moving an existing project to the Qt Project (including project name and description) to the "Qt Development List":<a rel="nofollow" class="external free" href="mailto:development@qt.io">mailto:development@qt.io</a> mailing list 
+</li>
+<li> If you want the project to be moved to the Playground, then you need to get an approval from one Qt maintainer on the mailing list
+</li>
+<li> If your project is well established and mature, you can alternatively request the project to be moved to the Qt Project as a new Qt Add-On module or tool. This requires discussion on the "Qt Development List":development@qt.io mailing list and the approval of the Chief Maintainer for the technical fit and spirit fit to Qt. Other technical reviews may be needed as well (TO BE CLARIFIED)
+</li>
+<li> After you have the approval from the mailing list, create a task in the Qt Project bug tracker ("QTQAINFRA"::<a rel="nofollow" class="external free" href="https://bugreports.qt.io/browse/QTQAINFRA/component/19470">https://bugreports.qt.io/browse/QTQAINFRA/component/19470</a> project, Gerrit component) requesting a new Gerrit project for you. Refer to the mailing list archives for the approval from a Qt Maintainer (for Playground projects) or Chief Maintainer (for new Qt modules and tools). Remember to mention that this is an existing project that will be moved to the Qt Project 
+</li>
+<li> A special contribution agreement will be created for your project. All existing contributors need to accept the contribution agreement before the project can be moved (see <a rel="nofollow" class="external text" href="http://qt.io/legal.html">Qt Project Legal Aspects</a>)
+</li>
+</ol>
+<h2><span class="mw-headline" id="Automated_testing_for_Playground_projects.">Automated testing for Playground projects.</span></h2>
+<p>To be added. How to provide automated testing and test results for Playground projects?
+</p>
+<h2><span class="mw-headline" id="Graduating_from_the_Playground.">Graduating from the Playground.</span></h2>
+<p>Once your project becomes more mature, it can be moved out of the playground, and become a Qt module or tool. This decision is done on the qt-development mailing list, based on the technical and spirit fit to Qt, and it requires the approval of the Chief Maintainer.
+</p><p>When your project is moved from the playground to the Qt project area, the playground name needs to be changed to a descriptive Qt module or tool name.
+</p>
+<h2><span class="mw-headline" id="Guidelines_for_choosing_good_module_and_tool_names.">Guidelines for choosing good module and tool names.</span></h2>
+<p>Generally, module and tool names should be descriptive. The names describe the core of the function or benefit. Branded names are generally not recommended. Examples of good descriptive names include Qt Designer, Qt Core, Qt Location, Qt Sensors, and Qt Document Gallery.
+</p><p>If a proposed new name is not a simple descriptive term, then Legal and connotation checks are needed. These checks would have to be done on a national level for the regions where Qt is used, so they are complex and expensive. Therefore, names that require such checks are discouraged. If a name that requires Legal and connotation checks is still desired, then the maintainer should escalate to the Chief Maintainer.
+</p><p>General name related criteria:
+</p>
+<ul>
+<li> Names fit the existing name and terminology range. For example for a new tool, consider following the example of the existing names Qt Designer, Qt Linguist, Qt Creator.
+</li>
+<li> Difficult terminology is avoided and names are factually correct
+</li>
+<li> Names should be chosen for long-term use
+</li>
+<li> Try to avoid acronyms. Do not follow the example of Qt JSON DB. See <a rel="nofollow" class="external text" href="http://developer.qt.nokia.com/wiki/Spelling_Module_Names_in_Qt_Documentation">this wiki</a> for the spelling of module names.
+</li>
+<li> Names work well in documentation and communications
+</li>
+<li> Names are easy to understand and remember. Prefer short and simple names.
+</li>
+<li> Names are free of negative meanings and connotations in different cultures and languages
+</li>
+<li> Names are available (if legal consultation needed please see Qt Project legal contact information from: <a rel="nofollow" class="external text" href="http://qt.io/legal.html">Qt Project Legal Aspects</a>)
+</li>
+</ul>
+<p>Don't use:
+</p>
+<ul>
+<li> Third party technology names or trademarks or industry standard names as part of the name. Names such as "Qt V8" do not work. In a possible trademark enforcement action, we might be forced to remove the trademark from our code, which would break compatibility. Therefore, you should avoid using trademarks anywhere in the code (file names, class names, methods and so on). Sometimes, it is necessary to call a 3rd party product or technology with its real name; in these cases, use of a 3rd party trademark may be possible under "fair use" guidelines. In such cases, please discuss with Qt Project Legal (<a rel="nofollow" class="external text" href="http://qt.io/legal.html">Qt Project Legal Aspects</a>).
+</li>
+<li> Any play on names. For example don't alter, derivate, conjugate or combine words to others. Don't follow the example of "ActiveQt" or "Qt MultimediaKit".
+</li>
+<li> Slang in names
+</li>
+</ul>
+<h2><span class="mw-headline" id="Using_the_module_name_in_application_code_and_documentation.">Using the module name in application code and documentation.</span></h2>
+<p>Once you have selected a name for your new module, you need to start using the name of the module in the code consistently. Be always consistent with your module name: choose just one name and spell it always in the same way. Use the same name in the C++ context and in QML: talk about the C++ API of your module or the QML API of your module.
+</p><p>In QML, applications should be able to start using any Qt module with the following QML import statement: import &lt;module name&gt;.&lt;extension&gt; &lt;version&gt;
+</p><p>For example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtContacts <span class="nu16">5.0</span>
+import QtQuick.<span class="me1">Particles</span> <span class="nu16">2.0</span>
+import QtExample.<span class="me1">UseCamelCaseHere</span> <span class="nu16">5.0</span></pre></div></div>
+Since the module repository structure should not be exposed to the user of Qt (see below), we use import statements like <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtContacts <span class="nu16">5.0</span></pre></div></div> instead of -<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtPim.<span class="me1">Contacts</span> <span class="nu16">5.0</span></pre></div></div>-.
+Qt modules are recommended to wrap their public API in a C++ namespace, to avoid clashes in symbol naming with other Qt libraries. The C++ namespace is the module name in camel-case format, for example: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QtFeedback</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QtJsonDb</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QtContacts</pre></div></div> and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QtBluetooth</pre></div></div>. Namespaces are especially recommended for Qt Add-On modules. However, former Qt 4 modules do not use a namespace for source compatibility reasons.
+If the module doesn't have a namespace, then the usual conventions for naming classes and functions apply (<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QMyClass</pre></div></div> etc.). When naming classes of a module that uses a namespace, a good practice is use simple non-prefixed class names within the C++ namespace. Naming classes like <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QMyClass</pre></div></div> is also OK within a namespace.
+<p>Include directives work similarly for all Qt modules:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">//modules are added to the include path, so these include directives work:</span>
+<span class="co2">#include &lt;QtFoo&gt; /* include all classes of the module */</span>
+<span class="co2">#include &lt;QBar&gt; /''' include one class */</span>
+&#160;
+<span class="co1">//if two modules use the same class name, you can do this:</span>
+<span class="co2">#include &lt;QtFoo/QBar&gt;</span></pre></div></div>
+<p>Libraries are named libqtfoo.so.5.0, QtFoo5.dll etc. 
+</p><p>The qmake .pro file usage does not change from Qt 4. Both Qt Essentials and Qt Add-On modules need to provide a .pri file so that Qt applications can add the module to a project with the familiar way (more about this below):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT <span class="sy0">+=</span> module</pre></div></div>
+<p>It is important to be consistent and use the same name for the module in all these places, and in the documentation.
+</p>
+<h2><span class="mw-headline" id="The_structure_of_a_new_module_repository.">The structure of a new module repository.</span></h2>
+<p>A module is a collection of library/-ies, documentation, examples, demos and tests. 
+</p><p>Sometimes several modules share a source code repository. The qtbase, qtsystems, and qtpim repos are examples of such module repositories. In these cases, the name of the module repository is an implementation detail. The modules should be named and treated independently in the documentation.
+</p><p>It is recommended that a module repository follows the following structure:
+</p>
+<b> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">README</pre></div></div></b>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">LICENSE</pre></div></div>
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">bin<span class="sy0">/</span></pre></div></div> - Where all binaries of the module is/will be located
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">examples<span class="sy0">/</span></pre></div></div> - Where the examples of the module will be located
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">lib<span class="sy0">/</span></pre></div></div> - Where the libraries of a module will be located (for non-local install prefixes)
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">plugins<span class="sy0">/</span></pre></div></div> - Where the plugins of a module will be located (for non-local install prefixes)
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">imports<span class="sy0">/</span></pre></div></div> - Where the QML imports of a module will be located (for non-local install prefixes)
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">src<span class="sy0">/</span></pre></div></div> - Source code for all libraries of the module
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">src<span class="sy0">/</span><span class="br0">&#91;</span>modulename<span class="br0">&#93;</span><span class="sy0">/</span>doc<span class="sy0">/</span></pre></div></div> - Where the documentation of the module will be located. <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="br0">&#91;</span>modulename<span class="br0">&#93;</span></pre></div></div> is optional when the repository only contains one module.
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">modules<span class="sy0">/</span>qt_<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">pri</span></pre></div></div> for all modules
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">tests<span class="sy0">/</span><span class="kw4">auto</span><span class="sy0">/</span></pre></div></div> - All the auto-tests for all the modules
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">tests<span class="sy0">/</span>benchmarks<span class="sy0">/</span></pre></div></div> - All the benchmarking tests for all the modules
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&lt;</span>repository<span class="sy0">&gt;</span>.<span class="me1">pro</span></pre></div></div> - A module repository's qmake top-level project file, which is responsible for compiling the complete project, with targets to generate the module's documentation.
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sync.<span class="me1">profile</span></pre></div></div>
+</li>
+</ul>
+<h2><span class="mw-headline" id="The_qt_.3Cmodule.3E.pri_files.">The qt_&lt;module&gt;.pri files.</span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qt_<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">pri</span></pre></div></div> is a module specific file, of which a module repository may have several. The typical location for this file is under the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">modules<span class="sy0">/</span></pre></div></div> directory of a repository, but the location can be arbitrary, as it is referred to by the sync.profile file.
+The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qt_<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">pri</span></pre></div></div> file is a normal qmake include file, and is loaded before a projects .pro file is parsed. This means that all the variables defined by a module is available to any project. Due to this, the variables should be scoped under
+ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span></pre></div></div>
+<p>Each module <b>requires</b> a certain set of variables to be defined:
+</p>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">name</span></pre></div></div> - Full name of module, f.ex. QtScriptTools
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">bins</span></pre></div></div> - Path of bin/ directory, typically <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$$QT_MODULE_BIN_BASE</pre></div></div>
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">includes</span></pre></div></div> - Path of include/, typically <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$$QT_MODULE_INCLUDE_BASE $$QT_MODULE_INCLUDE_BASE<span class="sy0">/</span>$$QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">name</span></pre></div></div>
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">private_includes</span></pre></div></div> - Path of private includes. <strike>typically <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$$QT_MODULE_INCLUDE_BASE<span class="sy0">/</span>$$QT.<span class="sy0">&lt;</span>library<span class="sy0">&gt;</span>.<span class="me1">name</span><span class="sy0">/</span><span class="kw2">private</span></pre></div></div> </strike>. The <a rel="nofollow" class="external text" href="http://qt.gitorious.org/qt/qtlocation/commit/b0ae24095376bf51916f1764a0d48a607bf8bdb2/diffs">new sanctioned way is using the version</a>, i.e. <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$$QT_MODULE_INCLUDE_BASE<span class="sy0">/&lt;</span>module<span class="sy0">&gt;/</span>$$QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">VERSION</span></pre></div></div>
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">sources</span></pre></div></div> - Path of source code, typically <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$$QT_MODULE_BASE<span class="sy0">/</span>src</pre></div></div>
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">libs</span></pre></div></div> - Path of lib/. typically <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$$QT_MODULE_LIB_BASE</pre></div></div>
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">plugins</span></pre></div></div> - Path of plugins/. typically <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$$QT_MODULE_PLUGIN_BASE</pre></div></div>
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">imports</span></pre></div></div> - Path of imports/. typically <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$$QT_MODULE_IMPORT_BASE</pre></div></div>
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">depends</span></pre></div></div> - The modules listed here should be all dependencies required to use &lt;module&gt;.
+</li>
+</ul>
+<p>A module should be listed here if &lt;module&gt; uses its includes, symbols or macro definitions in its own public API and headers. For example, if public headers of a dependency are used in the public headers of &lt;module&gt;, that dependency should be listed here. Similarly, if a preprocessor macro or compiler flag is required to use the dependency, and that macro is used in the public headers of &lt;module&gt;, then that is a public dependency that should be listed here.
+</p><p><b>Optional:</b>
+</p>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">CONFIG</span></pre></div></div> - CONFIG Options to add to project when this module is used
+</li>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="sy0">&lt;</span>module<span class="sy0">&gt;</span>.<span class="me1">DEFINES</span></pre></div></div> - Defines to add to the project when this module is used
+</li>
+</ul>
+If Qt is not a system install, syncqt will create forwarding .pri's in <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">mkspecs<span class="sy0">/</span>modules<span class="sy0">/</span></pre></div></div>, which populates the variables <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT_MODULE_BASE</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT_MODULE_BIN_BASE</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT_MODULE_INCLUDE_BASE</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT_MODULE_LIB_BASE</pre></div></div> with the appropriate paths before including the module pri file.
+In a system install Qt, the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">mkspecs<span class="sy0">/</span>modules<span class="sy0">/</span></pre></div></div> pri files are the original, and the above variables contain the paths of which Qt has been configured with.
+This means that for a developer build of Qt (where prefix points to the build directory), modules can be used without running 'make install' as soon as it's built. However, system install Qt requires you to <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make install</pre></div></div> every time you do a recompile in the module repository.
+<h2><span class="mw-headline" id="The_sync.profile_script">The sync.profile script</span></h2>
+<p>The sync.profile file is a Perl script which contains settings for the module repository. syncqt uses this file to create forward include files, and forwarding qmake-include (pri) files.
+</p><p>The&#160;%dependencies variable is also used by build-bots to determine what other module repositories, and at which revision, are needed to build the module repository.
+</p><p>It may contain the following Perl hashes, and arrays.
+</p>
+<h3><span class="mw-headline" id="modules">modules</span></h3>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>modules</pre></div></div> - contains a module's master include name, and the path for the sources, based on <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$basedir</pre></div></div>, which points to the modules base path.
+<ul>
+<li> ex:
+</li>
+</ul>
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>modules <span class="sy0">=</span> <span class="br0">&#40;</span> <span class="co2"># path to module name map</span>
+ <span class="st0">&quot;QtScript&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;$basedir/src/script&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;QtScriptTools&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;$basedir/src/scripttools&quot;</span><span class="sy0">,</span>
+<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h3><span class="mw-headline" id="moduleheaders">moduleheaders</span></h3>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>moduleheaders</pre></div></div> - restricts the module headers to only those found in these relative paths.
+</li>
+</ul>
+<p><i>Not really used (used by -separate-module command line option), use above variable for individual modules_</i>
+</p>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>classnames</pre></div></div>- contains a header file, and its C++ filename equivalent. (To be used if the file do not really have a C++ class with that name)
+</li>
+</ul>
+'<b><i> ex: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>classnames <span class="sy0">=</span> <span class="br0">&#40;</span>
+ <span class="st0">&quot;qglobal.h&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;QtGlobal&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;qnamespace.h&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;Qt&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;qdebug.h&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;QtDebug&quot;</span>
+<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div></i></b>
+<h3><span class="mw-headline" id="classnames">classnames</span></h3>
+<ul>
+<li> Under <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>classnames</pre></div></div>, there is one line like "qtmoduleversion.h" =&gt; "QtModuleVersion"
+</li>
+</ul>
+<p>'<b><i> Here the qtmoduleversion.h was generated by syncqt, just to get a new name based on above rules.</i></b>
+'<b><i> For this qtmoduleversion.h, it was based on the info from the module .pri file.</i></b>
+</p>
+<ul>
+<li> For example:
+</li>
+</ul>
+<p>'<b><i> for QtDeclarative module in qtdeclarative repo,</i></b>
+</p>
+'<b><i> based on <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="me1">declarative</span>.<span class="me1">MAJOR_VERSION</span></pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="me1">declarative</span>.<span class="me1">MINOR_VERSION</span></pre></div></div> and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT.<span class="me1">declarative</span>.<span class="me1">PATCH_VERSION</span></pre></div></div> in modules/qt_declarative.pri file</i></b>
+<p>'<b><i> it will generate a src/declarative/qtdeclarativeversion.h</i></b>
+'<b><i> please remember to add this file in qtdeclarative repo .gitignore file.</i></b>
+</p>
+<h3><span class="mw-headline" id="mastercontent">mastercontent</span></h3>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>mastercontent</pre></div></div> - contains extra content for a library's master include.
+</li>
+</ul>
+'<b><i> ex: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>mastercontent <span class="sy0">=</span> <span class="br0">&#40;</span>
+ <span class="st0">&quot;core&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;#include &lt;QtCore/QtCore&gt;&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;gui&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;#include &lt;QtGui/QtGui&gt;&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;scripttools&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;#include &lt;QtScriptTools/QtScriptTools&gt;&quot;</span><span class="sy0">,</span>
+<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div></i></b>
+<p>There are a few things going on here that should be explained further. To avoid talking about abstracts, let's use qtsensors as a concrete example.
+</p>
+The qtsensors module repository has a module, QtSensors. The source code of the module lives under src/sensors and the master header is QtSensors/QtSensors. Since this module specifies <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT <span class="sy0">=</span> core</pre></div></div> in its .pro file and since sync.profile specifies some mastercontent for core, that content goes into the master header before any of the generated include lines.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#ifndef QT_QTSENSORS_MODULE_H</span>
+<span class="co2">#define QT_QTSENSORS_MODULE_H</span>
+<span class="co2">#include &lt;QtCore/QtCore&gt;</span>
+<span class="co2">#include &quot;qaccelerometer.h&quot;</span>
+…</pre></div></div>
+<p>It's not completely clear why this is important. It possibly makes some sense when you have pre-compiled headers in use.
+</p>
+<h3><span class="mw-headline" id="modulepris">modulepris</span></h3>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>modulepris</pre></div></div> - contains the module master include name, and the path to the module's qmake include file.
+</li>
+</ul>
+'<b><i> ex: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>modulepris <span class="sy0">=</span> <span class="br0">&#40;</span>
+ <span class="st0">&quot;QtScript&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;$basedir/modules/qt_script.pri&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;QtScriptTools&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;$basedir/modules/qt_scripttools.pri&quot;</span><span class="sy0">,</span>
+<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div></i></b>
+<h3><span class="mw-headline" id="dependencies">dependencies</span></h3>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>dependencies</pre></div></div> - contains the other module repositories that are required to build this module repository, as well as the refs or SHA1s which should be used in them.
+</li>
+</ul>
+<p>Note that this should be all module repos needed to build this module repo, not just direct dependencies.
+</p>
+ex: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">%</span>dependencies <span class="sy0">=</span> <span class="br0">&#40;</span>
+ <span class="st0">&quot;qtbase&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;refs/heads/branchWithExperimentalStuff&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;qtscript&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;refs/heads/master&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;qtsvg&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;refs/heads/master&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;qtxmlpatterns&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;refs/heads/master&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;qttools&quot;</span> <span class="sy0">=&gt;</span> <span class="st0">&quot;01c57f35feac99ce910a56d0d1906717d27e2a62&quot;</span><span class="sy0">,</span>
+<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h3><span class="mw-headline" id="other_fields">other fields</span></h3>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ignore_for_master_contents</pre></div></div> - list of files to not check for any master content.
+</li>
+</ul>
+ ex: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ignore_for_master_contents <span class="sy0">=</span> <span class="br0">&#40;</span> <span class="st0">&quot;qt.h&quot;</span><span class="sy0">,</span> <span class="st0">&quot;qpaintdevicedefs.h&quot;</span> <span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ignore_for_include_check</pre></div></div> - list of files to not process at all
+</li>
+</ul>
+ ex: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ignore_for_include_check <span class="sy0">=</span> <span class="br0">&#40;</span> <span class="st0">&quot;qatomic.h&quot;</span> <span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ignore_for_qt_begin_header_check</pre></div></div>- list of files to not check for a begin header
+</li>
+</ul>
+ ex: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ignore_for_qt_begin_header_check <span class="sy0">=</span> <span class="br0">&#40;</span> <span class="st0">&quot;qconfig.h&quot;</span><span class="sy0">,</span> <span class="st0">&quot;qfeatures.h&quot;</span><span class="sy0">,</span> <span class="st0">&quot;qt_windows.h&quot;</span> <span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ignore_for_qt_begin_namespace_check</pre></div></div> - list of files to not check for begin namespace
+</li>
+</ul>
+ ex: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ignore_for_qt_begin_namespace_check <span class="sy0">=</span> <span class="br0">&#40;</span> <span class="st0">&quot;qconfig.h&quot;</span><span class="sy0">,</span> <span class="st0">&quot;qfeatures.h&quot;</span><span class="sy0">,</span> <span class="st0">&quot;qt_windows.h&quot;</span><span class="sy0">,</span> <span class="st0">&quot;qatomic_arch.h&quot;</span> <span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<ul>
+<li> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ignore_for_qt_module_check</pre></div></div> - list of paths to avoid checking for module
+</li>
+</ul>
+ ex: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ignore_for_qt_module_check <span class="sy0">=</span> <span class="br0">&#40;</span> <span class="st0">&quot;$modules{QtCore}/arch&quot;</span><span class="sy0">,</span> <span class="st0">&quot;$modules{QtSql}/drivers&quot;</span><span class="sy0">,</span> <span class="st0">&quot;$modules{phonon}&quot;</span> <span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h2><span class="mw-headline" id="Library_specific_.pro_files">Library specific .pro files</span></h2>
+A module library/appliction can start its .pro file with a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">load<span class="br0">&#40;</span>qt_module<span class="br0">&#41;</span></pre></div></div> to expose critical Qt configuration variables, such as <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QMAKE_MOC</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QMAKE_LFLAGS</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT_CFLAGS<span class="st0">''</span><span class="sy0">&lt;</span>subsystem<span class="sy0">&gt;</span></pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QMAKESPEC</pre></div></div>, etc.
+<h2><span class="mw-headline" id="Getting_a_module_repository_integrated_with_the_Qt_5_build_and_repository_system">Getting a module repository integrated with the Qt 5 build and repository system</span></h2>
+<p>To get your module repository integrated as part of the Qt5 build and repo system follow these steps, and submit the changes.
+</p>
+<ul>
+<li> Add the new submodule (replace qt-quick3d with your module details):
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd ~<span class="sy0">/</span>depot
+git clone git@gitorious.<span class="me1">org</span><span class="sy0">:</span>qt<span class="sy0">/</span>qt5.<span class="me1">git</span>
+cd qt5
+git submodule add git<span class="sy0">:</span><span class="co1">//gitorious.org/qt-quick3d/qt-quick3d.git qtquick3d</span></pre></div></div>
+'<b><i> This should create a new directory inside~/depot/qt5 named after your module, and also <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cat .<span class="me1">gitmodule</span></pre></div></div> should show your module.</i></b>
+<ul>
+<li> Edit <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qt.<span class="me1">pro</span></pre></div></div> and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">init<span class="sy0">-</span>repository</pre></div></div> scripts
+<ul>
+<li> Do a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git show f7225b87a9e9e8379c627c6771ee5b2bc6492f73</pre></div></div> for an example
+</li>
+<li> First add your module to qt.pro so that it can be built by typing <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">make module<span class="sy0">-</span>qtquick3d</pre></div></div> for example, but is not built by default
+</li>
+<li> Add the gerrit and/or gitorious repos for your module to the list
+</li>
+</ul>
+</li>
+<li> Suggest debugging your new qt5 changes to check they work
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">mkdir <span class="sy0">-</span>p ~<span class="sy0">/</span>test_depot <span class="sy0">&amp;&amp;</span> cd~<span class="sy0">/</span>test_depot
+git clone ~<span class="sy0">/</span>depot<span class="sy0">/</span>qt5 <span class="sy0">&amp;&amp;</span> cd qt5
+.<span class="sy0">/</span>init<span class="sy0">-</span>repository —no<span class="sy0">-</span>webkit —nokia<span class="sy0">-</span>developer —brisbane —codereview<span class="sy0">-</span>username sarasmit</pre></div></div>
+<ul>
+<li><ul>
+<li> check that the script successfully checks out your project and the other projects
+</li>
+</ul>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 1.865 seconds
+Real time usage: 1.857 seconds
+Preprocessor visited node count: 911/1000000
+Preprocessor generated node count: 2036/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:3059-0!*!0!!en!*!* and timestamp 20151105014835 and revision id 19233
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&amp;oldid=19233">http://wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&amp;oldid=19233</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:Developing_Qt" title="Category:Developing Qt">Developing Qt</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Creating+a+new+module+or+tool+for+Qt" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Creating_a_new_module_or_tool_for_Qt"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Creating_a_new_module_or_tool_for_Qt&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Creating_a_new_module_or_tool_for_Qt" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Creating_a_new_module_or_tool_for_Qt" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Creating_a_new_module_or_tool_for_Qt" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&amp;oldid=19233&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&amp;oldid=19233" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:21.</li>
+											<li id="footer-info-viewcount">This page has been accessed 2,566 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":535});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Creating_a_new_module_or_tool_for_Qt&oldid=19233 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:49:46 GMT -->
+</html>

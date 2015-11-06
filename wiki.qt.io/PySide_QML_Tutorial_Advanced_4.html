@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/PySide_QML_Tutorial_Advanced_4 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 09:47:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>PySide QML Tutorial Advanced 4 - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"PySide_QML_Tutorial_Advanced_4","wgTitle":"PySide QML Tutorial Advanced 4","wgCurRevisionId":19267,"wgRevisionId":19267,"wgArticleId":1288,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["LanguageBindings::PySide"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"PySide_QML_Tutorial_Advanced_4","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-PySide_QML_Tutorial_Advanced_4 skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">PySide QML Tutorial Advanced 4</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#PySide_QML_Advanced_Tutorial_4:_Finishing_Touches"><span class="tocnumber">1</span> <span class="toctext">PySide QML Advanced Tutorial 4: Finishing Touches</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Adding_some_flair"><span class="tocnumber">1.1</span> <span class="toctext">Adding some flair</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Animating_block_movement"><span class="tocnumber">1.2</span> <span class="toctext">Animating block movement</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Animating_block_opacity_changes"><span class="tocnumber">1.3</span> <span class="toctext">Animating block opacity changes</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Keeping_a_High_Scores_table"><span class="tocnumber">1.4</span> <span class="toctext">Keeping a High Scores table</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#That.27s_it.21"><span class="tocnumber">2</span> <span class="toctext">That's it!</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="PySide_QML_Advanced_Tutorial_4:_Finishing_Touches">PySide QML Advanced Tutorial 4: Finishing Touches</span></h1>
+<h2><span class="mw-headline" id="Adding_some_flair">Adding some flair</span></h2>
+<p>Now we're going to do two things to liven up the game: animate the blocks and add a High Score system.
+</p><p>We've also cleaned up the directory structure for our application files. We now have a lot of files, so all the JavaScript and QML files outside of <i>samegame.qml</i> have been moved into a new sub-directory named "content".
+</p><p>In anticipation of the new block animations, <i>Block.qml</i> file is now renamed to <i>BoomBlock.qml</i>.
+</p>
+<h2><span class="mw-headline" id="Animating_block_movement">Animating block movement</span></h2>
+<p>First we will animate the blocks so that they move in a fluid manner. QML has a number of methods for adding fluid movement, and in this case we're going to use the Behavior element to add a SpringAnimation. In BoomBlock.qml, we apply a SpringAnimation behavior to the x and y properties so that the block will follow and animate its movement in a spring-like fashion towards the specified position (whose values will be set by <i>samegame.js</i>). Here is the code added to <i>BoomBlock.qml</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> property <span class="kw4">bool</span> spawned<span class="sy0">:</span> <span class="kw2">false</span>
+&#160;
+Behavior on x <span class="br0">&#123;</span>
+ enabled<span class="sy0">:</span> spawned<span class="sy0">;</span>
+ SpringAnimation<span class="br0">&#123;</span> spring<span class="sy0">:</span> <span class="nu0">2</span><span class="sy0">;</span> damping<span class="sy0">:</span> <span class="nu16">0.2</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Behavior on y <span class="br0">&#123;</span>
+ SpringAnimation<span class="br0">&#123;</span> spring<span class="sy0">:</span> <span class="nu0">2</span><span class="sy0">;</span> damping<span class="sy0">:</span> <span class="nu16">0.2</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>The <i>spring</i> and <i>damping</i> values can be changed to modify the spring-like effect of the animation.
+</p><p>The enabled: spawned setting refers to the spawned value that is set from <i>createBlock()</i> in <i>samegame.js</i>. This ensures the <i>SpringAnimation</i> on the x is only enabled after <i>createBlock()</i> has set the block to the correct position. Otherwise, the blocks will slide out of the corner (0,0) when a game begins, instead of falling from the top in rows. (Try commenting out <i>enabled: spawned</i> and see for yourself.)
+</p>
+<h2><span class="mw-headline" id="Animating_block_opacity_changes">Animating block opacity changes</span></h2>
+<p>Next, we will add a smooth exit animation. For this, we'll use a Behavior element, which allows us to specify a default animation when a property change occurs. In this case, when the <i>opacity</i> of a Block changes, we will animate the opacity value so that it gradually fades in and out, instead of abruptly changing between fully visible and invisible. To do this, we'll apply a Behavior on the <i>opacity</i> property of the <i>Image</i> element in <i>BoomBlock.qml</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Image <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> img
+&#160;
+anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ source<span class="sy0">:</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>type  <span class="nu0">0</span><span class="br0">&#41;</span>
+                <span class="kw1">return</span> <span class="st0">&quot;../../shared/pics/redStone.png&quot;</span><span class="sy0">;</span>
+            <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>type  <span class="nu0">1</span><span class="br0">&#41;</span>
+ <span class="kw1">return</span> <span class="st0">&quot;../../shared/pics/blueStone.png&quot;</span><span class="sy0">;</span>
+ <span class="kw1">else</span>
+ <span class="kw1">return</span> <span class="st0">&quot;../../shared/pics/greenStone.png&quot;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ opacity<span class="sy0">:</span> <span class="nu0">0</span>
+&#160;
+Behavior on opacity <span class="br0">&#123;</span>
+ NumberAnimation <span class="br0">&#123;</span> properties<span class="sy0">:</span><span class="st0">&quot;opacity&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">200</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Note the <i>opacity: 0</i> which means the block is transparent when it is first created. We could set the opacity in <i>samegame.js</i> when we create and destroy the blocks, but instead we'll use states, since this is useful for the next animation we're going to add. Initially, we add these States to the root element of <i>BoomBlock.qml</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">property <span class="kw4">bool</span> dying<span class="sy0">:</span> <span class="kw2">false</span>
+states<span class="sy0">:</span> <span class="br0">&#91;</span>
+ State<span class="br0">&#123;</span> name<span class="sy0">:</span> <span class="st0">&quot;AliveState&quot;</span><span class="sy0">;</span> when<span class="sy0">:</span> spawned  <span class="kw2">true</span> <span class="sy0">&amp;&amp;</span> dying  <span class="kw2">false</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> img<span class="sy0">;</span> opacity<span class="sy0">:</span> <span class="nu0">1</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="sy0">,</span>
+ State<span class="br0">&#123;</span> name<span class="sy0">:</span> <span class="st0">&quot;DeathState&quot;</span><span class="sy0">;</span> when<span class="sy0">:</span> dying <span class="sy0">==</span> <span class="kw2">true</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> img<span class="sy0">;</span> opacity<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#93;</span></pre></div></div>
+<p>Now blocks will automatically fade in, as we already set <i>spawned</i> to true when we implemented the block animations. To fade out, we set <i>dying</i> to true instead of setting opacity to 0 when a block is destroyed (in the <i>floodFill()</i> function).
+</p>
+<h3><span class="mw-headline" id="Adding_particle_effects">Adding particle effects</span></h3>
+<p>Finally, we'll add a cool-looking particle effect to the blocks when they are destroyed. To do this, we first add a Particles element in <i>BoomBlock.qml</i>, like so:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Particles <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> particles
+&#160;
+width<span class="sy0">:</span> <span class="nu0">1</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">1</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+&#160;
+emissionRate<span class="sy0">:</span> <span class="nu0">0</span>
+ lifeSpan<span class="sy0">:</span> <span class="nu0">700</span><span class="sy0">;</span> lifeSpanDeviation<span class="sy0">:</span> <span class="nu0">600</span>
+ angle<span class="sy0">:</span> <span class="nu0">0</span><span class="sy0">;</span> angleDeviation<span class="sy0">:</span> <span class="nu0">360</span><span class="sy0">;</span>
+ velocity<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> velocityDeviation<span class="sy0">:</span> <span class="nu0">30</span>
+ source<span class="sy0">:</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>type  <span class="nu0">0</span><span class="br0">&#41;</span>
+                <span class="kw1">return</span> <span class="st0">&quot;../../shared/pics/redStar.png&quot;</span><span class="sy0">;</span>
+            <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>type  <span class="nu0">1</span><span class="br0">&#41;</span>
+ <span class="kw1">return</span> <span class="st0">&quot;../../shared/pics/blueStar.png&quot;</span><span class="sy0">;</span>
+ <span class="kw1">else</span>
+ <span class="kw1">return</span> <span class="st0">&quot;../../shared/pics/greenStar.png&quot;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>To fully understand this you should read the Particles documentation, but it's important to note that <i>emissionRate</i> is set to zero so that particles are not emitted normally. Also, we extend the <i>dying</i> State, which creates a burst of particles by calling the <i>burst()</i> method on the particles element. The code for the states now look like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> states<span class="sy0">:</span> <span class="br0">&#91;</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;AliveState&quot;</span>
+ when<span class="sy0">:</span> spawned  <span class="kw2">true</span> <span class="sy0">&amp;&amp;</span> dying  <span class="kw2">false</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> img<span class="sy0">;</span> opacity<span class="sy0">:</span> <span class="nu0">1</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="sy0">,</span>
+&#160;
+State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;DeathState&quot;</span>
+ when<span class="sy0">:</span> dying <span class="sy0">==</span> <span class="kw2">true</span>
+ StateChangeScript <span class="br0">&#123;</span> script<span class="sy0">:</span> particles.<span class="me1">burst</span><span class="br0">&#40;</span><span class="nu0">50</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> img<span class="sy0">;</span> opacity<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ StateChangeScript <span class="br0">&#123;</span> script<span class="sy0">:</span> block.<span class="me1">destroy</span><span class="br0">&#40;</span><span class="nu0">1000</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>Now the game is beautifully animated, with subtle (or not-so-subtle) animations added for all of the player's actions. The end result is shown below, with a different set of images to demonstrate basic theming:
+</p><p>The theme change here is produced simply by replacing the block images. This can be done at runtime by changing the l Image c source property, so for a further challenge, you could add a button that toggles between themes with different images.
+</p>
+<h2><span class="mw-headline" id="Keeping_a_High_Scores_table">Keeping a High Scores table</span></h2>
+<p>Another feature we might want to add to the game is a method of storing and retrieving high scores.
+</p><p>To do this, we will show a dialog when the game is over to request the player's name and add it to a High Scores table. This requires a few changes to <i>Dialog.qml</i>. In addition to a Text element, it now has a <i>TextInput</i> child item for receiving keyboard text input:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+…
+ TextInput <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> textInput
+ anchors <span class="br0">&#123;</span> verticalCenter<span class="sy0">:</span> parent.<span class="me1">verticalCenter</span><span class="sy0">;</span> left<span class="sy0">:</span> dialogText.<span class="me1">right</span> <span class="br0">&#125;</span>
+ width<span class="sy0">:</span> <span class="nu0">80</span>
+ text<span class="sy0">:</span> <span class="st0">&quot;&quot;</span>
+&#160;
+onAccepted<span class="sy0">:</span> container.<span class="me1">hide</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// close dialog when Enter is pressed</span>
+ <span class="br0">&#125;</span>
+…
+<span class="br0">&#125;</span></pre></div></div>
+<p>We'll also add a <i>showWithInput()</i> function. The text input will only be visible if this function is called instead of <i>show()</i>. When the dialog is closed, it emits a <i>closed()</i> signal, and other elements can retrieve the text entered by the user through an <i>inputText</i> property:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+…
+ property string inputText<span class="sy0">:</span> textInput.<span class="me1">text</span>
+ <span class="kw4">signal</span> closed
+&#160;
+function show<span class="br0">&#40;</span>text<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ dialogText.<span class="me1">text</span> <span class="sy0">=</span> text<span class="sy0">;</span>
+ container.<span class="me1">opacity</span> <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span>
+ textInput.<span class="me1">opacity</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+function showWithInput<span class="br0">&#40;</span>text<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ show<span class="br0">&#40;</span>text<span class="br0">&#41;</span><span class="sy0">;</span>
+ textInput.<span class="me1">opacity</span> <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span>
+ textInput.<span class="me1">focus</span> <span class="sy0">=</span> true<span class="sy0">;</span>
+ textInput.<span class="me1">text</span> <span class="sy0">=</span> <span class="st0">&quot;&quot;</span>
+ <span class="br0">&#125;</span>
+&#160;
+function hide<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ textInput.<span class="me1">focus</span> <span class="sy0">=</span> false<span class="sy0">;</span>
+ container.<span class="me1">opacity</span> <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+ container.<span class="me1">closed</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+…
+<span class="br0">&#125;</span></pre></div></div>
+<p>Now the dialog can be used in <i>samegame.qml</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Dialog <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> nameInputDialog
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ z<span class="sy0">:</span> <span class="nu0">100</span>
+&#160;
+onClosed<span class="sy0">:</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>nameInputDialog.<span class="me1">inputText</span> <span class="sy0">!=</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span>
+ SameGame.<span class="me1">saveHighScore</span><span class="br0">&#40;</span>nameInputDialog.<span class="me1">inputText</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>When the dialog emits the <i>closed</i> signal, we call the new <i>saveHighScore()</i> function in <i>samegame.js</i>, which stores the high score locally in an SQL database and also send the score to an online database if possible.
+</p><p>The nameInputDialog is activated in the <i>victoryCheck()</i> function in <i>samegame.js</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function vitoryCheck<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+…
+ <span class="co1">//Check whether game has finished</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>deservesBonus <span class="sy0">||</span> <span class="sy0">!</span><span class="br0">&#40;</span>floodMoveCheck<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> maxRow <span class="sy0">-</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ gameDuration <span class="sy0">=</span> <span class="kw1">new</span> Date<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-</span> gameDuration<span class="sy0">;</span>
+ nameInputDialog.<span class="me1">showWithInput</span><span class="br0">&#40;</span><span class="st0">&quot;You won! Please enter your name: &quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Storing_high_scores_offline">Storing high scores offline</span></h3>
+<p>Now we need to implement the functionality to actually save the High Scores table.
+</p><p>Here is the <i>saveHighScore()</i> function in <i>samegame.js</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function saveHighScore<span class="br0">&#40;</span>name<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>scoresURL <span class="sy0">!=</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span>
+ sendHighScore<span class="br0">&#40;</span>name<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+var db <span class="sy0">=</span> openDatabaseSync<span class="br0">&#40;</span><span class="st0">&quot;SameGameScores&quot;</span><span class="sy0">,</span> <span class="st0">&quot;1.0&quot;</span><span class="sy0">,</span> <span class="st0">&quot;Local SameGame High Scores&quot;</span><span class="sy0">,</span> <span class="nu0">100</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ var dataStr <span class="sy0">=</span> <span class="st0">&quot;INSERT INTO Scores VALUES (?,&#160;?,&#160;?,&#160;?)&quot;</span><span class="sy0">;</span>
+ var data <span class="sy0">=</span> <span class="br0">&#91;</span>name<span class="sy0">,</span> gameCanvas.<span class="me1">score</span><span class="sy0">,</span> maxColumn <span class="sy0">+</span> <span class="st0">&quot;x&quot;</span> <span class="sy0">+</span> maxRow<span class="sy0">,</span> Math.<span class="kw3">floor</span><span class="br0">&#40;</span>gameDuration <span class="sy0">/</span> <span class="nu0">1000</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="sy0">;</span>
+ db.<span class="me1">transaction</span><span class="br0">&#40;</span>function<span class="br0">&#40;</span>tx<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ tx.<span class="me1">executeSql</span><span class="br0">&#40;</span><span class="st0">'CREATE TABLE IF NOT EXISTS Scores(name TEXT, score NUMBER, gridSize TEXT, time NUMBER)'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ tx.<span class="me1">executeSql</span><span class="br0">&#40;</span>dataStr<span class="sy0">,</span> data<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+var rs <span class="sy0">=</span> tx.<span class="me1">executeSql</span><span class="br0">&#40;</span><span class="st0">'SELECT * FROM Scores WHERE gridSize = &quot;12x17&quot; ORDER BY score desc LIMIT 10'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ var r <span class="sy0">=</span> <span class="st0">&quot;SCORES for a standard sized grid<span class="es1">\n</span><span class="es1">\n</span>&quot;</span>
+ <span class="kw1">for</span> <span class="br0">&#40;</span>var i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> rs.<span class="me1">rows</span>.<span class="me1">length</span><span class="sy0">;</span> i<span class="sy0">+</span><span class="st0">''</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ r<span class="st0">''</span><span class="sy0">=</span> <span class="br0">&#40;</span>i <span class="sy0">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy0">+</span> <span class="st0">&quot;. &quot;</span> <span class="sy0">+</span> rs.<span class="me1">rows</span>.<span class="me1">item</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span>.<span class="me1">name</span> <span class="sy0">+</span> <span class="st0">' got '</span> <span class="sy0">+</span> rs.<span class="me1">rows</span>.<span class="me1">item</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span>.<span class="me1">score</span> <span class="sy0">+</span> <span class="st0">' points in '</span> <span class="sy0">+</span> rs.<span class="me1">rows</span>.<span class="me1">item</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span>.<span class="kw3">time</span> <span class="sy0">+</span> <span class="st0">' seconds.'</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ dialog.<span class="me1">show</span>®<span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>First we call <i>sendHighScore()</i> (explained in the section below) if it is possible to send the high scores to an online database.
+</p><p>Then, we use the Offline Storage API to maintain a persistant SQL database unique to this application. We create an offline storage database for the high scores using openDatabase() and prepare the data and SQL query that we want to use to save it. The offline storage API uses SQL queries for data manipulation and retrival, and in the <i>db.transaction()</i> call we use three SQL queries to initialize the database (if necessary), and then add to and retrieve high scores. To use the returned data, we turn it into a string with one line per row returned, and show a dialog containing that string.
+</p><p>This is one way of storing and displaying high scores locally, but certainly not the only way. A more complex alternative would be to create a high score dialog component, and pass it the results for processing and display (instead of reusing the Dialog). This would allow a more themeable dialog that could beter present the high scores. If your QML is the UI for a Python application, you could also have passed the score to a Python function to store it locally in a variety of ways, including a simple format without SQL or in another SQL database.
+</p>
+<h3><span class="mw-headline" id="Storing_high_scores_online">Storing high scores online</span></h3>
+<p>You've seen how you can store high scores locally, but it is also easy to integrate a web-enabled high score storage into your QML application. The implementation we've done here is very simple: the high score data is posted to a php script running on a server somewhere, and that server then stores it and displays it to visitors. You could also request an XML or QML file from that same server, which contains and displays the scores, but that's beyond the scope of this tutorial. The php script we use here is available in the examples directory.
+</p><p>If the player entered their name we can send the data to the web service us
+</p><p>If the player enters a name, we send the data to the service using this code in <i>samegame.js</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function sendHighScore<span class="br0">&#40;</span>name<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ var postman <span class="sy0">=</span> <span class="kw1">new</span> XMLHttpRequest<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ var postData <span class="sy0">=</span> <span class="st0">&quot;name=&quot;</span> <span class="sy0">+</span> name <span class="sy0">+</span> <span class="st0">&quot;&amp;score=&quot;</span> <span class="sy0">+</span> gameCanvas.<span class="me1">score</span> <span class="sy0">+</span> <span class="st0">&quot;&amp;gridSize=&quot;</span> <span class="sy0">+</span> maxColumn <span class="sy0">+</span> <span class="st0">&quot;x&quot;</span> <span class="sy0">+</span> maxRow <span class="sy0">+</span> 
+ <span class="st0">&quot;&amp;time=&quot;</span> <span class="sy0">+</span> Math.<span class="kw3">floor</span><span class="br0">&#40;</span>gameDuration <span class="sy0">/</span> <span class="nu0">1000</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ postman.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;POST&quot;</span><span class="sy0">,</span> scoresURL<span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ postman.<span class="me1">setRequestHeader</span><span class="br0">&#40;</span><span class="st0">&quot;Content-Type&quot;</span><span class="sy0">,</span> <span class="st0">&quot;application/x-www-form-urlencoded&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ postman.<span class="me1">onreadystatechange</span> <span class="sy0">=</span> function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>postman.<span class="me1">readyState</span> <span class="sy0">==</span> postman.<span class="me1">DONE</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ dialog.<span class="me1">show</span><span class="br0">&#40;</span><span class="st0">&quot;Your score has been uploaded.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ postman.<span class="me1">send</span><span class="br0">&#40;</span>postData<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>The XMLHttpRequest in this code is the same as the <i>XMLHttpRequest()</i> as you'll find in standard browser JavaScript, and can be used in the same way to dynamically get XML or QML from the web service to display the high scores. We don't worry about the response in this case - we just post the high score data to the web server. If it had returned a QML file (or a URL to a QML file) you could instantiate it in much the same way as you did with the blocks.
+</p><p>An alternate way to access and submit web-based data would be to use QML elements designed for this purpose. XmlListModel makes it very easy to fetch and display XML based data such as RSS in a QML application (see the Flickr demo for an example).
+</p>
+<h1><span class="mw-headline" id="That.27s_it.21">That's it!</span></h1>
+<p>By following this tutorial you've seen how you can write a fully functional application in QML:
+</p>
+<ul>
+<li> Build your application with QML elements.
+</li>
+<li> Add application logic with JavaScript code.
+</li>
+<li> Add animations with Behaviors and states.
+</li>
+<li> Store persistent application data using, for example, the Offline Storage API or XMLHttpRequest.
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.214 seconds
+Real time usage: 0.218 seconds
+Preprocessor visited node count: 134/1000000
+Preprocessor generated node count: 260/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1288-0!*!*!!en!*!* and timestamp 20151104190143 and revision id 19267
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index1258.html?title=PySide_QML_Tutorial_Advanced_4&amp;oldid=19267">http://wiki.qt.io/index.php?title=PySide_QML_Tutorial_Advanced_4&amp;oldid=19267</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_LanguageBindings__PySide.html" title="Category:LanguageBindings::PySide">LanguageBindings::PySide</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=800f87a2ebd757d7&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="PySide_QML_Tutorial_Advanced_4.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_PySide_QML_Tutorial_Advanced_4.html?title=Talk:PySide_QML_Tutorial_Advanced_4&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="PySide_QML_Tutorial_Advanced_4.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexe0c0.html?title=PySide_QML_Tutorial_Advanced_4&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexdb4b.html?title=PySide_QML_Tutorial_Advanced_4&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/PySide_QML_Tutorial_Advanced_4.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/PySide_QML_Tutorial_Advanced_4.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index27dc.html?title=PySide_QML_Tutorial_Advanced_4&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index1258.html?title=PySide_QML_Tutorial_Advanced_4&amp;oldid=19267" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index6827.html?title=PySide_QML_Tutorial_Advanced_4&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:22.</li>
+											<li id="footer-info-viewcount">This page has been accessed 707 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":1105});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/PySide_QML_Tutorial_Advanced_4 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 09:47:53 GMT -->
+</html>

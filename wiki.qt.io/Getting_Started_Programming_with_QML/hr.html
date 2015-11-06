@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Getting_Started_Programming_with_QML/hr by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 07:57:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Getting Started Programming with QML/hr - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Getting_Started_Programming_with_QML/hr","wgTitle":"Getting Started Programming with QML/hr","wgCurRevisionId":16528,"wgRevisionId":16528,"wgArticleId":859,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Getting_Started_Programming_with_QML/hr","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Getting_Started_Programming_with_QML_hr skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Getting Started Programming with QML/hr</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../index19ca.html?title=Getting_Started_Programming_with_QML/hr&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Po.C4.8Detak_programiranja_u_QML-u"><span class="tocnumber">1</span> <span class="toctext">Početak programiranja u QML-u</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#QML_u_izradi_korisni.C4.8Dkog_su.C4.8Delja"><span class="tocnumber">1.1</span> <span class="toctext">QML u izradi korisničkog sučelja</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Definicija_Dugmadi_i_Menija"><span class="tocnumber">1.2</span> <span class="toctext">Definicija Dugmadi i Menija</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Kreiranje_izborni.C4.8Dke_.28MENU.29_stranice"><span class="tocnumber">1.3</span> <span class="toctext">Kreiranje izborničke (MENU) stranice</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Implementacija_izborni.C4.8Dke_trake"><span class="tocnumber">1.4</span> <span class="toctext">Implementacija izborničke trake</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Upotreba_podatkovnih_modela_i_predlo.C5.BEaka"><span class="tocnumber">1.5</span> <span class="toctext">Upotreba podatkovnih modela i predložaka</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Izrada_Text_Editora"><span class="tocnumber">1.6</span> <span class="toctext">Izrada Text Editora</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Po.C4.8Detak_programiranja_u_QML-u">Početak programiranja u QML-u</span></h1>
+<p>Dobrodošli u svijet QMLa, opisnog UI jezika. U ovom vodiču kreirat ćemo jednostavni editor teksta upotrebom QMLa. Nakon što završite s čitanjem ovog vodiča, trebali biste biti spremni za razvoj vlastitih aplikacija upotrebom QMLa i C+<i>.</i>
+</p>
+<h2><span class="mw-headline" id="QML_u_izradi_korisni.C4.8Dkog_su.C4.8Delja">QML u izradi korisničkog sučelja</span></h2>
+<p>Aplikacija koju ćemo raditi je jednostavni tekstualni editor koji učitava, snima te izvodi jednostavne funkcije na tekstu. Ovaj vodič sastoji se od dva dijela. U prvom dijelu obrađuju se dizajn i izgled aplikacije te ponašanje iste upotrebom opsinog jezika u QMLu. U drugom dijelu, učitavanje i snimanje datoteke bit će implementirano koriteći Qt C. Upotrebom <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/metaobjects.html">Qt Meta-Object System</a> omogućujemo QML-ovim elementima pristup C<i>+ metodama. Radeći u Qt C++ i QML-u, lako je odvojiti logiku korisničkog sučelja od ostatka aplikacije.</i>
+</p><p>p=. <a href="../indexaa3f.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 editmenu.png">Texteditor</a>
+</p><p>Da bi pokrenuli QML primjer proslijediti QML datoteku <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qmlviewer.html">qmlviewer</a> programu. C++ dijelovi ovog vodiča predpostavljaju da čitatelj posjeduje osnovno znanje o kreiranju izvršnih datoteka iz Qt projekata.
+</p>
+<h2><span class="mw-headline" id="Definicija_Dugmadi_i_Menija">Definicija Dugmadi i Menija</span></h2>
+<h3><span class="mw-headline" id="Osnovni_elementi_-_dugme">Osnovni elementi - dugme</span></h3>
+<p>Započet ćemo rad na tekst editoru kreiranjem dugmeta. Funkcionalno, dugme se sastoji od područja osjetljivog na akcije miša i naslov. Dugmad izvršava akcije nakon što korisnik klikne na njega.
+</p><p>U QML-u, osnovni vizualni element je <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a>. <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a> ima svojstva kojima se određuje njegov izgled i položaj.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>simplebutton
+ color<span class="sy0">:</span> <span class="st0">&quot;grey&quot;</span>
+ width<span class="sy0">:</span> <span class="nu0">150</span>
+ height<span class="sy0">:</span> <span class="nu0">80</span>
+ Text<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonLabel
+ text<span class="sy0">:</span> <span class="st0">&quot;button label&quot;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent<span class="sy0">;</span>
+ anchors.<span class="me1">verticalCenterOffset</span><span class="sy0">:</span> –<span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+Prvo, linija koda <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span></pre></div></div> omogućuje <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qmlviewer.html">qmlviewer</a> alatom da uveze QML element koje ćemo kasnije koristiti. Ova linija je neophodna za svaku QML datoteku. Primjetite da koristimo i verziju Qt-a pri tome.
+Ovaj jednostavi element ima unikatni naziv, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">simplebutton</pre></div></div> koji je vezan za svojstvo <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">id</pre></div></div>. Svojstva elementa <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a> vežu se za vrijednosti, navođenjem svojstva iza kojeg bi uslijedila dvotočka a zatim vrijednost. U primjeru izvornog koda, siva boje postavljenja je za vrijednost boje(<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">color</pre></div></div>) <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a> elementa. Na isti način postavljena su svojstva za visinu(<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">height</pre></div></div>) i širinu(<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">width</pre></div></div>) elementa.
+<a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">Text</a> element je nepromjenjivo tekstualno polje. U primjeru ćemo ga nazvati <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonLabel</pre></div></div>. Da bi postavili sadržaj <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">Text</a> polja, potrebno je postaviti svojstvo <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">text</pre></div></div>. Naziv se nalazi unutar elementa <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a> i da bi centrirali potrebno je povezati lokaciju <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">Text</a> elementa s njegovim parent elementom, koji je u ovom slucaju <i>simplebutton</i>.
+Ovaj ćemo izvorni kod snimiti u datoteku SimpleButton.qml. Pokrenut ćemo <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qmlviewer.html">qmlviewer</a> program s parametrom <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">SimpleButton.<span class="me1">qml</span></pre></div></div> i prikazat će nam se sivi pravokutnik s upisanim tekstom.
+<p>p=. <a href="../indexe2e3.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_simplebutton.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 simplebutton.png">http://doc.qt.nokia.com/4.7/images/qml-texteditor1_simplebutton.png</a>
+</p><p>Da bismo implementirali interakciju s dugmetom, upotrijebiti ćemo QML-ov sistem za obradu događaja. Obrada događaja u QML-u je prilično slično sustavu signala i slotova u QT-u. Signali se emitiraju i pozivaju povezani slot.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>simplebutton
+ …
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonMouseArea
+&#160;
+anchors.<span class="me1">fill</span><span class="sy0">:</span> parent <span class="co1">//anchor all sides of the mouse area to the rectangle's anchors</span>
+ <span class="co1">//onClicked handles valid mouse button clicks</span>
+ onClicked<span class="sy0">:</span> console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+Dodajemo <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> našem <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">simplebutton</pre></div></div> elementu. <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> element opisuje interaktivno područje unutar kojeg se detektiraju korinički pomaci miša. Za naše dugme, povezali smo cijeli <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> za područje dugmeta. Dio koda <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">anchors.<span class="me1">fill</span></pre></div></div> omogućuje pritup svojstvu <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">fill</pre></div></div> unutar grupe svojstva <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">anchors</pre></div></div>. QML koristi predloške (<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">layout</pre></div></div>) bazirane na principu sidra (<i>anchor</i>) koji omogućavaju povezivanje sidra jednog elementa s drugim elementima kreirajući pri tome robusna sučelja.
+Za <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> postoji mnogo signala koji se aktiviraju pomicanjem miša unutar <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> granica. Jedan od njih je <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onClicked</pre></div></div> i on se poziva svaki put kad se pritisne tipka miša, po defaultu lijeva. Akciju ćemo zatim povezati s <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onClicked</pre></div></div> signalom. U našem primjeru <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> ispisuje tekst svaki put kad bi se tipka miša pritisnula unutar granica <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a>. Metoda <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> je izuzetno korisna za potrebe traženja i ispravljanja grešaka u kodu kao i ispis teksta.
+Izvorni kod u <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">SimpleButton.<span class="me1">qml</span></pre></div></div> dovoljan je za prikaz dugmeta na ekranu te ispis teksta svaki put kad bi kliknuli na njega mišem.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span>Button
+ …
+&#160;
+property color buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightblue&quot;</span>
+ property color onHoverColor<span class="sy0">:</span> <span class="st0">&quot;gold&quot;</span>
+ property color borderColor<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+&#160;
+<span class="kw4">signal</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ onButtonClick<span class="sy0">:</span> <span class="br0">&#123;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea <span class="br0">&#123;</span>
+ onClicked<span class="sy0">:</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ hoverEnabled<span class="sy0">:</span> <span class="kw2">true</span>
+ onEntered<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> onHoverColor
+ onExited<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> borderColor
+ <span class="br0">&#125;</span>
+&#160;
+<span class="co1">// determines the color of the button by using the conditional operator</span>
+ color<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="kw5">Qt</span>.<span class="me1">darker</span><span class="br0">&#40;</span>buttonColor<span class="sy0">,</span> <span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy0">:</span> buttonColor
+<span class="br0">&#125;</span></pre></div></div>
+U datoteci <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div> nalazi se potpuno funkcionalno dugme. Izvorni kod uz ovaj vodič je djelomično skraćen s obzirom da se ti dijelovi kod nalaze u prijašnjim primjerima ili nisu relevantne za ovu temu.
+Proizvoljna svojstva deklariraju se upotrebom "property type name" sintakse . U primjeru izvornog koda, svojstvo <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonColor</pre></div></div>, tip <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">color</pre></div></div> je deklarirano i vezano uz vrijednost <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">&quot;lightblue&quot;</span></pre></div></div>. Svojstvo <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonColor</pre></div></div> kasnije ćemo upotrijebiti u kondicionaloj operaciji kojom ćemo utvrditi boji dugmeta. Bitno je za primjetiti da je svojstvu vrijednost moguće dodijeliti upotrebom <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">&quot;=&quot;</span></pre></div></div> operatora uz mogućnost dodijeljivanja vrijednosti upotrebom znaka <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">&quot;:&quot;</span></pre></div></div>. Proizvoljna svojstva omogućuju pristup internim elementima izvan <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a> objekta. Osnovni <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativebasictypes.html">tipovi podatka</a> s kojima QML radi su <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">int</span></pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">string</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">real</pre></div></div> kao i <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">variant</pre></div></div>
+Povezivanjem <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onEntered</pre></div></div> i <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onExited</pre></div></div> signala s bojama, okvir dugmeta na ekranu promijenit će boju u žuto dok se pokazivač nađe unutar njegovih granica .
+Signal <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> deklariran je u <i>Button.qml</i> datoteci postavljanjem ključne riječi ispred naziva signala. Svim signalim automatski se kreiraju vezane metode koje nose isti naziv kao signal. Kao rezultat dobijemo metodu <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> vezanu za signal <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonClick</pre></div></div>. Na metodu <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> zatim se veže akcija koja će se izvršiti.
+U našem primjeru, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onClicked</pre></div></div> signal aktivirat će metodu <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick</pre></div></div> koja će prikazati tekst. Metoda <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick</pre></div></div> omogućuje vanjskim objektima pristup području dugmeta. Primjerice, elementi na sučelju mogu imati više od jedne deklaracije <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonClick</pre></div></div> signal će odrediti koja će vezana metoda bolje odraditi akciju vezanu na signal.
+<p>Do sada smo svladali osnove implementacije elemenata u QMLu za obradu osnovnih pokreta mišem. Kreirali smo "tekstualni":<a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">Rectangle</a> element unutar objekta <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a>, prilagodli njegova svojstva i implementirali ponašanje koje odgovarta pokretima mišem. Koncept kreiranja elemenata unutar elemenata raširen je kroz cijelu aplikaciju.
+</p><p>Ovo dugme je beskorisno ukoliko nije upotrebljen kao komponenta koja će izvršti neku akciju. U sljedećem dijelu vodiča kreirat ćemo meni koji će sadržavati neke od dugmadi.
+</p><p>p=. <a href="../index9db7.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_button.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 button.png">http://doc.qt.nokia.com/4.7/images/qml-texteditor1_button.png</a>
+</p>
+<h2><span class="mw-headline" id="Kreiranje_izborni.C4.8Dke_.28MENU.29_stranice">Kreiranje izborničke (MENU) stranice</span></h2>
+<p>Do ovog tgrenutka pokrili smo kreiranje elemenata i pripadajućih akcija unutar jedne QML datoteke. U ovom dijelu vodića proći ćemo uvoz QML elemenata te ponovno korištenje postojećih elemenata u izgradnji drugih.
+</p>
+Izbornici prikazuju sadržaj liste s time da svaki od njih ima mogućnost izvršavanja akcije. U QMLu, izbornik se može kreirati na više načina. Prvo, kreirat ćemo izbornik koji sadrži dugmad koja će eventulano izvršavati različite akcije. Izvorni kod za izbornike nalazi se u datoteci <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FileMenu.<span class="me1">qml</span></pre></div></div>.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span> import the main <span class="kw5">Qt</span> QML module
+import <span class="st0">&quot;folderName&quot;</span> import the contents of the folder
+import <span class="st0">&quot;script.js&quot;</span> as Script import a Javascript file and name it as Script</pre></div></div>
+Izvorni kod iznad pokazuje kako koristiti <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import</pre></div></div> ključnu riječ. Ona je neophodna ukoliko želimo koristiti JavaScript datoteke, ili QML datoteke a koje se ne nalaze unutaristog direktorija. S obzirom da se <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div> nalazi u istom direktoriju kao i <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FileMenu.<span class="me1">qml</span></pre></div></div>, za <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div> nije potrebno koristiti <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import</pre></div></div> da bi ga upotrijebili. Button element možemo kreirati deklaracijom <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button<span class="br0">&#123;</span><span class="br0">&#125;</span></pre></div></div>, slično kao što smo radili deklaraciju <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span><span class="br0">&#125;</span></pre></div></div> elementa.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Izvorni kod <span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>FileMenu.<span class="me1">qml</span></pre></div></div>:
+<p>Row{
+</p>
+<pre>anchors.centerIn: parent
+spacing: parent.width/6
+</pre>
+<p>Button{
+</p>
+<pre>id: loadButton
+buttonColor: "lightgrey"
+label: "Load"
+}
+Button{
+buttonColor: "grey"
+id: saveButton
+label: "Save"
+}
+Button{
+id: exitButton
+label: "Exit"
+buttonColor: "darkgrey"
+</pre>
+<p>onButtonClick: Qt.quit()
+</p>
+<pre>}
+}
+</pre>
+<p>&lt;/code&gt;
+</p>
+U datoteci <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FileMenu.<span class="me1">qml</span></pre></div></div> deklarirali smo tri <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button</pre></div></div> elementa. Njih smo postavili unutar <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Row</pre></div></div> elementa, koji sve elemente koji se nalazu unutar njega postavlja u okomiti red. Deklaracija <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button</pre></div></div> elementa nalazi se u <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div> datoteci koja je ista ona datoteka koju smo koritili u prethodnom primjeru. Na svojstva elementa <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button</pre></div></div> mogu se vezati nove vrijednosti i time prepisati osnovna svojstva elementa postavljena u <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div>. Klikom na dugme <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">exitButton</pre></div></div> aplikacije će se zatvoriti. Treba uzeti u obzir da će se uz metodu <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick</pre></div></div> vezanu na <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">exitButton</pre></div></div> dugme istovremno aktivirati i metoda <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick</pre></div></div> koja se nalazi unutar <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div> datoteke.
+<p>p=. <a href="../indexf003.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_filemenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 filemenu.png">Izbornik</a>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Row</pre></div></div> se deklarira unutar deklaracije <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> time kreirajući <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> koji sadrži u sebi red dugmadi. Ovaj dodatni <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> element indirektno utječe na organizaciju reda dugmadi unutar menija.
+Deklaracija izbornika <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Edit</pre></div></div> je u ovoj fazi prilično slična. Izbornik sadrži dugmad s nazivima: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Cut</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Paste</pre></div></div> i <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Select All</pre></div></div>
+<p>p=. <a href="../indexe0a4.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 editmenu.png">http://doc.qt.nokia.com/4.7/images/qml-texteditor1_editmenu.png</a>
+</p><p>Oboružani znanjem o uvozu i prilagođavanju od prije postojećih elemenata, sad možemo spojiti izborničke stranice u izborničku traku, koja će se sastojati od dugmadi za izbor menija i dobiti dobar primjer strukturiranja podataka upotrebom QML-a.
+</p>
+<h2><span class="mw-headline" id="Implementacija_izborni.C4.8Dke_trake">Implementacija izborničke trake</span></h2>
+<p>Naš tekst editor treba prikazivati izbornik upotrebom izborničke trake. Izbornička traka izmjenjivat će različite menije omogućujući koriniku izbor željene akcije. Izmjena izbornika podrazumjeva da su izbornicima treba malo više strukturiranja od običnog prikaza u redu. QML koristi modele i predloške za pregled strukturiranih podataka.
+</p>
+<h2><span class="mw-headline" id="Upotreba_podatkovnih_modela_i_predlo.C5.BEaka">Upotreba podatkovnih modela i predložaka</span></h2>
+QML dolazi s različitim <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativemodels.htm">podatkovim modelima</a> i predlošcima za prikaz istih. Naša izbornička traka prikazivati će izbornike u listi, sa zaglavljem u kojem će se nalaziti nazivi redova. Lista izbornika deklarira se unutar <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-visualitemmodel.html">VisualItemModel</a> elementa. <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-visualitemmodel.html">VisualItemModel</a> element sadrži elemente koji u sebi već sadrže <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> elemente kao i UI elemente koje smo uvezi. Druge tipove modele kao što je <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-listmodel.html">ListModel</a> moraju koristiti delegate da bi prikazali svoje podatke.
+Deklariramo dva vizualna elementa unutar <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">menuListModel</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FileMenu</pre></div></div> i <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">EditMenu</pre></div></div>. Prilagođujemo dva menija i prikazujemo ih upotrebom <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView</pre></div></div>. <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MenuBar.<span class="me1">qml</span></pre></div></div> datoteka sadrži QML deklaracije a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">EditMenu.<span class="me1">qml</span></pre></div></div> swadrži jednostavni <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Edit</pre></div></div> izbornik.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">VisualItemModel <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListModel
+ FileMenu<span class="br0">&#123;</span>
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ color<span class="sy0">:</span> fileColor
+ <span class="br0">&#125;</span>
+ EditMenu<span class="br0">&#123;</span>
+ color<span class="sy0">:</span> editColor
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-listview.html">ListView</a> element prikazuje model prema delegatu. Delagat mode deklarirati da se elementi modela prikazuju unutar <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Row</pre></div></div> elementa ili da ih se prikaže unutar mrežnog prikaza. Naš <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">menuListModel</pre></div></div> već ima vidljive elemente te nije potrebno deklarirati delegata.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListView
+&#160;
+<span class="co1">//Anchors are set to react to window anchors</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ anchors.<span class="me1">bottom</span><span class="sy0">:</span> parent.<span class="me1">bottom</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ height<span class="sy0">:</span> parent.<span class="me1">height</span>
+&#160;
+<span class="co1">//the model contains the data</span>
+ model<span class="sy0">:</span> menuListModel
+&#160;
+<span class="co1">//control the movement of the menu switching</span>
+ snapMode<span class="sy0">:</span> ListView.<span class="me1">SnapOneItem</span>
+ orientation<span class="sy0">:</span> ListView.<span class="me1">Horizontal</span>
+ boundsBehavior<span class="sy0">:</span> Flickable.<span class="me1">StopAtBounds</span>
+ flickDeceleration<span class="sy0">:</span> <span class="nu0">5000</span>
+ highlightFollowsCurrentItem<span class="sy0">:</span> <span class="kw2">true</span>
+ highlightMoveDuration<span class="sy0">:</span><span class="nu0">240</span>
+ highlightRangeMode<span class="sy0">:</span> ListView.<span class="me1">StrictlyEnforceRange</span>
+<span class="br0">&#125;</span></pre></div></div>
+U to <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView</pre></div></div> nasljeđuje <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Flickable</pre></div></div> i time reagira na pomake miša. Zasdnji dio koda iznad postavlja <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Flickable</pre></div></div> svojstva da reagiraju na pokrete unutar našeg programa. PReciznije, svojstvo <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">highlightMoveDuration</pre></div></div> određuje vrijeme izmjene između dva izbornika. Veća vrijednost, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">highlightMoveDuration</pre></div></div> uzrokovat će sporiju izmjenu izbornika.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView</pre></div></div> sadržava sve elemente po indeksima i svaki vizualni element je dostupan po tom indeksu, soritano po redu deklaracije. Izmjena <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">currentIndex</pre></div></div> izmjenjuje označeni element unutar <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView</pre></div></div> elementa. Ovaj efekt dobvro je vidljiv na zaglavlju našeg izbornika. U redu se nalaze dva dugmeta koji kad se kliken na njih mijenjaju trenutno odabrani izbornik. Dugme <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">fileButton</pre></div></div> izmijenit će trenbutno odabrani izbornik na <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">File</pre></div></div> izbornik, s indeksom 0 pošto je <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FileMenu</pre></div></div> prvi deklariran unutar <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">menuListModel</pre></div></div> elementa. Slično tome, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">editButton</pre></div></div> će promijeniti trenutni izbornik na <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">EditMenu</pre></div></div>.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> objekt <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">labelList</pre></div></div> imna svojstvo <i>z</i> postavljenmo na 1, što znači da će biti prikazan ispred izborničke trake. ELementi s nižom <i>z</i> vrijednosti bit će prikazane ispred elementa s višom <i>z</i> vrijednoti. Osnovna vrijednost <i>z</i> je 0.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> labelList
+ …
+ z<span class="sy0">:</span> <span class="nu0">1</span>
+ Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span><span class="nu0">40</span>
+ Button<span class="br0">&#123;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;File&quot;</span>
+ id<span class="sy0">:</span> fileButton
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">0</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> editButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Edit&quot;</span>
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>The menu bar we just created can be flicked to access the menus or by clicking on the menu names at the top. Switching menu screens feel intuitive and responsive.
+Izbornička traka koju smo upravo kreirali može biti manipulirana da bi se izbornicima pristupalo klikajući po nazivu izbornika na vrhu. Izmjena izborničkih ekrana djeluje intuitivno i ima brzi odaziv.
+</p><p>p=. <a href="../index9081.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor2_menubar.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor2 menubar.png">http://doc.qt.nokia.com/4.7/images/qml-texteditor2_menubar.png</a>
+</p>
+<h2><span class="mw-headline" id="Izrada_Text_Editora">Izrada Text Editora</span></h2>
+<h3><span class="mw-headline" id="Deklaracija_Text_Area">Deklaracija Text Area</span></h3>
+<p>Naš Tekst editor ne bi bio tekst editor a da nema u sebi površinu na kojoj možemo raditi izmjene na tekstu. QML ima <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-textedit.html">TextEdit</a> element koji omogućuje deklaraciju područja za prikaz i izmjene teksta. <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-textedit.html">TextEdit</a> se razlikuje od običnog <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">Text</a> koji nema mogućnost izmjene teksta.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> TextEdit<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> textEditor
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ width<span class="sy0">:</span>parent.<span class="me1">width</span><span class="sy0">;</span> height<span class="sy0">:</span>parent.<span class="me1">height</span>
+ color<span class="sy0">:</span><span class="st0">&quot;midnightblue&quot;</span>
+ focus<span class="sy0">:</span> <span class="kw2">true</span>
+&#160;
+wrapMode<span class="sy0">:</span> TextEdit.<span class="me1">Wrap</span>
+&#160;
+onCursorRectangleChanged<span class="sy0">:</span> flickArea.<span class="me1">ensureVisible</span><span class="br0">&#40;</span>cursorRectangle<span class="br0">&#41;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 1.930 seconds
+Real time usage: 1.960 seconds
+Preprocessor visited node count: 974/1000000
+Preprocessor generated node count: 2168/1000000
+Post‐expand include size: 1364/2097152 bytes
+Template argument size: 436/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:859-0!*!0!!en!2!* and timestamp 20151105063636 and revision id 16528
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../index3ef1.html?title=Getting_Started_Programming_with_QML/hr&amp;oldid=16528">http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/hr&amp;oldid=16528</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="../Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=3b1eba2d1a9d5672&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="hr.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_Getting_Started_Programming_with_QML/hr.html?title=Talk:Getting_Started_Programming_with_QML/hr&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="hr.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../index19ca.html?title=Getting_Started_Programming_with_QML/hr&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../indexa4de.html?title=Getting_Started_Programming_with_QML/hr&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/Getting_Started_Programming_with_QML/hr.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/Getting_Started_Programming_with_QML/hr.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../indexe130.html?title=Getting_Started_Programming_with_QML/hr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../index3ef1.html?title=Getting_Started_Programming_with_QML/hr&amp;oldid=16528" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../indexde91.html?title=Getting_Started_Programming_with_QML/hr&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 4 May 2015, at 16:12.</li>
+											<li id="footer-info-viewcount">This page has been accessed 387 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":2588});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Getting_Started_Programming_with_QML/hr by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 07:58:03 GMT -->
+</html>

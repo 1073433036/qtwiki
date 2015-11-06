@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Counting_Clicks_for_Qt_Widgets by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:26:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Counting Clicks for Qt Widgets - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Counting_Clicks_for_Qt_Widgets","wgTitle":"Counting Clicks for Qt Widgets","wgCurRevisionId":15039,"wgRevisionId":15039,"wgArticleId":659,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing with Qt::General","HowTo","Snippets","Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Counting_Clicks_for_Qt_Widgets","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Counting_Clicks_for_Qt_Widgets skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Counting Clicks for Qt Widgets</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+<b>How to find the Number of Clicks received for Qt Widgets using QSettings, re-implementing eventFilter() method</b>
+</p><p><br />
+<b>English</b> | <a href="How_to_Use_QSettings_Bulgarian.html" title="How to Use QSettings Bulgarian" class="mw-redirect">Български</a> | <a href="How_to_Use_QSettings_Spanish.html?title=How_to_Use_QSettings_Spanish&amp;action=edit&amp;redlink=1" class="new" title="How to Use QSettings Spanish (page does not exist)">Spanish</a> | <a href="How_to_Use_QSettings_SimplifiedChinese.html?title=How_to_Use_QSettings_SimplifiedChinese&amp;action=edit&amp;redlink=1" class="new" title="How to Use QSettings SimplifiedChinese (page does not exist)">简体中文</a> | <a href="How_to_Use_QSettings_Greek.html?title=How_to_Use_QSettings_Greek&amp;action=edit&amp;redlink=1" class="new" title="How to Use QSettings Greek (page does not exist)">Ελληνικά</a> |
+<a href="How_to_Use_QSettings_Russian.html?title=How_to_Use_QSettings_Russian&amp;action=edit&amp;redlink=1" class="new" title="How to Use QSettings Russian (page does not exist)">Русский</a> | <a href="How_to_Use_QSettings_Persian.html?title=How_to_Use_QSettings_Persian&amp;action=edit&amp;redlink=1" class="new" title="How to Use QSettings Persian (page does not exist)">فارسی</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#How_to_Use_QSettings"><span class="tocnumber">1</span> <span class="toctext">How to Use QSettings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#QSettings_Overview"><span class="tocnumber">1.1</span> <span class="toctext">QSettings Overview</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#QSettings_Object_Declaration.2C_Initialization_and_Construction"><span class="tocnumber">1.2</span> <span class="toctext">QSettings Object Declaration, Initialization and Construction</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#QSettings_Class_functions_used_in_this_example"><span class="tocnumber">1.3</span> <span class="toctext">QSettings Class functions used in this example</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Example"><span class="tocnumber">1.4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Usage_of_CountClicks_EventFilter_Class"><span class="tocnumber">1.5</span> <span class="toctext">Usage of CountClicks EventFilter Class</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="How_to_Use_QSettings">How to Use QSettings</span></h1>
+<h2><span class="mw-headline" id="QSettings_Overview">QSettings Overview</span></h2>
+<p><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5.0/qtcore/qsettings.html">QSettings</a> class provides <b>Persistent</b> and <b>platform-independent</b> application settings. <b>QSettings</b> allows to save and load the previously stored settings(Values) in the form of INI text files, system registry on Windows, and in XML preferences files on Mac OS X.
+</p><p>QSettings's values are stored as <b>QVariant</b>, allowing to save different types, such as <b>QString</b>, <b>QRect</b>, and <b>QImage</b>, with the minimum of effort.
+</p>
+<h2><span class="mw-headline" id="QSettings_Object_Declaration.2C_Initialization_and_Construction">QSettings Object Declaration, Initialization and Construction</span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QSettings</span> <span class="sy0">*</span>settings<span class="sy0">;</span></pre></div></div>
+<p><br />
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Countclicks<span class="sy0">::</span><span class="me2">Countclicks</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">:</span> <span class="kw5">QObject</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span>settings<span class="br0">&#40;</span><span class="kw2">NULL</span><span class="br0">&#41;</span></pre></div></div>
+<p><br />
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">settings <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QSettings</span><span class="br0">&#40;</span><span class="st0">&quot;clickscount.ini&quot;</span><span class="sy0">,</span><span class="kw5">QSettings</span><span class="sy0">::</span><span class="me2">IniFormat</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>the above three individual steps will construct a <b>QSettings</b> object for accessing the settings stored in the file called clickscount.ini,with the INI file format.
+</p>
+<h2><span class="mw-headline" id="QSettings_Class_functions_used_in_this_example">QSettings Class functions used in this example</span></h2>
+<ul>
+<li> beginGroup(const QString &amp; prefix )
+</li>
+</ul>
+<ul>
+<li> setValue ( const QString &amp; key, const QVariant &amp; value )
+</li>
+</ul>
+<ul>
+<li> value ( const QString &amp; key, const QVariant &amp; defaultValue = QVariant() ) const
+</li>
+</ul>
+<ul>
+<li> endGroup ()
+</li>
+</ul>
+<h2><span class="mw-headline" id="Example">Example</span></h2>
+<p>The following example shows how to create a class that handles the events if this class object has been installed as an event filter for the watched object.
+</p><p>CountClicks class is inherited from the QObject class.The protected boolean function is re-implemented.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">bool</span> eventFilter <span class="br0">&#40;</span> <span class="kw5">QObject</span> <span class="sy0">*</span> watched<span class="sy0">,</span> <span class="kw5">QEvent</span> <span class="sy0">*</span> event <span class="br0">&#41;</span> <span class="br0">&#91;</span><span class="kw2">virtual</span><span class="br0">&#93;</span></pre></div></div>
+<p>In the current implementation of this class the event <b>QEvent::MouseButtonPress</b> which includes <b>Qt::LeftButton</b>,<b>Qt::RightButton</b>,<b>Qt::MiddleButton</b> is filtered and handled,so <b>true</b> is returned to stop it being handled furthermore, and all the unhandled events are passed to the base class's <b>eventFilter(QObject</b> watched, QEvent * event)* function.
+</p>
+<h3><span class="mw-headline" id="countclicks.h">countclicks.h</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#ifndef COUNTCLICKS_H</span>
+<span class="co2">#define COUNTCLICKS_H</span>
+<span class="co2">#include &lt;QObject&gt;</span>
+<span class="co2">#include &lt;QSettings&gt;</span>
+&#160;
+<span class="kw2">class</span> CountClicks <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ CountClicks<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ ~CountClicks<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">bool</span> eventFilter<span class="br0">&#40;</span><span class="kw5">QObject</span> <span class="sy0">*</span>objectName<span class="sy0">,</span> <span class="kw5">QEvent</span> <span class="sy0">*</span>event<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+<span class="co1">//QSettings Object declaration</span>
+ <span class="kw5">QSettings</span> <span class="sy0">*</span>settings<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+<span class="co2">#endif // COUNTCLICKS_H</span></pre></div></div>
+<h3><span class="mw-headline" id="countclicks.cpp">countclicks.cpp</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QMouseEvent&gt;</span>
+<span class="co2">#include &lt;QApplication&gt;</span>
+&#160;
+<span class="co2">#include &quot;countclicks.h&quot;</span>
+&#160;
+CountClicks<span class="sy0">::</span><span class="me2">CountClicks</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">:</span> <span class="kw5">QObject</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span>settings<span class="br0">&#40;</span><span class="kw2">NULL</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+<span class="br0">&#125;</span>
+&#160;
+CountClicks<span class="sy0">::</span><span class="me2">~CountClicks</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">bool</span> CountClicks<span class="sy0">::</span><span class="me2">eventFilter</span><span class="br0">&#40;</span><span class="kw5">QObject</span> <span class="st0">''</span><span class="st0">'object, QEvent'</span><span class="st0">''</span> event<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw4">static</span> <span class="kw4">int</span> value <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+&#160;
+<span class="co1">//Constructs a QSettings object for accessing the settings stored in the file called &quot;clickscount&quot;, If the file doesn't already exist, it is created with the mentioned file format.Here it is INI text file format.</span>
+<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>settings<span class="br0">&#41;</span>
+ settings <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QSettings</span><span class="br0">&#40;</span><span class="st0">&quot;clickscount.ini&quot;</span><span class="sy0">,</span><span class="kw5">QSettings</span><span class="sy0">::</span><span class="me2">IniFormat</span><span class="sy0">,</span> <span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw1">if</span> <span class="br0">&#40;</span>event<span class="sy0">-&gt;</span><span class="me3">type</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">==</span> <span class="kw5">QEvent</span><span class="sy0">::</span><span class="me2">MouseButtonPress</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="co1">//Groups are useful to avoid typing in the same setting paths over and over.The current settings are stored with the prefix &quot;countclicks&quot; in the clickscount file.</span>
+settings<span class="sy0">-&gt;</span><span class="me3">beginGroup</span><span class="br0">&#40;</span><span class="st0">&quot;countclicks&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">//Returns the value for the given setting key. If the setting doesn't exist, defaultValue is returned.</span>
+<span class="kw4">int</span> value <span class="sy0">=</span> settings<span class="sy0">-&gt;</span><span class="me3">value</span><span class="br0">&#40;</span>object<span class="sy0">-&gt;</span><span class="me3">objectName</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">toInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+value <span class="sy0">=</span> <span class="sy0">++</span>value<span class="sy0">;</span>
+&#160;
+<span class="co1">//Sets the value of setting key to value. If the key already exists, the previous value is overwritten.</span>
+settings<span class="sy0">-&gt;</span><span class="me3">setValue</span><span class="br0">&#40;</span>object<span class="sy0">-&gt;</span><span class="me3">objectName</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span>value<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">//Resets the group to what it was before the corresponding beginGroup() call.If many settings are meant to be saved and restored with the same prefix, then prefixes beginGroup() and endGroup() are used.</span>
+settings<span class="sy0">-&gt;</span><span class="me3">endGroup</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// true is returned to stop it being handled furthermore by parent class.</span>
+<span class="kw1">return</span> true<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw1">else</span>
+ <span class="br0">&#123;</span>
+ <span class="co1">// all the unhandled events are passed to the base class's eventFilter(QObject * , QEvent * ) function</span>
+ <span class="kw1">return</span> <span class="kw5">QObject</span><span class="sy0">::</span><span class="me2">eventFilter</span><span class="br0">&#40;</span>object<span class="sy0">,</span>event<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="Usage_of_CountClicks_EventFilter_Class">Usage of CountClicks EventFilter Class</span></h2>
+<p>include the countclicks.h
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="co2">#include &quot;countclicks.h&quot;</span></pre></div></div>
+<p>Construct the object of CountClicks class.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">CountClicks <span class="sy0">*</span>cc <span class="sy0">=</span> <span class="kw1">new</span> CountClicks<span class="sy0">;</span></pre></div></div>
+<p>Filters MouseButtonPress events,and writes them to settings file if this object has been installed as an event filter for desired Qt widget like pushButton in any UserInterface.
+</p><p>Not only MouseButtonPress events are filtered and numbered,but also events like <b>QEvent::HoverEnter</b>,<b>QEvent::KeyPress</b>
+can also be filtered.
+</p><p>In the below step all events that are sent to pushButton object are filtered and only MouseButtonPress events are counted and stored for the next session by installing the event filter <b>cc</b> on pushButton.
+</p><p>For example:
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.140 seconds
+Real time usage: 0.145 seconds
+Preprocessor visited node count: 91/1000000
+Preprocessor generated node count: 196/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:659-0!*!0!!en!*!* and timestamp 20151105064329 and revision id 15039
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index539d.html?title=Counting_Clicks_for_Qt_Widgets&amp;oldid=15039">http://wiki.qt.io/index.php?title=Counting_Clicks_for_Qt_Widgets&amp;oldid=15039</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Developing_with_Qt__General.html" title="Category:Developing with Qt::General">Developing with Qt::General</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li><li><a href="Category_Snippets.html" title="Category:Snippets">Snippets</a></li><li><a href="Category_Tutorial.html" title="Category:Tutorial">Tutorial</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=fd864a387941f23d&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Counting_Clicks_for_Qt_Widgets.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Counting_Clicks_for_Qt_Widgets.html?title=Talk:Counting_Clicks_for_Qt_Widgets&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Counting_Clicks_for_Qt_Widgets.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexab90.html?title=Counting_Clicks_for_Qt_Widgets&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index3516.html?title=Counting_Clicks_for_Qt_Widgets&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Counting_Clicks_for_Qt_Widgets.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Counting_Clicks_for_Qt_Widgets.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexa38d.html?title=Counting_Clicks_for_Qt_Widgets&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index539d.html?title=Counting_Clicks_for_Qt_Widgets&amp;oldid=15039" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index0bf3.html?title=Counting_Clicks_for_Qt_Widgets&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 26 March 2015, at 12:29.</li>
+											<li id="footer-info-viewcount">This page has been accessed 638 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":411});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Counting_Clicks_for_Qt_Widgets by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:27:12 GMT -->
+</html>

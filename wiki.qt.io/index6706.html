@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&oldid=19259 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:17:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Pierwsze kroki w programowaniu z Qt - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pierwsze_kroki_w_programowaniu_z_Qt","wgTitle":"Pierwsze kroki w programowaniu z Qt","wgCurRevisionId":19259,"wgRevisionId":19259,"wgArticleId":1224,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pierwsze_kroki_w_programowaniu_z_Qt","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Pierwsze_kroki_w_programowaniu_z_Qt skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Pierwsze kroki w programowaniu z Qt</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 13:22, 23 August 2015 by <a href="http://wiki.qt.io/index.php?title=User:AutoSpider&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:AutoSpider (page does not exist)">AutoSpider</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:AutoSpider&amp;action=edit&amp;redlink=1" class="new" title="User talk:AutoSpider (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/AutoSpider" title="Special:Contributions/AutoSpider">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&amp;diff=prev&amp;oldid=19259" title="Pierwsze kroki w programowaniu z Qt">diff</a>) <a href="http://wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&amp;direction=prev&amp;oldid=19259" title="Pierwsze kroki w programowaniu z Qt">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="http://wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="http://wiki.qt.io/Updated_pages" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Pierwsze_kroki_w_programowaniu_z_Qt"><span class="tocnumber">1</span> <span class="toctext">Pierwsze kroki w programowaniu z Qt</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Powitalny_notatnik"><span class="tocnumber">1.1</span> <span class="toctext">Powitalny notatnik</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Dodanie_przycisku_Quit"><span class="tocnumber">1.2</span> <span class="toctext">Dodanie przycisku Quit</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Definiowanie_klas_pochodnych_od_QWidget"><span class="tocnumber">1.3</span> <span class="toctext">Definiowanie klas pochodnych od QWidget</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#U.C5.BCywanie_QMainWindow"><span class="tocnumber">1.4</span> <span class="toctext">Używanie QMainWindow</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Zapisywanie_i_.C5.82adowanie"><span class="tocnumber">1.5</span> <span class="toctext">Zapisywanie i ładowanie</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Pierwsze_kroki_w_programowaniu_z_Qt">Pierwsze kroki w programowaniu z Qt</span></h1>
+<p>Witamy w świecie Qt - wieloplatformowego zestawu narzędzi i bibliotek do tworzenia aplikacji z graficznym interfejsem użytkownika (GUI) i nie tylko. Nauczymy cię tutaj podstaw Qt pokazując jak zaimplementować prostą aplikację typu Notatnik. Po lekturze tego przewodnika powinieneś być gotów do zagłębienia się w dokumentację API oraz omówień poszczególnych modułów i rozwiązań dostępnych w Qt. Znajdywanie informacji potrzebnych do stworzenia aplikacji, którą zapewne od dawna planujesz napisać, będzie wówczas przebiegać sprawniej.
+</p>
+<h2><span class="mw-headline" id="Powitalny_notatnik">Powitalny notatnik</span></h2>
+<p>W pierwszym przykładzie stworzymy i pokażemy pole edycji tekstu w jego własnym oknie. Jest to najprostszy możliwy program napisany w Qt posiadający GUI.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/latest/images/gs1.png" class="new" title="File:Http://doc.qt.nokia.com/latest/images/gs1.png">screenshot</a>
+</p><p>Tak wygląda kod owej aplikacji:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QApplication&gt;</span>
+<span class="co2">#include &lt;QTextEdit&gt;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argv<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span><span class="st0">''</span><span class="st0">'args)
+{
+ QApplication app(argv, args);
+&#160;
+ QTextEdit textEdit;
+ textEdit.show();
+&#160;
+ return app.exec();
+}</span></pre></div></div>
+<p>Prześledźmy go linijka po linijce. W dwóch pierwszych dołączamy pliki nagłówkowe <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qapplication.html">QApplication</a> i <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qtextedit.html">QTextEdit</a>, czyli dwóch klas, których użyjemy w tym przykładzie. Wszystkie klasy Qt posiadają pliki nagłówkowe nazwane tak samo jak nazwy klas, których dotyczą.
+</p><p>W 6 linijce tworzony jest obiekt typu <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qapplication.html">QApplication</a>. Zarządza on zasobami aplikacji i jest niezbędny do uruchomienia jakiegokolwiek programu Qt mającego GUI. Parametry argv i args są wymagane, ponieważ każda aplikacja Qt obsługuje zestaw opcji, które można przekazać do programu z linii poleceń (np. -graphicssystem).
+</p><p>W 8 linijce powstaje obiekt typu <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qtextedit.html">QTextEdit</a>. Jest to element mający wizualną reprezentację w GUI, a takie w Qt nazywamy widżetami (z ang. <i>widget</i>). Inne widżety to np. pasek przesuwania (ang. <i>scroll bar</i>), etykieta (ang. <i>label</i>) czy przycisk opcji (ang. <i>radio button</i>). Widżet może być także kontenerem dla innych widżetów, a okno dialogowe jest tego przykładem.
+</p><p>Linijka 9 powoduje wyświetlenie się pola edycji tekstu z jego własną ramką okna. Ponieważ widżety funkcjonują także jako kontenery (np. <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qmainwindow.html">QMainWindow</a> z jego paskami narzędzi, menu, statusu i paroma innymi widżetami), możliwe jest wyświetlenie pojedynczego widżetu w jego własnym oknie. Widżety nie są domyślnie widoczne, ale funkcja <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qwidget.html#show">show()</a> pozwala nam zmienić ten stan rzeczy.
+</p><p>Ostatnia linijka w funkcji main() odpowiedzialna jest za wejście obiektu typu <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qapplication.html">QApplication</a> w jego pętlę zdarzeń (ang. <i>event loop</i>). Programy oparte na Qt korzystają ze zdarzeń, które są generowane i przesyłane w trakcie działania aplikacji między widżetami. Takie zdarzenia to np. naciśnięcie klawisza na klawiaturze lub myszy. W trakcie pisania tekstu w polu edycji, widżet je reprezentujący odbiera zdarzenia informujące o naciśnięciu poszczególnych klawiszy i rysuje wpisany tekst.
+</p><p>Nim uruchomimy naszą aplikację, musimy ją najpierw zbudować. Dokonać tego możemy otwierając z okno z linią poleceń, przechodząc do katalogu, w którym trzymamy wyżej zaprezentowany plik .cpp z kodem programu i wykonując następujące polecenia:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qmake <span class="sy0">-</span>project
+qmake
+make</pre></div></div>
+<p>To spowoduje utworzenie pliku wykonywalnego (w systemie Windows może zaistnieć potrzeba użycia polecenia nmake zamiast make; ponadto plik będzie umieszczony w podkatalogu debug lub release). qmake to narzędzie Qt wspierające budowanie aplikacji poprzez generację plików <a rel="nofollow" class="external text" href="http://pl.wikipedia.org/wiki/Make#Makefile">Makefile</a>, które opisują proces budowania, na bazie specjalnych plików konfiguracyjnych. Taki plik konfiguracyjny (o rozszerzeniu .pro) może zostać wygenerowany automatycznie również dzięki aplikacji qmake przy użyciu opcji -project. Pisaniem własnych plików .pro zajmiemy się później.
+</p>
+<h3><span class="mw-headline" id="Dowiedz_si.C4.99_wi.C4.99cej">Dowiedz się więcej</span></h3>
+<ul>
+<li> Widżety i geometria okien- <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/application-windows.html">Window and Dialog Widgets</a>
+</li>
+</ul>
+<p><b> Zdarzenia i ich obsługa - <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/eventsandfilters.html">The Event System</a></b>
+</p>
+<h2><span class="mw-headline" id="Dodanie_przycisku_Quit">Dodanie przycisku Quit</span></h2>
+<p>W prawdziwej aplikacji zazwyczaj potrzeba więcej niż jednego widżetu. Dodamy więc QPushButton – przycisk – pod polem edycji tekstu. Przycisk ten sprawi, że aplikacja zakończy się w momencie jego naciśnięcia (np. za pomocą kliknięcia myszą).
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/latest/images/gs2.png" class="new" title="File:Http://doc.qt.nokia.com/latest/images/gs2.png">screenshot</a>
+</p><p>Kod źródłowy dla tego przykładu:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QtGui&gt;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argv<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">**</span>args<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw5">QApplication</span> app<span class="br0">&#40;</span>argv<span class="sy0">,</span> args<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw5">QTextEdit</span> textEdit<span class="sy0">;</span>
+ <span class="kw5">QPushButton</span> quitButton<span class="br0">&#40;</span><span class="st0">&quot;Quit&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>quitButton<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>clicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> qApp<span class="sy0">,</span> SLOT <span class="br0">&#40;</span>quit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw5">QVBoxLayout</span> layout<span class="sy0">;</span>
+ layout.<span class="me1">addWidget</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>textEdit<span class="br0">&#41;</span><span class="sy0">;</span>
+ layout.<span class="me1">addWidget</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>quitButton<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw5">QWidget</span> window<span class="sy0">;</span>
+ window.<span class="me1">setLayout</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>layout<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+window.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw1">return</span> app.<span class="me1">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>W 10 linijce wykorzystujemy mechanizm sygnałów i slotów Qt, aby sprawić, że aplikacja zakończy się, kiedy przycisk <b>Quit</b> zostanie naciśnięty. Sygnał, kiedy uruchomiony, wywoła wszystkie powiązane z nim sloty.
+</p><p><a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qcoreapplication.html#quit">quit()</a> jest slotem klasy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qapplication.html">QApplication</a>, który zakańcza aplikację. <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qabstractbutton.html#clicked">clicked()</a> to sygnał <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qpsuhbutton.html">QPushButton</a>, który emitowany jest, gdy przycisk zostanie przyciśnięty. Statyczna metoda <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qobject.html#connect">QObject::connect()</a> zajmuje się dowiązaniem slotu do sygnału. <i>SIGNAL ()_ oraz _SLOT()</i> to dwa makra, które opisują metody mające zostać ze sobą powiązane. Trzeba również podać wskaźniki do obiektów, które emitują i otrzymują dany sygnał.
+</p><p>W linijce 12 tworzymy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qvboxlaout.html">QVBoxLayout</a>. Jak wspominaliśmy, widżety mogą zawierać inne widżety. Można ustawić lokalizację i wymiary każdego widżetu bezpośrednio ale zazwyczaj łatwiej jest użyć layoutu (z ang. „rozkład" lub „układ graficzny" - sposób rozmieszczenia). Layout zarządza wymiarami wszystkich swoich podwidżetów. Na przykład QVBoxLayout ustawia wszystkie podwidżety pionowo w rzędzie.
+</p><p>Linijki 13 oraz 14 dodają pole edycji tekstu oraz przycisk do layoutu. W linijce 17 ustawiony zostaje layout naszego widżetu.
+</p>
+<h3><span class="mw-headline" id="Dowiedz_si.C4.99_wi.C4.99cej_2">Dowiedz się więcej</span></h3>
+<ul>
+<li> Sygnały i sloty - <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/signalsandslots.html">Signals &amp; Slots</a>
+</li>
+<li> Sposoby rozmieszczania - <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/layout.html">Layout Management</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/widgets-and-layouts.html">Widgets and Layouts</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/examples-layouts.html">Layout Examples</a>
+</li>
+<li> Widżety dostępne w Qt - <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/gallery.html">Qt Widget Gallery</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/examples-widgets.html">Widget Examples</a>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Definiowanie_klas_pochodnych_od_QWidget">Definiowanie klas pochodnych od QWidget</span></h2>
+<p>Kiedy użytkownik chce wyjść z aplikacji, możesz chcieć pokazać okno dialogowe, które pyta, czy on, lub ona, rzeczywiście tego chce. W tym przykładzie, stworzymy klasę dziedziczącą z <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qwidget.html">QWidget</a> i dodamy slot, do którego podłączymy przycisk <i>Quit</i>.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/latest/images/gs3.png" class="new" title="File:Http://doc.qt.nokia.com/latest/images/gs3.png">screenshot</a>
+</p><p>Spójrzmy na kod źródłówy:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QtGui&gt;</span>
+&#160;
+<span class="kw2">class</span> Notepad <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QWidget</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+ <span class="kw5">QPushButton</span> quitButton<span class="br0">&#40;</span><span class="st0">&quot;Quit&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ Notepad<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> quit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ layout.<span class="me1">addWidget</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>quitButton<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw2">private</span><span class="sy0">:</span>
+ <span class="kw5">QTextEdit</span> <span class="sy0">*</span>textEdit<span class="sy0">;</span>
+ <span class="kw5">QPushButton</span> <span class="sy0">*</span>quitButton<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Makro <i>Q_OBJECT</i> musi być pierwszym elementem w definicji klasy. Deklaruje ono naszą klasę jako <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qobject.html">QObject</a> (oczywiście musi ona również dziedziczyć z <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qobject.html">QObject</a>). Dodaje to kilka funkcjonalności do zwykłej klasy C++. Przede wszystkim, nazwa klasy i jej slotów mogą być pobrane w trakcie działania programu. Można również pobrać typy parametrów tych slotów i je wywołać.
+</p><p>W linijce 13 deklarowany jest, przy użyciu makra <i>slots</i>, slot quit(). Teraz można podłączyć ten slot do sygnałów ze zgadzającą się sygnaturą, tj. z jakimkolwiek sygnałem, który nie ma parametrów.
+</p><p>Zamiast ustawiania GUI i łączenia slotów w funkcji main(), użyjemy konstruktora klasy Notepad.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Notepad<span class="sy0">::</span><span class="me2">Notepad</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ textEdit <span class="sy0">=</span> <span class="kw1">new</span> QTextEdit<span class="sy0">;</span>
+ quitButton <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QPushButton</span><span class="br0">&#40;</span>tr<span class="br0">&#40;</span><span class="st0">&quot;Quit&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">connect</span><span class="br0">&#40;</span>quitButton<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>clicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>quit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw5">QVBoxLayout</span> <span class="st0">''</span><span class="st0">'layout = new QVBoxLayout;
+ layout-&gt;addWidget(textEdit);
+ layout-&gt;addWidget(quitButton);
+&#160;
+ setLayout(layout);
+&#160;
+ setWindowTitle(tr(&quot;Notepad&quot;));
+ }</span></pre></div></div>
+<p>Jak widać było w definicji klasy, używamy wskaźników do naszych QObject-ów (textEdit oraz quitButton). Z zasady zawsze powinno się tworzyć <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qobject.html">QObiekty</a> na stosie i nigdy ich nie kopiować.
+</p><p>Następnie używamy metody <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qobject.html#tr">tr()</a> dla wszystkich widocznych dla użytkownika ciągów tekstu. Metoda ta jest niezbędna jeżeli chcesz udostępniać swoją aplikację w więcej niż jednym języku (np. po polsku i po angielsku). Nie będziemy wchodzić w szczegóły, możesz zgłębić temat pod linkiem Qt Linguist Manual z tabeli poniżej.
+</p>
+<h3><span class="mw-headline" id="Dowiedz_si.C4.99_wi.C4.99cej_3">Dowiedz się więcej</span></h3>
+<p><b> tr() i internacjonalizacja - <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/linguist-manual.html">Qt Linguist Manual</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/i18n-source-translation.html">Writing Source Code for Translation</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/linguist-hellotr.html">Hello tr() Example</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/internationalization.html">Internationalization with Qt</a></b>
+</p>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qtwebkit-bridge.html#qobjects">QObiekty</a> i model obiektów Qt (materiał kluczowy do zrozumienia Qt) - <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/object.html">Object Model</a>
+</li>
+<li> qmake i system budowania Qt - <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qmake-manual.html">qmake Manual</a>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Tworzenie_pliku_.pro">Tworzenie pliku .pro</span></h3>
+<p>Na potrzeby tego przykładu, napiszemy własny plik .pro zamiast używać qmake z opcją -project.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">HEADERS <span class="sy0">=</span> notepad.<span class="me1">h</span>
+SOURCES <span class="sy0">=</span> notepad.<span class="me1">cpp</span>  main.<span class="me1">cpp</span></pre></div></div>
+<p>Do zbudowania naszej aplikacji wystarczą teraz dwa polecenia:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qmake
+make</pre></div></div>
+<h2><span class="mw-headline" id="U.C5.BCywanie_QMainWindow">Używanie QMainWindow</span></h2>
+<p>Wiele aplikacji skorzysta z plusów używania <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qmainwindow.html">QMainWindow</a>. Klasa ta dostarcza swój własny layout, do którego można dodać menu, zadokowane widgety, paski narzędzi i pasek statusu. <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qobject.html">QMainWindow</a> ma centralną strefę, która może być zajmowana przez dowolny widget. W naszym przypadku będzie to pole edycji tekstu.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/latest/images/gs4.png" class="new" title="File:Http://doc.qt.nokia.com/latest/images/gs4.png">screenshot</a>
+</p><p>Oto kod nowa definicja klasy Notepad:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="co2">#include &lt;QtGui&gt;</span>
+&#160;
+ <span class="kw2">class</span> Notepad <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QMainWindow</span>
+ <span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+ <span class="kw2">public</span><span class="sy0">:</span>
+ Notepad<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw2">private</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> open<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> save<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> quit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw2">private</span><span class="sy0">:</span>
+ <span class="kw5">QTextEdit</span> <span class="sy0">*</span>textEdit<span class="sy0">;</span>
+&#160;
+ <span class="kw5">QAction</span> <span class="sy0">*</span>openAction<span class="sy0">;</span>
+ <span class="kw5">QAction</span> <span class="sy0">*</span>saveAction<span class="sy0">;</span>
+ <span class="kw5">QAction</span> <span class="sy0">*</span>exitAction<span class="sy0">;</span>
+&#160;
+ <span class="kw5">QMenu</span> <span class="st0">''</span><span class="st0">'fileMenu;
+ };</span></pre></div></div>
+<p>Dołączyliśmy dwa nowe sloty, które zapiszą i wczytają dokument. Zaimplementujemy je w następnej sekcji.
+</p><p>Bardzo często w głównym oknie ten sam slot może być wywołany przez kilka widżetów. Przykładem może być opcja w menu i przycisk na pasku narzędzi. Zeby to uprościć, Qt dostarcza klasę <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qaction.html">QAction</a>, obiektowi której podać można kilka widżetów i podłączyć go do slotu. Na przykład <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qmenu.html">QMenu</a> i <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qtoolbar.html">QToolBar</a> mogą stworzyć wpisy w menu i przycisku na pasku z tej samej QAction. Za chwilę zobaczymy, w jaki sposób to zrobić.
+</p><p>Tak jak wcześniej, używamy konstruktora klasy Notepad do zestawienia GUI:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Notepad<span class="sy0">::</span><span class="me2">Notepad</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ saveAction <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QAction</span><span class="br0">&#40;</span>tr<span class="br0">&#40;</span><span class="st0">&quot;&amp;Open&quot;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ saveAction <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QAction</span><span class="br0">&#40;</span>tr<span class="br0">&#40;</span><span class="st0">&quot;&amp;Save&quot;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ exitAction <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QAction</span><span class="br0">&#40;</span>tr<span class="br0">&#40;</span><span class="st0">&quot;E&amp;xit&quot;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw2">connect</span><span class="br0">&#40;</span>openAction<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>triggered<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>open<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span>saveAction<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>triggered<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>save<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span>exitAction<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>triggered<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> qApp<span class="sy0">,</span> SLOT <span class="br0">&#40;</span>quit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ fileMenu <span class="sy0">=</span> menuBar<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">addMenu</span><span class="br0">&#40;</span>tr<span class="br0">&#40;</span><span class="st0">&quot;&amp;File&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ fileMenu<span class="sy0">-&gt;</span><span class="me3">addAction</span><span class="br0">&#40;</span>openAction<span class="br0">&#41;</span><span class="sy0">;</span>
+ fileMenu<span class="sy0">-&gt;</span><span class="me3">addAction</span><span class="br0">&#40;</span>saveAction<span class="br0">&#41;</span><span class="sy0">;</span>
+ fileMenu<span class="sy0">-&gt;</span><span class="me3">addSeparator</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ fileMenu<span class="sy0">-&gt;</span><span class="me3">addAction</span><span class="br0">&#40;</span>exitAction<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ textEdit <span class="sy0">=</span> <span class="kw1">new</span> QTextEdit<span class="sy0">;</span>
+ setCentralWidget<span class="br0">&#40;</span>textEdit<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ setWindowTitle<span class="br0">&#40;</span>tr<span class="br0">&#40;</span><span class="st0">&quot;Notepad&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p><a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qaction.html">QAction</a> tworzone są z tekstu, który ma pojawić się na widżecie, do którego je dodajemy - w tym przypadku do opcji w menu. Gdybyśmy chcieli dodać akcje dodatkowo do paska narzędzi, moglibyśmy dać im również <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qicon.html">ikony</a>.
+</p><p>Teraz, w momencie kliknięcia wpisu w menu, uruchomi on akcję i wywoła odpowiedni slot.
+</p>
+<h3><span class="mw-headline" id="Dowiedz_si.C4.99_wi.C4.99cej_4">Dowiedz się więcej</span></h3>
+<p><b> Główne okna i klasy je udostępniające- <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/mainwindow.html">Application Main Window</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/examples-mainwindow.html">Main Window Examples</a></b>
+</p>
+<ul>
+<li> Aplikacje MDI - <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qmdiarea.html">QMdiArea</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/mainwindows-mdi.html">MDI Example</a>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Zapisywanie_i_.C5.82adowanie">Zapisywanie i ładowanie</span></h2>
+<p>W tym przykładzie, zaimplementujemy funkcjonalność slotów <i>open()</i> oraz <i>save()</i>, które dodaliśmy w poprzedniej sekcji.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/latest/images/gs4.png" class="new" title="File:Http://doc.qt.nokia.com/latest/images/gs4.png">screenshot</a>
+</p><p>Zaczniemy od slotu <i>open()</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QString</span> fileName <span class="sy0">=</span> <span class="kw5">QFileDialog</span><span class="sy0">::</span><span class="me2">getOpenFileName</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> tr<span class="br0">&#40;</span><span class="st0">&quot;Open File&quot;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="st0">&quot;&quot;</span><span class="sy0">,</span>
+ tr<span class="br0">&#40;</span><span class="st0">&quot;Text Files ('''.txt);;C++ Files ('''.cpp *.h)&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw1">if</span> <span class="br0">&#40;</span>fileName <span class="sy0">!=</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw5">QFile</span> file<span class="br0">&#40;</span>fileName<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>file.<span class="me1">open</span><span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">::</span><span class="me2">ReadOnly</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw5">QMessageBox</span><span class="sy0">::</span><span class="me2">critical</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> tr<span class="br0">&#40;</span><span class="st0">&quot;Error&quot;</span><span class="br0">&#41;</span><span class="sy0">,</span>
+ tr<span class="br0">&#40;</span><span class="st0">&quot;Could not open file&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ return<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="kw5">QString</span> contents <span class="sy0">=</span> file.<span class="me1">readAll</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">constData</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ textEdit<span class="sy0">-&gt;</span><span class="me3">setPlainText</span><span class="br0">&#40;</span>contents<span class="br0">&#41;</span><span class="sy0">;</span>
+ file.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Pierwszy krok to zapytanie użytkownika o nazwę pliku do wczytania. Qt dostarcza <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qfiledialog.html">QFileDialog</a>, który jest oknem dialogowym, gdzie użytkownik wybiera plik. Obrazek wyżej ukazuje takie okno na systemie Kubuntu. Statyczna metoda <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qfiledialog.html#getOpenFileName">getOpenFileName()</a> wyświetla modalne okno dialogowe i nie zwraca wartości dopóki użytkownik nie wybierze pliku. Zwracana przez nią wartość to ścieżka do wybranego pliku, lub pusty ciąg jeżeli użytkownik anulowal wybór.
+</p><p>Gdy mamy ścieżkę, otwieramy plik metodą <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qiodevice.html#open">open()</a>, która zwraca <i>true</i>, jeżeli operacja się powiodła. Nie będziemy zgłębiać obsługi błędów, jest ona opisane w linkach z tabeli <b>Dowiedz się więcej</b>. Jeżeli otwarcie pliku jest niemożliwe, używamy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qmessagebox.html">QMessageBox</a> do wyświetlenia okna z komunikatem błędu (zobacz opis klasy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qmessagebox.html">QMessageBox</a> po więcej szczegółów).
+</p><p>Sam odczyt danych jest trywialny dzięki użyciu metody <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qiodevice.html#readAll">readAll()</a>, która zwraca wszystkie dane w postaci <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qbytearray.html">QByteArray</a>. <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qbytearray.html#constData">constData()</a> zwraca tablicę jako const char*, dla której klasa <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qstring.html">QString</a> ma zdefiniowany konstruktor. Następnie zawartość pliku może być wyświetlona w polu edycji. Możemy więc zamknąć plik metodą <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qiodevice.html#close">close()</a>, aby oddać systemowi operacyjnemu deskryptor pliku.
+</p><p>Przejdźmy do slotu <i>save()</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QString</span> fileName <span class="sy0">=</span> <span class="kw5">QFileDialog</span><span class="sy0">::</span><span class="me2">getSaveFileName</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> tr<span class="br0">&#40;</span><span class="st0">&quot;Save File&quot;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="st0">&quot;&quot;</span><span class="sy0">,</span>
+ tr<span class="br0">&#40;</span><span class="st0">&quot;Text Files ('''.txt);;C++ Files ('''.cpp '''.h)&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw1">if</span> <span class="br0">&#40;</span>fileName <span class="sy0">!=</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw5">QFile</span> file<span class="br0">&#40;</span>fileName<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>file.<span class="me1">open</span><span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">::</span><span class="me2">WriteOnly</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="co1">// error message</span>
+ <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+ <span class="kw5">QTextStream</span> stream<span class="br0">&#40;</span><span class="sy0">&amp;</span>file<span class="br0">&#41;</span><span class="sy0">;</span>
+ stream <span class="sy0">&lt;&lt;</span> textEdit<span class="sy0">-&gt;</span><span class="me3">toPlainText</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ stream.<span class="me1">flush</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ file.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Do zapisywania zawartości pola edycji do pliku używamy klasy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qtextstream.html">QTextStream</a>, która opakowuje obiekt <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qfile.html">QFile</a>. Strumień może zapisywać <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qstring.html">QString</a> bezpośrednio do pliku, natomiast <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qfile.html">QFile</a> akceptuje jedynie czyste dane (<i>char*</i>) przy pomocy metody <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qiodevice.html#write">write()</a> z klasy <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qiodevice.html">QIODevice</a>.
+</p>
+<h3><span class="mw-headline" id="Dowiedz_si.C4.99_wi.C4.99cej_5">Dowiedz się więcej</span></h3>
+<p><b> Pliki i urządzenia we/wy - <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qfile.html">QFile</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qiodevice.html">QIODevice</a></b>
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.232 seconds
+Real time usage: 0.240 seconds
+Preprocessor visited node count: 164/1000000
+Preprocessor generated node count: 344/1000000
+Post‐expand include size: 1348/2097152 bytes
+Template argument size: 432/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1224-0!*!0!!en!2!* and timestamp 20151105100550 and revision id 19259
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&amp;oldid=19259">http://wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&amp;oldid=19259</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/Category:Articles_needing_cleanup" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="http://wiki.qt.io/index.php?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Pierwsze+kroki+w+programowaniu+z+Qt" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Pierwsze_kroki_w_programowaniu_z_Qt"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Pierwsze_kroki_w_programowaniu_z_Qt&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Pierwsze_kroki_w_programowaniu_z_Qt" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Pierwsze_kroki_w_programowaniu_z_Qt" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Pierwsze_kroki_w_programowaniu_z_Qt" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&amp;oldid=19259&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&amp;oldid=19259" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:22.</li>
+											<li id="footer-info-viewcount">This page has been accessed 3,778 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":245});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Pierwsze_kroki_w_programowaniu_z_Qt&oldid=19259 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:17:09 GMT -->
+</html>

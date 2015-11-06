@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&oldid=16951 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:02:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Regexp engine in Qt5 - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=ext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Regexp_engine_in_Qt5","wgTitle":"Regexp engine in Qt5","wgCurRevisionId":16951,"wgRevisionId":16951,"wgArticleId":1902,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing Qt::Qt Planning::Qt Public Roadmap"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Regexp_engine_in_Qt5","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Regexp_engine_in_Qt5 skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Regexp engine in Qt5</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 15:41, 22 May 2015 by <a href="http://wiki.qt.io/index.php?title=User:Uflex&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Uflex (page does not exist)">Uflex</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:Uflex&amp;action=edit&amp;redlink=1" class="new" title="User talk:Uflex (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Uflex" title="Special:Contributions/Uflex">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&amp;diff=prev&amp;oldid=16951" title="Regexp engine in Qt5">diff</a>) <a href="http://wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&amp;direction=prev&amp;oldid=16951" title="Regexp engine in Qt5">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Regular_expression_engine_in_Qt5"><span class="tocnumber">1</span> <span class="toctext">Regular expression engine in Qt5</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Current_issues_with_QRegExp"><span class="tocnumber">1.1</span> <span class="toctext">Current issues with QRegExp</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Future"><span class="tocnumber">2</span> <span class="toctext">Future</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Proposed_libraries"><span class="tocnumber">2.1</span> <span class="toctext">Proposed libraries</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Feature_matrix"><span class="tocnumber">2.2</span> <span class="toctext">Feature matrix</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Benchmarks"><span class="tocnumber">3</span> <span class="toctext">Benchmarks</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Regular_expression_engine_in_Qt5">Regular expression engine in Qt5</span></h1>
+<p>This page summarizes the research for an alternative regular expression engine to be used in <a href="http://wiki.qt.io/Qt_5.0" title="Qt 5.0" class="mw-redirect"> Qt 5.0</a>. The discussion started on the qt5-feedback mailing list, cf.
+</p>
+<ul>
+<li> <a rel="nofollow" class="external free" href="http://lists.qt-project.org/pipermail/qt5-feedback/2011-September/001004.html">http://lists.qt-project.org/pipermail/qt5-feedback/2011-September/001004.html</a>
+</li>
+<li> <a rel="nofollow" class="external free" href="https://bugreports.qt.io/browse/QTBUG-20888">https://bugreports.qt.io/browse/QTBUG-20888</a>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Current_issues_with_QRegExp">Current issues with QRegExp</span></h2>
+<p>From <a rel="nofollow" class="external free" href="http://lists.qt-project.org/pipermail/qt5-feedback/2011-September/001054.html">http://lists.qt-project.org/pipermail/qt5-feedback/2011-September/001054.html</a>
+</p>
+<h3><span class="mw-headline" id="High_level_issues">High level issues</span></h3>
+<ul>
+<li> QRegExp API is broken (see <b>T7</b> in Low Level)
+</li>
+<li> QRegExp is used for QtScript though it does not fullfill the ECMAScript specification <a rel="nofollow" class="external text" href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMA-262-1999</a> . Missing features include
+<ul>
+<li> Non-greedy quantifiers (see page 141 titled "- 129 -")
+</li>
+<li> But current implementation of QtScript uses JSC which uses its own engine anyway, and only use QRegExp in its api as a container.
+</li>
+</ul>
+</li>
+<li> Patternist/XPath also needs Regex features not found in QRegExp, including
+<ul>
+<li> Non-greedy quantifiers ( <a rel="nofollow" class="external free" href="http://www.w3.org/TR/xpath-functions/#regex-syntax">http://www.w3.org/TR/xpath-functions/#regex-syntax</a> )
+</li>
+</ul>
+</li>
+<li> Qt Creator might want to offer multi-line Regex search- and replacing later. This cannot be efficient because of <b>T6</b> described below. GtkSourceView has exactly <a rel="nofollow" class="external text" href="http://bugzilla.gnome.org/show_bug.cgi?id=134674#c1">that problem</a> …
+</li>
+<li> Customer complained about QRegExp (though I don't see what's their exact problem):
+<ul>
+<li> <i>In their code they have RegExp? for matching emoticons. Unfortunately, they cannot use QRegExp? because of poor support for negative/positive lookahead. As a workaround they are using the PCRE (Perl Compatible Regular Expressions) library.</i>
+</li>
+</ul>
+</li>
+<li> Public task request:
+<ul>
+<li> Lookbehind (<b>T4</b>) (<a rel="nofollow" class="external text" href="http://trolltech.com/developer/task-tracker/index_html?id=217916&amp;method=entry">bug 217916</a>)
+</li>
+<li> Support for POSIX syntax (<a rel="nofollow" class="external text" href="http://trolltech.com/developer/task-tracker/index_html?id=218604&amp;method=entry">bug 218604</a>)
+</li>
+<li> Removing const modifiers (<b>T7</b>) (<a rel="nofollow" class="external text" href="http://trolltech.com/developer/task-tracker/index_html?id=219234&amp;method=entry">bug 219234</a>, <a rel="nofollow" class="external text" href="http://trolltech.com/developer/task-tracker/index_html?id=209041&amp;method=entry">bug 209041</a>)
+</li>
+<li> Non-greedy quantifiers (<b>T3</b>) (<a rel="nofollow" class="external text" href="http://trolltech.com/developer/task-tracker/index_html?id=116127&amp;method=entry">bug 116127</a>)
+</li>
+</ul>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Low_Level_issues">Low Level issues</span></h3>
+<ul>
+<li> <b>T1</b>: ^ (caret) and $ (dollar) cannot match at each newline
+</li>
+<li> <b>T2</b>: . (dot) always matches newlines
+</li>
+<li> <b>T3</b>: lazy/non-greedy/reluctant quantifiers are not supported. this is not to be confused with minimal matching.
+</li>
+<li> <b>T4</b>: lookbehind is not supported (lookahead is)
+</li>
+<li> <b>T5</b>: lastIndexIn does not find that last match which indexIn would have found, e.g. lastIndexIn("abcd") for pattern ".*" returns 3, not 0
+</li>
+<li> <b>T6</b>: only linear input is supported, for a text editor like Kate this does not scale
+</li>
+<li> <b>T7</b>: QRegExp combines matcher and match object, despite the 1:n relation. As a consequence matching with a const QRegExp instance modifies a const object.
+</li>
+</ul>
+<h1><span class="mw-headline" id="Future">Future</span></h1>
+<ul>
+<li> It <b>must</b> be a solid 3rd party engine — don't want to develop an in-house engine and maintain it.
+</li>
+<li> QRegExp likely to be moved into its own module in order to keep source compatibility.
+</li>
+<li> Addresses the above low-level issues (as much as possible).
+</li>
+<li> (Nice to have) At least the same syntax / features than std::regex
+</li>
+</ul>
+<h2><span class="mw-headline" id="Proposed_libraries">Proposed libraries</span></h2>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://www.pcre.org/">PCRE</a>
+</li>
+<li> "V8"
+</li>
+<li> <a rel="nofollow" class="external text" href="http://userguide.icu-project.org/strings/regexp">ICU</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http://www.boost.org/doc/libs/1_47_0/libs/regex/doc/html/index.html">Boost.Regex</a>
+</li>
+<li> std::regex (new in C+<i>11)</i>
+</li>
+<li> <a rel="nofollow" class="external text" href="http://code.google.com/p/re2/">RE2</a>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Feature_matrix">Feature matrix</span></h2>
+<table class="wikitable">
+<tr>
+<th>
+</th>
+<th> QRegExp
+</th>
+<th> PCRE
+</th>
+<th> V8
+</th>
+<th> ICU
+</th>
+<th> Boost.Regex
+</th>
+<th> std::regex
+</th>
+<th> RE2
+</th></tr>
+<tr>
+<th> General comments
+</th>
+<td> See above.
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> Already being used in Qt?
+</th>
+<td> Yes
+</td>
+<td> Indirectly as a GLIB dependency under Unix. Moreover, a stripped down version of PCRE is available inside WebKit (src/3rdparty/webkit/JavaScriptCore/pcre); all features not required by the JS specification were removed.
+</td>
+<td> Yes (Qt 5)
+</td>
+<td> libicui18n (optionally?) used by Qt 4.8 / Qt 5 in QLocale.
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td></tr>
+<tr>
+<th> Pros
+</th>
+<td>
+</td>
+<td>Widely used, de-facto standard implementation for Perl-like regexps.
+</td>
+<td>
+</td>
+<td>Uses UTF-16 natively.
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>very fast, use a DFA
+</td></tr>
+<tr>
+<th> Cons
+</th>
+<td>
+</td>
+<td>Does not run on every platform supported by QtCore / QtBase[2].
+</td>
+<td>
+</td>
+<td>Boost does not give guarantees about ABI compatibility.
+</td>
+<td>
+</td>
+<td>uses UTF-8, doesn't have the lookbehind neither lookahead
+</td></tr>
+<tr>
+<th> Fixes T1
+</th>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td> ✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> Fixes T2
+</th>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td> ✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> Fixes T3
+</th>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>?
+</td></tr>
+<tr>
+<th> Fixes T4
+</th>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>
+</td>
+<td> ✘
+</td></tr>
+<tr>
+<th> Fixes T5
+</th>
+<td>
+</td>
+<td>?
+</td>
+<td>
+</td>
+<td>?
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> Fixes T6
+</th>
+<td>
+</td>
+<td>✔ ("by hand", with partial matching)
+</td>
+<td>
+</td>
+<td>Maybe yes, see <a rel="nofollow" class="external text" href="http://userguide.icu-project.org/strings/utext">UText</a> .
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔ see StringPiece
+</td></tr>
+<tr>
+<th> Fixes T7
+</th>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td> ✘
+</td></tr></table>
+<p>✘✔
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Supported_syntax:_Characters">Supported syntax: Characters</span></h3>
+<table class="wikitable">
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th> QRegExp
+</th>
+<th> PCRE
+</th>
+<th> V8
+</th>
+<th> ICU
+</th>
+<th> Boost.Regex
+</th>
+<th> std::regex
+</th>
+<th> RE2
+</th></tr>
+<tr>
+<th> \a
+</th>
+<td>BELL
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \A
+</th>
+<td>beginning of input
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \b inside a [set]
+</th>
+<td>BACKSPACE
+</td>
+<td>?
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \b outside a [set]
+</th>
+<td>on a word boundary
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \B
+</th>
+<td>not on a word boundary
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \cX
+</th>
+<td>ASCII control character X
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \d
+</th>
+<td>digit
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \D
+</th>
+<td>non digit
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \e
+</th>
+<td>ESCAPE
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \E
+</th>
+<td>end of \Q … \E quoting
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \f
+</th>
+<td>FORM FEED
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \G
+</th>
+<td>end of previous match
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \n
+</th>
+<td>LINE FEED
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \N{x}
+</th>
+<td>UNICODE CHARACTER NAME x
+</td>
+<td>✘
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \p{x}
+</th>
+<td>UNICODE PROPERTY NAME x
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \P{x}
+</th>
+<td>UNICODE PROPERTY NAME not x
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \Q
+</th>
+<td>start of \Q … \E quoting
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \r
+</th>
+<td>CARRIAGE RETURN
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \s
+</th>
+<td>white space
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \S
+</th>
+<td>non white space
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \t
+</th>
+<td>HORIZONTAL TAB
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \uhhhh
+</th>
+<td>U+hhhh (between U+0000 and U+FFFF)
+</td>
+<td>✘
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \Uhhhhhhhh
+</th>
+<td>U+hhhhhhhh (between U+00000000 and U+0010FFFF)
+</td>
+<td>✘
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \v
+</th>
+<td> VERTICAL TAB
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \w
+</th>
+<td>word character
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \W
+</th>
+<td>non word character
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \x{hhhh}
+</th>
+<td>U+hhhh
+</td>
+<td>✘
+</td>
+<td>✔ (0-10FFFF)
+</td>
+<td>
+</td>
+<td>✔ (0-10FFFF)
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \xhhhh
+</th>
+<td>U+hhhh
+</td>
+<td>✔ (0000-FFFF)
+</td>
+<td>✔ (00-FF)
+</td>
+<td>
+</td>
+<td>✔ (00-FF)
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \X
+</th>
+<td>grapheme cluster
+</td>
+<td>✘
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \Z
+</th>
+<td>end of input (or before the final )
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \z
+</th>
+<td>end of input
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \n
+</th>
+<td>n-th backreference
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \0ooo
+</th>
+<td>ASCII/Latin-1 character 0ooo
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> .
+</th>
+<td>any character but newlines
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> ^
+</th>
+<td>line beginning
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> $
+</th>
+<td>line end
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> \
+</th>
+<td>quote the following symbol
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<th> [pattern]
+</th>
+<td>set
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h3><span class="mw-headline" id="Supported_syntax:_Operators">Supported syntax: Operators</span></h3>
+<table class="wikitable">
+<tr>
+<th> Operator
+</th>
+<th>
+</th>
+<th> QRegExp
+</th>
+<th> PCRE
+</th>
+<th> V8
+</th>
+<th> ICU
+</th>
+<th> Boost.Regex
+</th>
+<th> std::regex
+</th>
+<th> RE2
+</th></tr>
+<tr>
+<th> *
+</th>
+<td>match 0 or more times
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>?
+</td>
+<td>?
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> +
+</th>
+<td>match 1 or more times
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th>&#160;?
+</th>
+<td>match 0 or 1 times
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> {n}
+</th>
+<td>match n times
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> {n,}
+</th>
+<td>match n or more times
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> {n,m}
+</th>
+<td>match between n and m times
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> *?
+</th>
+<td>match 0 or more times, not greedy
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> <i>?</i>
+</th>
+<td>match 1 or more times, not greedy
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th>&#160;??
+</th>
+<td>match 0 or 1 times, not greedy
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> {n}?
+</th>
+<td>match n times
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> {n,}?
+</th>
+<td>match n or more times, not greedy
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> {n,m}?
+</th>
+<td>match between n and m times, not greedy
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> *+
+</th>
+<td>match 0 or more times, possessive
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th><i>+</i>
+</th>
+<td>match 1 or more times, possessive
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th>&#160;?
+</th>
+<td>match 0 or 1 times, possessive
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> {n}+
+</th>
+<td>match n times
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> {n,}+
+</th>
+<td>match n or more times, possessive
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> {n,m}+
+</th>
+<td>match between n and m times, possessive
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> ( … )
+</th>
+<td>capturing group
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> (?: … )
+</th>
+<td>group
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> (?&gt; … )
+</th>
+<td>atomic grouping
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> (?# … )
+</th>
+<td>comment
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> (?= … )
+</th>
+<td>look-ahead assertion
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> (?! … )
+</th>
+<td>negative look-ahead assertion
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> (?&lt;= … )
+</th>
+<td>look-behind assertion
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> (?&lt;! … )
+</th>
+<td>negative look-behind assertion
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> (?flags: … )
+</th>
+<td>flags change
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> (?flags)
+</th>
+<td>flags change
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> (?P&lt;name&gt; …)
+</th>
+<td>named capturing group
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> (?&lt;name&gt; …)
+</th>
+<td>named capturing group
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> (?'name' …)
+</th>
+<td>named capturing group
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr>
+<tr>
+<th> …)
+</th>
+<td>branch reset
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✘
+</td></tr></table>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Supported_syntax:_flags">Supported syntax: flags</span></h3>
+<table class="wikitable">
+<tr>
+<th> Flag
+</th>
+<th>
+</th>
+<th> QRegExp
+</th>
+<th> PCRE
+</th>
+<th> V8
+</th>
+<th> ICU
+</th>
+<th> Boost.Regex
+</th>
+<th> std::regex
+</th>
+<th> RE2
+</th></tr>
+<tr>
+<th> /i
+</th>
+<td>case insensitive
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> /m
+</th>
+<td>multi-line
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> /s
+</th>
+<td>dot matches anything
+</td>
+<td>~<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> /x
+</th>
+<td>ignore whitespace and comments
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr>
+<tr>
+<th> /U
+</th>
+<td>minimal match
+</td>
+<td>✔
+</td>
+<td>✔
+</td>
+<td>
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>✔
+</td></tr></table>
+<h1><span class="mw-headline" id="Benchmarks">Benchmarks</span></h1>
+<p>See <a rel="nofollow" class="external free" href="https://gitorious.org/qt-regexp-benchmarks/qt-regexp-benchmarks">https://gitorious.org/qt-regexp-benchmarks/qt-regexp-benchmarks</a> for the code and <a rel="nofollow" class="external free" href="https://gitorious.org/qt-regexp-benchmarks/pages/Home">https://gitorious.org/qt-regexp-benchmarks/pages/Home</a> for some results.
+</p>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">It's actually not possible to UNSET /s for QRegExp, i.e. making the dot not to match a newline.</span>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.062 seconds
+Real time usage: 0.073 seconds
+Preprocessor visited node count: 67/1000000
+Preprocessor generated node count: 138/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1902-0!*!0!!en!*!* and timestamp 20151105023330 and revision id 16951
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&amp;oldid=16951">http://wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&amp;oldid=16951</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/index.php?title=Category:Developing_Qt::Qt_Planning::Qt_Public_Roadmap&amp;action=edit&amp;redlink=1" class="new" title="Category:Developing Qt::Qt Planning::Qt Public Roadmap (page does not exist)">Developing Qt::Qt Planning::Qt Public Roadmap</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Regexp+engine+in+Qt5" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Regexp_engine_in_Qt5"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Regexp_engine_in_Qt5&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Regexp_engine_in_Qt5" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Regexp_engine_in_Qt5" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Regexp_engine_in_Qt5" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&amp;oldid=16951&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&amp;oldid=16951" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 22 May 2015, at 15:41.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,458 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":806});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Regexp_engine_in_Qt5&oldid=16951 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:02:42 GMT -->
+</html>

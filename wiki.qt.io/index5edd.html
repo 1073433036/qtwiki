@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_5_from_Git/zh&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for Building Qt 5 from Git/zh - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building_Qt_5_from_Git/zh","wgTitle":"Building Qt 5 from Git/zh","wgCurRevisionId":19115,"wgRevisionId":0,"wgArticleId":161,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building_Qt_5_from_Git/zh","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building_Qt_5_from_Git_zh skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for Building Qt 5 from Git/zh</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/Building_Qt_5_from_Git/zh" title="Building Qt 5 from Git/zh">Building Qt 5 from Git/zh</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{Cleanup | reason=Auto-imported from ExpressionEngine.}}
+
+[[Category:HowTo]]
+[[Category:Developing_with_Qt]]
+
+{{LangSwitch}}
+
+
+= 在Git中构建Qt 5 =
+
+== 简介 ==
+
+本文将给出一些提示，来让你从Git中获取模块化的Qt5并构建它（在桌面平台上）。请随时更新本篇文章以反映开发过程中的变化。通过 http://forum.qt.io/viewthread/7018 来报告本文相关的问题。
+
+如果你也想编译Qt Creator，参考 [http://wiki.qt.io/Building-Qt-Creator-from-Git Building Qt Creator from Git].
+
+== 系统要求 ==
+
+=== 所有的桌面平台 ===
+
+* Git ('''>= 1.6.x''')
+* Perl ('''>=5.14''')
+* Python ('''>=2.6.x''')
+* 可以工作的编译器
+
+如需更多详细信息, 参考 [http://doc.qt.io/qt-5.1/qtdoc/requirements.html General Qt Requirements]
+
+==== SSL (可选) ====
+
+参考 [http://doc.qt.io/qt-5.1/qtnetwork/ssl.html#enabling-and-disabling-ssl-support Enabling and Disabling SSL Support]
+
+==== WebKit (可选) ====
+
+* bison
+* flex
+* gperf
+* [http://www.ruby-lang.org/ Ruby]
+* [http://site.icu-project.org/ ICU]
+
+对于 Windows来说, ''bison'', ''flex'' 和 ''gperf'' 可以从位于 ''&lt;qt>32\bin'' 的Git仓库获得。你可以从http://www.rubyinstaller.org/ 获得Ruby。你可以从 icu-project.org (MSVC 2010 only)下载提前编译好的ICU软件包，或者 [http://wiki.qt.io/Compiling-ICU 自行编译]
+
+=== Linux/X11 ===
+
+==== 软件包的简易安装 (仅限Ubuntu 11.10 — 12.10 ) ====
+
+对于Ubuntu/Debian, Gabor Loki 已经提供了一个定制的PPA， 使用 [https://launchpad.net/~u-szeged/+archive/sedkit sedkit-env-webkit] meta package 你可以安装Qt/Qt WebKit所需的全部依赖包。你可以通过如下命令添加PPA:
+
+&lt;code>
+sudo apt-add-repository ppa:u-szeged/sedkit &amp;&amp; sudo apt-get update &amp;&amp; sudo apt-get install sedkit-env-qtwebkit
+&lt;/code>
+
+对于其它的发行版，以如下的方式取得各自的组件。
+
+==== Build-essentials ====
+
+===== Ubuntu/Debian: =====
+
+&lt;code>
+sudo apt-get install build-essential perl python git
+&lt;/code>
+
+===== Fedora:
+&lt;code>
+su - -c "yum install perl-version"
+&lt;/code> =====
+
+===== OpenSUSE: =====
+
+&lt;code>
+sudo zypper install git-core gcc-c++ make
+&lt;/code>
+
+==== Libxcb ====
+
+[http://xcb.freedesktop.org/ Libxcb] 是基于X11/Xorg的平台的默认窗口系统后端，因此你应该安装libxcb及其附随的软件包。 不管xcb在你的系统上是什么版本，Qt5 应该都可以构建。(但是最好使用 v1.8 或者更高的版本). [http://code.qt.io/qt/qtbase/blobs/stable/src/plugins/platforms/xcb/README src/plugins/platforms/xcb/README] 列出了所需的xcb软件包。
+
+===== Ubuntu/Debian: =====
+
+&lt;code>
+sudo apt-get install "^libxcb.'''" libx11-xcb-dev libglu1-mesa-dev libxrender-dev
+&lt;/code>
+
+===== Fedora up to 16: =====
+&lt;code>
+su - -c "yum install libxcb libxcb-devel xcb-util xcb-util-devel"
+&lt;/code>
+
+===== Fedora 17+ (xcb-util-renderutil is currently available in updates repository until it goes stable): =====
+&lt;code>
+su- -c "yum —enablerepo=updates install libxcb libxcb-devel xcb-util xcb-util-devel xcb-util-'''-devel libX11-devel libXrender-devel"
+&lt;/code>
+
+===== OpenSuSE 12.2
+&lt;code>
+sudo zypper in xorg-x11-libxcb-devel xcb-util-devel xcb-util-image-devel xcb-util-keysyms-devel xcb-util-renderutil-devel xcb-util-wm-devel xorg-x11-devel libxkbcommon-devel
+&lt;/code> =====
+
+===== ArchLinux:
+&lt;code>
+sudo pacman -S —needed libxcb xcb-proto xcb-util xcb-util-image xcb-util-wm
+&lt;/code> =====
+
+在Chakra Linux上，除了ArchLinux所提到的软件包，你需要单独安装xcb-util-keysyms 软件包，其可以通过CCR得到。
+
+===== Mandriva/ROSA/Unity:
+&lt;code>
+urpmi 'pkgconfig(xcb)' 'pkgconfig(xcb-icccm)' 'pkgconfig(xcb-image)' 'pkgconfig(xcb-renderutil)' 'pkgconfig(xcb-keysyms)' 'pkgconfig(xrender)'
+&lt;/code> =====
+
+===== Centos 5/6 =====
+
+安装Qt构建时所缺失的依赖：
+&lt;code>
+yum install libxcb libxcb-devel xcb-util xcb-util-devel
+&lt;/code>
+
+你需要为CentOS-5/6 x86_64 安装 Red Hat DevTools 1.1，因为默认的CentOS上安装的是过时的GCC。
+&lt;code>
+wget http://people.centos.org/tru/devtools-1.1/devtools-1.1.repo -O /etc/yum.repos.d/devtools-1.1.repo
+yum install devtoolset-1.1
+&lt;/code>
+
+你还需要初始化刚安装的开发工具：
+&lt;code>
+scl enable devtoolset-1.1 bash
+
+# Test- Expect to see gcc version 4.7.2 ( * not * gcc version 4.4.7 )
+gcc -v
+&lt;/code>
+
+如需*CentOS*上的更多相关信息，参考 [https://forum.qt.io/viewthread/30708/ 这篇文章].
+
+==== OpenGL support ====
+因为Qt Quick 2，推荐系统上有原生的OpenGL 2.0 驱动支持。
+
+==== Accessibility ====
+推荐使用accessibility来构建, 安装 '''libatspi 2''' 和 '''libdbus-1''' 开发包。
+
+==== Qt WebKit ====
+===== Ubuntu/Debian: =====
+&lt;code>
+sudo apt-get install flex bison gperf libicu-dev libxslt-dev ruby
+&lt;/code>
+
+===== Fedora: =====
+&lt;code>
+su- -c "yum install flex bison gperf libicu-devel libxslt-devel ruby"
+&lt;/code>
+
+===== OpenSUSE:
+&lt;code>
+sudo zypper install flex bison gperf libicu-devel ruby
+&lt;/code> =====
+
+===== Mandriva/ROSA/Unity:
+&lt;code>
+urpmi gperf
+&lt;/code> =====
+
+==== Qt Multimedia ====
+
+你至少需要安装alsa-lib ('''>= 1.0.15''') 和 gstreamer ('''>=0.10.24''', [http://lists.qt-project.org/pipermail/development/2012-November/007916.html but &lt;1.0 for now]) 以及基本的插件包。
+
+===== Ubuntu/Debian:
+&lt;code>
+sudo apt-get install libasound2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
+&lt;/code> =====
+
+=== OS X ===
+
+从 App Store安装最新的Xcode。 检查Xcode的安装是正确配置的：
+&lt;code>
+xcodebuild -version &amp;&amp; xcodebuild -showsdks
+&lt;/code>
+
+应该输出，比如：
+&lt;code>
+Xcode 4.6.1
+Build version 4H512
+OS X SDKs:
+ Mac OS X 10.7 -sdk macosx10.7
+ OS X 10.8 -sdk macosx10.8
+
+iOS SDKs:
+ iOS 6.1 -sdk iphoneos6.1
+
+iOS Simulator SDKs:
+ Simulator- iOS 5.0 -sdk iphonesimulator5.0
+ Simulator- iOS 6.1 -sdk iphonesimulator6.1
+&lt;/code>
+
+通过如下命令，你可以检查当前使用的Xcode是否正确：
+&lt;code>
+xcode-select —print-path
+&lt;/code>
+
+如果指向 /Developer ，你可能使用的是旧版本的Xcode。通过如下命令切换到最新版本：
+&lt;code>
+sudo xcode-select —switch /Applications/Xcode.app/Contents/Developer
+&lt;/code>
+
+=== Windows ===
+
+==== Windows 图形驱动 ====
+
+QML2 需要 OpenGL 2.1（或者更高版本） 或者Open GL ES 2.0 才能工作。
+
+在Windows上， 有两种办法：
+# 使用 [http://code.google.com/p/angleproject/ ANGLE-library] 来将OpenGL调用映射为 ''DirectX'' (默认)
+# 使用Windows系统上显卡厂商提供的原生OpenGL 驱动
+
+Qt 5中已经绑定了一份ANGLE。如果要使用方法1，你需要安装 [http://msdn.microsoft.com/en-us/directx/default.aspx DirectX SDK] (注意： 从Windows Kit 8开始，它被包含在Windows SDK中)。
+
+如果要使用方法2，你需要确保你的显卡驱动支持OpenGL 2.1 或者更高版本 (注意：微软官方的Windows驱动仅支持OpenGL 1.1，这显然是不够的)，然后在使用configure.exe时加上参数'-opengl desktop' 。
+
+==== Windows上支持的编译器 ====
+
+* Visual Studio 2013
+* Visual Studio 2012
+* Visual Studio 2010 or Windows SDK v7.0A (可以升级至 Windows SDK v7.1)
+* Visual Studio 2008 or Windows SDK v6.0A (可以升级至 Windows SDK v6.1)
+* MinGW-w64 based compiler with _g+''_ version 4.7 或者更高 (比如 [http://sourceforge.net/projects/mingwbuilds/ MinGW-builds], 可以参考 [[MinGW-64-bit]]).
+
+注意：
+* Windows SDK v6.0A/v7.0A 包含和 Visual Studio 2008/2010同样的编译器。
+* Windows SDK 8.0 和更新的版本中没有包含编译器。
+* 自16.3.2012起，如果你想要同时安装Visual Studio 2010 和单独的SDK，可按照如下顺序(参考服务包中提供的readme.html)：
+## 安装 Visual Studio 2010
+## 安装 Windows SDK 7.1. 可参考 [[Cannot_Install_Windows_SDK]] 页面。
+## 安装 Visual Studio 2010 SP1
+## 为Windows SDK 7.1安装 Visual C''+ 2010 SP1编译器更新。 
+
+==== Windows 构建环境 ====
+
+我们推荐使用命令提示符窗口来提供Qt5的构建环境(参考 [http://code.qt.io/qt-creator/qt-creator/blobs/master/README Qt Creator README] )。在这个环境中， ''Python'' (例如 ''Active Python 2.7'' 或更新版本) 和 ''Perl'' (例如 ''Active State Perl 5.12'' 或更新版本) 应该在 ''PATH'' 环境变量中。
+获取Perl： [http://www.activestate.com/activeperl/downloads http://www.activestate.com/activeperl/downloads]
+获取Python： [http://www.python.org/download/releases/ http://www.python.org/download/releases/]
+获取Ruby： [http://www.rubyinstaller.org/ http://www.rubyinstaller.org/downloads/]
+
+'''提示''':确保 ''Perl'' 在 ''git'' 前面添加到path， 否则将会用到过时的版本 (''Perl'' 5.8)，从而导致脚本运行失败。
+
+多核构建： 当使用 ''nmake'' 并为了加快编译速度，编译器可以通过如下方式中的一种来利用所有的cpu核：
+* 向 Qt的 ''configure'' 传递选项 _-MP_
+* 设置环境变量 ''CL'' (指定Visual Studio 编译器的选项) 为 ''/MP'' (在命令行上: &lt;code>set CL=/MP&lt;/code>)
+* 使用工具 [[jom]] 来代替nmake。
+
+==== Windows上的ICU ====
+Qt 5 可以通过 [http://site.icu-project.org/ ICU] 库来得到UNICODE和 Globalization 支持。 构建Qt Webkit时将会 '''用到''' 。你可以使用提前编译好的ICU, 或者 "自行编译 ICU":Compiling-ICU .
+
+编译时，在调用 Windows SDK的配置脚本后， ICU的_include_ 和 ''lib'' 的绝对路径必须包含在 ''INCLUDE'' 和 ''LIB'' 环境变量中。
+
+运行时， ICU DLLs必须能够被找到。可以将这些 DLLs 拷贝到应用程序文件夹，或者将ICU的 ''bin'' 的绝对路径添加到 ''PATH'' 环境变量中。
+
+
+== 获取源码 ==
+首先克隆 git 中 Qt5 的顶层仓库：
+
+&lt;code>
+git clone git://code.qt.io/qt/qt5.git qt5
+&lt;/code>
+
+或者 (如果你位于防火墙之后并想使用https协议)：
+
+&lt;code>
+git clone https://code.qt.io/qt/qt5.git qt5
+&lt;/code>
+
+然后切换到目标分支上(参考 [[Branch-Guidelines]]):
+
+&lt;code>
+cd qt5
+git checkout stable
+&lt;/code>
+
+按照 [http://code.qt.io/qt/qt5/blobs/stable/README.git README.git]- 文件，我们使用 ''init-repository'' 脚本来初始化仓库，从而可以克隆各个Qt5的子模块。相关选项：
+* &lt;code>--no-webkit&lt;/code> : 此选项表明你不使用qtwebkit，这个模块非常大，编译将花费很长的时间而且是编译错误的主要来源。所以建议只有当你想使用它时再下载它。而且你可以在以后重新执行 init-repository来下载此模块。
+* &lt;code>--http&lt;/code> : 如果位于防火墙之后就使用此选项。
+* &lt;code>--codereview-username &lt;Jira/Gerrit username>&lt;/code> : 如果你打算向Qt贡献代码，应当指定你的 [[Gerrit_Introduction | codereview username]] 从而可以恰当的设置git remotes。
+
+&lt;code>
+cd qt5
+perl init-repository
+&lt;/code>
+
+== 配置与构建 ==
+
+Qt5的构建系统应完美灵活的防止"外部干扰" - 它应该不介意你是否在PATH中包含有其它版本的Qt，并且几乎完全忽略掉QTDIR变量。然而，你也要确保没有设置qmake特定的环境变量，像是QMAKEPATH 或者QMAKEFEATURES， 并且qmake -query 的输出不应当指向任何其它Qt版本 ($HOME/.config/Trolltech/QMake.conf 应当为空)。
+
+从最上层目录配置构建。禁用 tests 和 examples 模块将会显著加快编译速度：
+
+Linux / OS X 上：
+&lt;code>
+./configure -developer-build -opensource -nomake examples -nomake tests
+&lt;/code>
+
+Windows上：
+&lt;code>
+configure -developer-build -opensource -nomake examples -nomake tests
+&lt;/code>
+
+The &lt;code>-developer-build&lt;/code> 选项将会比正常Qt编译导出更多的符号，从而允许更多的类和函数进行单元测试。它同时默认进行了debug构建，并且将编译好的二进制文件安装在当前目录来避免 'make install'。 '-opensource' 选项将许可证设置为LGPL 2.1。 &lt;code>-nomake examples&lt;/code> 和 &lt;code>-nomake tests&lt;/code> 参数确保examples 和 tests 不会被默认编译，你可以在以后重新指定参数来再次进行编译。
+
+* 提示1： 在Linux上你应当使用 &lt;code>-no-gtkstyle&lt;/code>. This is because on a number of systems (at least SUSE and Gentoo) &lt;code>pkg-config —cflags gtk+–2.0&lt;/code> actually returns paths that include the system Qt 4.x include directories.
+
+* 提示2：你可以使用 &lt;code>-confirm-license&lt;/code> 参数来去掉关于许可证的问答。
+
+* 提示3：在Windows上， 如果 &lt;code>sh.exe&lt;/code> 存在于你的 ''PATH'' (比如由于 ''git'' 或者 ''msys'' 的安装)，你可能不能编译。 这样的错误信息大概是 &lt;code>qt5-srcqtbasebinqmake.exe: command not found&lt;/code> 。如果这样的话，确保&lt;code>sh.exe&lt;/code> 不在PATH中。如果你的安装已经配置过的话，那么你必须重新配置。 
+
+现在通过以下步骤来进行编译：
+
+对于 Linux / OS X:
+&lt;code>
+make -j4 all
+&lt;/code>
+
+如果你在进行out-of-source 的开发者模式的编译，并且包含了编译QtWebKit 模块，那么上面的命令会在编译到QtWebKit的时候返回错误。可以通过下面的方式来进行编译，也就是忽略了 ''all'' 参数：
+&lt;code>
+make -j 4
+&lt;/code>
+
+对于 Windows (MSVC)，选择下面的一种方式来进行编译（取决于你的环境）：
+&lt;code>
+nmake
+jom
+mingw32-make
+&lt;/code>
+
+或者仅仅编译一个特定的模块，比如， declarative及其依赖的模块：
+
+&lt;code>
+make module-qtdeclarative
+&lt;/code>
+
+=== 编译 Qt WebKit ===
+
+==== Windows ====
+
+[http://trac.webkit.org/wiki/BuildingQtOnWindows WebKit.org] 有在Windows上编译Webkit的指令。编译时需要 [http://site.icu-project.org/ ICU] 。
+
+为了方便，编译所需的工具 ''bison'', ''flex'' 和 ''gperf'' 已经提供并存放于 ''gnuwin32\bin''. 如果你在使用shadow 编译，你必须将此路径添加在PATH中，除此之外无需更多特别的操作就可以使用它们了。
+
+== 安装 (Linux / OS X) ==
+
+* 注意： 只有在configure时没有使用 &lt;code>-developer-build&lt;/code> 或者 &lt;code>-prefix "%PWD%/qtbase"&lt;/code> 选项 ，安装才是需要的。否则你可以直接从编译目录中使用Qt。
+
+要安装，运行
+
+&lt;code>
+make install
+&lt;/code>
+
+== 清理 ==
+
+为了得到 '''确实''' 干净的目录，运行：
+
+&lt;code>
+git submodule foreach —recursive "git clean -dfx"
+&lt;/code>
+
+因为在仓库的最上层 make confclean 不再有效。
+
+== 更新 ==
+
+要同时更新 qt5.git 仓库以及其子模块至最新的有效版本，运行：
+&lt;code>
+git pull
+git submodule sync
+git submodule update —recursive
+&lt;/code>
+
+如果你准备每日构建， 考虑使用脚本 ''qt5_tool'' ，其存放于 ''qtrepotools/bin'' 路径下。 它提供了更新仓库、清理、编译的选项。比如， &lt;code>qt5_tool -u -c -b&lt;/code> 用来清理、更新和编译。 &lt;code>qt5_tool -p -c- b&lt;/code> 用来将所有模块合并更新到它们主分支的HEAD。
+
+你可能需要重新运行configure，这取决于源代码产生了什么样的改变。为确保起见，你可以先清理，然后再configure和make。
+
+* 提示1： &lt;code>git submodule update&lt;/code> does a checkout in submodules, potentially hiding any local commits you've done! If the latter happened to you (and you haven't been working with branches anyhow), &lt;code>git reflog&lt;/code> is your friend ….
+* 提示2： When creating scripts for updates on Windows, note that &lt;code>git clean&lt;/code> often fails if some process locks a file or folder.
+
+== 在子模块中使用最新分支 ==
+
+默认检出是不会包含各自子模块的最新的stable/dev 分支，而是一个能在一起有效工作的最新联合版本。如果你想得到子模块的最新改动，你可以在每个子模块中执行，比如：
+
+&lt;code>
+cd qtdeclarative
+git fetch
+git checkout stable origin/stable
+&lt;/code>
+
+或者使用qt5_tool 来更新所有的仓库：
+
+&lt;code>
+./qtrepotools/bin/qt5_tool -p
+&lt;/code>
+
+不过这样做的话，有可能编译会失败！ 这样的话，你得向工作在当前问题模块上的人寻求帮助，来解决模块之间不兼容的问题。 
+
+Some [[unix shell tricks for Qt development|advanced shell tricks]] can be useful when you are making or reviewing changes in multiple modules.
+
+== 问题 ==
+=== Linux ===
+==== configure 失败，错误信息"No QPA platform plugin enabled!" (Linux) ====
+你需要安装libxcb 及其附随的软件包， 参考 'System Requirements'.
+
+==== configure失败，错误信息像是 "cannot stat file …" ====
+你的perl版本太旧了， Qt 5 beta1 需要至少 5.14。
+
+==== qmlscene segfaults "Cannot create platform GL context, none of GLX, EGL, DRI2 is enabled" (Linux) ====
+安装 libx11-xcb-dev 包：
+
+&lt;code>
+sudo apt-get install libx11-xcb-dev
+&lt;/code>
+
+之后你必须重新运行configure 并且强制重新编译qtbase/src/plugins/platforms/xcb 。
+
+==== WebKit doesn't compile, missing ICU ====
+当前configure时并不会检查ICU，所以出现此错误时，通过以下方式来安装相应的包
+
+==== 在Ubuntu/Debian上： ====
+&lt;code>
+sudo apt-get install libicu-dev
+&lt;/code>
+
+==== 在Fedora上： ====
+&lt;code>
+su- -c "yum install libicu-devel"
+&lt;/code>
+
+* You can also compile Qt without Qt WebKit by deleting / renaming the qtwebkit, qtwebkit-examples-and-demos directories.
+* The —no-webkit option of configure added, see [https://bugreports.qt.io/browse/QTBUG-20577 QTBUG-20577] issue.
+
+==== Qt D-Bus fails to build due to "inconsistent user-defined literal suffixes" ====
+
+This occours when you attempt to build Qt 5 with GCC 4.7 while D-Bus &lt; 1.4.20 is present on your system. (For example, the default Fedora 17 installation is prone to this error.) The error message is this:
+
+&lt;code>
+qdbusinternalfilters.cpp:124:36: error: inconsistent user-defined literal suffixes ‘DBUS_INTROSPECT_1_0_XML_PUBLIC_IDENTIFIER’ and ‘DBUS_INTROSPECT_1_0_XML_SYSTEM_IDENTIFIER’ in string literal
+&lt;/code>
+
+Note: The error is in the header files of D-Bus itself, and it has been fixed upstream, see https://bugs.freedesktop.org/show_bug.cgi?id=46147
+Solution: either upgrade to a newer version of D-Bus or edit that one line of the header file manually.
+
+==== […]::isNull is not defined (from qvariant_p.h) ====
+
+C+''11 support is detected while your GCC doesn't properly support it
+Fixed by passing
+&lt;code>-no-c11&lt;code>
+to the configure options
+
+==== cc1: fatal error: .pch/release-shared/QtGui: No such file or directory ====
+Currently unresolved bug with the build of assembly files, see discussion at http://comments.gmane.org/gmane.comp.lib.qt.devel/5933
+Fixed by passing
+&lt;/code>-no-pch&lt;/code>
+to the configure options
+
+==== ld: hidden symbol `void QQmlThread::postMethodToThread&lt;QQmlDataBlob*, QQmlDataBlob*, QQmlDataLoaderThread>(void (QQmlDataLoaderThread::''')(QQmlDataBlob'''), QQmlDataBlob* const&amp;)' isn't defined ====
+Bug with GCC versions &lt; 4.4.x, see bug report at https://bugzilla.redhat.com/show_bug.cgi?id=493929
+Fixed by adding
+&lt;code>QMAKE_CXXFLAGS_RELEASE''= -fno-inline&lt;code>
+in '''qtdeclarative/src/qml/qml.pro'''
+
+=== Windows ===
+
+==== qdeclarative 由于缺少v8.lib 而不会编译(Windows) ====
+
+Compiling v8 in qtbase requires Python. Make sure you have a python.exe in your %PATH%, go to qtjsbackend, run qmake &amp;&amp; nmake.
+
+==== 调试 OpenGL 问题 (Windows) ====
+
+Set the environment variable &lt;code>QT_QPA_VERBOSE=gl:1&lt;/code> and run the application with [http://technet.microsoft.com/en-us/sysinternals/bb896647 DebugView] installed. The log will show the requested vs obtained OpenGL version. If the log tells you that it only has OpenGL 1.1, QML2 will not work. Note that ''qmlscene'' will not report errors about unsupported OpenGL versions.
+
+== 疑问&amp;建议 ==
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:Ambox" title="Template:Ambox">Template:Ambox</a> (<a href="http://wiki.qt.io/index.php?title=Template:Ambox&amp;action=edit" title="Template:Ambox">view source</a>) </li><li><a href="http://wiki.qt.io/Template:Cleanup" title="Template:Cleanup">Template:Cleanup</a> (<a href="http://wiki.qt.io/index.php?title=Template:Cleanup&amp;action=edit" title="Template:Cleanup">view source</a>) </li><li><a href="http://wiki.qt.io/Template:LangSwitch" title="Template:LangSwitch">Template:LangSwitch</a> (<a href="http://wiki.qt.io/index.php?title=Template:LangSwitch&amp;action=edit" title="Template:LangSwitch">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/Building_Qt_5_from_Git/zh" title="Building Qt 5 from Git/zh">Building Qt 5 from Git/zh</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/Building_Qt_5_from_Git/zh">http://wiki.qt.io/Building_Qt_5_from_Git/zh</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Building+Qt+5+from+Git%2Fzh" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Building_Qt_5_from_Git/zh"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Building_Qt_5_from_Git/zh&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/Building_Qt_5_from_Git/zh" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=Building_Qt_5_from_Git/zh&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Building_Qt_5_from_Git/zh&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Building_Qt_5_from_Git/zh" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Building_Qt_5_from_Git/zh" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Building_Qt_5_from_Git/zh&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":271});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_5_from_Git/zh&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:11 GMT -->
+</html>

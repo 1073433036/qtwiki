@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/QML-Application-Structuring-Approaches by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:49:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>QML Application Structuring Approaches - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="QML_Application_Structuring_Approaches.html" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"QML_Application_Structuring_Approaches","wgTitle":"QML Application Structuring Approaches","wgCurRevisionId":19500,"wgRevisionId":19500,"wgArticleId":1381,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing with Qt::Qt Quick","HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"QML_Application_Structuring_Approaches","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"QML-Application-Structuring-Approaches","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-QML_Application_Structuring_Approaches skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">QML Application Structuring Approaches</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub">(Redirected from <a href="indexe430.html?title=QML-Application-Structuring-Approaches&amp;redirect=no" title="QML-Application-Structuring-Approaches">QML-Application-Structuring-Approaches</a>)</div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Needs to be updated to QtQuick 2<br /><small>Please <b><a rel="nofollow" class="external text" href="index0ee0.html?title=QML_Application_Structuring_Approaches&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Component_Element_Definition"><span class="tocnumber">2</span> <span class="toctext">Component Element Definition</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Loader_Element_Definition"><span class="tocnumber">3</span> <span class="toctext">Loader Element Definition</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Component_Element_vs._Loader_Element"><span class="tocnumber">4</span> <span class="toctext">Component Element vs. Loader Element</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Loader_Element_Use_Cases"><span class="tocnumber">5</span> <span class="toctext">Loader Element Use Cases</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Simple_Wizard_Template"><span class="tocnumber">5.1</span> <span class="toctext">Simple Wizard Template</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#More_Complex_Navigation"><span class="tocnumber">5.2</span> <span class="toctext">More Complex Navigation</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Loader_and_Component_Together"><span class="tocnumber">5.3</span> <span class="toctext">Loader and Component Together</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Loader_and_Inline_Component"><span class="tocnumber">5.4</span> <span class="toctext">Loader and Inline Component</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>A common approach to deal with a complex application is to decompose it in several smaller units. This leads to better structuring of application and more productive development process as a whole. QML offers two constructs that service this approach – <i>Component</i> and <i>Loader</i> elements. Roughly speaking, the both elements bring similar functionality. But the ways they do this are different. We may refer to the <i>Component</i> approach as static one and the <i>Loader</i> approach as dynamic one. We first re-call <i>Component</i> and <i>Loader</i> definitions, then compare the two approaches and in the main part of this article describe several <i>Loader</i> element use cases. There are two other approaches to structure a QML application – dynamic creation of objects and module importing. They are beyond the scope of this article.
+</p>
+<h2><span class="mw-headline" id="Component_Element_Definition">Component Element Definition</span></h2>
+<p>A QML component is a separate, autonomous unit that contains other QML elements. It could be defined in two modes – as an inline unit in a QML file or as a separate QML file. The main point with QML component is that it could be reused many times through its very convenient interface. For more details about <i>Component</i> syntax and interface consult the <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qml-qtqml-component.html">documentation.</a>
+</p><p>How does the <i>Component</i> element support application code structuring and particularly its decomposition? In case of component file it is obvious – the application is split in several components. They are included in the main file and instantiated via their interfaces, for example like this:
+</p><p>QML File
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">...
+<span class="me1">Banner</span> <span class="br0">&#123;</span>           <span class="co1">// The component file Banner.qml, located in the directory of the</span>
+                   <span class="co1">//QML File is instantiated here</span>
+  id<span class="sy0">:</span> ban1
+  color<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span>
+<span class="br0">&#125;</span>
+&#160;
+AnotherComponent <span class="br0">&#123;</span> <span class="co1">//Here another component is instantiated</span>
+  ...
+<span class="br0">&#125;</span>
+&#160;
+Banner <span class="br0">&#123;</span>           <span class="co1">// Here we use the same component file Banner.qml. The instantiated component is</span>
+                   <span class="co1">// different from ban1 – different id,</span>
+  id<span class="sy0">:</span> ban2         <span class="co1">// property color has different value, etc.</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;lightblue&quot;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Including of the component means that we get an instance of the component viewed as a template. The basic component is used to generate instances only and these instances do not depend anymore on the basic component. We may have several instances and they behave independently, treated like basic QML elements. Note that <i>Component</i> interface allows to re-define component properties - predefined ones as well as defining new ones. This is the case of the <i>color</i> property in the snippet above. We could even just instantiate the component and not alter any property.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">...
+<span class="me1">Banner</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
+...</pre></div></div>
+<p>We may have many instances of <i>Banner</i> component provided that they have different <i>id</i>.
+</p><p>By now we are considering properties defined at the top level of the component file. What about siblings’/children’ properties in a component file? Let us consider the following case:
+</p><p><i>ExampleOne.qml</i> - Component file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// This component file is used in componentScope.qml file</span>
+<span class="co1">// The point is how to have access to color property out of the scope of Text element</span>
+&#160;
+import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">300</span>
+  height<span class="sy0">:</span> <span class="nu0">200</span>
+  property alias nameTextTop<span class="sy0">:</span> nameText <span class="co1">// This alias is defined at top level and bound to Text element</span>
+&#160;
+  Text <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> nameText
+    color<span class="sy0">:</span> <span class="st0">&quot;blue&quot;</span>
+    text<span class="sy0">:</span> <span class="st0">&quot;Some text fragment&quot;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>componentScope.qml</i> – It is using component ExampleOne
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// The component ExampleOne is instantiated and its color property is change to red</span>
+import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">360</span>
+  height<span class="sy0">:</span> <span class="nu0">360</span>
+  ExampleOne <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> instance
+    nameTextTop.<span class="me1">color</span><span class="sy0">:</span> <span class="st0">&quot;red&quot;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>As you see, if we want to re-define the property <i>color</i> of <i>nameText</i> child we have to make it visible at the top level. To get this we define an alias of the <i>nameText</i> at the top level. This alias is re-defined in <i>componentScope.qml file</i>.
+</p><p>Could we develop more complex structures with components? For instance, could we have nested components? By nested components we mean that a component contains another component. Structures like these are acceptable:
+</p><p><i>nestedComponents.qml</i> - Main file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// Main file uses a component – Comp1. It in turn applies a nested component Comp2.</span>
+import QtQuick <span class="nu16">1.0</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">360</span>
+  height<span class="sy0">:</span> <span class="nu0">360</span>
+&#160;
+  Comp1 <span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="co1">// This component has a nested component Comp2</span>
+  Text <span class="br0">&#123;</span>
+    anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+    text<span class="sy0">:</span> <span class="st0">&quot;Top Level - we use a component Comp1&quot;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Comp1.qml</i> - First level component file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+<span class="co1">//First level component Comp1.qml</span>
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">100</span>
+  height<span class="sy0">:</span> <span class="nu0">62</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span>
+&#160;
+  Comp2<span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="co1">// This component becomes part of Comp1</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Comp2.qml</i> - Second level component file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+<span class="co1">//This is a component we nest in another component Comp1</span>
+Rectangle <span class="br0">&#123;</span>
+  x<span class="sy0">:</span> <span class="nu0">50</span><span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">40</span>
+  width<span class="sy0">:</span> <span class="nu0">100</span>
+  height<span class="sy0">:</span> <span class="nu0">62</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;green&quot;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>The inline definition syntax of the component element is very similar to this one of other QML elements. It starts with a key word <i>Component</i> followed by element block (represented by <i>{ }</i> pair). Within the block you may define and nest other QML elements – refer <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qml-qtqml-component.html">documentation</a>.
+</p><p>On the other hand, inline <i>Component</i> offers other kind of structuring. It encapsulates a piece of QML code that could be assigned as a property value of other QML elements. Particularly this mechanism is used in the definition of the <i>Loader</i> element – see the next section. This kind of structuring is sometimes referred as aggregation. An example how inline <i>Component</i> could be utilized is demonstrated in section <b>Loader and Inline Component</b>.
+</p>
+<h2><span class="mw-headline" id="Loader_Element_Definition">Loader Element Definition</span></h2>
+<p><i>Loader</i> element serves as a handler, which loads dynamically a QML unit formed as a separate QML file or inline component. Dynamically means that the QML unit to be loaded is determined at run-time, for example if a mouse button is clicked. The loaded unit is described as value of <i>source</i> or <i>sourceComponent</i> property of the <i>Loader</i>. The <i>source</i> value is a URL value – the path to QML file to be loaded. The <i>sourceComponent</i> value is <i>id</i> name of an inline component. Where can we bind values to these properties? The rule is: at places where the <i>Loader id</i> name is visible. In the following sections you see many examples of implementation of this rule. For more information on Loader see <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-loader.html#details">documentation</a>.
+</p><p>One interesting point is how the loaded QML unit could be accessed. The <i>Loader</i> element has a default property <i>item</i>. It is read-only and has <i>Item</i> type. In other words, loaded QML unit is a QML <i>Item</i> element. We recall that it is not visible and serves to group other QML elements. An illustrating snippet on item property follows:
+</p><p><i>LoaderItem.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// QML file Page.qml is loaded by Loader top. Its color property is red</span>
+<span class="co1">// Using Loader item property the color property is changed to blue</span>
+import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">360</span>
+  height<span class="sy0">:</span> <span class="nu0">360</span>
+&#160;
+  Loader <span class="br0">&#123;</span> id<span class="sy0">:</span> top <span class="br0">&#125;</span>
+&#160;
+  Rectangle <span class="br0">&#123;</span>
+    Component.<span class="me1">onCompleted</span><span class="sy0">:</span> <span class="br0">&#123;</span>
+      top.<span class="me1">source</span> <span class="sy0">=</span> <span class="st0">&quot;Page.qml&quot;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Text <span class="br0">&#123;</span>
+    anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+    text<span class="sy0">:</span> <span class="st0">&quot;Hello World&quot;</span>
+&#160;
+    MouseArea <span class="br0">&#123;</span>
+      anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+      onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+        top.<span class="me1">item</span>.<span class="me1">color</span><span class="sy0">=</span><span class="st0">&quot;blue&quot;</span>
+      <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Page.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">100</span>
+  height<span class="sy0">:</span> <span class="nu0">62</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>We could set up <i>source</i> or <i>sourceComponent</i> properties in the <i>Loader</i> definition. Now the <i>Loader</i> element is processed like any other QML element and its target will be rendered. In this case the behavior is similar to the one of component element. But note that we may change programmatically properties values of <i>source</i> or <i>sourceComponent</i> at a later time.
+</p>
+<h2><span class="mw-headline" id="Component_Element_vs._Loader_Element">Component Element vs. Loader Element</span></h2>
+<p>Now we are going to compare component file and <i>Loader</i> element. They both offer similar functionality, but differ in ways they are applied.
+</p><p>In case of a component file we have the following process. We declare the component (rather its interface) in a fixed way in the main file for example. QML parser immediately checks if a component file with the name as in component declaration exists. The parser searches in the directory where is placed the file.
+</p><p>The <i>Loader</i> acts a bit differently. When a QML file containing a <i>Loader</i> element is parsed, the <i>Loader</i> constructs itself like any other QML element. The <i>Loader</i> could define the source destination of the file to be loaded or not. In the first case the file is loaded. In the second case this is postponed to the moment we define the source destination of the file in a script element for example. Note that in case of <i>source</i> property we may point to a file located anywhere on our local computer or on the Internet. If we have many QML entities that are not needed permanently, there is no need to keep them in memory – rather load them as they are necessary. This leads to a better structuring of the application and more efficient computer memory management. Be aware that any consequent activation of a <i>Loader</i> destroys the previously loaded items. If we set an empty string as <i>source</i> property value or undefined value to <i>sourceComponent</i> property, the memory used by the <i>Loader</i> is released.
+</p><p>Because the file to be loaded by a <i>Loader</i> could be determined in run-time, the <i>Loader</i> approach is referred to as dynamic one. The component approach is called static one.
+</p><p>Combining loaders, components and other QML elements it is important to understand the hierarchy of elements and how they overlap each other. Let us create a demo example, which will illustrate QML elements rendering hierarchy. We are considering a QML main file that has two <i>Loaders</i>, one component and other standard QML elements. We re-define the <i>z</i> property of elements to control their overlapping.
+</p><p><i>elementHierarchy.qml</i> – main file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> first
+  width<span class="sy0">:</span> <span class="nu0">360</span>
+  height<span class="sy0">:</span> <span class="nu0">360</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;lightblue&quot;</span>
+&#160;
+  Loader <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> newLoad
+  <span class="br0">&#125;</span>
+&#160;
+  Text <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> textInner
+    z<span class="sy0">:</span> <span class="nu0">3</span>
+    text<span class="sy0">:</span> <span class="st0">&quot;Sample text with z=7 property &quot;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Rectangle <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> second
+    width<span class="sy0">:</span> <span class="nu0">100</span>
+    height<span class="sy0">:</span> <span class="nu0">100</span>
+    z<span class="sy0">:</span> <span class="nu0">2</span>
+    x<span class="sy0">:</span> <span class="nu0">80</span>
+    color<span class="sy0">:</span> <span class="st0">&quot;pink&quot;</span>
+    Text <span class="br0">&#123;</span>
+      text<span class="sy0">:</span> <span class="st0">&quot;with z=2&quot;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  CompNew <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> far
+    x<span class="sy0">:</span> <span class="nu0">20</span>
+    y<span class="sy0">:</span> <span class="nu0">20</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Loader <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> loadSecond
+    source<span class="sy0">:</span> <span class="st0">&quot;secondComp.qml&quot;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Rectangle <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> dummy
+    width<span class="sy0">:</span> <span class="nu0">80</span>
+    height<span class="sy0">:</span> <span class="nu0">40</span>
+    x<span class="sy0">:</span> <span class="nu0">140</span>
+    y<span class="sy0">:</span> <span class="nu0">80</span>
+    color<span class="sy0">:</span> <span class="st0">&quot;gray&quot;</span>
+&#160;
+    Component.<span class="me1">onCompleted</span><span class="sy0">:</span> <span class="br0">&#123;</span>
+      newLoad.<span class="me1">source</span> <span class="sy0">=</span> <span class="st0">&quot;firstLoader.qml&quot;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>firstLoader.qml</i> – file loaded by <i>newLoad Loader</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">200</span>
+  height<span class="sy0">:</span> <span class="nu0">100</span>
+  y<span class="sy0">:</span><span class="nu0">30</span>
+  color<span class="sy0">:</span><span class="st0">&quot;red&quot;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>secondComp.qml</i> - loaded by <i>loadSecond Loader</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">100</span>
+  height<span class="sy0">:</span> <span class="nu0">62</span>
+  x<span class="sy0">:</span> <span class="nu0">40</span>
+  y<span class="sy0">:</span> <span class="nu0">45</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;green&quot;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>CompNew.qml</i> – component file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  id<span class="sy0">:</span>comp
+  width<span class="sy0">:</span> <span class="nu0">62</span>
+  height<span class="sy0">:</span> <span class="nu0">62</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;yellow&quot;</span>
+  Text <span class="br0">&#123;</span>
+    text<span class="sy0">:</span> <span class="st0">&quot;CompNew&quot;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>The next picture illustrates how QML elements are displayed and overlapping. As a rule elements are rendered in the order they are defined in the main file. In the snippets above <i>z</i> property is changed for text element <i>textInner</i> (z=3) and for rectangle element <i>second</i> (z=2) and they are rendered at the top element hierarchy.
+</p><p><img src="http://i1072.photobucket.com/albums/w362/vabo123/elementsHier.jpg" alt="elementsHier.jpg" />
+</p><p>You may experiment changing <i>z</i> property.
+</p>
+<h2><span class="mw-headline" id="Loader_Element_Use_Cases">Loader Element Use Cases</span></h2>
+<h3><span class="mw-headline" id="Simple_Wizard_Template">Simple Wizard Template</span></h3>
+<p>Our application consists of several pages (3 in the snippet bellow), each of them formatted as a separate QML file. These files could be located in different directories, but for simplicity we suppose they reside in the directory where is located our main file. Each page has its own <i>Loader</i> element and when a <i>Click me</i> button is pressed the <i>Loader</i> loads a next wizard page.
+</p><p><i>wizardSimple.qml</i> – main file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> top
+  width<span class="sy0">:</span> <span class="nu0">360</span>
+  height<span class="sy0">:</span> <span class="nu0">360</span>
+&#160;
+  Loader <span class="br0">&#123;</span>                         <span class="co1">// Declaration of a Loader. It will be activated later.</span>
+    id<span class="sy0">:</span> main
+  <span class="br0">&#125;</span>
+&#160;
+  Text <span class="br0">&#123;</span>
+    text<span class="sy0">:</span> <span class="st0">&quot;Main file&quot;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Button <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> buttonMain
+    anchors.<span class="me1">bottom</span><span class="sy0">:</span> top.<span class="me1">bottom</span>    <span class="co1">// Position the button in top rectangle</span>
+    anchors.<span class="me1">right</span><span class="sy0">:</span> top.<span class="me1">right</span>
+&#160;
+    MouseArea <span class="br0">&#123;</span>
+      anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+      onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+        main.<span class="me1">source</span> <span class="sy0">=</span> <span class="st0">&quot;Page1.qml&quot;</span><span class="sy0">;</span> <span class="co1">// Load a new page</span>
+        buttonMain.<span class="me1">z</span> <span class="sy0">=</span> –<span class="nu0">1</span><span class="sy0">;</span>         <span class="co1">// Hide button</span>
+      <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Page1.qml</i> – first wizard page
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> page1Container
+  width<span class="sy0">:</span> <span class="nu0">200</span>
+  height<span class="sy0">:</span> <span class="nu0">300</span>
+  x<span class="sy0">:</span> <span class="nu0">40</span>
+  y<span class="sy0">:</span> <span class="nu0">40</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;pink&quot;</span>
+&#160;
+  Loader <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> page1                      <span class="co1">// Declaration of a new Loader element</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Text <span class="br0">&#123;</span>
+    text<span class="sy0">:</span> <span class="st0">&quot;First page loaded&quot;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Button <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> buttonPage1
+    anchors.<span class="me1">bottom</span><span class="sy0">:</span> page1Container.<span class="me1">bottom</span>  <span class="co1">// Position the button in page1Container rectangle</span>
+    anchors.<span class="me1">right</span><span class="sy0">:</span> page1Container.<span class="me1">right</span>
+&#160;
+    MouseArea <span class="br0">&#123;</span>
+      anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+      onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+        page1.<span class="me1">source</span> <span class="sy0">=</span> <span class="st0">&quot;Page2.qml&quot;</span><span class="sy0">;</span>
+        buttonPage1.<span class="me1">z</span> <span class="sy0">=</span> –<span class="nu0">1</span><span class="sy0">;</span>        <span class="co1">// Hide button     </span>
+      <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Page2.qml</i> – second wizard page
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> page2Container
+  width<span class="sy0">:</span> <span class="nu0">200</span>
+  height<span class="sy0">:</span> <span class="nu0">200</span>
+  x<span class="sy0">:</span> <span class="nu0">80</span>
+  y<span class="sy0">:</span> <span class="nu0">80</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;yellow&quot;</span>
+&#160;
+  Loader <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> page2
+  <span class="br0">&#125;</span>
+&#160;
+  Text <span class="br0">&#123;</span>
+    text<span class="sy0">:</span> <span class="st0">&quot;Second page loaded&quot;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Button <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> buttonPage2
+    anchors.<span class="me1">bottom</span><span class="sy0">:</span> page2Container.<span class="me1">bottom</span>
+    anchors.<span class="me1">right</span><span class="sy0">:</span> page2Container.<span class="me1">right</span>
+&#160;
+    MouseArea <span class="br0">&#123;</span>
+      anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+      onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+        page2.<span class="me1">source</span> <span class="sy0">=</span> <span class="st0">&quot;Page3.qml&quot;</span><span class="sy0">;</span>
+        buttonPage2.<span class="me1">z</span> <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span>
+      <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Page3.qml</i> – last wizard page
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">120</span>
+  height<span class="sy0">:</span> <span class="nu0">62</span>
+  x<span class="sy0">:</span> <span class="nu0">100</span> 
+  y<span class="sy0">:</span> <span class="nu0">100</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;green&quot;</span>
+&#160;
+  Text <span class="br0">&#123;</span>
+    text<span class="sy0">:</span> <span class="st0">&quot;Last Loaded Page&quot;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>The above wizard implementation is very simple, but suffers of some drawbacks:
+</p>
+<ul>
+<li> When a new page is loaded the previously loaded page stays unnecessary into memory.
+</li>
+<li> We use similar loaders for each page – their IDs are different only.
+</li>
+<li> The order of pages loading is fixed one – the source property values are set in advance.
+</li>
+<li> There is no mechanism for exchange of information between the caller and the called page and vise-verse.
+</li>
+</ul>
+<h3><span class="mw-headline" id="More_Complex_Navigation">More Complex Navigation</span></h3>
+<p>Now we will try to release the restrictions of the loading scheme from the previous section. Firstly, following the Simon Judge <a rel="nofollow" class="external text" href="http://www.mobilephonedevelopment.com/qt-qml-tips/">idea</a>, we will apply a common <i>Loader</i> for all pages. Secondly, we suppose that the next page to be loaded is not known in advance – it is determined after a condition is evaluated. And finally, we will use signals to pass information between pages and demonstrate how multi-window screens could be constructed.
+</p><p>A common approach to trigger some actions after an event is fired is to define an own signal like that (for more information <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qmlevents.html">here</a>):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">signal</span> MySignal<span class="br0">&#40;</span>string message<span class="sy0">,</span> <span class="kw4">int</span> trigger<span class="br0">&#41;</span></pre></div></div>
+<p>where <i>signal</i> is QML keyword, <i>MySignal</i> is the name of newly defined signal, <i>message</i> is a parameter of type <i>string</i> and <i>trigger</i> is another parameter. The parameters could be of different QML types. For our purposes we want to pass a string that is the name of wizard page to be loaded and an index to identify the application state.
+</p><p>The main idea is as follows: 
+</p>
+<ul>
+<li> When we want to load a page we emit our own signal.
+</li>
+<li> This signal is caught by a <i>Loader</i> defined somewhere.
+</li>
+<li> Our signal has a parameter to which we bound the name of the page to be loaded – as an URL value.
+</li>
+</ul>
+<p><b>Use Case</b>: We will consider an application that consists of a main page (<i>Page1</i>) and two other pages (<i>Page2</i>, <i>Page3</i>). The pages should be loaded sequentially and construct a wizard this way. Some of pages could be loaded checking for a logical condition creating the wizard branches. 
+</p><p><b>Objectives</b>: To demonstrate how a flexible wizard could be implemented based on QML <i>Loader</i> element. Additionally we may complicate the wizard constructing some multi-windows screens.
+</p><p><b>Design</b>: Pages are loaded one by one. The application starts loading automatically <i>Page1</i>. To load the next page we should click the left mouse button. For <i>Page1</i> we have two wizard branches depending on a logical value. We introduce a current index for pages (an integer) around which the application logic is build. 
+</p><p><b>Development</b>: For each page we define the same own signal:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">signal</span> handlerLoader<span class="br0">&#40;</span>string name<span class="sy0">,</span> <span class="kw4">int</span> index<span class="br0">&#41;</span></pre></div></div>
+<p>To activate this signal (emit the signal) we have to invoke it as a method in a script block. A <i>MouseArea onClicked</i> script block is used. In invocation the name of the page to be loaded is passed as parameter. Emitted signal is attached (automatically) to the signal handler <i>onHandlerLoader</i>, which in turn is connected to a target <i>pageLoader.item</i>. The connection is carried out by a QML <i>Connections</i> element in the QML file <i>flexibleLoader.qml</i>. The target <i>pageLoader.item</i> is in fact the object loaded by the <i>Loader</i> (<i>id:pageLoader</i>) defined in the file <i>flexibleLoader.qml</i>. Note that the target property of the <i>Connections</i> element is of type <i>Object</i>. When <i>Page2</i> is loaded we want a second window (<i>NewWindow.qml</i>) to be loaded into the same screen. This is done by a second <i>Loader</i> (<i>id:window</i>), which is defined in the file <i>flexibleLoader.qml</i>. The decision to load this second window is taken in <i>onHandlerLoader</i> block on the base of returned value of <i>trigger</i> parameter. Note that the <i>Loader</i> destroys previously loaded entities when loading new items.
+</p><p><b>Code</b>: 
+</p><p><i>flexibleLoader.qml</i> – application main file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Item <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> top
+  width<span class="sy0">:</span> <span class="nu0">300</span>
+  height<span class="sy0">:</span> <span class="nu0">200</span>
+&#160;
+  Loader<span class="br0">&#123;</span>
+    id<span class="sy0">:</span>window
+  <span class="br0">&#125;</span>
+&#160;
+  <span class="kw4">signal</span> handlerLoader<span class="br0">&#40;</span>string name<span class="sy0">,</span> <span class="kw4">int</span> index<span class="br0">&#41;</span>
+&#160;
+  Loader <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> pageLoader
+    source<span class="sy0">:</span> <span class="st0">&quot;Page1.qml&quot;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Connections <span class="br0">&#123;</span>
+    target<span class="sy0">:</span> pageLoader.<span class="me1">item</span>
+    onHandlerLoader<span class="sy0">:</span> <span class="br0">&#123;</span>
+      pageLoader.<span class="me1">source</span><span class="sy0">=</span>name<span class="sy0">;</span>
+      <span class="kw1">if</span> <span class="br0">&#40;</span>index <span class="sy0">===</span> <span class="nu0">2</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        window.<span class="me1">source</span> <span class="sy0">=</span> <span class="st0">&quot;NewWindow.qml&quot;</span><span class="sy0">;</span>
+      <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Page1.qml</i> – page 1
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> test1
+  width<span class="sy0">:</span> <span class="nu0">100</span>
+  height<span class="sy0">:</span> <span class="nu0">62</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span>
+&#160;
+  <span class="co1">// switchPage1 value is logically controlled somewhere in the code</span>
+  property <span class="kw4">bool</span> switchPage1<span class="sy0">:</span> <span class="kw2">true</span>
+  property <span class="kw4">int</span> page1Index<span class="sy0">:</span> <span class="nu0">2</span>
+&#160;
+  <span class="kw4">signal</span> handlerLoader<span class="br0">&#40;</span>string name<span class="sy0">,</span> <span class="kw4">int</span> index<span class="br0">&#41;</span>
+&#160;
+  MouseArea <span class="br0">&#123;</span>
+    anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+    onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+      <span class="kw1">if</span> <span class="br0">&#40;</span>switchPage1<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        handlerLoader<span class="br0">&#40;</span><span class="st0">&quot;Page2.qml&quot;</span><span class="sy0">,</span> page1Index<span class="br0">&#41;</span><span class="sy0">;</span>
+      <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+        handlerLoader<span class="br0">&#40;</span><span class="st0">&quot;Help.qml&quot;</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+      <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Files <i>Page2.qml</i> and <i>Page3.qml</i> are similar to <i>Page1.qml</i>.
+</p><p><b>Download Package</b>: Necessary files: <i>flexibleLoader.qml</i>, <i>Page1.qml</i>, <i>Page2.qml</i>, <i>Page3.qml</i>, <i>Help.qml</i>, <i>NewWindow.qml</i>. Get them from <a rel="nofollow" class="external text" href="http://bit.ly/1lnH77m">here</a>.
+</p>
+<h3><span class="mw-headline" id="Loader_and_Component_Together">Loader and Component Together</span></h3>
+<p><b>Use Case</b>: Assume the page we are loading uses an external component (component file) and from this component we want to load a next page. What is new in this use case comparing with the previous one? The call to the
+<i>Loader</i> is not located at the top level now. It is nested in a component. When the <i>Loader</i> is defined in the main application the pages are loaded in its context. This requires the <i>Loader source</i> property to be determined at the top level also. To solve this problem we use cascading definitions of properties. Firstly, have a look at a diagram illustrating the use case:
+</p><p><img src="http://i1072.photobucket.com/albums/w362/vabo123/complexLoader.jpg" alt="complexLoader.jpg" />
+</p><p><b>Design</b>: It follows the diagram above. The main file <i>componentLoader.qml</i> loads <i>Page1.qml</i>, which in turn loads <i>Page2.qml</i>. The <i>Page2.qml</i> file instantiates a component – <i>Inserted.qml</i>. From within <i>Inserted.qml</i> the <i>Loader</i> in <i>componentLoader.qml</i> is invoked.
+</p><p><b>Development</b>: The issue here is that the signal <i>handlerLoader</i> has to be activated at the top level of the file <i>Page2.qml</i>. When instantiating component <i>Inserted</i> we define an alias to the top level <i>id</i>: <i>property alias next1:pop</i>. The signal is invoked in <i>Inserted.qml</i> through a qualified name- <i>next1.handlerLoader("Page3.qml",0)</i>.
+</p><p><b>Code</b>: Main file <i>componentLoader.qml</i> and files <i>Page1.qml</i> and <i>Page3.qml</i> are similar to these ones of the previous section.
+</p><p><i>Page2.qml</i> – this file instantiates component file <i>Insert.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> pop
+  width<span class="sy0">:</span> <span class="nu0">100</span>
+  height<span class="sy0">:</span> <span class="nu0">62</span>
+  x<span class="sy0">:</span> <span class="nu0">30</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;yellow&quot;</span>
+&#160;
+  property <span class="kw4">int</span> page2Index<span class="sy0">:</span> <span class="nu0">3</span>
+&#160;
+  <span class="kw4">signal</span> handlerLoader<span class="br0">&#40;</span>string name<span class="sy0">,</span> <span class="kw4">int</span> index<span class="br0">&#41;</span>
+&#160;
+  Inserted <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> comp1
+    property alias next1<span class="sy0">:</span> pop
+    y<span class="sy0">:</span> <span class="nu0">20</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Inserted.qml</i> – this is component file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">100</span>
+  height<span class="sy0">:</span> <span class="nu0">62</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;blue&quot;</span>
+&#160;
+  MouseArea <span class="br0">&#123;</span>
+    anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+    onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+      next1.<span class="me1">handlerLoader</span><span class="br0">&#40;</span><span class="st0">&quot;Page3.qml&quot;</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><b>Download Package</b>: Necessary files: <i>componentLoader.qml</i>, <i>Page1.qml</i>, <i>Page2.qml</i>, <i>Page3.qml</i>, <i>Inserted.qml</i>. Get them from <a rel="nofollow" class="external text" href="http://bit.ly/1lnH77m">here</a>.
+</p>
+<h3><span class="mw-headline" id="Loader_and_Inline_Component">Loader and Inline Component</span></h3>
+<p><b>Use case</b>: We want to implement an advertising banner composed from images and texts. We have several images combined with explanatory texts and these pairs are displayed cyclically. Additionally a button is needed to be bound to each displayed pair – for example to get more information on advertised topic. Have a look at some screenshots.
+</p><p><img src="http://i1072.photobucket.com/albums/w362/vabo123/firstImage.jpg" alt="firstImage.jpg" />
+</p><p><img src="http://i1072.photobucket.com/albums/w362/vabo123/forthImage.jpg" alt="forthImage.jpg" />
+</p><p><b>Objectives</b>: To demonstrate how a loader and an inline component could be used together. Moreover nested components and QML <i>Timer</i> element are highlighted.
+</p><p><b>Design</b>: Below you have a diagram illustrating what and how QML elements are employed.
+</p><p><img src="http://i1072.photobucket.com/albums/w362/vabo123/elementsHierarchy.jpg" alt="elementsHierarchy.jpg" />
+</p><p><b>Development</b>: The cycling is implemented through a QML <i>Timer</i> element. Each time the <i>Timer</i> generates an <i>onTriggered</i> signal, the <i>sourceComponent</i> property of the <i>Loader</i> (<i>id:test</i>) is changed to load the next pair image-text. Images are arranged in a JavaScript array – defined in JavaScript function <i>act()</i>. The texts are placed in the JavaScript array <i>externalArray</i> – defined in a separate file <i>arrayExt.js</i> – just to show how this approach works. The pairs image-text are modeled with a inline component – <i>id:varText</i> – which is loaded sequentially by the loader. The necessary button is implemented as an external component – file <i>Button.qml</i> – and which is nested in the component <i>varText</i>. The handler, connected to this button, is illustrated with <i>console.log()</i> function output.
+</p><p><b>Code</b>: Each cycle forms a state. The states are indentified via the property <i>loop</i>, which gets <i>int</i> values and is used as arrays current index.
+</p><p><i>bannerComponent.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+import <span class="st0">&quot;arrayExt.js&quot;</span> as FileExt
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> topLevel
+  function act<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    var element <span class="sy0">=</span> <span class="br0">&#91;</span><span class="st0">&quot;fall1.jpg&quot;</span><span class="sy0">,</span> <span class="st0">&quot;fall2.jpg&quot;</span><span class="sy0">,</span> <span class="st0">&quot;fall3.jpg&quot;</span><span class="sy0">,</span> <span class="st0">&quot;fall4.jpg&quot;</span><span class="br0">&#93;</span><span class="sy0">;</span>
+    currentImage <span class="sy0">=</span> element<span class="br0">&#91;</span>loop<span class="br0">&#93;</span><span class="sy0">;</span>
+    currentText <span class="sy0">=</span> FileExt.<span class="me1">externalArray</span><span class="br0">&#91;</span>loop<span class="br0">&#93;</span><span class="sy0">;</span>
+    test.<span class="me1">sourceComponent</span> <span class="sy0">=</span> varText<span class="sy0">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span> loop <span class="sy0">==</span> <span class="nu0">3</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+      loop <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+      loop <span class="sy0">=</span> loop <span class="sy0">+</span> <span class="nu0">1</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Loader <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> test
+    anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+  <span class="br0">&#125;</span>
+&#160;
+  property string currentImage
+  property string currentText<span class="sy0">:</span> <span class="st0">&quot; &quot;</span>
+  property <span class="kw4">int</span> loop<span class="sy0">:</span> <span class="nu0">0</span>
+&#160;
+  width<span class="sy0">:</span> <span class="nu0">500</span>
+  height<span class="sy0">:</span> <span class="nu0">300</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;#f7e5db&quot;</span>
+  gradient<span class="sy0">:</span> Gradient <span class="br0">&#123;</span>
+    GradientStop <span class="br0">&#123;</span>
+      position<span class="sy0">:</span> <span class="nu16">0.00</span>
+      color<span class="sy0">:</span> <span class="st0">&quot;#ecd3d3&quot;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    GradientStop <span class="br0">&#123;</span>
+      position<span class="sy0">:</span> <span class="nu16">0.71</span>
+      color<span class="sy0">:</span> <span class="st0">&quot;#d2e8e8&quot;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Component <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> varText
+&#160;
+    Rectangle <span class="br0">&#123;</span>
+      id<span class="sy0">:</span> top
+      color<span class="sy0">:</span> topLevel.<span class="me1">color</span>
+      width<span class="sy0">:</span> <span class="nu0">500</span>
+      height<span class="sy0">:</span> <span class="nu0">300</span>
+&#160;
+      Image <span class="br0">&#123;</span>
+        id<span class="sy0">:</span> innerImage
+        anchors.<span class="me1">top</span><span class="sy0">:</span> parent.<span class="me1">top</span>
+        anchors.<span class="me1">topMargin</span><span class="sy0">:</span> <span class="nu0">30</span>
+        anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span>
+        width<span class="sy0">:</span> parent.<span class="me1">width</span> <span class="sy0">/</span> <span class="nu0">3</span>
+        height<span class="sy0">:</span> parent.<span class="me1">height</span> <span class="sy0">/</span> <span class="nu0">2</span>
+        source<span class="sy0">:</span> currentImage
+      <span class="br0">&#125;</span>
+&#160;
+      Text <span class="br0">&#123;</span>
+        id<span class="sy0">:</span> answer
+        anchors.<span class="me1">top</span><span class="sy0">:</span> innerImage.<span class="me1">bottom</span>
+        anchors.<span class="me1">topMargin</span><span class="sy0">:</span> <span class="nu0">30</span>
+        horizontalAlignment<span class="sy0">:</span> Text.<span class="me1">AlignHCenter</span>
+        width<span class="sy0">:</span> parent.<span class="me1">width</span>
+        text<span class="sy0">:</span> currentText
+      <span class="br0">&#125;</span>
+&#160;
+      Button <span class="br0">&#123;</span>
+        id<span class="sy0">:</span> bottom
+        anchors.<span class="me1">top</span><span class="sy0">:</span> answer.<span class="me1">bottom</span>
+        anchors.<span class="me1">topMargin</span><span class="sy0">:</span> <span class="nu0">30</span>
+        anchors.<span class="me1">right</span><span class="sy0">:</span> top.<span class="me1">right</span>
+        anchors.<span class="me1">rightMargin</span><span class="sy0">:</span> <span class="nu0">10</span>
+&#160;
+        MouseArea <span class="br0">&#123;</span>
+          id<span class="sy0">:</span> place
+          anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+          onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+            console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;State index = &quot;</span><span class="sy0">,</span> loop<span class="br0">&#41;</span>
+          <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+      <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  Timer <span class="br0">&#123;</span>
+    interval<span class="sy0">:</span> <span class="nu0">3000</span>
+    running<span class="sy0">:</span> <span class="kw2">true</span>
+    repeat<span class="sy0">:</span> <span class="kw2">true</span>
+&#160;
+    onTriggered<span class="sy0">:</span> <span class="br0">&#123;</span>
+      act<span class="br0">&#40;</span><span class="br0">&#41;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Button.qml</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  width<span class="sy0">:</span> <span class="nu0">90</span>
+  height<span class="sy0">:</span> <span class="nu0">20</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;#cbd9f3&quot;</span>
+  radius<span class="sy0">:</span> <span class="nu0">10</span>
+&#160;
+  Text <span class="br0">&#123;</span>
+    width<span class="sy0">:</span> parent.<span class="me1">width</span>
+    height<span class="sy0">:</span> parent.<span class="me1">height</span>
+    horizontalAlignment<span class="sy0">:</span> Text.<span class="me1">AlignHCenter</span>
+    verticalAlignment<span class="sy0">:</span> Text.<span class="me1">AlignVCenter</span>
+    text<span class="sy0">:</span> <span class="st0">&quot;Click me&quot;</span>
+    font.<span class="me1">pointSize</span><span class="sy0">:</span> <span class="nu0">8</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>arrayExt.js</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="coMULTI">/* This external JavaScript file contains the text blocks */</span>
+var externalArray <span class="sy0">=</span> <span class="br0">&#91;</span>
+  <span class="st0">&quot;First Image – it is the first element of the JavaScript array ‘element’&quot;</span><span class="sy0">,</span>
+  <span class="st0">&quot;Second Image – its index in the array is 1&quot;</span><span class="sy0">,</span>
+  <span class="st0">&quot;Third Image - its index in the array is 2&quot;</span><span class="sy0">,</span>
+  <span class="st0">&quot;Fourth Image - its index in the array is 3&quot;</span>
+<span class="br0">&#93;</span><span class="sy0">;</span></pre></div></div>
+<p><b>Download Package</b>: Necessary files: <i>bannerComponent.qml</i>, <i>Button.qml</i>, <i>arrayExt.js</i>, <i>fall1.jpg</i>, <i>fall2.jpg</i>, <i>fall3.jpg</i>, <i>fall4.jpg</i>. Get them from <a rel="nofollow" class="external text" href="http://bit.ly/1lnH77m">here</a>.
+</p><p>Note: The download package is organized in subdirectories corresponding to respective sections:
+</p>
+<ul>
+<li> Component Element Definition - Component
+</li>
+<li> Loader Element Definition – Loader
+</li>
+<li> Component Element vs. Loader Element – ComponentvsLoader
+</li>
+<li> Simple Wizard Template - SimpleWizard
+</li>
+<li> More Complex Navigation - ComplexNavigation
+</li>
+<li> Loader and Component Together - LoaderandComponent
+</li>
+<li> Loader and Inline Component - LoaderInline
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.558 seconds
+Real time usage: 0.584 seconds
+Preprocessor visited node count: 367/1000000
+Preprocessor generated node count: 1223/1000000
+Post‐expand include size: 3995/2097152 bytes
+Template argument size: 427/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1381-0!*!0!!en!*!* and timestamp 20151104100504 and revision id 19500
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexdd97.html?title=QML_Application_Structuring_Approaches&amp;oldid=19500">http://wiki.qt.io/index.php?title=QML_Application_Structuring_Approaches&amp;oldid=19500</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Developing_with_Qt__Qt_Quick.html" title="Category:Developing with Qt::Qt Quick">Developing with Qt::Qt Quick</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=951b5bfb4322915f&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="QML_Application_Structuring_Approaches.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_QML_Application_Structuring_Approaches.html?title=Talk:QML_Application_Structuring_Approaches&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="QML_Application_Structuring_Approaches.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index0ee0.html?title=QML_Application_Structuring_Approaches&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexb0b0.html?title=QML_Application_Structuring_Approaches&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/QML_Application_Structuring_Approaches.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/QML_Application_Structuring_Approaches.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index9726.html?title=QML_Application_Structuring_Approaches&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexdd97.html?title=QML_Application_Structuring_Approaches&amp;oldid=19500" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index5dce.html?title=QML_Application_Structuring_Approaches&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 4 September 2015, at 20:55.</li>
+											<li id="footer-info-viewcount">This page has been accessed 6,367 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":608});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/QML-Application-Structuring-Approaches by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:49:59 GMT -->
+</html>

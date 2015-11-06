@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&oldid=18874 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:11:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Native Build of Qt 5.4.1 on a Raspberry Pi - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi","wgTitle":"Native Build of Qt 5.4.1 on a Raspberry Pi","wgCurRevisionId":18874,"wgRevisionId":18874,"wgArticleId":3714,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-bash {line-height: normal;}
+.source-bash li, .source-bash pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for bash
+ * CSS class: source-bash, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.bash.source-bash .de1, .bash.source-bash .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.bash.source-bash  {font-family:monospace;}
+.bash.source-bash .imp {font-weight: bold; color: red;}
+.bash.source-bash li, .bash.source-bash .li1 {font-weight: normal; vertical-align:top;}
+.bash.source-bash .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.bash.source-bash .li2 {font-weight: bold; vertical-align:top;}
+.bash.source-bash .kw1 {color: #000000; font-weight: bold;}
+.bash.source-bash .kw2 {color: #c20cb9; font-weight: bold;}
+.bash.source-bash .kw3 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .co0 {color: #666666; font-style: italic;}
+.bash.source-bash .co1 {color: #800000;}
+.bash.source-bash .co2 {color: #cc0000; font-style: italic;}
+.bash.source-bash .co3 {color: #000000; font-weight: bold;}
+.bash.source-bash .co4 {color: #666666;}
+.bash.source-bash .es1 {color: #000099; font-weight: bold;}
+.bash.source-bash .es2 {color: #007800;}
+.bash.source-bash .es3 {color: #007800;}
+.bash.source-bash .es4 {color: #007800;}
+.bash.source-bash .es5 {color: #780078;}
+.bash.source-bash .es_h {color: #000099; font-weight: bold;}
+.bash.source-bash .br0 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .sy0 {color: #000000; font-weight: bold;}
+.bash.source-bash .st0 {color: #ff0000;}
+.bash.source-bash .st_h {color: #ff0000;}
+.bash.source-bash .nu0 {color: #000000;}
+.bash.source-bash .re0 {color: #007800;}
+.bash.source-bash .re1 {color: #007800;}
+.bash.source-bash .re2 {color: #007800;}
+.bash.source-bash .re4 {color: #007800;}
+.bash.source-bash .re5 {color: #660033;}
+.bash.source-bash .ln-xtra, .bash.source-bash li.ln-xtra, .bash.source-bash div.ln-xtra {background-color: #ffc;}
+.bash.source-bash span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Native_Build_of_Qt_5_4_1_on_a_Raspberry_Pi skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Native Build of Qt 5.4.1 on a Raspberry Pi</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 18:14, 16 July 2015 by <a href="http://wiki.qt.io/index.php?title=User:Triptec&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Triptec (page does not exist)">Triptec</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:Triptec&amp;action=edit&amp;redlink=1" class="new" title="User talk:Triptec (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Triptec" title="Special:Contributions/Triptec">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;diff=prev&amp;oldid=18874" title="Native Build of Qt 5.4.1 on a Raspberry Pi">diff</a>) <a href="http://wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;direction=prev&amp;oldid=18874" title="Native Build of Qt 5.4.1 on a Raspberry Pi">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Merge with Native_Build_of_Qt5_on_a_Raspberry_Pi<br /><small>Please <b><a rel="nofollow" class="external text" href="http://wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="http://wiki.qt.io/Updated_pages" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p>This is an update to the wiki page <a href="http://wiki.qt.io/Native_Build_of_Qt5_on_a_Raspberry_Pi" title="Native Build of Qt5 on a Raspberry Pi">Native_Build_of_Qt5_on_a_Raspberry_Pi</a> using a Raspberry Pi 2 and a Qt source tarball on Raspbian Wheezy.
+</p><p>In the following, a working setup for using Qt on the linux console with EGLFS and a touchscreen is established.
+</p><p>Compilation took ~8 hours without overclocking the Pi 2 which can be attributed to
+</p>
+<ul>
+<li> compiling the source on an external USB HDD (in contrast to the very slow SD card), and
+</li>
+<li> making use of the Raspberry Pi 2's multicore CPU.
+</li>
+</ul>
+<p>In addition to the configuration used in <a href="http://wiki.qt.io/Native_Build_of_Qt5_on_a_Raspberry_Pi" title="Native Build of Qt5 on a Raspberry Pi">Native_Build_of_Qt5_on_a_Raspberry_Pi</a>, support for
+</p>
+<ul>
+<li> tslib (touchscreen interface)
+</li>
+<li> pkg-config
+</li>
+</ul>
+<p>have been added.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Preparation"><span class="tocnumber">1</span> <span class="toctext">Preparation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Unpacking_source_to_an_external_USB_HDD"><span class="tocnumber">1.1</span> <span class="toctext">Unpacking source to an external USB HDD</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Increasing_available_RAM_for_concurrent_compilation"><span class="tocnumber">1.2</span> <span class="toctext">Increasing available RAM for concurrent compilation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Configure_and_compile_Qt_source_code"><span class="tocnumber">2</span> <span class="toctext">Configure and compile Qt source code</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Installing_dependencies"><span class="tocnumber">2.1</span> <span class="toctext">Installing dependencies</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Configuring_the_Qt_source"><span class="tocnumber">2.2</span> <span class="toctext">Configuring the Qt source</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Compilation"><span class="tocnumber">2.3</span> <span class="toctext">Compilation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Installation_and_Cleanup"><span class="tocnumber">3</span> <span class="toctext">Installation and Cleanup</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Installation"><span class="tocnumber">3.1</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Cleaning_up"><span class="tocnumber">3.2</span> <span class="toctext">Cleaning up</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Additional_Remarks"><span class="tocnumber">4</span> <span class="toctext">Additional Remarks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Up-to-date_tslib_support"><span class="tocnumber">4.1</span> <span class="toctext">Up-to-date tslib support</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Preparation">Preparation</span></h2>
+<p>For the following steps we asume that
+</p>
+<ul>
+<li> the build is done for user <tt>pi</tt> locally 
+</li>
+<li> the Qt tarball has been downloaded to <tt>~/qt-everywhere-opensource-src-5.4.1.tar.gz</tt>
+</li>
+<li> an external USB HDD is available and can be mounted to <tt>/media/usb</tt>
+</li>
+<li> the Qt binaries should be installed to <tt>/usr/local/qt5</tt>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Unpacking_source_to_an_external_USB_HDD">Unpacking source to an external USB HDD</span></h3>
+<p>Using this method the tree will still be located logically in the user's home directory so that it can be moved there after compilation finished and the external USB HDD removed.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="kw2">sudo</span> <span class="kw2">mkdir</span> <span class="re5">-p</span> <span class="sy0">/</span>media<span class="sy0">/</span>usb
+ <span class="co0"># put proper device here instead of /dev/sdXX!</span>
+ <span class="kw2">sudo</span> <span class="kw2">mount</span> <span class="sy0">/</span>dev<span class="sy0">/</span>sdXX <span class="sy0">/</span>media<span class="sy0">/</span>usb
+ <span class="kw2">sudo</span> <span class="kw2">mkdir</span> <span class="sy0">/</span>media<span class="sy0">/</span>usb<span class="sy0">/</span>build
+ <span class="kw2">sudo</span> <span class="kw2">chown</span> pi <span class="sy0">/</span>media<span class="sy0">/</span>usb<span class="sy0">/</span>build
+ <span class="kw3">cd</span> <span class="sy0">/</span>media<span class="sy0">/</span>usb<span class="sy0">/</span>build
+ <span class="kw2">tar</span> zxvf ~<span class="sy0">/</span>qt-everywhere-opensource-src-5.4.1.tar.gz
+&#160;
+ <span class="co0"># now bind it to ~/opt/qt-everywhere-opensource-src-5.4.1</span>
+ <span class="kw2">mkdir</span> <span class="re5">-p</span> ~<span class="sy0">/</span>opt<span class="sy0">/</span>qt-everywhere-opensource-src-5.4.1
+ <span class="kw2">sudo</span> <span class="kw2">mount</span> <span class="re5">--bind</span> <span class="sy0">/</span>media<span class="sy0">/</span>usb<span class="sy0">/</span>build<span class="sy0">/</span>qt-everywhere-opensource-src-5.4.1 <span class="sy0">/</span>home<span class="sy0">/</span>pi<span class="sy0">/</span>opt<span class="sy0">/</span>qt-everywhere-opensource-src-5.4.1
+ <span class="kw3">cd</span> ~<span class="sy0">/</span>opt<span class="sy0">/</span>qt-everywhere-opensource-src-5.4.1
+ <span class="kw2">ls</span></pre></div></div>
+<h3><span class="mw-headline" id="Increasing_available_RAM_for_concurrent_compilation">Increasing available RAM for concurrent compilation</span></h3>
+<p>Although the Raspberry Pi 2 comes with 1 GB of RAM, this still isn't enough for compiling QtWebkit with more than one concurrent compilation process. By default, raspbian maintains a 100 MB swapfile. Assuming that the external USB HDD has sufficient size, a larger swapfile will be put there. Alternatively, a swap partition could have been used.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="co0"># disable and remove swap file</span>
+ <span class="kw2">sudo</span> dphys-swapfile swapoff
+ <span class="kw2">sudo</span> dphys-swapfile uninstall
+&#160;
+ <span class="co0"># edit /etc/dphys-swapfile to read</span>
+ <span class="co0">#  #CONF_SWAPSIZE=100</span>
+ <span class="co0">#  CONF_SWAPFILE=/media/usb/swap</span>
+&#160;
+ <span class="co0"># create and enable new swap file</span>
+ <span class="kw2">sudo</span> dphys-swapfile setup
+ <span class="kw2">sudo</span> dphys-swapfile swapon
+&#160;
+<span class="co0"># if you get:</span>
+<span class="co0"># swapon: /media/usb/swap: read swap header failed: Invalid argument</span>
+<span class="co0"># reboot and rerun:</span>
+<span class="co0">#  sudo mount /dev/sdXX /media/usb</span>
+<span class="co0">#  sudo mount --bind /media/usb/build/qt-everywhere-opensource-src-5.4.1 /home/pi/opt/qt-everywhere-opensource-src-5.4.1</span>
+<span class="co0">#  cd ~/opt/qt-everywhere-opensource-src-5.4.1</span>
+&#160;
+<span class="co0"># check that a ~2GB swap file is active now</span>
+ <span class="kw2">cat</span> <span class="sy0">/</span>proc<span class="sy0">/</span>swaps</pre></div></div>
+<h2><span class="mw-headline" id="Configure_and_compile_Qt_source_code">Configure and compile Qt source code</span></h2>
+<h3><span class="mw-headline" id="Installing_dependencies">Installing dependencies</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="kw2">sudo</span> <span class="kw2">apt-get update</span>
+ <span class="kw2">sudo</span> <span class="kw2">apt-get dist-upgrade</span>
+ <span class="kw2">sudo</span> <span class="kw2">apt-get install</span> libfontconfig1-dev libdbus-<span class="nu0">1</span>-dev libfreetype6-dev libudev-dev libicu-dev \
+  libsqlite3-dev libxslt1-dev libssl-dev libasound2-dev libavcodec-dev libavformat-dev libswscale-dev \
+  libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev gstreamer-tools gstreamer0.10-plugins-good \
+  gstreamer0.10-plugins-bad libraspberrypi-dev libpulse-dev libx11-dev libglib2.0-dev libcups2-dev \
+  freetds-dev libsqlite0-dev libpq-dev libiodbc2-dev libmysqlclient-dev firebird-dev libpng12-dev \
+  libjpeg62-dev libgst-dev libxext-dev libxcb1 libxcb1-dev libx11-xcb1 libx11-xcb-dev libxcb-keysyms1 \
+  libxcb-keysyms1-dev libxcb-image0 libxcb-image0-dev libxcb-shm0 libxcb-shm0-dev libxcb-icccm4 \
+  libxcb-icccm4-dev libxcb-sync0 libxcb-sync0-dev libxcb-render-util0 libxcb-render-util0-dev \
+  libxcb-xfixes0-dev libxrender-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-glx0-dev libxi-dev \
+  libdrm-dev <span class="kw2">flex</span> ruby gperf <span class="kw2">bison</span> libts-dev
+ <span class="kw2">sudo</span> <span class="kw2">apt-get clean</span></pre></div></div>
+<p>In Raspbian Jessie, the package <tt>libjpeg62-dev</tt> has been removed. <tt>libjpeg62-turbo-dev</tt> can be used alternatively.
+</p>
+<h3><span class="mw-headline" id="Configuring_the_Qt_source">Configuring the Qt source</span></h3>
+<p>In contrast to the original wiki article, no manual adjustment of files seems to be necessary in order to properly build Qt on the Raspberry Pi. Not all functionality and modules were tested though, so YMMV.
+</p>
+<pre>./configure -v -opengl es2 -tslib -force-pkg-config -device linux-rasp-pi-g++ -device-option CROSS_COMPILE=/usr/bin/ \
+ -opensource -confirm-license -optimized-qmake -reduce-exports -release -qt-pcre -make libs \
+ -prefix /usr/local/qt5 2&gt;&amp;1 | tee config.out
+</pre>
+<p>Make sure that configuration succeeded. Look closely at the output from all errors as some features might be quietly disabled.
+</p>
+<h3><span class="mw-headline" id="Compilation">Compilation</span></h3>
+<p>Although the Raspberry Pi 2 provides four CPU cores, using all of them proved to be slightly unstable despite of the measures taken at the top of this page. Using three of them worked fine and led to a "satisfactory" compilation time (~12 hrs).
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="kw1">time</span> <span class="kw2">make</span> <span class="re5">-j3</span> <span class="nu0">2</span><span class="sy0">&gt;&amp;</span><span class="nu0">1</span> <span class="sy0">|</span> <span class="kw2">tee</span> make.out</pre></div></div>
+<h2><span class="mw-headline" id="Installation_and_Cleanup">Installation and Cleanup</span></h2>
+<h3><span class="mw-headline" id="Installation">Installation</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="kw2">sudo</span> <span class="kw2">make</span> <span class="kw2">install</span></pre></div></div>
+<p>For using the installed version of Qt, it is convenient to have a setup file, e.g. <tt>~/setup_qt.sh</tt>, which can be <tt>source</tt>'d if necessary. It should contain at least the following lines for setting up path variables:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="kw3">export</span> <span class="re2">LD_LIBRARY_PATH</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>qt5<span class="sy0">/</span>lib
+ <span class="kw3">export</span> <span class="re2">PATH</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>qt5<span class="sy0">/</span>bin:<span class="re1">$PATH</span></pre></div></div>
+<p>Additionally, it can be convenient to set additional variables depending on the periphery devices connected to the Pi, i.e. a touchscreen:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="co0"># hides mouse cursor</span>
+ <span class="kw3">export</span> <span class="re2">QT_QPA_EGLFS_HIDECURSOR</span>=<span class="nu0">1</span>
+ <span class="co0"># enables tslib plugin for touch screen</span>
+ <span class="kw3">export</span> <span class="re2">QT_QPA_GENERIC_PLUGINS</span>=Tslib
+ <span class="co0"># disables evdev mouse input (to avoid getting duplicated input from tslib AND evdev)</span>
+ <span class="kw3">export</span> <span class="re2">QT_QPA_EGLFS_DISABLE_INPUT</span>=<span class="nu0">1</span>
+ <span class="co0"># set physical display dimensions for proper font sizes etc.</span>
+ <span class="co0"># Qt should print a warning if this is necessary</span>
+ <span class="kw3">export</span> <span class="re2">QT_QPA_EGLFS_PHYSICAL_WIDTH</span>=<span class="nu0">154</span>
+ <span class="kw3">export</span> <span class="re2">QT_QPA_EGLFS_PHYSICAL_HEIGHT</span>=<span class="nu0">86</span></pre></div></div>
+<h3><span class="mw-headline" id="Cleaning_up">Cleaning up</span></h3>
+<p>Now some of the steps from <a href="#Preparation">#Preparation</a> could be reversed:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="co0"># unbind source directory and copy source tree to SD card</span>
+ <span class="kw2">sudo</span> unmount <span class="sy0">/</span>home<span class="sy0">/</span>pi<span class="sy0">/</span>opt<span class="sy0">/</span>qt-everywhere-opensource-src-5.4.1
+ rsync <span class="re5">-av</span> <span class="sy0">/</span>media<span class="sy0">/</span>usb<span class="sy0">/</span>build<span class="sy0">/</span>qt-everywhere-opensource-src-5.4.1<span class="sy0">/</span> <span class="sy0">/</span>home<span class="sy0">/</span>pi<span class="sy0">/</span>opt<span class="sy0">/</span>qt-everywhere-opensource-src-5.4.1
+ <span class="co0"># sudo rm -rf /media/usb/build</span>
+&#160;
+ <span class="co0"># revert to small swap file on SD card</span>
+ <span class="kw2">sudo</span> dphys-swapfile swapoff
+ <span class="kw2">sudo</span> dphys-swapfile uninstall
+ <span class="co0"># if the last step fails, continue with the following steps</span>
+ <span class="co0"># everything should be fine after a reboot</span>
+ <span class="co0"># the swap file has to be deleted manually after that though</span>
+&#160;
+ <span class="co0"># edit /etc/dphys-swapfile to read</span>
+ <span class="co0">#  CONF_SWAPSIZE=100</span>
+&#160;
+ <span class="co0"># create and enable new swap file</span>
+ <span class="kw2">sudo</span> dphys-swapfile setup
+ <span class="kw2">sudo</span> dphys-swapfile swapon</pre></div></div>
+<h2><span class="mw-headline" id="Additional_Remarks">Additional Remarks</span></h2>
+<h3><span class="mw-headline" id="Up-to-date_tslib_support">Up-to-date tslib support</span></h3>
+<p>At the time of writing, the Raspbian package for tslib did not support all popular touchscreen controllers used with the Raspberry Pi, in particular the <tt>D-WAV Scientific Co., Ltd eGalax TouchScreen</tt> (from <tt>lsusb</tt>). As the library is plugin based, it could be updated without recompiling Qt.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="kw2">git clone</span> git:<span class="sy0">//</span>github.com<span class="sy0">/</span>kergoth<span class="sy0">/</span>tslib.git
+ <span class="kw3">cd</span> tslib
+ .<span class="sy0">/</span>autogen.sh
+ .<span class="sy0">/</span>configure
+ <span class="kw2">make</span> <span class="re5">-j4</span>
+ <span class="kw2">sudo</span> <span class="kw2">make</span> <span class="kw2">install</span></pre></div></div>
+<p>Unfortunately, the <tt>libts-0.0-0</tt> package from Raspbian Wheezy cannot be removed easily without breaking dependencies, so some 'hacking' has to be done:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="kw2">mkdir</span> tslib_backup
+ <span class="kw2">sudo</span> <span class="kw2">mv</span> <span class="sy0">/</span>usr<span class="sy0">/</span>lib<span class="sy0">/</span>arm-linux-gnueabihf<span class="sy0">/</span>libts<span class="sy0">*</span> tslib_backup
+ <span class="kw2">sudo</span> <span class="kw2">mv</span> <span class="sy0">/</span>usr<span class="sy0">/</span>lib<span class="sy0">/</span>arm-linux-gnueabihf<span class="sy0">/</span>ts tslib_backup
+ <span class="kw2">sudo</span> <span class="kw2">mv</span> <span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>lib<span class="sy0">/</span>libts<span class="sy0">*</span> <span class="sy0">/</span>usr<span class="sy0">/</span>local<span class="sy0">/</span>lib<span class="sy0">/</span>ts <span class="sy0">/</span>usr<span class="sy0">/</span>lib<span class="sy0">/</span>arm-linux-gnueabihf
+ <span class="br0">&#40;</span><span class="kw3">cd</span> <span class="sy0">/</span>usr<span class="sy0">/</span>lib<span class="sy0">/</span>arm-linux-gnueabihf <span class="sy0">&amp;&amp;</span> <span class="kw2">sudo</span> <span class="kw2">ln</span> <span class="re5">-s</span> libts-<span class="nu0">1.0</span>.so.0 libts-<span class="nu0">0.0</span>.so.0<span class="br0">&#41;</span></pre></div></div>
+<p>In Raspbian Jessie, the libts-0.0.0  does not seem to be required by any other package, so the previous hack can be ignored and the files installed directly to <tt>/usr</tt> and <tt>/etc</tt>:
+</p>
+<pre>...
+./configure --prefix /usr --sysconfdir /etc
+...
+</pre>
+<p>Now uncomment <tt>module_raw input</tt> in <tt>/etc/ts.conf</tt> and set a few environment variables:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"> <span class="kw3">export</span> <span class="re2">TSLIB_FBDEVICE</span>=<span class="sy0">/</span>dev<span class="sy0">/</span>fb0
+ <span class="kw3">export</span> <span class="re2">TSLIB_CONSOLEDEVICE</span>=none
+ <span class="kw3">export</span> <span class="re2">TSLIB_TSDEVICE</span>=<span class="sy0">/</span>dev<span class="sy0">/</span>input<span class="sy0">/</span>by-id<span class="sy0">/`</span><span class="kw2">ls</span> <span class="sy0">/</span>dev<span class="sy0">/</span>input<span class="sy0">/</span>by-id<span class="sy0">/</span> <span class="sy0">|</span> <span class="kw2">grep</span> <span class="st0">&quot;eGalax&quot;</span><span class="sy0">`</span>
+ <span class="kw3">export</span> <span class="re2">TSLIB_CONFFILE</span>=<span class="sy0">/</span>etc<span class="sy0">/</span>ts.conf
+ <span class="kw3">export</span> <span class="re2">TSLIB_CALIBFILE</span>=<span class="sy0">/</span>etc<span class="sy0">/</span>pointercal
+ <span class="kw3">export</span> <span class="re2">TSLIB_PLUGINDIR</span>=<span class="sy0">/</span>usr<span class="sy0">/</span>lib<span class="sy0">/</span>arm-linux-gnueabihf<span class="sy0">/</span>ts</pre></div></div>
+<p>The touchscreen can be calibrated using <tt>ts_calibrate</tt> and tested with <tt>ts_test</tt>. It might be useful to add those environment variables to <tt>~/setup_qt.sh</tt> as well.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.134 seconds
+Real time usage: 0.142 seconds
+Preprocessor visited node count: 146/1000000
+Preprocessor generated node count: 344/1000000
+Post‐expand include size: 1400/2097152 bytes
+Template argument size: 463/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:3714-0!*!0!!en!*!* and timestamp 20151104095301 and revision id 18874
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;oldid=18874">http://wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;oldid=18874</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:Articles_needing_cleanup" title="Category:Articles needing cleanup">Articles needing cleanup</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Native+Build+of+Qt+5.4.1+on+a+Raspberry+Pi" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;oldid=18874&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;oldid=18874" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 16 July 2015, at 18:14.</li>
+											<li id="footer-info-viewcount">This page has been accessed 9,082 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":365});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Native_Build_of_Qt_5.4.1_on_a_Raspberry_Pi&oldid=18874 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:11:52 GMT -->
+</html>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Introduction_to_Qt_Quick_for_Cpp_developers_Greek by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:06:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Introduction to Qt Quick for C++ Developers/el - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="Introduction_to_Qt_Quick_for_C%2b%2b_Developers/el.html" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Introduction_to_Qt_Quick_for_C++_Developers/el","wgTitle":"Introduction to Qt Quick for C++ Developers/el","wgCurRevisionId":15964,"wgRevisionId":15964,"wgArticleId":1078,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Learning::Whitepapers","Developing with Qt::Qt Quick","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Introduction_to_Qt_Quick_for_C++_Developers/el","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Introduction_to_Qt_Quick_for_Cpp_developers_Greek","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Introduction_to_Qt_Quick_for_C_Developers_el skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Introduction to Qt Quick for C++ Developers/el</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="Introduction_to_Qt_Quick_for_C%2b%2b_Developers.html" title="Introduction to Qt Quick for C++ Developers">Introduction to Qt Quick for C++ Developers</a></span>(Redirected from <a href="index0a4b.html?title=Introduction_to_Qt_Quick_for_Cpp_developers_Greek&amp;redirect=no" title="Introduction to Qt Quick for Cpp developers Greek">Introduction to Qt Quick for Cpp developers Greek</a>)</div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexb88c.html?title=Introduction_to_Qt_Quick_for_C%2B%2B_Developers/el&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><b>Ελληνικά</b> <a href="Introduction_to_Qt_Quick_for_Cpp_developers.html" title="Introduction to Qt Quick for Cpp developers" class="mw-redirect">English</a> <a rel="nofollow" class="external text" href="http://qt-devnet.developpez.com/tutoriels/qt-quick/pour-developpeurs-cpp/">French</a>
+</p><p><br />
+<a href="indexfc90.html?title=Special:Upload&amp;wpDestFile=Http://qt.nokia.com/logo.png" class="new" title="File:Http://qt.nokia.com/logo.png">http://qt.nokia.com/logo.png</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.CE.95.CE.B9.CF.83.CE.B1.CE.B3.CF.89.CE.B3.CE.AE_.CF.83.CF.84.CE.BF_Qt_Quick_.CE.B3.CE.B9.CE.B1_C.2B.2B_Developers"><span class="tocnumber">1</span> <span class="toctext">Εισαγωγή στο Qt Quick για C++ Developers</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.CE.95.CF.80.CE.B9.CF.83.CE.BA.CF.8C.CF.80.CE.B7.CF.83.CE.B7_.CF.84.CE.BF.CF.85_Qt_Quick"><span class="tocnumber">2</span> <span class="toctext">Επισκόπηση του Qt Quick</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#.CE.9C.CE.B9.CE.B1_.CF.83.CF.8D.CE.BD.CF.84.CE.BF.CE.BC.CE.B7_.CE.B5.CE.B9.CF.83.CE.B1.CE.B3.CF.89.CE.B3.CE.AE_.CF.83.CF.84.CE.B7.CE.BD_QML"><span class="tocnumber">3</span> <span class="toctext">Μια σύντομη εισαγωγή στην QML</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#.CE.9F.CF.80.CF.84.CE.B9.CE.BA.CE.AC_elements:_Hello_World"><span class="tocnumber">3.1</span> <span class="toctext">Οπτικά elements: Hello World</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Layering_visual_elements"><span class="tocnumber">3.2</span> <span class="toctext">Layering visual elements</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Interaction_elements:_mouse_and_touch"><span class="tocnumber">3.3</span> <span class="toctext">Interaction elements: mouse and touch</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#State_Declarations"><span class="tocnumber">3.4</span> <span class="toctext">State Declarations</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#QML_components"><span class="tocnumber">3.5</span> <span class="toctext">QML components</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Animation_elements:_fluid_transitions"><span class="tocnumber">3.6</span> <span class="toctext">Animation elements: fluid transitions</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Model-View_pattern_in_QML"><span class="tocnumber">3.7</span> <span class="toctext">Model-View pattern in QML</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Using_Qt_Quick_in_C.2B.2B_applications"><span class="tocnumber">4</span> <span class="toctext">Using Qt Quick in C++ applications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Sharing_data_between_C.2B.2B_and_QML"><span class="tocnumber">4.1</span> <span class="toctext">Sharing data between C++ and QML</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#QML_views_into_C.2B.2B_models"><span class="tocnumber">4.2</span> <span class="toctext">QML views into C++ models</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#QML_.2F_C.2B.2B_program_flow"><span class="tocnumber">4.3</span> <span class="toctext">QML / C++ program flow</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Extending_QML_from_C.2B.2B"><span class="tocnumber">4.4</span> <span class="toctext">Extending QML from C++</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Getting_started"><span class="tocnumber">5</span> <span class="toctext">Getting started</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id=".CE.95.CE.B9.CF.83.CE.B1.CE.B3.CF.89.CE.B3.CE.AE_.CF.83.CF.84.CE.BF_Qt_Quick_.CE.B3.CE.B9.CE.B1_C.2B.2B_Developers">Εισαγωγή στο Qt Quick για C++ Developers</span></h1>
+<p>Σήμερα, οι καταναλωτές και οι εμπορικοί χρήστες είναι δύσκολο να ικανοποιηθούν. Μεγαλώνουν χρησιμοποιώντας slick UI στις παιχνιδομηχανές τους και βλέπουν ακόμη πιο εντυπωσιακά UI στις ταινίες. Τα specification και οι feature lists από μόνα τους δεν είναι πλέον σημεία πωλήσεων, αλλά είναι τα μέσα για ένα σκοπό. Visual impact και experience WOW είναι τα σημεία πωλήσεων που έχουν σημασία σήμερα, και ο καταναλωτής περιμένει αυτό το visual delight κάθε φορά που χρησιμοποιεί ένα ισχυρό εταιρικό υπολογιστή notebook, ένα set-top box, ή μία φορητή συσκευή.
+</p><p>Η επίτευξη αυτής της εμπειρίας απαιτεί σχεδιαστές και developers να δουλεύουν μαζί όπως ποτέ στο παρελθόν. Στο παρελθόν ανήκουν οι μέρες όπου οι σχεδιαστές μπορούσαν να παραθέτουν pixel maps στον τοίχο και να περιμένουν τους developers να υλοποιήσουν το όραμα τους. Στο παρελθόν ανήκουν επίσης οι μέρες που οι developers μπορούσαν να προγραμματίζουν μόνο με σκοπό τις επιδόσεις χωρίς να λαμβάνουν υπόψη το ελκυστικό οπτικά αποτέλεσμα. Σχεδίαση/development/test πρέπει να γίνουν έναν επαναληπτικός κύκλος, όχι ένα γραμμικό μονοπάτι.
+</p><p>Το Qt Quick είναι φτιαγμένο για τον τρόπο που οι ομάδες παραγωγής εργάζονται σήμερα. Η Core business logic προγραμματίζεται από τους developers και βελτιστοποιείται σε σχέση με την απόδοση, το interface χτίζεται από σχεδιαστές που εργάζονται με visual tools, και η χρήση ολοκληρωμένων εργαλείων υποστηρίζει αλληλοδιάδοχες επαναλήψεις μεταξύ των περιοχών.
+</p><p>Το Qt Quick έχει ως αποτέλεσμα επιδόσεις διότι κάθεται πάνω στο Qt framework για εφαρμογές και UI. Το Qt framework είναι γνωστό για την υψηλή runtime απόδοση και το μικρό footprint, γεγονός που το κάνει ιδανικό για mobile, embedded, και netbook εφαρμογές.
+</p><p>Το Qt Quick επεκτείνει το Qt framework με την QML, μια δηλωτική γλώσσα που κωδικοποιεί τον τρόπο που σκέφτονται οι σχεδιαστές. Κάθε frame ενός story board δηλώνεται ως ένα branch σε ένα element tree. Κάθε οπτική πτυχή ενός frame δηλώνεται ως μια ιδιότητα στοιχείων στο branch. Κάθε μετάβαση μεταξύ frames μπορεί να διακοσμηθεί με μια πλειάδα από animations και effects.
+</p><p>Το Qt Quick περιλαμβάνει τον Qt Creator, ένα περιβάλλον development φτιαγμένο για τη συνεργασία μεταξύ σχεδιαστών και developers. Οι σχεδιαστές εργάζονται σε ένα οπτικό περιβάλλον, οι developers εργάζονται σε ένα IDE πλήρες προσόντων, και ο Qt Creator υποστηρίζει αλληλοδιάδοχες επαναλήψεις για τη σχεδίαση, τη συγγραφή κώδικα, το test, και ξανά πίσω στη σχεδίαση.
+</p>
+<h1><span class="mw-headline" id=".CE.95.CF.80.CE.B9.CF.83.CE.BA.CF.8C.CF.80.CE.B7.CF.83.CE.B7_.CF.84.CE.BF.CF.85_Qt_Quick">Επισκόπηση του Qt Quick</span></h1>
+<p>Το Qt Quick αποτελείται από τη γλώσσα QML, το <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtdeclarative.html">QtDeclarative</a> C++ module το οποίο ολοκληρώνει τη γλώσσα QML με C++ αντικείμενα, και το εργαλείο Qt Creator το οποίο πλέον περιλαμβάνει επεκτάσεις για την υποστήριξη του περιβάλλοντος. Το Qt Quick βοηθά τους προγραμματιστές και τους σχεδιαστές να συνεργάζονται στη δημιουργία των fluid user interfaces που γίνονται κοινός τόπος στις φορητές καταναλωτικές συσκευές, όπως τα κινητά τηλέφωνα, τα media players, τα set-top boxes και τα netbooks. Χρησιμοποιώντας το <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtdeclarative.html">QtDeclarative</a> C++ module, μπορείτε να φορτώσετε QML αρχεία και να αλληλεπιδράσετε με αυτά μέσα από την Qt εφαρμογή σας.
+</p><p>Η QML παρέχει μηχανισμούς για το δηλωτικό χτίσιμο ενός δέντρου αντικειμένων <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeelements.html">QML elements</a>. Η QML βελτιώνει την ολοκλήρωση μεταξύ της JavaScript και των υπαρχόντων <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qobject.html">QObject</a> της Qt, προσθέτει υποστήριξη για αυτόματα <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/propertybinding.html">property bindings</a> και παρέχει <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativenetwork.html">network transparency</a> σε επίπεδο γλώσσας.
+</p><p>Τα <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeelements.html">QML elements</a> είναι ένα σοφιστικέ σετ από γραφικά και συμπεριφορικά δομικά στοιχεία. Αυτά τα διαφορετικά στοιχεία συνδυάζονται μαζί στο <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativedocuments.html">QML documents</a> για τη δημιουργία συστατικών με πολυπλοκότητα που ποικίλει από απλά κουμπιά και sliders, μέχρι ολόκληρες internet-enabled εφαρμογές σαν έναν <a rel="nofollow" class="external text" href="http://www.flickr.com/">Flickr</a> photo browser.
+</p><p>Το Qt Quick πατάει πάνω στα <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtprogrammers.html">δυνατά στοιχεία του Qt</a>. Η QML μπορεί να χρησιμοποιηθεί για την κλιμακωτή επέκταση μιας υπάρχουσας εφαρμογής ή για τη δημιουργία εντελώς νέων εφαρμογών. Η QML είναι πλήρως <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-extending.html">επεκτάσιμη από τη C+<i></a> μέσω του <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtdeclarative.html">QtDeclarative</a> module.</i>
+</p><p><a href="index113b-2.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/creator-design.png" class="new" title="File:Http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/creator-design.png">http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/creator-design.png</a>
+</p><p><i>Το user interface του Qt Creator για τη δημιουργία συστατικών του Qt Quick</i>
+</p>
+<h1><span class="mw-headline" id=".CE.9C.CE.B9.CE.B1_.CF.83.CF.8D.CE.BD.CF.84.CE.BF.CE.BC.CE.B7_.CE.B5.CE.B9.CF.83.CE.B1.CE.B3.CF.89.CE.B3.CE.AE_.CF.83.CF.84.CE.B7.CE.BD_QML">Μια σύντομη εισαγωγή στην QML</span></h1>
+<p>Η QML είναι μια πλούσια γλώσσα, και μια πλήρης περιγραφή είναι πέρα από τους σκοπούς αυτού του άρθρου. Αυτό το άρθρο εναλλακτικά θα παρουσιάσει μία εισαγωγή στο τι μπορεί να κάνει η QML και στο πώς μπορείτε να ολοκληρώσετε την QML με C<i>+ για να πάρετε το καλύτερο και από τους δύο κόσμους: υψηλών επιδόσεων business logic built σε C++ και πολύ δυναμικές διεπαφές χρήστη με χρήση της QML. Μια πλήρης περιγραφή της QML είναι διαθέσιμη στο <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/declarativeui.html">online documentation</a>.</i>
+</p>
+Η κατανόηση της QML αρχίζει με τη έννοια των <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeelements.html">elements</a>. Ένα element είναι ένα template για μία βασική δομική μονάδα από την οποία μπορεί να φτιαχτεί ένα πρόγραμμα σε QML. Η QML υποστηρίζει για παράδειγμα οπτικά elements των τύπων Rectangle και Text, αλληλεπιδραστικά elements των τύπων <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> και <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Flipable</pre></div></div>, και animation elements των τύπων <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">RotationAnimation</pre></div></div> και <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Transition</pre></div></div>. Υπάρχουν επίσης πολύπλοκοι τύποι element που επιτρέπουν στον developer να εργαστεί με δεδομένα, να υλοποιήσει views σε αρχιτεκτονικές model-view, καθώς και άλλοι τύποι housekeeping element οι οποίοι απλά θα προσθέσουν σύγχυση στην παρούσα φάση.
+Όλα τα QML elements περιλαμβάνουν μία ή περισσότερες ιδιότητες (για παράδειγμα <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">color</pre></div></div>) οι οποίες μπορεί να ελεγχθούν από τον developer και πολλά elements περιλαμβάνουν σήματα (signals) (για παράδειγμα <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onClicked</pre></div></div>) τα οποία μπορεί να χρησιμοποιηθούν για την απόκριση σε events ή σε αλλαγές κατάστασης.
+<h2><span class="mw-headline" id=".CE.9F.CF.80.CF.84.CE.B9.CE.BA.CE.AC_elements:_Hello_World">Οπτικά elements: Hello World</span></h2>
+<p>Αρκετά με το κείμενο! Είναι ώρα για το απαραίτητο Hello World παράδειγμα. Ακολουθεί ο απαιτούμενος κώδικας για την τοποθέτηση του κειμένου <i>Hello World</i> στην επιφάνεια ενός background rectangle:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> <span class="nu0">300</span>
+ height<span class="sy0">:</span> <span class="nu0">200</span>
+ Text <span class="br0">&#123;</span>
+ anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span>
+ anchors.<span class="me1">verticalCenter</span><span class="sy0">:</span> parent.<span class="me1">verticalCenter</span>
+ text<span class="sy0">:</span> <span class="st0">&quot;Hello World&quot;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Απόσπασμα κώδικα: Hello World</i>
+</p><p>Ας μελετήσουμε αυτό το απλό πρόγραμμα. Το παράδειγμα <i>Hello World</i> είναι ένα έγγραφο QML, πράγμα που σημαίνει ότι είναι ένα πλήρες block QML πηγαίου κώδικα, έτοιμου για εκτέλεση. Τα έγγραφα QML γενικά αντιστοιχούν σε plain αρχεία κειμένου αποθηκευμένα σε ένα δίσκο ή πόρο δικτύου, αλλά μπορούν να δημιουργηθούν άμεσα από δεδομένα κειμένου.
+</p><p>Ένα έγγραφο QML πάντα αρχίζει με μία ή περισσότερες εντολές import. Εδώ βλέπετε το import του Qt 4.7. Για να εμποδιστούν στοιχεία που θα παρουσιαστούν σε επόμενες εκδόσεις να επηρεάσουν υπάρχοντα έγγραφα QML, οι διαθέσιμοι τύποι στοιχείων μέσα σε ένα έγγραφο ελέγχονται από τα imported <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativemodules.html">QML Modules</a>. Αυτό σημαίνει ότι η QML είναι μία <i>versioned</i> γλώσσα.
+</p><p>Το επόμενο που βλέπετε είναι το Rectangle element template που χρησιμοποιείται για τη δημιουργία ενός ενεργού αντικειμένου. Τα αντικείμενα μπορεί να περιέχουν άλλα αντικείμενα, να δημιουργούν σχέσεις parent-child. Στο παραπάνω πρόγραμμα, το αντικείμενο Rectangle είναι parent στο αντικείμενο Text. Το στοιχείο Rectangle επίσης ορίζει ένα top-level παράθυρο για τη διαχείριση των οπτικών ορίων και του focus segmentation ολόκληρου του UI.
+</p><p>Μέσα στα αντικείμενα, οι ιδιότητες δένονται με τιμές χρησιμοποιώντας την <i>property&#160;: expression</i> statement. Υπάρχουν δύο πτυχές αυτής της statement που χρήζουν επεξήγησης.
+</p><p>Πρώτον, η expression είναι μία JavaScript expression, το οποίο σημαίνει ότι μπορείτε να ορίσετε τις ιδιότητες με βάση έναν υπολογισμό, μια συνθήκη, ή άλλες πολύπλοκες εντολές JavaScript. Για παράδειγμα, μπορείτε να ορίσετε το aspect ratio ενός rectangle με βάση την τιμή μιας variable orientation.
+</p><p>Δεύτερον, το binding είναι διαφορετικό από την ανάθεση (assignment). Στην ανάθεση, η τιμή μιας ιδιότητας ορίζεται όταν η εντολή ανάθεσης εκτελείται και είναι σταθερή στη συνέχεια μέχρι και εάν η εντολή εκτελεστεί ξανά. Σε ένα binding, μια ιδιότητα ορίζεται όταν η εντολή binding εκτελείται για πρώτη φορά, αλλά θα τροποποιηθεί εάν και όταν το αποτέλεσμα της έκφρασης που χρησιμοποιείται για τον ορισμό της ιδιότητας αλλάξει. (Εάν είναι επιθυμητό, μπορείτε να αναθέσετε μια τιμή στην ιδιότητα χρησιμοποιώντας ιδιότητα = έκφραση μέσα σε ένα JavaScript block.)
+</p><p>Σκεφθείτε τι συμβαίνει όταν ο προσανατολισμός της συσκευής αλλάζει από portrait σε landscape (πιθανόν λόγω ενός αισθητήρα σε μια φορητή συσκευή). Λόγω των property bindings, το aspect ratio του parent rectangle θα αλλάξει και τα text element anchors will θα ανταποκριθούν στην αλλαγή για να θέσουν ξανά το κείμενο στο κέντρο.
+</p>
+Η δήλωση <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span></pre></div></div> στοιχίζει το κέντρο του κειμένου με το κέντρο του parent rectangle. Τα Anchors παρέχουν τη δυνατότητα τοποθέτησης ενός στοιχείου καθορίζοντας τη σχέση του με το parent ή με τα sibling στοιχεία. (Σημείωση: if you check the online documentation for the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> element you will not see the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">anchors.<span class="me1">horizontalCenter</span></pre></div></div> property listed. Look closely and you will see the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> element inherits all the properties of the QML <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Item</pre></div></div> element; the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Item</pre></div></div> element provides the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">anchors.<span class="me1">horizontalCenter</span></pre></div></div> property.)
+There are currently seventeen anchor properties available, allowing you to align, center, and fill elements relative to each other and to set margins and offsets. For example, The following snippet shows a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Text</pre></div></div> element anchored to an <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Image</pre></div></div> element, horizontally centered and vertically below, with a margin.
+<p><a href="indexebe3-2.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/anchors.png" class="new" title="File:Http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/anchors.png">http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/anchors.png</a>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Text <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> label
+ anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> pic.<span class="me1">horizontalCenter</span>
+ anchors.<span class="me1">top</span><span class="sy0">:</span> pic.<span class="me1">bottom</span>
+ anchors.<span class="me1">topMargin</span><span class="sy0">:</span> <span class="nu0">5</span>
+ …
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: Use anchors to align elements</i>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Layering_visual_elements">Layering visual elements</span></h2>
+QML visual elements can be layered on top of each other with transparency using <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">opacity <span class="sy0">:</span> real</pre></div></div> where real varies from 0 (transparent) to 1 (opaque). For performance reasons this should be used sparingly, especially in animations as each layer in the scene will need to be rendered at runtime for each frame of the animation. This may be fine for rapid prototyping, but before final deployment it is best to pre-render as much of the scene as possible, then simply load pixel maps at runtime.
+<p>The following snippet produces two offset and overlapping rectangles, one red and one blue, with transparency invoked such that the overlapping square will be purple. Notice how the child (blue) rectangle inherits the 50% opacity from its parent (red) rectangle.
+</p><p><a href="index78e5.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/transparency.png" class="new" title="File:Http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/transparency.png">http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/transparency.png</a>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+ opacity<span class="sy0">:</span> <span class="nu16">0.5</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span>
+ width<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">100</span>
+ Rectangle <span class="br0">&#123;</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;blue&quot;</span>
+ x<span class="sy0">:</span> <span class="nu0">50</span><span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">50</span><span class="sy0">;</span> width<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">100</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: Use transparency sparingly</i>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Interaction_elements:_mouse_and_touch">Interaction elements: mouse and touch</span></h2>
+To add mouse or touch interaction you need to add a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> object. The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> object lets the user click and drag the mouse (or touch point). Other available interaction elements include <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Flickable</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Flipable</pre></div></div>, and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FocusScope</pre></div></div>.
+Note that the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> object can be separate from any visually apparent objects, providing the designer flexibility. It is quite possible, for example, to create a visual representation of button for a user to click and then surround the visual representation with a larger mouse area that allows the user to "miss" the visible element by a few pixels.
+<p>To introduce a mouse region to the <i>Hello World</i> example, the rectangle containing the text is made a child of a new rectangle that will define the mouse area.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;#ff0000&quot;</span>
+ width<span class="sy0">:</span> <span class="nu0">310</span>
+ height<span class="sy0">:</span> <span class="nu0">210</span>
+ MouseArea <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>parent.<span class="me1">color</span> <span class="sy0">==</span> <span class="st0">&quot;#ff0000&quot;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ parent.<span class="me1">color</span> <span class="sy0">=</span> <span class="st0">&quot;#ff9900&quot;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+ parent.<span class="me1">color</span> <span class="sy0">=</span> <span class="st0">&quot;#ff0000&quot;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Rectangle <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> <span class="nu0">300</span>
+ height<span class="sy0">:</span> <span class="nu0">200</span>
+ anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span>
+ anchors.<span class="me1">verticalCenter</span><span class="sy0">:</span> parent.<span class="me1">verticalCenter</span>
+&#160;
+Text <span class="br0">&#123;</span>
+ anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span>
+ anchors.<span class="me1">verticalCenter</span><span class="sy0">:</span> parent.<span class="me1">verticalCenter</span>
+ text<span class="sy0">:</span> <span class="st0">&quot;Hello World&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: Mouse-touch interaction</i>
+</p><p><br />
+</p>
+The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> element includes signal handlers that allow you to write JavaScript expressions that will be called upon certain events or changes in state. Available handlers include <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onClicked</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onEntered</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onExited</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onPressed</pre></div></div> and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onReleased</pre></div></div>. In the example above, the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onClicked</pre></div></div> signal handler toggles the color of the rectangle.
+This example changes the color of the rectangle in response to any valid click. A click is defined as a press followed by a release, both inside the <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> (pressing, moving outside the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div>, and then moving back inside and releasing is also considered a click). The full syntax for the handler is <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea<span class="sy0">::</span><span class="me2">onClicked</span> <span class="br0">&#40;</span>mouse<span class="br0">&#41;</span></pre></div></div> where the mouse parameter provides information about the click, including the x and y position of the release of the click, and whether the click was held. Our example does not care where the click occurred.
+The <i>Mouse-touch interaction</i> snippet shows a simple case of visualizing state by changing one value in response to one event. The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onClicked</pre></div></div> statement will quickly become ugly if you try to change multiple values in response to multiple states. That's where QML state declarations come in.
+<h2><span class="mw-headline" id="State_Declarations">State Declarations</span></h2>
+QML State declarations define a set of property value changes from the base state. The base state is the initial declaration of property values, and is expressed by using an empty string as the state name. After a state change you can always revert to the base state by assigning an empty string to the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">state</pre></div></div> property.
+<p>In the following snippet, states for the two colors are implemented. In the definition of the red rectangle, the id property is set. Named objects can be referenced by siblings or descendants. Two states are also defined: red and orange. The state property is assigned to give the element an initial state.
+</p>
+State elements include a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">when</pre></div></div> condition that can be used to determine when a state should be applied. Here you see the red state applied when the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> is currently being pressed.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">id<span class="sy0">:</span> buttonRect<span class="sy0">;</span>
+&#160;
+state<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span>
+states<span class="sy0">:</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span>
+ when<span class="sy0">:</span> mouseArea.<span class="me1">pressed</span>  <span class="kw2">true</span>
+        PropertyChanges <span class="br0">&#123;</span>
+            target<span class="sy0">:</span> buttonRect<span class="sy0">;</span>
+            color<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span><span class="sy0">;</span>
+            width<span class="sy0">:</span> <span class="nu0">80</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">40</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span><span class="sy0">,</span>
+    State <span class="br0">&#123;</span>
+        name<span class="sy0">:</span> <span class="st0">&quot;orange&quot;</span>
+        when<span class="sy0">:</span> mouseArea.<span class="me1">pressed</span>  <span class="kw2">false</span>
+ PropertyChanges <span class="br0">&#123;</span>
+ target<span class="sy0">:</span> buttonRect<span class="sy0">;</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;#ff9900&quot;</span><span class="sy0">;</span>
+ width<span class="sy0">:</span> <span class="nu0">120</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">80</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: Define states</i>
+</p><p><br />
+</p><p>The defined state not only sets the color for each state, but also the width and height of the rectangle. The orange state provides a larger button. To utilize the states, the mouse region onClicked JavaScript is updated.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>parent.<span class="me1">state</span> <span class="sy0">==</span> <span class="st0">&quot;red&quot;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ parent.<span class="me1">state</span> <span class="sy0">=</span> <span class="st0">&quot;orange&quot;</span>
+ <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+ parent.<span class="me1">state</span> <span class="sy0">=</span> <span class="st0">&quot;red&quot;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: Simple state transitions</i>
+</p><p><br />
+</p><p>It is possible to define a set of states using code, as in this example, or using the graphical Qt Quick Designer component in Qt Creator.
+</p><p>To create animations between states, transition elements are defined. Transition elements can use the information from the base state and the target state to interpolate the property changes using Animation elements. Animation elements in turn can use a number of different parametrized easing curves and grouping techniques, giving the developer and designer a high degree of control over how and when properties change during a state transition. This is discussed in further detail later on.
+</p>
+<h2><span class="mw-headline" id="QML_components">QML components</span></h2>
+<p>The discussion of the <i>Hello World</i> snippet described the contents of a QML document. How a QML document is named also matters. A QML document name that begins with an uppercase case letter defines a single, top-level <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativecomponent.html">QML component</a>. A QML component is a template that is interpreted by the QML runtime to create an object with some predefined behaviour. As it is a template, a single QML component can be "run" multiple times to produce several objects, each of which are said to be instances of the component.
+</p>
+Once created, instances are not dependent on the component that created them, so they can operate on independent data. Here is an example of a simple <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button</pre></div></div> component (defined in a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div> file) that is instantiated four times by <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">application.<span class="me1">qml</span></pre></div></div>. Each instance is created with a different value for its text property:
+<p><a href="indexe280.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/buttons.png" class="new" title="File:Http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/buttons.png">http://doc.qt.nokia.com/whitepapers/qml-for-cpp-whitepaper/buttons.png</a>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Column <span class="br0">&#123;</span>
+ spacing<span class="sy0">:</span> <span class="nu0">10</span>
+&#160;
+Button <span class="br0">&#123;</span> text<span class="sy0">:</span> <span class="st0">&quot;Apple&quot;</span> <span class="br0">&#125;</span>
+ Button <span class="br0">&#123;</span> text<span class="sy0">:</span> <span class="st0">&quot;Orange&quot;</span> <span class="br0">&#125;</span>
+ Button <span class="br0">&#123;</span> text<span class="sy0">:</span> <span class="st0">&quot;Pear&quot;</span> <span class="br0">&#125;</span>
+ Button <span class="br0">&#123;</span> text<span class="sy0">:</span> <span class="st0">&quot;Grape&quot;</span> <span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: Use the button four times with different text properties</i>
+</p><p><br />
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ property alias text<span class="sy0">:</span> textItem.<span class="me1">text</span>
+&#160;
+width<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">30</span>
+ border.<span class="me1">width</span><span class="sy0">:</span> <span class="nu0">1</span>
+ radius<span class="sy0">:</span> <span class="nu0">5</span>
+ smooth<span class="sy0">:</span> <span class="kw2">true</span>
+&#160;
+gradient<span class="sy0">:</span> Gradient <span class="br0">&#123;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.0</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;darkGray&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.5</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;black&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">1.0</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;darkGray&quot;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+Text <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> textItem
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ font.<span class="me1">pointSize</span><span class="sy0">:</span> <span class="nu0">20</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: The Button.qml file creates a button component</i>
+</p><p><br />
+</p>
+<ul>
+<li> <b>Note:</b> QML documents may also create components inline using the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Component</pre></div></div> element.
+</li>
+</ul>
+<h2><span class="mw-headline" id="Animation_elements:_fluid_transitions">Animation elements: fluid transitions</span></h2>
+<p>Animation effects are key to a fluid UI. In QML, animations are created by applying animation objects to object property values to gradually change them over time. Animation objects are created from the built-in set of animation elements, which can be used to animate various types of property values. In addition, animation objects can be applied in different ways depending on the context in which they are required.
+</p><p>There is a detailed treatment of <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeanimation.html">animation in QML</a> in the online documentation. As an introduction, let's consider transitions.
+</p>
+The following snippet shows the code to animate the movement of a rectangle. The snippet creates a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> object with two states: the default state, and an added moved state. In the moved state, the rectangle's position changes to (50, 50). The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Transition</pre></div></div> object specifies that when the rectangle changes between the default and the moved state, any changes to the x and y properties should be animated, using an <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Easing.<span class="me1">InOutQuad</span></pre></div></div>.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> rect
+ width<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">100</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span>
+&#160;
+states<span class="sy0">:</span> State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;moved&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> rect<span class="sy0">;</span> x<span class="sy0">:</span> <span class="nu0">50</span><span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">50</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+transitions<span class="sy0">:</span> Transition <span class="br0">&#123;</span>
+ PropertyAnimation <span class="br0">&#123;</span>
+ properties<span class="sy0">:</span> <span class="st0">&quot;x,y&quot;</span><span class="sy0">;</span>
+ easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">InOutQuad</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: Animated state transitions</i>
+</p><p><br />
+</p>
+You can apply multiple transitions to an item as in the following snippet. (Remember anything you can do to an item you can do to a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div>). By default a transition is applied to all state changes. For greater control you can set the from and to properties to apply a transition only when changing from a given state, to a given state, or between given states.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Item <span class="br0">&#123;</span>
+ …
+ transitions<span class="sy0">:</span>
+ Transition <span class="br0">&#123;</span> … <span class="br0">&#125;</span>
+ Transition <span class="br0">&#123;</span> … <span class="br0">&#125;</span>
+&#160;
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: Multiple transitions</i>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Model-View_pattern_in_QML">Model-View pattern in QML</span></h2>
+<p>Using QML in a model-view design pattern is a natural. QML can create fluid, visually appealing views into models whether the models are created in C++ or directly in QML.
+</p>
+QML currently provides three elements devoted to creating views into models. The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView</pre></div></div> and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">GridView</pre></div></div> elements create list and grid views respectively. The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">PathView</pre></div></div> element lays out model-provided items on a path, for example a loop path that allows you to create a carousel interface into a list.
+<p>Let's create two different views into the same model — a basic contact list.
+</p>
+You can build models directly in QML using the ListModel element among others. The following snippet shows how to create a contacts model where each contact record includes a name, a phone number, and an icon. Each element in the list is defined by a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListElement</pre></div></div> element; each entry includes two data roles, name and icon. Save the document in the file <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ContactModel.<span class="me1">qml</span></pre></div></div> for access later. (Notice the initial capital letter that makes this file an accessible component.)
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+ListModel <span class="br0">&#123;</span>
+ ListElement <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;Bill Jones&quot;</span>
+ number<span class="sy0">:</span> <span class="st0">&quot;+1 800 555 1212&quot;</span>
+ icon<span class="sy0">:</span> <span class="st0">&quot;pics/qtlogo.png&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;Jane Doe&quot;</span>
+ number<span class="sy0">:</span> <span class="st0">&quot;+1 800 555 3434&quot;</span>
+ icon<span class="sy0">:</span> <span class="st0">&quot;pics/qtlogo.png&quot;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;John Smith&quot;</span>
+ number<span class="sy0">:</span> <span class="st0">&quot;''1 800 555 5656&quot;</span>
+ icon<span class="sy0">:</span> <span class="st0">&quot;pics/qtlogo.png&quot;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: Defining a List Model in QML</i>
+</p><p>p. 
+</p>
+The following snippet uses the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView</pre></div></div> element to lay out items horizontally or vertically. The snippet sets the model property to the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ContactModel</pre></div></div> component just created. The delegate property provides a template defining each item instantiated by the view. In this case, the template shows the name and number roles using the built-in <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Text</pre></div></div> component. If you choose, you can define delegate components the same way you define any other QML component.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+ListView <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> <span class="nu0">180</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">200</span>
+&#160;
+ model<span class="sy0">:</span> ContactModel <span class="br0">&#123;</span><span class="br0">&#125;</span>
+ delegate<span class="sy0">:</span> Text <span class="br0">&#123;</span>
+ text<span class="sy0">:</span> name<span class="st0">''</span> <span class="st0">&quot;: &quot;</span> <span class="sy0">+</span> number
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: List view into contact model</i>
+</p><p><br />
+</p>
+Now let's get a little fancier and build a view into the contacts model that looks like a 3D carousel and allows the user to flick her way through the list. The resulting view and code is shown in the following snippet . Note the creation of an inline component for use as the delegate property in the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">PathView</pre></div></div> element.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> <span class="nu0">240</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">200</span>
+&#160;
+Component <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> delegate
+ Column <span class="br0">&#123;</span>
+ Image <span class="br0">&#123;</span> anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span>
+ name.<span class="me1">horizontalCenter</span><span class="sy0">;</span>
+ width<span class="sy0">:</span> <span class="nu0">64</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">64</span><span class="sy0">;</span>
+ source<span class="sy0">:</span> icon
+ <span class="br0">&#125;</span>
+ Text <span class="br0">&#123;</span> text<span class="sy0">:</span> name<span class="sy0">;</span> font.<span class="me1">pointSize</span><span class="sy0">:</span> <span class="nu0">16</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+PathView <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ model<span class="sy0">:</span> ContactModel <span class="br0">&#123;</span><span class="br0">&#125;</span>
+ delegate<span class="sy0">:</span> delegate
+ path<span class="sy0">:</span> Path <span class="br0">&#123;</span>
+ startX<span class="sy0">:</span> <span class="nu0">120</span><span class="sy0">;</span> startY<span class="sy0">:</span> <span class="nu0">100</span>
+ PathQuad <span class="br0">&#123;</span> x<span class="sy0">:</span> <span class="nu0">120</span><span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">25</span><span class="sy0">;</span> controlX<span class="sy0">:</span> <span class="nu0">260</span><span class="sy0">;</span> controlY<span class="sy0">:</span> <span class="nu0">75</span> <span class="br0">&#125;</span>
+ PathQuad <span class="br0">&#123;</span> x<span class="sy0">:</span> <span class="nu0">120</span><span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> controlX<span class="sy0">:</span> <span class="sy0">-</span><span class="nu0">20</span><span class="sy0">;</span> controlY<span class="sy0">:</span> <span class="nu0">75</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i>Snippet: Rotating carousel view into contact model</i>
+</p><p>p. 
+</p>
+<h1><span class="mw-headline" id="Using_Qt_Quick_in_C.2B.2B_applications">Using Qt Quick in C++ applications</span></h1>
+<p>Qt Quick comes with its own run-time and enables loading new functionality via modules, making it possible to develop applications built entirely with QML. However, the real strength of Qt Quick is the ability to integrate it into a C++ application.
+</p><p>For the most basic needs, for example integrating a QML view into a C++ project, the <b>QDeclarativeView</b> widget can be used. It is derived from a <b>QGraphicsView</b> but also includes the required components to host a QML application. Alternatively, you can simply make new C++ types available to the QML runtime through plugins, and these types can do anything your C++ application can do.
+</p><p>For more complex situations, how you proceed depends on from how the C++ code is built.
+</p><p>If you are starting with an application based on C++ widgets, you can reuse all your graphics assets and re-factor the <b>QWidgets</b> to QML. Since you already have the full interaction and design work done, developing and coding the QML is relatively easy.
+</p><p>If you are instead starting with an application based on a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qgraphicsview.html">QGraphicsView</a>, the conversion process is even easier and can proceed in stages. The entire QML application can be inserted into an existing graphics view by instantiating a QML engine. If desired, the QML interface can co-exist with the existing user interface and allow the conversion process to proceed in steps.
+</p><p>The following snippet shows the three steps required to add a QML engine and context to an existing <b>QGraphicsView</b>. First create an environment for instantiating QML components using the <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeengine.html">QDeclarativeEngine</a> class, then encapsulate a QML component definition using <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativecomponent.html">QDeclarativeComponent</a>. Finally, the resulting <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qgraphicsobject.html">QGraphicsObject</a> can be added to the existing scene and co-exist with the rest of the user interface.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QGraphicsScene</span> <span class="sy0">*</span>scene <span class="sy0">=</span> …<span class="sy0">;</span>
+&#160;
+QDeclarativeEngine <span class="sy0">*</span>engine <span class="sy0">=</span> <span class="kw1">new</span> QDeclarativeEngine<span class="sy0">;</span>
+QDeclarativeComponent component<span class="br0">&#40;</span>engine<span class="sy0">,</span> <span class="kw5">QUrl</span><span class="sy0">::</span><span class="me2">fromLocalFile</span><span class="br0">&#40;</span>…<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+QGraphicsObject <span class="st0">''</span><span class="st0">'object =
+ qobject_cast&lt;QGraphicsObject'</span><span class="st0">''</span><span class="sy0">&gt;</span><span class="br0">&#40;</span>component.<span class="me1">create</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+scene<span class="sy0">-&gt;</span><span class="me3">addItem</span><span class="br0">&#40;</span>object<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p><i>Snippet: Adding a QML engine to QGraphicsView</i>
+</p><p><br />
+</p>
+If the component fails to load the QML file, the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">error</pre></div></div> property will be set to true. To output the error messages, the following statement can be placed just after the call to <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">create<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qWarning<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> component.<span class="me1">errors</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>To align the user interfaces it is possible to transform the <b>QGraphicsObject</b> and adjust the z-value to place it at the right depth in the scene. In order to achieve the optimal performance for the QML part of the user interface, the following options are recommended to be set.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QGraphicsView</span> <span class="sy0">*</span>view <span class="sy0">=</span> …<span class="sy0">;</span>
+&#160;
+view<span class="sy0">-&gt;</span><span class="me3">setOptimizationFlags</span><span class="br0">&#40;</span><span class="kw5">QGraphicsView</span><span class="sy0">::</span><span class="me2">DontSavePainterState</span><span class="br0">&#41;</span><span class="sy0">;</span>
+view<span class="sy0">-&gt;</span><span class="me3">setViewportUpdateMode</span><span class="br0">&#40;</span>
+ <span class="kw5">QGraphicsView</span><span class="sy0">::</span><span class="me2">BoundingRectViewportUpdate</span><span class="br0">&#41;</span><span class="sy0">;</span>
+view<span class="sy0">-&gt;</span><span class="me3">setItemIndexMethod</span><span class="br0">&#40;</span><span class="kw5">QGraphicsScene</span><span class="sy0">::</span><span class="me2">NoIndex</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p><i>Snippet: Optimizing QML interface performance</i>
+</p><p><br />
+</p><p>Although combining an existing graphics view-based user interface with QML is possible, it is recommended to convert the entire experience to Qt Quick.
+</p>
+<h2><span class="mw-headline" id="Sharing_data_between_C.2B.2B_and_QML">Sharing data between C++ and QML</span></h2>
+<p>Qt Quick provides numerous ways to share data between C++ and QML with or without implementing a formal model-view design pattern. It is also possible to trigger calls to QML functions from C++ and vice-versa. In general, exposing a <b>QObject</b> will make all of its signals, slots and properties available to the QML environment.
+</p>
+All QML code executes within a context. The context keeps track of what data is available to different leaves and nodes in a QML object tree. Data is shared as context properties or context objects. A context property is simply a way to expose a given <b>QObject</b> through a given name. For example, to expose a <b>QColor</b> property named <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">frameColor</pre></div></div> to QML, simply use the following snippet.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QDeclarativeContext <span class="sy0">*</span>context <span class="sy0">=</span> …<span class="sy0">;</span>
+context<span class="sy0">-&gt;</span><span class="me3">setContextProperty</span><span class="br0">&#40;</span><span class="st0">&quot;frameColor&quot;</span><span class="sy0">,</span> <span class="kw5">QColor</span><span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">red</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+This property can then be accessed from within the QML context as a global property, as shown below. Remember property values are bound, not assigned, in QML. This means you can alter the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">frameColor</pre></div></div> property from C++ and the change will be reflected in QML.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+ border.<span class="me1">color</span><span class="sy0">:</span> frameColor
+<span class="br0">&#125;</span></pre></div></div>
+<p>It is possible to add multiple context properties to a <b>QDeclarativeContext</b> object, but as the list of properties climbs the readability of the code crumbles. Instead of setting each property individually, it is cleaner to gather all context properties into one <b>QObject</b> and set the single object as the context object instead.
+</p>
+The following snippet shows how to define the interface object <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MyInterface</pre></div></div> using the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">setContextProperty<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> method. The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Q_PROPERTY</pre></div></div> macro defines the properties available within <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MyInterface</pre></div></div> to the Qt property system and sets notification signals, allowing subsequent bindings to work.
+<p>Note that all properties added explicitly by <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativecontext.html#setContextProperty">QDeclarativeContext::setContextProperty()</a> take precedence over the context object's default properties.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> MyInterface <span class="sy0">:</span> … <span class="br0">&#123;</span>
+ …
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QAbstractItemModel</span> <span class="sy0">*</span>myModel READ model NOTIFY modelChanged<span class="br0">&#41;</span>
+ …
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+MyInterface <span class="sy0">*</span>myInterface <span class="sy0">=</span> <span class="kw1">new</span> MyInterface<span class="sy0">;</span>
+QDeclarativeEngine engine<span class="sy0">;</span>
+QDeclarativeContext <span class="sy0">*</span>context <span class="sy0">=</span> <span class="kw1">new</span>
+ QDeclarativeContext<span class="br0">&#40;</span>engine.<span class="me1">rootContext</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+context<span class="sy0">-&gt;</span><span class="me3">setContextObject</span><span class="br0">&#40;</span>myInterface<span class="br0">&#41;</span><span class="sy0">;</span>
+QDeclarativeComponent component<span class="br0">&#40;</span><span class="sy0">&amp;</span>engine<span class="sy0">;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+component.<span class="me1">setData</span><span class="br0">&#40;</span><span class="st0">&quot;import Qt 4.7<span class="es1">\n</span>ListView { model: myModel }&quot;</span><span class="sy0">,</span> <span class="kw5">QUrl</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+component.<span class="me1">create</span><span class="br0">&#40;</span>context<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p><i>Snippet: Defining an interface using setContextProperty()</i>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="QML_views_into_C.2B.2B_models">QML views into C++ models</span></h2>
+<p>Object properties work well when providing a limited set of values to QML, but are difficult to manage when large data sets are involved. In these cases formal models are visualized with formal views. This model/view design pattern allows developers to separate the implementation of user interface from business logic, supporting the model-view design pattern. The model can be implemented in C++ while the view is coded in QML.
+</p><p>QML can create views into C++ models that are exposed using the <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qabstractitemmodel.html">QAbstractItemModel</a> interface.
+</p><p>To expose a <b>QAbstractItemModel</b> to QML a context property is used:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QAbstractItemModel</span> <span class="sy0">*</span>model <span class="sy0">=</span> …<span class="sy0">;</span>
+context<span class="sy0">-&gt;</span><span class="me3">setContextProperty</span><span class="br0">&#40;</span><span class="st0">&quot;dataModel&quot;</span><span class="sy0">,</span> model<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h2><span class="mw-headline" id="QML_.2F_C.2B.2B_program_flow">QML / C++ program flow</span></h2>
+<p>Qt Quick allows QML to call C++ methods and allows C++ signals to be handled by JavaScript expressions within the QML context.
+</p>
+<h3><span class="mw-headline" id="Calling_C.2B.2B_methods_from_QML">Calling C++ methods from QML</span></h3>
+In order to feedback data from the user to the business logic, QML must be able to call C++ methods. This is achieved through slots or <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Q_INVOKABLE</pre></div></div> methods. By providing QML access to a <b>QObject</b> as a context property, the slots and invokable methods of that class can be called from QML.
+<p>For example, the following <b>QObject</b> derived class is added to the QML context.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> CallableClass <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+ …
+<span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> cppMethod<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="st0">&quot;C++ method called!&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+…
+&#160;
+context<span class="sy0">-&gt;</span><span class="me3">setContextProperty</span><span class="br0">&#40;</span><span class="st0">&quot;cppObject&quot;</span><span class="sy0">,</span> <span class="kw1">new</span> CallableClass<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>The QML code then can refer to the cppMethod method using the cppObject global object. In this example the method in question returns no value nor accepts any arguments, but that is not a limitation of QML. Both return values and arguments of the types supported by QML are supported.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea <span class="br0">&#123;</span>
+ …
+ onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+ cppObject.<span class="me1">cppMethod</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Qt_signal_to_QML_handler">Qt signal to QML handler</span></h3>
+Qt C++ signals can be handled by JavaScript executing in a QML context. For instance, the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">CallableClass</pre></div></div> class from the previous example also declares a signal, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cppSignal<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> CallableClass <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+ …
+<span class="kw2">signals</span><span class="sy0">:</span>
+ <span class="kw4">void</span> cppSignal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+Using a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Connections</pre></div></div> QML element, a signal handler can be implemented in QML. The connections element can be used to handle signals for any target object, including other QML elements. The signal handler is called <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onSignalName</pre></div></div>, where the first letter of the signal name is capitalized.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Connections <span class="br0">&#123;</span>
+ target<span class="sy0">:</span> cppObject
+ onCppSignal<span class="sy0">:</span> <span class="br0">&#123;</span> console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;QML function called!&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="Extending_QML_from_C.2B.2B">Extending QML from C++</span></h2>
+QML has built-in support for an extensive set of element types, but when application-specific needs pop up it is possible to extend QML with custom element types built in C+<i>. For example, let's say you have a burning desire for a QML element called <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Person</pre></div></div> with properties <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">name</pre></div></div> and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">shoeSize</pre></div></div>.</i>
+All QML elements map to C<i>+ types. The following snippet declares a basic C++ class <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Person</pre></div></div> with the two properties we want accessible on the QML type — <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">name</pre></div></div> and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">shoeSize</pre></div></div>. Although in this example we use the same name for the C++ class as the QML element, the C++ class can be named differently, or appear in a namespace.</i>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Person <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> name READ name WRITE setName<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw4">int</span> shoeSize READ shoeSize WRITE setShoeSize<span class="br0">&#41;</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ Person<span class="br0">&#40;</span><span class="kw5">QObject</span> <span class="sy0">*</span>parent <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw5">QString</span> name<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">void</span> setName<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span> <span class="sy0">&amp;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw4">int</span> shoeSize<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">void</span> setShoeSize<span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ <span class="kw5">QString</span> m_name<span class="sy0">;</span>
+ <span class="kw4">int</span> m_shoeSize<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p><i>Declare a Person class</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Person<span class="sy0">::</span><span class="me2">Person</span><span class="br0">&#40;</span><span class="kw5">QObject</span> <span class="st0">''</span><span class="st0">'parent)
+: QObject(parent), m_shoeSize(0)
+{
+}
+&#160;
+QString Person::name() const
+{
+ return m_name;
+}
+&#160;
+void Person::setName(const QString &amp;n)
+{
+ m_name = n;
+}
+&#160;
+int Person::shoeSize() const
+{
+ return m_shoeSize;
+}
+&#160;
+void Person::setShoeSize(int s)
+{
+ m_shoeSize = s;
+}</span></pre></div></div>
+<p><i>Snippet: Define the Person class</i>
+</p><p>p. 
+</p>
+The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Person</pre></div></div> class implementation is quite basic. The property accessors simply return members of the object instance.
+The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">main.<span class="me1">cpp</span></pre></div></div> file also calls the <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeengine.html#qmlRegisterType">qmlRegisterType()</a> function to register the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Person</pre></div></div> type with QML as a type in the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">People</pre></div></div> library version 1.0, and defines the mapping between the C++ and QML class names.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QtDeclarative&gt;</span>
+…………
+qmlRegisterType<span class="sy0">&lt;</span>Person<span class="sy0">&gt;</span><span class="br0">&#40;</span><span class="st0">&quot;People&quot;</span><span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="st0">&quot;Person&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+The <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Person</pre></div></div> type can now be used from QML:
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import People <span class="nu16">1.0</span>
+&#160;
+Person <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;Bob Jones&quot;</span>
+ shoeSize<span class="sy0">:</span> <span class="nu0">12</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h1><span class="mw-headline" id="Getting_started">Getting started</span></h1>
+<p>This paper provided a brief introduction to Qt Quick. There is plenty more
+information, tutorials, and code examples for you to explore.
+</p><p>For additional information about Qt Quick:
+</p><p><br />
+<b> Try the QML Tutorial at</b>
+<a rel="nofollow" class="external free" href="http://doc.qt.nokia.com/4.7/qml-tutorial.html">http://doc.qt.nokia.com/4.7/qml-tutorial.html</a>
+</p>
+<ul>
+<li> Full documentation of QML elements is online at
+</li>
+</ul>
+<pre><a rel="nofollow" class="external free" href="http://doc.qt.nokia.com/4.7/qdeclarativeelements.html">http://doc.qt.nokia.com/4.7/qdeclarativeelements.html</a>
+</pre>
+<p>To begin working with Qt Quick:
+</p>
+<ul>
+<li> Download latest <a rel="nofollow" class="external text" href="http://qt.nokia.com/downloads/">Qt SDK</a> which has tools ( including Qt libraries, Qt Creator IDE ) you need to build desktop, embedded and mobile applications with Qt from a single install. This is the recommended way to get started with Qt. The latest SDK has a self updater feature that will keep you up to date as new versions are made available.
+</li>
+</ul>
+<ul>
+<li> Or download and install snapshots of the latest Qt Creator IDE 2.1, which previews a QML Text Editor with code completion, syntax highlighting and context-sensitive help; a QML Visual Editor that was built from the ground up using QML; and a QML Debugger that allows you to inspect the QML item tree and its properties at runtime, to check frame rates, to evaluate JavaScript expressions and so on inside Qt Creator. Qt Creator 2.1 is scheduled for release later in 2010.
+</li>
+</ul>
+<ul>
+<li> Once you install Qt Creator, check out the included examples installed in the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">YourInstalledRoot<span class="sy0">/</span>examples<span class="sy0">/</span>declarative</pre></div></div> directory and exposed through the IDE.
+</li>
+</ul>
+<ul>
+<li> You will find an online discussions and wikis covering Qt Quick at
+</li>
+</ul>
+<pre><a rel="nofollow" class="external free" href="http://www.developer.nokia.com/Community">http://www.developer.nokia.com/Community</a>
+and at
+<a rel="nofollow" class="external free" href="http://developer.qt.nokia.com/">http://developer.qt.nokia.com/</a>
+</pre>
+<p><a href="indexc09e.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/share.png" class="new" title="File:Http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/share.png">http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/share.png</a> <a href="index2aa7.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/remix.png" class="new" title="File:Http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/remix.png">http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/remix.png</a> <a href="index0b9f.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/by.png" class="new" title="File:Http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/by.png">http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/by.png</a> <a href="index9ace.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/sa.png" class="new" title="File:Http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/sa.png">http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/sa.png</a>
+</p><p>This document is licensed under the <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by-sa/2.5/">Creative Commons Attribution-Share Alike 2.5</a> license.
+</p><p>For more information, see
+<a rel="nofollow" class="external free" href="http://creativecommons.org/licenses/by-sa/2.5/legalcode">http://creativecommons.org/licenses/by-sa/2.5/legalcode</a>
+for the full terms of the license.
+</p><p><a href="index498f.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/nokia-logo.png" class="new" title="File:Http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/nokia-logo.png">http://doc.qt.nokia.com/whitepapers/qt-creator-whitepaper/wiki-images/nokia-logo.png</a>
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 2.013 seconds
+Real time usage: 2.043 seconds
+Preprocessor visited node count: 1028/1000000
+Preprocessor generated node count: 2248/1000000
+Post‐expand include size: 1404/2097152 bytes
+Template argument size: 447/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1078-0!*!0!!en!2!* and timestamp 20151104105706 and revision id 15964
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexd581.html?title=Introduction_to_Qt_Quick_for_C%2B%2B_Developers/el&amp;oldid=15964">http://wiki.qt.io/index.php?title=Introduction_to_Qt_Quick_for_C%2B%2B_Developers/el&amp;oldid=15964</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Learning__Whitepapers.html" title="Category:Learning::Whitepapers">Learning::Whitepapers</a></li><li><a href="Category_Developing_with_Qt__Qt_Quick.html" title="Category:Developing with Qt::Qt Quick">Developing with Qt::Qt Quick</a></li><li><a href="Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=4d491fd03ceb16f1&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Introduction_to_Qt_Quick_for_C%2b%2b_Developers/el.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Introduction_to_Qt_Quick_for_C%2b%2b_Developers/el.html?title=Talk:Introduction_to_Qt_Quick_for_C%2B%2B_Developers/el&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Introduction_to_Qt_Quick_for_C%2b%2b_Developers/el.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexb88c.html?title=Introduction_to_Qt_Quick_for_C%2B%2B_Developers/el&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexe716.html?title=Introduction_to_Qt_Quick_for_C%2B%2B_Developers/el&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Introduction_to_Qt_Quick_for_C%2b%2b_Developers/el.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Introduction_to_Qt_Quick_for_C%2b%2b_Developers/el.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index34a1.html?title=Introduction_to_Qt_Quick_for_C%2B%2B_Developers/el&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexd581.html?title=Introduction_to_Qt_Quick_for_C%2B%2B_Developers/el&amp;oldid=15964" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index0cf6.html?title=Introduction_to_Qt_Quick_for_C%2B%2B_Developers/el&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:24.</li>
+											<li id="footer-info-viewcount">This page has been accessed 624 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":257});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Introduction_to_Qt_Quick_for_Cpp_developers_Greek by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:06:01 GMT -->
+</html>

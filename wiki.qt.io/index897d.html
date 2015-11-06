@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Threads_Events_QObjects/bg&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:59:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Threads Events QObjects/bg - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load1a8c.css?debug=false&amp;lang=en&amp;modules=ext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Threads_Events_QObjects/bg","wgTitle":"Threads Events QObjects/bg","wgCurRevisionId":16119,"wgRevisionId":16119,"wgArticleId":2053,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Threads_Events_QObjects/bg","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Threads_Events_QObjects_bg skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Threads Events QObjects/bg</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="Threads_Events_QObjects.html" title="Threads Events QObjects">Threads Events QObjects</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="index665a.html?title=Threads_Events_QObjects/bg&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><br />
+<b>Български</b> <a href="Threads_Events_QObjects.html" title="Threads Events QObjects">English</a> <a href="Threads_Events_QObjects_Russian.html" title="Threads Events QObjects Russian" class="mw-redirect">Русский</a> <a href="Threads_Events_QObjects_Chinese.html" title="Threads Events QObjects Chinese" class="mw-redirect">中文</a> <a href="Threads_Events_QObjects_Korean.html" title="Threads Events QObjects Korean" class="mw-redirect">한글</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.D0.9D.D0.B8.D1.88.D0.BA.D0.B8.2C_.D0.A1.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F_.D0.B8_QObject-.D0.B8"><span class="tocnumber">1</span> <span class="toctext">Нишки, Събития и QObject-и</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.D0.92.D0.BD.D0.B8.D0.BC.D0.B0.D0.BD.D0.B8.D0.B5:_.D0.92.D0.B5.D1.82.D0.B0_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D1.8F"><span class="tocnumber">1.1</span> <span class="toctext">Внимание: Вета версия</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#.D0.92.D1.8A.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5"><span class="tocnumber">2</span> <span class="toctext">Въведение</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#.D0.9F.D1.80.D0.B5.D0.B4.D0.BF.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BA.D0.B8"><span class="tocnumber">2.1</span> <span class="toctext">Предпоставки</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#.D0.A1.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F_.D0.B8_.D1.86.D0.B8.D0.BA.D1.8A.D0.BB.D0.B0_.D0.BD.D0.B0_.D1.81.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F.D1.82.D0.B0"><span class="tocnumber">3</span> <span class="toctext">Събития и цикъла на събитията</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#.D0.9A.D0.B0.D0.BA.D0.B2.D0.BE_.D0.B8.D0.B7.D0.B8.D1.81.D0.BA.D0.B2.D0.B0_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B5.D1.89_.D1.86.D0.B8.D0.BA.D1.8A.D0.BB_.D0.BD.D0.B0_.D1.81.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F.D1.82.D0.B0.3F"><span class="tocnumber">3.1</span> <span class="toctext">Какво изисква работещ цикъл на събитията?</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.B0.D0.BD.D0.B5_.D0.BD.D0.B0_.D1.86.D0.B8.D0.BA.D1.8A.D0.BB.D0.B0_.D0.BD.D0.B0_.D1.81.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F.D1.82.D0.B0"><span class="tocnumber">3.2</span> <span class="toctext">Блокиране на цикъла на събитията</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.D0.9F.D1.80.D0.B8.D0.BD.D1.83.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D0.BD.D0.B0_.D0.BE.D0.B1.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B0_.D0.BD.D0.B0_.D1.81.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F"><span class="tocnumber">3.3</span> <span class="toctext">Принудителна обработка на събития</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#.D0.9D.D0.B8.D1.88.D0.BA.D0.BE.D0.B2.D0.B8_.D0.BA.D0.BB.D0.B0.D1.81.D0.BE.D0.B2.D0.B5_.D0.B2_Qt"><span class="tocnumber">4</span> <span class="toctext">Нишкови класове в Qt</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#QThread"><span class="tocnumber">4.1</span> <span class="toctext">QThread</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#QRunnable_.D0.B8_QThreadPool"><span class="tocnumber">4.2</span> <span class="toctext">QRunnable и QThreadPool</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#QtConcurrent"><span class="tocnumber">4.3</span> <span class="toctext">QtConcurrent</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#.D0.A1.D1.80.D0.B0.D0.B2.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B0_.D0.B2.D1.8A.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D0.B8.D1.82.D0.B5"><span class="tocnumber">4.4</span> <span class="toctext">Сравнение на възможностите</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#.D0.9D.D0.B8.D1.88.D0.BA.D0.B8_.D0.B8_QObject-.D0.B8"><span class="tocnumber">5</span> <span class="toctext">Нишки и QObject-и</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#.D0.A6.D0.B8.D0.BA.D1.8A.D0.BB_.D0.BD.D0.B0_.D1.81.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F.D1.82.D0.B0_.D0.B7.D0.B0_.D0.B2.D1.81.D1.8F.D0.BA.D0.B0_.D0.BD.D0.B8.D1.88.D0.BA.D0.B0"><span class="tocnumber">5.1</span> <span class="toctext">Цикъл на събитията за всяка нишка</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#.D0.A1.D0.B8.D0.B3.D0.BD.D0.B0.D0.BB.D0.B8_.D0.B8_.D1.81.D0.BB.D0.BE.D1.82.D0.BE.D0.B2.D0.B5_.D0.BC.D0.B5.D0.B6.D0.B4.D1.83_.D0.BD.D0.B8.D1.88.D0.BA.D0.B8.D1.82.D0.B5"><span class="tocnumber">5.2</span> <span class="toctext">Сигнали и слотове между нишките</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id=".D0.9D.D0.B8.D1.88.D0.BA.D0.B8.2C_.D0.A1.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F_.D0.B8_QObject-.D0.B8">Нишки, Събития и QObject-и</span></h1>
+<h2><span class="mw-headline" id=".D0.92.D0.BD.D0.B8.D0.BC.D0.B0.D0.BD.D0.B8.D0.B5:_.D0.92.D0.B5.D1.82.D0.B0_.D0.B2.D0.B5.D1.80.D1.81.D0.B8.D1.8F">Внимание: Вета версия</span></h2>
+<p>Тази статия е почти готова, но има нужда от още малко до изглаждане и няколко добри примера. Всякакъв вид ревюта или допълнения са добре дошли! Дискусия за статията може да намерите <a rel="nofollow" class="external text" href="http://developer.qt.nokia.com/forums/viewthread/2423/">тук</a> .
+</p><p>Българския превод ще го правя постепенно, защото статията е огромна.
+</p>
+<h1><span class="mw-headline" id=".D0.92.D1.8A.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5">Въведение</span></h1>
+<blockquote>Правите го грешно. — Брадли Т. Хюджис
+</blockquote>
+<p>Една от най-популярните теми в "#qt IRC канала":<a rel="nofollow" class="external free" href="irc://irc.freenode.net/#qt">irc://irc.freenode.net/#qt</a> са нишките: Много хора влизат в канала и питат как да решат проблема си с код, който работи в нишка.
+</p><p>В девет от десет случая, бърз преглед на кода им, показва, че най-големият им проблем е, че въобще използват нишки, и те попадат на един от безкрайните капани на паралелното програмиране.
+</p><p>Лекотата, с която се създават и стартират нишки в Qt, комбинирана с липсата на знания за стила на програмиране (особено за асинхронно програмиране в мрежа, комбинирано със сигналите и слотовете в Qt) и/или навиците, придобити при използването на други библиотеки или езици, обикновено водят до "хора, които се прострелват сами в крака". Освен това, поддръжката на нишки в Qt е нож с две остриета: докато прави разработката на многонишкови програми много лесна, добавя и няколко възможности (особено, когато става дума за взаимодействието с QObject-и), за които трябва да сте наясно.
+</p><p>Целта на тази статия <b>не е</b> да ви научи как да използвате нишки, да правите правилно заключване, да разгледа паралелизма, или да пишете скалируеми програми; има много добри книги на тези теми; на пример, вижте препоръчителния списък за четене <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/threads.html">на тази страница</a>. Вместо това, тази малка статия е предназначена да бъде пътеводител, който да въведе потребителите в нишките в Qt 4, с цел да избегнат най-честите капани и да им помогне да разработят своя код, така че той да бъде едновременно по-ясен и добре структуриран.
+</p>
+<h2><span class="mw-headline" id=".D0.9F.D1.80.D0.B5.D0.B4.D0.BF.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BA.D0.B8">Предпоставки</span></h2>
+<blockquote>Мислете по този начин: нишките са като солта, а не като тестените изделия.
+<p>Вие обичате сол, аз обичам сол, ние всички обичаме сол. Но ядем повече тестени изделия.
+— Лари МакВой
+</p>
+</blockquote>
+<p>Тъй като това не е въведение с общо предназначение в програмирането (с нишки), се очаква да имате познания за:
+</p>
+<ul>
+<li> Основите на C++ (въпреки че повечето предложения могат да бъдат приложени и в други езици);
+</li>
+<li> Основи на Qt: QObject-и, сигнали и слотове, обработка на събития;
+</li>
+<li> Какво е нишка и какви са взаимоотношенията между нишките, процесите и операционната система;
+</li>
+<li> Как да стартирате и спирате нишка, и как да я изчакате да завърши, под (поне) една основна операционна система;
+</li>
+<li> Как да използвате мутекси, семафори и изчакващи условия за да създавате безопасни за използване от няколко нишки/реентрантни функции, структури от данни и класове.
+</li>
+</ul>
+<p>В тази статия ние следваме <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/threads-reentrancy.html">приетите в Qt наименования</a> , които са:
+</p>
+<ul>
+<li> <b>Реентрантен</b> Клас се счита за реентрантен, ако е безопасно да се използват негови инстанции от повече от една нишка, като най-много една нишка достъпва една инстанция в даден момент. Функция се счита за реентрантна, ако е безопасно да се извика от повече от една нишка едновременно, като е сигурно, че всяко извикване реферира уникални данни. С други думи, това значи, че потребителите на този клас/функция трябва да <i>сериализира</i> всеки достъп до инстанциите/споделените данни като се използва някакъв <i>външен механизъм за заключване</i>.
+</li>
+<li> <b>Нишково безопасен</b> Клас се счита за нишково безопасен ако е безопасно да се използват неговите инстанции от повече от една нишка по едно и също време. Функция е нишково безопасна, ако е безопасно да се извика повече от една нишка в едно и също време дори и ако извикванията достъпват споделени данни.
+</li>
+</ul>
+<h1><span class="mw-headline" id=".D0.A1.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F_.D0.B8_.D1.86.D0.B8.D0.BA.D1.8A.D0.BB.D0.B0_.D0.BD.D0.B0_.D1.81.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F.D1.82.D0.B0">Събития и цикъла на събитията</span></h1>
+<p>Поради това, че е Qt e система, задвижвана от събития, те и тяхното доставяне изграят централна роля в архитектурата на Qt. В тази статия няма да дадем подробно обяснение на тази тема; вместо това ние ще се фокусираме върху някои съврзани с нишките ключови концепции (вижте <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/eventsandfilters.html">тук</a> и <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/qq/qq11-events.html">тук</a> за повече информация относно събитийната системата в Qt).
+</p><p><b>Събитие</b> в Qt е обект, който представя нещо интересно, което се е случило; основната разлика между събитията и сигналите е, че събитията са <i>насочени</i> към специфичен обект в приложението (този обект решава какво да прави с това събитие), докато сигналите се излъчват "в дивото". От гледна точка на кода, всички събития са инстанции на подкласове на <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qevent.html">QEvent</a>, и всички класове, наследяващи QObject, могат да презапишат виртуалния метод QObject::event() с цел да обработват събития, изпратени към техни инстанции.
+</p><p>Събитията могат да бъдат генерирани както от приложението, така и да дойдат някъде отвънка; на пример:
+</p>
+<ul>
+<li> Обектите QKeyEvent и QMouseEvent представят някакво взаимодействие с клавиатурата и мишката, и те идват от мениджъра на прозорците;
+</li>
+<li> Обектите от тип QTimerEvent се изпращат към QObject, когато на един от неговите таймери му изтече периода, и те (обикновено) идват от операционата система;
+</li>
+<li> Обектите QChildEvent се изпращат, когато към QObject, когато е добавено или премахнато дете от него и тези събития идват от вашето Qt приложение.
+</li>
+</ul>
+<p>Важно нещо за събитията е, че те не се доставят веднага щом са генерирани; вместо това те се добавят в опашка, известна като <b>опашката на събития</b> и се изпращат по-късно. Диспечера на събитията обикаля опашката и изпраща събраните събития към техните целеви обекти, ето за това се нарича <b>цикъл на събитията</b>. Концептуално, той изглежда по следния начин (вижте статията в Qt Quarterly, към която има връзка по-горе):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw1">while</span> <span class="br0">&#40;</span>is_active<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">!</span>event_queue_is_empty<span class="br0">&#41;</span>
+ dispatch_next_event<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+wait_for_more_events<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Ние влизаме в главният цикъл на събитията в Qt, когато извикаме QCoreApplication::exec(); това извикване е блокиращо и изчаква, докато не се извика QCoreApplication::exit() или QCoreApplication::quit().
+</p><p>Функцията "wait_for_more_events()", блокира ( това не е изчакване защото нещо се пресмята ) докато не се генерира някоя събитие. Ако се замислите, всичко, което може генерира събития на този етап е от някакъв <i>външен</i> източник (разпращането на всички вътрешни събития е свършило и няма повече изчакващи на опашката). Следователно, цикъла на събитията може да се събуди от:
+</p>
+<ul>
+<li> активност от мениджъра на прозорците (натискане на клавиш/бутон на мишката, взаимодействие с другите прозорци и т.н.);
+</li>
+<li> активност от мрежата (има нови данни за четене, или може да се пише в някой сокет без блокиране, или има нова връзка и т.н.);
+</li>
+<li> таймери ( примерно на някой таймер му е изтекъл периода);
+</li>
+<li> събития създадени от други нишки (ще го разгледаме по-късно).
+</li>
+</ul>
+<p>В UNIX подобните системи, активност на мениджъра на прозорците (примерно X11) се съобщава на приложенията посредством сокети (Unix Domain или TCP/IP), тъй като клиентите ги използват за комуникация с X сървъра. Ако ние решим да разработим междунишково пускане на събития с вътрешен socketpair(2), всичко, което остава е да се будим от активност на:
+</p>
+<ul>
+<li> сокети;
+</li>
+<li> таймери;
+</li>
+</ul>
+<p>което е точно това, което прави системното извикване <b>select(2)</b>: то следи множество от дескриптори за активност <i>и</i> прекратява изпълнението си след известно време (то може да се конфигурира), ако няма никаква активност. Всичко, което Qt трябва да направи е да преработи това, което <i>select</i> връща, в обекти от подкласове на QEvent и да ги добави в опашката на събитията. Сега вече знаете какво има в цикъла на събитията&#160;:)
+</p>
+<h2><span class="mw-headline" id=".D0.9A.D0.B0.D0.BA.D0.B2.D0.BE_.D0.B8.D0.B7.D0.B8.D1.81.D0.BA.D0.B2.D0.B0_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B5.D1.89_.D1.86.D0.B8.D0.BA.D1.8A.D0.BB_.D0.BD.D0.B0_.D1.81.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F.D1.82.D0.B0.3F">Какво изисква работещ цикъл на събитията?</span></h2>
+<p>Това не е изчерпателен списък, но ако разбирате цялата картина, трябва да сте в състояние да познаете кои класове изискват работещ цикъл на събитията.
+</p>
+<ul>
+<li> <b>Прерисуване на графични елементи и взаимодействие с тях</b>: QWidget::paintEvent() ще бъде извикан, когато се получат QPaintEvent обекти, които може да са генерирани както от извикването на QWidget::update() (т.е вътрешно) така и от мениджъра на прозорците (на пример, когато скрит прозорец трябва да бъде показан отново). Същото нещо важи за всички видове взаимодействия (клавиатура, мишка и т.н.): съответните събития изискват работещ цикъл за да бъдат обработени.
+</li>
+<li> <b>Таймери</b>: казано на кратко, те пускат събитие, когато select(2) или на подобно извикване, му изтече времето, следователно трябва да позволите на Qt да обработи тези събития.
+</li>
+<li> <b>Работа в мрежа</b>: всички Qt мрежови класове от ниско ниво (QTcpSocket, QUdpSocket, QTcpServer и т.н.) са асинхронни. Когато извикате read(), те просто връщат дошлите до сега данни; когато извикате write(), те оставят писането за по-късно. Така, че реалното четене/записване става чак, когато се завърнете в цикъла на събитията. Забележете, че тези класове предлагат и синхронни методи(семейството от методи, започващи с waitFor* ), но употребата им не е препоръчителна, защото те блокират цикъла на събитията, докато чакат за данните. Класовете от високо ниво, като QNetworkAccessManager, просто не предлагат синхронно API и изискват да има цикъл.
+</li>
+</ul>
+<h2><span class="mw-headline" id=".D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.B0.D0.BD.D0.B5_.D0.BD.D0.B0_.D1.86.D0.B8.D0.BA.D1.8A.D0.BB.D0.B0_.D0.BD.D0.B0_.D1.81.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F.D1.82.D0.B0">Блокиране на цикъла на събитията</span></h2>
+<p>Преди да обсъдим защо <b>никога не трябва да блокирате цикъла на събитията</b>, нека да опитаме да установим какво значи "блокиране". Нека да предположим, че имате бутон, който излъчва сигнал, когато е натиснат; има и слот на обекта Worker, който е свързан към този сигнал, и този слот върши много работа. След като натиснете бутона, стека с извиканите функции ще изглежда ето така (стека расте надолу):
+</p>
+<ol>
+<li> main(int, char <b>)</b>
+</li>
+<li> QApplication::exec()
+</li>
+<li> […]
+</li>
+<li> QWidget::event(QEvent <b>)</b>
+</li>
+<li> Button::mousePressEvent(QMouseEvent<b>)</b>
+</li>
+<li> Button::clicked()
+</li>
+<li> […]
+</li>
+<li> Worker::doWork() 
+</li>
+</ol>
+<p>В main() ние стартираме цикъла на събитията, обикновено, като извикаме QApplication::exec() (линия 2). Мениджъра на прозорците ни изпраща съобщение за натискане на мишката, което е прихванато от ядрото на Qt, конвертирано в QMouseEvent и изпратено на метода event() на нашия бутон (линия 4) от QApplication::notify() (не е показано тук). Тъй като Button не презаписва event(), се извиква имплементацията на базовият клас (QWidget). QWidget::event() разпознава събитието като натискане на мишката и извиква специализирания метод за обработка Button::mousePressEvent() (линия 5). Ние сме презаписали този метод да изпраща сигнала Button::clicked() (линия 6), което извиква слота Worker::doWork на нашия Worker обект (линия 7).
+</p><p>Докато Worker е зает да работи, какво прави цикъла на събитията? Трябва да сте предположили: нищо! Той е предал събитието за натискане на мишката и е блокирал, чакайки метода за обработка да свърши. Ние успяхме да <b>блокираме цикъла</b>, което значи, че повече няма да се изпращат събития, докато ние не излезем от слота doWork(), нагоре по стека, чак до цикъла и да му позволим да обработи новодошлите събития. 
+</p><p>Със забило доставяне на събитията, <b>графичните елементи няма да могат да се прерисуват</b> (QPaintEvent обектите ще седят в опашката), <b>няма да може да има по нататъшно взаимодействие с тях</b> (поради същата причина), <b>таймерите няма да могат да изпращат сигнали, че им е изтекло времето</b> и <b>мрежовата комуникация ще се забави и спре</b>. Освен това, много от мениджърите на прозорци ще засекат, че вашето приложение вече не обработва събития и <b>ще кажат на потребителя, че приложението ви не отговаря</b>. Ето за това е толкова важно бързо да реагирате на събития и да се завръщате в цикъла на събития възможно най-бързо!
+</p>
+<h2><span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D0.BD.D1.83.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D0.BD.D0.B0_.D0.BE.D0.B1.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B0_.D0.BD.D0.B0_.D1.81.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F">Принудителна обработка на събития</span></h2>
+<p>Така… Какво можем да направим, ако имаме дълга задача и не искаме да блокираме цикъла на събитията? Единият възможен отговор е да сложим задачата в друга нишка( в следващите секции ще разгледаме как става това). Също така имаме възможност ръчно да накараме цикъла да се стартира като (нееднократно) извикваме CoreApplication::processEvents() вътре в нашата функция. QCoreApplication::processEvents() ще обработи събитията в опашката и след това ще продължи изпълнението на кода ви. 
+</p><p>Друг възможен начин е чрез класа <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qeventloop.html">QEventLoop</a>. Извиквайки QEventLoop::exec(), можем да влезем в цикъла на събитията и да свържем сигнали към слота QEventLoop::quit(). На пример:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QNetworkAccessManager</span> qnam<span class="sy0">;</span>
+<span class="kw5">QNetworkReply</span> <span class="st0">''</span><span class="st0">'reply = qnam.get(QNetworkRequest(QUrl(…)));
+QEventLoop loop;
+QObject::connect(reply, SIGNAL (finished()), &amp;loop, SLOT (quit()));
+loop.exec();
+/'</span><span class="st0">''</span> отговора е готов<span class="sy0">,</span> използвате го <span class="sy0">*/</span></pre></div></div>
+<p>QNetworkReply не предоставя блокиращо API и изисква цикъл за да работи. Ние влизаме в локален QEventLoop, и когато отговора е готов, напускаме цикъла.
+</p><p>Бъдете много внимателни, когато влизате на ново в цикъла на събитията "от други пътища": това може да доведе до нежелана рекурсия! Нека да се върнем на примера с бутона. Ако извикваме QCoreApplication::processEvents() вътре в слота doWork() и потребителя натисне пак бутона, doWork() ще бъде извикан <b>отново</b>:
+</p>
+<ol>
+<li> main(int, char<b>)</b>
+</li>
+<li> QApplication::exec()
+</li>
+<li> […]
+</li>
+<li> QWidget::event(QEvent <b>)</b>
+</li>
+<li> Button::mousePressEvent(QMouseEvent<b>) </b>
+</li>
+<li> Button::clicked() 
+</li>
+<li> […]
+</li>
+<li> Worker::doWork() // <b>първо извикване</b>
+</li>
+<li> QCoreApplication::processEvents() // <b>ръчно обработваме събитията и…</b>
+</li>
+<li> […]
+</li>
+<li> QWidget::event(QEvent * ) // <b>друго натискане на мишката е изпратено на бутона Button…</b>
+</li>
+<li> Button::mousePressEvent(QMouseEvent *) 
+</li>
+<li> Button::clicked() // <b>което изпраща сигнала clicked() отново…</b>
+</li>
+<li> […]
+</li>
+<li> Worker::doWork() // <b>ОПА! отново се извиква нашия слот в самия себе си.</b>
+</li>
+</ol>
+<p>Бързо и лесно заобиколно решение на този проблем е да подадем QEventLoop::ExcludeUserInputEvents на QCoreApplication::processEvents(). То казва на цикъла да не обработва събития, свързани с вход от потребителя(тези събития ще останат в опашката за по-късно).
+</p><p>За щастие, това <b>не</b> важи за <b>събитията за изтриване</b> (тези публикувани в цикъла от QObject::deleteLater()). В същност, те се прихващат по специален начин от Qt, и се обработват само ако работещия цикъл на събитията има по ниско ниво на "вложеност" (по отношение на цикли на събития) от това, в което е било извикано deleteLater. За пример:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QObject</span> <span class="sy0">*</span>object <span class="sy0">=</span> <span class="kw1">new</span> QObject<span class="sy0">;</span>
+object<span class="sy0">-&gt;</span><span class="me3">deleteLater</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw5">QDialog</span> dialog<span class="sy0">;</span>
+dialog.<span class="me1">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p><b>няма да направи</b> <i>object</i> невалиден указател ( цикъла, в който се влиза от QDialog::exec() има по-голяма вложеност от извикването на deleteLater). Същото нещо важи и за локалните цикли, стартирани с QEventLoop. Единственото забележимо изключение, което намерих, на това правило (по време на Qt 4.7.3) е, че ако deleteLater е извикан, когато <b>няма</b> работещ цикъл, то при първото влизане в такъв, събитието ще бъде обработено и обекта ще бъде изтрит. В това има доста смисъл, тъй като Qt не знае за друг "по-външен" цикъл, който евентуално да извърши изтриването и следователно изтрива обекта моментално.
+</p><p>.
+</p>
+<h1><span class="mw-headline" id=".D0.9D.D0.B8.D1.88.D0.BA.D0.BE.D0.B2.D0.B8_.D0.BA.D0.BB.D0.B0.D1.81.D0.BE.D0.B2.D0.B5_.D0.B2_Qt">Нишкови класове в Qt</span></h1>
+<blockquote>Компютъра е стейт машина. Нишките са за хора, които не могат да програмират стейт машини.
+<p>— Алън Кокс
+</p>
+</blockquote>
+<p>Qt има поддръжка на нишки от много години (Qt 2.2, пуснато на 22 Sept 2000, представи класа QThread.), а от 4.0 нишките са включени по подразбиране на всички поддържани платформи (въпреки, че могат да бъдат спрени. Вижте <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/fine-tuning-features.html">тук</a> за повече детайли). В момента Qt предлага няколко класа за работа с нишки. Нека да започнем с общ преглед.
+</p>
+<h2><span class="mw-headline" id="QThread">QThread</span></h2>
+<p><a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qthread.html">QThread</a> е централен клас от ниско ниво за поддръжка на нишки в Qt. Обект от тип QThread представя една нишка. Поради многоплатформеността на Qt, QThread успява да скрие платформено зависимия код, който е нужен за използването на нишки в различните операционни системи.
+</p><p>За да използваме QThread за стартиране на код в нишка, ние можем да му направим подклас и да пренапишем метода QThread::run():
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="coMULTI">/* имплементацията на вашата нишка */</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Тогава може да използваме
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Thread <span class="st0">''</span><span class="st0">'t = new Thread;
+t-&gt;start(); // start(), не run()!</span></pre></div></div>
+<p>за да пуснем новата нишка. Забележете, че от Qt 4.4, QThread вече не е абстрактен клас; сега виртуалния метод QThread::run() просто извиква QThread::exec();, която пуска <i>цикъла на събитията на нишката</i> (повече информация за това по-късно).
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="QRunnable_.D0.B8_QThreadPool">QRunnable и QThreadPool</span></h2>
+<p><a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qrunnable.html">QRunnable</a> е лек абстрактен клас, който може да се използва, за да се пусне задача в друга нишка в стила "пусни и забрави". За да постигнете това, всичко, което трябва да направите е да създадете подклас на QRunnable и да имплементирате неговия чисто виртуален метод run():
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Task <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QRunnable</span> <span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="sy0">/</span><span class="st0">''</span><span class="st0">' вашият код седи тук */
+ }
+};</span></pre></div></div>
+<p>За да пуснем QRunnable обект, ние използваме класа <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qthreadpool.html">QThreadPool</a> , който управлява множество от нишки. Чрез извикването на QThreadPool::start(runnable), ние добавяме QRunnable в опашката за изпълнение на QThreadPool; веднага щом нишката е на разположение, QRunnable-а ще бъде взет и пуснат на нея. Всички Qt приложения имат на разположение глобално множество от нишки, което е достъпно чрез QThreadPool::globalInstance(), но винаги могат да създадат и лична инстанция на QThreadPool и да я управляват самостоятелно.
+</p><p>Забележете, че тъй като не е QObject, QRunnable няма вграден начин за комуникация с другите компоненти. Вие трябва да направите това ръчно, използвайки ниските нива за работа с нишки (на пример защитена с мутекси опашка за събиране на резултатите).
+</p>
+<h2><span class="mw-headline" id="QtConcurrent">QtConcurrent</span></h2>
+<p><a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/threads-qtconcurrent.html">QtConcurrent</a> е API от по-високо ниво, построено върху QThreadPool, полезно за работа с най-често срещаните паралелни компютърни шаблони: <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Map_(higher-order_function">map</a>), <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Fold_(higher-order_function">reduce</a>), и <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Filter_(higher-order_function">filter</a>) . Също така предоставя и метода QtConcurrent::run(), чрез който може лесно да се пусне функция в отделна нишка.
+</p><p>За разлика от QThread и QRunnable, QtConcurrent не изисква от нас да използваме синхронизация от ниско ниво - всички методи на QtConcurrent връщат <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qfuture.html">QFuture</a> обект, който може да се използва за взимане на статуса на изпълнението(неговия прогрес), да прекъсва временно/стартира отново/прекратява изчислението, а също така и съдържа неговите <i>резултати</i>. Класа <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qfuturewatcher.html">QFutureWatcher</a> може да се използва за да се следи прогреса на QFuture и да се взаимодейства с него чрез сигнали и слотове (забележете, че QFuture, бидейки клас базиран на стойност, не наследява QObject).
+</p>
+<h2><span class="mw-headline" id=".D0.A1.D1.80.D0.B0.D0.B2.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B0_.D0.B2.D1.8A.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D0.B8.D1.82.D0.B5">Сравнение на възможностите</span></h2>
+<table>
+<tr>
+<th>
+</th>
+<th>QThread
+</th>
+<th>QRunnable
+</th>
+<th>QtConcurrent<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup>
+</th></tr>
+<tr>
+<td>High level API
+</td>
+<td>✘
+</td>
+<td>✘
+</td>
+<td>✔
+</td></tr>
+<tr>
+<td>Job-oriented
+</td>
+<td>✘
+</td>
+<td>✔
+</td>
+<td>✔
+</td></tr>
+<tr>
+<td>Builtin support for pause/resume/cancel
+</td>
+<td>✘
+</td>
+<td>✘
+</td>
+<td>✔
+</td></tr>
+<tr>
+<td>Can run at a different priority
+</td>
+<td>✔
+</td>
+<td>✘
+</td>
+<td>✘
+</td></tr>
+<tr>
+<td>Can run an event loop
+</td>
+<td>✔
+</td>
+<td>✘
+</td>
+<td>✘
+</td></tr></table>
+<h1><span class="mw-headline" id=".D0.9D.D0.B8.D1.88.D0.BA.D0.B8_.D0.B8_QObject-.D0.B8">Нишки и QObject-и</span></h1>
+<h2><span class="mw-headline" id=".D0.A6.D0.B8.D0.BA.D1.8A.D0.BB_.D0.BD.D0.B0_.D1.81.D1.8A.D0.B1.D0.B8.D1.82.D0.B8.D1.8F.D1.82.D0.B0_.D0.B7.D0.B0_.D0.B2.D1.81.D1.8F.D0.BA.D0.B0_.D0.BD.D0.B8.D1.88.D0.BA.D0.B0">Цикъл на събитията за всяка нишка</span></h2>
+<p>До сега ние говорихме за "цикълът на събитията", взимайки някак си за даденост, че има само един такъв цикъл в Qt приложенията. Но това не е така: QThread обектите могат да стартират локални за нишката цикли на събитията, които да работят в нея. За това казваме, че <b>главният цикъл на събитията</b> е този, създаден от нишката, извикана в main() и стартирана с QCoreApplication::exec() (който <i>трябва</i> да бъде извикан от тази нишка). Това също така се нарича <b>нишка на потребителската графика (GUI thread)</b>, защото е единствената нишка, в която е позволено да има операции, свързани с графичните елементи. Локалният цикъл на събитията за QThread може да се стартира като се извика QThread::exec() (вътре в нейният run() метод):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="coMULTI">/* … инициализиране … */</span>
+&#160;
+exec<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Както споменахме по-горе, от Qt 4.4 QThread::run() вече не е чисто виртуален метод; вместо това, той извиква QThread::exec(). Точно както QCoreApplication, QThread също има QThread::quit() и QThread::exit() методи за спиране на цикъла.
+</p><p>Нишковият цикъл доставя събитията за всички QObject-и, които <b>живеят</b> в тази нишка. Това включва, по подразбиране, всички обекти, създадени в нишката или такива преместени от друга (повече информация за това по-късно). Също така казваме, че <b>нишковият афинитет</b> на QObject е дадена нишка, когато този обект живее в нея. Това важи за обекти, които са създадени в конструктора на QThread обект:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> MyThread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span>
+<span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ MyThread<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ otherObj <span class="sy0">=</span> <span class="kw1">new</span> QObject<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ <span class="kw5">QObject</span> obj<span class="sy0">;</span>
+ <span class="kw5">QObject</span> <span class="sy0">*</span>otherObj<span class="sy0">;</span>
+ QScopedPointer<span class="sy0">&lt;</span><span class="kw5">QObject</span><span class="sy0">&gt;</span> yetAnotherObj<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Какъв е афинитета на obj, otherObj, yetAnotherObj след като създадем обект от тип MyThread? Трябва да гледаме нишката, която ги е създала: тя е тази, която е изпълнила конструктора на MyThread. Следователно и трите обекта <b>не</b> живеят в нишката MyThread, а в тази, която е създала инстанцията на MyThread ( инстанцията също живее в нея).
+</p><p>Ние може да видим афинитета към нишка на QObject като извикаме QObject::thread(). Забележете, че QObject-ите, създадени преди QCoreApplication обекта <b>нямат нишков афинитет</b>, и следователно за тях няма да има разпределяне на събитията (с други думи, QCoreApplication създава обекта от тип QThread, който представлява главната нишка).
+</p><p><a href="index2c58.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/threadsandobjects.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/threadsandobjects.png">http://doc.qt.nokia.com/4.7/images/threadsandobjects.png</a>
+</p><p>Ние може да използваме нишково безопасният метод QCoreApplication::postEvent() за пускане на събитие за даден обект. Това ще добави събитието в опашката на цикъла на събитията за нишката, в която съществува обекта; следователно, събитието няма да се обработи, освен ако нишката няма работещ цикъл.
+</p><p>Много е важно да разберете, че QObject и всички негови подкласове <b>не са нишково безопасни</b> (въпреки, че те могат да бъдат реентрантни); следователно, не можете да достъпвате QObject от повече от една нишка по едно и също време, освен ако не сериализирате достъпа до вътрешните данни на обекта (на пример като го защитите с мутекс). Запомнете, че обекта може да обработва събития, изпратени от цикъла на събитията на нишката, в която съществува, докато вие го достъпвате от друга нишка! По същата причина, не можете да изтриете QObject от друга нишка, но можете да използвате QObject::deleteLater(), която ще създаде събитие, което ще предизвика унищожаването на обекта от нишката, в която съществува.
+</p><p>Освен това QWidget и всички негови подкласове, заедно с други класове, свързани с графичния интерфейс (дори не базираните на QObject като QPixmap) <b>не са реентрантни</b>: те могат да се използват само от графичната нишка.
+</p><p>Можем да променим афинитета на QObject като извикаме QObject::moveToThread(). Това ще промени неговият афинитет и този на неговите деца. Тъй като QObject не е нишково безопасен, ние трябва да го използваме от нишката, в която съществува. За това, вие можете <b>само</b> да премествате обект <b>от</b> нишката, в която е, към друга нишка, но <b>не и да го взимате от</b> друга или да го местите между две нишки, от които никоя не е тази, в която съществува. Освен това, Qt изисква децата на QObject да са в същата нишка, в която е и той. Това означава, че:
+</p>
+<ul>
+<li> не можете да използвате QObject::moveToThread() с обект, който има родител;
+</li>
+<li> не трябва да създавате обекти в дадена нишка, които имат за родител QThread-a създал нишката:
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+ <span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw5">QObject</span> obj <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QObject</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// ГРЕШНО[[Image:|Image:]]!</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Това е защото <b>QThread обекта съществува в друга нишка</b>, а именно, тази, която го е създала.
+</p><p>Qt също изисква всички обекти, съществуващи в дадена нишка, да се изтриват преди QThread обекта, представляващ тази нишка, да бъде унищожен. Това може да се направи лесно като всички обекти, съществуващи в нишката, се създадат статично в стека на метода QThread::run().
+</p>
+<h2><span class="mw-headline" id=".D0.A1.D0.B8.D0.B3.D0.BD.D0.B0.D0.BB.D0.B8_.D0.B8_.D1.81.D0.BB.D0.BE.D1.82.D0.BE.D0.B2.D0.B5_.D0.BC.D0.B5.D0.B6.D0.B4.D1.83_.D0.BD.D0.B8.D1.88.D0.BA.D0.B8.D1.82.D0.B5">Сигнали и слотове между нишките</span></h2>
+<p>Предвид казаното до тук, как да извикваме методи на QObject-и, съществуващи в други нишки? Qt предлага много приятно и чисто решение: Ние създаваме събитие в опашката със събития за тази нишка, и обработването на това събитие ще се състои в извикването на метода, който ни интересува (това, разбира се, изисква нишката да има работещ цикъл на събитията). Тази функционалност е изградена около анализа на методите, предоставен от moc: следователно само сигнали, слотове и методи, маркирани с макроса Q_INVOKABLE, могат да бъдат извикани от други нишки.
+</p><p>Статичният метод QMetaObject::invokeMethod() върши цялата работа вместо нас:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QMetaObject</span><span class="sy0">::</span><span class="me2">invokeMethod</span><span class="br0">&#40;</span>object<span class="sy0">,</span> <span class="st0">&quot;methodName&quot;</span><span class="sy0">,</span>
+ <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">QueuedConnection</span><span class="sy0">,</span>
+ Q_ARG<span class="br0">&#40;</span>type1<span class="sy0">,</span> arg1<span class="br0">&#41;</span><span class="sy0">,</span>
+ Q_ARG<span class="br0">&#40;</span>type2<span class="sy0">,</span> arg2<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="sy0">&lt;</span>references <span class="sy0">/&gt;</span></pre></div></div>
+<br /><strong class="error mw-ext-cite-error">Cite error: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&amp;</span>lt<span class="sy0">;</span>ref<span class="sy0">&amp;</span>gt<span class="sy0">;</span></pre></div></div> tags exist, but no <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&amp;</span>lt<span class="sy0">;</span>references<span class="sy0">/&amp;</span>gt<span class="sy0">;</span></pre></div></div> tag was found</strong>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.289 seconds
+Real time usage: 0.295 seconds
+Preprocessor visited node count: 190/1000000
+Preprocessor generated node count: 448/1000000
+Post‐expand include size: 1312/2097152 bytes
+Template argument size: 423/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:2053-0!*!0!!en!2!* and timestamp 20151105101723 and revision id 16119
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index9649.html?title=Threads_Events_QObjects/bg&amp;oldid=16119">http://wiki.qt.io/index.php?title=Threads_Events_QObjects/bg&amp;oldid=16119</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=593e0788107cf2de&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Threads_Events_QObjects/bg.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Threads_Events_QObjects/bg.html?title=Talk:Threads_Events_QObjects/bg&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Threads_Events_QObjects/bg.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index665a.html?title=Threads_Events_QObjects/bg&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index93ce.html?title=Threads_Events_QObjects/bg&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Threads_Events_QObjects/bg.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Threads_Events_QObjects/bg.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index9649.html?title=Threads_Events_QObjects/bg&amp;oldid=16119" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index6632.html?title=Threads_Events_QObjects/bg&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:38.</li>
+											<li id="footer-info-viewcount">This page has been accessed 449 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":267});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Threads_Events_QObjects/bg&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:59:26 GMT -->
+</html>

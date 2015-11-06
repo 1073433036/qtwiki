@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_create_a_library_with_Qt_and_use_it_in_an_application&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:15:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for How to create a library with Qt and use it in an application - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_create_a_library_with_Qt_and_use_it_in_an_application","wgTitle":"How to create a library with Qt and use it in an application","wgCurRevisionId":19748,"wgRevisionId":0,"wgArticleId":931,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_create_a_library_with_Qt_and_use_it_in_an_application","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_to_create_a_library_with_Qt_and_use_it_in_an_application skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for How to create a library with Qt and use it in an application</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/How_to_create_a_library_with_Qt_and_use_it_in_an_application" title="How to create a library with Qt and use it in an application">How to create a library with Qt and use it in an application</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{LangSwitch}}
+[[Category:HowTo]]
+== Introduction ==
+
+This tutorial illustrates different approaches for using a custom library in your application on Windows. The first part explains how to create a shared library and how to link against it in your application. The second part is about creating and using a static library.
+
+== Creating a shared library ==
+
+When creating a shared library that you would like to link against, then you need to ensure that the symbols that are going to be used outside the library are properly exported when the library is created. Subsequently imported when you are linking against the library. This can be done using {{DocLink|QtGlobal|Q_DECL_EXPORT}} and {{DocLink|QtGlobal|Q_DECL_IMPORT}} as shown in the following example:
+
+'''test.h'''
+
+&lt;code>
+#include &lt;QtGui>
+
+#if defined TEST
+ #define TEST_COMMON_DLLSPEC Q_DECL_EXPORT
+#else
+ #define TEST_COMMON_DLLSPEC Q_DECL_IMPORT
+#endif
+
+class TEST_COMMON_DLLSPEC Widget : public QWidget
+{
+ Q_OBJECT
+ public:
+  Widget();
+};
+&lt;/code>
+
+'''test.cpp'''
+
+&lt;code>
+#include &lt;QtGui>
+#include "test.h"
+
+Widget::Widget() : QWidget() {}
+&lt;/code>
+
+'''test.pro'''
+
+&lt;code lang="make">
+TEMPLATE = lib
+
+# Input
+SOURCES += test.cpp
+HEADERS += test.h
+DEFINES += TEST
+&lt;/code>
+
+In windows, MinGW will output &lt;tt>.a&lt;/tt> and &lt;tt>.dll&lt;/tt>, MSVC2010 will ouput &lt;tt>.lib&lt;/tt> and &lt;tt>.dll&lt;/tt>. In linux, MinGW will output &lt;tt>.so&lt;/tt>, &lt;tt>.so.1&lt;/tt>, &lt;tt>.so.1.0&lt;/tt> and &lt;tt>.so.1.0.0&lt;/tt> - &lt;tt>.lib&lt;/tt>, &lt;tt>.a&lt;/tt> and &lt;tt>.so&lt;/tt> are import libraries. They help link your code to the library and is needed when you build your file(.a files not all the time).
+
+See also the documentation on [http://doc.qt.io/qt-5/sharedlibrary.html Creating Shared Libraries].
+
+=== Linking your application against the shared library ===
+
+In order to use the shared library in your application, then you can include the headers of your library in your code and use the methods. Compile with linking to the .lib file. At runtime this loads the dll which has the implementation. 
+
+To set this up, then in your application's .pro file you need to inform the application where to find the headers and the library. The [http://doc.qt.io/qt-5/qmake-variable-reference.html#includepath INCLUDEPATH] needs to point to the directory where the headers are installed, and the [http://doc.qt.io/qt-5/qmake-variable-reference.html#libs LIBS ] variable needs to point to the directory of the .lib file. In addition you need to ensure that the .dll is found by either putting it in the application's directory or in the global &lt;tt>PATH&lt;/tt>. 
+
+For example:
+
+'''loadTestLib.pro'''
+
+&lt;code lang="make">
+TEMPLATE = app
+TARGET =
+DEPENDPATH += . ../testLib
+INCLUDEPATH += ../testLib
+LIBS += -L../testLib/debug -ltestLib
+
+# Input
+SOURCES += main.cpp
+&lt;/code>
+
+'''main.cpp'''
+
+&lt;code lang="cpp-qt">
+#include &lt;QtGui>
+#include "test.h"
+
+int main(int argc, char *argv[])
+{
+ QApplication a(argc, argv);
+ Widget w;
+ w.resize(100,100);
+ w.show();
+ return a.exec();
+}
+&lt;/code>
+
+alternatively you can right-click your project in Qt Creator and select "Add Library...", choose "External library" and browse for your library file:
+
+* For libraries compiled with MSCV2010 compiler in windows, you look for .lib
+* in Windows, MinGW compiled linking libraries are in .a, but you will need to add it manually (as of Qt Creator 2.7). You could also try simply linking the .dll directly cause it would probably work. Don't try this with a MSCV2010 compiled library.
+* in linux you look for the .so file
+
+This will append the following code to your *.pro file:
+
+&lt;code lang="make">
+win32:CONFIG (release, debug|release): LIBS += -L$$PWD/build-MyLibrary/ -lmylibrary
+else:win32:CONFIG (debug, debug|release): LIBS += -L$$PWD/build-MyLibrary/ -lmylibrary
+else:unix: LIBS += -L$$PWD/build-MyLibrary/ -lMyLibrary
+
+INCLUDEPATH += $$PWD/build-MyLibrary
+DEPENDPATH += $$PWD/build-MyLibrary
+&lt;/code>
+[http://doc.qt.io/qt-5/qmake-variable-reference.html#pwd $$PWD] is used here to specify the full path leading to the directory containing your .pro file.
+
+Note that for Unix/Linux systems the library file name is case sensitive, but for Windows you have to leave in all small caps.
+
+
+=== Using QLibrary to load the shared library ===
+
+{{DocLink|QLibrary}} can be used for loading shared libraries at runtime. In this case you only need access to the .dll, access to the headers and .lib file(s) is not necessary.
+
+The following example shows how to set up a library for usage with QLibrary. For the function names to be resolvable, they must be exported as C functions (i.e., without name mangling) from the library. This means that the functions must be wrapped in an extern "C" block if the library is compiled with a C++ compiler.
+
+Since we are doing this on Windows we also must explicitly export the function from the DLL using Q_DECL_EXPORT and Q_DECL_IMPORT.
+
+'''qlibraryLibrary.pro'''
+
+&lt;code lang="make">
+TEMPLATE = lib
+HEADERS += widget.h
+SOURCES += widget.cpp
+DEFINES += TEST
+&lt;/code>
+
+'''widget.h'''
+
+&lt;code>
+#include &lt;QtGui>
+
+#if defined TEST
+ #define TEST_COMMON_DLLSPEC Q_DECL_EXPORT
+#else
+ #define TEST_COMMON_DLLSPEC Q_DECL_IMPORT
+#endif
+
+extern "C" TEST_COMMON_DLLSPEC QWidget* createWidget1();
+&lt;/code>
+
+'''widget.cpp'''
+
+&lt;code>
+#include &lt;QtGui>
+#include "widget.h"
+
+QWidget* createWidget1()
+{
+ QWidget *wid = new QWidget();
+ wid->resize(100,100);
+ return wid;
+}
+&lt;/code>
+
+=== Loading the library using QLibrary ===
+
+To load the library using QLibrary, you can simply pass in the .dll to the QLibrary constructor. Make sure the .dll is available in the application directory or in the global PATH. To use functions from the library in your application, you need to resolve them using {{DocLink|QLibrary|resolve|QLibrary::resolve()}}.
+
+The example below loads the library created above and uses one of its functions to create and show a widget.
+
+&lt;code>
+#include &lt;QtGui>
+
+int main(int argc, charargv)
+{
+ QApplication app(argc, argv);
+ QLibrary library("qlibraryLibrary.dll");
+ if (!library.load())
+ qDebug() &lt;&lt; library.errorString();
+ if (library.load())
+ qDebug() &lt;&lt; "library loaded";
+
+ typedef QWidget*(*CreateWidgetFunction)(void);
+ CreateWidgetFunction cwf = (CreateWidgetFunction)library.resolve("createWidget1");
+ if (cwf) {
+  QWidget* wid = cwf();
+  if (wid) wid->show();
+ } else {
+  qDebug() &lt;&lt; "Could not show widget from the loaded library";
+ }
+ return app.exec();
+}
+&lt;/code>
+
+== Creating a static library ==
+
+When creating a static library you need to specify the staticlib option to [http://doc.qt.io/qt-5/qmake-variable-reference.html#config CONFIG] in the .pro file. In contrast to the shared library example, you don't need to set up anything special for exporting and importing symbols in your .h file, since the library will be built into the application, for example:
+
+'''test.pro'''
+
+&lt;code lang="make">
+TEMPLATE = lib
+CONFIG += staticlib
+
+# Input
+HEADERS += test.h
+SOURCES += test.cpp
+&lt;/code>
+
+=== Using the static library in your application ===
+
+Similar to what we did for the shared library loading, you need to set up the [http://doc.qt.io/qt-5/qmake-variable-reference.html#includepath INCLUDEPATH] to point to the directory where the headers are installed and the [http://doc.qt.io/qt-5/qmake-variable-reference.html#libs LIBS] variable to point to the .lib file, for example:
+
+'''useStaticLib.pro'''
+
+&lt;code lang="make">
+TEMPLATE = app
+TARGET =
+CONFIG += console
+
+# Input
+SOURCES += main.cpp
+INCLUDEPATH += ../staticLibrary
+LIBS += -L../staticLibrary/debug -lstaticLibrary
+&lt;/code>
+
+'''main.cpp'''
+
+&lt;code>
+#include &lt;QtGui>
+#include "test.h"
+
+int main(int argc, char *argv[])
+{
+ QApplication a(argc, argv);
+ Widget w;
+ w.resize(100,100);
+ w.show();
+ return a.exec();
+}
+&lt;/code>
+
+== Installing a library ==
+
+When you build your libraries, it could be useful to have one build for one framework and to centralize them : for example, you could having one library for Android, one for Windows and QT5.4 and one for Windows with Qt5.5 without having specific configurations.
+The easiest way is to put your files in the Qt folders by adding in your *.pro file :
+
+&lt;code lang="make">
+headersDataFiles.path = $$[QT_INSTALL_HEADERS]/MyLib/
+headersDataFiles.files = $$PWD/src/*.h
+INSTALLS += headersDataFiles
+
+libraryFiles.path = $$[QT_INSTALL_LIBS]
+Debug:libraryFiles.files = $$OUT_PWD/debug/*.a $$OUT_PWD/debug/*.prl
+Release:libraryFiles.files = $$OUT_PWD/release/*.a $$OUT_PWD/release/*.prl
+INSTALLS += libraryFiles
+&lt;/code>
+
+You need to specify what files you want to copy with [http://doc.qt.io/qt-5/qmake-variable-reference.html#OUT_PWD $$OUT_PWD] and where you want to put them by using [http://doc.qt.io/qt-5/qmake-variable-reference.html#QT_INSTALL_HEADERS $$QT_INSTALL_HEADERS] and [http://doc.qt.io/qt-5/qmake-variable-reference.html#QT_INSTALL_LIBS $$QT_INSTALL_LIBS].
+
+For more information, see [http://doc.qt.io/qt-5/qmake-advanced-usage.html#installing-files Installing Files].
+
+
+== Which approach to choose ==
+
+Which approach to choose depends on your needs. When creating a shared library, you need to deploy it with your application. On the plus side, applications and libraries linked against a shared library are small. Whether to use QLibrary to load the .dll or just standard linking, depends on whether you have access to the headers and the .lib files, if you don't have access to those, then QLibrary is an alternative.
+
+Static linking results in a stand-alone executable. The advantage is that you will only have a few files to deploy. The disadvantage is that the executables are large. See the [http://doc.qt.io/qt-5/windows-deployment.html Deployment documentation] for more details on shared and static builds.
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:DocLink" title="Template:DocLink">Template:DocLink</a> (<a href="http://wiki.qt.io/index.php?title=Template:DocLink&amp;action=edit" title="Template:DocLink">view source</a>) </li><li><a href="http://wiki.qt.io/Template:LangSwitch" title="Template:LangSwitch">Template:LangSwitch</a> (<a href="http://wiki.qt.io/index.php?title=Template:LangSwitch&amp;action=edit" title="Template:LangSwitch">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/How_to_create_a_library_with_Qt_and_use_it_in_an_application" title="How to create a library with Qt and use it in an application">How to create a library with Qt and use it in an application</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/How_to_create_a_library_with_Qt_and_use_it_in_an_application">http://wiki.qt.io/How_to_create_a_library_with_Qt_and_use_it_in_an_application</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=How+to+create+a+library+with+Qt+and+use+it+in+an+application" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/How_to_create_a_library_with_Qt_and_use_it_in_an_application"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:How_to_create_a_library_with_Qt_and_use_it_in_an_application&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/How_to_create_a_library_with_Qt_and_use_it_in_an_application" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=How_to_create_a_library_with_Qt_and_use_it_in_an_application&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=How_to_create_a_library_with_Qt_and_use_it_in_an_application&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/How_to_create_a_library_with_Qt_and_use_it_in_an_application" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/How_to_create_a_library_with_Qt_and_use_it_in_an_application" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=How_to_create_a_library_with_Qt_and_use_it_in_an_application&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":238});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_create_a_library_with_Qt_and_use_it_in_an_application&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:15:29 GMT -->
+</html>

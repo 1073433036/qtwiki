@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Model_View_Tutorial_Part2_Delegate_und_View/de&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:37:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for Model View Tutorial Part2 Delegate und View/de - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Model_View_Tutorial_Part2_Delegate_und_View/de","wgTitle":"Model View Tutorial Part2 Delegate und View/de","wgCurRevisionId":17445,"wgRevisionId":0,"wgArticleId":2212,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Model_View_Tutorial_Part2_Delegate_und_View/de","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Model_View_Tutorial_Part2_Delegate_und_View_de skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for Model View Tutorial Part2 Delegate und View/de</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/Model_View_Tutorial_Part2_Delegate_und_View/de" title="Model View Tutorial Part2 Delegate und View/de">Model View Tutorial Part2 Delegate und View/de</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{Cleanup | reason=Auto-imported from ExpressionEngine.}}
+
+&lt;div class="factbox right">
+
+===Table of Content===
+
+* [[#e25d440156b05af0a9fa4429de19cbf5|Implementierung eines einfachen Delegates]]
+** [[#a2733a4c03115fc94a299bf9a958e759|createEditor]]
+** [[#badbc75263c16416f900062f1aa5a2cb|setEditorData]]
+** [[#6d78030daca3e755aa875e5609b16889|setModelData]]
+** [[#4824a0e5c4e77fc1ad2a650bbb388f5d|updateEditorGeometry]]
+* [[#59d548c78d34c4c998a50de9a4a77b67|Ändern von Editiereigenschaften der View]]
+
+&lt;/div>
+
+[http://qt.io/groups/qt_german/wiki/Model_View_Tutorial_Teil2 ←Teil 2: editierbares Datenmodell]&lt;br />[http://qt.io/groups/qt_german/wiki/Model_View_Tutorial ↑Übersicht Model/View Tutorial:CD Verwaltung↑]&lt;br />[http://qt.io/groups/qt_german/wiki/Model_View_Tutorial_Teil3 Teil 3: Zeilen / Spalten hinzufügen / entfernen→]
+
+=Implementierung eines einfachen Delegates=
+
+Zum Editieren eines Modells genügt es im Einfachsten Fall, wenn die Methode '''flags()''' das Flag ''Qt::ItemIsEditable'' liefert und bei '''data(…)''' und '''setData(…)''' die Rolle ''Qt::EditRole'' implementiert ist. Um ein Datum oder einen Integer nicht in einem Textfeld sondern einem Standardeditor für den jeweiligen Datentypen zu editieren, genügt es bei data() für die ''Qt::EditRole'' das Datum nativ in den ''QVariant'' zu schreiben, und nicht in Text umgewandelt, was bei einem Datum für die ''Qt::DisplayRole'' durchaus Sinn machen kann (z.B. wenn eine spezielle Formatierung gewünscht wird).
+
+In unserem Beispiel leiten wir von ''QItemDelegate'' ab, der dieses beschriebene Verhalten bereits implementiert. Beim Erzeugen eines eigenen Delegates muss darauf geachtet werden, dass immer, wenn es keine eigene Implementierung gibt, die Basisklasse aufgerufen wird.
+
+Sobald aber aus dem Datentyp der Editor nicht eineindeutig bestimmt werden kann, Grenzwerte oder Validierungen (=Gültigkeitsprüfungen) benötigt werden, muss man selbst Hand anlegen: man muss einen so genannten Delegate (von [http://doc.qt.nokia.com/latest/qabstractitemdelegate.html QAbstractItemDelegate] ''[doc.qt.nokia.com]'' abgeleitet) erstellen.
+
+Mit einem Delegate kann man folgende Dinge machen:
+
+* Spezielles Editieren von Elementen in einer View
+* Spezielle Darstellung von Elementen (z.B. ein Fortschrittsbalken in einer Tabelle)&lt;br /> Hier ein Beispiel aus der Qt-Dokumentation:&lt;br />[[Image:widgetdelegate.png|aus der Qt docu]]
+
+In unserem Beispiel wollen wir zum Bearbeiten der Genres eine Combo Box nutzen, mit der wir ein existierendes Genre auswählen oder ein neues eingeben können. Dazu überschreiben wir die folgenden Methoden:
+
+==createEditor==
+
+Mittels '''createEditor''' wird das Widget erzeugt, das zum Editieren benutzt werden soll. Hier können Standardwerte (wie ''autoComplete'' etc.) gesetzt werden, die üblicherweise zum Erzeugen des Widgets gehören. Bei einem Delegate muss immer der Index geprüft werden. Es kann auch ''ein'' Delegate für mehrere Views bzw. Modelle genutzt werden, daher sollte bei Zugriffen auf das Modell immer ''index.model'' oder bei ''setModeldata'' der Parameter ''model'' benutzt werden.
+
+&lt;div class="cpp-qt geshi">
+
+# &lt;div class="de1">[http://doc.qt.io/QWidget.html &lt;span class="kw5">QWidget&lt;/span>]&lt;span class="sy0">*&lt;/span> CdEditDelegate&lt;span class="sy0">::&lt;/span>&lt;span class="me2">createEditor&lt;/span>&lt;span class="br0">(&lt;/span>[http://doc.qt.io/QWidget.html &lt;span class="kw5">QWidget&lt;/span>]&lt;span class="sy0">*&lt;/span> parent&lt;span class="sy0">,&lt;/span> &lt;span class="kw4">const&lt;/span> [http://doc.qt.io/QStyleOptionViewItem.html &lt;span class="kw5">QStyleOptionViewItem&lt;/span>]&lt;span class="sy0">&amp;&lt;/span> option&lt;span class="sy0">,&lt;/span> &lt;span class="kw4">const&lt;/span> [http://doc.qt.io/QModelIndex.html &lt;span class="kw5">QModelIndex&lt;/span>]&lt;span class="sy0">&amp;&lt;/span> index &lt;span class="br0">)&lt;/span> &lt;span class="kw4">const&lt;/span>&lt;/div>
+# &lt;div class="de1">&lt;span class="br0">{&lt;/span>&lt;/div>
+# &lt;div class="de1">    &lt;span class="co1">// the genre column has index 2&lt;/span>&lt;/div>
+# &lt;div class="de1">    &lt;span class="kw1">if&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="nu0">2&lt;/span> &lt;span class="sy0">==&lt;/span> index.&lt;span class="me1">column&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="br0">)&lt;/span>&lt;/div>
+# &lt;div class="de2">    &lt;span class="br0">{&lt;/span>&lt;/div>
+# &lt;div class="de1">        [http://doc.qt.io/QComboBox.html &lt;span class="kw5">QComboBox&lt;/span>]&lt;span class="sy0">*&lt;/span> pEditor &lt;span class="sy0">=&lt;/span> &lt;span class="kw1">new&lt;/span> [http://doc.qt.io/QComboBox.html &lt;span class="kw5">QComboBox&lt;/span>]&lt;span class="br0">(&lt;/span>parent&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">        pEditor&lt;span class="sy0">->&lt;/span>&lt;span class="me3">setEditable&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="kw2">true&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">        pEditor&lt;span class="sy0">->&lt;/span>&lt;span class="me3">setAutoCompletion&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="kw2">true&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">        &lt;span class="kw1">return&lt;/span> pEditor&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de2">    &lt;span class="br0">}&lt;/span>&lt;/div>
+# &lt;div class="de1">    &lt;span class="kw1">return&lt;/span> [http://doc.qt.io/QItemDelegate.html &lt;span class="kw5">QItemDelegate&lt;/span>]&lt;span class="sy0">::&lt;/span>&lt;span class="me2">createEditor&lt;/span>&lt;span class="br0">(&lt;/span>parent&lt;span class="sy0">,&lt;/span> option&lt;span class="sy0">,&lt;/span> index&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">&lt;span class="br0">}&lt;/span>&lt;/div>
+
+&lt;/div>
+
+==setEditorData==
+
+Die Methode '''setEditorData''' wird nach createEditor aufgerufen. Sie wird benutzt, um das Editor-Widget mit Daten zu füllen. In unserem Beispiel fügen wir die Genres der ComboBox hinzu und setzen den aktuell selektierten Wert.
+
+&lt;div class="cpp-qt geshi">
+
+# &lt;div class="de1">&lt;span class="kw4">void&lt;/span> CdEditDelegate&lt;span class="sy0">::&lt;/span>&lt;span class="me2">setEditorData&lt;/span>&lt;span class="br0">(&lt;/span>[http://doc.qt.io/QWidget.html &lt;span class="kw5">QWidget&lt;/span>]&lt;span class="sy0">*&lt;/span> editor&lt;span class="sy0">,&lt;/span> &lt;span class="kw4">const&lt;/span> [http://doc.qt.io/QModelIndex.html &lt;span class="kw5">QModelIndex&lt;/span>]&lt;span class="sy0">&amp;&lt;/span> index &lt;span class="br0">)&lt;/span> &lt;span class="kw4">const&lt;/span>&lt;/div>
+# &lt;div class="de1">&lt;span class="br0">{&lt;/span>&lt;/div>
+# &lt;div class="de1">    &lt;span class="co1">// the genre column has index 2&lt;/span>&lt;/div>
+# &lt;div class="de1">    &lt;span class="kw1">if&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="nu0">2&lt;/span> &lt;span class="sy0">==&lt;/span> index.&lt;span class="me1">column&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="br0">)&lt;/span>&lt;/div>
+# &lt;div class="de2">    &lt;span class="br0">{&lt;/span>&lt;/div>
+# &lt;div class="de1">        [http://doc.qt.io/QComboBox.html &lt;span class="kw5">QComboBox&lt;/span>]&lt;span class="sy0">*&lt;/span> pEditor &lt;span class="sy0">=&lt;/span> qobject_cast&lt;span class="sy0">&lt;&lt;/span>[http://doc.qt.io/QComboBox.html &lt;span class="kw5">QComboBox&lt;/span>]&lt;span class="sy0">*>&lt;/span>&lt;span class="br0">(&lt;/span>editor&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">        &lt;span class="kw1">if&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="nu0">0&lt;/span> &lt;span class="sy0">!=&lt;/span> pEditor&lt;span class="br0">)&lt;/span>&lt;/div>
+# &lt;div class="de1">        &lt;span class="br0">{&lt;/span>&lt;/div>
+# &lt;div class="de1">            pEditor&lt;span class="sy0">->&lt;/span>&lt;span class="me3">addItems&lt;/span>&lt;span class="br0">(&lt;/span>m_pData&lt;span class="sy0">->&lt;/span>&lt;span class="me3">genres&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de2">            pEditor&lt;span class="sy0">->&lt;/span>&lt;span class="me3">setCurrentIndex&lt;/span>&lt;span class="br0">(&lt;/span>pEditor&lt;span class="sy0">->&lt;/span>&lt;span class="me3">findText&lt;/span>&lt;span class="br0">(&lt;/span>index.&lt;span class="me1">data&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="br0">)&lt;/span>.&lt;span class="me1">toString&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">        &lt;span class="br0">}&lt;/span>&lt;/div>
+# &lt;div class="de1">    &lt;span class="br0">}&lt;/span>&lt;/div>
+# &lt;div class="de1">    [http://doc.qt.io/QItemDelegate.html &lt;span class="kw5">QItemDelegate&lt;/span>]&lt;span class="sy0">::&lt;/span>&lt;span class="me2">setEditorData&lt;/span>&lt;span class="br0">(&lt;/span>editor&lt;span class="sy0">,&lt;/span> index&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">&lt;span class="br0">}&lt;/span>&lt;/div>
+
+&lt;/div>
+
+==setModelData==
+
+Die Methode '''setModelData''' wird aufgerufen, wenn das Editieren einer Zelle beendet wird. Das kann sein, weil mit der Maus woanders hingeklickt oder die Tabulator- oder Eingabetaste gedrückt wurde. Hier kann im Zweifelsfall nochmal der Wert validiert und dann ins Modell geschrieben werden. Das Beenden des Editierens (z.B. im Fehlerfall) ist hier nicht mehr möglich, da der Fokus evtl. schon woanders ist.
+
+In unserem Beispiel fragen wir den Wert aus der ComboBox ab und schreiben ihn mittels setData ins Modell.
+
+&lt;div class="cpp-qt geshi">
+
+# &lt;div class="de1">&lt;span class="kw4">void&lt;/span> CdEditDelegate&lt;span class="sy0">::&lt;/span>&lt;span class="me2">setModelData&lt;/span>&lt;span class="br0">(&lt;/span>[http://doc.qt.io/QWidget.html &lt;span class="kw5">QWidget&lt;/span>]&lt;span class="sy0">*&lt;/span> editor&lt;span class="sy0">,&lt;/span> [http://doc.qt.io/QAbstractItemModel.html &lt;span class="kw5">QAbstractItemModel&lt;/span>]&lt;span class="sy0">*&lt;/span> model&lt;span class="sy0">,&lt;/span> &lt;span class="kw4">const&lt;/span> [http://doc.qt.io/QModelIndex.html &lt;span class="kw5">QModelIndex&lt;/span>]&lt;span class="sy0">&amp;&lt;/span> index &lt;span class="br0">)&lt;/span> &lt;span class="kw4">const&lt;/span>&lt;/div>
+# &lt;div class="de1">&lt;span class="br0">{&lt;/span>&lt;/div>
+# &lt;div class="de1">    &lt;span class="co1">// the genre column has index 2&lt;/span>&lt;/div>
+# &lt;div class="de1">    &lt;span class="kw1">if&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="nu0">2&lt;/span> &lt;span class="sy0">==&lt;/span> index.&lt;span class="me1">column&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="br0">)&lt;/span>&lt;/div>
+# &lt;div class="de2">    &lt;span class="br0">{&lt;/span>&lt;/div>
+# &lt;div class="de1">        [http://doc.qt.io/QComboBox.html &lt;span class="kw5">QComboBox&lt;/span>]&lt;span class="sy0">*&lt;/span> pEditor &lt;span class="sy0">=&lt;/span> qobject_cast&lt;span class="sy0">&lt;&lt;/span>[http://doc.qt.io/QComboBox.html &lt;span class="kw5">QComboBox&lt;/span>]&lt;span class="sy0">*>&lt;/span>&lt;span class="br0">(&lt;/span>editor&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">        &lt;span class="kw1">if&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="nu0">0&lt;/span> &lt;span class="sy0">!=&lt;/span> pEditor&lt;span class="br0">)&lt;/span>&lt;/div>
+# &lt;div class="de1">        &lt;span class="br0">{&lt;/span>&lt;/div>
+# &lt;div class="de1">            model&lt;span class="sy0">->&lt;/span>&lt;span class="me3">setData&lt;/span>&lt;span class="br0">(&lt;/span>index&lt;span class="sy0">,&lt;/span> pEditor&lt;span class="sy0">->&lt;/span>&lt;span class="me3">currentText&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de2">            return&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">        &lt;span class="br0">}&lt;/span>&lt;/div>
+# &lt;div class="de1">    &lt;span class="br0">}&lt;/span>&lt;/div>
+# &lt;div class="de1">    [http://doc.qt.io/QItemDelegate.html &lt;span class="kw5">QItemDelegate&lt;/span>]&lt;span class="sy0">::&lt;/span>&lt;span class="me2">setModelData&lt;/span>&lt;span class="br0">(&lt;/span>editor&lt;span class="sy0">,&lt;/span> model&lt;span class="sy0">,&lt;/span> index&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">&lt;span class="br0">}&lt;/span>&lt;/div>
+
+&lt;/div>
+
+==updateEditorGeometry==
+
+Die Methode '''updateEditorGeometry''' wird aufgerufen, um den Editor in der Tabelle korrekt zu platzieren. Die Basisklasse ''QItemdelegate'' macht bereits alles, was wir benötigen, deswegen rufen wir einfach die Basisimplementierung auf.
+
+&lt;div class="cpp-qt geshi">
+
+# &lt;div class="de1">&lt;span class="kw4">void&lt;/span> CdEditDelegate&lt;span class="sy0">::&lt;/span>&lt;span class="me2">updateEditorGeometry&lt;/span>&lt;span class="br0">(&lt;/span>[http://doc.qt.io/QWidget.html &lt;span class="kw5">QWidget&lt;/span>]&lt;span class="sy0">*&lt;/span> editor&lt;span class="sy0">,&lt;/span> &lt;span class="kw4">const&lt;/span> [http://doc.qt.io/QStyleOptionViewItem.html &lt;span class="kw5">QStyleOptionViewItem&lt;/span>]&lt;span class="sy0">&amp;&lt;/span> option&lt;span class="sy0">,&lt;/span> &lt;span class="kw4">const&lt;/span> [http://doc.qt.io/QModelIndex.html &lt;span class="kw5">QModelIndex&lt;/span>]&lt;span class="sy0">&amp;&lt;/span> index &lt;span class="br0">)&lt;/span> &lt;span class="kw4">const&lt;/span>&lt;/div>
+# &lt;div class="de1">&lt;span class="br0">{&lt;/span>&lt;/div>
+# &lt;div class="de1">    [http://doc.qt.io/QItemDelegate.html &lt;span class="kw5">QItemDelegate&lt;/span>]&lt;span class="sy0">::&lt;/span>&lt;span class="me2">updateEditorGeometry&lt;/span>&lt;span class="br0">(&lt;/span>editor&lt;span class="sy0">,&lt;/span> option&lt;span class="sy0">,&lt;/span> index&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">&lt;span class="br0">}&lt;/span>&lt;/div>
+
+&lt;/div>
+
+=Ändern von Editiereigenschaften der View=
+
+Um einen Delegate in einer View zu verwenden, muss folgendes gemacht werden:
+
+# Erzeugen des Delegates auf dem Heap mit ''new''
+# [http://doc.qt.nokia.com/latest/qabstractitemview.html#setItemDelegate setItemdelegate] ''[doc.qt.nokia.com]'' in der View aufrufen
+
+Weiterhin kann mittels [http://doc.qt.nokia.com/latest/qabstractitemview.html#editTriggers-prop setEditTriggers] ''[doc.qt.nokia.com]'' eingestellt werden, durch welche Ereignisse das Editieren einer Zelle begonnen werden soll:
+
+{| class="infotable line"
+| '''Konstante'''
+| '''Beschreibung'''
+|-
+| '''QAbstractItemView::NoEditTriggers'''
+| kein Editieren möglich.
+|-
+| '''QAbstractItemView::CurrentChanged'''
+| Das Editieren wird gestartet, wenn das aktuelle Element gewechselt wird.
+|-
+| '''QAbstractItemView::DoubleClicked'''
+| Das Editieren startet mit einem Doppelklick auf ein Element.
+|-
+| '''QAbstractItemView::SelectedClicked'''
+| Das Editieren wird gestartet, wenn auf ein bereits selektiertes Element geklickt wird.
+|-
+| '''QAbstractItemView::EditKeyPressed'''
+| Das Editieren wird gestartet, wenn die plattformspezifische Bearbeiten-Taste gedrückt wird.
+|-
+| '''QAbstractItemView::AnyKeyPressed'''
+| Das Editieren wird gestartet, wenn irgend eine Taste gedrückt wird (Außer Tab oder Cursor).
+|-
+| '''QAbstractItemView::AllEditTriggers'''
+| Das Editieren wird in allen oben genannten Fällen gestartet
+|}
+
+&lt;div class="cpp-qt geshi">
+
+# &lt;div class="de1">&lt;span class="kw4">void&lt;/span> CVirtualCdRack&lt;span class="sy0">::&lt;/span>&lt;span class="me2">init&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="br0">)&lt;/span>&lt;/div>
+# &lt;div class="de1">&lt;span class="br0">{&lt;/span>&lt;/div>
+# &lt;div class="de1">    ....&lt;/div>
+# &lt;div class="de1"> &lt;/div>
+# &lt;div class="de2">    &lt;span class="me1">m_model&lt;/span> &lt;span class="sy0">=&lt;/span> &lt;span class="kw1">new&lt;/span> CdModel&lt;span class="br0">(&lt;/span>m_data&lt;span class="sy0">,&lt;/span> &lt;span class="kw1">this&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">    m_view &lt;span class="sy0">=&lt;/span> &lt;span class="kw1">new&lt;/span> QTableView&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">    m_view&lt;span class="sy0">->&lt;/span>&lt;span class="me3">setModel&lt;/span>&lt;span class="br0">(&lt;/span>m_model&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">    m_view&lt;span class="sy0">->&lt;/span>&lt;span class="me3">setAlternatingRowColors&lt;/span>&lt;span class="br0">(&lt;/span>&lt;span class="kw2">true&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">    m_view&lt;span class="sy0">->&lt;/span>&lt;span class="me3">setEditTriggers&lt;/span>&lt;span class="br0">(&lt;/span>[http://doc.qt.io/QAbstractItemView.html &lt;span class="kw5">QAbstractItemView&lt;/span>]&lt;span class="sy0">::&lt;/span>&lt;span class="me2">DoubleClicked&lt;/span> &lt;span class="sy0">|&lt;/span>&lt;/div>
+# &lt;div class="de2">                            [http://doc.qt.io/QAbstractItemView.html &lt;span class="kw5">QAbstractItemView&lt;/span>]&lt;span class="sy0">::&lt;/span>&lt;span class="me2">SelectedClicked&lt;/span> &lt;span class="sy0">|&lt;/span>&lt;/div>
+# &lt;div class="de1">                            [http://doc.qt.io/QAbstractItemView.html &lt;span class="kw5">QAbstractItemView&lt;/span>]&lt;span class="sy0">::&lt;/span>&lt;span class="me2">EditKeyPressed&lt;/span> &lt;span class="sy0">|&lt;/span>&lt;/div>
+# &lt;div class="de1">                            [http://doc.qt.io/QAbstractItemView.html &lt;span class="kw5">QAbstractItemView&lt;/span>]&lt;span class="sy0">::&lt;/span>&lt;span class="me2">AnyKeyPressed&lt;/span>&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">    CdEditDelegate&lt;span class="sy0">*&lt;/span> pDelegate &lt;span class="sy0">=&lt;/span> &lt;span class="kw1">new&lt;/span> CdEditDelegate&lt;span class="br0">(&lt;/span>&lt;span class="sy0">&amp;&lt;/span>m_data&lt;span class="sy0">,&lt;/span> m_view&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1">    m_view&lt;span class="sy0">->&lt;/span>&lt;span class="me3">setItemDelegate&lt;/span>&lt;span class="br0">(&lt;/span>pDelegate&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de2">    setCentralWidget&lt;span class="br0">(&lt;/span>m_view&lt;span class="br0">)&lt;/span>&lt;span class="sy0">;&lt;/span>&lt;/div>
+# &lt;div class="de1"> &lt;/div>
+# &lt;div class="de1">    ....&lt;/div>
+# &lt;div class="de1">&lt;span class="br0">}&lt;/span>&lt;/div>
+
+&lt;/div>
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:Ambox" title="Template:Ambox">Template:Ambox</a> (<a href="http://wiki.qt.io/index.php?title=Template:Ambox&amp;action=edit" title="Template:Ambox">view source</a>) </li><li><a href="http://wiki.qt.io/Template:Cleanup" title="Template:Cleanup">Template:Cleanup</a> (<a href="http://wiki.qt.io/index.php?title=Template:Cleanup&amp;action=edit" title="Template:Cleanup">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/Model_View_Tutorial_Part2_Delegate_und_View/de" title="Model View Tutorial Part2 Delegate und View/de">Model View Tutorial Part2 Delegate und View/de</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/Model_View_Tutorial_Part2_Delegate_und_View/de">http://wiki.qt.io/Model_View_Tutorial_Part2_Delegate_und_View/de</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Model+View+Tutorial+Part2+Delegate+und+View%2Fde" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Model_View_Tutorial_Part2_Delegate_und_View/de"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Model_View_Tutorial_Part2_Delegate_und_View/de&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/Model_View_Tutorial_Part2_Delegate_und_View/de" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=Model_View_Tutorial_Part2_Delegate_und_View/de&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Model_View_Tutorial_Part2_Delegate_und_View/de&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Model_View_Tutorial_Part2_Delegate_und_View/de" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Model_View_Tutorial_Part2_Delegate_und_View/de" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Model_View_Tutorial_Part2_Delegate_und_View/de&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":317});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Model_View_Tutorial_Part2_Delegate_und_View/de&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:37:23 GMT -->
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:58:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>PySide Binding Generation Tutorial: Module 5 Building the generator - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator","wgTitle":"PySide Binding Generation Tutorial: Module 5 Building the generator","wgCurRevisionId":15751,"wgRevisionId":15751,"wgArticleId":1263,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["LanguageBindings::PySide::Shiboken::PySide Binding Generation Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-PySide_Binding_Generation_Tutorial_Module_5_Building_the_generator skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">PySide Binding Generation Tutorial: Module 5 Building the generator</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p><p><b>English</b> <a rel="nofollow" class="external text" href="http://qt-devnet.developpez.com/tutoriels/python/pyside/binding-shiboken/#LVII">French</a>
+</p>
+<ul>
+<li> <b>Note:</b> this article is a member of the multipart <a rel="nofollow" class="external text" href="PySide_Binding_Generation_Tutorial.html">PySide Binding Generation Tutorial</a>
+</li>
+</ul>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#PySide_Binding_Generation_Tutorial"><span class="tocnumber">1</span> <span class="toctext">PySide Binding Generation Tutorial</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Three_Steps_to_Build_the_Binding"><span class="tocnumber">1.1</span> <span class="toctext">Three Steps to Build the Binding</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Gather_Information"><span class="tocnumber">1.2</span> <span class="toctext">Gather Information</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Run_the_Generator"><span class="tocnumber">1.3</span> <span class="toctext">Run the Generator</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Build"><span class="tocnumber">1.4</span> <span class="toctext">Build</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Conclusion"><span class="tocnumber">1.5</span> <span class="toctext">Conclusion</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="PySide_Binding_Generation_Tutorial">PySide Binding Generation Tutorial</span></h1>
+<h2><span class="mw-headline" id="Three_Steps_to_Build_the_Binding">Three Steps to Build the Binding</span></h2>
+<p>As mentioned before, the build system used must perform the following tasks in the correct order:
+</p>
+<ul>
+<li> Gather data about locations of headers and needed type systems from other projects.
+</li>
+<li> Run the generator with the correct parameters.
+</li>
+<li> Compile and link the binding.
+</li>
+</ul>
+<h2><span class="mw-headline" id="Gather_Information">Gather Information</span></h2>
+<p>There are two options to gather data about locations of headers and needed type systems:
+</p>
+<h3><span class="mw-headline" id="Collect_Information_with_pkg-config">Collect Information with pkg-config</span></h3>
+<p>The Qt bindings include compile and build information through the pkg-config mechanism. The pkg-config name for Qt Python bindings is <b>pyside</b> and a simple <b>pkg-config pyside —cflags —libs</b> will retrieve information required to build the new binding.
+</p><p>The Qt bindings file <b>pyside.pc</b> for the use of pkg-config requires Qt's <b>.pc</b> files to be installed. If the library is in an unusual location, e.g. <b>/opt/qt47</b>, remember to export it to the <b>PKG_CONFIG_PATH</b> environment variable. For example: 
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">export PKG_CONFIG_PATH<span class="sy0">=</span>$PKG_CONFIG_PATH<span class="sy0">:/</span>opt<span class="sy0">/</span>qt47<span class="sy0">/</span>lib<span class="sy0">/</span>pkgconfig</pre></div></div>
+<p>Information is also available through pkg-config: the <b>typesystemdir</b> variable. It is used like this: <b>pkg-config pyside —variable=typesystemdir</b>
+This provides information where to find the type system files used to create the Qt bindings. As mentioned before, the binding being created needs this to complement its own binding information for the generation proccess.
+</p><p>Information from the <b>Shiboken</b> binding generator is also needed for the build, it's pkg-config name is <b>shiboken</b>. More details on this later.
+</p>
+<h3><span class="mw-headline" id="Collect_Information_with_CMake">Collect Information with CMake</span></h3>
+When building your binding with CMake the relevant information can be included from your project's <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">CMakeLists.<span class="me1">txt</span></pre></div></div> using:
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">find_package<span class="br0">&#40;</span>Shiboken REQUIRED<span class="br0">&#41;</span>
+find_package<span class="br0">&#40;</span>PySide REQUIRED<span class="br0">&#41;</span></pre></div></div>
+<p>Requiring the <b>Shiboken</b> and <b>PySide</b> packages will set the values of a number of variables, according to <b>PySideConfig.cmake</b> file:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">PYSIDE_INCLUDE_DIR <span class="sy0">-</span> Directories to include to use PySide
+PYSIDE_LIBRARY <span class="sy0">-</span> Files to link against to use PySide
+PYSIDE_PYTHONPATH <span class="sy0">-</span> Path to where the PySide Python module files could be found
+PYSIDE_TYPESYSTEMS <span class="sy0">-</span> Type <span class="kw3">system</span> files that should be used by other bindings extending PySide</pre></div></div>
+<p>Similarly <b>ShibokenConfig.cmake</b> provides needed information:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">SHIBOKEN_INCLUDE_DIR <span class="sy0">-</span> Directories to include to use SHIBOKEN
+SHIBOKEN_LIBRARIES <span class="sy0">-</span> Files to link against to use SHIBOKEN
+SHIBOKEN_BUILD_TYPE <span class="sy0">-</span> Tells <span class="kw1">if</span> Shiboken was compiled in Release or Debug mode.
+<span class="me1">SHIBOKEN_PYTHON_INTERPRETER</span> <span class="sy0">-</span> Python interpreter <span class="br0">&#40;</span>regular or debug<span class="br0">&#41;</span> to be used with the bindings.
+<span class="me1">SHIBOKEN_PYTHON_LIBRARIES</span> <span class="sy0">-</span> Python libraries <span class="br0">&#40;</span>regular or debug<span class="br0">&#41;</span> Shiboken is linked against.</pre></div></div>
+<h2><span class="mw-headline" id="Run_the_Generator">Run the Generator</span></h2>
+<p>The generator is called with the following parameters and options:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">generatorrunner —generatorSet<span class="sy0">=</span>shiboken  global_header.<span class="me1">h</span>  —include<span class="sy0">-</span>paths<span class="sy0">=</span>$<span class="br0">&#40;</span>PATHS_TO_HEADERS<span class="br0">&#41;</span><span class="br0">&#41;</span>  —typesystem<span class="sy0">-</span>paths<span class="sy0">=</span>$<span class="br0">&#40;</span>PATHS_TO_TYPESYSTEMS<span class="br0">&#41;</span>  
+—output<span class="sy0">-</span>directory<span class="sy0">=</span>.  <span class="me1">typesystem</span>.<span class="me1">xml</span></pre></div></div>
+<p>Note that the variables for include and type system paths could be determined at build time with the pkg-config tool or with information provided by CMake configuration files.
+</p>
+<h2><span class="mw-headline" id="Build">Build</span></h2>
+<p>This section will alternate in presenting the two build methods: Makefile and CMake.
+</p>
+<h3><span class="mw-headline" id="The_Makefile_Version">The Makefile Version</span></h3>
+<p>Below is a plain Makefile for the binding project.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">foobinding<span class="sy0">-</span>makefile<span class="sy0">/</span>Makefile</pre></div></div>:
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">LIBFOO_DIR <span class="sy0">=</span> `pwd`<span class="sy0">/</span>..<span class="sy0">/</span>libfoo
+LIBS <span class="sy0">=</span> `pkg<span class="sy0">-</span>config pyside —libs`  <span class="sy0">-</span>L$<span class="br0">&#40;</span>LIBFOO_DIR<span class="br0">&#41;</span> <span class="sy0">-</span>lfoo
+CXXFLAGS <span class="sy0">=</span> <span class="sy0">-</span>I<span class="sy0">/</span>usr<span class="sy0">/</span>share<span class="sy0">/</span>qt4<span class="sy0">/</span>mkspecs<span class="sy0">/</span>linux<span class="sy0">-</span>g<span class="sy0">++</span> <span class="sy0">-</span>I.  <span class="sy0">-</span>I$<span class="br0">&#40;</span>LIBFOO_DIR<span class="br0">&#41;</span>  <span class="sy0">-</span>I`pwd`<span class="sy0">/</span>foo  <span class="sy0">-</span>I`pkg<span class="sy0">-</span>config —variable<span class="sy0">=</span>includedir pyside`<span class="sy0">/</span><span class="kw5">QtCore</span><span class="sy0">/</span>  
+<span class="sy0">-</span>I`pkg<span class="sy0">-</span>config —variable<span class="sy0">=</span>includedir <span class="kw5">QtCore</span>`  <span class="sy0">-</span>I`pkg<span class="sy0">-</span>config —variable<span class="sy0">=</span>includedir <span class="kw5">QtCore</span>`<span class="sy0">/</span>..  <span class="sy0">-</span>I`pkg<span class="sy0">-</span>config —variable<span class="sy0">=</span>includedir <span class="kw5">QtGui</span>`  
+`pkg<span class="sy0">-</span>config pyside —cflags`
+&#160;
+QT4TYPESYSTEM_DIR <span class="sy0">=</span> `pkg<span class="sy0">-</span>config pyside —variable<span class="sy0">=</span>typesystemdir`
+QT4HEADER_DIRS <span class="sy0">=</span> `pkg<span class="sy0">-</span>config —variable<span class="sy0">=</span>includedir <span class="kw5">QtCore</span>`<span class="sy0">:</span>`pkg<span class="sy0">-</span>config —variable<span class="sy0">=</span>includedir <span class="kw5">QtCore</span>`<span class="sy0">/</span>..
+<span class="me1">PYSIDE_PYTHONPATH</span> <span class="sy0">=</span> `pkg<span class="sy0">-</span>config —variable<span class="sy0">=</span>pythonpath PySide`
+PYTHON_INTERPRETER <span class="sy0">=</span> `pkg<span class="sy0">-</span>config —variable<span class="sy0">=</span>python_interpreter shiboken`
+&#160;
+all<span class="sy0">:</span> generate compile link
+&#160;
+generate<span class="sy0">:</span>
+ generatorrunner —generatorSet<span class="sy0">=</span>shiboken  global.<span class="me1">h</span>  —include<span class="sy0">-</span>paths<span class="sy0">=</span>$<span class="br0">&#40;</span>LIBFOO_DIR<span class="br0">&#41;</span><span class="sy0">:</span>$<span class="br0">&#40;</span>QT4HEADER_DIRS<span class="br0">&#41;</span><span class="sy0">:/</span>usr<span class="sy0">/</span>include  
+—typesystem<span class="sy0">-</span>paths<span class="sy0">=</span>.<span class="sy0">:</span>$<span class="br0">&#40;</span>QT4TYPESYSTEM_DIR<span class="br0">&#41;</span>  —output<span class="sy0">-</span>directory<span class="sy0">=</span>.  <span class="me1">typesystem_foo</span>.<span class="me1">xml</span>
+&#160;
+compile<span class="sy0">:</span>
+ g<span class="sy0">++</span> foo<span class="sy0">/</span>foo_module_wrapper.<span class="me1">cpp</span> foo<span class="sy0">/</span>math_wrapper.<span class="me1">cpp</span> <span class="sy0">-</span>Wall <span class="sy0">-</span>fPIC $<span class="br0">&#40;</span>CXXFLAGS<span class="br0">&#41;</span> <span class="sy0">-</span>c
+&#160;
+link<span class="sy0">:</span>
+ g<span class="sy0">++</span> foo_module_wrapper.<span class="me1">o</span> math_wrapper.<span class="me1">o</span> $<span class="br0">&#40;</span>LIBS<span class="br0">&#41;</span> <span class="sy0">-</span>fPIC <span class="sy0">-</span>shared <span class="sy0">-</span>Wl<span class="sy0">,-</span>soname<span class="sy0">,</span>foo.<span class="me1">so</span> <span class="sy0">-</span>o foo.<span class="me1">so</span>
+&#160;
+test<span class="sy0">:</span>
+ LD_LIBRARY_PATH<span class="sy0">=</span>$<span class="br0">&#40;</span>LIBFOO_DIR<span class="br0">&#41;</span><span class="sy0">:</span>$<span class="br0">&#40;</span>LD_LIBRARY_PATH<span class="br0">&#41;</span> PYTHONPATH<span class="sy0">=</span>$<span class="br0">&#40;</span>PYSIDE_PYTHONPATH<span class="br0">&#41;</span><span class="sy0">:</span>$<span class="br0">&#40;</span>PYTHONPATH<span class="br0">&#41;</span> $<span class="br0">&#40;</span>PYTHON_INTERPRETER<span class="br0">&#41;</span> <span class="sy0">-</span>c  
+<span class="st0">&quot;import foo; m = foo.Math(); print '5 squared is d' m.squared(5)&quot;</span>
+&#160;
+clean<span class="sy0">:</span>
+ rm <span class="sy0">-</span>rf <span class="st0">''</span><span class="st0">'.o'</span><span class="st0">''</span>.<span class="me1">so</span> <span class="st0">''</span><span class="st0">'.?pp'</span><span class="st0">''</span>.<span class="kw3">log</span> <span class="st0">''</span><span class="st0">'.log foo/'</span><span class="st0">''</span></pre></div></div>
+<p>Keep in mind that the Makefile above expects the <b>libfoo</b> and <b>foobinding-makefile</b> directories to be in the same level in the directory hierarchy. Remember to change any path references accordingly if you elect to change things.
+</p>
+<h4><span class="mw-headline" id="Build_and_Test">Build and Test</span></h4>
+<p>Now generate, compile and link the binding with make:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd foobinding<span class="sy0">-</span>makefile
+make
+make test</pre></div></div>
+<p>The <b>make test</b> causes the Python interpreter to run the line 
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import foo<span class="sy0">;</span> m <span class="sy0">=</span> foo.<span class="me1">Math</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> print <span class="st0">'5 squared is d'</span> m.<span class="me1">squared</span><span class="br0">&#40;</span><span class="nu0">5</span><span class="br0">&#41;</span></pre></div></div>
+<p>, which will import the binding module, instantiate the class from it, run a method and print its result (which should be 25).
+</p>
+<h3><span class="mw-headline" id="The_CMake_Version">The CMake Version</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">foobinding<span class="sy0">-</span>cmake<span class="sy0">/</span>CMakeLists.<span class="me1">txt</span></pre></div></div>:
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">project<span class="br0">&#40;</span>foobinding<span class="br0">&#41;</span>
+&#160;
+cmake_minimum_required<span class="br0">&#40;</span>VERSION <span class="nu16">2.6</span><span class="br0">&#41;</span>
+&#160;
+find_package<span class="br0">&#40;</span>PythonLibs REQUIRED<span class="br0">&#41;</span>
+find_package<span class="br0">&#40;</span>Shiboken REQUIRED<span class="br0">&#41;</span>
+find_package<span class="br0">&#40;</span>PySide REQUIRED<span class="br0">&#41;</span>
+find_package<span class="br0">&#40;</span>Qt4 4.6.2 REQUIRED<span class="br0">&#41;</span>
+&#160;
+set<span class="br0">&#40;</span>LIBFOO_DIR $<span class="br0">&#123;</span>CMAKE_SOURCE_DIR<span class="br0">&#125;</span><span class="sy0">/</span>..<span class="sy0">/</span>libfoo<span class="br0">&#41;</span>
+&#160;
+find_program<span class="br0">&#40;</span>GENERATOR generatorrunner REQUIRED<span class="br0">&#41;</span>
+<span class="kw1">if</span> <span class="br0">&#40;</span>NOT GENERATOR<span class="br0">&#41;</span>
+ message<span class="br0">&#40;</span>FATAL_ERROR <span class="st0">&quot;You need to specify GENERATOR variable (-DGENERATOR=value)&quot;</span><span class="br0">&#41;</span>
+endif<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+<span class="kw1">if</span><span class="br0">&#40;</span>CMAKE_HOST_UNIX<span class="br0">&#41;</span>
+ option<span class="br0">&#40;</span>ENABLE_GCC_OPTIMIZATION <span class="st0">&quot;Enable specific GCC flags to optimization library size and performance. Only available on Release Mode&quot;</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>CMAKE_CXX_FLAGS <span class="st0">&quot;${CMAKE_CXX_FLAGS} -Wall -fvisibility=hidden -Wno-strict-aliasing&quot;</span><span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>CMAKE_CXX_FLAGS_DEBUG <span class="st0">&quot;-g&quot;</span><span class="br0">&#41;</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span>ENABLE_GCC_OPTIMIZATION<span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>CMAKE_BUILD_TYPE Release<span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>CMAKE_CXX_FLAGS_RELEASE <span class="st0">&quot;-DNDEBUG -Os -Wl,-O1&quot;</span><span class="br0">&#41;</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span>NOT CMAKE_HOST_APPLE<span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>CMAKE_CXX_FLAGS <span class="st0">&quot;${CMAKE_CXX_FLAGS} -Wl,—hash-style=gnu&quot;</span><span class="br0">&#41;</span>
+ endif<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ endif<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+ <span class="kw1">if</span><span class="br0">&#40;</span>CMAKE_HOST_APPLE<span class="br0">&#41;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>NOT QT_INCLUDE_DIR<span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>QT_INCLUDE_DIR <span class="st0">&quot;/Library/Frameworks&quot;</span><span class="br0">&#41;</span>
+ endif<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ endif<span class="br0">&#40;</span><span class="br0">&#41;</span>
+endif<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+include<span class="br0">&#40;</span>$<span class="br0">&#123;</span>QT_USE_FILE<span class="br0">&#125;</span><span class="br0">&#41;</span>
+&#160;
+enable_testing<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+add_subdirectory<span class="br0">&#40;</span>foo<span class="br0">&#41;</span>
+add_subdirectory<span class="br0">&#40;</span>tests<span class="br0">&#41;</span></pre></div></div>
+<p>This is the main project's <b>CMakeLists.txt</b>, it is a regular CMake file and general doubts can be checked in the <a rel="nofollow" class="external text" href="http://www.cmake.org/cmake/help/documentation.html">CMake documentation</a> Notice the we're going to have tests in this project so we have to enable them with <b>enable_testing()</b>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">foobinding<span class="sy0">-</span>cmake<span class="sy0">/</span>foo<span class="sy0">/</span>CMakeLists.<span class="me1">txt</span></pre></div></div>:
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">project<span class="br0">&#40;</span>foo<span class="br0">&#41;</span>
+&#160;
+set<span class="br0">&#40;</span>foo_SRC
+ $<span class="br0">&#123;</span>CMAKE_CURRENT_BINARY_DIR<span class="br0">&#125;</span><span class="sy0">/</span>foo<span class="sy0">/</span>foo_module_wrapper.<span class="me1">cpp</span>
+ $<span class="br0">&#123;</span>CMAKE_CURRENT_BINARY_DIR<span class="br0">&#125;</span><span class="sy0">/</span>foo<span class="sy0">/</span>math_wrapper.<span class="me1">cpp</span>
+<span class="br0">&#41;</span>
+&#160;
+set<span class="br0">&#40;</span>foo_INCLUDE_DIRECTORIES
+ $<span class="br0">&#123;</span>SHIBOKEN_INCLUDE_DIR<span class="br0">&#125;</span>
+ $<span class="br0">&#123;</span>PYTHON_INCLUDE_PATH<span class="br0">&#125;</span>
+ $<span class="br0">&#123;</span>PYSIDE_INCLUDE_DIR<span class="br0">&#125;</span>
+ $<span class="br0">&#123;</span>PYSIDE_INCLUDE_DIR<span class="br0">&#125;</span><span class="sy0">/</span><span class="kw5">QtCore</span>
+ $<span class="br0">&#123;</span>QT_INCLUDE_DIR<span class="br0">&#125;</span>
+ $<span class="br0">&#123;</span>QT_QTCORE_INCLUDE_DIR<span class="br0">&#125;</span>
+ $<span class="br0">&#123;</span>LIBFOO_DIR<span class="br0">&#125;</span>
+<span class="br0">&#41;</span>
+&#160;
+set<span class="br0">&#40;</span>foo_LINK_LIBRARIES
+ $<span class="br0">&#123;</span>QT_QTCORE_LIBRARY<span class="br0">&#125;</span>
+ $<span class="br0">&#123;</span>SHIBOKEN_PYTHON_LIBRARIES<span class="br0">&#125;</span>
+ $<span class="br0">&#123;</span>SHIBOKEN_LIBRARY<span class="br0">&#125;</span>
+ $<span class="br0">&#123;</span>PYSIDE_LIBRARY<span class="br0">&#125;</span>
+ $<span class="br0">&#123;</span>LIBFOO_DIR<span class="br0">&#125;</span><span class="sy0">/</span>libfoo.<span class="me1">so</span>
+<span class="br0">&#41;</span>
+&#160;
+include_directories<span class="br0">&#40;</span>foo $<span class="br0">&#123;</span>foo_INCLUDE_DIRECTORIES<span class="br0">&#125;</span><span class="br0">&#41;</span>
+add_library<span class="br0">&#40;</span>foo MODULE $<span class="br0">&#123;</span>foo_SRC<span class="br0">&#125;</span><span class="br0">&#41;</span>
+set_property<span class="br0">&#40;</span>TARGET foo PROPERTY PREFIX <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span>
+target_link_libraries<span class="br0">&#40;</span>foo $<span class="br0">&#123;</span>foo_LINK_LIBRARIES<span class="br0">&#125;</span><span class="br0">&#41;</span>
+&#160;
+add_custom_command<span class="br0">&#40;</span>OUTPUT $<span class="br0">&#123;</span>foo_SRC<span class="br0">&#125;</span>
+ COMMAND $<span class="br0">&#123;</span>GENERATOR<span class="br0">&#125;</span>
+ —generatorSet<span class="sy0">=</span>shiboken —enable<span class="sy0">-</span>parent<span class="sy0">-</span>ctor<span class="sy0">-</span>heuristic —enable<span class="sy0">-</span>pyside<span class="sy0">-</span>extensions —enable<span class="sy0">-</span>return<span class="sy0">-</span>value<span class="sy0">-</span>heuristic
+ $<span class="br0">&#123;</span>CMAKE_SOURCE_DIR<span class="br0">&#125;</span><span class="sy0">/</span>foo<span class="sy0">/</span>global.<span class="me1">h</span>
+ —include<span class="sy0">-</span>paths<span class="sy0">=</span>$<span class="br0">&#123;</span>QT_INCLUDE_DIR<span class="br0">&#125;</span><span class="sy0">:</span>$<span class="br0">&#123;</span>LIBFOO_DIR<span class="br0">&#125;</span>
+ —typesystem<span class="sy0">-</span>paths<span class="sy0">=</span>$<span class="br0">&#123;</span>typesystem_path<span class="br0">&#125;</span><span class="sy0">:</span>$<span class="br0">&#123;</span>PYSIDE_TYPESYSTEMS<span class="br0">&#125;</span>
+ —output<span class="sy0">-</span>directory<span class="sy0">=</span>$<span class="br0">&#123;</span>CMAKE_CURRENT_BINARY_DIR<span class="br0">&#125;</span>
+ $<span class="br0">&#123;</span>CMAKE_CURRENT_SOURCE_DIR<span class="br0">&#125;</span><span class="sy0">/</span>typesystem_foo.<span class="me1">xml</span>
+ WORKING_DIRECTORY $<span class="br0">&#123;</span>CMAKE_CURRENT_SOURCE_DIR<span class="br0">&#125;</span>
+ COMMENT <span class="st0">&quot;Running generator for libfoo…&quot;</span>
+ <span class="br0">&#41;</span></pre></div></div>
+<p>This is the <b>CMakeLists.txt</b> file for the binding directory proper, the <b>add_custom_command</b> statement is responsible for the calling of Shiboken generator with the proper parameters and variables. Notice that the command line options <b>—enable-parent-ctor-heuristic —enable-pyside-extensions —enable-return-value-heuristic</b> are directly related to Qt bindings idiosyncrasies, for a pure C++ binding none of those will be necessary.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">foobinding<span class="sy0">-</span>cmake<span class="sy0">/</span>tests<span class="sy0">/</span>CMakeLists.<span class="me1">txt</span></pre></div></div>:
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw1">if</span><span class="br0">&#40;</span>WIN32<span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>TEST_PYTHONPATH <span class="st0">&quot;${foo_BINARY_DIR};${PYSIDE_PYTHONPATH}&quot;</span><span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>TEST_LIBRARY_PATH <span class="st0">&quot;${LIBFOO_DIR};$ENV{PATH}&quot;</span><span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>LIBRARY_PATH_VAR <span class="st0">&quot;PATH&quot;</span><span class="br0">&#41;</span>
+ string<span class="br0">&#40;</span>REPLACE <span class="st0">&quot;&quot;</span> <span class="st0">&quot;/&quot;</span> TEST_PYTHONPATH <span class="st0">&quot;${TEST_PYTHONPATH}&quot;</span><span class="br0">&#41;</span>
+ string<span class="br0">&#40;</span>REPLACE <span class="st0">&quot;&quot;</span> <span class="st0">&quot;/&quot;</span> TEST_LIBRARY_PATH <span class="st0">&quot;${TEST_LIBRARY_PATH}&quot;</span><span class="br0">&#41;</span>
+&#160;
+ string<span class="br0">&#40;</span>REPLACE <span class="st0">&quot;;&quot;</span> <span class="st0">&quot;;&quot;</span> TEST_PYTHONPATH <span class="st0">&quot;${TEST_PYTHONPATH}&quot;</span><span class="br0">&#41;</span>
+ string<span class="br0">&#40;</span>REPLACE <span class="st0">&quot;;&quot;</span> <span class="st0">&quot;;&quot;</span> TEST_LIBRARY_PATH <span class="st0">&quot;${TEST_LIBRARY_PATH}&quot;</span><span class="br0">&#41;</span>
+<span class="kw1">else</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>TEST_PYTHONPATH <span class="st0">&quot;${foo_BINARY_DIR}:${PYSIDE_PYTHONPATH}&quot;</span><span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>TEST_LIBRARY_PATH <span class="st0">&quot;${LIBFOO_DIR}:$ENV{LD_LIBRARY_PATH}&quot;</span><span class="br0">&#41;</span>
+ set<span class="br0">&#40;</span>LIBRARY_PATH_VAR <span class="st0">&quot;LD_LIBRARY_PATH&quot;</span><span class="br0">&#41;</span>
+endif<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+add_test<span class="br0">&#40;</span>math $<span class="br0">&#123;</span>SHIBOKEN_PYTHON_INTERPRETER<span class="br0">&#125;</span> $<span class="br0">&#123;</span>CMAKE_CURRENT_SOURCE_DIR<span class="br0">&#125;</span><span class="sy0">/</span>math_test.<span class="me1">py</span><span class="br0">&#41;</span>
+set_tests_properties<span class="br0">&#40;</span>math PROPERTIES ENVIRONMENT <span class="st0">&quot;PYTHONPATH=${TEST_PYTHONPATH};${LIBRARY_PATH_VAR}=${TEST_LIBRARY_PATH}&quot;</span><span class="br0">&#41;</span></pre></div></div>
+<p>This not very elaborate <b>CMakeLists.txt</b> informs CMake which tests should be executed, and with which variables.
+</p>
+<h4><span class="mw-headline" id="Build_and_Test_2">Build and Test</span></h4>
+The best thing to do when building with CMake is to create a build directory and run <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cmake</pre></div></div> from there.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd foobinding<span class="sy0">-</span>cmake
+mkdir build
+cd build
+cmake ..
+<span class="me1">make</span></pre></div></div>
+<p>Ah, let's not forget the unit test. It's a very simple one.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">foobinding<span class="sy0">-</span>cmake<span class="sy0">/</span>tests<span class="sy0">/</span>math.<span class="me1">py</span></pre></div></div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#!/usr/bin/env python</span>
+<span class="co2">#-'''- coding: utf-8 -'''-</span>
+&#160;
+<span class="st0">''</span><span class="st0">'Test cases for foo bindings module.'</span><span class="st0">''</span>
+&#160;
+import unittest
+import foo
+&#160;
+<span class="kw2">class</span> MathTest<span class="br0">&#40;</span>unittest.<span class="me1">TestCase</span><span class="br0">&#41;</span><span class="sy0">:</span>
+&#160;
+def testMath<span class="br0">&#40;</span>self<span class="br0">&#41;</span><span class="sy0">:</span>
+ <span class="st0">''</span><span class="st0">'Test case for Math class from foo module.'</span><span class="st0">''</span>
+ val <span class="sy0">=</span> <span class="nu0">5</span>
+ math <span class="sy0">=</span> foo.<span class="me1">Math</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ self.<span class="me1">assertEqual</span><span class="br0">&#40;</span>math.<span class="me1">squared</span><span class="br0">&#40;</span><span class="nu0">5</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="nu0">5</span> <span class="sy0">*</span> <span class="nu0">5</span><span class="br0">&#41;</span>
+&#160;
+<span class="kw1">if</span> <span class="st0">''</span>name<span class="st0">''</span> <span class="sy0">==</span> <span class="st0">''</span><span class="st0">'main'</span><span class="st0">''</span><span class="sy0">:</span>
+ unittest.<span class="me1">main</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>
+<p>To run the test:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ctest</pre></div></div>
+<p>The output will be something like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Test project YOURPATH<span class="sy0">/</span>binding<span class="sy0">-</span>tutorial<span class="sy0">/</span>foobinding<span class="sy0">-</span>cmake<span class="sy0">/</span>build
+ Start <span class="nu0">1</span><span class="sy0">:</span> math
+<span class="nu0">1</span><span class="sy0">/</span><span class="nu0">1</span> Test <span class="co2">#1: math ……………………….. Passed 0.10 sec</span>
+&#160;
+<span class="nu0">100</span><span class="sy0">%</span> tests passed<span class="sy0">,</span> <span class="nu0">0</span> tests failed out of <span class="nu0">1</span>
+&#160;
+Total Test <span class="kw3">time</span> <span class="br0">&#40;</span>real<span class="br0">&#41;</span> <span class="sy0">=</span> <span class="nu16">0.11</span> sec</pre></div></div>
+<p>For a more verbose output use <b>ctest -V</b>
+</p>
+<h2><span class="mw-headline" id="Conclusion">Conclusion</span></h2>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.415 seconds
+Real time usage: 0.416 seconds
+Preprocessor visited node count: 245/1000000
+Preprocessor generated node count: 492/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1263-0!*!*!!en!*!* and timestamp 20151105113055 and revision id 15751
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index3b96.html?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;oldid=15751">http://wiki.qt.io/index.php?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;oldid=15751</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_LanguageBindings__PySide__Shiboken__PySide_Binding_Generation_Tutorial.html" title="Category:LanguageBindings::PySide::Shiboken::PySide Binding Generation Tutorial">LanguageBindings::PySide::Shiboken::PySide Binding Generation Tutorial</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=2a7bbb28959f25ff&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="PySide_Binding_Generation_Tutorial__Module_5_Building_the_generator.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_PySide_Binding_Generation_Tutorial__Module_5_Building_the_generator.html?title=Talk:PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="PySide_Binding_Generation_Tutorial__Module_5_Building_the_generator.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index1ebd.html?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index6c14.html?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/PySide_Binding_Generation_Tutorial__Module_5_Building_the_generator.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/PySide_Binding_Generation_Tutorial__Module_5_Building_the_generator.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index3b96.html?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;oldid=15751" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexee5f.html?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 13 April 2015, at 11:55.</li>
+											<li id="footer-info-viewcount">This page has been accessed 593 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":161});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:58:54 GMT -->
+</html>

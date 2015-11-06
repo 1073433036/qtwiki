@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=API_Design_Principles/ru&oldid=19208 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:54:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>API Design Principles/ru - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"API_Design_Principles/ru","wgTitle":"API Design Principles/ru","wgCurRevisionId":19208,"wgRevisionId":19208,"wgArticleId":36,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing Qt::Guidelines"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"API_Design_Principles/ru","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-API_Design_Principles_ru skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">API Design Principles/ru</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="http://wiki.qt.io/API_Design_Principles" title="API Design Principles">API Design Principles</a></span><div id="mw-revision-info">Revision as of 13:15, 23 August 2015 by <a href="http://wiki.qt.io/index.php?title=User:AutoSpider&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:AutoSpider (page does not exist)">AutoSpider</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:AutoSpider&amp;action=edit&amp;redlink=1" class="new" title="User talk:AutoSpider (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/AutoSpider" title="Special:Contributions/AutoSpider">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=API_Design_Principles/ru&amp;diff=prev&amp;oldid=19208" title="API Design Principles/ru">diff</a>) <a href="http://wiki.qt.io/index.php?title=API_Design_Principles/ru&amp;direction=prev&amp;oldid=19208" title="API Design Principles/ru">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="http://wiki.qt.io/index.php?title=API_Design_Principles/ru&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="http://wiki.qt.io/Updated_pages" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><b>Русском</b> <a href="http://wiki.qt.io/API-Design-Principles" title="API-Design-Principles" class="mw-redirect">English</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.D0.9F.D1.80.D0.B8.D0.BD.D1.86.D0.B8.D0.BF.D1.8B_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_API"><span class="tocnumber">1</span> <span class="toctext">Принципы проектирования API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.D0.A8.D0.B5.D1.81.D1.82.D1.8C_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA_.D1.85.D0.BE.D1.80.D0.BE.D1.88.D0.B5.D0.B3.D0.BE_API"><span class="tocnumber">1.1</span> <span class="toctext">Шесть характеристик хорошего API</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.D0.A1.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.BF.D0.BE.D0.BB.D0.B8.D0.BC.D0.BE.D1.80.D1.84.D0.B8.D0.B7.D0.BC"><span class="tocnumber">1.2</span> <span class="toctext">Статический полиморфизм</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#API.2C_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D0.BE.D0.B5_.D0.BD.D0.B0_.D1.81.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0.D1.85"><span class="tocnumber">1.3</span> <span class="toctext">API, основанное на свойствах</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.A1.2B.2B"><span class="tocnumber">1.4</span> <span class="toctext">Особенности С++</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#.D0.A1.D0.B5.D0.BC.D0.B0.D0.BD.D1.82.D0.B8.D0.BA.D0.B0_.D0.B8_.D0.B4.D0.BE.D0.BA.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D0.B0.D1.86.D0.B8.D1.8F_API"><span class="tocnumber">1.5</span> <span class="toctext">Семантика и документация API</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#.D0.98.D1.81.D0.BA.D1.83.D1.81.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D1.80.D0.B8.D1.81.D0.B2.D0.B0.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B8.D0.BC.D0.B5.D0.BD"><span class="tocnumber">1.6</span> <span class="toctext">Искусство присваивания имен</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#.D0.9A.D0.B0.D0.BA_.D0.B8.D0.B7.D0.B1.D0.B5.D0.B6.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D1.81.D0.BF.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA"><span class="tocnumber">1.7</span> <span class="toctext">Как избежать распространенных ошибок</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B"><span class="tocnumber">1.8</span> <span class="toctext">Примеры</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D0.BD.D1.86.D0.B8.D0.BF.D1.8B_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_API">Принципы проектирования API</span></h1>
+<p>Одно из достоинств Qt — это его логичный, легкий для изучения и мощный API. С помощью этой статьи мы попытаемся подытожить все те знания, которые мы получили, проектируя API для Qt. Часть рекомендаций являются универсальными, а другие — более традиционными, и мы следуем им в основном для совместимости с уже существующими API.
+</p><p>Эти рекомендации в первую очередь касаются внешних API, но их так же можно использовать и для проектирования внутренних, тем самым помогая вашим коллегам разработчикам.
+</p><p>Если вам интересна эта тема, то можно почитать <a rel="nofollow" class="external text" href="http://chaos.troll.no/~shausman/api-design/api-design.pdf">"Маленькая инструкция по проектированию API"</a> Жасмин Бланшет.
+</p>
+<h2><span class="mw-headline" id=".D0.A8.D0.B5.D1.81.D1.82.D1.8C_.D1.85.D0.B0.D1.80.D0.B0.D0.BA.D1.82.D0.B5.D1.80.D0.B8.D1.81.D1.82.D0.B8.D0.BA_.D1.85.D0.BE.D1.80.D0.BE.D1.88.D0.B5.D0.B3.D0.BE_API">Шесть характеристик хорошего API</span></h2>
+<p>API для программиста — это как GUI для пользователя. Буква "P" в аббревиатуре API означает "Программист", а не "Программа", что бы подчеркунуть тот факт, что API пользуются программисты.
+</p><p>В статье <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/qq/qq13-apis.html">Qt Quarterly 13 article about API design</a> Маттиас считает, что API должен быть минимальным и полным, иметь прозрачную и простую семантику, быть интуитивно понятным и легко запоминаться, а также способствовать написанию читаемого кода.
+</p>
+<ul>
+<li> <b>Быть минимальным</b>: Минимальный API содержит как можно меньше открытых методов на класс и как можно меньше классов. Благодаря этому можно легко понять, запомнить, тестировать и изменять API.
+</li>
+<li> <b>Быть полным</b>: Полное API подразумевает покрытие всей функциональности. Правда, это мешает сохранению минимальности. А еще, если член класса, находится в неправильном классе, то это приведет к тому, что пользователи не смогут найти эту функцию.
+</li>
+<li> <b>Обладать прозрачной и просто семантикой</b>: Необходимо следовать принципу наименьшего удивления: сделать общие задачи проще. Должна быть возможность выполнять редкие задачи, но не стоит заострять внимание на них. Надо решать конкретные проблемы, а не делать общие решения, когда в этом нет необходимости. (Например, QMimeSourceFactory в Qt 3 можно было бы назвать QImageLoader с иным API.)
+</li>
+<li> <b>Интуитивно понятный</b>: API, как и все остальное в компьютере, должно быть интуитивно понятным. Разные условия и опыт приводят к разным взглядам на то, что является интуитивным, а что — нет. Интуитивно понятное API, это такое API, которым может пользоваться среднестатистический пользователь, не читая документацию и программист, который не знает API, может понять код, в котором он используется.
+</li>
+<li> <b>Легко запоминающийся</b>: Что бы сделать API легко запоминающимся, необходимо использовать прямые и точные названия. Использовать наглядные шаблоны и концепции, избегая сокращений.
+</li>
+<li> <b>Способствовать написанию читаемого кода</b>: Код пишется один раз, но затем читается (и тестируется, и изменяется) множество раз. Написание читаемого кода может потребовать больше времени, чем обычно, но сэкономит время на протяжении всего жизненного цикла продукта.
+</li>
+</ul>
+<p>Ну и наконец, имейте ввиду, что разные пользователи будут пользоваться разными частями API. Даже если пользоваться экземпляром класса Qt легко, пользователь все же прочтет документацию, прежде чем наследовать этот класс.
+</p>
+<h2><span class="mw-headline" id=".D0.A1.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.BF.D0.BE.D0.BB.D0.B8.D0.BC.D0.BE.D1.80.D1.84.D0.B8.D0.B7.D0.BC">Статический полиморфизм</span></h2>
+<p>У похожих классов должно быть cхожее API. Это можно реализовать с помощью наследования, когда в этом есть смысл (при условии, что используется полиморфизм времени выполнения). Но полиморфизм всречается и во время проектирования. Например, решив заменить QProgressBar на QSlider или QString на QByteArray, можно обнаружить, что схожесть API позволяет очень легко выполнить эту замену. Мы называем это "статический полиморфизм".
+</p><p>Благодаря статическому полиморфизму легко запоминать API и шаблоны проектирования. Как следствие, схожее API для множества связанных классов иногда лучше, чем безупречные разные API для каждого класса.
+</p><p>В основном, в Qt, мы предпочитаем использовать статический полиморфизм, а не наследование, если на то нет никаких веских причин. Благодаря этому сохраняется набор открытых классов в Qt, а новички в Qt легко находят необходимые функции в документации.
+</p><p><b>Хорошо</b>: QDialogButtonBox и QMessageBox обладают схожим API для работы с кнопками (addButton(), setStandardButtons(), и др.), не наследуя какой нибудь "QAbstractButtonBox" класс.
+</p><p><b>Плохо</b>: QAbstractSocket наследуют и QTcpSocket и QUdpSocket: два класса с разными видами взаимодействия. Никто, кажется, никогда не пользовался указателем на QAbstractSocket универсальным или полезным способом.
+</p><p><b>Сомнительно</b>: QBoxLayout — базовый класс для QHBoxLayout и QVBoxLayout. Преимущество: можно использовать QBoxLayout и вызывать метод setOrientation() в панели инструментов, чтобы сделать его вертикальным/горизонтальным. Недостатки: Один лишний класс, и пользователи могут писать ((QBoxLayout*)hbox)-&gt;setOrientation(Qt::Vertical), что лишено смысла.
+</p>
+<h2><span class="mw-headline" id="API.2C_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D0.BE.D0.B5_.D0.BD.D0.B0_.D1.81.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0.D1.85">API, основанное на свойствах</span></h2>
+<p>Новые классы Qt, как правило, используют API, основанное на свойствах. Например:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QTimer</span> timer<span class="sy0">;</span>
+ timer.<span class="me1">setInterval</span><span class="br0">&#40;</span><span class="nu0">1000</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ timer.<span class="me1">setSingleShot</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ timer.<span class="me1">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Под <i>свойством</i> подразумевается любой атрибут, который является частью состояния объекта, пусть даже это не настоящий Q_PROPERTY. По-возможности, пользователь должен уметь устанавливать свойства в любом порядке, т.е. свойства должны быть ортогональными. Например, предыдущий код можно записать так
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QTimer</span> timer<span class="sy0">;</span>
+ timer.<span class="me1">setSingleShot</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ timer.<span class="me1">setInterval</span><span class="br0">&#40;</span><span class="nu0">1000</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ timer.<span class="me1">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Для <i>удобства</i> мы можем написать так <tt>timer.start(1000)</tt>.
+</p><p>Аналогично для QRegExp
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QRegExp</span> regExp<span class="sy0">;</span>
+ regExp.<span class="me1">setCaseSensitive</span><span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">CaseInsensitive</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ regExp.<span class="me1">setPattern</span><span class="br0">&#40;</span><span class="st0">&quot;'''.'''&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ regExp.<span class="me1">setPatternSyntax</span><span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">WildcardSyntax</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Платой, за реализацию такого API, является позднее конструирование объекта. Например, в случае с QRegExp, нет возможности выполнить преждевременную компиляцию шаблона "<b>.</b>" в setPattern(), потому что мы не знаем, какой стиль шаблона будем использовать.
+</p><p>Зачастую надо быть осторожным, потому что свойства часто устанавливаются каскадно. Обратите внимание на "размер иконки по-умолчанию" в текущем стиле и свойство "iconSize" QToolButton:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> toolButton<span class="sy0">-&gt;</span><span class="me3">iconSize</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// возвращает значение по-умолчанию для текущего стиля</span>
+ toolButton<span class="sy0">-&gt;</span><span class="me3">setStyle</span><span class="br0">&#40;</span>otherStyle<span class="br0">&#41;</span><span class="sy0">;</span>
+ toolButton<span class="sy0">-&gt;</span><span class="me3">iconSize</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// возвращает значение по-умолчанию для otherStyle</span>
+ toolButton<span class="sy0">-&gt;</span><span class="me3">setIconSize</span><span class="br0">&#40;</span><span class="kw5">QSize</span><span class="br0">&#40;</span><span class="nu0">52</span><span class="sy0">,</span> <span class="nu0">52</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ toolButton<span class="sy0">-&gt;</span><span class="me3">iconSize</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// возвращает (52, 52)</span>
+ toolButton<span class="sy0">-&gt;</span><span class="me3">setStyle</span><span class="br0">&#40;</span>yetAnotherStyle<span class="br0">&#41;</span><span class="sy0">;</span>
+ toolButton<span class="sy0">-&gt;</span><span class="me3">iconSize</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// возвращает (52, 52)</span></pre></div></div>
+<p>Обратите внимание, что единожды установив iconSize, это свойство больше не изменяется, даже если изменить текущий стиль. Это очень удобно. Иногда, этим можно воспользоваться для сброса свойства. Отсюда вытекает два подхода:
+</p>
+<ul>
+<li> для "сброса", воспользоваться специальным значением (например QSize(), –1, Qt::Alignment(0))
+</li>
+<li> иметь специальную функцию resetFoo() или unsetFoo()
+</li>
+</ul>
+<p>Для "сброса" свойства iconSize достаточно установить ему значение QSize() (что эквивалентно, QSize(–1, -1))
+</p><p>Иногда, геттеры возвращают не те значения, которые мы записали перед этим. Например, если вызвать widget-&gt;setEnabled(true), то widget-&gt;isEnabled() может вернуть false, при условие, что родительский виджет будет в выключенном состоянии. И это нормально, потому что нас интересует действительное состояние (виджет, родитель которого находится в выключенном состоянии, должен быть тоже неактивным и вести себя, как будто он тоже выключен. В то же время, где-то внутри, он все же "включен" и просто ждет, пока родитель снова перейдет во включенное состояние), но такие ситуации должны быть документированы.
+</p>
+<h2><span class="mw-headline" id=".D0.9E.D1.81.D0.BE.D0.B1.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.A1.2B.2B">Особенности С++</span></h2>
+<h3><span class="mw-headline" id=".D0.97.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D1.82.D0.B8.D0.B2_.D0.9E.D0.B1.D1.8A.D0.B5.D0.BA.D1.82.D0.B0">Значение против Объекта</span></h3>
+<h3><span class="mw-headline" id=".D0.A3.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D0.B5.D0.BB.D0.B8_.D0.BF.D1.80.D0.BE.D1.82.D0.B8.D0.B2_.D0.A1.D1.81.D1.8B.D0.BB.D0.BE.D0.BA">Указатели против Ссылок</span></h3>
+<p>Какой тип для выходных параметров лучше, указатели или ссылки?
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">void</span> getHsv<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy0">*</span>h<span class="sy0">,</span> <span class="kw4">int</span> <span class="sy0">*</span>s<span class="sy0">,</span> <span class="kw4">int</span> <span class="sy0">*</span>v<span class="br0">&#41;</span> <span class="kw4">const</span>
+ <span class="kw4">void</span> getHsv<span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy0">&amp;</span>h<span class="sy0">,</span> <span class="kw4">int</span> <span class="sy0">&amp;</span>s<span class="sy0">,</span> <span class="kw4">int</span> <span class="sy0">&amp;</span>v<span class="br0">&#41;</span> <span class="kw4">const</span></pre></div></div>
+<p>В книгах по С++ рекомендуют использовать ссылки, где только есть возможность, аргументируя это тем, что в основном, ссылки "приятнее и безопаснее" указателей. А мы, в Qt Software предпочитаем чаще использовать указатели, потому что код пользователя становиться более читабельным. Сравните:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> color.<span class="me1">getHsv</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>h<span class="sy0">,</span> <span class="sy0">&amp;</span>s<span class="sy0">,</span> <span class="sy0">&amp;</span>v<span class="br0">&#41;</span><span class="sy0">;</span>
+ color.<span class="me1">getHsv</span><span class="br0">&#40;</span>h<span class="sy0">,</span> s<span class="sy0">,</span> v<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Только в первой строчке сразу становится понятно, что h, s, и v с высокой долей вероятности, будут модифицированы функцией.
+</p>
+<h3><span class="mw-headline" id=".D0.92.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B8">Виртуальные функции</span></h3>
+<p>Когда метод класса объявлен, как виртуальный, то напрямую можно изменить поведение функции, если перегрузить ее в производном классе. Делать функции виртуальными надо в том случае, если есть необходимость вызвать ваш код, вместо кода функции. Нужно хорошо подумать, прежде чем объявить функцию виртуальной, если извне класса никто не может ее вызвать.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="co1">// QTextEdit в Qt 3: методы, которые нет смысла делать виртуальными</span>
+ <span class="kw2">virtual</span> <span class="kw4">void</span> resetFormat<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">virtual</span> <span class="kw4">void</span> setUndoDepth<span class="br0">&#40;</span> <span class="kw4">int</span> d <span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">virtual</span> <span class="kw4">void</span> setFormat<span class="br0">&#40;</span> <span class="kw5">QTextFormat</span> <span class="st0">''</span><span class="st0">'f, int flags );
+ virtual void ensureCursorVisible();
+ virtual void placeCursor( const QPoint &amp;pos;, QTextCursorc = 0 );
+ virtual void moveCursor( CursorAction action, bool select );
+ virtual void doKeyboardAction( KeyboardAction action );
+ virtual void removeSelectedText( int selNum = 0 );
+ virtual void removeSelection( int selNum = 0 );
+ virtual void setCurrentFont( const QFont &amp;f );
+ virtual void setOverwriteMode( bool b ) { overWrite = b; }</span></pre></div></div>
+<p>Когда мы портировали QTextEdit с Qt 3 на Qt 4, мы удалили практически все виртуальные функции. Интересно (но в то же время неожиданно), что никто на это не жаловался. Почему? Потому что в Qt 3 не использовался полиморфизм. В Qt 3 не вызывались эти функции, их вызывали вы. Проще говоря, не было причин делать производный класс от QTextEdit и переопределять эти функции, если только вы самостоятельно не вызвали эти функции. Если вам нужен полиморфизм в вашем приложении вне Qt, можно добавить полиморфизм самостоятельно.
+</p>
+<h4><span class="mw-headline" id=".D0.9A.D0.B0.D0.BA_.D0.B8.D0.B7.D0.B1.D0.B5.D0.B6.D0.B0.D1.82.D1.8C_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B9">Как избежать виртуальных функций</span></h4>
+<p>В Qt мы стараемся минимизировать колличество виртуальных функций по ряду причин. Каждый виртуальный вызов усложняет исправление ошибок, вставляя неконтролируемые узлы в список вызовов (результат получается непредсказуемым). Люди, внутри перегруженных функций, делают страшные вещи, например:
+</p><p><b> посылают события</b>
+</p>
+<ul>
+<li> посылают сигналы
+</li>
+<li> повторно входят в цикл обработки событий (например, открывают диалог выбора файла)
+</li>
+<li> удаляют объекты (что иногда приводит к "удалению this")
+</li>
+</ul>
+<p>Есть и другие причины, по которым стоит избегать чрезмерного использования виртуальных функций:
+</p>
+<ul>
+<li> невозможно добавлять, перемещать или удалять виртуальные функции, не ломая то, что уже написано
+</li>
+<li> тяжело перегружать виртуальные функции
+</li>
+<li> компиляторы практически никогда не делают оптимизацию или встраиваемые вызовы виртуальных функций
+</li>
+<li> для вызова виртуальной функции необходим поиск по таблице виртуальных функций, что замедляет работу, по сравнению с нормальным вызовом, в 2-3 раза
+</li>
+<li> из-за виртуальных функций тяжело копировать класс по значению (возможно, но грубо, что делать не рекомендуется)
+</li>
+</ul>
+<p>Опыт показал, что в классах без виртуальных функций как правило проявляется меньше ошибок и для их поддержки нужно меньше ресурсов.
+</p><p>Общее правило гласит, если в основном пользователи будут вызывать метод класса, то он скорее всего должен быть не виртуальным.
+</p>
+<h4><span class="mw-headline" id=".D0.92.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D1.82.D0.B8.D0.B2_.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE.D1.81.D1.82.D0.B8_.D0.BA.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D1.82.D1.8C">Виртуальность против возможности копировать</span></h4>
+<p>Полиморфные объекьты и классы, передающиеся по значению — плохие друзья.
+</p><p>В классах, с виртуальными функциям должны быть объявлены виртуальные деструкторы, чтобы избежать утечек памяти, когда удаляется базовый класс и не чистится память производного класса.
+</p><p>Если необходимо копировать и присваивать класс, или сравнивать по значению, скорее всего необходим определить конструктор копирования, оператор присваивания и операторы сравнения.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> CopyClass <span class="br0">&#123;</span>
+ <span class="kw2">public</span><span class="sy0">:</span>
+ CopyClass<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ CopyClass<span class="br0">&#40;</span><span class="kw4">const</span> CopyClass <span class="sy0">&amp;</span>other<span class="sy0">;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ ~CopyClass<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ CopyClass <span class="sy0">&amp;</span>operator<span class="sy0">;=</span><span class="br0">&#40;</span><span class="kw4">const</span> CopyClass <span class="sy0">&amp;</span>other<span class="sy0">;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">bool</span> operator<span class="sy0">==</span><span class="br0">&#40;</span><span class="kw4">const</span> CopyClass <span class="sy0">&amp;</span>other<span class="sy0">;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">bool</span> operator<span class="sy0">!=</span><span class="br0">&#40;</span><span class="kw4">const</span> CopyClass <span class="sy0">&amp;</span>other<span class="sy0">;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+&#160;
+<span class="kw2">virtual</span> <span class="kw4">void</span> setValue<span class="br0">&#40;</span><span class="kw4">int</span> v<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Если создать производный класс от этого класса, ваш код может начать вести себя неожиданно. В обычной ситуации, когда нет виртуальных функций и виртуальных деструкторов, люди не могут создать производный класс и полагаться на полиморфизм. Но если добавить виртуальные функции или виртуальный деструктор, могут возникнуть причины, для создания производного класса, и все становится сложнее. <i>На первый взгляд все выглядит просто, ведь можно объявить виртуальные операторы</i>. Но этот путь может привести к хаосу и падению (не читаемому коду). Взгляните на этот пример:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> OtherClass <span class="br0">&#123;</span>
+ <span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw4">const</span> CopyClass <span class="sy0">&amp;</span>instance<span class="sy0">;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span> <span class="co1">// что тут возвращается? Что я могу ему присвоить?</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>(этот раздел находится в разработке)
+</p>
+<h3><span class="mw-headline" id=".D0.9A.D0.BE.D0.BD.D1.81.D1.82.D0.B0.D0.BD.D1.82.D0.BD.D0.BE.D1.81.D1.82.D1.8C">Константность</span></h3>
+<p>В С++ есть ключевое слово "const", которым можно пометить то, что нельзя менять или то, что имеет побочный эффект. Его можно применить к простым значениям, указателям, тому, на что они указывают и как атрибут к функциям, которые не должны менять состояние объекта.
+</p><p>Стоит отметить что "const", само по себе, не несет никакого смысла — во множестве языков нет эквивалента ключевому слову "const", но это не делает их функционально не полными. На самом деле, если удалить перегруженные функции и, используя поиск и замену, удалить все вхождения слова "const" из С++ кода, с большой вероятностью он откомпилируется и будет нормально работать. Очень важно сохранять прагматичный подход к использованию "const".
+</p><p>Давайте пройдемся по областям, где используется "const" и которые относятся к проектированию API в Qt:
+</p>
+<h4><span class="mw-headline" id=".D0.92.D1.85.D0.BE.D0.B4.D1.8F.D1.89.D0.B8.D0.B5_.D0.B0.D1.80.D0.B3.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B:_.D0.BA.D0.BE.D0.BD.D1.81.D1.82.D0.B0.D0.BD.D1.82.D0.BD.D1.8B.D0.B5_.D1.83.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D0.B5.D0.BB.D0.B8">Входящие аргументы: константные указатели</span></h4>
+<p>Константные функции, которые принимают в качестве входящих параметров указатели, практически всегда должны принимать константные указатели.
+</p><p>Если функция определена, как const, это значит, что она никогда не будет подвержена побочному эффекту, т.е. не изменит видимого состояния объекта. Так зачем же тогда передавать не константные входящие аргументы? Давайте вспомним, что константные функции часто вызываются из других константных функций, в которых тяжело использовать не константные параметры (без const_cast и, там, где это возможно, мы действительно стараемся избежать const_cast).
+</p><p>До:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">bool</span> <span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">isVisibleTo</span><span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>ancestor<span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">bool</span> <span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">isEnabledTo</span><span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>ancestor<span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw5">QPoint</span> <span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">mapFrom</span><span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>ancestor<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw5">QPoint</span> <span class="sy0">&amp;</span>pos<span class="sy0">;</span><span class="br0">&#41;</span> const<span class="sy0">;</span></pre></div></div>
+<p>В QWidget определено много константных функций, которые в качестве входных параметров принимают не константный указатель. Напомним, что такие функции могут модифицировать виджет, но не могут модифицировать объект, которому принадлежат. Такие функции часто сопровождаются const_casts. Было бы неплохо, если бы эти функции принимали константный указатель в качестве аргументов.
+</p><p>После:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">bool</span> <span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">isVisibleTo</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QWidget</span> <span class="sy0">*</span>ancestor<span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">bool</span> <span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">isEnabledTo</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QWidget</span> <span class="sy0">*</span>ancestor<span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw5">QPoint</span> <span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">mapFrom</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QWidget</span> <span class="sy0">*</span>ancestor<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw5">QPoint</span> <span class="sy0">&amp;</span>pos<span class="sy0">;</span><span class="br0">&#41;</span> const<span class="sy0">;</span></pre></div></div>
+<p>Хочется отметить, что для QGraphicsItem мы это исправили, а вот QWidget должен подождать до Qt 5:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">bool</span> isVisibleTo<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QGraphicsItem</span> <span class="sy0">*</span>parent<span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw5">QPointF</span> mapFromItem <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QGraphicsItem</span> <span class="sy0">*</span>item<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw5">QPointF</span> <span class="sy0">&amp;</span>point<span class="sy0">;</span><span class="br0">&#41;</span> const<span class="sy0">;</span></pre></div></div>
+<h4><span class="mw-headline" id=".D0.92.D0.BE.D0.B7.D0.B2.D1.80.D0.B0.D1.89.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D1.8F:_.D0.BA.D0.BE.D0.BD.D1.81.D1.82.D0.B0.D0.BD.D1.82.D0.BD.D1.8B.D0.B5_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D1.8F">Возвращаемые значения: константные значения</span></h4>
+<p>Результатом вызова функции, которая не возвращает ссылку будет R-value(то, что может стоять справа в операции присвоения).
+</p><p>Даже если синтаксически возможно добавить "const" к встроенным типам данных, в этом нет никакого смысла, т.к. это ничего не изменит в плане прав доступа. Современные компиляторы даже выведут предупреждение, встретив подобный код.
+</p><p>Если добавить "const" к классовому R-value, то доступ к не константным методам будет закрыт, так же, как и прямая работа с его членами.
+</p><p>Если не добавить "const", то такой доступ возможен, но он редко необходим, потому что время жизни R-value объекта ограничено и равно времени выполнения выражения.
+</p><p>Пример:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">struct</span> Foo
+ <span class="br0">&#123;</span>
+ <span class="kw4">void</span> setValue<span class="br0">&#40;</span><span class="kw4">int</span> v<span class="br0">&#41;</span> <span class="br0">&#123;</span> value <span class="sy0">=</span> v<span class="sy0">;</span> <span class="br0">&#125;</span>
+ <span class="kw4">int</span> value<span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+Foo foo<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="kw1">return</span> Foo<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw4">const</span> Foo cfoo<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="kw1">return</span> Foo<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="co1">// Следующий код компилируется, foo() не константное R-value значение, которому нельзя ничего</span>
+ <span class="co1">// присвоить, но можно получить доступ к L-value членам:</span>
+ foo<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">value</span> <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span> <span class="co1">// Ok, но значение временное и будет удалено после того, как выражение полностью выполнится.</span>
+&#160;
+<span class="co1">// Следующий код компилируется, foo() не константное R-value значение, которому нельзя ничего</span>
+ <span class="co1">// присвоить, но можно получить доступ к его методам (даже не константным):</span>
+ foo<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">setValue</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Ok, но значение временное и будет удалено после того, как выражение полностью выполнится.</span>
+&#160;
+<span class="co1">// Следующий код НЕ компилируется, foo() константное R-value,</span>
+ <span class="co1">// с константными членами, к которым нет доступа:</span>
+ cfoo<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">value</span> <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span> <span class="co1">// Not ok.</span>
+&#160;
+<span class="co1">// Следующий код НЕ компилируется, foo() константное R-value,</span>
+ <span class="co1">// у которого нельзя вызвать не константный метод:</span>
+ cfoo<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">setValue</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Not ok</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h4><span class="mw-headline" id=".D0.92.D0.BE.D0.B7.D0.B2.D1.80.D0.B0.D1.89.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D1.8F:_.D1.83.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D0.B5.D0.BB.D0.B8_.D0.BF.D1.80.D0.BE.D1.82.D0.B8.D0.B2_.D0.BA.D0.BE.D0.BD.D1.81.D1.82.D0.B0.D0.BD.D1.82.D0.BD.D1.8B.D1.85_.D1.83.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9">Возвращаемые значения: указатели против константных указателей</span></h4>
+<p>Тема о том, когда константная функция должна возвращать указатели, а когда константные указатели, склоняет большинство людей к тому, что концепция "правильной константности" в С++ не работает. Проблемы начинаются, когда константная функция, которая не должна модифицировать внутреннее состояние объекта, возвращает не константный указатель на член. Просто действие, по возврату указателя, не меняет ни видимого состояния объекта, ни его возможностей. Но дает программисту косвенный доступ, для модификации данных объекта.
+</p><p>Этот пример демонстрирует один из нескольких способов обойти константность используя константную функцию, которая возвращает не константный указатель:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QVariant</span> CustomWidget<span class="sy0">::</span><span class="me2">inputMethodQuery</span><span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">InputMethodQuery</span> query<span class="br0">&#41;</span> <span class="kw4">const</span>
+ <span class="br0">&#123;</span>
+ moveBy<span class="br0">&#40;</span><span class="nu0">10</span><span class="sy0">,</span> <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// doesn't compile!</span>
+ window<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">childAt</span><span class="br0">&#40;</span>mapTo<span class="br0">&#40;</span>window<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span> rect<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">center</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">moveBy</span><span class="br0">&#40;</span><span class="nu0">10</span><span class="sy0">,</span> <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// компилируется!</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Функции, которые возвращают константный указатель, действительно защищают от подобной ситуации (возможно нежелательной\неожиданной), по крайней мере до определенной степени. Но какие функции предпочли бы вы? Те, которые возвращают константный указатель или те, которые возвращают их список? Если следовать концепции "правильной константности", каждая константная функция, которая возвращает указатель на член объекта (или список указателей на члены), должна возвращать константный указатель. На практике, такая концепция приводит к негодному API:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QGraphicsScene</span> scene<span class="sy0">;</span>
+ <span class="co1">// … populate scene</span>
+&#160;
+<span class="kw2">foreach</span> <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QGraphicsItem</span> <span class="st0">''</span><span class="st0">'item, scene.items()) {
+ item-&gt;setPos(qrand()&#160;% 500, qrand()&#160;% 500); // не компилируется! Элемент - константный указатель
+ }</span></pre></div></div>
+<p><i>QGraphicsScene::items()</i> — константная функция, и вы наверно подумаете, что она должна возвращать только константный указатель.
+</p><p>В Qt мы используем не константные шаблоны практически повсеместно. Мы выбрали прагматический подход: результат возврата константного указателя приведет к злоупотреблению const_cast, что создаст больше проблем, чем возврат не константного указателя.
+</p>
+<h4><span class="mw-headline" id=".D0.92.D0.BE.D0.B7.D0.B2.D1.80.D0.B0.D1.89.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D1.8F:_.D0.BF.D0.BE_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D1.8E_.D0.B8.D0.BB.D0.B8_.D0.BA.D0.BE.D0.BD.D1.81.D1.82.D0.B0.D0.BD.D1.82.D0.BD.D0.BE.D0.B9_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B5.3F">Возвращаемые значения: по значению или константной ссылке?</span></h4>
+<p>Если у нас есть копия возвращаемого объекта, быстрее будет работать возврат константной ссылки. Однако, это может помешать нам в будущем, если, например, мы захотим переписать класс. (Используя идеологию d-указателей, мы можем менять представление класса в памяти, но одновременно, мы не можем поменять сигнатуру функций с "const QFoo &amp;" на "QFoo" и при этом не потерять бинарную совместимость.) Именно из-за этого, мы в основном возвращаем "QFoo" вместо "const QFoo &amp;", кроме тех случаев, когда критична скорость, а рефакторинг — не проблема (например, QList::at()).
+</p>
+<h4><span class="mw-headline" id=".D0.9A.D0.BE.D0.BD.D1.81.D1.82.D0.B0.D0.BD.D1.82.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D1.82.D0.B8.D0.B2_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D1.8F_.D0.BE.D0.B1.D1.8A.D0.B5.D0.BA.D1.82.D0.B0">Константность против состояния объекта</span></h4>
+<p>Константная корректность в С++ активно обсуждается, потому что в некоторых областях она не работает.
+</p><p>Основное правило гласит, что константные функции не меняют видимого состояния класса. Под состоянием подразумевается "себя и свои возможности". Это не значит, что не константные функции, в отличии от константных, меняют приватные члены класса. А значит, что эти функции активные, и могут иметь видимые побочные эффекты. Константные функции в общем случае не обладают обратными эффектами. К примеру:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QSize</span> size <span class="sy0">=</span> widget<span class="sy0">-&gt;</span><span class="me3">sizeHint</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// const</span>
+ widget<span class="sy0">-&gt;</span><span class="me3">move</span><span class="br0">&#40;</span><span class="nu0">10</span><span class="sy0">,</span> <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// not const</span></pre></div></div>
+<p>Делегат отвечает за рисование на чем-то. Его состояние включает и его возможности, а значит, и состояние того, на чем он рисует. Вызов рисования влечет за собой побочный эффект. Оно меняет внешний вид устройства (а значит и состояние), рисуя на нем. Поэтому, нет смысла делать paint() константным методом, как и paint() диалогов или QIcon. Никто не будет вызывать QIcon::paint() из константной функции. А если уж очень нужно, можно явно снять константность функции, поэтому в таких случая проще воспользоваться const_cast.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="co1">// QAbstractItemDelegate::paint is const</span>
+ <span class="kw4">void</span> <span class="kw5">QAbstractItemDelegate</span><span class="sy0">::</span><span class="me2">paint</span><span class="br0">&#40;</span>QPainterpainter<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw5">QStyleOptionViewItem</span> <span class="sy0">&amp;</span>option<span class="sy0">;,</span> <span class="kw4">const</span> <span class="kw5">QModelIndex</span> <span class="sy0">&amp;</span>index<span class="sy0">;</span><span class="br0">&#41;</span> <span class="kw4">const</span>
+&#160;
+ <span class="co1">// QGraphicsItem::paint is not const</span>
+ <span class="kw4">void</span> <span class="kw5">QGraphicsItem</span><span class="sy0">::</span><span class="me2">paint</span><span class="br0">&#40;</span><span class="kw5">QPainter</span><span class="st0">''</span><span class="st0">' painter, const QStyleOptionGraphicsItem '</span><span class="st0">''</span>option<span class="sy0">,</span> <span class="kw5">QWidget</span> <span class="st0">''</span><span class="st0">'widget = 0)</span></pre></div></div>
+<p>.
+</p>
+<h2><span class="mw-headline" id=".D0.A1.D0.B5.D0.BC.D0.B0.D0.BD.D1.82.D0.B8.D0.BA.D0.B0_.D0.B8_.D0.B4.D0.BE.D0.BA.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D0.B0.D1.86.D0.B8.D1.8F_API">Семантика и документация API</span></h2>
+<p>Что необходимо делать, когда функция возвращает –1? и т.д.
+</p><p>Предупреждения/ошибки/и т.д.
+</p><p>API должно быть качественным. Первая версия всегда будет с ошибками, поэтому ее нужно протестировать. Взгляните на код, использующий это API и убедитесть в том, что он читабелен.
+</p><p>Еще один прием — попросить кого нибудь воспользоваться вашим API с/без документацией(-ии) и документировать класс (как в общем весь класс, так и каждый метод).
+</p><p>Ключевое слово const не должно "работать" на вас. Попробуйте избавиться от него, чтобы исключить две перегруженные версии функции (константная и не константная).
+</p>
+<h2><span class="mw-headline" id=".D0.98.D1.81.D0.BA.D1.83.D1.81.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D1.80.D0.B8.D1.81.D0.B2.D0.B0.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B8.D0.BC.D0.B5.D0.BD">Искусство присваивания имен</span></h2>
+<p>Одна из самых больших проблем проектирования API — присваивание имен. Как должен называться класс? Как должны называться его методы?
+</p>
+<h3><span class="mw-headline" id=".D0.93.D0.BB.D0.B0.D0.B2.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.B0_.D0.BF.D1.80.D0.B8.D1.81.D0.B2.D0.B0.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B8.D0.BC.D0.B5.D0.BD">Главные правила присваивания имен</span></h3>
+<p>Несколько правил можно отнести ко всем видам имен. Во-первых, как уже было сказано, не пользуйтесь аббревиатурами. Даже если "previous" вы замените на "prev", в будущем это только сыграет против вас, потому что пользователь должен помнить, какие слова используются в виде аббревиатур.
+</p><p>Еще хуже, если в API встречаются двойственные варианты. Например, в Qt 3 есть activatePreviousWindow() и fetchPrev(). Следуя правилу "никаких аббревиатур" легче сделать непротиворечивое API.
+</p><p>Другое, важное, но более тонкое правило: когда проектируются классы, необходимо попытаться сохранить пространство имен для производных классов чистым. В Qt 3, не всегда соблюдается этот принцип. Что бы продемонстрировать это, приведем в пример QToolButton. Если назвать name(), caption(), text(), или textLabel() в QToolButton в Qt 3, к чему это приведет? Попробуйте поиграться с QToolButton в дизайнере:
+</p>
+<ul>
+<li> Свойство name наследуется от QObject и ссылается на внутреннее имя объекта, которое можно использовать для отладки и тестирования.
+</li>
+<li> Свойство caption наследуется от QWidget и ссылается на заголовок окна, который никак не влияет на объекты QToolButton, потому что у них очень часто есть родитель.
+</li>
+<li> Свойство text наследуется от QButton и используется в кнопке, если только useTextLabel не установленно в true.
+</li>
+<li> Свойство textLabel определено в QToolButton и отображается на кнопке, если useTextLabel установленно в true.
+</li>
+</ul>
+<p>Для облегчения читабельности в Qt 4 в классе QToolButton name преименовано на objectName, caption на windowTitle, а свойство textLabel вообще удалено.
+</p><p>В поиске имен можно воспользоваться хитростью и просто попробовать написать документацию: задокументировать элементы (классы, функции, перечисления и др.) и использовать первое предложения, как основу для создания имени. Если трудно найти подходящее имя, это первый сигнал, который ставит под сомнение необходимость данного элемента. Если не получается найти подходящее имя, но вы уверенны, что такой элемент должен существовать, нужно придумать абсолютно новое имя. Таким образом появились имена "widget", "event", "focus", "buddy".
+</p>
+<h3><span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D1.81.D0.B2.D0.BE.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D0.BC.D0.B5.D0.BD_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.B0.D0.BC">Присвоение имен классам</span></h3>
+<p>Нужно искать группы классов, вместо того, что бы подбирать каждому классу индивидуальное имя. Например, в Qt 4 классы для отображения моделей имеют суффикс View (QListView, QTableView, и QTreeView), а классы, для отображения элементов — Widget (QListWidget, QTableWidget, and QTreeWidget).
+</p>
+<h3><span class="mw-headline" id=".D0.98.D0.BC.D0.B5.D0.BD.D0.B0_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.B5.D1.80.D0.B5.D1.87.D0.B8.D1.81.D0.BB.D1.8F.D0.B5.D0.BC.D1.8B.D1.85_.D1.82.D0.B8.D0.BF.D0.BE.D0.B2_.D0.B8_.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D0.B8.D0.B9">Имена для перечисляемых типов и значений</span></h3>
+<p>Когда мы определяем перечисляемый тип, нужно держать во внимание, что в С++ (в отличии от Java или С#), значения перечисляемого типа используются без названия самого типа. Следующий пример показывает, на сколько опасно использовать общие имена в значениях перечисляемого типа:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">namespace</span> <span class="kw5">Qt</span>
+ <span class="br0">&#123;</span>
+ <span class="kw2">enum</span> Corner <span class="br0">&#123;</span> TopLeft<span class="sy0">,</span> BottomRight<span class="sy0">,</span> … <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw2">enum</span> CaseSensitivity <span class="br0">&#123;</span> Insensitive<span class="sy0">,</span> Sensitive <span class="br0">&#125;</span><span class="sy0">;</span>
+ …
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ tabWidget<span class="sy0">-&gt;</span><span class="me3">setCornerWidget</span><span class="br0">&#40;</span>widget<span class="sy0">,</span> <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">TopLeft</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ str.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;$(QTDIR)&quot;</span><span class="sy0">,</span> <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">Insensitive</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>В последней строчке что может значить Insensitive? Одна из рекомендаций: хотя бы один элемент перечислимого типа должен повторяться во всех значениях этого типа:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">namespace</span> <span class="kw5">Qt</span>
+ <span class="br0">&#123;</span>
+ <span class="kw2">enum</span> Corner <span class="br0">&#123;</span> TopLeftCorner<span class="sy0">,</span> BottomRightCorner<span class="sy0">,</span> … <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw2">enum</span> CaseSensitivity <span class="br0">&#123;</span> CaseInsensitive<span class="sy0">,</span>
+ CaseSensitive <span class="br0">&#125;</span><span class="sy0">;</span>
+ …
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ tabWidget<span class="sy0">-&gt;</span><span class="me3">setCornerWidget</span><span class="br0">&#40;</span>widget<span class="sy0">,</span> <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">TopLeftCorner</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ str.<span class="me1">indexOf</span><span class="br0">&#40;</span><span class="st0">&quot;$(QTDIR)&quot;</span><span class="sy0">,</span> <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">CaseInsensitive</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Если перечислимые значения могут подвергаться операции OR и использоваться, как флажки, то результат операции будет храниться в переменной типа int, что не так уж и хорошо. В Qt 4 есть шаблонный класс QFlags, где T — перечислимый тип. Для удобства в Qt определяется новый тип для имен флага, и можно просто писать Qt::Alignment вместо QFlags&lt;Qt::AlignmentFlag&gt;.
+</p><p>Было решено, для перечислимого типа использовать имена в единственном числе (потому что в один момент времени может содержать только один флаг), а для "флажков" — в множественном. Например:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">enum</span> RectangleEdge <span class="br0">&#123;</span> LeftEdge<span class="sy0">,</span> RightEdge<span class="sy0">,</span> … <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw4">typedef</span> <span class="kw5">QFlags</span><span class="sy0">&lt;</span>RectangleEdge<span class="sy0">&gt;</span> RectangleEdges<span class="sy0">;</span></pre></div></div>
+<p>В некоторых случаях, имена "флажков" могут быть в единственном числе. Тогда, имя перечислимого типа сдержит суффикс Flag:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">enum</span> AlignmentFlag <span class="br0">&#123;</span> AlignLeft<span class="sy0">,</span> AlignTop<span class="sy0">,</span> … <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw4">typedef</span> <span class="kw5">QFlags</span><span class="sy0">&lt;</span>AlignmentFlag<span class="sy0">&gt;</span> Alignment<span class="sy0">;</span></pre></div></div>
+<h3><span class="mw-headline" id=".D0.98.D0.BC.D0.B5.D0.BD.D0.B0_.D1.84.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.B9_.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D0.BE.D0.B2">Имена функций и параметров</span></h3>
+<p>Первое правило для присвоения имен функциям — из названия функции должно быть понятно, имеет она побочные эффекты или нет. В Qt 3, константная функция QString::simplifyWhiteSpace() игнорирует это правило, потому что не модифицирует строку, для которой она вызвана, как можно было бы подумать, исходя из имени, а возвращает QString. В Qt 4 функция была переименована в QString::simplified().
+</p><p>Имена параметров — важный источник информации для программиста, даже если он не смотрит в код, который относится к API. С тех пор, как современные IDE научились показывать их, во время написания кода, есть смысл присваивать имена параметрам в заголовочных файлах и использовать эти же имена в документации.
+</p>
+<h3><span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D1.81.D0.B2.D0.B0.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B8.D0.BC.D0.B5.D0.BD_.D0.BB.D0.BE.D0.B3.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.BC_.D0.B3.D0.B5.D1.82.D1.82.D0.B5.D1.80.D0.B0.D0.BC.2C_.D1.81.D0.B5.D1.82.D1.82.D0.B5.D1.80.D0.B0.D0.BC_.D0.B8_.D1.81.D0.B2.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0.D0.BC">Присваивание имен логическим геттерам, сеттерам и свойствам</span></h3>
+<p>Особую головную боль доставляет поиск имен, для геттеров и сеттеров bool параметров. Геттер должен быть назван checked() или isChecked()? scrollBarsEnabled() или areScrollBarEnabled()?
+</p><p>В Qt 4 мы используем следующий подход при именовании геттер функций:
+</p><p><b> Прилагательные с префиксом is-. Примеры:</b>
+<b> isChecked()</b>
+'<b><i> isDown()</i></b>
+'<b><i> isEmpty()</i></b>
+'<b><i> isMovingEnabled()</i></b>
+</p>
+<ul>
+<li> Но, прилагательные применяемые к множественному числу используются без префикса:
+</li>
+</ul>
+<p>'<b><i> scrollBarsEnabled(), не areScrollBarsEnabled()</i></b>
+</p>
+<ul>
+<li> Глаголы не имеют никакого префикса и не используют третье лицо (-s):
+</li>
+</ul>
+<p>'<b><i> acceptDrops(), не acceptsDrops()</i></b>
+'<b><i> allColumnsShowFocus()</i></b>
+</p>
+<ul>
+<li> Существительные обычно без префикса:
+</li>
+</ul>
+<p>'<b><i> autoCompletion(), не isAutoCompletion()</i></b>
+'<b><i> boundaryChecking()</i></b>
+</p>
+<ul>
+<li> Иногда, отсутсвие префикса вводит в заблуждение, поэтому мы используем префикс is-:
+</li>
+</ul>
+<p>'<b><i> isOpenGLAvailable(), не openGL()</i></b>
+'<b><i> isDialog(), не dialog()</i></b>
+</p>
+<pre>(Исходя из имени функции dialog() мы легко можем догадаться, что она возвращает QDialog <b>.) </b>
+</pre>
+<p>Имя сеттера можно получить из имени геттера, просто удалив все префиксы и в начало имени поставить "set". Например, setDown() и setScrollBarsEnabled(). Имя свойства будет таким же, как и геттер, только без префикса.
+</p>
+<h2><span class="mw-headline" id=".D0.9A.D0.B0.D0.BA_.D0.B8.D0.B7.D0.B1.D0.B5.D0.B6.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D1.81.D0.BF.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA">Как избежать распространенных ошибок</span></h2>
+<h3><span class="mw-headline" id=".D0.9D.D0.B5.D0.B2.D0.B8.D0.B4.D0.B8.D0.BC.D0.B0.D1.8F_.D0.BB.D0.BE.D0.B2.D1.83.D1.88.D0.BA.D0.B0">Невидимая ловушка</span></h3>
+<p>Популярное заблуждение, что чем меньше кода необходимо для реализации чего-то, тем лучше API. Нужно помнить, что код пишется реже, чем читается и осмысливается. К примеру:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QSlider</span> <span class="sy0">*</span>slider <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QSlider</span><span class="br0">&#40;</span><span class="nu0">12</span><span class="sy0">,</span> <span class="nu0">18</span><span class="sy0">,</span> <span class="nu0">3</span><span class="sy0">,</span> <span class="nu0">13</span><span class="sy0">,</span> <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">Vertical</span><span class="sy0">,</span>
+ <span class="nu0">0</span><span class="sy0">,</span> <span class="st0">&quot;volume&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>намного труднее читается (и даже пишется), чем
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QSlider</span> <span class="st0">''</span><span class="st0">'slider = new QSlider(Qt::Vertical);
+ slider-&gt;setRange(12, 18);
+ slider-&gt;setPageStep(3);
+ slider-&gt;setValue(13);
+ slider-&gt;setObjectName(&quot;volume&quot;);</span></pre></div></div>
+<h3><span class="mw-headline" id=".D0.9B.D0.BE.D0.B2.D1.83.D1.88.D0.BA.D0.B0_.D1.81_.D0.B1.D1.83.D0.BB.D0.B5.D0.B2.D1.8B.D0.BC.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D0.B0.D0.BC.D0.B8">Ловушка с булевыми параметрами</span></h3>
+<p>Булевы параметры часто приводят к не читаемому коду. Идея добавить bool параметр в функцию чаще всего является ошибочной. В Qt стандартный пример — функция repaint(), которая может принимать bool в качестве необязательного параметра, который определяет, будет ли стираться задний фон (по-умолчанию) или нет. Поэтому мы можем писать так
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> widget<span class="sy0">-&gt;</span><span class="me3">repaint</span><span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>а новичок такой код может прочитать как "Не перерисовывать!"
+</p><p>Размышления приводят к тому, что bool параметры сохраняют одну функцию, а размер уменьшается. А на самом деле, размер только увеличивается. Как много пользователей Qt честно знают, что делают все эти три строчки?
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> widget<span class="sy0">-&gt;</span><span class="me3">repaint</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ widget<span class="sy0">-&gt;</span><span class="me3">repaint</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ widget<span class="sy0">-&gt;</span><span class="me3">repaint</span><span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>На сколько лучше был бы такой вариант
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> widget<span class="sy0">-&gt;</span><span class="me3">repaint</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ widget<span class="sy0">-&gt;</span><span class="me3">repaintWithoutErasing</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>В Qt 4 мы решили проблему просто удалив возможность перерисовки без стирания виджета. Встроенная поддержка двойной буферизации в Qt 4 ликвидировала необходимость в этой возможности.
+</p><p>Приведем еще пример:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> widget<span class="sy0">-&gt;</span><span class="me3">setSizePolicy</span><span class="br0">&#40;</span><span class="kw5">QSizePolicy</span><span class="sy0">::</span><span class="me2">Fixed</span><span class="sy0">,</span>
+ <span class="kw5">QSizePolicy</span><span class="sy0">::</span><span class="me2">Expanding</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ textEdit<span class="sy0">-&gt;</span><span class="me3">insert</span><span class="br0">&#40;</span><span class="st0">&quot;Where's Waldo?&quot;</span><span class="sy0">,</span> <span class="kw2">true</span><span class="sy0">,</span> <span class="kw2">true</span><span class="sy0">,</span> <span class="kw2">false</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QRegExp</span> rx<span class="br0">&#40;</span><span class="st0">&quot;moc_''''''.c??&quot;</span><span class="sy0">,</span> <span class="kw2">false</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Очевидное решение проблемы — заменить bool параметры перечислимыми типами. Это именно то, что мы сделали в Qt 4 с учетом регистра в QString. Сравните:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> str.<span class="me1">replace</span><span class="br0">&#40;</span><span class="st0">&quot;USER&quot;</span><span class="sy0">,</span> user<span class="sy0">,</span> <span class="kw2">false</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Qt 3</span>
+ str.<span class="me1">replace</span><span class="br0">&#40;</span><span class="st0">&quot;USER&quot;</span><span class="sy0">,</span> user<span class="sy0">,</span> <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">CaseInsensitive</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Qt 4</span></pre></div></div>
+<h3><span class="mw-headline" id=".D0.9B.D0.BE.D0.B2.D1.83.D1.88.D0.BA.D0.B0_.D0.BA.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D1.82.D1.8C.2F.D0.B2.D1.81.D1.82.D0.B0.D0.B2.D0.B8.D1.82.D1.8C">Ловушка копировать/вставить</span></h3>
+<h2><span class="mw-headline" id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B">Примеры</span></h2>
+<h3><span class="mw-headline" id="QProgressBar">QProgressBar</span></h3>
+<p>Чтобы продемонстрировать эти концепции на практике, давайте рассмотрим API QProgressBar в Qt 3 и сравним с Qt 4 API. В Qt3:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> <span class="kw5">QProgressBar</span> <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QWidget</span>
+ <span class="br0">&#123;</span>
+ …
+ <span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw4">int</span> totalSteps<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">int</span> progress<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+&#160;
+<span class="kw4">const</span> <span class="kw5">QString</span> <span class="sy0">&amp;</span>progressString<span class="sy0">;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">bool</span> percentageVisible<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">void</span> setPercentageVisible<span class="br0">&#40;</span><span class="kw4">bool</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw4">void</span> setCenterIndicator<span class="br0">&#40;</span><span class="kw4">bool</span> on<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">bool</span> centerIndicator<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+&#160;
+<span class="kw4">void</span> setIndicatorFollowsStyle<span class="br0">&#40;</span><span class="kw4">bool</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">bool</span> indicatorFollowsStyle<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+&#160;
+<span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> reset<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">virtual</span> <span class="kw4">void</span> setTotalSteps<span class="br0">&#40;</span><span class="kw4">int</span> totalSteps<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">virtual</span> <span class="kw4">void</span> setProgress<span class="br0">&#40;</span><span class="kw4">int</span> progress<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> setProgress<span class="br0">&#40;</span><span class="kw4">int</span> progress<span class="sy0">,</span> <span class="kw4">int</span> totalSteps<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw2">virtual</span> <span class="kw4">bool</span> setIndicator<span class="br0">&#40;</span><span class="kw5">QString</span> <span class="sy0">&amp;</span>progressStr<span class="sy0">;,</span>
+ <span class="kw4">int</span> progress<span class="sy0">,</span>
+ <span class="kw4">int</span> totalSteps<span class="br0">&#41;</span><span class="sy0">;</span>
+ …
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>API довольно сложный и не логичный. Например, по именам не совсем понятно, что reset(), setTotalSteps(), and setProgress() связанны между собой.
+</p><p>Для улучшения API нужно было просто заметить сходство QProgressBar и класса QAbstractSpinBox в Qt 4, а так же его наследников, QSpinBox, QSlider и QDial. Какое будет решение? Заменить progress и totalSteps на minimum, maximum и value. Добавить сигнал valueChanged(). Добавить вспомогательную функцию setRange().
+</p><p>Следующее замечание по поводу progressString, проценты и индикатор преследуют один и тот же смысл: текст, который отобрадается на прогресс баре. Очень часто текст — это проценты, но его можно поменять, используя setIndicator(). Вот новое API:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">virtual</span> <span class="kw5">QString</span> text<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">void</span> setTextVisible<span class="br0">&#40;</span><span class="kw4">bool</span> visible<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">bool</span> isTextVisible<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span></pre></div></div>
+<p>По-умолчанию, текст — индикатор процентов. Но его можно изменить, самостоятельно реализовав text().
+</p><p>В API Qt 3 есть две функции, setCenterIndicator() и setIndicatorFollowsStyle(), которые отвечают за выравнивание. Их легко можно заменить на одну, setAlignment():
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">void</span> setAlignment<span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">Alignment</span> alignment<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Если программист не вызовет функцию setAlignment(), выравнивание будет основываться на стиле. Для стиля Motif, текст будет располагаться посередине. Для других стилей, он будет отображаться с правой стороны.
+</p><p>Посмотрим на улучшенное API QProgressBar:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> <span class="kw5">QProgressBar</span> <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QWidget</span>
+ <span class="br0">&#123;</span>
+ …
+ <span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw4">void</span> setMinimum<span class="br0">&#40;</span><span class="kw4">int</span> minimum<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">int</span> minimum<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">void</span> setMaximum<span class="br0">&#40;</span><span class="kw4">int</span> maximum<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">int</span> maximum<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">void</span> setRange<span class="br0">&#40;</span><span class="kw4">int</span> minimum<span class="sy0">,</span> <span class="kw4">int</span> maximum<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">int</span> value<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+&#160;
+<span class="kw2">virtual</span> <span class="kw5">QString</span> text<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">void</span> setTextVisible<span class="br0">&#40;</span><span class="kw4">bool</span> visible<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">bool</span> isTextVisible<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">Alignment</span> alignment<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ <span class="kw4">void</span> setAlignment<span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">Alignment</span> alignment<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> reset<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> setValue<span class="br0">&#40;</span><span class="kw4">int</span> value<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">signals</span><span class="sy0">:</span>
+ <span class="kw4">void</span> valueChanged<span class="br0">&#40;</span><span class="kw4">int</span> value<span class="br0">&#41;</span><span class="sy0">;</span>
+ …
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<h3><span class="mw-headline" id="QAbstractPrintDialog_.26_QAbstractPageSizeDialog">QAbstractPrintDialog &amp; QAbstractPageSizeDialog</span></h3>
+<p>В Qt 4 появились два класса QAbstractPrintDialog и QAbstractPageSizeDialog, которые служат базовыми классами для QPrintDialog и QPageSizeDialog. Но это глупое решение, потому что в Qt API нигде не используются в качестве аргументов указатели на QAbstractPrint- или -PageSizeDialog и над ними не выполняются никакие операции. Это яркий пример, когда нет никакой необходимости в абстрактных классах.
+</p><p>Но нельзя говорить, что хорошая абстракция — это не правильно. Ведь правда, QPrintDialog может использовать фабрику или другой механизм для его модификации, что подтверждает определение #ifdef QTOPIA_PRINTDIALOG.
+</p>
+<h3><span class="mw-headline" id="QAbstractItemModel">QAbstractItemModel</span></h3>
+<p>Детально проблемы модели\представления в Qt 4 хорошо описаны и в других местах, но главный вывод, который можно сделать: "QAbstractFoo" не должен объединять все производные классы, и заострять на нем внимание во время написания кода. Потому что модель "объединить все" для базового класса практически всегда является плохим решением. И QAbstractItemModel совершает эту ошибку. На самом деле он представляет из себя всего лишь QTreeOfTablesModel, но со значительно усложненным API, которое затем еще и <i>наследуется производными классами</i>.
+</p><p>Добавление абстракции автоматически не делает API лучше. 
+</p>
+<h3><span class="mw-headline" id="QLayoutIterator_.26_QGLayoutIterator">QLayoutIterator &amp; QGLayoutIterator</span></h3>
+<p>В Qt 3, для создания своего класса размещения, необходимо реализовать классы QLayout и QGLayoutIterator ("G" от слова "generic"). Экземпляр QGLayoutIterator используется классом QLayoutIterator, который пользователи могут использовать, как обычный итератор. С помощью QLayoutIterator можно писать такой код:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw5">QLayoutIterator</span> it <span class="sy0">=</span> layout<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">iterator</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QLayoutItem</span> <span class="sy0">**</span>child<span class="sy0">;</span>
+ <span class="kw1">while</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>child <span class="sy0">=</span> it.<span class="me1">current</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>child<span class="sy0">-&gt;</span><span class="me3">widget</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">==</span> myWidget<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ it.<span class="me1">takeCurrent</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ return<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="sy0">++</span>it<span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>В Qt 4 мы удалили класс QGLayoutIterator (и другие подобные классы для разный размещений) и вместо него, реализуя свой QLayout нужно реализовать функции itemAt(), takeAt(), и count().
+</p>
+<h3><span class="mw-headline" id="QImageSink">QImageSink</span></h3>
+<p>В Qt 3 был целый набор классов для последовательного чтения изображений и вывода их как анимации — классы QImageSource/Sink/QASyncIO/QASyncImageIO. Т.к. все они были необходимы только для анимации, то мы их просто удалили, а на замену им пришел QLabel.
+</p><p>Мораль сей басни такова, что не стоит добавлять абстракцию на туманное будущее. Лучше сделать проще. Когда настанет это будущее, будет намного проще внедрить новшество в простую систему, чем в сложную.
+</p><p>=== другие Qt3 против Qt4?
+</p>
+<h3><span class="mw-headline" id="QWidget::setWindowModified.28bool.29">QWidget::setWindowModified(bool)</span></h3>
+<h3><span class="mw-headline" id="Q3Url_vs._QUrl">Q3Url vs. QUrl</span></h3>
+<h3><span class="mw-headline" id="Q3TextEdit_vs._QTextEdit_.3D.3D.3D">Q3TextEdit vs. QTextEdit ===</span></h3>
+<p>Как все эти виртуальные функции умирают.
+</p>
+<h3><span class="mw-headline" id="Qt.27s_Clipping_Story_.28naming_of_clipping_fns.29">Qt's Clipping Story (naming of clipping fns)</span></h3>
+<p>When you set the clip rect, you actually set a region (should be setClipRegion(QRect) instead of setClipRect()).
+</p><p>(on the right, how it should have been…)
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.692 seconds
+Real time usage: 0.703 seconds
+Preprocessor visited node count: 462/1000000
+Preprocessor generated node count: 884/1000000
+Post‐expand include size: 1304/2097152 bytes
+Template argument size: 421/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:36-0!*!0!!en!*!* and timestamp 20151105063335 and revision id 19208
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=API_Design_Principles/ru&amp;oldid=19208">http://wiki.qt.io/index.php?title=API_Design_Principles/ru&amp;oldid=19208</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/Category:Articles_needing_cleanup" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="http://wiki.qt.io/Category:Developing_Qt::Guidelines" title="Category:Developing Qt::Guidelines">Developing Qt::Guidelines</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=API+Design+Principles%2Fru" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/API_Design_Principles/ru"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:API_Design_Principles/ru&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/API_Design_Principles/ru" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=API_Design_Principles/ru&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=API_Design_Principles/ru&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/API_Design_Principles/ru" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/API_Design_Principles/ru" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=API_Design_Principles/ru&amp;oldid=19208&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=API_Design_Principles/ru&amp;oldid=19208" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=API_Design_Principles/ru&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:15.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,428 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":217});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=API_Design_Principles/ru&oldid=19208 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:54:42 GMT -->
+</html>

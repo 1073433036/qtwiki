@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&oldid=18313 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>How to do dynamic translation in QML - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_do_dynamic_translation_in_QML","wgTitle":"How to do dynamic translation in QML","wgCurRevisionId":18313,"wgRevisionId":18313,"wgArticleId":947,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_do_dynamic_translation_in_QML","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_to_do_dynamic_translation_in_QML skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">How to do dynamic translation in QML</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 00:14, 28 June 2015 by <a href="http://wiki.qt.io/User:Wieland" title="User:Wieland" class="mw-userlink">Wieland</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/User_talk:Wieland" title="User talk:Wieland">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Wieland" title="Special:Contributions/Wieland">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&amp;diff=prev&amp;oldid=18313" title="How to do dynamic translation in QML">diff</a>) <a href="http://wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&amp;direction=prev&amp;oldid=18313" title="How to do dynamic translation in QML">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#What_to_do_on_the_C.2B.2B_side"><span class="tocnumber">2</span> <span class="toctext">What to do on the C++ side</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#QML_implementation"><span class="tocnumber">3</span> <span class="toctext">QML implementation</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#The_Project_File"><span class="tocnumber">4</span> <span class="toctext">The Project File</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#lupdate_and_lrelease"><span class="tocnumber">5</span> <span class="toctext">lupdate and lrelease</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>QML relies on the core internationalization capabilities provided by Qt. In the sections below we show how you can load and install the translators on the C++ side and set the needed translation on the QML side.
+</p>
+<h2><span class="mw-headline" id="What_to_do_on_the_C.2B.2B_side">What to do on the C++ side</span></h2>
+<p>The example below illustrates the necessary steps to get the dynamic translation to work. In the TranslationTest class we create a property:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> emptyString READ getEmptyString NOTIFY languageChanged<span class="br0">&#41;</span></pre></div></div>
+<p>that simply sets an empty string. This empty string is appended to the text in the QML code. This is a trick to get the whole expression to be reevaluated whenever the property emptyString changes. When not using this trick, QDeclarativeEngine will not know that it should reevaluate the text and do the translation. There is a suggestion for adding a more convenient way to know when the strings should be retranslated.
+</p><p>The <tt>selectLanguage()</tt> function checks which language is currently being set, loads and installs the corresponding translation file accordingly. It then emits <tt>languageChanged()</tt>. All QML <tt>Text { }</tt> elements that use <tt>rootItem.emptyString</tt> in their text binding will receive a <tt>NOTIFY</tt> signal causing the <tt>qsTr("...")</tt> to be reevaluated using the new <tt>QTranslator</tt>. Because <tt>rootItem.emptyString</tt> is just "" (an empty string), it will alter the text in your GUI.
+</p><p><tt>TranslationTest::selectLanguage()</tt> is callable from QML as it uses <tt>Q_INVOKABLE</tt>. To be able to call Qt class methods from QML code, the methods must be declared as public slots or conventional methods with the <tt>Q_INVOKABLE</tt> macro. In both cases, Qt methods are available to the Qt Meta-Object system and the methods are callable from QML.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QtGui&gt;</span>
+<span class="co2">#include &lt;QtDeclarative&gt;</span>
+&#160;
+<span class="kw2">class</span> TranslationTest <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> emptyString READ getEmptyString NOTIFY languageChanged<span class="br0">&#41;</span>
+&#160;
+ <span class="kw2">public</span><span class="sy0">:</span>
+  TranslationTest<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   translator1 <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QTranslator</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+   translator2 <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QTranslator</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  <span class="kw5">QString</span> getEmptyString<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   <span class="kw1">return</span> <span class="st0">&quot;&quot;</span><span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+&#160;
+ Q_INVOKABLE <span class="kw4">void</span> selectLanguage<span class="br0">&#40;</span><span class="kw5">QString</span> language<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span>language  <span class="kw5">QString</span><span class="br0">&#40;</span><span class="st0">&quot;fr&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   translator1<span class="sy0">-&gt;</span><span class="me3">load</span><span class="br0">&#40;</span><span class="st0">&quot;t1_fr&quot;</span><span class="sy0">,</span> <span class="st0">&quot;.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+   qApp<span class="sy0">-&gt;</span><span class="me3">installTranslator</span><span class="br0">&#40;</span>translator1<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  <span class="kw1">if</span><span class="br0">&#40;</span>language  <span class="kw5">QString</span><span class="br0">&#40;</span><span class="st0">&quot;sp&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   translator2<span class="sy0">-&gt;</span><span class="me3">load</span><span class="br0">&#40;</span><span class="st0">&quot;t1_sp&quot;</span><span class="sy0">,</span> <span class="st0">&quot;.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+   qApp<span class="sy0">-&gt;</span><span class="me3">installTranslator</span><span class="br0">&#40;</span>translator2<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  <span class="kw1">if</span><span class="br0">&#40;</span>language <span class="sy0">==</span> <span class="kw5">QString</span><span class="br0">&#40;</span><span class="st0">&quot;en&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+   qApp<span class="sy0">-&gt;</span><span class="me3">removeTranslator</span><span class="br0">&#40;</span>translator1<span class="br0">&#41;</span><span class="sy0">;</span>
+   qApp<span class="sy0">-&gt;</span><span class="me3">removeTranslator</span><span class="br0">&#40;</span>translator2<span class="br0">&#41;</span><span class="sy0">;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  emit languageChanged<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+ <span class="kw2">signals</span><span class="sy0">:</span>
+  <span class="kw4">void</span> languageChanged<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw2">private</span><span class="sy0">:</span>
+  <span class="kw5">QTranslator</span> <span class="sy0">*</span>translator1<span class="sy0">;</span>
+  <span class="kw5">QTranslator</span> <span class="sy0">*</span>translator2<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw5">QApplication</span> app<span class="br0">&#40;</span>argc<span class="sy0">,</span> argv<span class="br0">&#41;</span><span class="sy0">;</span>
+ TranslationTest myObj<span class="sy0">;</span>
+ QDeclarativeView view<span class="sy0">;</span>
+ view.<span class="me1">rootContext</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">setContextProperty</span><span class="br0">&#40;</span><span class="st0">&quot;rootItem&quot;</span><span class="sy0">,</span> <span class="br0">&#40;</span><span class="kw5">QObject</span><span class="sy0">*</span><span class="br0">&#41;</span><span class="sy0">&amp;</span>myObj<span class="br0">&#41;</span><span class="sy0">;</span>
+ view.<span class="me1">setSource</span><span class="br0">&#40;</span><span class="kw5">QUrl</span><span class="sy0">::</span><span class="me2">fromLocalFile</span><span class="br0">&#40;</span><span class="st0">&quot;main.qml&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ view.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">return</span> app.<span class="me1">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co2">#include &quot;main.moc&quot;</span></pre></div></div>
+<h2><span class="mw-headline" id="QML_implementation">QML implementation</span></h2>
+<p>A convenient way to switch between languages is by using buttons, so we create a Button.qml component as follows:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> root<span class="sy0">;</span>
+ property string label<span class="sy0">;</span>
+&#160;
+ <span class="kw4">signal</span> clicked<span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+ width<span class="sy0">:</span> <span class="nu0">120</span>
+ height<span class="sy0">:</span> <span class="nu0">30</span>
+ color<span class="sy0">:</span> mouse.<span class="me1">pressed</span>&#160;? <span class="st0">&quot;lightgray&quot;</span> <span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+&#160;
+ radius<span class="sy0">:</span> <span class="nu0">4</span>
+ border.<span class="me1">width</span><span class="sy0">:</span> <span class="nu0">1</span>
+ border.<span class="me1">color</span><span class="sy0">:</span> <span class="st0">&quot;gray&quot;</span>
+&#160;
+ MouseArea <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> mouse
+  anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+  onClicked<span class="sy0">:</span> root.<span class="me1">clicked</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+ Text <span class="br0">&#123;</span>
+  anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+  text<span class="sy0">:</span> root.<span class="me1">label</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Button.qml is then used in the main.qml file below to create 3 buttons that allow us to switch between English, French and Spanish. Each time a button is pressed, it causes the selectLanguage() of the C++ class to be called with the appropriate language string. This will then trigger the text to be reevaluated and hence translated.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> <span class="nu0">340</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">150</span>
+&#160;
+ Column <span class="br0">&#123;</span>
+  anchors.<span class="me1">fill</span><span class="sy0">:</span> parent<span class="sy0">;</span> spacing<span class="sy0">:</span> <span class="nu0">20</span>
+&#160;
+  Text <span class="br0">&#123;</span>
+   text<span class="sy0">:</span> qsTr<span class="br0">&#40;</span><span class="st0">&quot;Hello&quot;</span><span class="br0">&#41;</span> <span class="sy0">+</span> rootItem.<span class="me1">emptyString</span>
+   font.<span class="me1">pointSize</span><span class="sy0">:</span> <span class="nu0">25</span><span class="sy0">;</span> anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span>
+  <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+ Row <span class="br0">&#123;</span>
+  anchors.<span class="me1">verticalCenter</span><span class="sy0">:</span> parent.<span class="me1">verticalCenter</span>
+  Button <span class="br0">&#123;</span> label<span class="sy0">:</span> <span class="st0">&quot;English&quot;</span><span class="sy0">;</span> onClicked<span class="sy0">:</span> rootItem.<span class="me1">selectLanguage</span><span class="br0">&#40;</span><span class="st0">&quot;en&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+  Button <span class="br0">&#123;</span> label<span class="sy0">:</span> <span class="st0">&quot;Spanish&quot;</span><span class="sy0">;</span> onClicked<span class="sy0">:</span> rootItem.<span class="me1">selectLanguage</span><span class="br0">&#40;</span><span class="st0">&quot;sp&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+  Button <span class="br0">&#123;</span> label<span class="sy0">:</span> <span class="st0">&quot;French&quot;</span><span class="sy0">;</span> onClicked<span class="sy0">:</span> rootItem.<span class="me1">selectLanguage</span><span class="br0">&#40;</span><span class="st0">&quot;fr&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="The_Project_File">The Project File</span></h2>
+<p>In the .pro file we need to list the translation files under the <tt>TRANSLATIONS</tt> variable.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">TEMPLATE <span class="sy0">=</span> app
+TARGET <span class="sy0">=</span>
+INCLUDEPATH <span class="sy0">+=</span> .
+&#160;
+<span class="co2"># Input</span>
+SOURCES <span class="sy0">+=</span> main.<span class="me1">cpp</span>
+QT<span class="sy0">+=</span> declarative
+TRANSLATIONS <span class="sy0">=</span> t1_fr.<span class="me1">ts</span> t1_sp.<span class="me1">ts</span>
+&#160;
+OTHER_FILES <span class="sy0">+=</span> Button.<span class="me1">qml</span></pre></div></div>
+<h2><span class="mw-headline" id="lupdate_and_lrelease">lupdate and lrelease</span></h2>
+<p>We can now create the translation files by running <tt>lupdate</tt> on the <tt>.qml</tt> file. <tt>lupdate</tt> will generate the first set of TS translation source files with all the user-visible text but no translations. In our example, we do:
+</p>
+<pre># lupdate main.qml -ts t1_fr.ts t1_sp.ts
+</pre>
+<p>to create the translation files. These files can now be opened in Linguist and translated there. Finally, when the application is finished, you need to run <tt>lrelease</tt> on the <tt>.ts</tt> files to read the <tt>.ts</tt> files and produce the <tt>.qm</tt> files used by the application at runtime. For example:
+</p>
+<pre># lrelease t1_fr.ts
+# lrelease t1_sp.ts
+</pre>
+<p>When running the example at this point, it should now switch between English, French and Spanish when clicking the respective buttons.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.113 seconds
+Real time usage: 0.134 seconds
+Preprocessor visited node count: 161/1000000
+Preprocessor generated node count: 715/1000000
+Post‐expand include size: 2593/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:947-0!*!*!!en!*!* and timestamp 20151105031022 and revision id 18313
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&amp;oldid=18313">http://wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&amp;oldid=18313</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:HowTo" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=How+to+do+dynamic+translation+in+QML" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/How_to_do_dynamic_translation_in_QML"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk"><span><a href="http://wiki.qt.io/Talk:How_to_do_dynamic_translation_in_QML"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/How_to_do_dynamic_translation_in_QML" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/How_to_do_dynamic_translation_in_QML" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/How_to_do_dynamic_translation_in_QML" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&amp;oldid=18313&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&amp;oldid=18313" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 June 2015, at 00:14.</li>
+											<li id="footer-info-viewcount">This page has been accessed 3,433 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":259});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_do_dynamic_translation_in_QML&oldid=18313 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:15:36 GMT -->
+</html>

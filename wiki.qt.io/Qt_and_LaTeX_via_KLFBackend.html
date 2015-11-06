@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Qt_and_LaTeX_via_KLFBackend by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:02:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Qt and LaTeX via KLFBackend - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Qt_and_LaTeX_via_KLFBackend","wgTitle":"Qt and LaTeX via KLFBackend","wgCurRevisionId":13433,"wgRevisionId":13433,"wgArticleId":1446,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Learning::Demos and Examples","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Qt_and_LaTeX_via_KLFBackend","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Qt_and_LaTeX_via_KLFBackend skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Qt and LaTeX via KLFBackend</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexcc60.html?title=Qt_and_LaTeX_via_KLFBackend&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Render_LaTeX_code_via_KLFBackend_library"><span class="tocnumber">1</span> <span class="toctext">Render LaTeX code via KLFBackend library</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#What_is_KLFBackend.3F"><span class="tocnumber">1.1</span> <span class="toctext">What is KLFBackend?</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Getting_it"><span class="tocnumber">1.2</span> <span class="toctext">Getting it</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Requirements"><span class="tocnumber">1.3</span> <span class="toctext">Requirements</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Building_the_library"><span class="tocnumber">1.4</span> <span class="toctext">Building the library</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Using_KLFBackend_in_your_Qt_app."><span class="tocnumber">1.5</span> <span class="toctext">Using KLFBackend in your Qt app.</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Where_to_go_from_here:"><span class="tocnumber">1.6</span> <span class="toctext">Where to go from here:</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Render_LaTeX_code_via_KLFBackend_library">Render LaTeX code via KLFBackend library</span></h1>
+<p><i>23/5/2014 Update: TinyTex's Qt 5 port of KLFBackend has been <a rel="nofollow" class="external text" href="https://bitbucket.org/bruceoutdoors/tiny-tex/pull-request/1/updated-to-328/diff">updated to 3.2.8</a> (fixes a bug with ghostscript) thanks to retux</i>
+</p>
+<h2><span class="mw-headline" id="What_is_KLFBackend.3F">What is KLFBackend?</span></h2>
+<p>KLFBackend is a C++ library originally developed by Philippe Faist to render LaTeX code in KLatexFormula:
+<a rel="nofollow" class="external free" href="http://klatexformula.sourceforge.net/doc/apidoc/klfbackend/html/">http://klatexformula.sourceforge.net/doc/apidoc/klfbackend/html/</a>
+</p>
+<h2><span class="mw-headline" id="Getting_it">Getting it</span></h2>
+<p><a href="index2a8e.html?title=Special:Upload&amp;wpDestFile=Https://lh4.googleusercontent.com/-1sMCCrbbQ7s/UWWOeqssR4I/AAAAAAAABPA/2yzn2O3CMhU/s750/Program%2BManager_2013-04-11_00-07-07.png" class="new" title="File:Https://lh4.googleusercontent.com/-1sMCCrbbQ7s/UWWOeqssR4I/AAAAAAAABPA/2yzn2O3CMhU/s750/Program+Manager 2013-04-11 00-07-07.png">TinyTex</a>
+</p><p>The source code of KLFBackend is inside KLatexFormula from here <a rel="nofollow" class="external free" href="http://klatexformula.sourceforge.net/download/">http://klatexformula.sourceforge.net/download/</a> (as of this writing the current stable source version is 3.2.6). However, the library only works with Qt 4. I have a modified version of the library that allows it to support both Qt 4 and Qt 5 plus certain features which I'll get to. For this tutorial to work you'll need this modified version. <a rel="nofollow" class="external text" href="https://bitbucket.org/bruceoutdoors/tiny-tex/get/master.zip">Download it from here</a> . It comes with an simple example(<a rel="nofollow" class="external text" href="https://bitbucket.org/bruceoutdoors/tiny-tex">TinyTex</a> ). Note that TinyTex only works with Qt 5. To make it work with Qt 4 you would need to rebuild it and change some includes.
+</p>
+<h2><span class="mw-headline" id="Requirements">Requirements</span></h2>
+<p>Library is tested to work on Windows 7 and Linux Mint 14 32bit, in Qt 4 and Qt 5. However, for windows users you can only use MinGW version of Qt. MSCV2010 compiler will produce an error should you try to build the library or run programs with it.
+</p><p>To get latex working: In linux you'll nees to install texlive and ghostscript from synaptic package manager. In windows install <a rel="nofollow" class="external text" href="http://miktex.org/download">Miktex</a> - just the basic Miktex would work.
+</p>
+<h2><span class="mw-headline" id="Building_the_library">Building the library</span></h2>
+<p>Open the KLFBackend pro file located in the latextest folder that you've downloaded and build the project. Now go to the "build-KLFBackend" directory where you have build your library and you should see KLFBackend.dll(windows) or libKLFBackend.so, libKLFBackend.so.1, libKLFBackend.so.1.0, libKLFBackend.so.1.0.0(linux). You can freely choose to discard the rest of the files cause they're taking up space.
+</p>
+<h2><span class="mw-headline" id="Using_KLFBackend_in_your_Qt_app.">Using KLFBackend in your Qt app.</span></h2>
+<p>Open TinyTex.pro to access the example(alternatively you can refer to KLatexFormula's source code as most of the code in this mini example originated from there).
+</p><p>in your pro file be sure you have
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">DEFINES <span class="st0">''</span><span class="sy0">=</span> KLF_SRC_BUILD</pre></div></div>
+<p>or it will output a bunch of warnings(though the app still runs happily). You will also need the following:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># note that in unix(linux) systems library names are case sensitive</span>
+win32<span class="sy0">:</span>CONFIG <span class="br0">&#40;</span>release<span class="sy0">,</span> debug<span class="sy0">|</span>release<span class="br0">&#41;</span><span class="sy0">:</span> LIBS<span class="st0">''</span><span class="sy0">=</span> <span class="sy0">-</span>L$$PWD<span class="sy0">/</span>build<span class="sy0">-</span>KLFBackend<span class="sy0">/</span> <span class="sy0">-</span>lklfbackend
+<span class="kw1">else</span><span class="sy0">:</span>win32<span class="sy0">:</span>CONFIG <span class="br0">&#40;</span>debug<span class="sy0">,</span> debug<span class="sy0">|</span>release<span class="br0">&#41;</span><span class="sy0">:</span> LIBS <span class="st0">''</span><span class="sy0">=</span> <span class="sy0">-</span>L$$PWD<span class="sy0">/</span>build<span class="sy0">-</span>KLFBackend<span class="sy0">/</span> <span class="sy0">-</span>lklfbackend
+<span class="kw1">else</span><span class="sy0">:</span>unix<span class="sy0">:</span> LIBS <span class="st0">''</span><span class="sy0">=</span> <span class="sy0">-</span>L$$PWD<span class="sy0">/</span>build<span class="sy0">-</span>KLFBackend<span class="sy0">/</span> <span class="sy0">-</span>lKLFBackend
+&#160;
+INCLUDEPATH<span class="st0">''</span><span class="sy0">=</span> $$PWD<span class="sy0">/</span>klfbackend</pre></div></div>
+<p>this will add KLFBackend library(LIB) when running app, and import all the headers(INCLUDEPATH) in KLFBackend into your project. Note that $$PWD refers to the project working directory.
+</p><p><b>mainwindow.h</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#ifndef MAINWINDOW_H</span>
+<span class="co2">#define MAINWINDOW_H</span>
+&#160;
+<span class="co2">#include &lt;QMainWindow&gt;</span>
+<span class="co2">#include &lt;QClipboard&gt;</span>
+<span class="co2">#include &quot;klfbackend.h&quot;</span>
+<span class="co2">#include &quot;klfpreviewbuilderthread.h&quot;</span>
+&#160;
+<span class="kw2">namespace</span> Ui <span class="br0">&#123;</span>
+<span class="kw2">class</span> MainWindow<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw2">class</span> MainWindow <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QMainWindow</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw2">explicit</span> MainWindow<span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ ~MainWindow<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> updatePreviewBuilderThreadInput<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> showRealTimePreview<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QImage</span><span class="sy0">&amp;</span> preview<span class="sy0">,</span> <span class="kw4">bool</span> latexerror<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> copyToClipboard<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ Ui<span class="sy0">::</span><span class="me2">MainWindow</span> <span class="sy0">*</span>ui<span class="sy0">;</span>
+ KLFPreviewBuilderThread <span class="sy0">*</span>mPreviewBuilderThread<span class="sy0">;</span>
+ KLFBackend<span class="sy0">::</span><span class="me2">klfInput</span> input<span class="sy0">;</span>
+ KLFBackend<span class="sy0">::</span><span class="me2">klfSettings</span> settings<span class="sy0">;</span>
+ KLFBackend<span class="sy0">::</span><span class="me2">klfOutput</span> output<span class="sy0">;</span>
+ <span class="kw5">QClipboard</span> <span class="sy0">*</span>clipboard<span class="sy0">;</span>
+ <span class="kw5">QPixmap</span> pixmap<span class="sy0">;</span>
+&#160;
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="co2">#endif // MAINWINDOW_H</span></pre></div></div>
+<p>KLFBackend::klfInput object stores input like preamble, mathmode, latex code and size. KLFBackend::klfSettings stores settings like the directories of your latex executable. the KLFPreviewBuilderThread object is used to render your equations by feeding it with KLFBackend::klfInput and KLFBackend::klfSettings. We will save the image as a QPixmap to the clipboard although it's output a QImage, because for some reason copying the QImage of the equation gives really choppy results.
+</p><p>Below is the implementation file:
+</p><p><b>mainwindow.cpp</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &quot;mainwindow.h&quot;</span>
+<span class="co2">#include &quot;ui_mainwindow.h&quot;</span>
+<span class="co2">#include &quot;klfbackend.h&quot;</span>
+<span class="co2">#include &lt;QDebug&gt;</span>
+&#160;
+&#160;
+MainWindow<span class="sy0">::</span><span class="me2">MainWindow</span><span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent<span class="br0">&#41;</span> <span class="sy0">:</span>
+&#160;
+ <span class="kw5">QMainWindow</span><span class="br0">&#40;</span>parent<span class="br0">&#41;</span><span class="sy0">,</span>
+ ui<span class="br0">&#40;</span><span class="kw1">new</span> Ui<span class="sy0">::</span><span class="me2">MainWindow</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+&#160;
+ ui<span class="sy0">-&gt;</span><span class="me3">setupUi</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ input.<span class="me1">mathmode</span> <span class="sy0">=</span> <span class="st0">&quot;&quot;</span><span class="sy0">;</span>
+ input.<span class="me1">dpi</span> <span class="sy0">=</span> <span class="nu0">200</span><span class="sy0">;</span>
+ ui<span class="sy0">-&gt;</span><span class="me3">label</span><span class="sy0">-&gt;</span><span class="me3">setMinimumHeight</span><span class="br0">&#40;</span>input.<span class="me1">dpi</span><span class="sy0">/</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// input.bg_color = qRgba(225, 225, 225, 225);</span>
+ input.<span class="me1">preamble</span> <span class="sy0">=</span> <span class="kw5">QString</span><span class="br0">&#40;</span><span class="st0">&quot;usepackage{amssymb,amsmath,mathrsfs}&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy0">!</span>KLFBackend<span class="sy0">::</span><span class="me2">detectSettings</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>settings<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;unable to find LaTeX in default directories.&quot;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;default settings working!&quot;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+ <span class="co1">// setup variables:</span>
+ mPreviewBuilderThread <span class="sy0">=</span> <span class="kw1">new</span> KLFPreviewBuilderThread<span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> input<span class="sy0">,</span> settings<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="co1">// make connections</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span>ui<span class="sy0">-&gt;</span><span class="me3">plainTextEdit</span><span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>textChanged<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span>
+ SLOT <span class="br0">&#40;</span>updatePreviewBuilderThreadInput<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">QueuedConnection</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span>mPreviewBuilderThread<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>previewAvailable<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QImage</span><span class="sy0">&amp;,</span> <span class="kw4">bool</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span>
+ <span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>showRealTimePreview<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QImage</span><span class="sy0">&amp;,</span> <span class="kw4">bool</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">QueuedConnection</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span>ui<span class="sy0">-&gt;</span><span class="me3">clipBtn</span><span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>clicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>copyToClipboard<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ ui<span class="sy0">-&gt;</span><span class="me3">plainTextEdit</span><span class="sy0">-&gt;</span><span class="me3">setFocus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ ui<span class="sy0">-&gt;</span><span class="me3">statusBar</span><span class="sy0">-&gt;</span><span class="me3">showMessage</span><span class="br0">&#40;</span><span class="st0">&quot;Waiting for input…&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> MainWindow<span class="sy0">::</span><span class="me2">copyToClipboard</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ clipboard<span class="sy0">-&gt;</span><span class="me3">setPixmap</span><span class="br0">&#40;</span>pixmap<span class="br0">&#41;</span><span class="sy0">;</span>
+ ui<span class="sy0">-&gt;</span><span class="me3">statusBar</span><span class="sy0">-&gt;</span><span class="me3">showMessage</span><span class="br0">&#40;</span><span class="st0">&quot;your image has been copied to clipboard&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="br0">&#125;</span>
+&#160;
+MainWindow<span class="sy0">::</span><span class="me2">~MainWindow</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">delete</span> mPreviewBuilderThread<span class="sy0">;</span>
+ <span class="kw1">delete</span> ui<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> MainWindow<span class="sy0">::</span><span class="me2">updatePreviewBuilderThreadInput</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="co1">// in linux, I need to reinstate the preamble when rendering. No idea why.</span>
+ input.<span class="me1">preamble</span> <span class="sy0">=</span> <span class="kw5">QString</span><span class="br0">&#40;</span><span class="st0">&quot;usepackage{amssymb,amsmath}&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ input.<span class="me1">latex</span> <span class="sy0">=</span> ui<span class="sy0">-&gt;</span><span class="me3">plainTextEdit</span><span class="sy0">-&gt;</span><span class="me3">toPlainText</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span>mPreviewBuilderThread<span class="sy0">-&gt;</span><span class="me3">inputChanged</span><span class="br0">&#40;</span>input<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;input changed. Render…&quot;</span><span class="sy0">;</span>
+ ui<span class="sy0">-&gt;</span><span class="me3">statusBar</span><span class="sy0">-&gt;</span><span class="me3">showMessage</span><span class="br0">&#40;</span><span class="st0">&quot;Input changed. Render…&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ mPreviewBuilderThread<span class="sy0">-&gt;</span><span class="me3">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> MainWindow<span class="sy0">::</span><span class="me2">showRealTimePreview</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QImage</span><span class="sy0">&amp;</span> preview<span class="sy0">,</span> <span class="kw4">bool</span> latexerror<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>latexerror<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ ui<span class="sy0">-&gt;</span><span class="me3">statusBar</span><span class="sy0">-&gt;</span><span class="me3">showMessage</span><span class="br0">&#40;</span><span class="st0">&quot;Unable to render your equation. Please double check.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+ ui<span class="sy0">-&gt;</span><span class="me3">statusBar</span><span class="sy0">-&gt;</span><span class="me3">showMessage</span><span class="br0">&#40;</span><span class="st0">&quot;render is succesful[[Image:|Image:]]&#160;:D&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ pixmap <span class="sy0">=</span> <span class="kw5">QPixmap</span><span class="sy0">::</span><span class="me2">fromImage</span><span class="br0">&#40;</span>preview<span class="br0">&#41;</span><span class="sy0">;</span>
+ ui<span class="sy0">-&gt;</span><span class="me3">label</span><span class="sy0">-&gt;</span><span class="me3">setPixmap</span><span class="br0">&#40;</span>pixmap<span class="br0">&#41;</span><span class="sy0">;</span>
+ ui<span class="sy0">-&gt;</span><span class="me3">label</span><span class="sy0">-&gt;</span><span class="me3">adjustSize</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Although the LaTeX equation itself is
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="br0">&#123;</span>amssymb<span class="sy0">,</span>amsmath<span class="sy0">,</span>mathrsfs<span class="br0">&#125;</span></pre></div></div>
+<p>I have to write it as
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">usepackage<span class="br0">&#123;</span>amssymb<span class="sy0">,</span>amsmath<span class="sy0">,</span>mathrsfs<span class="br0">&#125;</span></pre></div></div>
+<p>because in C<i>+ strings, the backslash is used to indicate some commands(e.g is newline). So is read as by the program.</i>
+</p><p>KLFBackend::detectSettings is a useful function to automatically search your the required executables. However should you need to set it manually you'll do is as so:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#if defined(Q_OS_WIN)</span>
+ settings.<span class="me1">tempdir</span> <span class="sy0">=</span> <span class="kw5">QDir</span><span class="sy0">::</span><span class="me2">tempPath</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ settings.<span class="me1">dvipsexec</span> <span class="sy0">=</span> <span class="st0">&quot;D:/Program Files/MiKTeX 2.9/miktex/bin/dvips.exe&quot;</span><span class="sy0">;</span>
+ settings.<span class="me1">gsexec</span> <span class="sy0">=</span> <span class="st0">&quot;D:/Program Files/MiKTeX 2.9/miktex/bin/mgs.exe&quot;</span><span class="sy0">;</span>
+ settings.<span class="me1">latexexec</span> <span class="sy0">=</span> <span class="st0">&quot;D:/Program Files/MiKTeX 2.9/miktex/bin/latex.exe&quot;</span><span class="sy0">;</span>
+<span class="co2">#elif defined(Q_OS_LINUX)</span>
+ settings.<span class="me1">tempdir</span> <span class="sy0">=</span> <span class="kw5">QDir</span><span class="sy0">::</span><span class="me2">tempPath</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ settings.<span class="me1">dvipsexec</span> <span class="sy0">=</span> <span class="st0">&quot;/usr/bin/dvips&quot;</span><span class="sy0">;</span>
+ settings.<span class="me1">gsexec</span> <span class="sy0">=</span> <span class="st0">&quot;/usr/bin/gs&quot;</span><span class="sy0">;</span>
+ settings.<span class="me1">latexexec</span> <span class="sy0">=</span> <span class="st0">&quot;/usr/bin/latex&quot;</span><span class="sy0">;</span>
+<span class="co2">#endif</span></pre></div></div>
+<p>note that to use QDir you need to include QDir in your implementation file.
+</p>
+<h2><span class="mw-headline" id="Where_to_go_from_here:">Where to go from here:</span></h2>
+<p><a rel="nofollow" class="external text" href="http://klatexformula.sourceforge.net/doc/apidoc/klfbackend/html/">the KLFBackend API documentation</a>
+</p><p>The development version of KLatexFormula adds extra features to KLFBackend. According to the author…
+</p><p><i>Performance wise the older version might be slightly better, if only because it's more lightweight. The new version no longer depends on "epstopdf" for generating pdf, and uses directly ghostscript directly. It has much better detection of bounding boxes, can also generate SVG if the ghostscript driver is installed, and has a better interface for different fonts sizes and vector scaling. It stores also meta-information in PDF files too. You can also invoke user scripts that change the way the formula is rendered (for example for feynman diagrams with feynmf). Maybe more and I'm forgetting. So basically, it has more features, but if you were fine with 3.2, you can stick to that.</i>
+<i>KLFBackend now needs some tools that are defined in klftools (e.g. data serializing, and utilities for the user scripts), and so depends on that library. And it wasn't logical to have klftools depend on klfbackend.</i>
+</p><p>Note that you will need to install cmake to configure it, and that it currently only works with Qt 4, and that I can't get to build in windows.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">&gt;</span> svn checkout https<span class="sy0">:</span><span class="co1">//klatexformula.svn.sourceforge.net/svnroot/klatexformula/trunk/klatexformula</span>
+ <span class="sy0">&gt;</span> cd klatexformula<span class="sy0">/</span>
+ <span class="sy0">&gt;</span> mkdir build <span class="sy0">&amp;&amp;</span> cd build<span class="sy0">/</span>
+ <span class="sy0">&gt;</span> cmake .. <span class="sy0">-</span>DKLF_BUILD_GUI<span class="sy0">=</span>off <span class="sy0">-</span>DKLF_LIBKLFTOOLS_STATIC<span class="sy0">=</span>on <span class="sy0">-</span>DKLF_LIBKLFBACKEND_STATIC<span class="sy0">=</span>on  <span class="sy0">-</span>DKLF_BUILD_KTEXTEDITORPLUGIN<span class="sy0">=</span>off <span class="sy0">-</span>DCMAKE_INSTALL_PREFIX<span class="sy0">=/</span>usr<span class="sy0">/</span>local</pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.160 seconds
+Real time usage: 0.174 seconds
+Preprocessor visited node count: 111/1000000
+Preprocessor generated node count: 264/1000000
+Post‐expand include size: 1316/2097152 bytes
+Template argument size: 424/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1446-0!*!0!!en!2!* and timestamp 20151104082737 and revision id 13433
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index49ad.html?title=Qt_and_LaTeX_via_KLFBackend&amp;oldid=13433">http://wiki.qt.io/index.php?title=Qt_and_LaTeX_via_KLFBackend&amp;oldid=13433</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Learning__Demos_and_Examples.html" title="Category:Learning::Demos and Examples">Learning::Demos and Examples</a></li><li><a href="Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=c95eb37810e9c2d8&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Qt_and_LaTeX_via_KLFBackend.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Qt_and_LaTeX_via_KLFBackend.html?title=Talk:Qt_and_LaTeX_via_KLFBackend&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Qt_and_LaTeX_via_KLFBackend.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexcc60.html?title=Qt_and_LaTeX_via_KLFBackend&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index2851.html?title=Qt_and_LaTeX_via_KLFBackend&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Qt_and_LaTeX_via_KLFBackend.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Qt_and_LaTeX_via_KLFBackend.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexe21b.html?title=Qt_and_LaTeX_via_KLFBackend&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index49ad.html?title=Qt_and_LaTeX_via_KLFBackend&amp;oldid=13433" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexc282.html?title=Qt_and_LaTeX_via_KLFBackend&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 12 March 2015, at 17:33.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,928 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":355});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Qt_and_LaTeX_via_KLFBackend by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:03:03 GMT -->
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Building_Qt_Desktop_for_Windows_with_MSVC by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:16:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Building Qt Desktop for Windows with MSVC - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building_Qt_Desktop_for_Windows_with_MSVC","wgTitle":"Building Qt Desktop for Windows with MSVC","wgCurRevisionId":18255,"wgRevisionId":18255,"wgArticleId":138,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing with Qt::General","HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building_Qt_Desktop_for_Windows_with_MSVC","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building_Qt_Desktop_for_Windows_with_MSVC skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Building Qt Desktop for Windows with MSVC</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Required_SDKs_and_tools"><span class="tocnumber">1</span> <span class="toctext">Required SDKs and tools</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Installation"><span class="tocnumber">2</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Environment_setup"><span class="tocnumber">3</span> <span class="toctext">Environment setup</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#What_we_have"><span class="tocnumber">4</span> <span class="toctext">What we have</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.22Static.22_tips"><span class="tocnumber">5</span> <span class="toctext">"Static" tips</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Building_OpenSSL"><span class="tocnumber">6</span> <span class="toctext">Building OpenSSL</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Configuring_Qt_Desktop"><span class="tocnumber">7</span> <span class="toctext">Configuring Qt Desktop</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Recommendations"><span class="tocnumber">8</span> <span class="toctext">Recommendations</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Reduce_used_HDD_space"><span class="tocnumber">9</span> <span class="toctext">Reduce used HDD space</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Required_SDKs_and_tools">Required SDKs and tools</span></h2>
+<p>Here are the tools required to build a Qt Shared or a Qt Static library. First, please, download and install <i><span class="below listed software, of versions latest find to idea good a is it"></span></i>:
+</p>
+<dl>
+<dd>1. Qt source code (I think you know where to find it&#160;:))
+</dd>
+</dl>
+<dl>
+<dd>2. On machines not having a previous Qt version already installed you need to install also Perl (e.g. <a rel="nofollow" class="external text" href="http://www.activestate.com/activeperl/downloads">ActivePerl</a> ) prior to configure. Otherwise you may receive following error message at the end of configure:
+<dl>
+<dd> &gt; Perl not found in environment - cannot run syncqt.
+</dd>
+</dl>
+</dd>
+<dd>3. <a rel="nofollow" class="external text" href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=35AEDA01-421D-4BA5-B44B-543DC8C33A20">Microsoft Platform SDK</a> (most recent at time of last wiki edit is Microsoft Windows 7.1 SDK.). The SDK includes the Microsoft Visual C++ compilers and debugging tools. You can in addition install <a rel="nofollow" class="external text" href="http://www.microsoft.com/express/Downloads/">Visual Studio Express</a> if you like the IDE (not required!).
+</dd>
+</dl>
+<dl>
+<dd>4. <a rel="nofollow" class="external text" href="https://connect.microsoft.com/VisualStudio/Downloads/DownloadDetails.aspx?DownloadID=33355">KB2485545</a> or <a rel="nofollow" class="external text" href="http://www.microsoft.com/download/en/details.aspx?id=23691">Service Pack 1</a> are required for MSVC 2010 when building a 64bit library on intel x86 based CPUs. <b>They fix a bug in the MSVC2010 compiler, and without it you will experience crashes when running 64bit binaries.</b>
+</dd>
+</dl>
+<dl>
+<dd>5. <a rel="nofollow" class="external text" href="http://www.openssl.org/">OpenSSL</a> libraries or source code (if you want to build it yourself)
+</dd>
+</dl>
+<p>For Shared (if you want Phonon support) also required
+</p>
+<ol>
+<li> <a rel="nofollow" class="external text" href="http://go.microsoft.com/fwlink/?LinkID=71193&amp;clcid=0x409">Microsoft DirectX SDK</a>
+</li>
+</ol>
+<p>Ok, all done but… If you decided to build OpenSSL yourself (really, I recommend you) it is also required
+</p>
+<ol>
+<li> <a rel="nofollow" class="external text" href="http://www.activestate.com/activeperl/downloads">ActivePerl</a> (community edition is free)
+</li>
+<li> <a rel="nofollow" class="external text" href="http://www.nasm.us/">The Netwide Assembler</a>
+</li>
+</ol>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>At first I recommend you to install all packages into one directory (for example _C:):
+</p>
+<ul>
+<li> <i>C:</i> (for Visual C+<i>)</i>
+</li>
+<li> <i>C:7.1 SDK</i> (for platform SDK)
+</li>
+<li> <i>C:</i> (for OpenSSL library or unpack source code anywhere for build)
+</li>
+<li> …
+</li>
+</ul>
+<p>It is not required to install examples, demos, docs, libraries not for target architecture e.g.&#160;;)
+</p>
+<h2><span class="mw-headline" id="Environment_setup">Environment setup</span></h2>
+<p>It looks good to have a script to set up the environment instead of setting it all using system PATH variable:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">@ECHO OFF
+&#160;
+set DEV<span class="sy0">=</span>C<span class="sy0">:</span>set QTDIR<span class="sy0">=%</span>DEV<span class="sy0">%</span>set PATH<span class="sy0">=%</span>SystemRoot<span class="sy0">%;%</span>SystemRoot<span class="sy0">%</span><span class="nu19">32</span><span class="sy0">;%</span>QTDIR<span class="sy0">%</span>
+&#160;
+echo Setting OpenSSL Env.
+<span class="me1">set</span> OPENSSL<span class="sy0">=%</span>DEV<span class="sy0">%</span>set PATH<span class="sy0">=%</span>OPENSSL<span class="sy0">%;%</span>PATH<span class="sy0">%</span>
+set LIB<span class="sy0">=%</span>OPENSSL<span class="sy0">%</span>set INCLUDE<span class="sy0">=%</span>OPENSSL<span class="sy0">%</span>
+&#160;
+echo Setting NASM Env.
+<span class="me1">set</span> PATH<span class="sy0">=%</span>DEV<span class="sy0">%;%</span>PATH<span class="sy0">%</span>
+&#160;
+echo Setting DirectX Env.
+<span class="me1">set</span> LIB<span class="sy0">=%</span>DEV<span class="sy0">%</span>SDK\Lib\x86<span class="sy0">;%</span>LIB<span class="sy0">%</span>
+set INCLUDE<span class="sy0">=%</span>DEV<span class="sy0">%</span>SDK\Include<span class="sy0">;%</span>INCLUDE<span class="sy0">%</span>
+&#160;
+echo Setting Windows SDK Env.
+<span class="me1">set</span> WindowsSdkDir<span class="sy0">=%</span>DEV<span class="sy0">%</span><span class="nu16">7.1</span> SDK
+set PATH<span class="sy0">=%</span>WindowsSdkDir<span class="sy0">%;%</span>PATH<span class="sy0">%</span>
+set LIB<span class="sy0">=%</span>WindowsSdkDir<span class="sy0">%;%</span>LIB<span class="sy0">%</span>
+set INCLUDE<span class="sy0">=%</span>WindowsSdkDir<span class="sy0">%;%</span>INCLUDE<span class="sy0">%</span>
+set TARGET_CPU<span class="sy0">=</span>x86
+&#160;
+echo Setting MSVC2010 Env.
+<span class="me1">set</span> VSINSTALLDIR<span class="sy0">=%</span>DEV<span class="sy0">%</span>set VCINSTALLDIR<span class="sy0">=%</span>DEV<span class="sy0">%</span>set DevEnvDir<span class="sy0">=%</span>VSINSTALLDIR<span class="sy0">%</span><span class="nu19">7</span>\IDE
+set PATH<span class="sy0">=%</span>VCINSTALLDIR<span class="sy0">%;%</span>VSINSTALLDIR<span class="sy0">%</span><span class="nu19">7</span>\Tools<span class="sy0">;%</span>VSINSTALLDIR<span class="sy0">%</span><span class="nu19">7</span>\IDE<span class="sy0">;%</span>VCINSTALLDIR<span class="sy0">%;%</span>PATH<span class="sy0">%</span>
+set INCLUDE<span class="sy0">=%</span>VCINSTALLDIR<span class="sy0">%;%</span>INCLUDE<span class="sy0">%</span>
+set LIB<span class="sy0">=%</span>VCINSTALLDIR<span class="sy0">%;%</span>LIB<span class="sy0">%</span>
+set LIBPATH<span class="sy0">=%</span>VCINSTALLDIR<span class="sy0">%</span>
+&#160;
+echo Setting Framework Env.
+<span class="me1">set</span> FrameworkVersion<span class="sy0">=</span>v4.0.30319
+set Framework35Version<span class="sy0">=</span>v3.5
+set FrameworkDir<span class="sy0">=%</span>SystemRoot<span class="sy0">%</span>.<span class="me1">NET</span>\Framework
+set LIBPATH<span class="sy0">=%</span>FrameworkDir<span class="sy0">%</span>amp<span class="sy0">;</span><span class="co2">#37;FrameworkVersion%;%FrameworkDir%amp;#37;Framework35Version%;%LIBPATH%</span>
+set PATH<span class="sy0">=%</span>LIBPATH<span class="sy0">%;%</span>PATH<span class="sy0">%</span>
+&#160;
+echo Env. <span class="me1">ready</span>.
+&#160;
+<span class="me1">title</span> <span class="kw5">Qt</span> Framework 4.7.1 Development Kit.
+&#160;
+<span class="me1">cd</span> <span class="sy0">%</span>DEV<span class="sy0">%</span></pre></div></div>
+<p>This file is <b>.bat (or</b>.cmd) script. Just modify and save it for your environment. I set it up from tool’s (MSVC, SDKs) prompts.
+</p><p>You can add it to start menu or make a label (change script address at label preferences to "cmd /k <i>path/to/setqtenv.cmd</i>").
+</p>
+<h2><span class="mw-headline" id="What_we_have">What we have</span></h2>
+<p>At my computer I have installed MSVC<i>+ 2010 Express Edition to </i>C:<i>, Windows 7.1 SDK </i>C:7.1 SDK<i>, DirectX SDK </i>C:SDK<i>, Perl </i>C:<i> (impossible to change), NASM unpacked to </i>C:<i>, Qt Desktop (4.7.1) source code (from </i>qt-everywhere-opensource-src-4.7.1.tar.gz<i>) unpacked to </i>C:<i> and OpenSSL source code unpacked to </i>C:–1.0.0c
+</p>
+<h2><span class="mw-headline" id=".22Static.22_tips">"Static" tips</span></h2>
+<p>Before you start to build a static Qt Desktop library, you must know that for now you will have a dependence with MSVC Redistributable. To escape this you must replace -MD (d) build flag with -MT (d) (<i>I will not recommend you use it, because it can cause runtime errors, etc.</i> <i>For example with this configuration I cannot start QtDesigner app.</i> <i>The reason is unknown.)</i>
+</p><p>It's available as both Static and Shared builds.
+</p>
+<h2><span class="mw-headline" id="Building_OpenSSL">Building OpenSSL</span></h2>
+<p>At first, open your new Qt prompt, <i>cd</i> to your OpennSSL source directory and setup (if not set) Perl bin directory path (and check it?):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&gt;</span> cd openssl<span class="sy0">-*</span>
+<span class="sy0">&gt;</span> set PATH<span class="sy0">=</span>C<span class="sy0">:;%</span>PATH<span class="sy0">%</span>
+<span class="sy0">&gt;</span> echo <span class="sy0">%</span>PATH<span class="sy0">%</span></pre></div></div>
+<p>Something like this:
+</p><p>If all is ok, we can continue…
+</p><p>Configuring and preparing OpenSSL (copy-paste it, here is underscore symbols):
+</p><p>If you have NASM:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&gt;</span> perl Configure VC<span class="sy0">-</span>WIN32 —prefix<span class="sy0">=</span>C<span class="sy0">:&gt;</span> ms\do_nasm</pre></div></div>
+<p>And if not:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&gt;</span> perl Configure VC<span class="sy0">-</span>WIN32 no<span class="sy0">-</span>asm —prefix<span class="sy0">=</span>C<span class="sy0">:&gt;</span> ms\do_ms</pre></div></div>
+<p>Here we set up compiler and destination directory.
+</p><p>Now open <i>ms\ntdll.mak</i> (for Static &#8212; <i>ms\nt.mak</i>) file and replace at <b>LFLAGS</b> <i>/debug</i> with <i>/release</i>.
+</p><p>For Static build flag -MT is applied by default (look at "<i>Static</i>" <i>tips</i>). For shared -MD is used (change <b>CFLAG</b>’s at <i>ms\ntdll.mak</i> from /MD to /MT if required for you).
+</p><p>Ok, building, testing and "installing":
+</p><p>For Shared:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&gt;</span> nmake <span class="sy0">-</span>f ms\ntdll.<span class="me1">mak</span>
+<span class="sy0">&gt;</span> nmake <span class="sy0">-</span>f ms\ntdll.<span class="me1">mak</span> test
+<span class="sy0">&gt;</span> nmake <span class="sy0">-</span>f ms\ntdll.<span class="me1">mak</span> install</pre></div></div>
+<p>And for Static:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&gt;</span> nmake <span class="sy0">-</span>f ms\nt.<span class="me1">mak</span>
+<span class="sy0">&gt;</span> nmake <span class="sy0">-</span>f ms\nt.<span class="me1">mak</span> test
+<span class="sy0">&gt;</span> nmake <span class="sy0">-</span>f ms\nt.<span class="me1">mak</span> install</pre></div></div>
+<p>Ready. Now you can remove your OpenSSL source code (<i>C:–1.0.0c</i> here, on screenshot) directory and Perl installation. They are no longer required.
+</p>
+<h2><span class="mw-headline" id="Configuring_Qt_Desktop">Configuring Qt Desktop</span></h2>
+<p>There are 2 steps:
+</p>
+<ol>
+<li> Check/Change build flags
+</li>
+<li> Configure
+</li>
+</ol>
+<blockquote>Note: MSVC supports build with multiple processes. Really. You can add -MP[processMax] flag. Details <a rel="nofollow" class="external text" href="http://msdn.microsoft.com/en-us/library/bb385193.aspx">here</a>.
+</blockquote>
+<p>For first step (are you really sure with "Static" tips?) we are going to <i>%QTDIR%32-msvc2010</i> (I know that you know that real path is <i>C:32-msvc2010</i> and if you have different version of MSVC it will be different spec directory&#160;;)). Here we are interested in the <i>qmake.conf</i> configuration file.
+</p><p>Edit <b>QMAKE_CFLAGS_RELEASE</b>, <b>QMAKE_CFLAGS_RELEASE_WITH_DEBUGINFO</b> &amp; <b>QMAKE_CFLAGS_DEBUG</b> variables. For example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QMAKE_CFLAGS_RELEASE <span class="sy0">=</span> <span class="sy0">-</span>O2 <span class="sy0">-</span>MD <span class="sy0">-</span>MP2
+QMAKE_CFLAGS_RELEASE_WITH_DEBUGINFO <span class="sy0">+=</span> <span class="sy0">-</span>O2 <span class="sy0">-</span>MD <span class="sy0">-</span>Zi <span class="sy0">-</span>MP2
+QMAKE_CFLAGS_DEBUG <span class="sy0">=</span> <span class="sy0">-</span>Zi <span class="sy0">-</span>MDd <span class="sy0">-</span>MP2</pre></div></div>
+<p>Next &#8212; configuring. My configuration (shared) is:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">&gt;</span> configure <span class="sy0">-</span>release <span class="sy0">-</span>opensource <span class="sy0">-</span>shared <span class="sy0">-</span>ltcg <span class="sy0">-</span>no<span class="sy0">-</span>fast <span class="sy0">-</span>exceptions <span class="sy0">-</span>accessibility <span class="sy0">-</span>stl <span class="sy0">-</span>qt<span class="sy0">-</span>sql<span class="sy0">-</span>sqlite <span class="sy0">-</span>no<span class="sy0">-</span>qt3support 
+<span class="sy0">-</span>no<span class="sy0">-</span>openvg <span class="sy0">-</span>platform win32<span class="sy0">-</span>msvc2010 <span class="sy0">-</span>graphicssystem raster <span class="sy0">-</span>qt<span class="sy0">-</span>zlib <span class="sy0">-</span>qt<span class="sy0">-</span>gif <span class="sy0">-</span>qt<span class="sy0">-</span>libpng <span class="sy0">-</span>qt<span class="sy0">-</span>libmng <span class="sy0">-</span>qt<span class="sy0">-</span>libtiff 
+<span class="sy0">-</span>qt<span class="sy0">-</span>libjpeg <span class="sy0">-</span>no<span class="sy0">-</span>dsp <span class="sy0">-</span>no<span class="sy0">-</span>vcproj <span class="sy0">-</span>incredibuild<span class="sy0">-</span>xge <span class="sy0">-</span>plugin<span class="sy0">-</span>manifests <span class="sy0">-</span>qmake <span class="sy0">-</span>process <span class="sy0">-</span>rtti <span class="sy0">-</span>mmx –3dnow <span class="sy0">-</span>sse <span class="sy0">-</span>sse2 
+<span class="sy0">-</span>openssl <span class="sy0">-</span>no<span class="sy0">-</span>dbus <span class="sy0">-</span>phonon <span class="sy0">-</span>phonon<span class="sy0">-</span>backend <span class="sy0">-</span>multimedia <span class="sy0">-</span>audio<span class="sy0">-</span>backend <span class="sy0">-</span>webkit <span class="sy0">-</span>script <span class="sy0">-</span>scripttools <span class="sy0">-</span>declarative 
+<span class="sy0">-</span>arch windows <span class="sy0">-</span>qt<span class="sy0">-</span>style<span class="sy0">-</span>windows <span class="sy0">-</span>qt<span class="sy0">-</span>style<span class="sy0">-</span>windowsxp <span class="sy0">-</span>qt<span class="sy0">-</span>style<span class="sy0">-</span>windowsvista <span class="sy0">-</span>no<span class="sy0">-</span>style<span class="sy0">-</span>plastique
+<span class="sy0">-</span>no<span class="sy0">-</span>style<span class="sy0">-</span>cleanlooks <span class="sy0">-</span>no<span class="sy0">-</span>style<span class="sy0">-</span>motif <span class="sy0">-</span>no<span class="sy0">-</span>style<span class="sy0">-</span>cde <span class="sy0">-</span>no<span class="sy0">-</span>style<span class="sy0">-</span>windowsce <span class="sy0">-</span>no<span class="sy0">-</span>style<span class="sy0">-</span>windowsmobile <span class="sy0">-</span>no<span class="sy0">-</span>style<span class="sy0">-</span>s60 
+<span class="sy0">-</span>native<span class="sy0">-</span>gestures</pre></div></div>
+<p>As you see, I do not want to build Qt3 support module, some styles, using image libs from Qt source, some additional instructions sets are enabled and some another stuff.
+</p><p>Ok, let’s configure… Accepting license… Please, wait… (building qmake now)&#160;:)
+</p><p>All the project’s files are read and now we able to build libs, tools, examples, etc. Just <i>nmake</i> it to build all. Also we are able to make only libs (<i>nmake sub-src</i>), tools (<i>nmake sub-tools</i>, but after libs)…
+</p>
+<h2><span class="mw-headline" id="Recommendations">Recommendations</span></h2>
+<p>Copy (or move) OpenSSL libraries (*.dll) from <i>%QTDIR%</i> directory to Qt bin directory and add <i>%QTDIR%</i> to system <i>%PATH%</i> variable.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">&gt;</span> move OpenSSL\bin.<span class="me1">dll</span> <span class="kw5">Qt</span>\bin</pre></div></div>
+<h2><span class="mw-headline" id="Reduce_used_HDD_space">Reduce used HDD space</span></h2>
+<p><b>Attention! This operations removes debugging information! (if you set release-and-debug)</b>
+</p><p>Just at <i>%QTDIR%</i> run <i>nmake clean</i> to delete all tmp objects, etc. Then rebuild translations (go to <i>%QTDIR%</i> and run <i>nmake</i>). And remove libraries (<b>.dll) from <i>%QTDIR%</i>.</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&gt;</span> cd <span class="kw5">Qt</span>
+<span class="sy0">&gt;</span> nmake clean
+<span class="sy0">&gt;</span> cd translations
+<span class="sy0">&gt;</span> nmake
+<span class="sy0">&gt;</span> cd ..<span class="sy0">&gt;</span> del<span class="st0">''</span><span class="st0">'.dll</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.199 seconds
+Real time usage: 0.220 seconds
+Preprocessor visited node count: 217/1000000
+Preprocessor generated node count: 833/1000000
+Post‐expand include size: 2718/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:138-0!*!*!!en!*!* and timestamp 20151104104823 and revision id 18255
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexe1e8.html?title=Building_Qt_Desktop_for_Windows_with_MSVC&amp;oldid=18255">http://wiki.qt.io/index.php?title=Building_Qt_Desktop_for_Windows_with_MSVC&amp;oldid=18255</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Developing_with_Qt__General.html" title="Category:Developing with Qt::General">Developing with Qt::General</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=190adbb6595ed88a&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Building_Qt_Desktop_for_Windows_with_MSVC.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Building_Qt_Desktop_for_Windows_with_MSVC.html?title=Talk:Building_Qt_Desktop_for_Windows_with_MSVC&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Building_Qt_Desktop_for_Windows_with_MSVC.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index292d.html?title=Building_Qt_Desktop_for_Windows_with_MSVC&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index62f0.html?title=Building_Qt_Desktop_for_Windows_with_MSVC&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Building_Qt_Desktop_for_Windows_with_MSVC.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Building_Qt_Desktop_for_Windows_with_MSVC.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index6c31.html?title=Building_Qt_Desktop_for_Windows_with_MSVC&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexe1e8.html?title=Building_Qt_Desktop_for_Windows_with_MSVC&amp;oldid=18255" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexa2a0.html?title=Building_Qt_Desktop_for_Windows_with_MSVC&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 June 2015, at 21:54.</li>
+											<li id="footer-info-viewcount">This page has been accessed 6,357 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":238});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Building_Qt_Desktop_for_Windows_with_MSVC by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:16:47 GMT -->
+</html>

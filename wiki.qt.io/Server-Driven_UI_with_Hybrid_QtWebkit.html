@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Server-Driven_UI_with_Hybrid_QtWebkit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 09:39:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Server-Driven UI with Hybrid QtWebkit - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Server-Driven_UI_with_Hybrid_QtWebkit","wgTitle":"Server-Driven UI with Hybrid QtWebkit","wgCurRevisionId":19357,"wgRevisionId":19357,"wgArticleId":1945,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing with Qt::QtWebKit","Learning::Whitepapers"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Server-Driven_UI_with_Hybrid_QtWebkit","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Server-Driven_UI_with_Hybrid_QtWebkit skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Server-Driven UI with Hybrid QtWebkit</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="index1211.html?title=Server-Driven_UI_with_Hybrid_QtWebkit&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Server-driven_UI_with_Hybrid_Qt_-_WebKit_Integration"><span class="tocnumber">1</span> <span class="toctext">Server-driven UI with Hybrid Qt - WebKit Integration</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Overview"><span class="tocnumber">2</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#The_people"><span class="tocnumber">2.1</span> <span class="toctext">The people</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#The_technology"><span class="tocnumber">2.2</span> <span class="toctext">The technology</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Using_Qt_-_WebKit_Integration"><span class="tocnumber">3</span> <span class="toctext">Using Qt - WebKit Integration</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Define_the_subsystems"><span class="tocnumber">3.1</span> <span class="toctext">Define the subsystems</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Add_the_Qt_objects_to_the_web_environment"><span class="tocnumber">3.2</span> <span class="toctext">Add the Qt objects to the web environment</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Access_the_Qt_objects_from_JavaScript"><span class="tocnumber">3.3</span> <span class="toctext">Access the Qt objects from JavaScript</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Getting_Started"><span class="tocnumber">4</span> <span class="toctext">Getting Started</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Server-driven_UI_with_Hybrid_Qt_-_WebKit_Integration">Server-driven UI with Hybrid Qt - WebKit Integration</span></h1>
+<p>A great user experience requires dynamic content, enhanced by dynamic presentation, and supported by fast plumbing. Product and service designs that fall short in any one of these three critical elements may disappoint users and leave a market opening for competitors. Dynamic content and presentation requirements can only be satisfied with server-based solutions that can be updated long after code is released. Fast plumbing can only be delivered though native coding.
+</p><p>Hybrid Qt - WebKit with HTML5 is optimized for designs requiring the responsiveness and power of native code integrated with large amounts of dynamic content. The hybrid architecture extends the standard Qt C++ framework for high performance cross-platform software development with the QtWebkit module to allow developers to freely combine Qt objects built in C++ with JavaScript, style sheets, and web content. In a hybrid Qt - WebKit implementation the native code is developed, tested, and released with all the rigor and controls one would expect of a mass-produced consumer product. The UI, however, is updated from a server and can change quite frequently.
+</p><p>This paper uses the example of a media center with a UI coded in HTML, JavaScript, and CSS supported by a native music library subsystem developed in Qt C+<i>. This allows, for example, a single firmware build to be dynamically skinned for a variety of different customers. It also allows the integration of a music store, with all content and promotions controlled by the server. </i>
+</p>
+<h1><span class="mw-headline" id="Overview">Overview</span></h1>
+<h2><span class="mw-headline" id="The_people">The people</span></h2>
+<p>Hybrid development processes make maximum use of the skills available in today's development teams. Most of the work is done using existing web skills – user experience design, UI implementation with HTML and CSS, and logic embodied in JavaScript. Developers with experience in web design will need to adapt when developing for embedded and mobile platforms, but they need not start from scratch. Consider a User Experience designer with years of practice developing online shopping portals. Designing a shopping experience for a "leaning back" TV viewer, delivered though a set-top box, will be quite different than designing one for a "leaning forward" consumer sitting in front of a full-screen desktop browser. Performance considerations also come into play when developing for embedded platforms. However, web developers can continue to draw on
+their technical skills in building experiences using web technologies and working with existing web design tools.
+</p><p>Web skills are augmented by C<i>+ work using the Qt framework. When a desired component is not available in the web environment, a Qt object can be created and integrated. It should be mentioned that even though hybrid development combines web and C++ coding, hybrid teams do not necessarily have "web people" and "C++ people". The precise allocation of tasks and combination of skill sets varies widely from organization to</i>
+organization.
+</p>
+<h2><span class="mw-headline" id="The_technology">The technology</span></h2>
+<p>The hybrid Qt - WebKit architecture is conceptually simple: web content built with HTML, JavaScript, and CSS interact with native objects built in C++ using the Qt cross-platform framework. The web content and native objects share events and data while presenting one seamless interface to the user.
+</p>
+<ul>
+<li> <b>Native objects</b> are built using the Qt C++ framework for high performance cross-platform software development. Objects built using Qt can run as native objects on supported platforms including Windows, desktop and embedded Linux, Mac, and Symbian S60.
+</li>
+<li> <b>Web content</b> is handled using the QtWebkit module within the Qt framework. This module integrates the popular WebKit engine into applications, making it easy to integrate web content and native functionality.
+</li>
+<li> <b>Interaction</b> between the web content and native objects creates a seamless experience for the user.
+</li>
+</ul>
+<p>With Qt - WebKit integration designs can:
+</p>
+<ul>
+<li> Embed Qt widgets in HTML pages along with native C++ code.
+</li>
+<li> Access Qt objects from JavaScript, allowing a web page's script to interact directly with C++ data structures. This interaction between JavaScript and C++ data structures is illustrated in code examples later in this paper.
+</li>
+<li> Call JavaScript functions in their web page context from C++ code and trigger events in the web page.
+</li>
+<li> Share client-side storage. This provides access to a database accessible both from JavaScript and C+<i>, making it possible to share large amounts of data easily even when offline.</i>
+</li>
+</ul>
+<h1><span class="mw-headline" id="Using_Qt_-_WebKit_Integration">Using Qt - WebKit Integration</span></h1>
+<p>Consider a media center as a use case. It provides local storage and playback of music, video, and still images whether or not the center is connected to the Internet. It integrates with online stores from which a user can purchase media tracks.
+</p><p>Some aspects of the media center clearly need to be server-driven, including access to the online stores and stylistic elements such as branding and themes.
+</p><p>Other aspects of the media center clearly need to be optimized for power and performance. These might include video processing or a local cache of pre-scaled thumbnail images.
+</p><p>This leads to two questions. First, what technology should be used to implement the media center? There are three primary options in Qt, and each has a place in the media center.
+</p>
+<ul>
+<li> <b>Qt widgets</b> written in C<i>+ provide high performance and cross-platform capability. A playlist manager would be a good use of Qt widgets.</i>
+</li>
+<li> <b>Qt Quick</b> is available since the Qt 4.7 release, and the Qt Declarative module would make an eye-catching UI easy to code. An animated view through a stream of album covers would be a good use for Qt Quick.
+</li>
+</ul>
+<p>Qt WebKit Hybrid design is best for integrating a lot of server-driven content with native functionality. This approach is ideal for managing an online music store and/or a local music library.
+</p><p>The Qt WebKit Hybrid design integrates native components coded in Qt C++ with web capability coded in HTML, JavaScript, and CSS. This begs the second question: What goes where?
+</p><p>There are no hard and fast answers to this question, but most hybrid applications code "the application" using web technologies and leverage a library of custom-written Qt C++ objects. For the media center this would mean using HTML with server-driven UI for the online store, Qt C++ objects for managing a local music library (a subsystem of the media center), and locally-cached HTML to create the interface to previously-downloaded tracks.
+</p><p>Implementing this system consists of three primary steps: build the Qt C++ objects, add those objects to the web environment, and then manipulate the objects in JavaScript.
+</p>
+<h2><span class="mw-headline" id="Define_the_subsystems">Define the subsystems</span></h2>
+<p>Define each subsystem of the design in terms of content, actions, events, and transient data types. Here are the particulars for the music library:
+</p>
+<ul>
+<li> <b>Subsystem</b> of the media center
+</li>
+<li> <b>Content:</b> A list of all albums in the music library
+</li>
+<li> <b>Actions:</b> Add a song to the music library; add an album to the music library
+</li>
+</ul>
+<p>(also delete album and delete song)
+</p>
+<ul>
+<li> <b>Events:</b> The list of all albums has changed
+</li>
+<li> <b>Transient data types:</b> Album, Song
+</li>
+</ul>
+<p>Note that the Qt WebKit environment knows how to transform transient data types to and from JavaScript objects and arrays. This means that using those types for passing arguments between the web environment and the native code (either in signals, slots or properties) allows JavaScript to access the internals of the transient type (for example, the song's title). More details are available in Default Conversion from C++ to QtScript.
+</p><p>Here is a snippet of the code for the music library object. Notice the signal that albums have been changed and the use of QVariant and QVariantList to pass data between the native and web environments.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> MusicLibrary <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+<span class="kw2">Q_OBJECT</span>
+Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QVariantList</span> allAlbums READ allAlbums<span class="br0">&#41;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+MusicLibrary <span class="br0">&#40;</span><span class="kw5">QObject</span><span class="sy0">*</span> parent <span class="sy0">=</span> <span class="kw2">NULL</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw5">QVariantList</span> allAlbums<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+<span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+<span class="kw5">QVariant</span> addSong<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QVariant</span> <span class="sy0">&amp;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw5">QVariant</span> addAlbum<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QVariant</span> <span class="sy0">&amp;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw2">signals</span><span class="sy0">:</span>
+<span class="kw4">void</span> albumsChanged<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw2">private</span><span class="sy0">:</span>
+<span class="kw5">QMap</span><span class="sy0">&lt;</span><span class="kw5">QUuid</span><span class="sy0">,</span>Song<span class="sy0">&gt;</span> song_map<span class="sy0">;</span>
+<span class="kw5">QMap</span><span class="sy0">&lt;</span><span class="kw5">QUuid</span><span class="sy0">,</span>Album<span class="sy0">&gt;</span> album_map<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+<span class="kw2">class</span> MediaCenter <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+<span class="kw2">Q_OBJECT</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+MediaCenter<span class="br0">&#40;</span><span class="kw5">QObject</span><span class="sy0">*</span> o <span class="sy0">=</span> <span class="kw2">NULL</span><span class="br0">&#41;</span><span class="sy0">;</span>
+MusicManager <span class="sy0">&amp;</span> music<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <span class="st0">''</span><span class="st0">'musicManager; }
+private:
+MusicManager'</span><span class="st0">''</span> musicManager<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<h2><span class="mw-headline" id="Add_the_Qt_objects_to_the_web_environment">Add the Qt objects to the web environment</span></h2>
+Qt C++ objects are not available to the web environment unless explicitly exposed using the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QWebFrame</span><span class="sy0">::</span><span class="me2">addToJavaScriptWindowObject</span></pre></div></div> function. This is important for security reasons as the C '<b> objects may execute</b>
+<p>outside of the sandbox of the web environment.
+</p><p>In the following snippet the system is named "MediaCenter". Note the connection of a slot to the web-frame's javaScriptWindowObjectCleared signal to make sure the object is added every time the frame refreshes.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> MyObject <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+<span class="kw2">Q_OBJECT</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+MyObject<span class="br0">&#40;</span>MediaCenter<span class="sy0">*</span> mc<span class="sy0">,</span> <span class="kw5">QWebFrame</span><span class="sy0">*</span> f<span class="br0">&#41;</span> <span class="sy0">:</span> <span class="kw5">QObject</span><span class="br0">&#40;</span>mc<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+frame <span class="sy0">=</span> f<span class="sy0">;</span>
+mediaCenter <span class="sy0">=</span> mc<span class="sy0">;</span>
+addJS<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="kw2">connect</span><span class="br0">&#40;</span>f<span class="sy0">,</span>SIGNAL <span class="br0">&#40;</span>javaScriptWindowObjectCleared<span class="br0">&#40;</span>
+<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span><span class="kw1">this</span><span class="sy0">,</span>
+SLOT <span class="br0">&#40;</span>addJS<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+<span class="kw4">void</span> addJS<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+frame<span class="sy0">-</span>
+<span class="sy0">&gt;</span>addToJavaScriptWindowObject
+<span class="br0">&#40;</span><span class="st0">&quot;MediaCenter&quot;</span><span class="sy0">,</span>mediaCenter<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">private</span><span class="sy0">:</span>
+<span class="kw5">QWebFrame</span><span class="sy0">*</span> frame<span class="sy0">;</span>
+MediaCenter<span class="sy0">*</span> mediaCenter<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<h2><span class="mw-headline" id="Access_the_Qt_objects_from_JavaScript">Access the Qt objects from JavaScript</span></h2>
+<p>The MediaCenter object is now accessible like any other JavaScript object. JavaScript code can now activate slots, connect to signals, read/write properties and access child objects.
+</p><p>Here is how to access the child named "music" of the main MediaCenter object:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var musicManager <span class="sy0">=</span> MediaCenter.<span class="me1">music</span><span class="sy0">;</span></pre></div></div>
+<p>Call the addSong slot when the user wants to add a song:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">musicManager.<span class="me1">addSong</span><span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Read the allAlbums property to show the list:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">albums <span class="sy0">=</span> musicManager.<span class="me1">allAlbums</span><span class="sy0">;</span></pre></div></div>
+<p>And remember the C++ signal generated when the albums changed? Here is how you connect the signal to the JavaScript's refresh function to update the view:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">musicManager.<span class="me1">albumsChanged</span>.<span class="kw2">connect</span><span class="br0">&#40;</span>refresh<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>For detailed information about the Qt WebKit implementation including a full class reference, see <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/topics-web-content.html">Integrating Web Content with QtWebkit</a> in the online documentation, or download the <a rel="nofollow" class="external text" href="http://qt.io/download">Qt SDK</a> and start hacking on the included examples.
+</p>
+<h1><span class="mw-headline" id="Getting_Started">Getting Started</span></h1>
+<p>To drill deeper into the steps involved to create a Qt WebKit hybrid design:
+</p>
+<ul>
+<li> Learn more about Qt C++ objects in the online documentation of the <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/object.html">Qt Object Model</a> .
+</li>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtscript-index.html">Making Applications Scriptable</a> provides more detail about the relationship between your Qt objects and your web environment.
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.130 seconds
+Real time usage: 0.140 seconds
+Preprocessor visited node count: 116/1000000
+Preprocessor generated node count: 252/1000000
+Post‐expand include size: 1356/2097152 bytes
+Template argument size: 434/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1945-0!*!0!!en!*!* and timestamp 20151105070332 and revision id 19357
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexcd46.html?title=Server-Driven_UI_with_Hybrid_QtWebkit&amp;oldid=19357">http://wiki.qt.io/index.php?title=Server-Driven_UI_with_Hybrid_QtWebkit&amp;oldid=19357</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Developing_with_Qt__QtWebKit.html" title="Category:Developing with Qt::QtWebKit">Developing with Qt::QtWebKit</a></li><li><a href="Category_Learning__Whitepapers.html" title="Category:Learning::Whitepapers">Learning::Whitepapers</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=8f29dac92cac80ad&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Server-Driven_UI_with_Hybrid_QtWebkit.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Server-Driven_UI_with_Hybrid_QtWebkit.html?title=Talk:Server-Driven_UI_with_Hybrid_QtWebkit&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Server-Driven_UI_with_Hybrid_QtWebkit.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index1211.html?title=Server-Driven_UI_with_Hybrid_QtWebkit&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexdccb.html?title=Server-Driven_UI_with_Hybrid_QtWebkit&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Server-Driven_UI_with_Hybrid_QtWebkit.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Server-Driven_UI_with_Hybrid_QtWebkit.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexdcb5.html?title=Server-Driven_UI_with_Hybrid_QtWebkit&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexcd46.html?title=Server-Driven_UI_with_Hybrid_QtWebkit&amp;oldid=19357" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index5729.html?title=Server-Driven_UI_with_Hybrid_QtWebkit&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:26.</li>
+											<li id="footer-info-viewcount">This page has been accessed 876 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":766});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Server-Driven_UI_with_Hybrid_QtWebkit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 09:39:23 GMT -->
+</html>

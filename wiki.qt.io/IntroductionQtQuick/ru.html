@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/IntroductionQtQuick/ru by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:18:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>IntroductionQtQuick/ru - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"IntroductionQtQuick/ru","wgTitle":"IntroductionQtQuick/ru","wgCurRevisionId":15968,"wgRevisionId":15968,"wgArticleId":1084,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing with Qt::Qt Quick","Developing with Qt::Qt Quick::Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"IntroductionQtQuick/ru","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-IntroductionQtQuick_ru skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">IntroductionQtQuick/ru</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="../IntroductionQtQuick.html" title="IntroductionQtQuick">IntroductionQtQuick</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../index029a-2.html?title=IntroductionQtQuick/ru&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><b>Русский</b> <a href="../IntroductionQtQuick.html" title="IntroductionQtQuick" class="mw-redirect">English</a> <a href="../IntroductionQtQuick_Bulgarian.html" title="IntroductionQtQuick Bulgarian" class="mw-redirect">Български</a>
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_Qt_Quick"><span class="tocnumber">1</span> <span class="toctext">Введение в Qt Quick</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.D0.9E_Qt_Quick"><span class="tocnumber">1.1</span> <span class="toctext">О Qt Quick</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.D0.A2.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D1.8B_.D0.B8_.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.BE.D0.BB.D0.BE.D0.B3.D0.B8.D1.8F"><span class="tocnumber">1.2</span> <span class="toctext">Термины и терминология</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D1.80.D0.B5.D0.B4.D1.8B_.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B8"><span class="tocnumber">1.3</span> <span class="toctext">Настройка среды разработки</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.D0.97.D0.B4.D1.80.D0.B0.D0.B2.D1.81.D1.82.D0.B2.D1.83.D0.B9.2C_.D0.BC.D0.B8.D1.80.21"><span class="tocnumber">1.4</span> <span class="toctext">Здравствуй, мир!</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.D0.AF.D0.B7.D1.8B.D0.BA_QML"><span class="tocnumber">1.5</span> <span class="toctext">Язык QML</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.BD.D0.B5.D0.BD.D1.82.D1.8B_Qt_Quick"><span class="tocnumber">1.6</span> <span class="toctext">Стандартные компоненты Qt Quick</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id=".D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_Qt_Quick">Введение в Qt Quick</span></h1>
+<h2><span class="mw-headline" id=".D0.9E_Qt_Quick">О Qt Quick</span></h2>
+<p>Пользовательские интерфейсы разработанные в Qt Quick создаются как прямоугольные элементы в визуальном дереве. Технология ограничена набором элементов сфокусированных на взаимодействии через прикосновения и жесты. Qt Quick вводит новую концепцию логики моделирования приложений, используя иерархическую машину состояний. Кроме того, переходы и богатый набор анимаций (<a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Tweening">tweens</a>) облегчают создание богатых пользовательских интерфейсов.
+</p><p>Хотя веб-разработчики все чаще называют себя дизайнерами и большинство разработчиков программного обеспечения смотрят на кодировку, как на искусство, по-прежнему большой проблемой для дизайнеров было участие в процессе разработки с Qt и C+<i>. C, в конце концов, является языком низкого уровня ориентированным на системное программирование. Qt Quick был разработан с нуля, чтобы заполнить этот пробел. Как предметно-ориентированный язык он специально ориентирован на создание пользовательских интерфейсов. Это устанавливает декларативный слой поверх JavaScript, который похож на каскадные таблицы стилей (CSS). Вас не будут беспокоить приведение типов, указатели и время жизни объектов. Вместо этого, в центре внимания находится создание богатых пользовательских интерфейсов.</i>
+</p>
+<h2><span class="mw-headline" id=".D0.A2.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D1.8B_.D0.B8_.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.BE.D0.BB.D0.BE.D0.B3.D0.B8.D1.8F">Термины и терминология</span></h2>
+<p>Прежде чем начать кодирование в Qt Quick, давайте сразу обсудим некоторые термины. Все, кажется, говорят о Qt Quick в наше время и, так как технология все еще новая, ее окружает много мифов.
+</p><p>В первую очередь, Qt Quick, QtQuick и QML относятся к разным вещам! Qt Quick и QML часто используются как синонимы, что не совсем правильно. QML это язык, QtQuick (без пробела) является именем стандартной библиотеки компонентов, а Qt Quick (с пробелом) относится к технологии в целом. QML как язык позволяет описывать иерархии объектов и состояний основанной логики приложения. Это также может быть использовано в иных областях приложения, не связанных с разработкой пользовательского интерфейса.
+</p>
+<h2><span class="mw-headline" id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D1.80.D0.B5.D0.B4.D1.8B_.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B8">Настройка среды разработки</span></h2>
+<p>Начиная с версии 4.7, Qt поставляется с Qt Quick. Вы можете редактировать свои QML файлы вашим любимым редактором, но Qt Creator в настоящее время предлагает лучшую поддержку. Qt предоставляет новый инструмент под названием "qmlviewer", который позволяет отображать QML файлы. Начиная с версии 2.1, Qt Creator также поддерживает специальный режиме разработки QML.
+Depending on your target platform you may opt for downloading all tools in one package - including the necessary cross-compile chains. Qt Quick также включена в последние Nokia и Meego/AppUp SDK. You can avoid these SDKs (and their gigabytes) by installing Qt with your favorite package manager and setting your editor to highlight QML files (<b>.qml) as JavaScript or CSS. As of Maverick (10.10), Qt 4.7 and qmlviewer are both included in Ubuntu. Ищите <i>libqt4-dev</i> и <i>qt4-qmlviewer</i> пакеты.</b>
+</p>
+<h2><span class="mw-headline" id=".D0.97.D0.B4.D1.80.D0.B0.D0.B2.D1.81.D1.82.D0.B2.D1.83.D0.B9.2C_.D0.BC.D0.B8.D1.80.21">Здравствуй, мир!</span></h2>
+<p>Начнем с самой простой программы, показывающей известное сообщение: <i>"Здравствуй, мир!"</i>. Для загрузки файла, убедитесь, что <i>qmlviewer</i> под рукой. Если вы желаете использовать QtCreator, просто нажмите <i>Файл-&gt;Новый файл или проект-&gt;Проект Qt Quick-&gt;Интерфейс пользователя на Qt Quick</i> (<i>File-&gt;New-&gt;Qt Quick Project-&gt;Qt Quick UI</i>). Затем вставьте исходный код и нажмите на большую треугольную кнопку в левом нижнем углу интерфейса.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// HelloWorld.qml</span>
+import QtQuick <span class="nu16">1.0</span>
+Rectangle <span class="br0">&#123;</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;beige&quot;</span>
+ width<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">100</span>
+ Text <span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ color<span class="sy0">:</span> <span class="st0">&quot;chocolate&quot;</span>
+ text<span class="sy0">:</span> <span class="st0">&quot;Здравствуй, мир!&quot;</span>
+ <span class="br0">&#125;</span>
+ MouseArea <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ onClicked<span class="sy0">:</span> <span class="kw5">Qt</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Первая строка просто комментарий. Синтаксис комментариев такой же, как в C+<i>. Строки, начинающиеся с </i>//<i> и текст, заключенный в </i>/* … */<i> игнорируются. Вторая строка импортирует все стандартные компоненты: </i>Rectangle, Image, Text, MouseArea, Flickable,<i> … и т.д. Третья строка создает корневой узел вашей визуальной иерархии. Элемент </i>Rectangle<i> просто отображает прямоугольник закрашенный заданным цветом с возможностью закругления углов. Вы можете использовать любое из SVG названий цветов или задать цвет непосредственно с помощью RGB названия цветов. В нашем примере мы могли бы написать </i>#F5F5DC<i> вместо </i>"beige"<i>. Размеры прямоугольника задается с помощью свойств </i>width<i> и </i>height<i>. Для каждого визуального элемента вы можете указать геометрию, используя свойства </i>x<i>, </i>y<i>, </i>width<i> и </i>height<i> задавая значения в пикселах. По большей части, это необходимо только для элементов верхнего уровня и анимации.</i>
+После этого мы добавили два дочерние элемента: <i>Text</i> и <i>MouseArea</i>. Мы используем якоря, чтобы связать геометрию дети с родительской. Центр текстового элемента привязывается к родительскому центру. Попробуйте изменить размер окна, чтобы проверить это. Второй дочерний элемент <i>MouseArea</i>, стоит на якоре полностью перекрывающем его родителя. <i>MouseArea</i> является одним из невидимых элементов для захвата пользовательского ввода. Элемент называется <i>MouseArea</i>, но также обеспечивает поддержку событий нажатия и табуляции. Наконец <i>MouseArea</i> включает обработчик события <i>onClicked</i>, который вызывает функцию по умолчанию для завершения работы Qt Quick приложения.
+</p>
+<h2><span class="mw-headline" id=".D0.AF.D0.B7.D1.8B.D0.BA_QML">Язык QML</span></h2>
+<p>QML это декларативный язык, который определяет иерархию объектов. Дерево объектов создается при загрузке QML файла. Для каждого объекта определяется набор свойств. В качестве значений свойств используются константы или выражения JavaScript. Значение свойств установленных как javascript выржения переоцениваются, если любые свойства используемые в выражении изменяются. Эта концепция декларирования свойств, которые зависят друг от друга и обновляются в реальном времени называется <b>связыванием свойств</b> (<b>property binding</b>) в QML. QML называют расширением JavaScript, но это также и улучшение. Хотя язык JavaScript использует утиную типизацию ( <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Duck_typing">duck-typing</a> ), в QML есть базовые типы и проверка синтаксиса при закрузке файлов. Например, пропробуйте выполнить следующие действия:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+Rectangle <span class="br0">&#123;</span>
+ color<span class="sy0">:</span> <span class="nu0">0</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>При загрузке данного файла в <i>qmlviewer</i> декларативный контексты выдаст корректный отчет о несоответствии типа:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">file<span class="sy0">:</span><span class="co1">///home/frank/gitorious/qml-demos/MyRectangle.qml:3:12: Invalid property assignment: color expected</span>
+ color<span class="sy0">:</span> <span class="nu0">0</span></pre></div></div>
+<p>Кроме того, в QML вы не можете изменить глобальный объект. Это обычно происходит случайно, когда вы забыли использовать <i>var</i> при объявлении локальных переменных.
+Это незначительные изменения, расширенный синтаксис JavaScript полностью совместим с JavaScript используемым в веб браузерах. Вы можете использовать встроенные объекты, такие как <i>Date</i>, <i>Number</i> или <i>Math</i>. Вы можете написать JavaScript код в отдельном JavaScript файле и импортировать его в ваш QML контекст. Вы также можете объявить JavaScript в рамках компонентов. Взгляните на следующий пример:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">100</span>
+ color<span class="sy0">:</span> red<span class="br0">&#40;</span><span class="nu16">0.5</span><span class="br0">&#41;</span>
+ Rectangle <span class="br0">&#123;</span>
+ anchors.<span class="me1">verticalCenter</span><span class="sy0">:</span> parent.<span class="me1">verticalCenter</span>
+ width<span class="sy0">:</span> parent.<span class="me1">width</span> <span class="sy0">/</span> <span class="nu0">2</span>
+ height<span class="sy0">:</span> parent.<span class="me1">height</span> <span class="sy0">/</span> <span class="nu0">2</span>
+ color<span class="sy0">:</span> red<span class="br0">&#40;</span><span class="nu0">1</span>.<span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ function red<span class="br0">&#40;</span>v<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <span class="st0">'#'</span><span class="st0">''</span> Math.<span class="kw3">floor</span><span class="br0">&#40;</span>v<span class="st0">''</span><span class="st0">' 255).toString(16)'</span><span class="st0">' '</span><span class="nu8">0000</span><span class="st0">'; }
+}</span></pre></div></div>
+<p>Здесь мы объявили функцию <i>red</i> для вычисления названий цветов оттенков красного.
+</p>
+<h2><span class="mw-headline" id=".D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.BD.D0.B5.D0.BD.D1.82.D1.8B_Qt_Quick">Стандартные компоненты Qt Quick</span></h2>
+<p>Библиотека компонентов <i>QtQuick</i> предоставляет богатый набор анимационных элементов, элементов для обработки изображений, элементов обработки ввода и модель-представление элементов. Особое внимание уделяется специальным пользовательским интерфейсам, созданным в рамках встраиваемых и мобильных устройств. Есть основанные на якорях макеты и позиционеры, но есть и компоненты высокого уровня, такие как поля со списком или панели инструментов. Ведется постоянная работа над проектом под названием <a rel="nofollow" class="external text" href="http://developer.qt.nokia.com/wiki/Qt_Quick_Components">Qt Components</a> который предоставляет такие высокоуровневые компоненты, но проект все еще находится на ранних стадиях.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.082 seconds
+Real time usage: 0.091 seconds
+Preprocessor visited node count: 81/1000000
+Preprocessor generated node count: 184/1000000
+Post‐expand include size: 1296/2097152 bytes
+Template argument size: 419/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1084-0!*!0!!en!*!* and timestamp 20151104115639 and revision id 15968
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../index6f21.html?title=IntroductionQtQuick/ru&amp;oldid=15968">http://wiki.qt.io/index.php?title=IntroductionQtQuick/ru&amp;oldid=15968</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="../Category_Developing_with_Qt__Qt_Quick.html" title="Category:Developing with Qt::Qt Quick">Developing with Qt::Qt Quick</a></li><li><a href="../Category_Developing_with_Qt__Qt_Quick__Tutorial.html" title="Category:Developing with Qt::Qt Quick::Tutorial">Developing with Qt::Qt Quick::Tutorial</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=7be51158cf48288b&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="ru.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_IntroductionQtQuick/ru.html?title=Talk:IntroductionQtQuick/ru&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="ru.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../index029a-2.html?title=IntroductionQtQuick/ru&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../index6e44.html?title=IntroductionQtQuick/ru&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/IntroductionQtQuick/ru.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/IntroductionQtQuick/ru.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../index4f8f.html?title=IntroductionQtQuick/ru&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../index6f21.html?title=IntroductionQtQuick/ru&amp;oldid=15968" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../indexc9e7.html?title=IntroductionQtQuick/ru&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:24.</li>
+											<li id="footer-info-viewcount">This page has been accessed 3,560 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":250});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/IntroductionQtQuick/ru by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:18:25 GMT -->
+</html>

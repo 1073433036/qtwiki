@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=QML_Application_Structuring_Approaches&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:29:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for QML Application Structuring Approaches - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"QML_Application_Structuring_Approaches","wgTitle":"QML Application Structuring Approaches","wgCurRevisionId":19500,"wgRevisionId":0,"wgArticleId":1381,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"QML_Application_Structuring_Approaches","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-QML_Application_Structuring_Approaches skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for QML Application Structuring Approaches</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/QML_Application_Structuring_Approaches" title="QML Application Structuring Approaches">QML Application Structuring Approaches</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{Cleanup|reason=Needs to be updated to QtQuick 2}}
+{{LangSwitch}}
+[[Category:Developing_with_Qt::Qt Quick]]
+[[Category:HowTo]]
+== Introduction ==
+
+A common approach to deal with a complex application is to decompose it in several smaller units. This leads to better structuring of application and more productive development process as a whole. QML offers two constructs that service this approach – ''Component'' and ''Loader'' elements. Roughly speaking, the both elements bring similar functionality. But the ways they do this are different. We may refer to the ''Component'' approach as static one and the ''Loader'' approach as dynamic one. We first re-call ''Component'' and ''Loader'' definitions, then compare the two approaches and in the main part of this article describe several ''Loader'' element use cases. There are two other approaches to structure a QML application – dynamic creation of objects and module importing. They are beyond the scope of this article.
+
+== Component Element Definition ==
+
+A QML component is a separate, autonomous unit that contains other QML elements. It could be defined in two modes – as an inline unit in a QML file or as a separate QML file. The main point with QML component is that it could be reused many times through its very convenient interface. For more details about ''Component'' syntax and interface consult the [http://doc.qt.io/qt-5/qml-qtqml-component.html documentation.]
+
+How does the ''Component'' element support application code structuring and particularly its decomposition? In case of component file it is obvious – the application is split in several components. They are included in the main file and instantiated via their interfaces, for example like this:
+
+QML File
+
+&lt;code>
+...
+Banner {           // The component file Banner.qml, located in the directory of the
+                   //QML File is instantiated here
+  id: ban1
+  color: "red"
+}
+
+AnotherComponent { //Here another component is instantiated
+  ...
+}
+
+Banner {           // Here we use the same component file Banner.qml. The instantiated component is
+                   // different from ban1 – different id,
+  id: ban2         // property color has different value, etc.
+  color: "lightblue"
+}
+&lt;/code>
+
+Including of the component means that we get an instance of the component viewed as a template. The basic component is used to generate instances only and these instances do not depend anymore on the basic component. We may have several instances and they behave independently, treated like basic QML elements. Note that ''Component'' interface allows to re-define component properties - predefined ones as well as defining new ones. This is the case of the ''color'' property in the snippet above. We could even just instantiate the component and not alter any property.
+
+&lt;code>
+...
+Banner {}
+...
+&lt;/code>
+
+We may have many instances of ''Banner'' component provided that they have different ''id''.
+
+By now we are considering properties defined at the top level of the component file. What about siblings’/children’ properties in a component file? Let us consider the following case:
+
+''ExampleOne.qml'' - Component file
+
+&lt;code>
+// This component file is used in componentScope.qml file
+// The point is how to have access to color property out of the scope of Text element
+
+import QtQuick 1.1
+
+Rectangle {
+  width: 300
+  height: 200
+  property alias nameTextTop: nameText // This alias is defined at top level and bound to Text element
+
+  Text {
+    id: nameText
+    color: "blue"
+    text: "Some text fragment"
+  }
+}
+&lt;/code>
+
+''componentScope.qml'' – It is using component ExampleOne
+
+&lt;code>
+// The component ExampleOne is instantiated and its color property is change to red
+import QtQuick 1.1
+
+Rectangle {
+  width: 360
+  height: 360
+  ExampleOne {
+    id: instance
+    nameTextTop.color: "red"
+  }
+}
+&lt;/code>
+
+As you see, if we want to re-define the property ''color'' of ''nameText'' child we have to make it visible at the top level. To get this we define an alias of the ''nameText'' at the top level. This alias is re-defined in ''componentScope.qml file''.
+
+Could we develop more complex structures with components? For instance, could we have nested components? By nested components we mean that a component contains another component. Structures like these are acceptable:
+
+''nestedComponents.qml'' - Main file
+
+&lt;code>
+// Main file uses a component – Comp1. It in turn applies a nested component Comp2.
+import QtQuick 1.0
+
+Rectangle {
+  width: 360
+  height: 360
+  
+  Comp1 {} // This component has a nested component Comp2
+  Text {
+    anchors.centerIn: parent
+    text: "Top Level - we use a component Comp1"
+  }
+}
+&lt;/code>
+
+''Comp1.qml'' - First level component file
+
+&lt;code>
+import QtQuick 1.0
+
+//First level component Comp1.qml
+Rectangle {
+  width: 100
+  height: 62
+  color: "red"
+ 
+  Comp2{} // This component becomes part of Comp1
+}
+&lt;/code>
+
+''Comp2.qml'' - Second level component file
+
+&lt;code>
+import QtQuick 1.0
+
+//This is a component we nest in another component Comp1
+Rectangle {
+  x: 50; y: 40
+  width: 100
+  height: 62
+  color: "green"
+}
+&lt;/code>
+
+The inline definition syntax of the component element is very similar to this one of other QML elements. It starts with a key word ''Component'' followed by element block (represented by ''{ }'' pair). Within the block you may define and nest other QML elements – refer [http://doc.qt.io/qt-5/qml-qtqml-component.html documentation].
+
+On the other hand, inline ''Component'' offers other kind of structuring. It encapsulates a piece of QML code that could be assigned as a property value of other QML elements. Particularly this mechanism is used in the definition of the ''Loader'' element – see the next section. This kind of structuring is sometimes referred as aggregation. An example how inline ''Component'' could be utilized is demonstrated in section '''Loader and Inline Component'''.
+
+== Loader Element Definition ==
+
+''Loader'' element serves as a handler, which loads dynamically a QML unit formed as a separate QML file or inline component. Dynamically means that the QML unit to be loaded is determined at run-time, for example if a mouse button is clicked. The loaded unit is described as value of ''source'' or ''sourceComponent'' property of the ''Loader''. The ''source'' value is a URL value – the path to QML file to be loaded. The ''sourceComponent'' value is ''id'' name of an inline component. Where can we bind values to these properties? The rule is: at places where the ''Loader id'' name is visible. In the following sections you see many examples of implementation of this rule. For more information on Loader see [http://doc.qt.nokia.com/4.7/qml-loader.html#details documentation].
+
+One interesting point is how the loaded QML unit could be accessed. The ''Loader'' element has a default property ''item''. It is read-only and has ''Item'' type. In other words, loaded QML unit is a QML ''Item'' element. We recall that it is not visible and serves to group other QML elements. An illustrating snippet on item property follows:
+
+''LoaderItem.qml''
+
+&lt;code>
+// QML file Page.qml is loaded by Loader top. Its color property is red
+// Using Loader item property the color property is changed to blue
+import QtQuick 1.1
+
+Rectangle {
+  width: 360
+  height: 360
+
+  Loader { id: top }
+
+  Rectangle {
+    Component.onCompleted: {
+      top.source = "Page.qml"
+    }
+  }
+
+  Text {
+    anchors.centerIn: parent
+    text: "Hello World"
+ 
+    MouseArea {
+      anchors.fill: parent
+      onClicked: {
+        top.item.color="blue"
+      }
+    }
+  }
+}
+&lt;/code>
+
+''Page.qml''
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+  width: 100
+  height: 62
+  color: "red"
+}
+&lt;/code>
+
+We could set up ''source'' or ''sourceComponent'' properties in the ''Loader'' definition. Now the ''Loader'' element is processed like any other QML element and its target will be rendered. In this case the behavior is similar to the one of component element. But note that we may change programmatically properties values of ''source'' or ''sourceComponent'' at a later time.
+
+== Component Element vs. Loader Element ==
+
+Now we are going to compare component file and ''Loader'' element. They both offer similar functionality, but differ in ways they are applied.
+
+In case of a component file we have the following process. We declare the component (rather its interface) in a fixed way in the main file for example. QML parser immediately checks if a component file with the name as in component declaration exists. The parser searches in the directory where is placed the file.
+
+The ''Loader'' acts a bit differently. When a QML file containing a ''Loader'' element is parsed, the ''Loader'' constructs itself like any other QML element. The ''Loader'' could define the source destination of the file to be loaded or not. In the first case the file is loaded. In the second case this is postponed to the moment we define the source destination of the file in a script element for example. Note that in case of ''source'' property we may point to a file located anywhere on our local computer or on the Internet. If we have many QML entities that are not needed permanently, there is no need to keep them in memory – rather load them as they are necessary. This leads to a better structuring of the application and more efficient computer memory management. Be aware that any consequent activation of a ''Loader'' destroys the previously loaded items. If we set an empty string as ''source'' property value or undefined value to ''sourceComponent'' property, the memory used by the ''Loader'' is released.
+
+Because the file to be loaded by a ''Loader'' could be determined in run-time, the ''Loader'' approach is referred to as dynamic one. The component approach is called static one.
+
+Combining loaders, components and other QML elements it is important to understand the hierarchy of elements and how they overlap each other. Let us create a demo example, which will illustrate QML elements rendering hierarchy. We are considering a QML main file that has two ''Loaders'', one component and other standard QML elements. We re-define the ''z'' property of elements to control their overlapping.
+
+''elementHierarchy.qml'' – main file
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+  id: first
+  width: 360
+  height: 360
+  color: "lightblue"
+ 
+  Loader {
+    id: newLoad
+  }
+
+  Text {
+    id: textInner
+    z: 3
+    text: "Sample text with z=7 property "
+  }
+
+  Rectangle {
+    id: second
+    width: 100
+    height: 100
+    z: 2
+    x: 80
+    color: "pink"
+    Text {
+      text: "with z=2"
+    }
+  }
+
+  CompNew {
+    id: far
+    x: 20
+    y: 20
+  }
+
+  Loader {
+    id: loadSecond
+    source: "secondComp.qml"
+  }
+
+  Rectangle {
+    id: dummy
+    width: 80
+    height: 40
+    x: 140
+    y: 80
+    color: "gray"
+
+    Component.onCompleted: {
+      newLoad.source = "firstLoader.qml"
+    }
+  }
+}
+&lt;/code>
+
+''firstLoader.qml'' – file loaded by ''newLoad Loader''
+
+&lt;code>
+import QtQuick 1.0
+
+Rectangle {
+  width: 200
+  height: 100
+  y:30
+  color:"red"
+}
+&lt;/code>
+
+''secondComp.qml'' - loaded by ''loadSecond Loader''
+
+&lt;code>
+import QtQuick 1.0
+
+Rectangle {
+  width: 100
+  height: 62
+  x: 40
+  y: 45
+  color: "green"
+}
+&lt;/code>
+
+''CompNew.qml'' – component file
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+  id:comp
+  width: 62
+  height: 62
+  color: "yellow"
+  Text {
+    text: "CompNew"
+  }
+}
+&lt;/code>
+
+The next picture illustrates how QML elements are displayed and overlapping. As a rule elements are rendered in the order they are defined in the main file. In the snippets above ''z'' property is changed for text element ''textInner'' (z=3) and for rectangle element ''second'' (z=2) and they are rendered at the top element hierarchy.
+
+http://i1072.photobucket.com/albums/w362/vabo123/elementsHier.jpg
+
+You may experiment changing ''z'' property.
+
+== Loader Element Use Cases ==
+
+=== Simple Wizard Template ===
+
+Our application consists of several pages (3 in the snippet bellow), each of them formatted as a separate QML file. These files could be located in different directories, but for simplicity we suppose they reside in the directory where is located our main file. Each page has its own ''Loader'' element and when a ''Click me'' button is pressed the ''Loader'' loads a next wizard page.
+
+''wizardSimple.qml'' – main file
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+  id: top
+  width: 360
+  height: 360
+
+  Loader {                         // Declaration of a Loader. It will be activated later.
+    id: main
+  }
+
+  Text {
+    text: "Main file"
+  }
+
+  Button {
+    id: buttonMain
+    anchors.bottom: top.bottom    // Position the button in top rectangle
+    anchors.right: top.right
+ 
+    MouseArea {
+      anchors.fill: parent
+      onClicked: {
+        main.source = "Page1.qml"; // Load a new page
+        buttonMain.z = –1;         // Hide button
+      }
+    }
+  }
+}
+&lt;/code>
+
+''Page1.qml'' – first wizard page
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+  id: page1Container
+  width: 200
+  height: 300
+  x: 40
+  y: 40
+  color: "pink"
+  
+  Loader {
+    id: page1                      // Declaration of a new Loader element
+  }
+ 
+  Text {
+    text: "First page loaded"
+  }
+
+  Button {
+    id: buttonPage1
+    anchors.bottom: page1Container.bottom  // Position the button in page1Container rectangle
+    anchors.right: page1Container.right
+
+    MouseArea {
+      anchors.fill: parent
+      onClicked: {
+        page1.source = "Page2.qml";
+        buttonPage1.z = –1;        // Hide button     
+      }
+    }
+  }
+}
+&lt;/code>
+
+''Page2.qml'' – second wizard page
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+  id: page2Container
+  width: 200
+  height: 200
+  x: 80
+  y: 80
+  color: "yellow"
+
+  Loader {
+    id: page2
+  }
+
+  Text {
+    text: "Second page loaded"
+  }
+
+  Button {
+    id: buttonPage2
+    anchors.bottom: page2Container.bottom
+    anchors.right: page2Container.right
+ 
+    MouseArea {
+      anchors.fill: parent
+      onClicked: {
+        page2.source = "Page3.qml";
+        buttonPage2.z = -1;
+      }
+    }
+  }
+}
+&lt;/code>
+
+''Page3.qml'' – last wizard page
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+  width: 120
+  height: 62
+  x: 100 
+  y: 100
+  color: "green"
+
+  Text {
+    text: "Last Loaded Page"
+  }
+}
+&lt;/code>
+
+The above wizard implementation is very simple, but suffers of some drawbacks:
+* When a new page is loaded the previously loaded page stays unnecessary into memory.
+* We use similar loaders for each page – their IDs are different only.
+* The order of pages loading is fixed one – the source property values are set in advance.
+* There is no mechanism for exchange of information between the caller and the called page and vise-verse.
+
+=== More Complex Navigation ===
+Now we will try to release the restrictions of the loading scheme from the previous section. Firstly, following the Simon Judge [http://www.mobilephonedevelopment.com/qt-qml-tips/ idea], we will apply a common ''Loader'' for all pages. Secondly, we suppose that the next page to be loaded is not known in advance – it is determined after a condition is evaluated. And finally, we will use signals to pass information between pages and demonstrate how multi-window screens could be constructed.
+
+A common approach to trigger some actions after an event is fired is to define an own signal like that (for more information [http://doc.qt.nokia.com/4.7/qmlevents.html here]):
+
+&lt;code>
+signal MySignal(string message, int trigger)
+&lt;/code>
+
+where ''signal'' is QML keyword, ''MySignal'' is the name of newly defined signal, ''message'' is a parameter of type ''string'' and ''trigger'' is another parameter. The parameters could be of different QML types. For our purposes we want to pass a string that is the name of wizard page to be loaded and an index to identify the application state.
+
+The main idea is as follows: 
+
+* When we want to load a page we emit our own signal.
+* This signal is caught by a ''Loader'' defined somewhere.
+* Our signal has a parameter to which we bound the name of the page to be loaded – as an URL value.
+
+'''Use Case''': We will consider an application that consists of a main page (''Page1'') and two other pages (''Page2'', ''Page3''). The pages should be loaded sequentially and construct a wizard this way. Some of pages could be loaded checking for a logical condition creating the wizard branches. 
+
+'''Objectives''': To demonstrate how a flexible wizard could be implemented based on QML ''Loader'' element. Additionally we may complicate the wizard constructing some multi-windows screens.
+
+'''Design''': Pages are loaded one by one. The application starts loading automatically ''Page1''. To load the next page we should click the left mouse button. For ''Page1'' we have two wizard branches depending on a logical value. We introduce a current index for pages (an integer) around which the application logic is build. 
+
+'''Development''': For each page we define the same own signal:
+
+&lt;code>
+signal handlerLoader(string name, int index)
+&lt;/code>
+
+To activate this signal (emit the signal) we have to invoke it as a method in a script block. A ''MouseArea onClicked'' script block is used. In invocation the name of the page to be loaded is passed as parameter. Emitted signal is attached (automatically) to the signal handler ''onHandlerLoader'', which in turn is connected to a target ''pageLoader.item''. The connection is carried out by a QML ''Connections'' element in the QML file ''flexibleLoader.qml''. The target ''pageLoader.item'' is in fact the object loaded by the ''Loader'' (''id:pageLoader'') defined in the file ''flexibleLoader.qml''. Note that the target property of the ''Connections'' element is of type ''Object''. When ''Page2'' is loaded we want a second window (''NewWindow.qml'') to be loaded into the same screen. This is done by a second ''Loader'' (''id:window''), which is defined in the file ''flexibleLoader.qml''. The decision to load this second window is taken in ''onHandlerLoader'' block on the base of returned value of ''trigger'' parameter. Note that the ''Loader'' destroys previously loaded entities when loading new items.
+
+'''Code''': 
+
+''flexibleLoader.qml'' – application main file
+
+&lt;code>
+import QtQuick 1.1
+
+Item {
+  id: top
+  width: 300
+  height: 200
+ 
+  Loader{
+    id:window
+  }
+
+  signal handlerLoader(string name, int index)
+
+  Loader {
+    id: pageLoader
+    source: "Page1.qml"
+  }
+ 
+  Connections {
+    target: pageLoader.item
+    onHandlerLoader: {
+      pageLoader.source=name;
+      if (index === 2) {
+        window.source = "NewWindow.qml";
+      }
+    }
+  }
+}
+&lt;/code>
+
+''Page1.qml'' – page 1
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+  id: test1
+  width: 100
+  height: 62
+  color: "red"
+
+  // switchPage1 value is logically controlled somewhere in the code
+  property bool switchPage1: true
+  property int page1Index: 2
+
+  signal handlerLoader(string name, int index)
+
+  MouseArea {
+    anchors.fill: parent
+    onClicked: {
+      if (switchPage1) {
+        handlerLoader("Page2.qml", page1Index);
+      } else {
+        handlerLoader("Help.qml", 0);
+      }
+    }
+  }
+}
+&lt;/code>
+
+Files ''Page2.qml'' and ''Page3.qml'' are similar to ''Page1.qml''.
+
+'''Download Package''': Necessary files: ''flexibleLoader.qml'', ''Page1.qml'', ''Page2.qml'', ''Page3.qml'', ''Help.qml'', ''NewWindow.qml''. Get them from [http://bit.ly/1lnH77m here].
+
+=== Loader and Component Together ===
+'''Use Case''': Assume the page we are loading uses an external component (component file) and from this component we want to load a next page. What is new in this use case comparing with the previous one? The call to the
+''Loader'' is not located at the top level now. It is nested in a component. When the ''Loader'' is defined in the main application the pages are loaded in its context. This requires the ''Loader source'' property to be determined at the top level also. To solve this problem we use cascading definitions of properties. Firstly, have a look at a diagram illustrating the use case:
+
+http://i1072.photobucket.com/albums/w362/vabo123/complexLoader.jpg
+
+'''Design''': It follows the diagram above. The main file ''componentLoader.qml'' loads ''Page1.qml'', which in turn loads ''Page2.qml''. The ''Page2.qml'' file instantiates a component – ''Inserted.qml''. From within ''Inserted.qml'' the ''Loader'' in ''componentLoader.qml'' is invoked.
+
+'''Development''': The issue here is that the signal ''handlerLoader'' has to be activated at the top level of the file ''Page2.qml''. When instantiating component ''Inserted'' we define an alias to the top level ''id'': ''property alias next1:pop''. The signal is invoked in ''Inserted.qml'' through a qualified name- ''next1.handlerLoader("Page3.qml",0)''.
+
+'''Code''': Main file ''componentLoader.qml'' and files ''Page1.qml'' and ''Page3.qml'' are similar to these ones of the previous section.
+
+''Page2.qml'' – this file instantiates component file ''Insert.qml''
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+  id: pop
+  width: 100
+  height: 62
+  x: 30
+  color: "yellow"
+ 
+  property int page2Index: 3
+
+  signal handlerLoader(string name, int index)
+
+  Inserted {
+    id: comp1
+    property alias next1: pop
+    y: 20
+  }
+}
+&lt;/code>
+
+''Inserted.qml'' – this is component file
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+  width: 100
+  height: 62
+  color: "blue"
+
+  MouseArea {
+    anchors.fill: parent
+    onClicked: {
+      next1.handlerLoader("Page3.qml", 0)
+    }
+  }
+}
+&lt;/code>
+
+'''Download Package''': Necessary files: ''componentLoader.qml'', ''Page1.qml'', ''Page2.qml'', ''Page3.qml'', ''Inserted.qml''. Get them from [http://bit.ly/1lnH77m here].
+
+=== Loader and Inline Component ===
+
+'''Use case''': We want to implement an advertising banner composed from images and texts. We have several images combined with explanatory texts and these pairs are displayed cyclically. Additionally a button is needed to be bound to each displayed pair – for example to get more information on advertised topic. Have a look at some screenshots.
+
+http://i1072.photobucket.com/albums/w362/vabo123/firstImage.jpg
+
+http://i1072.photobucket.com/albums/w362/vabo123/forthImage.jpg
+
+'''Objectives''': To demonstrate how a loader and an inline component could be used together. Moreover nested components and QML ''Timer'' element are highlighted.
+
+'''Design''': Below you have a diagram illustrating what and how QML elements are employed.
+
+http://i1072.photobucket.com/albums/w362/vabo123/elementsHierarchy.jpg
+
+'''Development''': The cycling is implemented through a QML ''Timer'' element. Each time the ''Timer'' generates an ''onTriggered'' signal, the ''sourceComponent'' property of the ''Loader'' (''id:test'') is changed to load the next pair image-text. Images are arranged in a JavaScript array – defined in JavaScript function ''act()''. The texts are placed in the JavaScript array ''externalArray'' – defined in a separate file ''arrayExt.js'' – just to show how this approach works. The pairs image-text are modeled with a inline component – ''id:varText'' – which is loaded sequentially by the loader. The necessary button is implemented as an external component – file ''Button.qml'' – and which is nested in the component ''varText''. The handler, connected to this button, is illustrated with ''console.log()'' function output.
+
+'''Code''': Each cycle forms a state. The states are indentified via the property ''loop'', which gets ''int'' values and is used as arrays current index.
+
+''bannerComponent.qml''
+
+&lt;code>
+import QtQuick 1.0
+import "arrayExt.js" as FileExt
+
+Rectangle {
+  id: topLevel
+  function act() {
+    var element = ["fall1.jpg", "fall2.jpg", "fall3.jpg", "fall4.jpg"];
+    currentImage = element[loop];
+    currentText = FileExt.externalArray[loop];
+    test.sourceComponent = varText;
+    if( loop == 3) {
+      loop = 0;
+    } else {
+      loop = loop + 1;
+    }
+  }
+
+  Loader {
+    id: test
+    anchors.centerIn: parent
+  }
+
+  property string currentImage
+  property string currentText: " "
+  property int loop: 0
+
+  width: 500
+  height: 300
+  color: "#f7e5db"
+  gradient: Gradient {
+    GradientStop {
+      position: 0.00
+      color: "#ecd3d3"
+    }
+
+    GradientStop {
+      position: 0.71
+      color: "#d2e8e8"
+    }
+  }
+
+  Component {
+    id: varText
+ 
+    Rectangle {
+      id: top
+      color: topLevel.color
+      width: 500
+      height: 300
+
+      Image {
+        id: innerImage
+        anchors.top: parent.top
+        anchors.topMargin: 30
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: parent.width / 3
+        height: parent.height / 2
+        source: currentImage
+      }
+
+      Text {
+        id: answer
+        anchors.top: innerImage.bottom
+        anchors.topMargin: 30
+        horizontalAlignment: Text.AlignHCenter
+        width: parent.width
+        text: currentText
+      }
+
+      Button {
+        id: bottom
+        anchors.top: answer.bottom
+        anchors.topMargin: 30
+        anchors.right: top.right
+        anchors.rightMargin: 10
+
+        MouseArea {
+          id: place
+          anchors.fill: parent
+          onClicked: {
+            console.log("State index = ", loop)
+          }
+        }
+      }
+    }
+  }
+
+  Timer {
+    interval: 3000
+    running: true
+    repeat: true
+
+    onTriggered: {
+      act()
+    }
+  }
+}
+&lt;/code>
+
+''Button.qml''
+
+&lt;code>
+import QtQuick 1.0
+
+Rectangle {
+  width: 90
+  height: 20
+  color: "#cbd9f3"
+  radius: 10
+
+  Text {
+    width: parent.width
+    height: parent.height
+    horizontalAlignment: Text.AlignHCenter
+    verticalAlignment: Text.AlignVCenter
+    text: "Click me"
+    font.pointSize: 8
+  }
+}
+&lt;/code>
+
+''arrayExt.js''
+
+&lt;code>
+/* This external JavaScript file contains the text blocks */
+var externalArray = [
+  "First Image – it is the first element of the JavaScript array ‘element’",
+  "Second Image – its index in the array is 1",
+  "Third Image - its index in the array is 2",
+  "Fourth Image - its index in the array is 3"
+];
+&lt;/code>
+
+'''Download Package''': Necessary files: ''bannerComponent.qml'', ''Button.qml'', ''arrayExt.js'', ''fall1.jpg'', ''fall2.jpg'', ''fall3.jpg'', ''fall4.jpg''. Get them from [http://bit.ly/1lnH77m here].
+
+Note: The download package is organized in subdirectories corresponding to respective sections:
+* Component Element Definition - Component
+* Loader Element Definition – Loader
+* Component Element vs. Loader Element – ComponentvsLoader
+* Simple Wizard Template - SimpleWizard
+* More Complex Navigation - ComplexNavigation
+* Loader and Component Together - LoaderandComponent
+* Loader and Inline Component - LoaderInline
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:Ambox" title="Template:Ambox">Template:Ambox</a> (<a href="http://wiki.qt.io/index.php?title=Template:Ambox&amp;action=edit" title="Template:Ambox">view source</a>) </li><li><a href="http://wiki.qt.io/Template:Cleanup" title="Template:Cleanup">Template:Cleanup</a> (<a href="http://wiki.qt.io/index.php?title=Template:Cleanup&amp;action=edit" title="Template:Cleanup">view source</a>) </li><li><a href="http://wiki.qt.io/Template:LangSwitch" title="Template:LangSwitch">Template:LangSwitch</a> (<a href="http://wiki.qt.io/index.php?title=Template:LangSwitch&amp;action=edit" title="Template:LangSwitch">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/QML_Application_Structuring_Approaches" title="QML Application Structuring Approaches">QML Application Structuring Approaches</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/QML_Application_Structuring_Approaches">http://wiki.qt.io/QML_Application_Structuring_Approaches</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=QML+Application+Structuring+Approaches" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/QML_Application_Structuring_Approaches"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:QML_Application_Structuring_Approaches&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/QML_Application_Structuring_Approaches" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=QML_Application_Structuring_Approaches&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=QML_Application_Structuring_Approaches&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/QML_Application_Structuring_Approaches" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/QML_Application_Structuring_Approaches" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=QML_Application_Structuring_Approaches&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":350});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=QML_Application_Structuring_Approaches&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:29:48 GMT -->
+</html>

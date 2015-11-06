@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_style_a_QML_scroll_bar_with_an_image_provider&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:18:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for How to style a QML scroll bar with an image provider - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_style_a_QML_scroll_bar_with_an_image_provider","wgTitle":"How to style a QML scroll bar with an image provider","wgCurRevisionId":16424,"wgRevisionId":0,"wgArticleId":978,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_style_a_QML_scroll_bar_with_an_image_provider","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_to_style_a_QML_scroll_bar_with_an_image_provider skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for How to style a QML scroll bar with an image provider</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/How_to_style_a_QML_scroll_bar_with_an_image_provider" title="How to style a QML scroll bar with an image provider">How to style a QML scroll bar with an image provider</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{Cleanup | reason=Auto-imported from ExpressionEngine.}}
+
+[[Category:HowTo]]
+[[Category:snippets]]
+[[Category:Developing_with_Qt::Qt Quick]]
+[[Category:Developing_with_Qt::Qt Quick::QML]]
+
+= How to style a QML scroll bar with an image provider =
+
+This is not a recommended way to style QML elements, but it does provide an example of
+creating a QML plugin and creating an image provider. In this example, some parameters
+have been tailored for Windows XP.
+
+=== main.qml ===
+
+This is a simple UI to have something which needs a scroll bar. The ScrollBar element is in the ScrollBar.qml below. It is connected to a ListView element by setting the target property to the id of the list view. The list view is filled with 100 items to give it something to scroll.
+
+&lt;code>
+import Qt 4.7
+import style 1.0
+
+Item {
+ width: 300
+ height: 300
+
+ListView {
+ id: myList
+ anchors.fill: parent
+ model: 100
+ delegate: Text {
+ text: "item " + index
+ }
+ }
+ ScrollBar {
+ target: myList
+ }
+}
+&lt;/code>
+
+=== ScrollBar.qml ===
+
+This [http://bitbucket.org/gregschlom/qmlscrollbar/src/tip/ScrollBar.qml ScrollBar is originally by Gregory Schlomoff]. It was modified from the original by changing the source property for Image and BorderImage elements from a image file reference to an image provider reference of the form "image://style/control/subControl", where control and subControl are replaced with names of those QStyle parts. What values those can be are defined in the StyleImageProvider.cpp below. In this example, the only valid values are scrollBar and the subControls of a scroll bar.
+
+&lt;code>
+/*
+ ScrollBar component for QML Flickable
+
+Copyright © 2010 Gregory Schlomoff - gregory.schlomoff at gmail.com
+
+This code is released under the MIT license
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
+With modifications:
+ Copyright © 2010 Bradley Smith &lt;bradley at baysmith.com>
+
+Original: http://bitbucket.org/gregschlom/qmlscrollbar/src/tip/ScrollBar.qml
+*/
+
+/'''
+ Usage:
+
+Flickable {
+ id: myFlickable
+ …
+ }
+ ScrollBar {
+ target: myFlickable
+ }
+*/
+
+import Qt 4.7
+import style 1.0
+
+Item {
+ property variant target
+
+ width: upArrow.width
+ anchors.top: target.top
+ anchors.bottom: target.bottom
+ anchors.margins: 1
+ anchors.rightMargin: 2
+ anchors.bottomMargin: 2
+ anchors.right: target.right
+ visible: (track.height == slider.height) ? false : true
+
+ Image {
+ id: groove
+ width: parent.width
+ anchors.top: parent.top
+ anchors.bottom: parent.bottom
+ source: "image://style/scrollBar/addPage"
+ }
+
+ Item {
+ anchors.fill: parent
+
+ Image {
+ id: upArrow
+ source: "image://style/scrollBar/subLine"
+ z: 1
+ anchors.top: parent.top
+ anchors.horizontalCenter: parent.horizontalCenter
+ MouseArea {
+ anchors.fill: parent
+ onPressed: {
+ timer.scrollAmount = -10
+ timer.running = true;
+ }
+ onReleased: {
+ timer.running = false;
+ }
+ }
+ }
+
+ Timer {
+ property int scrollAmount
+
+ id: timer
+ repeat: true
+ interval: 20
+ onTriggered: {
+ target.contentY = Math.max(0, Math.min(target.contentY + scrollAmount,
+ target.contentHeight- target.height));
+ }
+ }
+
+ Item {
+ id: track
+ anchors.top: upArrow.bottom
+ anchors.topMargin: 1
+ anchors.bottom: downArrow.top
+ width: parent.width
+
+ MouseArea {
+ anchors.fill: parent
+ onPressed: {
+ timer.scrollAmount = target.height''' (mouseY &lt; slider.y ? -1 : 1)
+ timer.running = true;
+ }
+ onReleased: {
+ timer.running = false;
+ }
+ }
+
+ BorderImage {
+ id:slider
+
+ source: "image://style/scrollBar/slider"
+ border.left: 3
+ border.top: 3
+ border.right: 3
+ border.bottom: 3
+ horizontalTileMode: BorderImage.Round
+ verticalTileMode: BorderImage.Round
+ width: parent.width
+ Image {
+ anchors.centerIn: parent
+ source: "image://style/scrollBar/sliderDecor"
+ }
+
+ height: Math.min(target.height / target.contentHeight * track.height, track.height)
+ y: target.visibleArea.yPosition * track.height
+
+ MouseArea {
+ anchors.fill: parent
+ drag.target: parent
+ drag.axis: Drag.YAxis
+ drag.minimumY: 0
+ drag.maximumY: track.height- height
+
+onPositionChanged: {
+ if (pressedButtons == Qt.LeftButton) {
+ target.contentY = slider.y * target.contentHeight / track.height
+ }
+ }
+ }
+ }
+ }
+ Image {
+ id: downArrow
+ source: "image://style/scrollBar/addLine"
+ width: parent.width
+ z: 1
+ anchors.bottom: parent.bottom
+ anchors.horizontalCenter: parent.horizontalCenter
+ MouseArea {
+ anchors.fill: parent
+ onPressed: {
+ timer.scrollAmount = 10
+ timer.running = true;
+ }
+ onReleased: {
+ timer.running = false;
+ }
+ }
+ }
+ }
+}
+&lt;/code>
+
+=== qmldir ===
+
+This defines the plugin name and resources for it.
+
+&lt;code>
+plugin style
+ScrollBar 1.0 ScrollBar.qml
+&lt;/code>
+
+=== StylePlugin.h ===
+
+&lt;code>
+#ifndef STYLE_PLUGIN_H
+#define STYLE_PLUGIN_H
+
+#include &lt;QDeclarativeExtensionPlugin>
+
+class StylePlugin : public QDeclarativeExtensionPlugin
+{
+ Q_OBJECT
+
+public:
+ void registerTypes(const char *uri);
+ void initializeEngine(QDeclarativeEngine *engine, const char *uri);
+};
+
+#endif // STYLE_PLUGIN_H
+
+&lt;/code>
+
+=== StylePlugin.cpp ===
+
+&lt;code>
+#include "StylePlugin.h"
+#include "StyleImageProvider.h"
+
+#include &lt;qdeclarative.h>
+#include &lt;QDeclarativeEngine>
+
+void StylePlugin::registerTypes(const char *uri)
+{
+}
+
+void StylePlugin::initializeEngine(QDeclarativeEngine *engine, const char *uri)
+{
+ Q_UNUSED(uri);
+ engine->addImageProvider("style", new StyleImageProvider);
+}
+
+Q_EXPORT_PLUGIN2(style, StylePlugin)
+
+&lt;/code>
+
+=== StyleImageProvider.h ===
+
+The StyleImageProvider class parses the requested pixmap's id for the control and subControl (and an optional state, hover, pressed, etc. which is not used in this example). A QStyleOptionComplex is created and the QStyle from the application is used to paint into a pixmap. The pixmap is cropped to an appropriate size and returned.
+
+&lt;code>
+#ifndef STYLEIMAGEPROVIDER_H
+#define STYLEIMAGEPROVIDER_H
+
+#include &lt;QDeclarativeEngine>
+#include &lt;QDeclarativeImageProvider>
+
+class StyleImageProvider : public QDeclarativeImageProvider
+{
+public:
+ StyleImageProvider();
+ QPixmap requestPixmap(const QString &amp;id, QSize *size, const QSize &amp;requestedSize);
+
+};
+
+#endif // STYLEIMAGEPROVIDER_H
+&lt;/code>
+
+=== StyleImageProvider.cpp ===
+
+&lt;code>
+#include "StyleImageProvider.h"
+
+#include &lt;QApplication>
+#include &lt;QPainter>
+#include &lt;QStyleOptionSlider>
+
+namespace
+{
+ QMap&lt;QString, QStyle::ComplexControl> complexControlMap;
+ QMap&lt;QString, QStyle::SubControl> subControlMap;
+}
+
+StyleImageProvider::StyleImageProvider()
+ : QDeclarativeImageProvider(QDeclarativeImageProvider::Pixmap)
+{
+ complexControlMap["scrollBar"] = QStyle::CC_ScrollBar;
+
+subControlMap["none"] = QStyle::SC_None;
+ subControlMap["addLine"] = QStyle::SC_ScrollBarAddLine;
+ subControlMap["subLine"] = QStyle::SC_ScrollBarSubLine;
+ subControlMap["addPage"] = QStyle::SC_ScrollBarAddPage;
+ subControlMap["subPage"] = QStyle::SC_ScrollBarSubPage;
+ subControlMap["first"] = QStyle::SC_ScrollBarFirst;
+ subControlMap["last"] = QStyle::SC_ScrollBarLast;
+ subControlMap["slider"] = QStyle::SC_ScrollBarSlider;
+ subControlMap["sliderDecor"] = QStyle::SC_ScrollBarSlider;
+ subControlMap["groove"] = QStyle::SC_ScrollBarGroove;
+}
+
+QPixmap StyleImageProvider::requestPixmap(const QString &amp;id, QSize '''size, const QSize &amp;requestedSize)
+{
+ // Parse the request into complex and sub control parts
+ QStyle::ComplexControl complexControl = complexControlMap[id.section('/', 0, 0)];
+ QString subControlName = id.section('/', 1, 1);
+ QStyle::SubControl subControl = subControlMap[subControlName];
+ QString state = id.section('/', 2, 2);
+
+ // Manually tailored parameters for Windows XP
+ int width = 16;
+ int height = 50;
+
+ // Setup the style options
+ QStyleOptionComplex''' option = 0;
+ if (complexControl  QStyle::CC_ScrollBar)
+    {
+        QStyleOptionSlider *sliderOption = new QStyleOptionSlider;
+        option = sliderOption;
+        if (subControlName  "sliderDecor")
+ // Manually tailored parameter for Windows XP
+ height = 72;
+ sliderOption->orientation = Qt::Vertical;
+ sliderOption->state = QStyle::State_Enabled;
+ if (state  "hover")
+            sliderOption->state |= QStyle::State_MouseOver;
+        else if (state  "pressed")
+ sliderOption->state |= QStyle::State_Sunken;
+ else if (state == "disabled")
+ sliderOption->state ^= QStyle::State_Enabled;
+ sliderOption->minimum = 1;
+ sliderOption->maximum = 100;
+ sliderOption->sliderPosition = 50;
+ sliderOption->sliderValue = 50;
+ sliderOption->singleStep = 1;
+ sliderOption->pageStep = 100;
+ }
+ if (!option)
+ // Unsupported control
+ return QPixmap();
+
+option->subControls = subControl;
+ option->activeSubControls = subControl;
+
+// Create a pixmap of the correct size
+ QPixmap pixmap(requestedSize.width() > 0 ? requestedSize.width() : width,
+ requestedSize.height() > 0 ? requestedSize.height() : height);
+ option->rect = QRect(QPoint(), pixmap.size());
+ delete option;
+
+// Paint the control
+ QPainter painter(&amp;pixmap);
+ QRect subControlRect = qApp->style()->subControlRect(complexControl, option, subControl);
+ qApp->style()->drawComplexControl(complexControl, option, &amp;painter);
+ painter.end();
+
+// Copy just the sub control from the painted image
+ QPixmap sliderPixmap;
+ if (subControlName == "sliderDecor")
+ sliderPixmap = pixmap.copy(subControlRect.adjusted(3, 3, –3, –3));
+ else
+ sliderPixmap = pixmap.copy(subControlRect);
+
+// Return the size of the pixmap created
+ if (size)
+ *size = sliderPixmap.size();
+
+return sliderPixmap;
+}
+&lt;/code>
+
+=== style.pro ===
+
+&lt;code>
+TEMPLATE = lib
+TARGET = style
+QT ''= declarative
+CONFIG''= qt plugin
+DESTDIR = style
+
+TARGET = $$qtLibraryTarget($$TARGET)
+
+SOURCES ''=  StylePlugin.cpp  StyleImageProvider.cpp
+
+HEADERS''=  StylePlugin.h  StyleImageProvider.h
+
+OTHER_FILES = qmldir test.qml ScrollBar.qml main.qml
+
+copy_qmldir.target = $$OUT_PWD/$$DESTDIR/qmldir
+copy_qmldir.depends = $$PWD/qmldir
+copy_qmldir.commands = $(COPY_FILE) quot;$$replace(copy_qmldir.depends, /, $$QMAKE_DIR_SEP)quot; quot;$$replace(copy_qmldir.target, /, $$QMAKE_DIR_SEP)quot;
+copy_ScrollBar_qml.target = $$OUT_PWD/$$DESTDIR/ScrollBar.qml
+copy_ScrollBar_qml.depends = $$PWD/ScrollBar.qml
+copy_ScrollBar_qml.commands = $(COPY_FILE) quot;$$replace(copy_ScrollBar_qml.depends, /, $$QMAKE_DIR_SEP)quot; quot;$$replace(copy_ScrollBar_qml.target, /, $$QMAKE_DIR_SEP)quot;
+QMAKE_EXTRA_TARGETS ''= copy_qmldir copy_ScrollBar_qml
+PRE_TARGETDEPS''= $$copy_qmldir.target $$copy_ScrollBar_qml.target
+&lt;/code>
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:Ambox" title="Template:Ambox">Template:Ambox</a> (<a href="http://wiki.qt.io/index.php?title=Template:Ambox&amp;action=edit" title="Template:Ambox">view source</a>) </li><li><a href="http://wiki.qt.io/Template:Cleanup" title="Template:Cleanup">Template:Cleanup</a> (<a href="http://wiki.qt.io/index.php?title=Template:Cleanup&amp;action=edit" title="Template:Cleanup">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/How_to_style_a_QML_scroll_bar_with_an_image_provider" title="How to style a QML scroll bar with an image provider">How to style a QML scroll bar with an image provider</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/How_to_style_a_QML_scroll_bar_with_an_image_provider">http://wiki.qt.io/How_to_style_a_QML_scroll_bar_with_an_image_provider</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=How+to+style+a+QML+scroll+bar+with+an+image+provider" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/How_to_style_a_QML_scroll_bar_with_an_image_provider"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:How_to_style_a_QML_scroll_bar_with_an_image_provider&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/How_to_style_a_QML_scroll_bar_with_an_image_provider" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=How_to_style_a_QML_scroll_bar_with_an_image_provider&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=How_to_style_a_QML_scroll_bar_with_an_image_provider&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/How_to_style_a_QML_scroll_bar_with_an_image_provider" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/How_to_style_a_QML_scroll_bar_with_an_image_provider" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=How_to_style_a_QML_scroll_bar_with_an_image_provider&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":231});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_style_a_QML_scroll_bar_with_an_image_provider&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:18:31 GMT -->
+</html>

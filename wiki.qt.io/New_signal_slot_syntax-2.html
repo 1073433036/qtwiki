@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/New_signal_slot_syntax by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:19:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>New Signal Slot Syntax - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="New_Signal_Slot_Syntax.html" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"New_Signal_Slot_Syntax","wgTitle":"New Signal Slot Syntax","wgCurRevisionId":19173,"wgRevisionId":19173,"wgArticleId":1170,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing Qt::Qt Planning::Qt Public Roadmap","Developing Qt::Qt Planning","Developing Qt"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"New_Signal_Slot_Syntax","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"New_signal_slot_syntax","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-New_Signal_Slot_Syntax skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">New Signal Slot Syntax</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub">(Redirected from <a href="index2d11.html?title=New_signal_slot_syntax&amp;redirect=no" title="New signal slot syntax">New signal slot syntax</a>)</div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<a href="New_Signal_Slot_Syntax/de.html" title="New Signal Slot Syntax/de">De</a>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#New_Signal_Slot_Syntax_in_Qt_5"><span class="tocnumber">1</span> <span class="toctext">New Signal Slot Syntax in Qt 5</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Status"><span class="tocnumber">1.1</span> <span class="toctext">Status</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Connecting_in_Qt5"><span class="tocnumber">1.2</span> <span class="toctext">Connecting in Qt5</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Disconnecting_in_Qt5"><span class="tocnumber">1.3</span> <span class="toctext">Disconnecting in Qt5</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Asynchronous_made_easier."><span class="tocnumber">1.4</span> <span class="toctext">Asynchronous made easier.</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Error_reporting"><span class="tocnumber">1.5</span> <span class="toctext">Error reporting</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Open_Questions"><span class="tocnumber">1.6</span> <span class="toctext">Open Questions</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#History"><span class="tocnumber">1.7</span> <span class="toctext">History</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="New_Signal_Slot_Syntax_in_Qt_5">New Signal Slot Syntax in Qt 5</span></h1>
+<p>This page was used to describe the new signal and slot syntax during its development. The feature is now released with Qt5.
+</p>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://woboq.com/blog/new-signals-slots-syntax-in-qt5.html">Blog entry introducing it</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http://woboq.com/blog/how-qt-signals-slots-work-part2-qt5.html">How it works</a> (implementation details)
+</li>
+</ul>
+<p><b>Note</b>: This is in addition to the old string-based syntax which remains valid.
+</p>
+<h2><span class="mw-headline" id="Status">Status</span></h2>
+<ul>
+<li> Already merged in qtbase/master
+</li>
+</ul>
+<h2><span class="mw-headline" id="Connecting_in_Qt5">Connecting in Qt5</span></h2>
+<p>There will be several ways to connect a signal in Qt5.
+</p>
+<h3><span class="mw-headline" id="Old_syntax">Old syntax</span></h3>
+<p>Qt5 will continue to support the <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qobject.html#connect">old string-based syntax</a> for connecting signals and slots defined in a QObject or any class that inherits from QObject (including QWidget)
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">connect</span><span class="br0">&#40;</span>sender<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>valueChanged<span class="br0">&#40;</span><span class="kw5">QString</span><span class="sy0">,</span><span class="kw5">QString</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span>
+ receiver<span class="sy0">,</span> SLOT <span class="br0">&#40;</span>updateValue<span class="br0">&#40;</span><span class="kw5">QString</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h3><span class="mw-headline" id="New:_connecting_to_QObject_member">New: connecting to QObject member</span></h3>
+<p>Here's a new way to connect two QObjects and pass non-string objects:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">connect</span><span class="br0">&#40;</span>sender<span class="sy0">,</span> <span class="sy0">&amp;</span>Sender<span class="sy0">::</span><span class="me2">valueChanged</span><span class="sy0">,</span>
+ receiver<span class="sy0">,</span> <span class="sy0">&amp;</span>Receiver<span class="sy0">::</span><span class="me2">updateValue</span> <span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h4><span class="mw-headline" id="pros">pros</span></h4>
+<ul>
+<li> Compile time check of the existence of the signals and slot, of the types, or if the Q_OBJECT is missing.
+</li>
+<li> Argument can be by typedefs or with different namespace specifier, and it works.
+</li>
+<li> Possibility to automatically cast the types if there is implicit conversion (e.g. from QString to QVariant)
+</li>
+<li> It is possible to connect to any member function of QObject, not only slots.
+</li>
+</ul>
+<h4><span class="mw-headline" id="cons">cons</span></h4>
+<ul>
+<li> More complicated syntax? (you need to specify the type of your object)
+</li>
+<li> Very complicated syntax in cases of overloads?
+</li>
+<li> Default arguments in slot is not supported anymore.
+</li>
+</ul>
+<h3><span class="mw-headline" id="New:_connecting_to_simple_function">New: connecting to simple function</span></h3>
+<p>The new syntax can even connect to functions, not just QObjects:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">connect</span><span class="br0">&#40;</span>sender<span class="sy0">,</span> <span class="sy0">&amp;</span>Sender<span class="sy0">::</span><span class="me2">valueChanged</span><span class="sy0">,</span> someFunction<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h4><span class="mw-headline" id="pro">pro</span></h4>
+<ul>
+<li> can be used with tr1::bind
+</li>
+<li> can be used with c+<i>11 lambda expressions</i>
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">connect</span><span class="br0">&#40;</span>sender<span class="sy0">,</span> <span class="sy0">&amp;</span>Sender<span class="sy0">::</span><span class="me2">valueChanged</span><span class="sy0">,</span>
+ tr1<span class="sy0">::</span><span class="me2">bind</span><span class="br0">&#40;</span>receiver<span class="sy0">,</span> <span class="sy0">&amp;</span>Receiver<span class="sy0">::</span><span class="me2">updateValue</span><span class="sy0">,</span> <span class="st0">&quot;senderValue&quot;</span><span class="sy0">,</span> tr1<span class="sy0">::</span><span class="me2">placeholder</span><span class="sy0">::</span>_1<span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">connect</span><span class="br0">&#40;</span>sender<span class="sy0">,</span> <span class="sy0">&amp;</span>Sender<span class="sy0">::</span><span class="me2">valueChanged</span><span class="sy0">,</span> <span class="br0">&#91;</span><span class="sy0">=</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span> <span class="sy0">&amp;</span>newValue<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ receiver<span class="sy0">-&gt;</span><span class="me3">updateValue</span><span class="br0">&#40;</span><span class="st0">&quot;senderValue&quot;</span><span class="sy0">,</span> newValue<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span> <span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h4><span class="mw-headline" id="cons_2">cons</span></h4>
+<ul>
+<li> There is no automatic disconnection when the 'receiver' is destroyed because it's a functor with no QObject. However, since 5.2 there is an overload which adds a "context object". When that object is destroyed, the connection is broken (the context is also used for the thread affinity: the lambda will be called in the thread of the event loop of the object used as context).
+</li>
+</ul>
+<h2><span class="mw-headline" id="Disconnecting_in_Qt5">Disconnecting in Qt5</span></h2>
+<p>As you might expect, there are some changes in how connections can be terminated in Qt5, too.
+</p>
+<h3><span class="mw-headline" id="Old_way">Old way</span></h3>
+<p>You can disconnect in the old way (using SIGNAL, SLOT) but only if 
+</p>
+<ul>
+<li> you connected using the old way, or
+</li>
+<li> if you want to disconnect all the slots from a given signal using wild card character
+</li>
+</ul>
+<h3><span class="mw-headline" id="Symetric_to_the_function_pointer_one">Symetric to the function pointer one</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">disconnect<span class="br0">&#40;</span>sender<span class="sy0">,</span> <span class="sy0">&amp;</span>Sender<span class="sy0">::</span><span class="me2">valueChanged</span><span class="sy0">,</span>
+ receiver<span class="sy0">,</span> <span class="sy0">&amp;</span>Receiver<span class="sy0">::</span><span class="me2">updateValue</span> <span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Only works if you connected with the symmetric call, with function pointers (Or you can also use 0 for wild card)
+In particular, does not work with static function, functors or lambda functions.
+</p>
+<h3><span class="mw-headline" id="New_way_using_QMetaObject::Connection">New way using QMetaObject::Connection</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QMetaObject</span><span class="sy0">::</span><span class="me2">Connection</span> m_connection<span class="sy0">;</span>
+<span class="co1">//…</span>
+m_connection <span class="sy0">=</span> <span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span>…<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="co1">//…</span>
+<span class="kw5">QObject</span><span class="sy0">::</span><span class="me2">disconnect</span><span class="br0">&#40;</span>m_connection<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Works in all cases, including lambda functions or functors.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Asynchronous_made_easier.">Asynchronous made easier.</span></h2>
+<p>With C11 it is possible to keep the code inline
+</p><p><br />
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">void</span> doYourStuff<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QByteArray</span> <span class="sy0">&amp;</span>page<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw5">QTcpSocket</span> <span class="sy0">*</span>socket <span class="sy0">=</span> <span class="kw1">new</span> QTcpSocket<span class="sy0">;</span>
+ socket<span class="sy0">-&gt;</span><span class="me3">connectToHost</span><span class="br0">&#40;</span><span class="st0">&quot;qt.io&quot;</span><span class="sy0">,</span> <span class="nu0">80</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span>socket<span class="sy0">,</span> <span class="sy0">&amp;</span><span class="kw5">QTcpSocket</span><span class="sy0">::</span><span class="me2">connected</span><span class="sy0">,</span> <span class="br0">&#91;</span>socket<span class="sy0">,</span> page<span class="br0">&#93;</span> <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ socket<span class="sy0">-&gt;</span><span class="me3">write</span><span class="br0">&#40;</span><span class="kw5">QByteArray</span><span class="br0">&#40;</span><span class="st0">&quot;GET &quot;</span> <span class="sy0">+</span> page <span class="sy0">+</span> <span class="st0">&quot;&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span>socket<span class="sy0">,</span> <span class="sy0">&amp;</span><span class="kw5">QTcpSocket</span><span class="sy0">::</span><span class="me2">readyRead</span><span class="sy0">,</span> <span class="br0">&#91;</span>socket<span class="br0">&#93;</span> <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">&lt;&lt;</span> <span class="st0">&quot;GOT DATA &quot;</span><span class="sy0">&lt;&lt;</span> socket<span class="sy0">-&gt;</span><span class="me3">readAll</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span>socket<span class="sy0">,</span> <span class="sy0">&amp;</span><span class="kw5">QTcpSocket</span><span class="sy0">::</span><span class="me2">disconnected</span><span class="sy0">,</span> <span class="br0">&#91;</span>socket<span class="br0">&#93;</span> <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">&lt;&lt;</span> <span class="st0">&quot;DISCONNECTED &quot;</span><span class="sy0">;</span>
+ socket<span class="sy0">-&gt;</span><span class="me3">deleteLater</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span>socket<span class="sy0">,</span> <span class="kw2">static_cast</span><span class="sy0">&lt;</span><span class="kw4">void</span> <span class="br0">&#40;</span><span class="kw5">QTcpSocket</span><span class="sy0">::*</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="kw5">QAbstractSocket</span><span class="sy0">::</span><span class="me2">SocketError</span><span class="br0">&#41;</span><span class="sy0">&gt;</span>
+<span class="br0">&#40;</span><span class="sy0">&amp;</span><span class="kw5">QAbstractSocket</span><span class="sy0">::</span><span class="me2">error</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="br0">&#91;</span>socket<span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw5">QAbstractSocket</span><span class="sy0">::</span><span class="me2">SocketError</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">&lt;&lt;</span> <span class="st0">&quot;ERROR &quot;</span> <span class="sy0">&lt;&lt;</span> socket<span class="sy0">-&gt;</span><span class="me3">errorString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ socket<span class="sy0">-&gt;</span><span class="me3">deleteLater</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Here's a QDialog without re-entering the eventloop, and keeping the code where it belongs:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">void</span> Doc<span class="sy0">::</span><span class="me2">saveDocument</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw5">QFileDialog</span> <span class="sy0">*</span>dlg <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QFileDialog</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ dlg<span class="sy0">-&gt;</span><span class="me3">open</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span>dlg<span class="sy0">,</span> <span class="sy0">&amp;</span><span class="kw5">QDialog</span><span class="sy0">::</span><span class="me2">finished</span><span class="sy0">,</span> <span class="br0">&#91;</span>dlg<span class="sy0">,</span> <span class="kw1">this</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">int</span> result<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>result<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw5">QFile</span> file<span class="br0">&#40;</span>dlg<span class="sy0">-&gt;</span><span class="me3">selectedFiles</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">first</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="co1">// …</span>
+ <span class="br0">&#125;</span>
+ dlg<span class="sy0">-&gt;</span><span class="me3">deleteLater</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="br0">&#125;</span></pre></div></div>
+<p>Another example using <a rel="nofollow" class="external text" href="http://blog.nikhilmarathe.me/2011/02/qhttpserver-web-apps-in-qt.html">QHttpServer</a>&#160;: <a rel="nofollow" class="external free" href="http://pastebin.com/pfbTMqUm">http://pastebin.com/pfbTMqUm</a>
+</p>
+<h2><span class="mw-headline" id="Error_reporting">Error reporting</span></h2>
+<p>Tested with GCC.
+</p><p>Fortunately, IDEs like Qt Creator simplifies the function naming
+</p>
+<h3><span class="mw-headline" id="forgot_Q_OBJECT">forgot Q_OBJECT</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QtCore&gt;</span>
+<span class="kw2">class</span> Goo <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span> <span class="br0">&#123;</span>
+ Goo<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> <span class="sy0">&amp;</span>Goo<span class="sy0">::</span><span class="me2">someSignal</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> <span class="sy0">&amp;</span><span class="kw5">QObject</span><span class="sy0">::</span><span class="me2">deleteLater</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="kw2">signals</span><span class="sy0">:</span>
+ <span class="kw4">void</span> someSignal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qobject.<span class="me1">h</span><span class="sy0">:</span> In member function <span class="st0">'void QObject::qt_check_for_QOBJECT_macro(const T&amp;&amp;) const [with T = Goo]'</span><span class="sy0">:</span>
+qobject.<span class="me1">h</span><span class="sy0">:</span><span class="nu0">535</span><span class="sy0">:</span><span class="nu0">9</span><span class="sy0">:</span> instantiated from <span class="st0">'static typename QtPrivate::QEnableIf&lt;((int)
+(QtPrivate::FunctionPointer&lt;Func&gt;::ArgumentCount) &gt;= (int)
+(QtPrivate::FunctionPointer&lt;Func2&gt;::ArgumentCount)), void*&gt;::Type QObject::connect(const typename
+QtPrivate::FunctionPointer&lt;Func&gt;::Object*, Func1, const typename QtPrivate::FunctionPointer&lt;Func2&gt;::Object*,
+Func2, Qt::ConnectionType) [with Func1 = void (Goo::*)(), Func2 = void (QObject::*)(), typename
+QtPrivate::QEnableIf&lt;((int)(QtPrivate::FunctionPointer&lt;Func&gt;::ArgumentCount) &gt;= (int)
+(QtPrivate::FunctionPointer&lt;Func2&gt;::ArgumentCount)), void*&gt;::Type = void*, typename 
+QtPrivate::FunctionPointer&lt;Func&gt;::Object = Goo, typename QtPrivate::FunctionPointer&lt;Func2&gt;::Object = QObject]'</span>
+main.<span class="me1">cc</span><span class="sy0">:</span><span class="nu0">4</span><span class="sy0">:</span><span class="nu0">68</span><span class="sy0">:</span> instantiated from here
+qobject.<span class="me1">h</span><span class="sy0">:</span><span class="nu0">353</span><span class="sy0">:</span><span class="nu0">5</span><span class="sy0">:</span> error<span class="sy0">:</span> <span class="kw4">void</span> value not ignored as it ought to be
+make<span class="sy0">:</span> <span class="st0">''</span><span class="st0">'* [main.o] Error 1</span></pre></div></div>
+<h3><span class="mw-headline" id="Type_mismatch">Type mismatch</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QtCore&gt;</span>
+<span class="kw2">class</span> Goo <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span> <span class="br0">&#123;</span>
+<span class="kw2">Q_OBJECT</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ Goo<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> <span class="sy0">&amp;</span>Goo<span class="sy0">::</span><span class="me2">someSignal</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> <span class="sy0">&amp;</span>Goo<span class="sy0">::</span><span class="me2">someSlot1</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//error</span>
+ <span class="kw2">connect</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> <span class="sy0">&amp;</span>Goo<span class="sy0">::</span><span class="me2">someSignal</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> <span class="sy0">&amp;</span>Goo<span class="sy0">::</span><span class="me2">someSlot2</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//works</span>
+ <span class="br0">&#125;</span>
+<span class="kw2">signals</span><span class="sy0">:</span>
+ <span class="kw4">void</span> someSignal<span class="br0">&#40;</span><span class="kw5">QString</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw4">void</span> someSlot1<span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> someSlot2<span class="br0">&#40;</span><span class="kw5">QVariant</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qobject.<span class="me1">h</span><span class="sy0">:</span> In <span class="kw4">static</span> member function <span class="st0">'static typename QtPrivate::QEnableIf&lt;((int)
+(QtPrivate::FunctionPointer&lt;Func&gt;::ArgumentCount) &gt;= (int)
+(QtPrivate::FunctionPointer&lt;Func2&gt;::ArgumentCount)), void*&gt;::Type QObject::connect(const typename
+QtPrivate::FunctionPointer&lt;Func&gt;::Object*, Func1, const typename QtPrivate::FunctionPointer&lt;Func2&gt;::Object*,
+Func2, Qt::ConnectionType) [with Func1 = void (Goo::*)(QString), Func2 = void (Goo::*)(int), typename
+QtPrivate::QEnableIf&lt;((int)(QtPrivate::FunctionPointer&lt;Func&gt;::ArgumentCount) &gt;= (int)
+(QtPrivate::FunctionPointer&lt;Func2&gt;::ArgumentCount)), void*&gt;::Type = void*, typename 
+QtPrivate::FunctionPointer&lt;Func&gt;::Object = Goo, typename QtPrivate::FunctionPointer&lt;Func2&gt;::Object = Goo]'</span><span class="sy0">:</span>
+main.<span class="me1">cc</span><span class="sy0">:</span><span class="nu0">6</span><span class="sy0">:</span><span class="nu0">62</span><span class="sy0">:</span> instantiated from here
+qobject.<span class="me1">h</span><span class="sy0">:</span><span class="nu0">538</span><span class="sy0">:</span><span class="nu0">163</span><span class="sy0">:</span> error<span class="sy0">:</span> no type named <span class="st0">'IncompatibleSignalSlotArguments'</span> in <span class="st0">'struct 
+QtPrivate::CheckCompatibleArguments&lt;QtPrivate::List&lt;QString, void&gt;, QtPrivate::List&lt;int, void&gt;, true&gt;'</span>
+qobject.<span class="me1">h</span><span class="sy0">:</span> In <span class="kw4">static</span> member function <span class="st0">'static void QtPrivate::FunctionPointer&lt;Ret (Obj::*)(Arg1)&gt;::call
+(QtPrivate::FunctionPointer&lt;Ret (Obj::*)(Arg1)&gt;::Function, Obj*, void*) [with Args = QtPrivate::List&lt;QString, void&gt;,
+Obj = Goo, Ret = void, Arg1 = int, QtPrivate::FunctionPointer&lt;Ret (Obj::*)(Arg1)&gt;::Function = void (Goo::*)(int)]'</span><span class="sy0">:</span>
+qobject.<span class="me1">h</span><span class="sy0">:</span><span class="nu0">501</span><span class="sy0">:</span><span class="nu0">13</span><span class="sy0">:</span> instantiated from <span class="st0">'void QObject::QSlotObject&lt;Func, Args&gt;::call(QObject*, void**) [with Func =
+void (Goo::*)(int), Args = QtPrivate::List&lt;QString, void&gt;, QObject = QObject]'</span>
+main.<span class="me1">cc</span><span class="sy0">:</span><span class="nu0">14</span><span class="sy0">:</span><span class="nu0">2</span><span class="sy0">:</span> instantiated from here
+qobject.<span class="me1">h</span><span class="sy0">:</span><span class="nu0">109</span><span class="sy0">:</span><span class="nu0">13</span><span class="sy0">:</span> error<span class="sy0">:</span> cannot convert <span class="st0">'QtPrivate::RemoveRef&lt;QString&gt;::Type'</span> to <span class="st0">'int'</span> in argument passing
+make<span class="sy0">:</span> <span class="sy0">***</span> <span class="br0">&#91;</span>main.<span class="me1">o</span><span class="br0">&#93;</span> Error <span class="nu0">1</span></pre></div></div>
+<h2><span class="mw-headline" id="Open_Questions">Open Questions</span></h2>
+<h3><span class="mw-headline" id="Default_arguments_in_slot">Default arguments in slot</span></h3>
+<p>if you have code like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> A <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span> <span class="br0">&#123;</span> <span class="kw2">Q_OBJECT</span>
+ <span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> someSlot<span class="br0">&#40;</span><span class="kw4">int</span> foo <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>The old method allows you to connect that slot to a signal that does not have arguments.
+But I cannot know with template code if a function has default arguments or not.
+So this feature is disabled.
+</p><p>There was an implementation that falls back to the old method if there are more arguments in the slot than in the signal.
+This however is quite inconsistent, since the old method does not perform type-checking or type conversion. It was removed from the patch that has been merged.
+</p>
+<h3><span class="mw-headline" id="Overload">Overload</span></h3>
+<p>As you might see in the example, connecting to QAbstractSocket::error is not really beautiful since error has an overload, and taking the address of an overloaded function requires explicit casting.
+</p><p>Some macro could help (with c11 or <i>typeof</i> extensions)
+</p><p>The best thing is probably to recommend not to overload signals or slots …
+</p><p>… but we have been adding overloads in past minor releases of Qt because taking the address of a function was not a use case we support. But now this would be impossible without breaking the source compatibility.
+</p>
+<h3><span class="mw-headline" id="Disconnect">Disconnect</span></h3>
+<p>Should QMetaObject::Connection have a disconnect() function?
+</p><p>The other problem is that there is no automatic disconnection for some object in the closure if we use the syntax that take a closure.
+One could add a list of object in the disconnection, or a new function like QMetaObject::Connection::require
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">auto</span> c <span class="sy0">=</span> <span class="kw2">connect</span><span class="br0">&#40;</span>sender<span class="sy0">,</span> <span class="sy0">&amp;</span>Sender<span class="sy0">::</span><span class="me2">valueChanged</span><span class="sy0">,</span> <span class="br0">&#91;</span><span class="sy0">=</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span> <span class="sy0">&amp;</span>newValue<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ receiver<span class="sy0">-&gt;</span><span class="me3">updateValue</span><span class="br0">&#40;</span><span class="st0">&quot;senderValue&quot;</span><span class="sy0">,</span> newValue<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span> <span class="sy0">,</span> <span class="kw5">QList</span><span class="sy0">&lt;</span><span class="kw5">QObject</span><span class="sy0">&gt;</span> <span class="br0">&#123;</span> receiver <span class="br0">&#125;</span> <span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// solution 1</span>
+c.<span class="me1">require</span><span class="br0">&#40;</span>receiver<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// solution 2</span></pre></div></div>
+<h3><span class="mw-headline" id="Callbacks">Callbacks</span></h3>
+<p>Function such as QHostInfo::lookupHost or QTimer::singleShot or QFileDialog::open take a QObject receiver and char* slot.
+This do not work for the new method.
+If one wants to do callback c<i>+ way, one should use std::function (or tr1)</i>
+But we cannot use STL types in our ABI, so a QFunction should be done to copy std::function.
+This is anyway irrelevant for QObject connections.
+</p>
+<h2><span class="mw-headline" id="History">History</span></h2>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.315 seconds
+Real time usage: 0.337 seconds
+Preprocessor visited node count: 318/1000000
+Preprocessor generated node count: 969/1000000
+Post‐expand include size: 2259/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1170-0!*!0!!en!*!* and timestamp 20151105080343 and revision id 19173
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index6e41.html?title=New_Signal_Slot_Syntax&amp;oldid=19173">http://wiki.qt.io/index.php?title=New_Signal_Slot_Syntax&amp;oldid=19173</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Developing_Qt__Qt_Planning__Qt_Public_Roadmap.html?title=Category:Developing_Qt::Qt_Planning::Qt_Public_Roadmap&amp;action=edit&amp;redlink=1" class="new" title="Category:Developing Qt::Qt Planning::Qt Public Roadmap (page does not exist)">Developing Qt::Qt Planning::Qt Public Roadmap</a></li><li><a href="Category_Developing_Qt__Qt_Planning.html" title="Category:Developing Qt::Qt Planning">Developing Qt::Qt Planning</a></li><li><a href="Category_Developing_Qt.html" title="Category:Developing Qt">Developing Qt</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=6424d6b1d2624db2&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="New_Signal_Slot_Syntax.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_New_Signal_Slot_Syntax.html?title=Talk:New_Signal_Slot_Syntax&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="New_Signal_Slot_Syntax.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index0db6.html?title=New_Signal_Slot_Syntax&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index336e.html?title=New_Signal_Slot_Syntax&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/New_Signal_Slot_Syntax.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/New_Signal_Slot_Syntax.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index345e.html?title=New_Signal_Slot_Syntax&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index6e41.html?title=New_Signal_Slot_Syntax&amp;oldid=19173" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexecbe.html?title=New_Signal_Slot_Syntax&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 21 August 2015, at 15:29.</li>
+											<li id="footer-info-viewcount">This page has been accessed 33,350 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":226});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/New_signal_slot_syntax by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:19:00 GMT -->
+</html>

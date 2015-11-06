@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Qt_Serial_Port/ru&oldid=16834 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:29:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Qt Serial Port/ru - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=ext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Qt_Serial_Port/ru","wgTitle":"Qt Serial Port/ru","wgCurRevisionId":16834,"wgRevisionId":16834,"wgArticleId":1845,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Qt_Serial_Port/ru","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-bash {line-height: normal;}
+.source-bash li, .source-bash pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for bash
+ * CSS class: source-bash, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.bash.source-bash .de1, .bash.source-bash .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.bash.source-bash  {font-family:monospace;}
+.bash.source-bash .imp {font-weight: bold; color: red;}
+.bash.source-bash li, .bash.source-bash .li1 {font-weight: normal; vertical-align:top;}
+.bash.source-bash .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.bash.source-bash .li2 {font-weight: bold; vertical-align:top;}
+.bash.source-bash .kw1 {color: #000000; font-weight: bold;}
+.bash.source-bash .kw2 {color: #c20cb9; font-weight: bold;}
+.bash.source-bash .kw3 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .co0 {color: #666666; font-style: italic;}
+.bash.source-bash .co1 {color: #800000;}
+.bash.source-bash .co2 {color: #cc0000; font-style: italic;}
+.bash.source-bash .co3 {color: #000000; font-weight: bold;}
+.bash.source-bash .co4 {color: #666666;}
+.bash.source-bash .es1 {color: #000099; font-weight: bold;}
+.bash.source-bash .es2 {color: #007800;}
+.bash.source-bash .es3 {color: #007800;}
+.bash.source-bash .es4 {color: #007800;}
+.bash.source-bash .es5 {color: #780078;}
+.bash.source-bash .es_h {color: #000099; font-weight: bold;}
+.bash.source-bash .br0 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .sy0 {color: #000000; font-weight: bold;}
+.bash.source-bash .st0 {color: #ff0000;}
+.bash.source-bash .st_h {color: #ff0000;}
+.bash.source-bash .nu0 {color: #000000;}
+.bash.source-bash .re0 {color: #007800;}
+.bash.source-bash .re1 {color: #007800;}
+.bash.source-bash .re2 {color: #007800;}
+.bash.source-bash .re4 {color: #007800;}
+.bash.source-bash .re5 {color: #660033;}
+.bash.source-bash .ln-xtra, .bash.source-bash li.ln-xtra, .bash.source-bash div.ln-xtra {background-color: #ffc;}
+.bash.source-bash span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Qt_Serial_Port_ru skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Qt Serial Port/ru</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="http://wiki.qt.io/Qt_Serial_Port" title="Qt Serial Port">Qt Serial Port</a></span><div id="mw-revision-info">Revision as of 19:37, 20 May 2015 by <a href="http://wiki.qt.io/index.php?title=User:Julienw&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Julienw (page does not exist)">Julienw</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:Julienw&amp;action=edit&amp;redlink=1" class="new" title="User talk:Julienw (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Julienw" title="Special:Contributions/Julienw">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Qt_Serial_Port/ru&amp;diff=prev&amp;oldid=16834" title="Qt Serial Port/ru">diff</a>) <a href="http://wiki.qt.io/index.php?title=Qt_Serial_Port/ru&amp;direction=prev&amp;oldid=16834" title="Qt Serial Port/ru">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="http://wiki.qt.io/index.php?title=Qt_Serial_Port/ru&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="http://wiki.qt.io/Updated_pages" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table><a href="http://wiki.qt.io/QtSerialPort" title="QtSerialPort" class="mw-redirect">English</a>
+<p>| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_German&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort German (page does not exist)">Deutsch</a>
+| <b>Русский</b>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Polish&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Polish (page does not exist)">Polski</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Dutch&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Dutch (page does not exist)">Nederlands</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Portuguese&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Portuguese (page does not exist)">Português</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Spanish&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Spanish (page does not exist)">Español</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Ukrainian&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Ukrainian (page does not exist)">Українською</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Persian&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Persian (page does not exist)">فارسی</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Arabic&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Arabic (page does not exist)">عربي</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Korean&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Korean (page does not exist)">한국어</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Finnish&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Finnish (page does not exist)">Suomi</a>
+| <a href="http://wiki.qt.io/index.php?title=Wiki_Home_Catalan&amp;action=edit&amp;redlink=1" class="new" title="Wiki Home Catalan (page does not exist)">Català</a>
+| <a href="http://wiki.qt.io/Wiki_Home_Italian" title="Wiki Home Italian" class="mw-redirect">Italiano</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Japanese&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Japanese (page does not exist)">日本語</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_French&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort French (page does not exist)">Français</a>
+| <a href="http://wiki.qt.io/Wiki_Home_Hungarian" title="Wiki Home Hungarian" class="mw-redirect">Magyar</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Kannada&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Kannada (page does not exist)">ಕನ್ನಡ</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Hindi&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Hindi (page does not exist)">हिन्दी</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Thai&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Thai (page does not exist)">ภาษาไทย</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_SimplifiedChinese&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort SimplifiedChinese (page does not exist)">简体中文</a>
+| <a href="http://wiki.qt.io/index.php?title=QtSerialPort_Bulgarian&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Bulgarian (page does not exist)">Български</a>
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#QtSerialPort"><span class="tocnumber">1</span> <span class="toctext">QtSerialPort</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.D0.9D.D0.BE.D0.B2.D0.BE.D1.81.D1.82.D0.B8"><span class="tocnumber">1.1</span> <span class="toctext">Новости</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.D0.9A.D1.80.D0.B0.D1.82.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5"><span class="tocnumber">1.2</span> <span class="toctext">Краткое описание</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.D0.98.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8F"><span class="tocnumber">1.3</span> <span class="toctext">История</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.D0.A4.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C"><span class="tocnumber">1.4</span> <span class="toctext">Функциональность</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.B4.D0.B0"><span class="tocnumber">1.5</span> <span class="toctext">Просмотр исходного кода</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.B4.D0.B0"><span class="tocnumber">1.6</span> <span class="toctext">Получение исходного кода</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#.D0.A1.D0.B1.D0.BE.D1.80.D0.BA.D0.B0_.D0.B8_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0"><span class="tocnumber">1.7</span> <span class="toctext">Сборка и установка</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5"><span class="tocnumber">1.8</span> <span class="toctext">Использование</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#.D0.93.D0.B5.D0.BD.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.B4.D0.BE.D0.BA.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D0.B0.D1.86.D0.B8.D0.B8"><span class="tocnumber">1.9</span> <span class="toctext">Генерация документации</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#.D0.94.D0.BB.D1.8F_.D0.B6.D0.B5.D0.BB.D0.B0.D1.8E.D1.89.D0.B8.D1.85_.D0.BF.D1.80.D0.B8.D0.BD.D1.8F.D1.82.D1.8C_.D1.83.D1.87.D0.B0.D1.81.D1.82.D0.B8.D0.B5_.D0.B2_.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B5"><span class="tocnumber">1.10</span> <span class="toctext">Для желающих принять участие в разработке</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#.D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B"><span class="tocnumber">1.11</span> <span class="toctext">Возможные проблемы</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#.D0.9E.D1.82.D1.81.D0.BB.D0.B5.D0.B6.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA"><span class="tocnumber">1.12</span> <span class="toctext">Отслеживание ошибок</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="QtSerialPort">QtSerialPort</span></h1>
+<p><i><b>Примечание:</b> Эта страница в стадии разработки, требует пересмотра.</i>
+</p>
+<h2><span class="mw-headline" id=".D0.9D.D0.BE.D0.B2.D0.BE.D1.81.D1.82.D0.B8">Новости</span></h2>
+<p>Заполнить
+</p><p>26.02.2013 - Проект перемещен из песочницы в основную ветвь Qt5!
+</p>
+<h2><span class="mw-headline" id=".D0.9A.D1.80.D0.B0.D1.82.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5">Краткое описание</span></h2>
+<p>Модуль <b>QtSerialPort</b> - это дополнение к библиотеке Qt5, которое предоставляет единый интерфейс для работы как аппаратными, так и с виртуальными последовательными портами.
+</p><p><i><b>Примечание:</b> Также добавлена поддержка и библиотеки Qt4.</i>
+</p><p>Последовательный интерфейс благодаря своей простоте и надежности до сих пор популярен в промышленности, при разработке встраиваемых устройств, робототехнике и т.п.
+</p><p>Использование модуля <b>QtSerialPort</b> позволяет разработчикам значительно сократить время на реализацию Qt-приложений, требующих доступ к последовательным интерфейсам.
+</p>
+<h2><span class="mw-headline" id=".D0.98.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8F">История</span></h2>
+<p>Модуль <b>QtSerialPort</b> берет свое начало из библиотеки <a rel="nofollow" class="external text" href="http://gitorious.org/qserialdevice/qserialdevice/trees/2.0">QSerialDevice</a> (ветка 2.0), которая недавно была перемещена в репозиторий на <a rel="nofollow" class="external free" href="https://codereview.qt.io/">https://codereview.qt.io/</a>
+</p><p>Это было сделано в надежде на более открытую и свободную разработку, а также на помощь сообщества, которое заинтересовано в развитии данного модуля.
+</p>
+<h2><span class="mw-headline" id=".D0.A4.D1.83.D0.BD.D0.BA.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C">Функциональность</span></h2>
+<p>В настоящее время API модуля содержит два класса <b>SerialPort</b> и <b>SerialPortInfo</b>.
+</p>
+<h3><span class="mw-headline" id="SerialPort">SerialPort</span></h3>
+<p>Класс <b>SerialPort</b> является основным классом модуля и предоставляет набор основных методов и свойств для доступа к ресурсам последовательных портов.
+</p><p>Поддерживает следующие операционные системы:
+</p><p>{background:#009900}. |<i>. Операционная система |</i>. Поддержка |<i>. Примечание</i>
+|
+|Windows NT/2K/XP/Vista/7
+|ДА
+|Полная поддержка
+|
+|Windows CE
+|ДА
+|Тестировалось только на 5 и 6 платформах в эмуляторе
+|
+|Gnu/Linux
+|ДА
+|Полная поддержка
+|
+|MacOSX
+|ДА
+|Полная поддержка
+|
+|Другие Unix
+|ДА
+|Все POSIX совместимые
+|
+|Symbian<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup>
+|ДА
+|Частично, тестировалось только в эмуляторе (*)
+|
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="SerialPortInfo">SerialPortInfo</span></h3>
+<p>Класс <b>SerialPortInfo</b> является вспомогательным. Он позволяет получить информацию о имеющихся в системе последовательных портах.
+</p><p>Поддерживает следующие операционные системы:
+</p><p>{background:#009900}. |<i>. Операционная система |</i>. Поддержка |<i>. Примечание</i>
+|
+|Windows NT/2K/XP/Vista/7
+|ДА
+|Полная поддержка (с использованием SetupAPI)
+|
+|Windows CE
+|ДА
+|Тестировалось только на 5 и 6 платформах в эмуляторе
+|
+|Gnu/Linux
+|ДА
+|Полная поддержка (с использованием libudev или простой перебор в /dev)
+|
+|MacOSX
+|ДА
+|Полная поддержка
+|
+|Другие Unix
+|ДА
+|Все POSIX совместимые (только простой перебор в /dev)
+|
+|Symbian<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup>
+|ДА
+|Частично, тестировалось только в эмуляторе (<b>)</b>
+|
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id=".D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.B4.D0.B0">Просмотр исходного кода</span></h2>
+<p>Недавно запущено публичное зеркало репозитория проекта на <a rel="nofollow" class="external text" href="https://qt.gitorious.org/qt/qtserialport">Gitorious</a>
+</p><p>Теперь каждый желающий может свободно и оперативно через WEB браузер просмотреть последние изменения в исходном коде проекта.
+</p>
+<h2><span class="mw-headline" id=".D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8.D1.81.D1.85.D0.BE.D0.B4.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.B4.D0.B0">Получение исходного кода</span></h2>
+<h3><span class="mw-headline" id=".D0.94.D0.BB.D1.8F_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9">Для пользователей</span></h3>
+<p>Для получения текущего снимка исходного кода репозитория в виде архива достаточно из WEB браузера перейти по <a rel="nofollow" class="external text" href="http://qt.gitorious.org/qt/qtserialport/archive-tarball/stable">этой</a> ссылке, загрузка начнется автоматически.
+</p><p>Для желающих использовать Git можно выполнить следующую команду:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">git clone</span> git:<span class="sy0">//</span>gitorious.org<span class="sy0">/</span>qt<span class="sy0">/</span>qtserialport.git</pre></div></div>
+<h3><span class="mw-headline" id=".D0.94.D0.BB.D1.8F_.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.87.D0.B8.D0.BA.D0.BE.D0.B2">Для разработчиков</span></h3>
+<p>Получить исходный код и внести свой вклад в разработку могут только зарегистрированные в Gerrit разработчики, используя Git (<a rel="nofollow" class="external text" href="http://wiki.qt.io/Setting_up_Gerrit">настройка Gerrit</a>).
+</p><p>Получить исходный код можно так:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">git clone</span> ssh:<span class="sy0">//&lt;</span>username<span class="sy0">&gt;@</span>codereview.qt.io:<span class="nu0">29418</span><span class="sy0">/</span>qt<span class="sy0">/</span>qtserialport.git</pre></div></div>
+<p>где username - логин зарегистрированного в Gerrit пользователя
+</p>
+<h2><span class="mw-headline" id=".D0.A1.D0.B1.D0.BE.D1.80.D0.BA.D0.B0_.D0.B8_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0">Сборка и установка</span></h2>
+<p><i><b>Примечание:</b> При сборке лучше использовать "теневую сборку", когда для результатов сборки используется отдельная директория. Это позволяет оставить директорию с исходными кодами в нетронутом виде, не засоренную продуктами сборки.</i>
+</p><p>Перед сборкой необходимо:
+<b> установить Perl<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup></b>
+</p>
+<ul>
+<li> убедиться что корректно настроены переменные окружения:
+</li>
+</ul>
+<p>'<b><i> правильно указаны пути к установленной Qt4/Qt5</i></b>
+'<b><i> правильно указаны пути к используемым компиляторам</i></b>
+'<b><i> правильно указаны пути к Perl<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup></i></b>
+</p>
+<ul>
+<li> предварительно создать директорию для сборки которая находится на том же уровне, что и директория с исходными кодами
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">/</span>
+<span class="sy0">|-</span> <span class="sy0">/</span>serialport<span class="sy0">-</span>src
+<span class="sy0">|-</span> <span class="sy0">/</span>serialport<span class="sy0">-</span>build</pre></div></div>
+<p>Ниже приведены рекомендуемые процедуры сборки библиотеки для Qt4/Qt5.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw3">cd</span> serialport-build
+qmake ..<span class="sy0">/</span>serialport-src<span class="sy0">/</span>qtserialport.pro
+<span class="kw2">make</span> <span class="br0">&#91;</span>или <span class="st_h">'nmake'</span> для MSVC компилятора, или <span class="st_h">'mingw32-make'</span> для MinGW компилятора<span class="br0">&#93;</span>
+<span class="kw2">make</span> <span class="kw2">install</span> <span class="br0">&#91;</span>или <span class="st_h">'nmake install'</span> для MSVC компилятора, или <span class="st_h">'mingw32-make install'</span> для MinGW компилятора<span class="br0">&#93;</span></pre></div></div>
+<p><i><b>Примечание:</b> В *nix системах для установки возможно потребуются права суперпользователя:</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="bash source-bash"><pre class="de1"><span class="kw2">sudo</span> <span class="kw2">make</span> <span class="kw2">install</span></pre></div></div>
+<h2><span class="mw-headline" id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5">Использование</span></h2>
+<p>При использовании библиотеки необходимо ее подключить в <i>*.pro</i> файл пользовательского проекта, это действие для Qt4 и Qt5 немного отличается:
+</p>
+<h3><span class="mw-headline" id="Qt4">Qt4</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">CONFIG <span class="st0">''</span><span class="sy0">=</span> serialport</pre></div></div>
+<h3><span class="mw-headline" id="Qt5">Qt5</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT<span class="st0">''</span><span class="sy0">=</span> serialport</pre></div></div>
+<p>Подключение заголовочных файлов от <b>QtSerialPort</b> в пользовательский проект для Qt4 и Qt5 одинаковое:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">…
+<span class="co2">#include &lt;QSerialPort&gt;</span>
+<span class="co2">#include &lt;QSerialPortInfo&gt;</span>
+…</pre></div></div>
+<h3><span class="mw-headline" id=".D0.9F.D1.80.D0.BE.D1.81.D1.82.D0.BE.D0.B9_.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D1.80">Простой пример</span></h3>
+<p>Ниже представлен простейший пример реализации <i>main.cpp</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QCoreApplication&gt;</span>
+<span class="co2">#include &lt;QDebug&gt;</span>
+&#160;
+<span class="co2">#include &lt;QSerialPort&gt;</span>
+<span class="co2">#include &lt;QSerialPortInfo&gt;</span>
+&#160;
+QT_USE_NAMESPACE
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw5">QCoreApplication</span> a<span class="br0">&#40;</span>argc<span class="sy0">,</span> argv<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Example use SerialPortInfo</span>
+ <span class="kw2">foreach</span> <span class="br0">&#40;</span><span class="kw4">const</span> SerialPortInfo <span class="sy0">&amp;</span>info<span class="sy0">,</span> SerialPortInfo<span class="sy0">::</span><span class="me2">availablePorts</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Name&#160;: &quot;</span> <span class="sy0">&lt;&lt;</span> info.<span class="me1">portName</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Description&#160;: &quot;</span> <span class="sy0">&lt;&lt;</span> info.<span class="me1">description</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Manufacturer: &quot;</span> <span class="sy0">&lt;&lt;</span> info.<span class="me1">manufacturer</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Example use SerialPort</span>
+ SerialPort serial<span class="sy0">;</span>
+ serial.<span class="me1">setPort</span><span class="br0">&#40;</span>info<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>serial.<span class="me1">open</span><span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">::</span><span class="me2">ReadWrite</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+ serial.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw1">return</span> a.<span class="me1">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id=".D0.93.D0.B5.D0.BD.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.B4.D0.BE.D0.BA.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D0.B0.D1.86.D0.B8.D0.B8">Генерация документации</span></h2>
+<p>Нет необходимости в сборке документации, потому что текущий снимок документации находится <a rel="nofollow" class="external text" href="http://doc-snapshot.qt.io/qt5-stable/qtserialport/qtserialport-index.html">тут</a>.
+</p>
+<h2><span class="mw-headline" id=".D0.94.D0.BB.D1.8F_.D0.B6.D0.B5.D0.BB.D0.B0.D1.8E.D1.89.D0.B8.D1.85_.D0.BF.D1.80.D0.B8.D0.BD.D1.8F.D1.82.D1.8C_.D1.83.D1.87.D0.B0.D1.81.D1.82.D0.B8.D0.B5_.D0.B2_.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B5">Для желающих принять участие в разработке</span></h2>
+<p>Вся разработка ведется через <a rel="nofollow" class="external text" href="http://wiki.qt.io/Setting_up_Gerrit">Gerrit</a>, поэтому желающие включиться в процесс разработки должны иметь там учетную запись.
+</p><p>Подробнее о процессе регистрации и разработки можно прочитать <a rel="nofollow" class="external text" href="http://wiki.qt.io/Code_Reviews">здесь</a>
+</p>
+<h2><span class="mw-headline" id=".D0.92.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B">Возможные проблемы</span></h2>
+<p>Заполнить
+</p>
+<h2><span class="mw-headline" id=".D0.9E.D1.82.D1.81.D0.BB.D0.B5.D0.B6.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA">Отслеживание ошибок</span></h2>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Для OS Symbian разработка модуля приостановлена в связи с отсутствием разработчиков, а также с тем фактом, что Nokia отказалась от этой платформы и не будет включать ее поддержку в Qt5._</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Для OS Symbian разработка модуля приостановлена в связи с отсутствием разработчиков, а также с тем фактом, что Nokia отказалась от этой платформы и не будет включать ее поддержку в Qt5._</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Perl необходим только в случае использования Qt5, подробнее см. <a rel="nofollow" class="external text" href="http://wiki.qt.io/Building_Qt_5_from_Git">тут</a>. При использовании Qt4 просто пропустите этот пункт.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Perl необходим только в случае использования Qt5, подробнее см. <a rel="nofollow" class="external text" href="http://wiki.qt.io/Building_Qt_5_from_Git">тут</a>. При использовании Qt4 просто пропустите этот пункт.</span>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.198 seconds
+Real time usage: 0.217 seconds
+Preprocessor visited node count: 262/1000000
+Preprocessor generated node count: 642/1000000
+Post‐expand include size: 1276/2097152 bytes
+Template argument size: 414/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1845-0!*!0!!en!*!* and timestamp 20151104135338 and revision id 16834
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Qt_Serial_Port/ru&amp;oldid=16834">http://wiki.qt.io/index.php?title=Qt_Serial_Port/ru&amp;oldid=16834</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:Articles_needing_cleanup" title="Category:Articles needing cleanup">Articles needing cleanup</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Qt+Serial+Port%2Fru" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Qt_Serial_Port/ru"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Qt_Serial_Port/ru&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Qt_Serial_Port/ru" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Qt_Serial_Port/ru&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Qt_Serial_Port/ru&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Qt_Serial_Port/ru" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Qt_Serial_Port/ru" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Qt_Serial_Port/ru&amp;oldid=16834&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Qt_Serial_Port/ru&amp;oldid=16834" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Qt_Serial_Port/ru&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 20 May 2015, at 19:37.</li>
+											<li id="footer-info-viewcount">This page has been accessed 6,500 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":350});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Qt_Serial_Port/ru&oldid=16834 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:29:50 GMT -->
+</html>

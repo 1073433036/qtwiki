@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:58:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for PySide Binding Generation Tutorial: Module 5 Building the generator - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator","wgTitle":"PySide Binding Generation Tutorial: Module 5 Building the generator","wgCurRevisionId":15751,"wgRevisionId":0,"wgArticleId":1263,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-PySide_Binding_Generation_Tutorial_Module_5_Building_the_generator skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for PySide Binding Generation Tutorial: Module 5 Building the generator</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator" title="PySide Binding Generation Tutorial: Module 5 Building the generator">PySide Binding Generation Tutorial: Module 5 Building the generator</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">
+
+
+[[Category:LanguageBindings::PySide::Shiboken::PySide Binding Generation Tutorial]]
+
+
+'''English''' [http://qt-devnet.developpez.com/tutoriels/python/pyside/binding-shiboken/#LVII French]
+
+* '''Note:''' this article is a member of the multipart [https://wiki.qt.io/PySide_Binding_Generation_Tutorial PySide Binding Generation Tutorial]
+
+= PySide Binding Generation Tutorial =
+
+== Three Steps to Build the Binding ==
+
+As mentioned before, the build system used must perform the following tasks in the correct order:
+
+* Gather data about locations of headers and needed type systems from other projects.
+* Run the generator with the correct parameters.
+* Compile and link the binding.
+
+== Gather Information ==
+
+There are two options to gather data about locations of headers and needed type systems:
+
+=== Collect Information with pkg-config ===
+
+The Qt bindings include compile and build information through the pkg-config mechanism. The pkg-config name for Qt Python bindings is '''pyside''' and a simple '''pkg-config pyside —cflags —libs''' will retrieve information required to build the new binding.
+
+The Qt bindings file '''pyside.pc''' for the use of pkg-config requires Qt's '''.pc''' files to be installed. If the library is in an unusual location, e.g. '''/opt/qt47''', remember to export it to the '''PKG_CONFIG_PATH''' environment variable. For example: 
+&lt;code>export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/qt47/lib/pkgconfig&lt;/code>
+
+Information is also available through pkg-config: the '''typesystemdir''' variable. It is used like this: '''pkg-config pyside —variable=typesystemdir'''
+This provides information where to find the type system files used to create the Qt bindings. As mentioned before, the binding being created needs this to complement its own binding information for the generation proccess.
+
+Information from the '''Shiboken''' binding generator is also needed for the build, it's pkg-config name is '''shiboken'''. More details on this later.
+
+=== Collect Information with CMake ===
+
+When building your binding with CMake the relevant information can be included from your project's &lt;code>CMakeLists.txt&lt;/code> using:
+
+&lt;code>
+find_package(Shiboken REQUIRED)
+find_package(PySide REQUIRED)
+&lt;/code>
+
+Requiring the '''Shiboken''' and '''PySide''' packages will set the values of a number of variables, according to '''PySideConfig.cmake''' file:
+
+&lt;code>
+PYSIDE_INCLUDE_DIR - Directories to include to use PySide
+PYSIDE_LIBRARY - Files to link against to use PySide
+PYSIDE_PYTHONPATH - Path to where the PySide Python module files could be found
+PYSIDE_TYPESYSTEMS - Type system files that should be used by other bindings extending PySide
+&lt;/code>
+
+Similarly '''ShibokenConfig.cmake''' provides needed information:
+
+&lt;code>
+SHIBOKEN_INCLUDE_DIR - Directories to include to use SHIBOKEN
+SHIBOKEN_LIBRARIES - Files to link against to use SHIBOKEN
+SHIBOKEN_BUILD_TYPE - Tells if Shiboken was compiled in Release or Debug mode.
+SHIBOKEN_PYTHON_INTERPRETER - Python interpreter (regular or debug) to be used with the bindings.
+SHIBOKEN_PYTHON_LIBRARIES - Python libraries (regular or debug) Shiboken is linked against.
+&lt;/code>
+
+== Run the Generator ==
+
+The generator is called with the following parameters and options:
+
+&lt;code>
+generatorrunner —generatorSet=shiboken  global_header.h  —include-paths=$(PATHS_TO_HEADERS))  —typesystem-paths=$(PATHS_TO_TYPESYSTEMS)  
+—output-directory=.  typesystem.xml
+&lt;/code>
+
+Note that the variables for include and type system paths could be determined at build time with the pkg-config tool or with information provided by CMake configuration files.
+
+== Build ==
+
+This section will alternate in presenting the two build methods: Makefile and CMake.
+
+=== The Makefile Version ===
+
+Below is a plain Makefile for the binding project.
+
+&lt;code>foobinding-makefile/Makefile&lt;/code>:
+
+&lt;code>
+LIBFOO_DIR = `pwd`/../libfoo
+LIBS = `pkg-config pyside —libs`  -L$(LIBFOO_DIR) -lfoo
+CXXFLAGS = -I/usr/share/qt4/mkspecs/linux-g++ -I.  -I$(LIBFOO_DIR)  -I`pwd`/foo  -I`pkg-config —variable=includedir pyside`/QtCore/  
+-I`pkg-config —variable=includedir QtCore`  -I`pkg-config —variable=includedir QtCore`/..  -I`pkg-config —variable=includedir QtGui`  
+`pkg-config pyside —cflags`
+
+QT4TYPESYSTEM_DIR = `pkg-config pyside —variable=typesystemdir`
+QT4HEADER_DIRS = `pkg-config —variable=includedir QtCore`:`pkg-config —variable=includedir QtCore`/..
+PYSIDE_PYTHONPATH = `pkg-config —variable=pythonpath PySide`
+PYTHON_INTERPRETER = `pkg-config —variable=python_interpreter shiboken`
+
+all: generate compile link
+
+generate:
+ generatorrunner —generatorSet=shiboken  global.h  —include-paths=$(LIBFOO_DIR):$(QT4HEADER_DIRS):/usr/include  
+—typesystem-paths=.:$(QT4TYPESYSTEM_DIR)  —output-directory=.  typesystem_foo.xml
+
+compile:
+ g++ foo/foo_module_wrapper.cpp foo/math_wrapper.cpp -Wall -fPIC $(CXXFLAGS) -c
+
+link:
+ g++ foo_module_wrapper.o math_wrapper.o $(LIBS) -fPIC -shared -Wl,-soname,foo.so -o foo.so
+
+test:
+ LD_LIBRARY_PATH=$(LIBFOO_DIR):$(LD_LIBRARY_PATH) PYTHONPATH=$(PYSIDE_PYTHONPATH):$(PYTHONPATH) $(PYTHON_INTERPRETER) -c  
+"import foo; m = foo.Math(); print '5 squared is d' m.squared(5)"
+
+clean:
+ rm -rf '''.o'''.so '''.?pp'''.log '''.log foo/'''
+&lt;/code>
+
+Keep in mind that the Makefile above expects the '''libfoo''' and '''foobinding-makefile''' directories to be in the same level in the directory hierarchy. Remember to change any path references accordingly if you elect to change things.
+
+==== Build and Test ====
+
+Now generate, compile and link the binding with make:
+
+&lt;code>
+cd foobinding-makefile
+make
+make test
+&lt;/code>
+
+The '''make test''' causes the Python interpreter to run the line 
+&lt;code>import foo; m = foo.Math(); print '5 squared is d' m.squared(5)&lt;/code>
+, which will import the binding module, instantiate the class from it, run a method and print its result (which should be 25).
+
+=== The CMake Version ===
+
+&lt;code>foobinding-cmake/CMakeLists.txt&lt;/code>:
+
+&lt;code>
+project(foobinding)
+
+cmake_minimum_required(VERSION 2.6)
+
+find_package(PythonLibs REQUIRED)
+find_package(Shiboken REQUIRED)
+find_package(PySide REQUIRED)
+find_package(Qt4 4.6.2 REQUIRED)
+
+set(LIBFOO_DIR ${CMAKE_SOURCE_DIR}/../libfoo)
+
+find_program(GENERATOR generatorrunner REQUIRED)
+if (NOT GENERATOR)
+ message(FATAL_ERROR "You need to specify GENERATOR variable (-DGENERATOR=value)")
+endif()
+
+if(CMAKE_HOST_UNIX)
+ option(ENABLE_GCC_OPTIMIZATION "Enable specific GCC flags to optimization library size and performance. Only available on Release Mode" 0)
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fvisibility=hidden -Wno-strict-aliasing")
+ set(CMAKE_CXX_FLAGS_DEBUG "-g")
+ if(ENABLE_GCC_OPTIMIZATION)
+ set(CMAKE_BUILD_TYPE Release)
+ set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -Os -Wl,-O1")
+ if(NOT CMAKE_HOST_APPLE)
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,—hash-style=gnu")
+ endif()
+ endif()
+
+ if(CMAKE_HOST_APPLE)
+ if (NOT QT_INCLUDE_DIR)
+ set(QT_INCLUDE_DIR "/Library/Frameworks")
+ endif()
+ endif()
+endif()
+
+include(${QT_USE_FILE})
+
+enable_testing()
+
+add_subdirectory(foo)
+add_subdirectory(tests)
+&lt;/code>
+
+This is the main project's '''CMakeLists.txt''', it is a regular CMake file and general doubts can be checked in the [http://www.cmake.org/cmake/help/documentation.html CMake documentation] Notice the we're going to have tests in this project so we have to enable them with '''enable_testing()'''.
+
+&lt;code>foobinding-cmake/foo/CMakeLists.txt&lt;/code>:
+
+&lt;code>
+project(foo)
+
+set(foo_SRC
+ ${CMAKE_CURRENT_BINARY_DIR}/foo/foo_module_wrapper.cpp
+ ${CMAKE_CURRENT_BINARY_DIR}/foo/math_wrapper.cpp
+)
+
+set(foo_INCLUDE_DIRECTORIES
+ ${SHIBOKEN_INCLUDE_DIR}
+ ${PYTHON_INCLUDE_PATH}
+ ${PYSIDE_INCLUDE_DIR}
+ ${PYSIDE_INCLUDE_DIR}/QtCore
+ ${QT_INCLUDE_DIR}
+ ${QT_QTCORE_INCLUDE_DIR}
+ ${LIBFOO_DIR}
+)
+
+set(foo_LINK_LIBRARIES
+ ${QT_QTCORE_LIBRARY}
+ ${SHIBOKEN_PYTHON_LIBRARIES}
+ ${SHIBOKEN_LIBRARY}
+ ${PYSIDE_LIBRARY}
+ ${LIBFOO_DIR}/libfoo.so
+)
+
+include_directories(foo ${foo_INCLUDE_DIRECTORIES})
+add_library(foo MODULE ${foo_SRC})
+set_property(TARGET foo PROPERTY PREFIX "")
+target_link_libraries(foo ${foo_LINK_LIBRARIES})
+
+add_custom_command(OUTPUT ${foo_SRC}
+ COMMAND ${GENERATOR}
+ —generatorSet=shiboken —enable-parent-ctor-heuristic —enable-pyside-extensions —enable-return-value-heuristic
+ ${CMAKE_SOURCE_DIR}/foo/global.h
+ —include-paths=${QT_INCLUDE_DIR}:${LIBFOO_DIR}
+ —typesystem-paths=${typesystem_path}:${PYSIDE_TYPESYSTEMS}
+ —output-directory=${CMAKE_CURRENT_BINARY_DIR}
+ ${CMAKE_CURRENT_SOURCE_DIR}/typesystem_foo.xml
+ WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+ COMMENT "Running generator for libfoo…"
+ )
+&lt;/code>
+
+This is the '''CMakeLists.txt''' file for the binding directory proper, the '''add_custom_command''' statement is responsible for the calling of Shiboken generator with the proper parameters and variables. Notice that the command line options '''—enable-parent-ctor-heuristic —enable-pyside-extensions —enable-return-value-heuristic''' are directly related to Qt bindings idiosyncrasies, for a pure C++ binding none of those will be necessary.
+
+&lt;code>foobinding-cmake/tests/CMakeLists.txt&lt;/code>:
+
+&lt;code>
+if(WIN32)
+ set(TEST_PYTHONPATH "${foo_BINARY_DIR};${PYSIDE_PYTHONPATH}")
+ set(TEST_LIBRARY_PATH "${LIBFOO_DIR};$ENV{PATH}")
+ set(LIBRARY_PATH_VAR "PATH")
+ string(REPLACE "" "/" TEST_PYTHONPATH "${TEST_PYTHONPATH}")
+ string(REPLACE "" "/" TEST_LIBRARY_PATH "${TEST_LIBRARY_PATH}")
+
+ string(REPLACE ";" ";" TEST_PYTHONPATH "${TEST_PYTHONPATH}")
+ string(REPLACE ";" ";" TEST_LIBRARY_PATH "${TEST_LIBRARY_PATH}")
+else()
+ set(TEST_PYTHONPATH "${foo_BINARY_DIR}:${PYSIDE_PYTHONPATH}")
+ set(TEST_LIBRARY_PATH "${LIBFOO_DIR}:$ENV{LD_LIBRARY_PATH}")
+ set(LIBRARY_PATH_VAR "LD_LIBRARY_PATH")
+endif()
+
+add_test(math ${SHIBOKEN_PYTHON_INTERPRETER} ${CMAKE_CURRENT_SOURCE_DIR}/math_test.py)
+set_tests_properties(math PROPERTIES ENVIRONMENT "PYTHONPATH=${TEST_PYTHONPATH};${LIBRARY_PATH_VAR}=${TEST_LIBRARY_PATH}")
+&lt;/code>
+
+This not very elaborate '''CMakeLists.txt''' informs CMake which tests should be executed, and with which variables.
+
+==== Build and Test ====
+The best thing to do when building with CMake is to create a build directory and run &lt;code>cmake&lt;/code> from there.
+
+&lt;code>
+cd foobinding-cmake
+mkdir build
+cd build
+cmake ..
+make
+&lt;/code>
+
+Ah, let's not forget the unit test. It's a very simple one.
+
+&lt;code>foobinding-cmake/tests/math.py&lt;/code>
+
+&lt;code>
+#!/usr/bin/env python
+#-'''- coding: utf-8 -'''-
+
+'''Test cases for foo bindings module.'''
+
+import unittest
+import foo
+
+class MathTest(unittest.TestCase):
+
+def testMath(self):
+ '''Test case for Math class from foo module.'''
+ val = 5
+ math = foo.Math()
+ self.assertEqual(math.squared(5), 5 * 5)
+
+if ''name'' == '''main''':
+ unittest.main()
+&lt;/code>
+
+To run the test:
+
+&lt;code>
+ctest
+&lt;/code>
+
+The output will be something like this:
+
+&lt;code>
+Test project YOURPATH/binding-tutorial/foobinding-cmake/build
+ Start 1: math
+1/1 Test #1: math ……………………….. Passed 0.10 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) = 0.11 sec
+&lt;/code>
+
+For a more verbose output use '''ctest -V'''
+
+== Conclusion ==
+</textarea><div class="templatesUsed"></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator" title="PySide Binding Generation Tutorial: Module 5 Building the generator">PySide Binding Generation Tutorial: Module 5 Building the generator</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator">http://wiki.qt.io/PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=PySide+Binding+Generation+Tutorial%3A+Module+5+Building+the+generator" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":795});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=PySide_Binding_Generation_Tutorial:_Module_5_Building_the_generator&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:58:54 GMT -->
+</html>

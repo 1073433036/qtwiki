@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_create_columns_in_a_QML_ListView/de&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:17:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for How to create columns in a QML ListView/de - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_create_columns_in_a_QML_ListView/de","wgTitle":"How to create columns in a QML ListView/de","wgCurRevisionId":15181,"wgRevisionId":0,"wgArticleId":3124,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_create_columns_in_a_QML_ListView/de","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_to_create_columns_in_a_QML_ListView_de skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for How to create columns in a QML ListView/de</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/How_to_create_columns_in_a_QML_ListView/de" title="How to create columns in a QML ListView/de">How to create columns in a QML ListView/de</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{Cleanup | reason=Auto-imported from ExpressionEngine.}}
+
+[[Category:Learning]]
+[[Category:HowTo]]
+[[Category:snippets]]
+[[Category:German]]
+[[Category:Developing_with_Qt::Qt Quick]]
+[[Category:Developing_with_Qt::Qt Quick::QML]]
+
+'''Deutsch''' | [[How_to_create_columns_in_a_QML_ListView|English]]
+ | [http://qt-devnet.developpez.com/tutoriels/qt-quick/qml/creation-colonnes-dans-listview/ French] |[[How_to_create_columns_in_a_QML_ListView_Japanese|日本語]] | [[How_to_create_columns_in_a_QML_ListView_Bulgarian|Български]] | [[How_to_create_columns_in_a_QML_ListView_Korean|한국어]]
+
+= Wie man Spalten in einem QML ListView erzeugt =
+
+Im folgenden wird ein Weg gezeigt, wie man ein ListView mit mehreren Spalten erzeugt, deren Breite abhängig von der Breite der enthaltenen Daten ist.
+
+Normalerweise sieht ein ListView mit Row-Elementen so aus:
+
+[[Image:http://lh4.ggpht.com/_U9jn31652gY/TPlwteOB05I/AAAAAAAAAA0/lJOcCa-qlYA/qmlTable1.png|ListView of Row elements]]
+
+Spalten können erzeugt werden, indem man die Breite der Elemente in den Row-Elementen festlegt.
+
+[[Image:http://lh5.ggpht.com/_U9jn31652gY/TPlyiLef8QI/AAAAAAAAABE/K7uJVMzmi9w/qmlTable2.png|ListView with columns]]
+
+== Wie man die Text-Breite erhält ==
+
+Zeichensatzmetriken sind in QML nicht verfügbar. Aber Text-Elemente können mit JavaScript dynamisch erzeugt und ihre Breite abgefragt werden.
+
+&lt;code>
+ // Create temporary Text element
+ var textElement = Qt.createQmlObject('import Qt 4.7; Text { text: "' + text + '"}',
+ parent, "calcTextWidth");
+
+// Use textElement.width for the width of the text
+
+// Dispose of temporary element
+ textElement.destroy()
+&lt;/code>
+
+== Spalten in einem ListView erzeugen ==
+
+Die Spaltenbreiten für das Modell werden mit JavaScript berechnet und in einer Map gespeichert, die als Schlüssel die Elementnamen aus dem Modell verwendet. Diese Spaltenbreiten werden dann im Delegate des ListViews zur Formatierung verwendet.
+
+=== main.qml ===
+
+Es folgt eine einfache Benutzeroberfläche zur Demonstration. Als Container wird ein Rectangle-Element benutzt, sodass die Hintergrundfarbe des ListViews und die Farbe der Zeilen übereinstimmen. Beachte, wie die ''columnWidths'' Property eingesetzt wird, um die berechneten Breiten zu speichern, welche schließlich im Delegate genutzt werden.
+&lt;code>
+import Qt 4.7
+import "ColumnHelper.js" as ColumnHelper
+
+Rectangle {
+ width: 620
+ height: 200
+ color: "#bebebe"
+
+ListView {
+ id: list
+ property variant columnWidths: ColumnHelper.calcColumnWidths(model, list)
+ anchors.fill: parent
+ model: MovieModel { }
+ delegate: MovieItem { }
+ }
+
+}
+&lt;/code>
+
+=== ColumnHelper.js ===
+
+Eine einfache JavaScript-Funktion wird benutzt, um pro Spalte die maximale Breite aller dort enthaltenen Text-Elemente zu berechnen. Das Ergebnis dieser Berechnungen wird als ein einziges Object von der Funktion zurückgegeben, welches alle notwendigen Spaltenbreiten, abfragbar mit den Spaltennamen als Schlüssel, enthält.
+&lt;code>
+var columns = {}
+
+function calcColumnWidths(model, parent)
+{
+ for (var i = 0; i &lt; model.count; +''i)
+ {
+ var data = model.get(i)
+ for (var key in data)
+ {
+ if (!columns[key]) {
+ columns[key] = 0
+ }
+
+ var textElement = Qt.createQmlObject(
+ 'import Qt 4.7;'
+'' 'Text {'
+ + ' text: "' + data[key] + '" '
+ + '}',
+ parent, "calcColumnWidths")
+
+columns[key] = Math.max(textElement.width, columns[key])
+ textElement.destroy()
+ }
+ }
+ return columns
+}
+&lt;/code>
+
+=== MovieItem.qml ===
+
+Nun zum Delegate des ListViews. Die Property ''columnWidths'' wird benutzt, um die Breiten aller Spalten festzulegen.
+&lt;code>
+import Qt 4.7
+
+Component {
+ Item {
+ id: item
+ width: parent.width - 15
+ height: row.height
+
+function altColor(i) {
+ var colors = [ "#bebebe", "#b7b7b7" ];
+ return colors[i];
+ }
+
+Rectangle {
+ id: background
+ width: parent.width + 15
+ height: parent.height
+ color: altColor(index%2)
+ }
+
+Row {
+ id: row
+ width: parent.width
+ spacing: 5
+ Item {
+ // Indent a little
+ width: 5
+ height: 1
+ }
+ Text {
+ width: list.columnWidths['title']
+ text: model.title
+ color: "blue"
+ }
+ Loader { sourceComponent: columnSeparator; height: parent.height }
+ Text {
+ width: list.columnWidths['year']
+ text: model.year
+ }
+ Loader { sourceComponent: columnSeparator; height: parent.height }
+ Text {
+ width: list.columnWidths['rank']
+ text: model.rank
+ }
+ Loader { sourceComponent: columnSeparator; height: parent.height }
+ Text {
+ width: list.columnWidths['votes']
+ text: model.votes
+ }
+ Loader { sourceComponent: columnSeparator; height: parent.height }
+ Text {
+ width: list.columnWidths['composer']
+ text: model.composer ? model.composer : ""
+ }
+
+Component {
+ id: columnSeparator
+ Rectangle {
+ width: 1
+ color: "black"
+ opacity: 0.3
+ }
+ }
+ }
+ }
+}
+&lt;/code>
+
+=== MovieModel.qml ===
+
+Die folgenden Beispieldaten sind Eigentum von [http://www.imdb.com The Internet Movie Database]
+
+&lt;code>
+import Qt 4.7
+
+ListModel {
+ ListElement {
+ votes: 532564
+ rank: 9.2
+ title: "The Shawshank Redemption"
+ year: 1994
+ composer: "Newman, Thomas"
+ }
+ ListElement {
+ votes: 419312
+ rank: 9.1
+ title: "The Godfather"
+ year: 1972
+ composer: "Rota, Nino"
+ }
+ ListElement {
+ votes: 251290
+ rank: 9.0
+ title: "The Godfather: Part II"
+ year: 1974
+ composer: "Rota, Nino"
+ }
+ ListElement {
+ votes: 225000
+ rank: 8.9
+ title: "Inception"
+ year: 2010
+ composer: "Zimmer, Hans"
+ }
+ ListElement {
+ votes: 165033
+ rank: 8.9
+ title: "Il buono, il brutto, il cattivo."
+ year: 1966
+ composer: "Morricone, Ennio"
+ }
+ ListElement {
+ votes: 426752
+ rank: 8.9
+ title: "Pulp Fiction"
+ year: 1994
+ }
+ ListElement {
+ votes: 282473
+ rank: 8.9
+ title: "Schindler's List"
+ year: 1993
+ composer: "Williams, John"
+ }
+ ListElement {
+ votes: 122919
+ rank: 8.9
+ title: "12 Angry Men"
+ year: 1957
+ composer: "Hopkins, Kenyon"
+ }
+ ListElement {
+ votes: 219739
+ rank: 8.8
+ title: "One Flew Over the Cuckoo's Nest"
+ year: 1975
+ composer: "Nitzsche, Jack"
+ }
+ ListElement {
+ votes: 476112
+ rank: 8.8
+ title: "The Dark Knight"
+ year: 2008
+ composer: "Zimmer, Hans"
+ }
+ ListElement {
+ votes: 283354
+ rank: 8.8
+ title: "Star Wars: Episode V - The Empire Strikes Back"
+ year: 1980
+ composer: "Williams, John"
+ }
+ ListElement {
+ votes: 371790
+ rank: 8.8
+ title: "The Lord of the Rings: The Return of the King"
+ year: 2003
+ composer: "Shore, Howard"
+ }
+ ListElement {
+ votes: 98799
+ rank: 8.8
+ title: "Shichinin no samurai"
+ year: 1954
+ composer: "Hayasaka, Fumio"
+ }
+ ListElement {
+ votes: 326619
+ rank: 8.7
+ title: "Star Wars"
+ year: 1977
+ composer: "Williams, John"
+ }
+ ListElement {
+ votes: 234582
+ rank: 8.7
+ title: "Goodfellas"
+ year: 1990
+ }
+ ListElement {
+ votes: 170874
+ rank: 8.7
+ title: "Casablanca"
+ year: 1942
+ composer: "Steiner, Max"
+ }
+}
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:Ambox" title="Template:Ambox">Template:Ambox</a> (<a href="http://wiki.qt.io/index.php?title=Template:Ambox&amp;action=edit" title="Template:Ambox">view source</a>) </li><li><a href="http://wiki.qt.io/Template:Cleanup" title="Template:Cleanup">Template:Cleanup</a> (<a href="http://wiki.qt.io/index.php?title=Template:Cleanup&amp;action=edit" title="Template:Cleanup">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/How_to_create_columns_in_a_QML_ListView/de" title="How to create columns in a QML ListView/de">How to create columns in a QML ListView/de</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/How_to_create_columns_in_a_QML_ListView/de">http://wiki.qt.io/How_to_create_columns_in_a_QML_ListView/de</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=How+to+create+columns+in+a+QML+ListView%2Fde" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/How_to_create_columns_in_a_QML_ListView/de"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:How_to_create_columns_in_a_QML_ListView/de&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/How_to_create_columns_in_a_QML_ListView/de" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=How_to_create_columns_in_a_QML_ListView/de&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=How_to_create_columns_in_a_QML_ListView/de&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/How_to_create_columns_in_a_QML_ListView/de" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/How_to_create_columns_in_a_QML_ListView/de" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=How_to_create_columns_in_a_QML_ListView/de&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":2517});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_create_columns_in_a_QML_ListView/de&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:17:43 GMT -->
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=QtSerialPort&diff=13052&oldid=6252 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:47:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Difference between revisions of "Qt Serial Port" - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="https://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="https://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=ext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.action.history.diff&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Qt_Serial_Port","wgTitle":"Qt Serial Port","wgCurRevisionId":18165,"wgRevisionId":13052,"wgArticleId":1833,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Qt_Serial_Port","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Qt_Serial_Port skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Difference between revisions of "Qt Serial Port"</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class='diff diff-contentalign-left'>
+				<col class='diff-marker' />
+				<col class='diff-content' />
+				<col class='diff-marker' />
+				<col class='diff-content' />
+				<tr style='vertical-align: top;'>
+				<td colspan='2' class='diff-otitle'><div id="mw-diff-otitle1"><strong><a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;oldid=6252" title="Qt Serial Port">Revision as of 08:31, 25 February 2015</a> (<a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;action=edit&amp;oldid=6252" title="Qt Serial Port">view source</a>)</strong></div><div id="mw-diff-otitle2"><a href="https://wiki.qt.io/index.php?title=User:Maintenance_script&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Maintenance script (page does not exist)">Maintenance script</a>  <span class="mw-usertoollinks">(<a href="https://wiki.qt.io/index.php?title=User_talk:Maintenance_script&amp;action=edit&amp;redlink=1" class="new" title="User talk:Maintenance script (page does not exist)">Talk</a> | <a href="https://wiki.qt.io/Special:Contributions/Maintenance_script" title="Special:Contributions/Maintenance script">contribs</a>)</span></div><div id="mw-diff-otitle3"></div><div id="mw-diff-otitle5"></div><div id="mw-diff-otitle4"><a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;diff=prev&amp;oldid=6252" title="Qt Serial Port" id="differences-prevlink">← Older edit</a></div></td>
+				<td colspan='2' class='diff-ntitle'><div id="mw-diff-ntitle1"><strong><a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;oldid=13052" title="Qt Serial Port">Revision as of 15:00, 10 March 2015</a> (<a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;action=edit&amp;oldid=13052" title="Qt Serial Port">view source</a>) </strong></div><div id="mw-diff-ntitle2"><a href="https://wiki.qt.io/index.php?title=User:JKSH&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:JKSH (page does not exist)">JKSH</a>  <span class="mw-usertoollinks">(<a href="https://wiki.qt.io/User_talk:JKSH" title="User talk:JKSH">Talk</a> | <a href="https://wiki.qt.io/Special:Contributions/JKSH" title="Special:Contributions/JKSH">contribs</a>)</span> </div><div id="mw-diff-ntitle3"> <span class="comment">(<a href="#News">→</a>‎<span dir="auto"><span class="autocomment">News: </span> Notify readers that Qt Serial Port is now officially part of Qt 5</span>)</span></div><div id="mw-diff-ntitle5"></div><div id="mw-diff-ntitle4"><a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;diff=next&amp;oldid=13052" title="Qt Serial Port" id="differences-nextlink">Newer edit →</a></div></td>
+				</tr><tr><td colspan='4' style='text-align: center;' class='diff-multi'>(21 intermediate revisions by 2 users not shown)</td></tr><tr><td colspan="2" class="diff-lineno">Line 1:</td>
+<td colspan="2" class="diff-lineno">Line 1:</td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange">{{Cleanup | reason=Auto-imported from ExpressionEngine.}}</ins></div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange"></ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>'''English'''</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>'''English'''</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>| [[:QtSerialPort_German|Deutsch]]</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>| [[:QtSerialPort_German|Deutsch]]</div></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 22:</td>
+<td colspan="2" class="diff-lineno">Line 24:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>| [[:QtSerialPort_Bulgarian|Български]]</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>| [[:QtSerialPort_Bulgarian|Български]]</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange">[toc align_right=&quot;yes&quot; depth=&quot;3&quot;]</del></div></td><td colspan="2">&#160;</td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange"></del></div></td><td colspan="2">&#160;</td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange">= QtSerialPort =</del></div></td><td colspan="2">&#160;</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>'''''Note''': this page is work in progress, needs review.''</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>'''''Note''': this page is work in progress, needs review.''</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== News ==</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== News ==</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>&#160;</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">* '''2013-07-03''' - As of Qt 5.1, Qt Serial Port is now officially part of Qt. '''You no longer need to build Qt Serial Port manually; simply install Qt 5.1 or later.'''</ins></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">Fill up</del></div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">* '''2013-</ins>02<ins class="diffchange diffchange-inline">-</ins>26<ins class="diffchange diffchange-inline">''' </ins>- The project moved from the playground to the trunk of Qt5!</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>&#160;</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>02<del class="diffchange diffchange-inline">/</del>26<del class="diffchange diffchange-inline">/2013 </del>- The project moved from the playground to the trunk of Qt5!</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== Brief description ==</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== Brief description ==</div></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 46:</td>
+<td colspan="2" class="diff-lineno">Line 43:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== History ==</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== History ==</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>'''QtSerialPort''' originated from the third-party library <del class="diffchange diffchange-inline">&quot;QSerialDevice&quot;:</del>http://gitorious.org/qserialdevice/qserialdevice/trees/2.0 (branch 2.0), which was recently moved to a repository on https://codereview.qt.io/</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>'''QtSerialPort''' originated from the third-party library <ins class="diffchange diffchange-inline">[</ins>http://gitorious.org/qserialdevice/qserialdevice/trees/2.0 <ins class="diffchange diffchange-inline">QSerialDevice] [gitorious.org] </ins>(branch 2.0), which was recently moved to a repository on https://codereview.qt.io/</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>This was done to allow more open development, and to gather and coordinate a community that is interested in developing this module.</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>This was done to allow more open development, and to gather and coordinate a community that is interested in developing this module.</div></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 60:</td>
+<td colspan="2" class="diff-lineno">Line 57:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Supports the following operating systems:</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Supports the following operating systems:</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>{<del class="diffchange diffchange-inline">background</del>:<del class="diffchange diffchange-inline">#009900}. </del>|<del class="diffchange diffchange-inline">''. </del>Operating system |<del class="diffchange diffchange-inline">''. </del>Support state |<del class="diffchange diffchange-inline">''. </del>Note</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>{<ins class="diffchange diffchange-inline">| class=&quot;wikitable&quot;</ins></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">! style=&quot;text-align</ins>:<ins class="diffchange diffchange-inline">left;&quot;</ins>| Operating system &#160;</div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">! style=&quot;text-align:left;&quot;</ins>| Support state &#160;</div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">! style=&quot;text-align:left;&quot;</ins>| Note</div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Windows NT/2K/XP/Vista/7</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Windows NT/2K/XP/Vista/7</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Windows CE</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Windows CE</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Tested only on 5 and 6 platforms in the emulator</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Tested only on 5 and 6 platforms in the emulator</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Gnu/Linux</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Gnu/Linux</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|MacOSX</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|MacOSX</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Others Unix</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Others Unix</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|All POSIX-compatible</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|All POSIX-compatible</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|Symbian&lt;ref&gt;For OS Symbian development of the module is suspended due to lack of developers, as well as the fact that Nokia has abandoned the platform and will not include support for it in Qt5.</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|Symbian&lt;ref&gt;For OS Symbian development of the module is suspended due to lack of developers, as well as the fact that Nokia has abandoned the platform and will not include support for it in Qt5.&lt;/ref&gt;</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>&lt;/ref&gt;</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Partially, tested only in the emulator</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Partially, tested only in the emulator</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">}</ins></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>&#160;</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">&lt;references /&gt;</ins></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>&#160;</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">h3. </del>QSerialPortInfo</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">=== </ins>QSerialPortInfo <ins class="diffchange diffchange-inline">===</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>'''QSerialPortInfo''' is a helper class. It provides information on the available serial ports on the system.</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>'''QSerialPortInfo''' is a helper class. It provides information on the available serial ports on the system.</div></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 96:</td>
+<td colspan="2" class="diff-lineno">Line 94:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Supports the following operating systems:</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Supports the following operating systems:</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>{<del class="diffchange diffchange-inline">background</del>:<del class="diffchange diffchange-inline">#009900}. </del>|<del class="diffchange diffchange-inline">''. </del>Operating system |<del class="diffchange diffchange-inline">''. </del>Support state |<del class="diffchange diffchange-inline">''. </del>Note</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>{<ins class="diffchange diffchange-inline">| class=&quot;wikitable&quot;</ins></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">! style=&quot;text-align</ins>:<ins class="diffchange diffchange-inline">left;&quot;</ins>|Operating system &#160;</div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">! style=&quot;text-align:left;&quot;</ins>|Support state &#160;</div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">! style=&quot;text-align:left;&quot;</ins>|Note</div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Windows NT/2K/XP/Vista/7</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Windows NT/2K/XP/Vista/7</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support (using SetupAPI)</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support (using SetupAPI)</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Windows CE</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Windows CE</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Tested only on 5 and 6 platforms in the emulator</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Tested only on 5 and 6 platforms in the emulator</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Gnu/Linux</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Gnu/Linux</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support (using libudev or simple search in /dev)</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support (using libudev or simple search in /dev)</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|MacOSX</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|MacOSX</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Full support</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Others Unix</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Others Unix</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|All POSIX-compatible (only simple search in /dev)</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|All POSIX-compatible (only simple search in /dev)</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">-</ins></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|<del class="diffchange diffchange-inline">Symbian&lt;ref&gt;Symbian development of the module is suspended due to lack of developers, as well as the fact that Nokia has abandoned the platform and will not include support for it in Qt5.</del></div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">Symbian²</ins></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">&lt;/ref&gt;</del></div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|YES</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Partially, tested only in the emulator</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>|Partially, tested only in the emulator</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>|</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>|<ins class="diffchange diffchange-inline">}</ins></div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div>&#160;</div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">²Symbian development of the module is suspended due to lack of developers, as well as the fact that Nokia has abandoned the platform and will not include support for it in Qt5.</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== View the source code ==</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== View the source code ==</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>Recently launched a public mirror of the repository project at <del class="diffchange diffchange-inline">&quot;Gitorious&quot;:</del>http://qt.gitorious.org/qt/qtserialport</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>Recently launched a public mirror of the repository project at <ins class="diffchange diffchange-inline">[</ins>http://qt.gitorious.org/qt/qtserialport <ins class="diffchange diffchange-inline">Gitorious]</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Now everyone can freely and quickly view the latest changes through a WEB browser.</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Now everyone can freely and quickly view the latest changes through a WEB browser.</div></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 134:</td>
+<td colspan="2" class="diff-lineno">Line 136:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>=== For end-users ===</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>=== For end-users ===</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>To get the current snapshot of the source code as an archive click on <del class="diffchange diffchange-inline">&quot;this&quot;:</del>http://qt.gitorious.org/qt/qtserialport/archive-tarball/stable link.</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>To get the current snapshot of the source code as an archive click on <ins class="diffchange diffchange-inline">[</ins>http://qt.gitorious.org/qt/qtserialport/archive-tarball/stable <ins class="diffchange diffchange-inline">this] </ins>link.</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Those who want to use Git can run the following command:</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Those who want to use Git can run the following command:</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>&lt;code&gt;git clone git://gitorious.org/qt/qtserialport.git&lt;code&gt;</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>&lt;code&gt;git clone git://gitorious.org/qt/qtserialport.git&lt;<ins class="diffchange diffchange-inline">/</ins>code&gt;</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>=== For developers ===</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>=== For developers ===</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>To get the source code and contribute to the development you need to register a Qt developer account and set it up for use with Gerrit and Git (see <del class="diffchange diffchange-inline">&quot;Setting up Gerrit&quot;:</del>http://wiki.qt.io/Setting_up_Gerrit).</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>To get the source code and contribute to the development you need to register a Qt developer account and set it up for use with Gerrit and Git (see <ins class="diffchange diffchange-inline">[</ins>http://wiki.qt.io/Setting_up_Gerrit <ins class="diffchange diffchange-inline">Setting up Gerrit]</ins>).</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>You can then check out the repository using git, like this:</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>You can then check out the repository using git, like this:</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>&lt;<del class="diffchange diffchange-inline">/</del>code&gt;git clone ssh://&lt;username&gt;@codereview.qt.io:29418/qt/qtserialport.git&lt;/code&gt;</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>&lt;code&gt;git clone ssh://&lt;username&gt;@codereview.qt.io:29418/qt/qtserialport.git&lt;/code&gt;</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>…with your Gerrit user ID in place of &lt;username&gt;.</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>…with your Gerrit user ID in place of &lt;username&gt;.</div></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 155:</td>
+<td colspan="2" class="diff-lineno">Line 157:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Before building you need to:</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Before building you need to:</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>* install <del class="diffchange diffchange-inline">Perl&lt;ref&gt;Perl is required only in the case of Qt5, see &quot;here&quot;:http://wiki.qt.io/Building_Qt_5_from_Git. When using Qt4 just skip this point.</del></div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>* install <ins class="diffchange diffchange-inline">Perl³</ins></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">&lt;/ref&gt;</del></div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>* ensure that the environment variables are set correctly:</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>* ensure that the environment variables are set correctly:</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">'''''' </del>correctly specified the path to the installed Qt4/Qt5</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">** </ins>correctly specified the path to the installed Qt4/Qt5</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">'''''' </del>correctly specified the path to use the compiler</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">** </ins>correctly specified the path to use the compiler</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">'''''' </del>correctly specified the path to <del class="diffchange diffchange-inline">Perl&lt;ref&gt;Perl is required only in the case of Qt5, see &quot;here&quot;:http://wiki.qt.io/Building_Qt_5_from_Git. When using Qt4 just skip this point.</del></div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">** </ins>correctly specified the path to <ins class="diffchange diffchange-inline">Perl³</ins></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">&lt;/ref&gt;</del></div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>* create a build directory that is in the same level as the directory with the source code</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>* create a build directory that is in the same level as the directory with the source code</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;code&gt;</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;code&gt;</div></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 183:</td>
+<td colspan="2" class="diff-lineno">Line 183:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;/code&gt;</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;/code&gt;</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">h3. </del>Build and install from the QtCreator</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">=== </ins>Build and install from the QtCreator <ins class="diffchange diffchange-inline">===</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Using QtCreator is the simplest and fastest way to manually install the library.</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Using QtCreator is the simplest and fastest way to manually install the library.</div></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 189:</td>
+<td colspan="2" class="diff-lineno">Line 189:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Before building you need to:</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>Before building you need to:</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">''' </del>install <del class="diffchange diffchange-inline">Perl&lt;ref&gt;Perl is required only in the case of Qt5, see &quot;here&quot;:http://wiki.qt.io/Building_Qt_5_from_Git. When using Qt4 just skip this point.</del></div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">* </ins>install <ins class="diffchange diffchange-inline">Perl³ </ins>and check that the path to Perl was correctly specified in a global env</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">&lt;/ref&gt; </del>and check that the path to Perl was correctly specified in a global env</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>* check that the desired toolchains (kits) of QtCreator have been correctly configured</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>* check that the desired toolchains (kits) of QtCreator have been correctly configured</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 204:</td>
+<td colspan="2" class="diff-lineno">Line 203:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>'''''Note:''' on *nix systems this method can be failed if Qt was installed from the repositories into system directories. Super user privileges may be required for &quot;make install&quot; target_</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>'''''Note:''' on *nix systems this method can be failed if Qt was installed from the repositories into system directories. Super user privileges may be required for &quot;make install&quot; target_</div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange"></ins></div></td></tr>
+<tr><td colspan="2">&#160;</td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange">³Perl is required only in the case of Qt5, see [http://wiki.qt.io/Building_Qt_5_from_Git here]. When using Qt4 just skip this point.</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== Usage ==</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== Usage ==</div></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 212:</td>
+<td colspan="2" class="diff-lineno">Line 213:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;code&gt;</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;code&gt;</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>CONFIG <del class="diffchange diffchange-inline">''</del>= serialport</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>CONFIG <ins class="diffchange diffchange-inline">+</ins>= serialport</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;/code&gt;</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;/code&gt;</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">h3. </del>Qt5</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div><ins class="diffchange diffchange-inline">=== </ins>Qt5 <ins class="diffchange diffchange-inline">===</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;code&gt;</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;code&gt;</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>QT<del class="diffchange diffchange-inline">''</del>= serialport</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>QT <ins class="diffchange diffchange-inline">+</ins>= serialport</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;/code&gt;</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>&lt;/code&gt;</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 266:</td>
+<td colspan="2" class="diff-lineno">Line 267:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== Documentation generation ==</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== Documentation generation ==</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>There is no need to build the documentation, because the documentation is available <del class="diffchange diffchange-inline">&quot;here&quot;:</del>http://doc-snapshot.qt.io/qt5-stable/qtserialport-index.html.</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>There is no need to build the documentation, because the documentation is available <ins class="diffchange diffchange-inline">[</ins>http://doc-snapshot.qt.io/qt5-stable/qtserialport-index.html <ins class="diffchange diffchange-inline">here]</ins>.</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== For those wishing to contribute to the development ==</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== For those wishing to contribute to the development ==</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>All development is done through <del class="diffchange diffchange-inline">&quot;Gerrit&quot;:</del>http://wiki.qt.io/Setting_up_Gerrit. Therefore, those wishing to be involved in the development process must have a Qt developer account.</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>All development is done through <ins class="diffchange diffchange-inline">[</ins>http://wiki.qt.io/Setting_up_Gerrit <ins class="diffchange diffchange-inline">Gerrit]</ins>. Therefore, those wishing to be involved in the development process must have a Qt developer account.</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>More information about the registration process and development can be found <del class="diffchange diffchange-inline">&quot;here&quot;:</del>http://wiki.qt.io/Code_Reviews</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>More information about the registration process and development can be found <ins class="diffchange diffchange-inline">[</ins>http://wiki.qt.io/Code_Reviews <ins class="diffchange diffchange-inline">here]</ins></div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== Possible problems ==</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== Possible problems ==</div></td></tr>
+<tr><td colspan="2" class="diff-lineno">Line 280:</td>
+<td colspan="2" class="diff-lineno">Line 281:</td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== Bug Tracking ==</div></td><td class='diff-marker'>&#160;</td><td class='diff-context'><div>== Bug Tracking ==</div></td></tr>
+<tr><td class='diff-marker'>&#160;</td><td class='diff-context'></td><td class='diff-marker'>&#160;</td><td class='diff-context'></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>Use <del class="diffchange diffchange-inline">&quot;</del>bugreports.qt.io<del class="diffchange diffchange-inline">&quot;:https://</del>bugreports.qt.io, Project &quot;Qt&quot;, Component &quot;Serial Port&quot;.</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div>Use <ins class="diffchange diffchange-inline">[https://</ins>bugreports.qt.io bugreports.qt.io<ins class="diffchange diffchange-inline">]</ins>, Project &quot;Qt&quot;, Component &quot;Serial Port&quot;.</div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div>&#160;</div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div></div></td></tr>
+<tr><td class='diff-marker'>−</td><td class='diff-deletedline'><div><del class="diffchange diffchange-inline">&lt;references /&gt;</del></div></td><td class='diff-marker'>+</td><td class='diff-addedline'><div></div></td></tr>
+</table><hr class='diff-hr' />
+		<h2 class='diff-currentversion-title'>Revision as of 15:00, 10 March 2015</h2>
+<table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="http://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="https://wiki.qt.io/Updated_pages" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><b>English</b>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_German&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort German (page does not exist)">Deutsch</a>
+| <a href="https://wiki.qt.io/QtSerialPort_Russian" title="QtSerialPort Russian" class="mw-redirect">Русский</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Polish&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Polish (page does not exist)">Polski</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Dutch&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Dutch (page does not exist)">Nederlands</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Portuguese&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Portuguese (page does not exist)">Português</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Spanish&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Spanish (page does not exist)">Español</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Ukrainian&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Ukrainian (page does not exist)">Українською</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Persian&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Persian (page does not exist)">فارسی</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Arabic&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Arabic (page does not exist)">عربي</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Korean&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Korean (page does not exist)">한국어</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Finnish&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Finnish (page does not exist)">Suomi</a>
+| <a href="https://wiki.qt.io/index.php?title=Wiki_Home_Catalan&amp;action=edit&amp;redlink=1" class="new" title="Wiki Home Catalan (page does not exist)">Català</a>
+| <a href="https://wiki.qt.io/Wiki_Home_Italian" title="Wiki Home Italian" class="mw-redirect">Italiano</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Japanese&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Japanese (page does not exist)">日本語</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_French&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort French (page does not exist)">Français</a>
+| <a href="https://wiki.qt.io/Wiki_Home_Hungarian" title="Wiki Home Hungarian" class="mw-redirect">Magyar</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Kannada&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Kannada (page does not exist)">ಕನ್ನಡ</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Hindi&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Hindi (page does not exist)">हिन्दी</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Thai&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Thai (page does not exist)">ภาษาไทย</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_SimplifiedChinese&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort SimplifiedChinese (page does not exist)">简体中文</a>
+| <a href="https://wiki.qt.io/index.php?title=QtSerialPort_Bulgarian&amp;action=edit&amp;redlink=1" class="new" title="QtSerialPort Bulgarian (page does not exist)">Български</a>
+</p><p><br />
+<i><b>Note</b>: this page is work in progress, needs review.</i>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#News"><span class="tocnumber">1</span> <span class="toctext">News</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Brief_description"><span class="tocnumber">2</span> <span class="toctext">Brief description</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#History"><span class="tocnumber">3</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Functionality"><span class="tocnumber">4</span> <span class="toctext">Functionality</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#QSerialPort"><span class="tocnumber">4.1</span> <span class="toctext">QSerialPort</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#QSerialPortInfo"><span class="tocnumber">4.2</span> <span class="toctext">QSerialPortInfo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#View_the_source_code"><span class="tocnumber">5</span> <span class="toctext">View the source code</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Getting_the_source_code"><span class="tocnumber">6</span> <span class="toctext">Getting the source code</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#For_end-users"><span class="tocnumber">6.1</span> <span class="toctext">For end-users</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#For_developers"><span class="tocnumber">6.2</span> <span class="toctext">For developers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Building_and_Installing"><span class="tocnumber">7</span> <span class="toctext">Building and Installing</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Build_and_install_from_command_line"><span class="tocnumber">7.1</span> <span class="toctext">Build and install from command line</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Build_and_install_from_the_QtCreator"><span class="tocnumber">7.2</span> <span class="toctext">Build and install from the QtCreator</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Usage"><span class="tocnumber">8</span> <span class="toctext">Usage</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Qt4"><span class="tocnumber">8.1</span> <span class="toctext">Qt4</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Qt5"><span class="tocnumber">8.2</span> <span class="toctext">Qt5</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Simple_example"><span class="tocnumber">8.3</span> <span class="toctext">Simple example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Documentation_generation"><span class="tocnumber">9</span> <span class="toctext">Documentation generation</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#For_those_wishing_to_contribute_to_the_development"><span class="tocnumber">10</span> <span class="toctext">For those wishing to contribute to the development</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Possible_problems"><span class="tocnumber">11</span> <span class="toctext">Possible problems</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#Bug_Tracking"><span class="tocnumber">12</span> <span class="toctext">Bug Tracking</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="News">News</span></h2>
+<ul>
+<li> <b>2013-07-03</b> - As of Qt 5.1, Qt Serial Port is now officially part of Qt. <b>You no longer need to build Qt Serial Port manually; simply install Qt 5.1 or later.</b>
+</li>
+<li> <b>2013-02-26</b> - The project moved from the playground to the trunk of Qt5!
+</li>
+</ul>
+<h2><span class="mw-headline" id="Brief_description">Brief description</span></h2>
+<p>The <b>QtSerialPort</b> module is an add-on module for the Qt5 library, providing a single interface for both hardware and virtual serial ports.
+</p><p><i><b>Note:</b> Also added support for Qt4.</i>
+</p><p>Serial interfaces, due to their simplicity and reliability, are still popular in some industries like the development of embedded systems, robotics, etc.
+</p><p>Using the <b>QtSerialPort</b> module, developers can significantly reduce the time needed to implement Qt applications that require access to a serial interface.
+</p>
+<h2><span class="mw-headline" id="History">History</span></h2>
+<p><b>QtSerialPort</b> originated from the third-party library <a rel="nofollow" class="external text" href="http://gitorious.org/qserialdevice/qserialdevice/trees/2.0">QSerialDevice</a> [gitorious.org] (branch 2.0), which was recently moved to a repository on <a rel="nofollow" class="external free" href="https://codereview.qt.io/">https://codereview.qt.io/</a>
+</p><p>This was done to allow more open development, and to gather and coordinate a community that is interested in developing this module.
+</p>
+<h2><span class="mw-headline" id="Functionality">Functionality</span></h2>
+<p>Currently, the module API contains two classes: <b>QSerialPort</b> and <b>QSerialPortInfo</b>.
+</p>
+<h3><span class="mw-headline" id="QSerialPort">QSerialPort</span></h3>
+<p><b>QSerialPort</b> is the base class of the module and provides a set of basic methods and properties to access resources on serial ports.
+</p><p>Supports the following operating systems:
+</p>
+<table class="wikitable">
+<tr>
+<th style="text-align:left;"> Operating system
+</th>
+<th style="text-align:left;"> Support state
+</th>
+<th style="text-align:left;"> Note
+</th></tr>
+<tr>
+<td>Windows NT/2K/XP/Vista/7
+</td>
+<td>YES
+</td>
+<td>Full support
+</td></tr>
+<tr>
+<td>Windows CE
+</td>
+<td>YES
+</td>
+<td>Tested only on 5 and 6 platforms in the emulator
+</td></tr>
+<tr>
+<td>Gnu/Linux
+</td>
+<td>YES
+</td>
+<td>Full support
+</td></tr>
+<tr>
+<td>MacOSX
+</td>
+<td>YES
+</td>
+<td>Full support
+</td></tr>
+<tr>
+<td>Others Unix
+</td>
+<td>YES
+</td>
+<td>All POSIX-compatible
+</td></tr>
+<tr>
+<td>Symbian<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup>
+</td>
+<td>YES
+</td>
+<td>Partially, tested only in the emulator
+</td></tr></table>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">For OS Symbian development of the module is suspended due to lack of developers, as well as the fact that Nokia has abandoned the platform and will not include support for it in Qt5.</span>
+</li>
+</ol>
+<h3><span class="mw-headline" id="QSerialPortInfo">QSerialPortInfo</span></h3>
+<p><b>QSerialPortInfo</b> is a helper class. It provides information on the available serial ports on the system.
+</p><p>Supports the following operating systems:
+</p>
+<table class="wikitable">
+<tr>
+<th style="text-align:left;">Operating system
+</th>
+<th style="text-align:left;">Support state
+</th>
+<th style="text-align:left;">Note
+</th></tr>
+<tr>
+<td>Windows NT/2K/XP/Vista/7
+</td>
+<td>YES
+</td>
+<td>Full support (using SetupAPI)
+</td></tr>
+<tr>
+<td>Windows CE
+</td>
+<td>YES
+</td>
+<td>Tested only on 5 and 6 platforms in the emulator
+</td></tr>
+<tr>
+<td>Gnu/Linux
+</td>
+<td>YES
+</td>
+<td>Full support (using libudev or simple search in /dev)
+</td></tr>
+<tr>
+<td>MacOSX
+</td>
+<td>YES
+</td>
+<td>Full support
+</td></tr>
+<tr>
+<td>Others Unix
+</td>
+<td>YES
+</td>
+<td>All POSIX-compatible (only simple search in /dev)
+</td></tr>
+<tr>
+<td>Symbian²
+</td>
+<td>YES
+</td>
+<td>Partially, tested only in the emulator
+</td></tr></table>
+<p>²Symbian development of the module is suspended due to lack of developers, as well as the fact that Nokia has abandoned the platform and will not include support for it in Qt5.
+</p>
+<h2><span class="mw-headline" id="View_the_source_code">View the source code</span></h2>
+<p>Recently launched a public mirror of the repository project at <a rel="nofollow" class="external text" href="http://qt.gitorious.org/qt/qtserialport">Gitorious</a>
+</p><p>Now everyone can freely and quickly view the latest changes through a WEB browser.
+</p>
+<h2><span class="mw-headline" id="Getting_the_source_code">Getting the source code</span></h2>
+<h3><span class="mw-headline" id="For_end-users">For end-users</span></h3>
+<p>To get the current snapshot of the source code as an archive click on <a rel="nofollow" class="external text" href="http://qt.gitorious.org/qt/qtserialport/archive-tarball/stable">this</a> link.
+</p><p>Those who want to use Git can run the following command:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git clone git<span class="sy0">:</span><span class="co1">//gitorious.org/qt/qtserialport.git</span></pre></div></div>
+<h3><span class="mw-headline" id="For_developers">For developers</span></h3>
+<p>To get the source code and contribute to the development you need to register a Qt developer account and set it up for use with Gerrit and Git (see <a rel="nofollow" class="external text" href="http://wiki.qt.io/Setting_up_Gerrit">Setting up Gerrit</a>).
+</p><p>You can then check out the repository using git, like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git clone ssh<span class="sy0">:</span><span class="co1">//&lt;username&gt;@codereview.qt.io:29418/qt/qtserialport.git</span></pre></div></div>
+<p>…with your Gerrit user ID in place of &lt;username&gt;.
+</p>
+<h2><span class="mw-headline" id="Building_and_Installing">Building and Installing</span></h2>
+<h3><span class="mw-headline" id="Build_and_install_from_command_line">Build and install from command line</span></h3>
+<p>Before building you need to:
+</p>
+<ul>
+<li> install Perl³
+</li>
+<li> ensure that the environment variables are set correctly:
+<ul>
+<li> correctly specified the path to the installed Qt4/Qt5
+</li>
+<li> correctly specified the path to use the compiler
+</li>
+<li> correctly specified the path to Perl³
+</li>
+</ul>
+</li>
+<li> create a build directory that is in the same level as the directory with the source code
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">/</span>
+<span class="sy0">|-</span> <span class="sy0">/</span>serialport<span class="sy0">-</span>src
+<span class="sy0">|-</span> <span class="sy0">/</span>serialport<span class="sy0">-</span>build</pre></div></div>
+<p>The following are the recommended steps for building the <b>QtSerialPort</b> library on Qt4/Qt5 from the command line.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd serialport<span class="sy0">-</span>build
+qmake ..<span class="sy0">/</span>serialport<span class="sy0">-</span>src<span class="sy0">/</span>qtserialport.<span class="me1">pro</span>
+make <span class="br0">&#91;</span>or <span class="st0">'nmake'</span> <span class="kw1">for</span> MSVC compiler<span class="sy0">,</span> or <span class="st0">'mingw32-make'</span> <span class="kw1">for</span> MinGW compiler<span class="br0">&#93;</span>
+make install <span class="br0">&#91;</span>or <span class="st0">'nmake install'</span> <span class="kw1">for</span> MSVC compiler<span class="sy0">,</span> or <span class="st0">'mingw32-make install'</span> <span class="kw1">for</span> MinGW compiler<span class="br0">&#93;</span></pre></div></div>
+<p><b><i>Note:'</i> on </b>nix systems super user privileges might be required:_
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo make install</pre></div></div>
+<h3><span class="mw-headline" id="Build_and_install_from_the_QtCreator">Build and install from the QtCreator</span></h3>
+<p>Using QtCreator is the simplest and fastest way to manually install the library.
+</p><p>Before building you need to:
+</p>
+<ul>
+<li> install Perl³ and check that the path to Perl was correctly specified in a global env
+</li>
+<li> check that the desired toolchains (kits) of QtCreator have been correctly configured
+</li>
+</ul>
+<p>Recommended steps to build the <b>QtSerialPort</b> library for Qt4/Qt5 from QtCreator:
+</p>
+<ul>
+<li> download and unpack the QtSerialPort sources
+</li>
+<li> run QtCreator and open the "qtserialport.pro" project file
+</li>
+<li> get to "Projects-&gt;(Your Kit)-&gt;Build-&gt;Build Steps"
+</li>
+<li> add a new make "Build Step" and write to the "Make arguments" the <b>install</b> target
+</li>
+<li> from the menus, select "Rebuild Project qtserialport"
+</li>
+</ul>
+<p>As a result, the QtSerialPort library will be automatically compiled and installed into the desired Qt instance (according to the selected Kit).
+</p><p><i><b>Note:</b> on *nix systems this method can be failed if Qt was installed from the repositories into system directories. Super user privileges may be required for "make install" target_</i>
+</p><p>³Perl is required only in the case of Qt5, see <a rel="nofollow" class="external text" href="http://wiki.qt.io/Building_Qt_5_from_Git">here</a>. When using Qt4 just skip this point.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>To use the library, add serialport to the <i>*.pro</i> file of your project:
+</p>
+<h3><span class="mw-headline" id="Qt4">Qt4</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">CONFIG <span class="sy0">+=</span> serialport</pre></div></div>
+<h3><span class="mw-headline" id="Qt5">Qt5</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT <span class="sy0">+=</span> serialport</pre></div></div>
+<p>Include the header files of QtSerialPort where appropriate:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">…
+<span class="co2">#include &lt;QtSerialPort/QSerialPort&gt;</span>
+<span class="co2">#include &lt;QtSerialPort/QSerialPortInfo&gt;</span>
+…</pre></div></div>
+<h3><span class="mw-headline" id="Simple_example">Simple example</span></h3>
+<p>Below is a simple example of <i>main.cpp</i>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QtCore/QCoreApplication&gt;</span>
+<span class="co2">#include &lt;QtCore/QDebug&gt;</span>
+&#160;
+<span class="co2">#include &lt;QtSerialPort/QSerialPort&gt;</span>
+<span class="co2">#include &lt;QtSerialPort/QSerialPortInfo&gt;</span>
+&#160;
+QT_USE_NAMESPACE
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw5">QCoreApplication</span> a<span class="br0">&#40;</span>argc<span class="sy0">,</span> argv<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Example use QSerialPortInfo</span>
+ <span class="kw2">foreach</span> <span class="br0">&#40;</span><span class="kw4">const</span> QSerialPortInfo <span class="sy0">&amp;</span>amp<span class="sy0">;</span>info<span class="sy0">,</span> QSerialPortInfo<span class="sy0">::</span><span class="me2">availablePorts</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Name&#160;: &quot;</span> <span class="sy0">&lt;&lt;</span> info.<span class="me1">portName</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Description&#160;: &quot;</span> <span class="sy0">&lt;&lt;</span> info.<span class="me1">description</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">qDebug</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;Manufacturer: &quot;</span> <span class="sy0">&lt;&lt;</span> info.<span class="me1">manufacturer</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Example use QSerialPort</span>
+ QSerialPort serial<span class="sy0">;</span>
+ serial.<span class="me1">setPort</span><span class="br0">&#40;</span>info<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>serial.<span class="me1">open</span><span class="br0">&#40;</span><span class="kw5">QIODevice</span><span class="sy0">::</span><span class="me2">ReadWrite</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+ serial.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="kw1">return</span> a.<span class="me1">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><i><b>Note:</b> CONFIG </i>= serial port / QT<i>= serialport must be the first or second line in your .pro file.</i>
+</p>
+<h2><span class="mw-headline" id="Documentation_generation">Documentation generation</span></h2>
+<p>There is no need to build the documentation, because the documentation is available <a rel="nofollow" class="external text" href="http://doc-snapshot.qt.io/qt5-stable/qtserialport-index.html">here</a>.
+</p>
+<h2><span class="mw-headline" id="For_those_wishing_to_contribute_to_the_development">For those wishing to contribute to the development</span></h2>
+<p>All development is done through <a rel="nofollow" class="external text" href="http://wiki.qt.io/Setting_up_Gerrit">Gerrit</a>. Therefore, those wishing to be involved in the development process must have a Qt developer account.
+</p><p>More information about the registration process and development can be found <a rel="nofollow" class="external text" href="http://wiki.qt.io/Code_Reviews">here</a>
+</p>
+<h2><span class="mw-headline" id="Possible_problems">Possible problems</span></h2>
+<p>Fill up
+</p>
+<h2><span class="mw-headline" id="Bug_Tracking">Bug Tracking</span></h2>
+<p>Use <a rel="nofollow" class="external text" href="https://bugreports.qt.io/">bugreports.qt.io</a>, Project "Qt", Component "Serial Port".
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.206 seconds
+Real time usage: 0.207 seconds
+Preprocessor visited node count: 210/1000000
+Preprocessor generated node count: 430/1000000
+Post‐expand include size: 1264/2097152 bytes
+Template argument size: 411/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;oldid=13052">http://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;oldid=13052</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.qt.io/Category:Articles_needing_cleanup" title="Category:Articles needing cleanup">Articles needing cleanup</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="https://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="https://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Qt+Serial+Port" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="https://wiki.qt.io/Qt_Serial_Port"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk"><span><a href="https://wiki.qt.io/Talk:Qt_Serial_Port"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="https://wiki.qt.io/Qt_Serial_Port" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;action=edit&amp;oldid=13052"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="https://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(https://wiki.qt.io/skins/common/images/wiki.png);" href="https://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="https://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="https://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="https://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="https://wiki.qt.io/Special:WhatLinksHere/Qt_Serial_Port" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="https://wiki.qt.io/Special:RecentChangesLinked/Qt_Serial_Port" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="https://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;diff=13052&amp;oldid=6252&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;oldid=13052" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="https://wiki.qt.io/index.php?title=Qt_Serial_Port&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="https://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":453});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=QtSerialPort&diff=13052&oldid=6252 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:47:01 GMT -->
+</html>

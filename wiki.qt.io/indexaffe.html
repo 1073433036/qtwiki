@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Setting_up_Gerrit&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:29:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Setting up Gerrit - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Setting_up_Gerrit","wgTitle":"Setting up Gerrit","wgCurRevisionId":19615,"wgRevisionId":19615,"wgArticleId":3061,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing Qt::Instructions"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Setting_up_Gerrit","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Setting_up_Gerrit skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Setting up Gerrit</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+All projects under the Qt Open Governance umbrella are hosted on our <a rel="nofollow" class="external text" href="http://codereview.qt-project.org/">Gerrit Instance</a>. There is an <a rel="nofollow" class="external text" href="http://code.qt.io/">official mirror and browser</a> of these repositories.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#How_to_get_started_-_Gerrit_registration"><span class="tocnumber">1</span> <span class="toctext">How to get started - Gerrit registration</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Local_Setup"><span class="tocnumber">2</span> <span class="toctext">Local Setup</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Configuring_Git"><span class="tocnumber">3</span> <span class="toctext">Configuring Git</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Using_Existing_clones"><span class="tocnumber">3.1</span> <span class="toctext">Using Existing clones</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Cloning_repositories"><span class="tocnumber">3.2</span> <span class="toctext">Cloning repositories</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Pushing_your_local_changes_to_gerrit"><span class="tocnumber">3.3</span> <span class="toctext">Pushing your local changes to gerrit</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="How_to_get_started_-_Gerrit_registration">How to get started - Gerrit registration</span></h2>
+<ol>
+<li> Create an account in the <a rel="nofollow" class="external text" href="https://bugreports.qt.io/">Qt bug tracker</a> (also known as JIRA)
+</li>
+<li> Go to <a rel="nofollow" class="external free" href="https://codereview.qt-project.org/">https://codereview.qt-project.org</a> and log in with your Qt bug tracker credentials
+<ul>
+<li> <b>Note</b>: Gerrit usernames are case-sensitive, but JIRA usernames are not. If you attempt to log into Gerrit with different capitalizations, you will end up with multiple accounts.
+</li>
+</ul>
+</li>
+<li> Go to the Settings page: <a rel="nofollow" class="external free" href="https://codereview.qt-project.org/settings/">https://codereview.qt-project.org/settings/</a>
+</li>
+<li> Go to "Settings" -&gt; "Contact Information" and register your email address.
+<ul>
+<li> You will receive a confirmation email; click on the link inside to finalize your registration.
+<ul>
+<li> When you use Outlook, manually copy the link <i>including any trailing equal signs</i> into the browser.
+</li>
+</ul>
+</li>
+<li> <b>Note</b>: Your username and e-mail address will be visible to the public. Use an alias + a custom e-mail address if you want to stay anonymous (this is discouraged)
+</li>
+</ul>
+</li>
+<li> Go to "Settings"-&gt; "SSH Public Keys" and upload your <a rel="nofollow" class="external text" href="https://help.github.com/articles/generating-ssh-keys">public SSH Key</a>
+</li>
+<li> If you are behind a firewall that blocks SSH access:
+<ol>
+<li> Go to "Settings" -&gt; "HTTP Password"
+</li>
+<li> Click "Generate Password"
+</li>
+<li> Add the following line to your <tt>~/.netrc</tt> (Windows: <tt>​%USERPROFILE%\_netrc</tt>):<pre>machine codereview.qt-project.org login &lt;Gerrit username&gt; password &lt;Generated password&gt;</pre>
+</li>
+</ol>
+</li>
+</ol>
+<h2><span class="mw-headline" id="Local_Setup">Local Setup</span></h2>
+<p>Configure SSH properly (the URLs below rely on this). Add this to your <tt>~/.ssh/config</tt> (Windows: <tt> C:\Users\%USERNAME%\.ssh\config</tt>): 
+</p>
+<pre>
+Host codereview.qt-project.org
+Port 29418
+User &lt;Gerrit/Jira username&gt;
+</pre>
+<p><b>NOTE:</b> The following steps need to be applied to every clone:
+</p><p>Install the hook generating Commit-Id files into your top level project directory, as well as all sub-repositories (e.g. qtbase.git) either through
+</p>
+<pre>
+$ scp -p codereview.qt-project.org:hooks/commit-msg .git/hooks
+</pre>
+<p>or by downloading the file via browser: <a rel="nofollow" class="external text" href="http://codereview.qt-project.org/tools/hooks/commit-msg">commit-msg</a> and putting it into the <tt>.git/hooks</tt> directory (make sure it is executable).
+</p><p>It is recommended to install the git_post_commit_hook from the <a rel="nofollow" class="external text" href="https://qt.gitorious.org/qt/qtrepotools">qtrepotools</a> repository. This gives you the checks of the <a href="Early_Warning_System.html" title="Early Warning System">Sanity Bot</a> locally. To do this, save the script
+</p>
+<pre>
+#! /bin/sh
+exec &quot;&lt;path to git clone&gt;/qtrepotools/git-hooks/git_post_commit_hook&quot; &quot;$@&quot;
+</pre>
+<p>into each &lt;path to git clone&gt;/.git/hooks/post-commit
+</p><p><b>NOTE:</b> Starting with git 1.7.8, if <tt>&lt;module name&gt;/.git</tt> contains <tt>gitdir: ../.git/modules/&lt;module name&gt;</tt>, you need to put the submodule hooks in <tt>.git/modules/&lt;module name&gt;/hooks</tt> instead of <tt>&lt;module name&gt;/.git/hooks</tt>.
+</p>
+<h2><span class="mw-headline" id="Configuring_Git">Configuring Git</span></h2>
+<p>We are developing in a heterogeneous environment with both Unix and Windows machines. Therefore it is imperative to have all files in the repository in the canonical LF-only format. Therefore, Windows users <b>must</b> run
+</p>
+<pre>
+$ git config --global core.autocrlf true
+</pre>
+<p>to automatically get CRLF line endings which are suitable for the native tools, and Unix users <i>should</i> use
+</p>
+<pre>
+$ git config --global core.autocrlf input
+</pre>
+<p>(this is a safety measure for the case where files with CRLF line endings get into the file system- this can happen when archives are unpacked, attachments saved, etc.).
+</p><p>To be able to create commits which can be pushed to the server, you need to set up your committer information correctly:
+</p>
+<pre>
+$ git config --global user.name &quot;Your Name&quot;
+$ git config --global user.email &quot;me@example.com&quot;
+</pre>
+<p>Please do not use nicknames or pseudonyms instead of the real name unless you have really good reasons.
+Gerrit will not accept your commits unless the committer information matches the email address(es) you registered.
+</p><p>To facilitate following the style guide for commit messages, it is recommended to install the Qt commit message template:
+</p>
+<pre>
+$ git config --global commit.template &lt;path to qt5.git or qt.git&gt;/.commit-template
+</pre>
+<p>A common mistake is forgetting to add new files to a commit. Therefore it is recommended to set up git to always show them in <tt>git stat</tt> and <tt>git commit</tt>, even if this is somewhat slower (especially on Windows):
+</p>
+<pre>
+$ git config --global status.showuntrackedfiles all
+</pre>
+<p>Pre-2.0 git has a somewhat stupid default that <tt>git push</tt> will push <i>all</i> branches to the upstream repository, which is almost never what you want. To fix this, use:
+</p>
+<pre>
+$ git config --global push.default tracking
+</pre>
+<p>This is not relevant for mainline branches under Gerrit control, as all pushing happens with refs anyway, but it may be important for your private clones.
+</p><p>Sometimes it is necessary to resolve the same conflicts multiple times. Git has the ability to record and replay conflict resolutions automatically, but - surprise surprise - it is not enabled by default. To fix it, run:
+</p>
+<pre>
+$ git config --global rerere.enabled true
+$ git config --global rerere.autoupdate true # this saves you the git add, but you should verify the result with git diff --staged
+</pre>
+<p><tt>git pull</tt> will show a nice diffstat, so you get an overview of the changes from upstream. <tt>git pull --rebase</tt> does not do that by default. But you want it:
+</p>
+<pre>
+$ git config --global rebase.stat true
+</pre>
+<p>To get nicely colored patches (from <tt>git diff</tt>, <tt>git log -p</tt>, <tt>git show</tt>, etc.), use this:
+</p>
+<pre>
+$ git config --global color.ui auto
+$ git config --global core.pager &quot;less -FRSX&quot;
+</pre>
+<p>Git supports aliases which you can use to save yourself some typing. For example, these (any similarity with subversion command aliases is purely accidental&#160;;)):
+</p>
+<pre>
+$ git config --global alias.di diff
+$ git config --global alias.ci commit
+$ git config --global alias.co checkout
+$ git config --global alias.ann blame
+$ git config --global alias.st status
+</pre>
+<h3><span class="mw-headline" id="Using_Existing_clones">Using Existing clones</span></h3>
+<p>Add a <tt>gerrit</tt> remote pointing to codereview.
+</p>
+<pre>
+$ git remote add gerrit ssh://codereview.qt-project.org/qt/&lt;qt5 or the submodule name you have checked out&gt;
+</pre>
+<p>If you are behind a SSH-blocking firewall, use the https protocol:
+</p>
+<pre>
+$ git remote add gerrit https://codereview.qt-project.org/p/qt/&lt;qt5 or the submodule name you have checked out&gt;
+</pre>
+<p>For Qt 4.8, use
+</p>
+<pre>
+$ git remote add gerrit ssh://codereview.qt-project.org/qt/qt
+</pre>
+<p>If you are behind a SSH-blocking firewall, use the https protocol:
+</p>
+<pre>
+$ git remote add gerrit https://codereview.qt-project.org/p/qt/qt
+</pre>
+<p>For Qt Creator, use
+</p>
+<pre>
+$ git remote add gerrit ssh://codereview.qt-project.org/qt-creator/qt-creator
+</pre>
+<p>If you are behind a SSH-blocking firewall, use the https protocol:
+</p>
+<pre>
+$ git remote add gerrit https://codereview.qt-project.org/p/qt-creator/qt-creator
+</pre>
+<h3><span class="mw-headline" id="Cloning_repositories">Cloning repositories</span></h3>
+<p>You should clone from the <a rel="nofollow" class="external text" href="http://code.qt.io/">official mirror</a> and track changes from there in order to keep the load on Gerrit down.
+</p>
+<h4><span class="mw-headline" id="Cloning_Qt5">Cloning Qt5</span></h4>
+<p>Qt 5 is modularized into several repositories which are aggregated by the qt5 super repo.
+The canonical way to obtain a Qt 5 clone is cloning the super repo from a mirror, and running the init-repository script in qt5 to set up the gerrit remote(s) pointing to codereview, and to clone the submodules:
+</p>
+<pre>
+$ git clone git://code.qt.io/qt/qt5.git
+$ cd qt5
+$ ./init-repository -f --no-webkit
+</pre>
+<p>Note that Qt 5 submodules have been changed from absolute to relative URLs (like "../qtbase.git") in the .gitmodules file.
+If you make a clone of <a rel="nofollow" class="external free" href="git://gitorious.org/qt/qt5">git://gitorious.org/qt/qt5</a> in gitorious as <a rel="nofollow" class="external free" href="git://gitorious.org/~">git://gitorious.org/~</a>&lt;username&gt;/qt/&lt;cloned-repository-name&gt;.git the init-repository script will not work. A URL rewrite rule has to be added to the .gitconfig file to make it work:
+</p>
+<pre>
+[url &quot;git://gitorious.org/qt/&quot;]
+        insteadOf = git://gitorious.org/~&lt;username&gt;/qt/
+</pre>
+<p>Alternatively, individual Qt5 submodules can be manually cloned as well. Follow <b>Using Existing Clones</b> above after cloning.
+</p>
+<h4><span class="mw-headline" id="Cloning_Qt4">Cloning Qt4</span></h4>
+<pre>
+$ git clone git://code.qt.io/qt/qt.git
+</pre>
+<p>Note that Qt4 does not have a <tt>master</tt> branch (since no 4.9 is planned). So, you should push changes to the <tt>4.8</tt> branch.
+</p>
+<h4><span class="mw-headline" id="Cloning_Qt_Creator">Cloning Qt Creator</span></h4>
+<pre>
+$ git clone git://code.qt.io/qt-creator/qt-creator.git
+</pre>
+<p>Setup the gerrit remote
+</p>
+<pre>
+$ git remote add gerrit ssh://codereview.qt-project.org/qt-creator/qt-creator
+</pre>
+<p>If you are behind a SSH-blocking firewall, use the https protocol:
+</p>
+<pre>
+$ git remote add gerrit https://codereview.qt-project.org/p/qt-creator/qt-creator
+</pre>
+<h3><span class="mw-headline" id="Pushing_your_local_changes_to_gerrit">Pushing your local changes to gerrit</span></h3>
+<p>See <a href="Gerrit_Introduction.html" title="Gerrit Introduction">Gerrit Introduction</a>.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.025 seconds
+Real time usage: 0.029 seconds
+Preprocessor visited node count: 269/1000000
+Preprocessor generated node count: 560/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:3061-0!*!0!!en!*!* and timestamp 20151104114648 and revision id 19615
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexa88c.html?title=Setting_up_Gerrit&amp;oldid=19615">http://wiki.qt.io/index.php?title=Setting_up_Gerrit&amp;oldid=19615</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Developing_Qt__Instructions.html" title="Category:Developing Qt::Instructions">Developing Qt::Instructions</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=3b507cf7394cb69a&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Setting_up_Gerrit.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Setting_up_Gerrit.html?title=Talk:Setting_up_Gerrit&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Setting_up_Gerrit.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index9277.html?title=Setting_up_Gerrit&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index5118.html?title=Setting_up_Gerrit&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Setting_up_Gerrit.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Setting_up_Gerrit.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="indexa88c.html?title=Setting_up_Gerrit&amp;oldid=19615" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexac63.html?title=Setting_up_Gerrit&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 September 2015, at 20:50.</li>
+											<li id="footer-info-viewcount">This page has been accessed 8,987 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":758});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Setting_up_Gerrit&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:29:51 GMT -->
+</html>

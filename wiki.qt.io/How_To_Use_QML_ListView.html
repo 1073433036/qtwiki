@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/How_To_Use_QML_ListView by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:40:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>How To Use QML ListView - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_To_Use_QML_ListView","wgTitle":"How To Use QML ListView","wgCurRevisionId":18789,"wgRevisionId":18789,"wgArticleId":990,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_To_Use_QML_ListView","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_To_Use_QML_ListView skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">How To Use QML ListView</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Needs to be updated to QtQuick 2<br /><small>Please <b><a rel="nofollow" class="external text" href="index5aa3.html?title=How_To_Use_QML_ListView&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#ListView"><span class="tocnumber">2</span> <span class="toctext">ListView</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Example"><span class="tocnumber">2.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Delegate"><span class="tocnumber">3</span> <span class="toctext">Delegate</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Example:_Separate_File_with_Delegate_Component"><span class="tocnumber">3.1</span> <span class="toctext">Example: Separate File with Delegate Component</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Example:_Delegate_Component_Embedded_in_Main_QML_file"><span class="tocnumber">3.2</span> <span class="toctext">Example: Delegate Component Embedded in Main QML file</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Different_ways_of_providing_Model_data"><span class="tocnumber">4</span> <span class="toctext">Different ways of providing Model data</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#ListModel"><span class="tocnumber">4.1</span> <span class="toctext">ListModel</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>ListView provides a way to visualize contents of an one-dimensional model. Data can come from QML model elements like ListModel, XmlListModel, or C++ custom model classes inherited from QAbstractListModel.
+</p><p>ListView has a <b>model</b> property which supplies data to be visualized, and has a <b>delegate</b> property which supplies how ( LAF ) each row in the model is visualized. ListView is provided as a part of model/view paradigm in Qt/Qt Quick.
+</p>
+<h2><span class="mw-headline" id="ListView">ListView</span></h2>
+<p>ListView element needs to be told about the model to visualize and the delegate component to use to visualize each element of the model. This is done with <b>model</b> and <b>delegate</b> properties of ListView
+</p>
+<h3><span class="mw-headline" id="Example">Example</span></h3>
+<p>Main.qml
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Item <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> rootItem
+  <span class="co1">// create a model item instance</span>
+&#160;
+  SampleListModel <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> sampleModel
+  <span class="br0">&#125;</span>
+&#160;
+  ListView <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> sampleListView
+    anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+    model<span class="sy0">:</span> sampleModel              <span class="co1">// concrete model</span>
+    delegate<span class="sy0">:</span> ExampleDelegate <span class="br0">&#123;</span> <span class="br0">&#125;</span>   <span class="co1">// provide delegate component.</span>
+    spacing<span class="sy0">:</span> <span class="nu0">4</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Now let's code ExampleDelegate component.
+</p>
+<h2><span class="mw-headline" id="Delegate">Delegate</span></h2>
+<p>Delegate components provide a way to visualize each row of model provided in ListView. An instance of delegate component is created dynamically for each row.
+</p>
+<h3><span class="mw-headline" id="Example:_Separate_File_with_Delegate_Component">Example: Separate File with Delegate Component</span></h3>
+<p>ExampleDelegate.qml
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> delegateItem
+  width<span class="sy0">:</span> parent.<span class="me1">width</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">100</span>
+  color<span class="sy0">:</span> <span class="st0">&quot;blue&quot;</span>
+&#160;
+  Image <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> imageItem
+    height<span class="sy0">:</span> parent.<span class="me1">height</span><span class="sy0">;</span> width<span class="sy0">:</span> <span class="nu0">100</span>
+    anchors.<span class="me1">left</span><span class="sy0">:</span> parent.<span class="me1">left</span>
+    <span class="co1">// delegate can directly use ListElement role name</span>
+    source<span class="sy0">:</span> imagePath
+  <span class="br0">&#125;</span>
+&#160;
+  Text <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> itexItem
+    anchors.<span class="me1">left</span><span class="sy0">:</span> imageItem.<span class="me1">right</span>
+    anchors.<span class="me1">leftMargin</span><span class="sy0">:</span> <span class="nu0">20</span>
+    anchors.<span class="me1">verticalCenter</span><span class="sy0">:</span> parent.<span class="me1">verticalCenter</span>
+    font.<span class="me1">pixelSize</span><span class="sy0">:</span> <span class="nu0">40</span>
+    <span class="co1">// delegate can directly use ListElement role name</span>
+    text<span class="sy0">:</span> imageName
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>As you can see above, <b>imagePath</b>, and <b>imageName</b> are not properties of delegateItem, so where are they coming from? They are coming from the model of ListView. <b>The magic is that delegate components can access roles of each ListElement it visualizes directly inside it</b>.
+</p><p>Alternatively, we can place this delegate component in the same .qml file where we have ListView element.
+</p>
+<h3><span class="mw-headline" id="Example:_Delegate_Component_Embedded_in_Main_QML_file">Example: Delegate Component Embedded in Main QML file</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Item <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> rootItem
+&#160;
+  Component <span class="br0">&#123;</span>
+    id<span class="sy0">:</span> delegateComponent
+    Item <span class="br0">&#123;</span> ... <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  ListView <span class="br0">&#123;</span>
+    <span class="co1">// provide delegate component.</span>
+    delegate<span class="sy0">:</span> delegateComponent
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>or
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Item <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> rootItem
+  ListView <span class="br0">&#123;</span>
+    <span class="co1">// provide delegate component.</span>
+    delegate<span class="sy0">:</span> Item <span class="br0">&#123;</span>
+      ...
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Now, let's create SimpleListModel model where each row has roles <b>imagePath</b>, and <b>imageName</b>
+</p>
+<h2><span class="mw-headline" id="Different_ways_of_providing_Model_data">Different ways of providing Model data</span></h2>
+<p>As specified earlier, data for ListView can be provided with QML Model elements like ListModel, XmlListModel or C++ custom classes inherited from QAbstractListModel.
+</p>
+<h3><span class="mw-headline" id="ListModel">ListModel</span></h3>
+<p>ListModel provides a way to specify model data to ListView. Each row in ListModel is constructed with ListElement.
+</p><p>Example:
+</p>
+<pre>SampleListModel.qml
+</pre>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+ListModel <span class="br0">&#123;</span>
+  ListElement <span class="br0">&#123;</span> imagePath<span class="sy0">:</span> <span class="st0">&quot;1.jpg&quot;</span><span class="sy0">;</span> imageName<span class="sy0">:</span> <span class="st0">&quot;flower&quot;</span> <span class="br0">&#125;</span>
+  ListElement <span class="br0">&#123;</span> imagePath<span class="sy0">:</span> <span class="st0">&quot;2.jpg&quot;</span><span class="sy0">;</span> imageName<span class="sy0">:</span> <span class="st0">&quot;house&quot;</span> <span class="br0">&#125;</span>
+  ListElement <span class="br0">&#123;</span> imagePath<span class="sy0">:</span> <span class="st0">&quot;3.jpg&quot;</span><span class="sy0">;</span> imageName<span class="sy0">:</span> <span class="st0">&quot;water&quot;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>The above example defines a simple ListModel which can be used by a ListView. Each ListElement contains list of roles that can be directly accessed inside delegate element of ListView.
+Note: Copy three images with names "1.jpb","2.jpg", and "3.jpg" to folder where you have qml files.
+</p><p>ListModel provides methods to manipulate ListModel from JavaScript. If we start with a empty ListModel, the first item inserted in to ListModel determines the roles that will be available to delegate in ListView.
+</p><p>Example&#160;:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListModel <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> sampleModel
+<span class="br0">&#125;</span>
+...
+<span class="me1">sampleModel</span>.<span class="me1">append</span><span class="br0">&#40;</span><span class="br0">&#123;</span><span class="st0">&quot;name&quot;</span><span class="sy0">:</span><span class="st0">&quot;sonia&quot;</span><span class="sy0">;</span><span class="st0">&quot;age&quot;</span><span class="sy0">:</span><span class="nu0">23</span><span class="br0">&#125;</span><span class="br0">&#41;</span></pre></div></div>
+<p>Now, roles <b>name</b>, and <b>age</b> will be available inside delegate of ListView. If we append more rows to above model with different roles, they will not be available to delegate.
+</p><p>Example&#160;:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListModel <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> sampleModel
+  ListElement <span class="br0">&#123;</span> imagePath<span class="sy0">:</span> <span class="st0">&quot;image1.jpg&quot;</span><span class="sy0">;</span> imageName<span class="sy0">:</span><span class="st0">&quot;house&quot;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+...
+&#160;
+<span class="co1">// insert a new row to model at index 1. Index starts from 0.</span>
+<span class="co1">// This is equivalent to appending at the end as index we provide is 1.</span>
+sampleModel.<span class="me1">insert</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span> <span class="br0">&#123;</span><span class="st0">&quot;name&quot;</span><span class="sy0">:</span><span class="st0">&quot;sonia&quot;</span><span class="sy0">,</span> <span class="st0">&quot;age&quot;</span><span class="sy0">:</span><span class="nu0">23</span><span class="br0">&#125;</span><span class="br0">&#41;</span></pre></div></div>
+<p>In the above example, roles <b>name</b>, and <b>age</b> will not be available in delegate. Only roles <b>imagePath</b>, and <b>imageName</b> will be available.
+</p><p>To get row at a given index, use ListModel::get(index)
+Example&#160;:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListModel <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> sampleModel
+  ListElement <span class="br0">&#123;</span> imagePath<span class="sy0">:</span> <span class="st0">&quot;image1.jpg&quot;</span><span class="sy0">;</span> imageName<span class="sy0">:</span><span class="st0">&quot;house&quot;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+...
+<span class="co1">// prints value of imagePath in the first row of sampleModel</span>
+console.<span class="kw3">log</span><span class="br0">&#40;</span>sampleModel.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">imagePath</span><span class="br0">&#41;</span></pre></div></div>
+<p>To Modify values of roles of a particular row, use ListModel::set(int index,jsobject dict) method
+Example&#160;:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListModel <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> sampleModel
+  ListElement <span class="br0">&#123;</span> imagePath<span class="sy0">:</span> <span class="st0">&quot;image1.jpg&quot;</span><span class="sy0">;</span> imageName<span class="sy0">:</span><span class="st0">&quot;house&quot;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+...
+<span class="me1">sampleModel</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="br0">&#123;</span>imagePath<span class="sy0">:</span> <span class="st0">&quot;image2.jpg&quot;</span><span class="sy0">,</span> imageName<span class="sy0">:</span><span class="st0">&quot;water&quot;</span><span class="br0">&#125;</span><span class="br0">&#41;</span></pre></div></div>
+<p>To set value of a particular role in a given row, use ListModel::setProperty(int index, string rolename, variant value)
+Example&#160;:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListModel <span class="br0">&#123;</span>
+  id<span class="sy0">:</span> sampleModel
+  ListElement <span class="br0">&#123;</span> imagePath<span class="sy0">:</span> <span class="st0">&quot;image1.jpg&quot;</span><span class="sy0">;</span> imageName<span class="sy0">:</span><span class="st0">&quot;house&quot;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+...
+<span class="me1">sampleModel</span>.<span class="me1">setProperty</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="st0">&quot;imagePath&quot;</span><span class="sy0">,</span> <span class="st0">&quot;image2.jpg&quot;</span><span class="br0">&#41;</span></pre></div></div>
+<p>To move elements inside ListModel use ListModel::move(int from, int to,int n)
+Moves n items from one position to another.
+</p><p>To remove a row from ListModel use ListModel::remove(index) and to clear all the rows in a model call ListModel.clear()
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.204 seconds
+Real time usage: 0.226 seconds
+Preprocessor visited node count: 201/1000000
+Preprocessor generated node count: 899/1000000
+Post‐expand include size: 3560/2097152 bytes
+Template argument size: 412/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:990-0!*!0!!en!*!* and timestamp 20151104123732 and revision id 18789
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexb520.html?title=How_To_Use_QML_ListView&amp;oldid=18789">http://wiki.qt.io/index.php?title=How_To_Use_QML_ListView&amp;oldid=18789</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=f8f3e5e883de587f&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="How_To_Use_QML_ListView.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_How_To_Use_QML_ListView.html?title=Talk:How_To_Use_QML_ListView&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="How_To_Use_QML_ListView.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index5aa3.html?title=How_To_Use_QML_ListView&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index629d.html?title=How_To_Use_QML_ListView&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/How_To_Use_QML_ListView.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/How_To_Use_QML_ListView.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index934d.html?title=How_To_Use_QML_ListView&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexb520.html?title=How_To_Use_QML_ListView&amp;oldid=18789" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index6848.html?title=How_To_Use_QML_ListView&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 8 July 2015, at 21:29.</li>
+											<li id="footer-info-viewcount">This page has been accessed 5,459 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":345});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/How_To_Use_QML_ListView by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:40:15 GMT -->
+</html>

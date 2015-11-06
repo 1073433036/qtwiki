@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&oldid=15142 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:15:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Creating a styled Gradient Button Bar - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Creating_a_styled_Gradient_Button_Bar","wgTitle":"Creating a styled Gradient Button Bar","wgCurRevisionId":15142,"wgRevisionId":15142,"wgArticleId":3610,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Creating_a_styled_Gradient_Button_Bar","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Creating_a_styled_Gradient_Button_Bar skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Creating a styled Gradient Button Bar</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 14:49, 28 March 2015 by <a href="http://wiki.qt.io/User:Simow" title="User:Simow" class="mw-userlink">Simow</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/User_talk:Simow" title="User talk:Simow">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Simow" title="Special:Contributions/Simow">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&amp;diff=prev&amp;oldid=15142" title="Creating a styled Gradient Button Bar">diff</a>) <a href="http://wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&amp;direction=prev&amp;oldid=15142" title="Creating a styled Gradient Button Bar">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><span style="font-size:.8em;">by <a rel="nofollow" class="external text" href="http://forum.qt.io/user/simow">Simon Wilper</a>, inspired by <a rel="nofollow" class="external text" href="http://forum.qt.io/user/darongyi">darongyi</a></span>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#What_you_learn"><span class="tocnumber">2</span> <span class="toctext">What you learn</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Creating_a_new_Project"><span class="tocnumber">3</span> <span class="toctext">Creating a new Project</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Preparing_the_Main_Window"><span class="tocnumber">4</span> <span class="toctext">Preparing the Main Window</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Adding_the_Icon_Resources"><span class="tocnumber">5</span> <span class="toctext">Adding the Icon Resources</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Adding_Items_to_the_Tab_Bar"><span class="tocnumber">6</span> <span class="toctext">Adding Items to the Tab Bar</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Enter_QBrush.2C_QLinearGradient_and_QPalette"><span class="tocnumber">7</span> <span class="toctext">Enter QBrush, QLinearGradient and QPalette</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#MyNoFocusStyle"><span class="tocnumber">8</span> <span class="toctext">MyNoFocusStyle</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>Sometimes when you are just bored by the default <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtabwidget.html#">QTabWidget</a></span> and don't want to pull QML dependencies into your project to create a fancy user interface this article might be for you. With the help of <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qstyle.html#">QStyle</a></span>, <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qbrush.html#">QBrush</a></span>, a left-to-right <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qlistwidget.html#">QListWidget</a></span> we are creating a stylish tab bar that can switch through a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qstackedlayout.html#">QStackedLayout</a></span> that looks like this (only an example, everything customizable):
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.qt.io/File:Gradient-tab-bar-01.png" class="image"><img alt="Gradient-tab-bar-01.png" src="http://wiki.qt.io/images/d/d0/Gradient-tab-bar-01.png" width="501" height="206" /></a></div></div>
+<h2><span class="mw-headline" id="What_you_learn">What you learn</span></h2>
+<p>This tutorial makes use of different features and techniques provided by Qt:
+</p>
+<ul>
+<li> <b>Resource System</b> The icons you see in the screenshot are loaded via the <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/resources.html">Qt Resource System</a>
+</li>
+<li> <b>QBrush</b> For creating the gradient we make use of <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qlineargradient.html#">QLinearGradient</a></span> that is assigned to a <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qbrush.html#">QBrush</a></span>.
+</li>
+<li> <b>QPalette</b> Qt has no direct way for setting colors to particular widgets, except using stylesheets, but as far as I know there is no support for gradients yet. So we need to make use of color roles and a customized <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qpalette.html#">QPalette</a></span>
+</li>
+<li> <b>QListWidget</b> We make use of the <tt>flow</tt> property to make the items flow horizontally.
+</li>
+</ul>
+<h2><span class="mw-headline" id="Creating_a_new_Project">Creating a new Project</span></h2>
+<p>To make our life easy and get results fast we use QtCreator along this tutorial. So lets create a new project by calling 'File' - 'New File or Project' and select 'Qt Widgets Application'. Follow the Wizard steps and we should end up with a project skeleton containing a form, header and source for the main window.
+</p>
+<h2><span class="mw-headline" id="Preparing_the_Main_Window">Preparing the Main Window</span></h2>
+<p>We start by modifying the <tt>mainwindow.ui</tt> form. Open the Forms folder and double click the .ui file. The form designer opens the empty main window. Since we don't need a tool bar, status bar and menu bar we get rid of them by right-click - 'Remove', either on the item directly or in the object inspector:
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.qt.io/File:Gbb-object-inspector.png" class="image"><img alt="Gbb-object-inspector.png" src="http://wiki.qt.io/images/c/c3/Gbb-object-inspector.png" width="397" height="180" /></a></div></div>
+<p>Now that we have an empty form we add an item-based 'List Widget' (QListWidget) from the Widget Box and below that a normal widget (QWidget) that will later hold our stacked layout containing the tab pages. Let's give the list widget the name <i>tabBar</i> and the QWidget <i>tabContainer</i>. To make the widgets resize nicely when you resize the main window we select the main window and press the 'Lay Out Vertically' button of the form designer toolbar (or use the Ctrl+L shortcut).
+</p><p>This should give us the following result:
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.qt.io/File:Gbb-form-with-widgets.png" class="image"><img alt="Gbb-form-with-widgets.png" src="http://wiki.qt.io/images/9/99/Gbb-form-with-widgets.png" width="645" height="202" /></a></div></div>
+<p>Well, that doesn't look very nice. The list widget going to display the tab icons is way too high. This is because the widget property <i>maximum height</i> does not limit the height for the current layout situation. So we set it to a fixed height, let's say 50:
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.qt.io/File:Gbb-form-with-widgets-sized.png" class="image"><img alt="Gbb-form-with-widgets-sized.png" src="http://wiki.qt.io/images/9/98/Gbb-form-with-widgets-sized.png" width="711" height="283" /></a></div></div>
+<p>Nice. That's better.
+</p><p>Now we have a QListWidget as the tab bar. But wait, a <i>list</i>? Doesn't a list normally <i>list</i> the items from top to bottom? Yes. But this widget has the <tt>flow</tt> property we can set to <tt>LeftToRight</tt>:
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.qt.io/File:Gbb-list-flow.png" class="image"><img alt="Gbb-list-flow.png" src="http://wiki.qt.io/images/9/91/Gbb-list-flow.png" width="369" height="84" /></a></div></div>
+<h2><span class="mw-headline" id="Adding_the_Icon_Resources">Adding the Icon Resources</span></h2>
+<p>Now that we have an empty tab bar, let's add some items. But first we need to register a resource file that is going to hold the graphics files. If you want to follow the example from above you can download the icons from here:
+</p>
+<table>
+<tr>
+<td> <a href="http://wiki.qt.io/File:Gbb-network.png" class="image"><img alt="Gbb-network.png" src="http://wiki.qt.io/images/e/e2/Gbb-network.png" width="24" height="24" /></a> </td>
+<td> <a href="http://wiki.qt.io/File:Gbb-disc.png" class="image"><img alt="Gbb-disc.png" src="http://wiki.qt.io/images/6/6e/Gbb-disc.png" width="24" height="24" /></a> </td>
+<td> <a href="http://wiki.qt.io/File:Gbb-floppy.png" class="image"><img alt="Gbb-floppy.png" src="http://wiki.qt.io/images/e/e7/Gbb-floppy.png" width="24" height="24" /></a>
+</td></tr></table>
+<p>Add a new resource file by choosing <i>File</i> - <i>New File or Project</i>. From that dialog select <i>Qt</i> from the template category list on the left and then <i>Qt Resource File</i>. Confirm by clicking on <i>Choose...</i>. Enter the name <i>main.qrc</i> and click <i>Next</i>, then on <i>Finish</i> to confirm the default settings for version management.
+</p><p>Now you should see the resource editor:
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.qt.io/File:Gbb-resource-aditor.png" class="image"><img alt="Gbb-resource-aditor.png" src="http://wiki.qt.io/images/f/f7/Gbb-resource-aditor.png" width="586" height="154" /></a></div></div>
+<p>Now we need to add a prefix. A <i>prefix</i> can be seen as a virtual folder within a resource file. This technique can be used to group resource files or e.g. create different language sensitive icons. Bear in mind that you are not only limited to graphics. You could also add a license document to the resource file and load it in the about box.
+</p><p>Let's add the prefix called <tt>/</tt> what happens to be our root prefix. Click on the <i>Add</i> button then choose <i>Add prefix</i> from the popup menu. An automatically named entry <tt>/new/prefix1</tt> is created. Remove the text portion so that only <tt>/</tt> remains in the text field below.
+</p><p>Now while the prefix <tt>/</tt> is selected you can add some files by clicking <i>Add</i> - <i>Add Files</i>. For the sake of simplicity I assume that the icons are located in the same directory as the rest of the project files. From the File picker you can also select multiple files.
+</p><p>Select the three icon PNG files and click 'Open'. This should result into:
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.qt.io/File:Gbb-resource-tree.png" class="image"><img alt="Gbb-resource-tree.png" src="http://wiki.qt.io/images/b/b1/Gbb-resource-tree.png" width="226" height="104" /></a></div></div>
+<h2><span class="mw-headline" id="Adding_Items_to_the_Tab_Bar">Adding Items to the Tab Bar</span></h2>
+<p>Now it's time to add some items to our tab bar. The project wizard created some <tt>cpp</tt> and header files we just need to modify.
+</p><p>In the <tt>mainwindow.cpp</tt> we find a constructor that creates the user interface (<tt>Ui::MainWindow</tt>) if you didn't change the default name. In the constructor the method <tt>setupUi</tt> is called what initializes the from the included <tt>ui_mainwindow.h</tt> header file which is in turn created by the <tt>uic</tt> (User Interface Compiler).
+</p><p>After the initialization we can access the list widget and add some items:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MainWindow<span class="sy0">::</span><span class="me2">MainWindow</span><span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent<span class="br0">&#41;</span> <span class="sy0">:</span>
+    <span class="kw5">QMainWindow</span><span class="br0">&#40;</span>parent<span class="br0">&#41;</span><span class="sy0">,</span>
+    ui<span class="br0">&#40;</span><span class="kw1">new</span> Ui<span class="sy0">::</span><span class="me2">MainWindow</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+&#160;
+    ui<span class="sy0">-&gt;</span><span class="me3">setupUi</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+    <span class="kw5">QListWidgetItem</span> <span class="sy0">*</span>item1 <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QListWidgetItem</span><span class="br0">&#40;</span>ui<span class="sy0">-&gt;</span><span class="me3">listWidget</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    item1<span class="sy0">-&gt;</span><span class="me3">setText</span><span class="br0">&#40;</span><span class="st0">&quot;Floppy Disc&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    item1<span class="sy0">-&gt;</span><span class="me3">setIcon</span><span class="br0">&#40;</span> <span class="kw5">QIcon</span><span class="br0">&#40;</span><span class="st0">&quot;:/floppy.png&quot;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+    <span class="kw5">QListWidgetItem</span> <span class="sy0">*</span>item2 <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QListWidgetItem</span><span class="br0">&#40;</span>ui<span class="sy0">-&gt;</span><span class="me3">listWidget</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    item2<span class="sy0">-&gt;</span><span class="me3">setText</span><span class="br0">&#40;</span><span class="st0">&quot;Compact Disc&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    item2<span class="sy0">-&gt;</span><span class="me3">setIcon</span><span class="br0">&#40;</span> <span class="kw5">QIcon</span><span class="br0">&#40;</span><span class="st0">&quot;:/disc.png&quot;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+    <span class="kw5">QListWidgetItem</span> <span class="sy0">*</span>item3 <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QListWidgetItem</span><span class="br0">&#40;</span>ui<span class="sy0">-&gt;</span><span class="me3">listWidget</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    item3<span class="sy0">-&gt;</span><span class="me3">setText</span><span class="br0">&#40;</span><span class="st0">&quot;Network&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    item3<span class="sy0">-&gt;</span><span class="me3">setIcon</span><span class="br0">&#40;</span> <span class="kw5">QIcon</span><span class="br0">&#40;</span><span class="st0">&quot;:/network.png&quot;</span><span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="br0">&#125;</span></pre></div></div>
+<p>These lines are quite straight-forward:
+</p>
+<ol>
+<li> create a new <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qlistwidgetitem.html#">QListWidgetItem</a></span> and pass the list widget from the <tt>ui</tt> object as the parameter so that it gets added automatically
+</li>
+<li> set the text for the tab label
+</li>
+<li> set the icon from the resources we already added
+</li>
+</ol>
+<p>Running our sample application with these modifications results into this:
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.qt.io/File:Gbb-added-items.png" class="image"><img alt="Gbb-added-items.png" src="http://wiki.qt.io/images/5/51/Gbb-added-items.png" width="525" height="235" /></a></div></div>
+<p>Well, we have items, we have icons and we can select but we are still missing the promised fanciness. The items are now painted using the default style (on my system the GTK-Qt-Style is used). And most important: Still no gradients. Seems like we need some more actors on the stage.
+</p>
+<h2><span class="mw-headline" id="Enter_QBrush.2C_QLinearGradient_and_QPalette">Enter QBrush, QLinearGradient and QPalette</span></h2>
+<p>In order to create a linear gradient we need at least three bits of information:
+</p>
+<ol>
+<li> <b>the coordinates</b> to tell the painter where to start drawing the gradient
+</li>
+<li> <b>start color</b> the relative position and the start color
+</li>
+<li> <b>end color</b> the relative position and the end color
+</li>
+</ol>
+<p>Put together we insert right after the line <tt>ui-&gt;setupUi(this);</tt>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QLinearGradient</span> buttonGradient<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span>ui<span class="sy0">-&gt;</span><span class="me3">listWidget</span><span class="sy0">-&gt;</span><span class="me3">height</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>The QLinearGradient constructor takes four parameters: x1, y1, x2, y2. With these coordinate pairs we can exactly define the interpolated area. In our case we want the background of the list widget being filled entirely by the gradient. Thus we pass as the first coordinate pair 0,0 (start at the upper left corner) and the second 0,<tt>ui-&gt;listWidget-&gt;height()</tt> stop at the lower left corner so that the gradient spans the entire height of the list widget.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonGradient.<span class="me1">setColorAt</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="kw5">QColor</span><span class="br0">&#40;</span><span class="nu0">100</span><span class="sy0">,</span><span class="nu0">120</span><span class="sy0">,</span><span class="nu0">140</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+buttonGradient.<span class="me1">setColorAt</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span><span class="kw5">QColor</span><span class="br0">&#40;</span><span class="nu0">160</span><span class="sy0">,</span><span class="nu0">180</span><span class="sy0">,</span><span class="nu0">200</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>These two lines define the start and stop color. The first parameter is the relative position where to set the color. It is a real value ranging from 0 to 1. Here we just define our two colors at 0 and at 1.
+</p><p>So, a gradient definition alone does not do anything useful yet. Now we need to get it painted onto the background. Unfortunately the QWidget class does not come with a method <tt>setBackground()</tt> or something similar. The Qt user interface classes are completely <i>style</i>-driven. The colors can only be changed by setting them in a <i>palette</i>-object.
+</p><p>The <span class="plainlinks"><a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qpalette.html#">QPalette</a></span> is responsible for organizing various colors in groups and roles. For detailed information see the documentation link.
+</p><p>For us now it's just important that we need to change the following color roles:
+</p>
+<ul>
+<li> <b>QPalette::Base</b>: color used to paint the widget background
+</li>
+<li> <b>QPalette::Highlight</b>: what color to use for the selected item background
+</li>
+<li> <b>QPalette::HighlightedText</b>: forground color for selected item
+</li>
+<li> <b>QPalette::Text</b>: forground color for the other non-selected items
+</li>
+</ul>
+<p>The method to use for changing the color is <tt>void QPalette::setBrush(ColorRole role, const QBrush &amp; brush)</tt>. We can assign the new colors directly to the global application wide palette. But that will change the colors for every widget. We want only our list widget to use our custom colors. So we create a copy of the current palette and change only the colors we need.
+</p><p>Directly after the gradient code block we insert:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QPalette</span> palette <span class="sy0">=</span> qApp<span class="sy0">-&gt;</span><span class="me3">palette</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+palette.<span class="me1">setBrush</span><span class="br0">&#40;</span> <span class="kw5">QPalette</span><span class="sy0">::</span><span class="me2">Base</span><span class="sy0">,</span> buttonGradient <span class="br0">&#41;</span><span class="sy0">;</span>
+palette.<span class="me1">setBrush</span><span class="br0">&#40;</span> <span class="kw5">QPalette</span><span class="sy0">::</span><span class="me2">Highlight</span><span class="sy0">,</span> buttonGradient <span class="br0">&#41;</span><span class="sy0">;</span>
+palette.<span class="me1">setBrush</span><span class="br0">&#40;</span> <span class="kw5">QPalette</span><span class="sy0">::</span><span class="me2">HighlightedText</span><span class="sy0">,</span> <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">white</span> <span class="br0">&#41;</span><span class="sy0">;</span>
+palette.<span class="me1">setBrush</span><span class="br0">&#40;</span> <span class="kw5">QPalette</span><span class="sy0">::</span><span class="me2">Text</span><span class="sy0">,</span> <span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">white</span> <span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ui<span class="sy0">-&gt;</span><span class="me3">listWidget</span><span class="sy0">-&gt;</span><span class="me3">setPalette</span><span class="br0">&#40;</span>palette<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Let's see what we've got:
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.qt.io/File:Gbb-gradient-background.png" class="image"><img alt="Gbb-gradient-background.png" src="http://wiki.qt.io/images/3/31/Gbb-gradient-background.png" width="525" height="249" /></a></div></div>
+<p>Wow, gradient background. So far, so good. But something is amiss: There is still this ugly focus box displayed around the selected entry. So, let's get rid of this.
+</p>
+<h2><span class="mw-headline" id="MyNoFocusStyle">MyNoFocusStyle</span></h2>
+<p>Removing the focus box involves altering the current style of the widget. For this we need to understand how styles work. Each time a widget is painted on the display different methods of the currently set style are called:
+</p>
+<ul>
+<li> drawPrimitive
+</li>
+<li> drawControl
+</li>
+<li> drawItemPixmap
+</li>
+</ul>
+<p>to name a few. Each of the methods are responsible for different aspects of the underlying layout. We are now interested in the <tt>drawPrimitive</tt> method:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">void</span> <span class="kw5">QStyle</span><span class="sy0">::</span><span class="me2">drawPrimitive</span><span class="br0">&#40;</span>
+    PrimitiveElement element<span class="sy0">,</span>
+    <span class="kw4">const</span> <span class="kw5">QStyleOption</span> <span class="sy0">*</span> option<span class="sy0">,</span>
+    <span class="kw5">QPainter</span> <span class="sy0">*</span> painter<span class="sy0">,</span>
+    <span class="kw4">const</span> <span class="kw5">QWidget</span> <span class="sy0">*</span> widget <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw4">const</span></pre></div></div>
+<p>that we need to overload in our new class <tt>MyNoFocusStyle</tt>. Create a new class by calling <i>File</i> - <i>New File or Project...</i>. Select <i>C++ Class</i> from the category <i>C++</i> and click <i>Choose...</i>.
+</p><p>On the next wizard page enter the class name "MyNewFocusStyle" and let it inherit from "QProxyStyle". Finish the wizard and add the <tt>drawPrimitive</tt>-method to the cpp file (and the method declaration to the header file of course):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">void</span> MyNoFocusStyle<span class="sy0">::</span><span class="me2">drawPrimitive</span><span class="br0">&#40;</span>
+     PrimitiveElement element<span class="sy0">,</span>
+     <span class="kw4">const</span> <span class="kw5">QStyleOption</span> <span class="sy0">*</span>option<span class="sy0">,</span>
+     <span class="kw5">QPainter</span> <span class="sy0">*</span>painter<span class="sy0">,</span>
+     <span class="kw4">const</span> <span class="kw5">QWidget</span> <span class="sy0">*</span>widget<span class="br0">&#41;</span> <span class="kw4">const</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span> element <span class="sy0">==</span> PE_FrameFocusRect <span class="br0">&#41;</span> return<span class="sy0">;</span>
+    QProxyStyle<span class="sy0">::</span><span class="me2">drawPrimitive</span><span class="br0">&#40;</span> element<span class="sy0">,</span> option<span class="sy0">,</span> painter<span class="sy0">,</span> widget <span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>That's it. No rocket science but I think this needs a word of explanation. The focus rectangle in the QStyle world is a so-called <i>Primitive</i> what gets drawn -- you guessed it -- in the drawPrimitive method with the passed <i>PrimitiveElement</i> parameter <i>element</i>. In the enumeration of all primitive elements the focus rectangle has the id 3 or <i>PE_FrameFocusRect</i>.
+</p><p>When our items of the list widget are painted we just want the focus frame <i>not</i> to be drawn. Thus we just return from the drawPrimitive method when the passed element parameter is the focus frame, otherwise we pass all parameters to the parent class QProxyStyle, so that all other primitives are still drawn.
+</p><p>Now we just need to instantiate the new style and assign it to our list widget. Right after <tt>ui-&gt;setupUi()</tt> add the line:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ui<span class="sy0">-&gt;</span><span class="me3">listWidget</span><span class="sy0">-&gt;</span><span class="me3">setStyle</span><span class="br0">&#40;</span> <span class="kw1">new</span> MyNoFocusStyle <span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Some further beautification can be done via style sheets:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ui<span class="sy0">-&gt;</span><span class="me3">listWidget</span><span class="sy0">-&gt;</span><span class="me3">setStyleSheet</span><span class="br0">&#40;</span><span class="st0">&quot;border: none; font-weight: bold;&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>and we are there:
+</p>
+<div class="center"><div class="floatnone"><a href="http://wiki.qt.io/File:Gbb-no-focus-rect.png" class="image"><img alt="Gbb-no-focus-rect.png" src="http://wiki.qt.io/images/2/28/Gbb-no-focus-rect.png" width="525" height="249" /></a></div></div>
+<p>The rest is almost self-explanatory: For each tab page create a new QWidget, put the elements in there, add them to the QStackedLayout that you assigned to the <tt>widgetPages</tt> of our main window. Finally connect the signal for selection change of the list widget to a change page slot of your main window...
+</p><p>... what has been left as an exercise for the reader.
+</p><p>If you made it this far and like this tutorial you might want to extend/add more features and continue this tutorial.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.205 seconds
+Real time usage: 2.092 seconds
+Preprocessor visited node count: 200/1000000
+Preprocessor generated node count: 445/1000000
+Post‐expand include size: 927/2097152 bytes
+Template argument size: 198/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:3610-0!*!*!!en!2!* and timestamp 20151104160116 and revision id 15142
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&amp;oldid=15142">http://wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&amp;oldid=15142</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:HowTo" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Creating+a+styled+Gradient+Button+Bar" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Creating_a_styled_Gradient_Button_Bar"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Creating_a_styled_Gradient_Button_Bar&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Creating_a_styled_Gradient_Button_Bar" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Creating_a_styled_Gradient_Button_Bar" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Creating_a_styled_Gradient_Button_Bar" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&amp;oldid=15142&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&amp;oldid=15142" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 March 2015, at 14:49.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,718 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":245});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Creating_a_styled_Gradient_Button_Bar&oldid=15142 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:15:18 GMT -->
+</html>

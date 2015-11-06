@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=SUBDIRS_-_handling_dependencies&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:05:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>SUBDIRS - handling dependencies - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SUBDIRS_-_handling_dependencies","wgTitle":"SUBDIRS - handling dependencies","wgCurRevisionId":19360,"wgRevisionId":19360,"wgArticleId":3833,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Tools::qmake"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"SUBDIRS_-_handling_dependencies","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-SUBDIRS_-_handling_dependencies skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">SUBDIRS - handling dependencies</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#template:_subdirs"><span class="tocnumber">2</span> <span class="toctext">template: subdirs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Defining_Project_Dependencies:_.depends_attributes"><span class="tocnumber">2.1</span> <span class="toctext">Defining Project Dependencies: .depends attributes</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Defining_a_processing_sequence:_CONFIG_.2B.3D_ordered"><span class="tocnumber">2.2</span> <span class="toctext">Defining a processing sequence: CONFIG += ordered</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Background_on_Windows_Build_Systems"><span class="tocnumber">2.3</span> <span class="toctext">Background on Windows Build Systems</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>It is common for larger software projects to separate its components into different topics. There might be components the are relevant to the GUI of a software, other might be in the topic of handling geometrical processing, others are in the topic of generating a report.
+</p><p>Typically the software components belonging to a topic are combined into a software library (<a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Library_(computing)">Wikipedia</a>). In Windows these libraries are often found as .lib or .dll files; under Linux there are .a and .so files; under MacOS X they are called .a or .dylib files.
+</p><p>Finally these libraries are linked to an executable application.
+</p><p>The following text uses a small example, consisting of an application: app and two libraries: lib and lib2.
+The application app uses features of the libraries lib and lib2 while the libraries are in no direct relation.
+So, to have a running application the toolchain must create the lib.lib and lib2.lib files and finally create the app.exe by linking the lib.lib and lib2.lib to the object files of the app components. (The following Text uses the Windows file name notations of the objects)
+</p><p>When the software project is in an early design and implementation phase, the libraries might change as often as the application using the libraries. In the Qt domain, each of the three topics: lib, lib2 and app will be handled bye one project each. Typically there will be three folders: lib, lib2 and app, each containing a specific .pro file, describing how to handle each project (which source files, compile parameters, ...). The profiles typically will be named after the folders they live in: lib.pro, lib2.pro and app.pro. For this example all three projects will live in one folder: src.
+</p><p>On the file system this can be seen as following hierarchy:
+</p>
+<pre>
+ /src
+ |--- app
+ |    |--- app.pro
+ |    `--- ... (source files of app)
+ |--- lib
+ |    |--- lib.pro
+ |    `--- ... (source files of lib)
+ `--- lib2
+      |--- lib2.pro
+      `--- ... (source files of lib2)
+ 
+</pre>
+<p>Each of this projects could for example be edited separately in three Microsoft Visual Studio 2010 IDEs (MSVS2010) or handled as three separate projects in one QtCreator. But this handling of the projects would mean to compile each by hand separately.
+It gets tedious when taking into account the dependencies between the three projects: the libs must be compiled before the app can be created!
+</p>
+<h2><span class="mw-headline" id="template:_subdirs">template: subdirs</span></h2>
+<p>To handle this relation automatically qmake has a template type: subdirs (<a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qmake-variable-reference.html#template">template</a>). 
+</p><p>The basic idea of this template type is, to list all projects that belong to a kind of meta project.
+A new .pro file is created for that meta project, that simply consists of the qmake system variable <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qmake-variable-reference.html#subdirs">SUBDIRS</a>. This variable is filled with the names of the project folders by giving the
+relative path to where the meta .pro file lies. In the following text this meta profile is names subdirs.pro.
+For a better overview in the file hierarchy a new parent folder is introduced, named after the software project that is created:
+FooApp.
+</p>
+<pre>
+ /FooApp
+ |--- subdirs.pro
+ `--- src
+      |
+      |--- app
+      |    |--- app.pro
+      |    `--- ... (source files of app)
+      |--- lib
+      |    |--- lib.pro
+      |    `--- ... (source files of lib)
+      `--- lib2
+           |--- lib2.pro
+           `--- ... (source files of lib2)
+ 
+</pre>
+<p>The meta profile subdirs.pro is on the same level as the src folder.
+</p><p>The content of the subdirs.pro is
+</p>
+<pre>
+ template = subdirs
+
+ SUBDIRS = \
+           src/app \   # relative paths
+           src/lib \
+           src/lib2
+ 
+</pre>
+<p>The subdirs.pro file can be opened by QtCreator. In QtCreator there will be just one project with child elements, the sub-project. The advantage is now that when compiling this meta project the sub-projects are compiled automatically. Asking for a qmake run within QtCreator on this meta project will also recurse into the sub-projects calling qmake for each.
+</p><p>To make this meta project available for MSVC2010, qmake must be called on the command line in the folder FooApp:
+</p>
+<pre>qmake -tp vc -r
+</pre>
+<p>This will generate a solution file with the name subdirs.sln. When opening this file in MSVC2010 a solution will be opened that contain the three project: app, lib, and lib2. A compile on the solution will call compile for each of the contained projects.
+</p><p><b>Attention:</b> The order in with the subproject are compiled is <b>not</b> defined by the SUBDIRS content. And this could lead to a wrong processing order. So, the app project could not be build if it is processed first; it would miss the libraries lib and lib2.
+One could assume that the build order is given by the order of the entities in the SUBDIRS variable (so example given above would be wrong). But many modern compile tools offer parallel compilation. If the order of the entity would be forcing the build order, then parallel compilation on the projects level would not be possible. Per default the sub-projects are compiled in any order the used build-systems logic prefers.
+</p>
+<h3><span class="mw-headline" id="Defining_Project_Dependencies:_.depends_attributes">Defining Project Dependencies: .depends attributes</span></h3>
+<p><b>Attention Visual Studio</b> This method is very fragile implemented in qmake when generating the Windows Visual Studio files (.sln and .vcxproj).
+Qt 4.8.x does not support it at all and Qt 5.4.1 must have special setting in the sub projects pro files.
+A bug was filled in <a rel="nofollow" class="external free" href="https://bugreports.qt.io/browse/QTBUG-45706">https://bugreports.qt.io/browse/QTBUG-45706</a>.
+</p><p>To support parallel processing of the projects on modern computers, an additional information must be given: Which project must be finished before another project can be processed.
+</p><p>In the running example, we have noted that app can only be build, when lib and lib2 are build.
+</p><p>By telling the dependency explicitly in the meta project file, qmake can build processing instructions that allow a high degree of parallelism.
+</p>
+<pre>
+ template = subdirs
+
+ SUBDIRS = \
+           lib2 \   # sub-project names
+           lib  \
+           app
+
+ # where to find the sub projects - give the folders
+ lib2.subdir = src/lib2
+ lib.subdir  = src/lib
+ app.subdir  = src/app
+
+ # what subproject depends on others
+ app.depends = lib lib2
+ 
+</pre>
+<p>The important addition to the file is the line <tt>app.depends = lib lib2</tt>. Setting the .depends attribute of the project app tells qmake that app can only be build if lib and lib2 is processed.
+</p><p>This allows qmake to build processing instructions that can be executed in a high degree of parallelism. For example lib and lib2 can be build in parallel, while app is hold back until lib and lib2 processing is finished.
+</p><p>In addition there is an implicit introduction of projects names. In SUBDIRS the project names are given (not the path anymore). The path to the project directory is set below by setting the .subdir attribute to the relative path where the project folder is located.
+</p>
+<h3><span class="mw-headline" id="Defining_a_processing_sequence:_CONFIG_.2B.3D_ordered">Defining a processing sequence: CONFIG += ordered</span></h3>
+<p><b>Attention Visual Studio</b>: This feature is not supported under Qt 4.8.x (<a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qmake-variable-reference.html#ordered-targets-and-visual-studio-solution-files">Qt Docs 4.8</a>). Instead an automatic dependency detection scheme is used in the Microsoft Visual Studio file generation (.sln and .vcxproj). In the Qt5 documentation, the section describing the automatism is deleted! A small test showed that the ordered otption as show here does still not work for Qt 5.4.1.
+A bug report was filled in <a rel="nofollow" class="external free" href="https://bugreports.qt.io/browse/QTBUG-45706">https://bugreports.qt.io/browse/QTBUG-45706</a>.
+</p><p>With this option the processing of the sub-project can be set to follow the order in which they are listed in the SUBDIRS variable.
+</p>
+<pre>
+ template = subdirs
+
+ SUBDIRS = \
+           src/lib2\   
+           src/lib \
+           src/app
+
+ # build the project sequentially as listed in SUBDIRS !
+ CONFIG += ordered
+ 
+</pre>
+<p>By having the listing order: src/lib2, src/lib, src/app the build tool will follow that order and build the project one at a time. 
+Due to processing in this strict project order the build dependencies are implicitly fulfilled, as long as the listing order is chosen right.
+</p><p>But the processing "one at a time" eliminates the possibility to process independent projects in parallel. However each projects might process in parallel in its local context - e.g. the .cpp files within lib2 might get compiled in parallel.
+</p>
+<h3><span class="mw-headline" id="Background_on_Windows_Build_Systems">Background on Windows Build Systems</span></h3>
+<p>There are different ways to process a project (or meta project) under windows.
+</p>
+<h4><span class="mw-headline" id="Makefiles">Makefiles</span></h4>
+<p>There are command line tools to compile project with the help of a compile rule file: a Makefile (<a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Makefile">wikipedia</a>).
+</p><p>For a meta-project, qmake must be called with the recursive option in the FooApp folder, the one with the subdirs.pro file:
+</p>
+<pre>qmake -r
+</pre>
+<p>This will generate a Makefile in the same directory. In addition qmake will process all the subdirs given in the SUBDIRS variable and create Makefiles in each of the sub-project folders, containing rules to create the sub-project.
+</p>
+<pre>
+ /FooApp
+ |--- Makefile
+ |--- subdirs.pro
+ `--- src
+      |
+      |--- app
+      |    |--- app.pro
+      |    |--- Makefile
+      |    |--- Makefile.Debug
+      |    |--- Makefile.Release
+      |    `--- ... (source files of app)
+      |--- lib
+      |    |--- lib.pro
+      |    |--- Makefile
+      |    |--- Makefile.Debug
+      |    |--- Makefile.Release
+      |    `--- ... (source files of lib)
+      `--- lib2
+           |--- lib2.pro
+           |--- Makefile
+           |--- Makefile.Debug
+           |--- Makefile.Release
+           `--- ... (source files of lib2)
+ 
+</pre>
+<h5><span class="mw-headline" id="nmake">nmake</span></h5>
+<p>The windows nmake tool reads a Windows Makefile that was generated by qmake. nmake will understand the rules in the Makefile and will call the compiler and linker to build the libraries and application.
+</p><p>Calling nmake in the meta project folder FooApp via
+</p>
+<pre>nmake
+</pre>
+<p>will find the Makefile and will process it. As this Makefile is one for a meta-project, it contains rules to process the Makefiles of the sub-project.
+</p><p>nmake has no feature to call compile or link in parallel. An option "-j &lt;n&gt;" as known with Unix make or gnumake does not exist. So nmake start project after project and in each project compiles file after file. Probably the listing order of the sub-projects within the SUBDIRS variable will be used. But this is nothing to rely on! How to determine the processing order sufficiently is shown in the chapters above.
+</p>
+<h5><span class="mw-headline" id="jom">jom</span></h5>
+<p>The missing parallel execution feature of nmake is inefficient on modern computer architectures. With CPUs having many kernels for parallelism and fast storage units, a modern computer is bored by using nmake and project compilation takes longer as it could take. This lead to the creation of a new make tool: <a href="Jom.html" title="Jom">Jom</a>. jom is basically an nmake clone extended with the '/J &lt;n&gt;' option to compile in parallel. To compile a meta projects Makefile the call has to be
+</p>
+<pre>jom
+</pre>
+<p>in the FooApp folder. jom will recurse automatically in the sub-project folders and use the Makefile of the sub-folders. But all in a parallel fashion.
+To see the dependency graph that jom processes, the command
+</p>
+<pre>jom /DUMPGRAPH
+</pre>
+<p>can be called.
+For the insufficient and wrongly ordered example
+</p>
+<pre>
+ template = subdirs
+
+ SUBDIRS = \
+           src/app \   # relative paths
+           src/lib \
+           src/lib2
+ 
+</pre>
+<p>the output of jom is
+</p>
+<pre>
+first
+ make_first
+  sub-src-app-make_first
+   FORCE
+  sub-src-lib-make_first
+   FORCE
+  sub-src-lib2-make_first
+   FORCE
+  FORCE
+ 
+</pre>
+<p>All three sub-src-xxx-make_first are on the same level and they have no dependency under it (aside from FORCE).
+So <i>all</i> is build in parallel if the number of kernels is high enough. 
+The parallel processing might result in a build error due to race conditions: The linker of the app project could be started even though the necessary libraries are not build already!
+</p><p>For an example with dependency given explicitly:
+</p>
+<pre>
+ template = subdirs
+
+ SUBDIRS = \
+           lib2 \   # sub-project names
+           lib  \
+           app
+
+ # where to find the sub projects - give the folders
+ lib2.subdir = src/lib2
+ lib.subdir  = src/lib
+ app.subdir  = src/app
+
+ # what subproject depends on others
+ app.depends = lib lib2
+ 
+</pre>
+<p>jom output for the graph:
+</p>
+<pre>
+first
+ make_first
+  sub-src-lib-make_first
+   FORCE
+  sub-src-lib2-make_first
+   FORCE
+  sub-src-app-make_first
+   sub-src-lib-make_first
+    FORCE
+   sub-src-lib2-make_first
+    FORCE
+   FORCE
+  FORCE
+ 
+</pre>
+<p>Here sub-src-app-make_first depends on sub-src-lib-make_first and sub-src-lib2-make_first. So lib and lib2 must first be build before app can be processed. Here lib and lib2 can even be processed in parallel, they have no dependencies.
+</p><p>Finally for the sequential case
+</p>
+<pre>
+ template = subdirs
+
+ SUBDIRS = \
+           src/lib2\   
+           src/lib \
+           src/app
+
+ # build the project sequentially as listed in SUBDIRS !
+ CONFIG += ordered
+ 
+</pre>
+<p>jom's output for the graph is:
+</p>
+<pre>
+first
+ make_first
+  sub-src-lib2-make_first-ordered
+   FORCE
+  sub-src-lib-make_first-ordered
+   sub-src-lib2-make_first-ordered
+    FORCE
+   FORCE
+  sub-src-app-make_first-ordered
+   sub-src-lib-make_first-ordered
+    sub-src-lib2-make_first-ordered
+     FORCE
+    FORCE
+   FORCE
+  FORCE
+ 
+</pre>
+<p>So app can be build if lib was build and lib can be build if lib2 was build: first lib2, then lib, then app. No parallelism on the project level is possible.
+</p><p>With
+</p>
+<pre>jom /J 10
+</pre>
+<p>ten parallel compiles will be started if enough independent compiles are found.
+</p>
+<h4><span class="mw-headline" id=".sln_files_.2F_.vcxproj_files">.sln files / .vcxproj files</span></h4>
+<p>The standard Microsoft Visual Studio toolchain does not use Makefiles. The toolchain needs a solution file (.sln) and one ore more project files (.vcxproj). The solution is again a kind of meta project collecting the project a solution consists of.
+These files can be processed by the Microsoft Visual Studio C++ IDE (MSVC2010) or with the msbuild tool as a command line tool.
+</p><p>qmake can also generate these files, to make it possible to use this IDE. To have this generated
+</p>
+<pre>
+ gmake -tp vc -r
+ 
+</pre>
+<p>must be called in the FooApp folder containing the meta project subdirs.pro project file. gmake will create a .sln file in the same FooApp folder. qmake will also go into the SUBDIRS project folders and generate .vcxproj files that are refered to in the .sln file. In MSVS2010 IDE the .sln file can be opened a a listing of subdir projects will be listed. For the running example the file would be names: subdirs.sln, app.vcxproj, lib.vcxproj, and lib2.vcxproj.
+</p><p>With the explicit dependency giving subdir.pro file
+</p>
+<pre>
+ template = subdirs
+
+ SUBDIRS = \
+           lib2 \   # sub-project names
+           lib  \
+           app
+
+ # where to find the sub projects - give the folders
+ lib2.subdir = src/lib2
+ lib.subdir  = src/lib
+ app.subdir  = src/app
+
+ # what subproject depends on others
+ app.depends = lib lib2
+ 
+</pre>
+<p>solution and project files will be generated that reflect these dependencies.
+</p>
+<h5><span class="mw-headline" id="Microsoft_Visual_Studio_IDE">Microsoft Visual Studio IDE</span></h5>
+<p>Within the IDE the solution properties contain a section "Common Properties" and in this a subsection "Project Dependencies". This subsection has a combo box to choose a project. All project this chosen on depends on are checked in the listing below.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:774px;"><a href="File_MSVC2010_dependency_property1.html" class="image"><img alt="" src="images/b/b1/MSVC2010_dependency_property1.png" width="772" height="481" class="thumbimage" /></a>  <div class="thumbcaption">app depends on lib and lib2</div></div></div></div>
+<p>This dependency constellation can also be checked in the .sln file.
+</p>
+<pre>
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project(&quot;{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}&quot;) = &quot;lib&quot;, &quot;C:/Users/Michael/QtProgramme/subdirs_test/src/lib\lib.vcxproj&quot;, &quot;{BBD7705B-EE58-39F5-9DA4-17D53DE9F205}&quot;
+EndProject
+Project(&quot;{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}&quot;) = &quot;lib2&quot;, &quot;C:/Users/Michael/QtProgramme/subdirs_test/src/lib2\lib2.vcxproj&quot;, &quot;{E2C38A45-30F3-3D3D-9D94-91EB9244EAF6}&quot;
+EndProject
+Project(&quot;{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}&quot;) = &quot;app&quot;, &quot;C:/Users/Michael/QtProgramme/subdirs_test/src/app\app.vcxproj&quot;, &quot;{124A643E-E033-36E6-AA41-AD3E268A86DE}&quot;
+	ProjectSection(ProjectDependencies) = postProject
+		{BBD7705B-EE58-39F5-9DA4-17D53DE9F205} = {BBD7705B-EE58-39F5-9DA4-17D53DE9F205}
+		{E2C38A45-30F3-3D3D-9D94-91EB9244EAF6} = {E2C38A45-30F3-3D3D-9D94-91EB9244EAF6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBD7705B-EE58-39F5-9DA4-17D53DE9F205}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BBD7705B-EE58-39F5-9DA4-17D53DE9F205}.Debug|Win32.Build.0 = Debug|Win32
+		{BBD7705B-EE58-39F5-9DA4-17D53DE9F205}.Release|Win32.ActiveCfg = Release|Win32
+		{BBD7705B-EE58-39F5-9DA4-17D53DE9F205}.Release|Win32.Build.0 = Release|Win32
+		{E2C38A45-30F3-3D3D-9D94-91EB9244EAF6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E2C38A45-30F3-3D3D-9D94-91EB9244EAF6}.Debug|Win32.Build.0 = Debug|Win32
+		{E2C38A45-30F3-3D3D-9D94-91EB9244EAF6}.Release|Win32.ActiveCfg = Release|Win32
+		{E2C38A45-30F3-3D3D-9D94-91EB9244EAF6}.Release|Win32.Build.0 = Release|Win32
+		{124A643E-E033-36E6-AA41-AD3E268A86DE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{124A643E-E033-36E6-AA41-AD3E268A86DE}.Debug|Win32.Build.0 = Debug|Win32
+		{124A643E-E033-36E6-AA41-AD3E268A86DE}.Release|Win32.ActiveCfg = Release|Win32
+		{124A643E-E033-36E6-AA41-AD3E268A86DE}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
+
+</pre>
+<p>In the project app there is a section to describe the dependency.
+</p>
+<pre>
+ProjectSection(ProjectDependencies) = postProject
+		{BBD7705B-EE58-39F5-9DA4-17D53DE9F205} = {BBD7705B-EE58-39F5-9DA4-17D53DE9F205}
+		{E2C38A45-30F3-3D3D-9D94-91EB9244EAF6} = {E2C38A45-30F3-3D3D-9D94-91EB9244EAF6}
+	EndProjectSection
+
+</pre>
+<p>Such a solution can be build from within the IDE. Within the IDE the projects are processed in parallel, respecting the dependencies.
+</p><p>In the build output window there will be something like
+</p>
+<pre>
+ 1&gt;------ Rebuild All started: Project: lib2, Configuration: Debug Win32 ------
+ 2&gt;------ Rebuild All started: Project: lib, Configuration: Debug Win32 ------
+ 1&gt;  lib2.cpp
+ 2&gt;  lib.cpp
+ 1&gt;     Creating library debug\\lib2d.lib and object debug\\lib2d.exp
+ 2&gt;     Creating library debug\\libd.lib and object debug\\libd.exp
+ 1&gt;  lib2.vcxproj -&gt; C:\Users\Michael\QtProgramme\subdirs_test\src\lib2\debug\lib2d.dll
+ 2&gt;  lib.vcxproj -&gt; C:\Users\Michael\QtProgramme\subdirs_test\src\lib\debug\libd.dll
+ 3&gt;------ Rebuild All started: Project: app, Configuration: Debug Win32 ------
+ 3&gt;  main.cpp
+ 3&gt;  app.vcxproj -&gt; C:\Users\Michael\QtProgramme\subdirs_test\src\app\debug\app.exe
+ 
+</pre>
+<p>The parallelism in processing lib and lib2 can be seen very well. After lib and lib2 finishes processing of app starts.
+</p>
+<h5><span class="mw-headline" id="msbuild">msbuild</span></h5>
+<p>From the command line the tool msbuild can be used to process the solution. In the FooApp folder, where the .sln file was generated, a call
+</p>
+<pre>
+ msbuild
+
+</pre>
+<p>will process the solution file.
+</p><p>By default msbuild does not process in any parallel fashion. But similarly to joms "/J &lt;n&gt;" option msbuild has the "/m:&lt;n&gt;" option. When calling
+</p>
+<pre>
+ msbuild /m:4
+
+</pre>
+<p>maximal four cores of the computer will be used to parallelize the processing of the solution.
+An output from such a call might look like this for the running example
+</p>
+<pre>
+Microsoft (R)-Buildmodul, Version 4.0.30319.18408
+[Microsoft .NET Framework, Version 4.0.30319.18408]
+Copyright (C) Microsoft Corporation 2007. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 19.04.2015 21:37:32 gestartet.
+     1&gt;Projekt &quot;c:\Users\Michael\QtProgramme\subdirs_test\subdirs_test.sln&quot; auf Knoten &quot;1&quot; (Standardziele).
+     1&gt;ValidateSolutionConfiguration:
+         Die Projektmappenkonfiguration &quot;Debug|Win32&quot; wird erstellt.
+     1&gt;Das Projekt &quot;c:\Users\Michael\QtProgramme\subdirs_test\subdirs_test.sln&quot; (1) erstellt &quot;c:\Users\Michael\QtProgramme\subdirs_test\src\lib2\lib2.vcxproj&quot; (3) auf Knoten &quot;2&quot; (Standardziele).
+     3&gt;InitializeBuildStatus:
+         &quot;debug\lib2.unsuccessfulbuild&quot; wird erstellt, da &quot;AlwaysCreate&quot; angegeben wurde.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /IC:\Qt_online\5.4\msvc2010_opengl\include /IC:\Qt_online\5.4\msvc2010_opengl\include\QtCore /Idebug /I&quot;C:\Qt_online\5.4\msvc2010_opengl\mkspecs\win32-msvc2010&quot; /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D LIB2_LIBRARY /D QT_CORE_LIB /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo&quot;debug\\&quot; /Fd&quot;debug\vc100.pdb&quot; /Gd /TP /analyze- /errorReport:queue lib2.cpp -Zm200 -w34100 -w34189 
+     1&gt;Das Projekt &quot;c:\Users\Michael\QtProgramme\subdirs_test\subdirs_test.sln&quot; (1) erstellt &quot;c:\Users\Michael\QtProgramme\subdirs_test\src\lib\lib.vcxproj&quot; (2) auf Knoten &quot;1&quot; (Standardziele).
+     2&gt;InitializeBuildStatus:
+         &quot;debug\lib.unsuccessfulbuild&quot; wird erstellt, da &quot;AlwaysCreate&quot; angegeben wurde.
+     3&gt;ClCompile:
+         lib2.cpp
+     2&gt;ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /IC:\Qt_online\5.4\msvc2010_opengl\include /IC:\Qt_online\5.4\msvc2010_opengl\include\QtCore /Idebug /I&quot;C:\Qt_online\5.4\msvc2010_opengl\mkspecs\win32-msvc2010&quot; /Zi /nologo /W3 /WX- /Od /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D LIB_LIBRARY /D QT_CORE_LIB /D _WINDLL /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo&quot;debug\\&quot; /Fd&quot;debug\vc100.pdb&quot; /Gd /TP /analyze- /errorReport:queue lib.cpp -Zm200 -w34100 -w34189 
+         lib.cpp
+     3&gt;Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:&quot;debug\\lib2d.dll&quot; /NOLOGO /LIBPATH:C:\Qt_online\5.4\msvc2010_opengl\lib C:\Qt_online\5.4\msvc2010_opengl\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:&quot;debug\lib2d.dll.intermediate.manifest&quot; /MANIFESTUAC:&quot;level='asInvoker' uiAccess='false'&quot; /DEBUG /PDB:&quot;c:\Users\Michael\QtProgramme\subdirs_test\src\lib2\debug\lib2d.pdb&quot; /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /DLL debug\lib2.obj
+            Creating library debug\\lib2d.lib and object debug\\lib2d.exp
+         lib2.vcxproj -&gt; c:\Users\Michael\QtProgramme\subdirs_test\src\lib2\debug\lib2d.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:&quot;debug\\lib2d.dll;#2&quot; /manifest debug\lib2d.dll.intermediate.manifest
+     2&gt;Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:&quot;debug\\libd.dll&quot; /NOLOGO /LIBPATH:C:\Qt_online\5.4\msvc2010_opengl\lib C:\Qt_online\5.4\msvc2010_opengl\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:&quot;debug\libd.dll.intermediate.manifest&quot; /MANIFESTUAC:&quot;level='asInvoker' uiAccess='false'&quot; /DEBUG /PDB:&quot;c:\Users\Michael\QtProgramme\subdirs_test\src\lib\debug\libd.pdb&quot; /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /DLL debug\lib.obj
+     3&gt;FinalizeBuildStatus:
+         Die Datei &quot;debug\lib2.unsuccessfulbuild&quot; wird gel&quot;scht.
+         Aktualisieren des Timestamps von &quot;debug\lib2.lastbuildstate&quot;.
+     3&gt;Die Erstellung von Projekt &quot;c:\Users\Michael\QtProgramme\subdirs_test\src\lib2\lib2.vcxproj&quot; ist abgeschlossen (Standardziele).
+     2&gt;Link:
+            Creating library debug\\libd.lib and object debug\\libd.exp
+         lib.vcxproj -&gt; c:\Users\Michael\QtProgramme\subdirs_test\src\lib\debug\libd.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:&quot;debug\\libd.dll;#2&quot; /manifest debug\libd.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Die Datei &quot;debug\lib.unsuccessfulbuild&quot; wird gel&quot;scht.
+         Aktualisieren des Timestamps von &quot;debug\lib.lastbuildstate&quot;.
+     2&gt;Die Erstellung von Projekt &quot;c:\Users\Michael\QtProgramme\subdirs_test\src\lib\lib.vcxproj&quot; ist abgeschlossen (Standardziele).
+     1&gt;Das Projekt &quot;c:\Users\Michael\QtProgramme\subdirs_test\subdirs_test.sln&quot; (1) erstellt &quot;c:\Users\Michael\QtProgramme\subdirs_test\src\app\app.vcxproj.metaproj&quot; (4) auf Knoten &quot;1&quot; (Standardziele).
+     4&gt;Das Projekt &quot;c:\Users\Michael\QtProgramme\subdirs_test\src\app\app.vcxproj.metaproj&quot; (4) erstellt &quot;c:\Users\Michael\QtProgramme\subdirs_test\src\app\app.vcxproj&quot; (5) auf Knoten &quot;2&quot; (Standardziele).
+     5&gt;InitializeBuildStatus:
+         &quot;debug\app.unsuccessfulbuild&quot; wird erstellt, da &quot;AlwaysCreate&quot; angegeben wurde.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\lib /IC:\Qt_online\5.4\msvc2010_opengl\include /IC:\Qt_online\5.4\msvc2010_opengl\include\QtCore /Idebug /I&quot;C:\Qt_online\5.4\msvc2010_opengl\mkspecs\win32-msvc2010&quot; /Zi /nologo /W3 /WX- /Od /Oy- /D _CONSOLE /D UNICODE /D WIN32 /D QT_CORE_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo&quot;debug\\&quot; /Fd&quot;debug\vc100.pdb&quot; /Gd /TP /analyze- /errorReport:queue main.cpp -Zm200 -w34100 -w34189 
+         main.cpp
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:&quot;debug\\app.exe&quot; /NOLOGO /LIBPATH:C:\Users\Michael\QtProgramme\subdirs_test\src\app\..\lib\debug\ /LIBPATH:C:\Users\Michael\QtProgramme\subdirs_test\src\app\..\lib2\debug\ /LIBPATH:C:\Qt_online\5.4\msvc2010_opengl\lib C:\Users\Michael\QtProgramme\subdirs_test\src\app\..\lib\debug\\libd.lib C:\Users\Michael\QtProgramme\subdirs_test\src\app\..\lib2\debug\\lib2d.lib C:\Qt_online\5.4\msvc2010_opengl\lib\Qt5Cored.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:&quot;debug\app.exe.intermediate.manifest&quot; /MANIFESTUAC:&quot;level='asInvoker' uiAccess='false'&quot; /DEBUG /PDB:&quot;c:\Users\Michael\QtProgramme\subdirs_test\src\app\debug\app.pdb&quot; /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 debug\main.obj &quot;/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'&quot; 
+         app.vcxproj -&gt; c:\Users\Michael\QtProgramme\subdirs_test\src\app\debug\app.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:&quot;debug\\app.exe;#1&quot; /manifest debug\app.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Die Datei &quot;debug\app.unsuccessfulbuild&quot; wird gel&quot;scht.
+         Aktualisieren des Timestamps von &quot;debug\app.lastbuildstate&quot;.
+     5&gt;Die Erstellung von Projekt &quot;c:\Users\Michael\QtProgramme\subdirs_test\src\app\app.vcxproj&quot; ist abgeschlossen (Standardziele).
+     4&gt;Die Erstellung von Projekt &quot;c:\Users\Michael\QtProgramme\subdirs_test\src\app\app.vcxproj.metaproj&quot; ist abgeschlossen (Standardziele).
+     1&gt;Die Erstellung von Projekt &quot;c:\Users\Michael\QtProgramme\subdirs_test\subdirs_test.sln&quot; ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgefhrt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:02.23
+
+</pre>
+<p><br />
+</p><p>msbuild has many <a rel="nofollow" class="external text" href="https://msdn.microsoft.com/en-us/library/ms164311(v=vs.100).aspx">command line options</a>.
+For example, to let msbuild construct the release version the command
+</p>
+<pre>
+ msbuild /p:Configuration=Release
+
+</pre>
+<p>must be called.
+</p><p><br />
+to be continued....
+</p><p>--<a href="User_Moellney.html?title=User:Moellney&amp;action=edit&amp;redlink=1" class="new" title="User:Moellney (page does not exist)">Moellney</a> (<a href="User_talk_Moellney.html?title=User_talk:Moellney&amp;action=edit&amp;redlink=1" class="new" title="User talk:Moellney (page does not exist)">talk</a>) 21:48, 20 April 2015 (UTC)
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.035 seconds
+Real time usage: 0.241 seconds
+Preprocessor visited node count: 208/1000000
+Preprocessor generated node count: 468/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:3833-0!*!0!!en!2!* and timestamp 20151105070248 and revision id 19360
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index76b6.html?title=SUBDIRS_-_handling_dependencies&amp;oldid=19360">http://wiki.qt.io/index.php?title=SUBDIRS_-_handling_dependencies&amp;oldid=19360</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Tools__qmake.html" title="Category:Tools::qmake">Tools::qmake</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=a5a8378eb7846e84&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="SUBDIRS_-_handling_dependencies.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_SUBDIRS_-_handling_dependencies.html?title=Talk:SUBDIRS_-_handling_dependencies&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="SUBDIRS_-_handling_dependencies.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index6359.html?title=SUBDIRS_-_handling_dependencies&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexda4e.html?title=SUBDIRS_-_handling_dependencies&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/SUBDIRS_-_handling_dependencies.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/SUBDIRS_-_handling_dependencies.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index76b6.html?title=SUBDIRS_-_handling_dependencies&amp;oldid=19360" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexef46.html?title=SUBDIRS_-_handling_dependencies&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:26.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,292 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":220});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=SUBDIRS_-_handling_dependencies&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:05:31 GMT -->
+</html>

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&oldid=16423 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:18:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>How to Port From Desktop to Mobile - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_Port_From_Desktop_to_Mobile","wgTitle":"How to Port From Desktop to Mobile","wgCurRevisionId":16423,"wgRevisionId":16423,"wgArticleId":967,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing with Qt","Qt Quick","Developing with Qt::QtMobility","HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_Port_From_Desktop_to_Mobile","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_to_Port_From_Desktop_to_Mobile skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">How to Port From Desktop to Mobile</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 13:26, 27 April 2015 by <a href="http://wiki.qt.io/index.php?title=User:AutoSpider&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:AutoSpider (page does not exist)">AutoSpider</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:AutoSpider&amp;action=edit&amp;redlink=1" class="new" title="User talk:AutoSpider (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/AutoSpider" title="Special:Contributions/AutoSpider">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&amp;diff=prev&amp;oldid=16423" title="How to Port From Desktop to Mobile">diff</a>) <a href="http://wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&amp;direction=prev&amp;oldid=16423" title="How to Port From Desktop to Mobile">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#How_to_Migrate_Your_Application_from_the_Desktop_to_a_Mobile_Platform"><span class="tocnumber">1</span> <span class="toctext">How to Migrate Your Application from the Desktop to a Mobile Platform</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Introduction"><span class="tocnumber">1.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Screen_Resolution"><span class="tocnumber">1.2</span> <span class="toctext">Screen Resolution</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Memory_Management"><span class="tocnumber">1.3</span> <span class="toctext">Memory Management</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Screen_Orientation"><span class="tocnumber">1.4</span> <span class="toctext">Screen Orientation</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Qt_Mobility_APIs"><span class="tocnumber">1.5</span> <span class="toctext">Qt Mobility APIs</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Porting_a_Desktop_Application_to_Mobile"><span class="tocnumber">1.6</span> <span class="toctext">Porting a Desktop Application to Mobile</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="How_to_Migrate_Your_Application_from_the_Desktop_to_a_Mobile_Platform">How to Migrate Your Application from the Desktop to a Mobile Platform</span></h1>
+<p>This tutorial originally appeared on <a rel="nofollow" class="external text" href="http://wiki.qtlabs.org.br/doku.php?id=howto:desktoptomobile">qtlabs.org.br.</a> and was written by a team of developers from INdT.
+</p>
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>Developing for mobile devices require that you pay attention to some details, and migrating your destkop application to the mobile world can be hard if you don't use the right tools and framework. Thanks to Qt and QML, this job can be easy and won't demand too much time from the developer.
+</p><p>This tutorial aims at helping the developer that wants to migrate his desktop application to the mobile, giving tips about architectural changes in your application and mobile best practices.
+</p>
+<h3><span class="mw-headline" id="About_QML">About QML</span></h3>
+<p>We will use a desktop application as an example during this tutorial and we will guide you during the migration of this example to a mobile version. We'll use QML, the mark up language for Qt Quick, to build the mobile interface.
+</p><p>QML provides the means for building dynamic, rich and custom user interfaces. It also improves the integration between JavaScript and <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/metaobjects.html">Qt's Object system,</a> allowing it to easily integrate with your C++ code.
+</p>
+<h3><span class="mw-headline" id="About_Qt_Mobility">About Qt Mobility</span></h3>
+<p>Qt Mobility is a set of Qt APIs with features that are usually present on mobile devices, specially phones. Besides being APIs that aim the mobile world, they support different backends, making it easy to develop applications for phones in the desktop. This avoid the "round-trips" between developing on desktop and testing on the phone, allowing the application's development to be faster.
+</p><p>Examples of these APIs are: bearer management, contacts, location, multimedia and sytem information. Basically, Qt Mobility will give you access to the phone features and its sensors.
+</p>
+<h3><span class="mw-headline" id="Canvas-based_UIs">Canvas-based UIs</span></h3>
+<p>While developing desktop applications using Qt the developer usually will use <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtwidgets-index.html">QWidgets,</a> which are widgets developed with the desktop in mind and that will look exactly like the "native" widgets of the platform. This also works for the mobile world but today it is more usual to find UIs that are rich and fluid.
+</p><p>In order to properly have UIs that can be animated and that doesn't look like the platform's widgets, one should use a canvas based UI. Qt provides a canvas for developers called <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qgraphicsview.html">QGraphicsView</a>. One of the many differences between QGraphicsView's interfaces and QWidget's ones is that QWidget depends on the screen resolution and that if the developer chooses to use a canvas he must be aware that most of the common widgets are not yeat available out of the box, but that they can be easily built using pixmaps.
+</p><p>This gives extra freedom to the application's designer as he can create all the elements of the screen and they will look like exactly the way they were designed. It is important to say that QML runs on top of QGraphicsView and that it eases the development of the user interfaces. However it is still possible to make everything in plain C+<i>.</i>
+</p><p>This tutorial will focus in the use of QML and its integration with C, trying to keep all the logic in C<i>+ and just making your UI using QML. This is the easiest path if the developer needs to maintain a mobile version of an application at the same time that he maintains the desktop version.</i>
+</p>
+<h3><span class="mw-headline" id="Considerations_about_mobile_UIs">Considerations about mobile UIs</span></h3>
+<p>You need to take special care related to the areas that will be "clickable" in your application when you develop to a mobile device.
+</p><p>The "clickable" areas of your application should be big enough to handle the "average" finger size of someone and also you should not forget that the fingers used to interact with your application may vary depending on the device's orientation (landscape vs portrait).
+</p><p>Be sure to make the areas small enough to not overlap each other. Also avoid the device's corners as they are harder for the user to select. During design time, make sure you question yourself if the user is going to use your application with just one hand for example as this may change the user experience of your application.
+</p>
+<h2><span class="mw-headline" id="Screen_Resolution">Screen Resolution</span></h2>
+<p>When developing mobile applications, one thing to keep in mind and take care of is that: If you want your application to run on a wide range of devices, you have to cope with different screen resolutions, that have different properties and features. It is important to allow your application to be scalable to give the user the best experience possible on the specific device. Additionally, many devices support screen rotation when your application is running, so be prepared to dot it.
+</p><p>When writing mobile applications, the developer must avoid using fixed size for items placed on the screen. Qt and QML provide ways to layout items that help you to deal with that. Take a look at the example below.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="coMULTI">/* main.qml */</span>
+Item <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> parent.<span class="me1">width</span>
+ height<span class="sy0">:</span> parent.<span class="me1">height</span>
+&#160;
+ Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> rect
+ width<span class="sy0">:</span> <span class="nu0">100</span>
+ height<span class="sy0">:</span> <span class="nu0">100</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;red&quot;</span>
+&#160;
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+&#160;
+ MouseArea <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ onClicked<span class="sy0">:</span> rect.<span class="me1">color</span> <span class="sy0">==</span> <span class="st0">&quot;red&quot;</span>&#160;? rect.<span class="me1">color</span> <span class="sy0">=</span> <span class="st0">&quot;blue&quot;</span> <span class="sy0">:</span> rect.<span class="me1">color</span> <span class="sy0">=</span> <span class="st0">&quot;red&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>The example above makes usage of anchors, in order to adapt the application size to screen resolution of the device. Additionally, is important to make your application starts on fullscreen, so the QML item above will anchor at QDeclarativeView, like the example below:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">/</span><span class="st0">''</span><span class="st0">' main.cpp */
+QDeclarativeView window;
+window.showFullScreen();
+window.setSource(QUrl::fromLocalFile(&quot;main.qml&quot;));</span></pre></div></div>
+<h2><span class="mw-headline" id="Memory_Management">Memory Management</span></h2>
+<p>When dealing with mobile development, the developer must be aware that resources are very limited, e.g. CPU power and memory. So, when porting your desktop application to mobile world, memory management has to be seriously taken into account, since it can become a bottleneck on application execution.
+</p>
+<h3><span class="mw-headline" id="Memory_Allocation">Memory Allocation</span></h3>
+<p>There are two ways that a user can allocate memory: Stack allocation and Heap allocation.
+</p><p>Every time a program starts its memory is organized in the following segments:
+</p><p><b> Text segment: The place where the program code is placed (the machine instructions)</b>
+</p>
+<ul>
+<li> Stack segment: Reserved block of memory that gets allocated when a thread/function is started, in order to handle local variables and parameters
+</li>
+<li> Heap segment: Memory block that is reserved for dynamic allocation during the program execution
+</li>
+</ul>
+<h3><span class="mw-headline" id="Heap">Heap</span></h3>
+<p>The Heap segment is a big block of free memory where user can allocate portions of memory dynamically. For instance, in C a user can allocate memory in the heap using the malloc operator, however in C++ you use the new operator to allocate memory in the heap. The precise location of the requested memory is not known in advance, so those dynamic allocator operators return a pointer to user, in order to manage the allocated memory. Additionally, it is worth telling that continuous block of memory requested does not assure that a sequential block of memory is going to be allocated, this is due to memory fragmentation resulted by various memory allocation and deallocation operations.
+</p>
+<h3><span class="mw-headline" id="Stack">Stack</span></h3>
+<p>Whenever a thread is started, a block of memory is allocated and given to it, in order to store its local variables and parameters. So, for instance when a C program starts (the main thread) it receives a block of memory, the Stack. When a function is called, a block of memory of this stack (on top of it) is reserved for that function to store its data and gets pushed on the Stack.
+</p>
+<h3><span class="mw-headline" id="Example">Example</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span><span class="sy0">**</span> argv<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw4">int</span> a<span class="sy0">;</span> <span class="co1">// allocated on stack</span>
+&#160;
+<span class="kw4">int</span> b<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span><span class="sy0">;</span> <span class="co1">//allocated on the stack</span>
+&#160;
+<span class="kw4">int</span> <span class="st0">''</span><span class="st0">'p = (int'</span><span class="st0">''</span><span class="br0">&#41;</span> <span class="kw3">malloc</span><span class="br0">&#40;</span><span class="kw3">sizeof</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// allocated on the heap</span>
+&#160;
+<span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>In the example above variable //*<b>a// and //b// (the whole array) get allocated on the stack. On the other hand, //p// gets dynamically allocated on the heap.</b>
+</p><p>When the thread/function exits, all the memory that was being used by it (local variables, parameters, etc…) gets automatically deallocated whereas all memory that was dynamically allocated must be explicitly deallocated by the user, or leaks of memory may appear.
+</p><p>So, the code above would be better written like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span><span class="st0">''</span><span class="st0">'* argv)
+{
+ int a; // allocated on stack
+&#160;
+int b[10]; // allocated on stack
+&#160;
+int '</span><span class="st0">''</span>p <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">int</span><span class="st0">''</span><span class="st0">') malloc(sizeof(int)); // allocated on the heap
+&#160;
+free(p); // free memory on heap
+&#160;
+return 0;
+}</span></pre></div></div>
+<h3><span class="mw-headline" id="Heap_Allocation_vs_Stack_Allocation">Heap Allocation vs Stack Allocation</span></h3>
+<p>Memory allocation on the stack is faster when compared to the heap.
+</p><p>When a memory block is requested to the heap, by new or malloc for instance, the dynamic memory operator starts seeking for an available amount of memory that fits the requested size. On the other hand, the stack size needed for a function is known beforehand. When the function is called a piece of the stack is reserved for the function and then all local variables and parameters are placed there. Additionally, the memory of the stack tends to be used very frequently, due to several function calls, thus it tends to be mapped to the processor's cache, increasing cache hit ratio, which makes the access time shorter than the time spent to access some memory allocated at the heap, which you have higher probability to get a page fault.
+</p><p>Thus, it is preferable to use stack allocation as much as possible when developing something mobile. However, beware that the stack has limited size depending on the platform (Symbian for instance have 8KB by default). Although the stack can be extended, allocating huge amount of memory on stack can cause a stack overflow and makes your program crash. To put in a nutshell, the developer must use memory allocation wisely, balancing between stack and heap, in order to make an fast application.
+</p>
+<h3><span class="mw-headline" id="Note_on_Symbian_Platform">Note on Symbian Platform</span></h3>
+<p>On Symbian you can explicitly set the size of both Stack and Heap sizes. This is done by using EPOCSTACKSIZE and EPOCHEAPSIZE statements at the .mmp file, or put on your .pro file of your Qt application, as described on the example below:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="coMULTI">/* app.pro */</span>
+QT <span class="st0">''</span><span class="sy0">=</span> core gui network
+&#160;
+TARGET <span class="sy0">=</span> myapp
+TEMPLATE <span class="sy0">=</span> app
+&#160;
+&#160;
+SOURCES<span class="st0">''</span><span class="sy0">=</span> main.<span class="me1">cpp</span>
+&#160;
+symbian <span class="br0">&#123;</span>
+ TARGET.<span class="me1">UID3</span> <span class="sy0">=</span> <span class="nu12">0xeb22583b</span>
+&#160;
+ TARGET.<span class="me1">EPOCSTACKSIZE</span> <span class="sy0">=</span> <span class="nu12">0x14000</span> <span class="co2"># Stack will have 80kB</span>
+ TARGET.<span class="me1">EPOCHEAPSIZE</span> <span class="sy0">=</span> <span class="nu12">0x020000</span> <span class="nu12">0x800000</span> <span class="co2"># Heap minimum of 128kB and maximum of 8MB</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Call_by_Value_vs_Call_by_Reference">Call by Value vs Call by Reference</span></h3>
+<p>Since mobile resources (CPU and memory) are very limited, unnecessary memory copies must be avoided by the developer. One important point to avoid such copies is to watch the way you pass parameters when calling functions. Calling functions by value makes a temporary copy of the object, that is being passed as parameter, in memory. This can take unnecessary space in memory and waste CPU cycles to create a copy of the object, when the same function call could be made by reference, saving that used memory. Thus, if a function call could be done by "call by reference" it is preferable to do it, in order to avoid unnecessary memory copy operations. C++ support call by reference by adding the &amp; operator to the parameters' description of the function. C does not support call by reference, even when you create a function that receives a pointer that pointer is copied in memory, which is a great way to "simulate" call by reference in C.
+</p><p>Below are some examples:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> MyObject
+<span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+&#160;
+ <span class="kw4">int</span> i<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="kw4">struct</span> myStruct <span class="br0">&#123;</span>
+ <span class="kw4">int</span> i<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="kw4">void</span> add<span class="br0">&#40;</span><span class="kw4">struct</span> myStruct<span class="st0">''</span><span class="st0">' s)
+{
+ s-&gt;i+'</span><span class="st0">';
+}
+&#160;
+void add(MyObject &amp;obj)
+{
+ obj.i;
+}
+&#160;
+int main(int argc, char** argv)
+{
+ MyObject o;
+ o.i = 10;
+ add(o); // called by reference
+&#160;
+ struct myStruct '</span><span class="st0">''</span>my <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">struct</span> myStruct<span class="st0">''</span><span class="st0">') malloc(sizeof(struct myStruct));
+ add(my); // pointer &quot;my&quot; is copied to the function add
+&#160;
+ return 0;
+}</span></pre></div></div>
+<h2><span class="mw-headline" id="Screen_Orientation">Screen Orientation</span></h2>
+<p>Screen orientation is not supported before Qt 4.7.2. So some platform specific code is necessary to lock or unlock the device orientation if you are compiling with old versions of Qt. However, if you are using QtCreator to develop your applications, you don't need to worry about it, since it abstracts all the necessary code in a helper class.
+</p>
+<h3><span class="mw-headline" id="Qt_Creator_Wizard">Qt Creator Wizard</span></h3>
+<p>While creating a new project, you will be prompted to choose what kind of orientation behavior your application will have. The default option is "Automatically Rotate Orientation". If your application is designed to work in just one screen orientation, you can choose one of the other options, which are "Lock to Landscape Orientation" and "Lock to Portrait Orientation".
+</p><p><a href="http://wiki.qt.io/File:B4.png" class="image" title="New Qt Quick Application"><img alt="New Qt Quick Application" src="http://wiki.qt.io/images/f/ff/B4.png" width="527" height="411" /></a>
+</p>
+<h3><span class="mw-headline" id="Platform-Specific_Code">Platform-Specific Code</span></h3>
+<p>If you need to use platform specific code to set the device orientation, you will need to add some ifdefs in your code. You can follow QtCreator approach extending a QWidget class and adding an extra method to abstract orientation changes. For example, to handle screen orientation for Symbian and Maemo devices you can create a helper class like the following:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// …</span>
+&#160;
+<span class="co2">#ifdef Q_OS_SYMBIAN</span>
+<span class="co2">#include &lt;eikenv.h&gt;</span>
+<span class="co2">#include &lt;aknappui.h&gt;</span>
+<span class="co2">#endif</span>
+&#160;
+ApplicationView<span class="sy0">::</span><span class="me2">ApplicationView</span><span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent<span class="br0">&#41;</span>
+ <span class="sy0">:</span> QDeclarativeView<span class="br0">&#40;</span>parent<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+&#160;
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> ApplicationView<span class="sy0">::</span><span class="me2">setOrientation</span><span class="br0">&#40;</span>ScreenOrientation orientation<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+<span class="co2">#if defined(Q_OS_SYMBIAN)</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>orientation <span class="sy0">==</span> ScreenOrientationAuto<span class="br0">&#41;</span>
+ return<span class="sy0">;</span>
+&#160;
+ CAknAppUiBase<span class="sy0">::</span><span class="me2">TAppUiOrientation</span> uiOrientation<span class="sy0">;</span>
+&#160;
+ <span class="kw1">if</span> <span class="br0">&#40;</span>orientation <span class="sy0">==</span> ScreenOrientationLockPortrait<span class="br0">&#41;</span>
+ uiOrientation <span class="sy0">=</span> CAknAppUi<span class="sy0">::</span><span class="me2">EAppUiOrientationPortrait</span><span class="sy0">;</span>
+ <span class="kw1">else</span>
+ uiOrientation <span class="sy0">=</span> CAknAppUi<span class="sy0">::</span><span class="me2">EAppUiOrientationLandscape</span><span class="sy0">;</span>
+&#160;
+ CAknAppUi <span class="st0">''</span><span class="st0">'ui = dynamic_cast&lt;CAknAppUi'</span><span class="st0">''</span><span class="sy0">&gt;</span><span class="br0">&#40;</span>CEikonEnv<span class="sy0">::</span><span class="me2">Static</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">AppUi</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ TRAPD <span class="br0">&#40;</span>error<span class="sy0">,</span> <span class="kw1">if</span> <span class="br0">&#40;</span>ui<span class="br0">&#41;</span> ui<span class="sy0">-&gt;</span><span class="me3">SetOrientationL</span><span class="br0">&#40;</span>uiOrientation<span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ Q_UNUSED<span class="br0">&#40;</span>error<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="co2">#elif defined(Q_WS_MAEMO_5)</span>
+ <span class="kw1">switch</span> <span class="br0">&#40;</span>orientation<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">case</span> ScreenOrientationLockPortrait<span class="sy0">:</span>
+ setAttribute<span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">WA_Maemo5PortraitOrientation</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ break<span class="sy0">;</span>
+ <span class="kw1">case</span> ScreenOrientationLockLandscape<span class="sy0">:</span>
+ setAttribute<span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">WA_Maemo5LandscapeOrientation</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ break<span class="sy0">;</span>
+ <span class="kw1">default</span><span class="sy0">:</span>
+ setAttribute<span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">WA_Maemo5AutoOrientation</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ break<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="co2">#else</span>
+ Q_UNUSED<span class="br0">&#40;</span>orientation<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="co2">#endif</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Setting_Orientation_in_Qt_4.7.2">Setting Orientation in Qt 4.7.2</span></h3>
+<p>Some new attributes were added in Qt 4.7.2 to set screen orientation. They are as follows:
+</p>
+<ul>
+<li> Qt::WA_LockPortraitOrientation: //Locks the widget to a portrait orientation, ignoring changes to the display's orientation with respect to the user//
+</li>
+</ul>
+<ul>
+<li> Qt::WA_LockLandscapeOrientation: //Locks the widget to a landscape orientation, ignoring changes to the display's orientation with respect to the user//
+</li>
+</ul>
+<ul>
+<li> Qt::WA_AutoOrientation: //Causes the widget to change orientation whenever the display changes orientation with respect to the user//
+</li>
+</ul>
+<p><b>Usage example:</b> In order to lock screen orientation in portrait mode you can do as follows:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QDeclarativeView view<span class="sy0">;</span>
+&#160;
+view.<span class="me1">setAttribute</span><span class="br0">&#40;</span><span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">WA_LockPortraitOrientation</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p><b>Important note:</b> Currently these attributes are being used just for Symbian, but probably this will change in future releases to handle Maemo and other platforms as well
+</p>
+<h2><span class="mw-headline" id="Qt_Mobility_APIs">Qt Mobility APIs</span></h2>
+<p>As said previously, on Introduction, Qt Mobility is a set of Qt APIs that allow developers to write applications that uses some mobile features (e.g. contacts, location and message service) easily and in a cross-platform way, which means that you only need to have Qt and Qt Mobility frameworks installed on your mobile device.
+</p><p>With these APIs the developers can write applications that:
+</p>
+<ul>
+<li> Are able to use location services provided by the mobile device, e.g. GPS.
+</li>
+<li> Can send SMS to other mobile device
+</li>
+<li> Can play musics/videos and manage multimedia content
+</li>
+<li> Are able to manage the mobile device contacts
+</li>
+</ul>
+<p>In order to use the Qt Mobility, the developer must use the Qt Mobility namespace on his project.
+</p><p>Ex.:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QMainWindow&gt;</span>
+<span class="co2">#include &lt;QTextEdit&gt;</span>
+<span class="co2">#include &lt;QTimer&gt;</span>
+<span class="co2">#include &lt;qgeopositioninfosource.h&gt;</span>
+<span class="co2">#include &lt;qgeosatelliteinfosource.h&gt;</span>
+<span class="co2">#include &lt;qmessagemanager.h&gt;</span>
+<span class="co2">#include &lt;qmessageservice.h&gt;</span>
+&#160;
+QTM_USE_NAMESPACE <span class="co1">// Qt Mobility namespace</span>
+&#160;
+<span class="kw2">class</span> MainApp <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QMainWindow</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+….
+….</pre></div></div>
+<p>Here are some Qt Mobility APIs
+</p>
+<h3><span class="mw-headline" id="Service_Framework">Service Framework</span></h3>
+<p>Implement and find services that are available on the mobile device and perform some operations with them.
+</p>
+<h3><span class="mw-headline" id="Messaging">Messaging</span></h3>
+<p>This API gives the user capabilities to handle SMS, MMS, e-mail and any other kind of "messages" the mobile device can deal with.
+User can send, search and sort messages, get notified when new messages arrive, compose messages, etc.
+</p>
+<h3><span class="mw-headline" id="Bearer_Management">Bearer Management</span></h3>
+<p>Manages the connectivity state of the mobile device to the network, this includes WLAN and 3G networks
+</p>
+<h3><span class="mw-headline" id="Contacts">Contacts</span></h3>
+<p>Manages all contact information on the mobile device or remotely. With it, user can create, delete and edit contacts
+</p>
+<h3><span class="mw-headline" id="Location">Location</span></h3>
+<p>Perform location based operations, like: Retrieve your current GPS location
+</p>
+<h3><span class="mw-headline" id="Multimedia">Multimedia</span></h3>
+<p>Manages multimedia content on the mobile device. User can play music and videos, record audio and manage FM radio, for instance.
+</p>
+<h3><span class="mw-headline" id="System_Information">System Information</span></h3>
+<p>Retrieve some system information like Installed Softwares' Version, Features (hardware), Network Status, Display Information, Storage Information, Device Information (battery, profile, SIM card)
+</p>
+<h3><span class="mw-headline" id="Sensors">Sensors</span></h3>
+<p>An API for accessing hardware sensors, like the accelerometer
+</p>
+<h3><span class="mw-headline" id="Camera">Camera</span></h3>
+<p>Control the camera, capturing images, videos, etc.
+</p><p>When writing an application that uses any Qt Mobility API, the developer must add the respective //*<b>domain</b>*// to MOBILITY variable on the project's .pro file and add the "mobility" option to CONFIG variable.
+</p><p>Below is a table that lists the Qt Mobility domains and associate it with the respective value that must be added to the MOBILITY variable.
+</p>
+<table class="wikitable">
+<tr>
+<th>Domain
+</th>
+<th>Value
+</th></tr>
+<tr>
+<td> Bearer Management
+</td>
+<td> bearer
+</td></tr>
+<tr>
+<td> Contacts
+</td>
+<td> contacts
+</td></tr>
+<tr>
+<td> Location
+</td>
+<td> location
+</td></tr>
+<tr>
+<td> Multimedia
+</td>
+<td> multimedia
+</td></tr>
+<tr>
+<td> Messaging
+</td>
+<td> messaging
+</td></tr>
+<tr>
+<td> Publish And Subscribe
+</td>
+<td> publishsubscribe
+</td></tr>
+<tr>
+<td> Service Framework
+</td>
+<td> serviceframework
+</td></tr>
+<tr>
+<td> Sensors
+</td>
+<td> sensors
+</td></tr>
+<tr>
+<td> System Information
+</td>
+<td> systeminfo
+</td></tr>
+<tr>
+<td> Versit
+</td>
+<td> versit
+</td></tr>
+<tr>
+<td> Document Gallery
+</td>
+<td> gallery
+</td></tr>
+<tr>
+<td> Organizer
+</td>
+<td> organizer
+</td></tr>
+<tr>
+<td> Tactile Feedback
+</td>
+<td> feedback
+</td></tr></table>
+<p><br />
+For instance, if you want to write an application that uses Qt Mobility to send messages to some contact, stored on your device, your .pro would look like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="coMULTI">/* app.pro */</span>
+QT <span class="st0">''</span><span class="sy0">=</span> core gui network
+&#160;
+TARGET <span class="sy0">=</span> myapp
+TEMPLATE <span class="sy0">=</span> app
+&#160;
+SOURCES<span class="st0">''</span><span class="sy0">=</span> main.<span class="me1">cpp</span>
+&#160;
+CONFIG <span class="st0">''</span><span class="sy0">=</span> mobility <span class="co2"># mobility option in CONFIG</span>
+MOBILITY<span class="st0">''</span><span class="sy0">=</span> messaging <span class="co2"># domains used on application</span>
+ contacts</pre></div></div>
+<h3><span class="mw-headline" id="Note_on_Symbian_Platform_2">Note on Symbian Platform</span></h3>
+<p>When developing for Symbian with Qt Mobility, you have to add the required capabilities that are required by the specified domains (for further information, take a look <a rel="nofollow" class="external text" href="http://wiki.forum.nokia.com/index.php/Capabilities">here</a>).
+So, for Symbian the .pro would look like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">/</span><span class="st0">''</span><span class="st0">' app.pro */
+QT'</span><span class="st0">'= core gui network
+&#160;
+TARGET = myapp
+TEMPLATE = app
+&#160;
+SOURCES '</span><span class="st0">'= main.cpp
+&#160;
+CONFIG'</span><span class="st0">'= mobility # mobility option in CONFIG
+MOBILITY '</span><span class="st0">'= messaging # domains used on application
+ contacts
+&#160;
+symbian: {
+ TARGET.CAPABILITY = ReadUserData # Symbian capabilities
+ WriteUserData  NetworkServices
+}</span></pre></div></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Porting_a_Desktop_Application_to_Mobile">Porting a Desktop Application to Mobile</span></h2>
+<p>Let's pick one of the Qt examples to guide our study: the <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtwidgets-widgets-calculator-example.html">calculator</a>
+</p><p>This example uses QWidgets to build a typical desktop interface. Besides that, the code has the logic strongly coupled to the UI definition, what is not the ideal scenario for porting an application to a different screen size and requires some modifications in the original code.
+</p>
+<h3><span class="mw-headline" id="UI_and_Reusable_Logic">UI and Reusable Logic</span></h3>
+<p>Let's take a look at Calculator, the main class in this example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Calculator <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QDialog</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ Calculator<span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> digitClicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> unaryOperatorClicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> additiveOperatorClicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> multiplicativeOperatorClicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> equalClicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> pointClicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> changeSignClicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> backspaceClicked<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> clear<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> clearAll<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> clearMemory<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> readMemory<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> setMemory<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> addToMemory<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ Button <span class="sy0">*</span>createButton<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span> <span class="sy0">&amp;</span>text<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>member<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> abortOperation<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">bool</span> calculate<span class="br0">&#40;</span><span class="kw4">double</span> rightOperand<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw5">QString</span> <span class="sy0">&amp;</span>pendingOperator<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw4">double</span> sumInMemory<span class="sy0">;</span>
+ <span class="kw4">double</span> sumSoFar<span class="sy0">;</span>
+ <span class="kw4">double</span> factorSoFar<span class="sy0">;</span>
+ <span class="kw5">QString</span> pendingAdditiveOperator<span class="sy0">;</span>
+ <span class="kw5">QString</span> pendingMultiplicativeOperator<span class="sy0">;</span>
+ <span class="kw4">bool</span> waitingForOperand<span class="sy0">;</span>
+&#160;
+ <span class="kw5">QLineEdit</span> <span class="sy0">*</span>display<span class="sy0">;</span>
+&#160;
+ <span class="kw2">enum</span> <span class="br0">&#123;</span> NumDigitButtons <span class="sy0">=</span> <span class="nu0">10</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+ Button <span class="sy0">*</span>digitButtons<span class="br0">&#91;</span>NumDigitButtons<span class="br0">&#93;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>The Calculator class inherits <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qdialog.html">QDialog,</a> contains the calculator buttons and display. It also contains several slots responsible for processing the inputs and calculating the results.
+With such scenario, our first task is to separate the UI from the logic.
+</p><p>To make things clearer for the sequence of this tutorial, we simplified a bit the original code of this example. Instead of using the createButton() method, we preferred to make all the creation and connections explicit.
+</p><p>We are going to create a new class for the calculator logic. Let's call it //CalculatorEngine//.
+This class will receive the slots that were in the Calculator class and will provide a signal emitted everytime a new result is available. This is the interface used by the current QWidget UI and also for the new QML based UI.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> CalculatorEngine <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> display READ getDisplay NOTIFY displayChanged<span class="br0">&#41;</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ CalculatorEngine<span class="br0">&#40;</span><span class="kw5">QObject</span> <span class="sy0">*</span>parent <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+ <span class="kw4">void</span> digitAdded<span class="br0">&#40;</span><span class="kw4">int</span> digitValue<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw4">void</span> addition<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> subtraction<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> multiplication<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> division<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw4">void</span> square<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> power<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> reciprocal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw4">void</span> equal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> point<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> changeSign<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> backspace<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> clear<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> clearAll<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> clearMemory<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> readMemory<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> setMemory<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> addToMemory<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> abortOperation<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">bool</span> calculate<span class="br0">&#40;</span><span class="kw4">double</span> rightOperand<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw5">QString</span> <span class="sy0">&amp;</span>pendingOperator<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw2">signals</span><span class="sy0">:</span>
+ <span class="kw4">void</span> displayChanged<span class="br0">&#40;</span><span class="kw5">QString</span> text<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ <span class="kw4">void</span> additiveOperation<span class="br0">&#40;</span><span class="kw5">QString</span> selectedOperator<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> multiplicativeOperation<span class="br0">&#40;</span><span class="kw5">QString</span> selectedOperator<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> unaryOperation<span class="br0">&#40;</span><span class="kw5">QString</span> selectedOperator<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="kw5">QString</span> display<span class="sy0">;</span>
+ <span class="kw4">double</span> sumInMemory<span class="sy0">;</span>
+ <span class="kw4">double</span> sumSoFar<span class="sy0">;</span>
+ <span class="kw4">double</span> factorSoFar<span class="sy0">;</span>
+ <span class="kw5">QString</span> pendingAdditiveOperator<span class="sy0">;</span>
+ <span class="kw5">QString</span> pendingMultiplicativeOperator<span class="sy0">;</span>
+ <span class="kw4">bool</span> waitingForOperand<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>QML code can invoke slots and Q_INVOKABLE methods declared in C<i>+. It is well described in <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtqml-syntax-propertybinding.html">this section</a> of the Qt documentation.</i>
+</p><p>Our new Calculator class without all the logic part looks like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Calculator <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QDialog</span>
+<span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ Calculator<span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ <span class="kw5">QLineEdit</span> <span class="sy0">*</span>display<span class="sy0">;</span>
+&#160;
+<span class="kw2">enum</span> <span class="br0">&#123;</span> NumDigitButtons <span class="sy0">=</span> <span class="nu0">10</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+ Button <span class="sy0">*</span>digitButtons<span class="br0">&#91;</span>NumDigitButtons<span class="br0">&#93;</span><span class="sy0">;</span>
+&#160;
+CalculatorEngine <span class="sy0">*</span>engine<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+Now Calculator contains the visual elements: 10 Buttons (which inherits <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtoolbutton.html">QToolButton</a>) and a <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qlineedit.html">QLineEdit.</a> The class implementation now concentrates in the creation and layout of the UI. All the logic was moved to <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">CalculatorEngine</pre></div></div>, which inherits QObject and has the slots used by Calculator to connect its signals.
+<p>With the original code refactored, we have two clearly separated parts of the application: the current desktop UI and the internal logic. The logic part will be reused in the mobile version of the application.
+</p>
+<h3><span class="mw-headline" id="Reusing_Existing_Models_from_standard_Qt_in_QML">Reusing Existing Models from standard Qt in QML</span></h3>
+<p>If your application has a proper separation between the UI and it's logic the transition should not be hard and the UI will be the unique code rewritten. To port your app to QML there are two basic steps to do.
+</p><p>The first one is to create a <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtquick-porting-qt5.html">QDeclarativeView</a> and make it load the root QML element of your application. The second is to export your current application logic to let QML use it.
+</p>
+The following snippet loads the Calculator.qml element and makes our <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">CalculatorEngine</pre></div></div> visible to QML through the id <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">calcEngine</pre></div></div>.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw5">QApplication</span> app<span class="br0">&#40;</span>argc<span class="sy0">,</span> argv<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+CalculatorEngine calcEngine<span class="sy0">;</span>
+ QDeclarativeView view<span class="sy0">;</span>
+ QDeclarativeContext <span class="st0">''</span><span class="st0">'context = view.rootContext();
+ context-&gt;setContextProperty(&quot;calcEngine&quot;, &amp;calcEngine); // Exporting logic part of our application to QML
+ view.setSource(QUrl(&quot;:Calculator.qml&quot;)); // Set the QML file that is inside a Qt Resource file
+ view.show();
+&#160;
+ return app.exec();
+}</span></pre></div></div>
+<p>Now that we have a CalculatorEngine object visible in QML context we must use its properties, slots and signals to link with our UI.
+In our example, the QML code binds the display property from the model into a text element that we call Display.
+Javascript is also used to map the buttons in the layout with the actions that must be performed, calling the methods which the CalculatorEngine exports to QML.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// delegates of each model's item will be created</span>
+<span class="co1">// to fill the grid view</span>
+delegate<span class="sy0">:</span> Component <span class="br0">&#123;</span>
+ Item <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> grid.<span class="me1">cellWidth</span>
+ height<span class="sy0">:</span> grid.<span class="me1">cellHeight</span>
+ Button <span class="br0">&#123;</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ anchors.<span class="me1">margins</span><span class="sy0">:</span> <span class="nu0">3</span>
+ icon<span class="sy0">:</span> modelData.<span class="me1">source</span>
+ onClicked<span class="sy0">:</span> <span class="br0">&#123;</span>
+ <span class="co1">// we are using javascript to map the buttons</span>
+ <span class="co1">// with the actions it must perform</span>
+ var currentItem <span class="sy0">=</span> Calc.<span class="me1">landscapeButtonsModel</span><span class="br0">&#91;</span>index<span class="br0">&#93;</span><span class="sy0">;</span>
+ var action <span class="sy0">=</span> currentItem<span class="br0">&#91;</span><span class="st0">'action'</span><span class="br0">&#93;</span><span class="sy0">;</span>
+ action<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Using_the_Qt_Resource_System">Using the Qt Resource System</span></h3>
+<p>Qt provides a platform-independent resource system, useful to store important files needed by the application. It is a good option to guarantee the deployment and to avoid problems due to the corruption of one of these files.
+The Qt Resource System can generate a binary containing the files, then the application loads the content from this binary. Another possibility is to embed this generated resource file into the application binary. In this example, we use the second option to embed the images and QML files - check calculator.qrc. For more details regarding can be found in the <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/resources.html">Qt Resource System documentation</a>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Deploying_to_Mobile_using_Nokia_Qt_SDK">Deploying to Mobile using Nokia Qt SDK</span></h3>
+<h4><span class="mw-headline" id="Creating_a_new_Mobile_Application">Creating a new Mobile Application</span></h4>
+<p>While creating a new application you will be prompted to choose what kind of application you are about to create. Choose Qt Quick application:
+</p><p><a href="http://wiki.qt.io/File:B1.png" class="image"><img alt="B1.png" src="http://wiki.qt.io/images/2/2b/B1.png" width="562" height="482" /></a>
+</p><p>Continue with the Wizard and choose what targets your application will have. If you want to deploy for Symbian and Maemo click in the respective checkbox.
+</p><p><a href="http://wiki.qt.io/File:B3.png" class="image"><img alt="B3.png" src="http://wiki.qt.io/images/a/a2/B3.png" width="527" height="411" /></a>
+</p><p>In application options you can change some target variables. You can set at this time the icon your application will use in Symbian and Maemo platforms and also change the UID3 for Symbian.
+</p><p><b> The UID3 is an unique value that identifies your application. By default QtCreator will set a temporary UID which is just useful for development purpose. However, in order to submit your application to OVI store, you will need to get a [<a rel="nofollow" class="external text" href="http://www.forum.nokia.com/Distribute/Packaging_and_signing.xhtml%7Cvalid">UID</a>].</b>
+</p><p><a href="http://wiki.qt.io/File:B5.png" class="image"><img alt="B5.png" src="http://wiki.qt.io/images/4/4c/B5.png" width="530" height="411" /></a>
+</p>
+<h4><span class="mw-headline" id="Testing_and_Deploying">Testing and Deploying</span></h4>
+<p>After creating the project you can select the desired target in the left panel. In the case below, a Symbian Device is selected.
+Note that in the device picture, there is a green circle indicating the device has been detected. QtCreator automatically detects new devices connected in the USB ports.
+</p>
+<ul>
+<li> Note: In order for the device to be detected, it must have 'Nokia Ovi Suite' option active in the USB settings and it must have also TRK installed (Symbian^3 TRK sis file can be found at &lt;PATH_TO_SDK&gt;^3\TRK).
+</li>
+</ul>
+<p><a href="http://wiki.qt.io/File:B13.png" class="image"><img alt="B13.png" src="http://wiki.qt.io/images/2/28/B13.png" width="814" height="593" /></a>
+</p><p>If the device has been detected, you can test your application at any time in the target device, clicking in the green arrow in the left panel. This will build (if necessary) your application, send it to device and launch it.
+</p>
+<ul>
+<li> Note: You can also debug your application in the device clicking in the green arrow below the first one (the arrow with a bug).
+</li>
+</ul>
+<p>The output is like the following:
+</p><p><a href="http://wiki.qt.io/File:B16.png" class="image"><img alt="B16.png" src="http://wiki.qt.io/images/a/a1/B16.png" width="814" height="593" /></a>
+</p><p>When you are ready to deploy your application you can click in 'Deploy All'. This will generate installation files for your target device. Generally the generated files are placed in the build directory. For Symbian, for example, you can send the generated .sis files to your device, so you can install and run it at any time.
+</p><p><a href="http://wiki.qt.io/File:B14.png" class="image"><img alt="B14.png" src="http://wiki.qt.io/images/9/98/B14.png" width="814" height="593" /></a>
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.418 seconds
+Real time usage: 1.484 seconds
+Preprocessor visited node count: 318/1000000
+Preprocessor generated node count: 532/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:967-0!*!*!!en!2!* and timestamp 20151104224834 and revision id 16423
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&amp;oldid=16423">http://wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&amp;oldid=16423</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/Category:Developing_with_Qt" title="Category:Developing with Qt">Developing with Qt</a></li><li><a href="http://wiki.qt.io/index.php?title=Category:Qt_Quick&amp;action=edit&amp;redlink=1" class="new" title="Category:Qt Quick (page does not exist)">Qt Quick</a></li><li><a href="http://wiki.qt.io/Category:Developing_with_Qt::QtMobility" title="Category:Developing with Qt::QtMobility">Developing with Qt::QtMobility</a></li><li><a href="http://wiki.qt.io/Category:HowTo" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=How+to+Port+From+Desktop+to+Mobile" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/How_to_Port_From_Desktop_to_Mobile"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:How_to_Port_From_Desktop_to_Mobile&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/How_to_Port_From_Desktop_to_Mobile" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/How_to_Port_From_Desktop_to_Mobile" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/How_to_Port_From_Desktop_to_Mobile" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&amp;oldid=16423&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&amp;oldid=16423" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 April 2015, at 13:26.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,875 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":274});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_Port_From_Desktop_to_Mobile&oldid=16423 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:18:25 GMT -->
+</html>

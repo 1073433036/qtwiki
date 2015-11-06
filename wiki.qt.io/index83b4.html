@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=PySide_for_Android_guide&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:39:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for PySide for Android guide - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"PySide_for_Android_guide","wgTitle":"PySide for Android guide","wgCurRevisionId":15038,"wgRevisionId":0,"wgArticleId":1274,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"PySide_for_Android_guide","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-PySide_for_Android_guide skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for PySide for Android guide</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/PySide_for_Android_guide" title="PySide for Android guide">PySide for Android guide</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">
+
+
+[[Category:LanguageBindings::PySide]]
+
+= PySide for Android =
+
+
+This guide describes:
+
+* how to build Shiboken &amp; PySide for Android using the Necessitas SDK
+* how to use the resulting libraries
+* and how to bundle them with your Python program in a standalone APK
+
+'''NOTE:''' If you just want to run you Python &amp; PySide programs on Android, you can skip the ''Building PySide'' section and go directly to [http://wiki.qt.io/PySide_for_Android_guide#0f9f7f288b4f606f352d2dfede683e15 PySide for Android example application] &amp; [http://wiki.qt.io/PySide_for_Android_guide#9de8e69b9d5975439d9560475508d28b Example project for the Necessitas Qt Creator] .
+
+See [http://wiki.qt.io/PySide_for_Android_guide/#bd908db5ccb07777ced8023dffc802f4 Links] for [http://wiki.qt.io/PySide_for_Android_guide/#b8e1f77d0be4f2c3175a2050caae5132 source code] &amp; [http://wiki.qt.io/PySide_for_Android_guide/#9b5d07e7366cd5412ce3607b5d4b2785 pre-built binaries].
+
+== Building PySide ==
+
+=== Prerequisites ===
+
+==== Necessitas SDK ====
+Make sure to get the latest Necessitas alpha 4 SDK - older version might not work correctly with the build script (incompatible libraries, different paths, etc.). 
+
+Download &amp; run the Necessitas SDK installer
+
+&lt;code>
+wget http://files.kde.org/necessitas/installer/release/linux-online-necessitas-alpha4-sdk-installer
+chmod ''x linux-online-necessitas-alpha4-sdk-installer
+./linux-online-necessitas-alpha4-sdk-installer
+&lt;/code>
+
+'''Once the installer starts -> don't forget to install Android API 14 [[Image:|Image:]]*
+* on the ''Select components'' page go to * Miscellaneous->Android SDK''' and select '''API 14''' for installation
+
+* to make sure you have the Android SDK platform/API 14 installed in the Necessitas SDK (can be done after SDK installation):
+- run SDKMaintenanceTool select ''Package manager'' and in '''Miscantelous->Android SDK''' check if you have '''API 14''' installed
+- PySide should probably compile even against a lower API, but that has not been tested yet
+
+==== Other prerequisites ====
+* system-wide installed Shiboken
+* system-wide installed Python 2.7
+* Python 2.7 compiled for Android
+* cmake
+* git
+
+This command should probably fetch most of the prerequisites on Ubuntu:
+&lt;code>
+sudo apt-get install build-essential cmake git python2.7-minimal shiboken
+&lt;/code>
+
+If you find some are is missing or if you wan't to provide similar command for other distributions, add them ! :)
+
+Then clone the ''Android-pyside-build-scripts'' project and ''cd'' to it's directory:
+&lt;code>
+git clone https://github.com/M4rtinK/android-pyside-build-scripts.git
+cd android-pyside-build-scripts
+&lt;/code>
+
+Now run the ''prepare.sh'' script:
+&lt;code>
+./prepare.sh
+&lt;/code>
+It clones Android-modified Shiboken &amp; PySide and creates some folders needed for the build.
+
+And that's it, you are ready to start the build. :)
+
+=== Build ===
+To start the build, just run the main build script, called ''build.sh'':
+&lt;code>
+./build.sh
+&lt;/code>
+It first builds Shiboken, followed by PySide. The script is fully automatic, but waits for the user to ''press any key'':
+* after Shiboken is configured for build
+* after PySide is configured for build
+Like this you can easily check for any errors during configuration.
+
+Also note, that when running the script, it clears any previous build results before building.
+
+You can also run the ''build_shiboken.sh'' and ''build_pyside.sh'' scripts manually, just always make sure to run the Shiboken one before running the PySide one.
+
+=== Build issues ===
+If you have any issues during the PySide build, the first thing you should do is to check the PySide for Android build scripts repository if it was not updated since you cloned it, as it might already contain a fix for you issue.
+
+==== arm-linux-androideabi-g: Internal error: Killed (program cc1plus) ====
+This error seems to be caused by low system resources during build and/or running the compilation in multiple threads on some machines. If you are experiencing this error, try to set BUILD_THREAD_COUNT in env.sh to 1.
+
+=== Results ===
+The resulting PySide libraries compiled for Android are located in the ''stage/lib'' folder.
+
+See the ''Example project for the Necessitas Qt Creator'', [http://wiki.qt.io/PySide_for_Android_guide#9de8e69b9d5975439d9560475508d28b Modifying the project], section ''Replacing PySide libraries'' for how the PySide libraries can be used as a part of a self-contained Android application.
+
+
+== PySide for Android example application ==
+This is an example, that demonstrates a fully functional standalone Android application that uses Python, PySide and Qt Components.
+
+&lt;gallery>
+File:Expyside1.png|example application in ladscape
+File:Expyside2.png|example application in portrait
+File:Expyside3.png|example application showing the tools menu
+&lt;/gallery>
+[http://modrana.org/trac/wiki/ScreenshotsEN#PySideQtComponentsexample more screenshots]
+
+=== Ready-to-install APK ===
+A ready-to-install standalone APK is available here:
+
+http://modrana.org/platforms/android/pyside_example/PySideExample_1.2.apk
+
+Just install it and press the ''PySideExample'' icon.
+
+==== First start ====
+If you haven't yet installed any Ministro using Qt application on your Android device, you will be redirected to the Play store to install the Ministro application. Ministro is a manager &amp; updater for the Qt libraries for Android. The example application requires to be installed to run.
+So just install Ministro and everything else will be handled automatically. You might need to press the ''PySideExample'' icon again once Ministro is installed.
+
+Once Ministro is installed and does it's work, the example might still take some time to start, as it is unpacking Python, Qt Components, theme for Qt Components and the example program to it's working directory. Once the unpacking is finished, the example application will be started.
+
+The unpacking is done only once on the first application start, following starts are very fast, at least when tested on my device (HP Touchpad with CM9).
+
+==== What the example application demonstrates ====
+* sending data to Python and back * the content of the entry field is sent to Python, where it is painted on the PySide image and returned to QML using ImageProvider * the date is retrieved in Python and shown in QML
+* working text entry with the Android virtual keyboard
+* working screen rotation
+* correct Portrait/Landscape orientation switching * in both normal &amp; inverted orientations
+* working notifications (InfoBanner)
+* working ToolBar
+* working Menu
+* "tools" menu with rotation &amp; opacity sliders for the PySide image
+
+==== Source code ====
+Available from Github under BSD licence:
+https://github.com/M4rtinK/expyside/tree/android
+
+==== Size of the APK ====
+The example APK has about 16 MB. This is because it needs to bundle quite a lot of
+libraries and related files. Big part of it is actually not used by the example in any way.
+
+For normal applications it should be possible to make the resulting APK much smaller by:
+* including only the PySide libraries that are actually used
+* removing unused Python modules
+* cutting down the Qt Components theme from all graphics &amp; icons that are not used
+
+== Example project for the Necessitas Qt Creator ==
+This project has been used to generate the above mentioned application example APK.
+
+=== Using the project ===
+Using the project to build your own project is very easy. Just install the [http://necessitas.kde.org/necessitas/necessitas_sdk_installer.php Necessitas SDK] and clone the example project from git:
+&lt;code>
+git clone https://github.com/M4rtinK/android-pyside-example-project.git
+&lt;/code>
+Then just open the ''PySideExample.pro'' with the Necessitas Qt Creator. 
+
+To generate a new APK, just click the green '''run''' arrow in the lower left - Qt Creator should rebuild the the APK and deploy it either to the simulator or to any connected Android device that has debugging enabled.
+
+==== Build &amp; deployment issues ====
+===== '''The example fails to start when deployed to device''' =====
+First check you have the latest clone of the project.
+
+Then check for which ARM architecture are you building by clicking on '''Projects'''. The available architecture targets are:
+* Necessitas Qt 4.8.2 for Android armv5
+* Necessitas Qt 4.8.2 for Android armv7a
+
+The currently used architecture dark, the unused is white-grey. The build architecture needs to correspond to what the CPU of your device is using. If not sure, just try both and stick with the one that works. :)
+
+===== '''Cannot find ELF information''' =====
+This error is harmless and can be safely ignored.
+
+=== How does it work ? ===
+The project contains various components, that together enable the creation of fully standalone Python &amp; PySide application APK, while also allowing to bundle any arbitrary libraries and files needed by the application.
+
+The example project is called PySideExample and uses the org.modrana.PySideExample unique name. This means, that when it's APK is installed on and Android device, it gets installed to this directory:
+&lt;code>
+/data/data/org.modrana.PySide.Example/
+&lt;/code>
+This path is important, as the application needs to set a couple of environmental variables during startup, pointing to libraries and themes that reside in this directory.
+
+==== C''+ wrapper ====
+The main.cpp and main.h files are used to build a C++ Python wrapper. This wrapper is build against the the Android-compiled python libraries in build_dependencies/python by Necessitas.
+
+Once the APK is deployd to the device and started, this wrapper is run. It initializes it's build-in Python interpreter, which tries to start the /data/data/org.modrana.PySide.Example/files/main.py Python file. This Python code then imports PySide, instantiates a QApplication and starts the main loop.
+
+Behind the scenes, Necessitas handles wrapping the QApplication to an Android activity and showing it on the screen. It also handles other stuff like keyboard input &amp; Qt Mobility.
+
+===== main.h =====
+
+This file contains important paths for the C++ wrapper.
+
+&lt;code>
+#ifndef MAIN_H
+#define MAIN_H
+
+#define MAIN_PYTHON_FILE "/data/data/org.modrana.PySideExample/files/main.py"
+
+#define PYTHON_HOME "/data/data/org.modrana.PySideExample/files/python/"
+
+#define PYTHON_PATH "/data/data/org.modrana.PySideExample/files/python/lib/python2.7/lib-
+dynload:/data/data/org.modrana.PySideExample/files/python/lib/python2.7/:/data/data/org.modrana.
+PySideExample/files/python/lib/python2.7/site-
+packages:/data/data/org.modrana.PySideExample/files/python/lib"
+
+#define LD_LIBRARY_PATH "/data/data/org.modrana.PySideExample/files/python/lib:/data
+/data/org.modrana.PySideExample/files/python/lib/python2.7/lib-
+dynload:/data/data/org.kde.necessitas.ministro/files/qt/lib/"
+
+#define PATH "/data/data/org.modrana.PySideExample/files/python/bin:$PATH"
+
+#define THEME_PATH "/data/data/org.modrana.PySideExample/files/python/themes/"
+
+#define QML_IMPORT_PATH "/data/data/org.modrana.PySideExample/files/python/imports/"
+
+#define PYSIDE_APPLICATION_FOLDER "/data/data/org.modrana.PySideExample/"
+
+#endif // MAIN_H
+&lt;/code>
+
+* MAIN_PYTHON_FILE - path to the main Python file to run once the application is started
+* PYTHON_HOME
+* LD_LIBRARY_PATH - '':'' separated list of paths used to look for libraries when loading them
+* PATH - search path for executables
+* THEME_PATH - path to the main themes folder for Qt Components
+* QML_IMPORT_PATH - path to the Qt Components imports folder
+
+===== main.cpp =====
+
+This is the C++ wrapper, it contains the embedded Python interpreter that is used to start the application and also sets some important environmental variables specified through main.h .
+
+==== The example Python application ====
+
+The example in main.py inside my_python_project.zip is basically a normal PySide application, it imports PySide, instantiates QApplication and starts the main loop. There is only one main difference in this piece of code:
+
+&lt;code>
+from ctypes import *
+PROJECT_FOLDER = os.environ['PYSIDE_APPLICATION_FOLDER']
+# 'PYSIDE_APPLICATION_FOLDER' can be configured in main.h
+LIB_DIR = os.path.join(PROJECT_FOLDER, 'files/python/lib')
+SHIBOKEN_SO = os.path.join(LIB_DIR, 'libshiboken.so')
+PYSIDE_SO = os.path.join(LIB_DIR, 'libpyside.so')
+&lt;/code>
+
+Due to some not yet identified bug, unless libshiboken.so &amp; libpyside.so are manually loaded to memory like this, importing any PySide module fails.
+
+'''So make sure this piece of code is somewhere in your application and is executed before import of any PySide module takes place.'''
+
+Regarding the PYSIDE_APPLICATION_FOLDER environmental variable, it is set by the main.cpp wrapper and can be configured in main.h .
+
+==== Bundling ====
+
+The example project bundles all files needed by the application inside the standalone APK. This section describes how the bundling works.
+
+===== Modified QtActivity.java =====
+
+Another mportant file is the main Android ''activity'' located in &lt;code>android/src/org/kde/necessitas/origo/QtActivity.java&lt;/code> This is actually the first thing that is started once you press the application icon on android. It basically works as a glue between Android, Qt and in our case, Python &amp; PySide.
+
+The basic activity file that is part of every Necessitas Qt Creator project has been modified by the ''android_python27'' project, to look for two specific zip archives in the installation folder at startup ant to decompress them &amp; then remover the archives.
+
+This way bundling of arbitrary files (libraries, executables, code, themes, etc.) inside the application APK has been achieved.
+
+'''NOTE:''' Necessitas Qt Creator might sometimes want to update the pre-generated '''.java files with a new version. If this happens, check if the update didn't break or remove the bundling code in QtActivity.java .
+
+===== GlobalConstants.java =====
+The file android/src/org/kde/necessitas/origo/GlobalConstants.java contains variables for the main QtActivity file.
+
+It looks like this:
+
+&lt;code>
+package org.kde.necessitas.origo;
+
+public class GlobalConstants {
+
+ public static final String PYTHON_MAIN_SCRIPT_NAME = "main.py";
+ public static final String PYTHON_PROJECT_ZIP_NAME = "my_python_project.zip";
+ public static final String PYTHON_ZIP_NAME = "python_27.zip";
+ public static final String PYTHON_EXTRAS_ZIP_NAME = "python_extras_27.zip";
+
+ public static final boolean IS_FOREGROUND_SERVICE = true;
+
+ public static final String PYTHON_BIN_RELATIVE_PATH = "/python/bin/python";
+ public static final String PYTHON_NAME = "python";
+ public static final String PYTHON_NICE_NAME = "Python 2.7.2";
+
+ public static String[] SCRIPT_ARGS = { "—foreground" };
+
+ public static final String LOG_TAG = "PythonAPK";
+}
+&lt;/code>
+As you can see, you can use it to set various variables, such as name of the bundling archives or logging prefix (does this actually work ?).
+
+===== my_python_project.zip =====
+The first archive, located in android/res/raw/my_python_project.zip in the project contains the Python application code. On first application start, it's contents are unpacked into:
+
+/data/data/org.modrana.PySide.Example/files/
+
+===== python27.zip =====
+
+This file is located android/res/raw/python_27.zip in the project and it's content is unpacked to:
+
+/data/data/org.modrana.PySide.Example/files/python
+
+The paths set in main.h expect this and point the corresponding environmental variables to the bin, lib, imports and themes folders in this directory.
+
+=== Modifying the project ===
+When you want to use the example project as basis for your Python application for Android, you just need to rename it and replace the example application. 
+
+But just in case I've also documented replacing all the other components.
+
+==== Renaming ====
+===== Names =====
+There are actually two names - the project/application name and the unique application name.
+
+For the example project, they project name is PySideExample and the unique name is org.modrana.PySideExample. As you can see, the project name is also a suffix for the unique name. (You probably can use a project name that differs from the suffix, but I rather make them the same to avoid needless confusion).
+
+The unique name is very important:
+* it has to be unique so it dosn't clash with other applications * for this reason, it is mostly based on a domain name you control or some other string with low possibility of being used by another developer
+* the unique name is used for path to the installation folder * the example project uses the org.modrana.PySideExample and it is installed into /data/data/org.modrana.PySideExample as a result * the path to the installation folder is used when setting important environmental variables, so make sure to change all the corresponding paths when changing the unique name
+
+===== Project rename script =====
+
+You can also run this combined script from the project directory, which should do all the needed renaming:
+&lt;code>
+NEW_NAME="BarApp"
+NEW_UNIQUE_NAME="foo.foomatic.${NEW_NAME}"
+
+mv PySideExample.pro "${NEW_NAME}.pro"
+sed -i "s/PySideExample/${NEW_NAME}/g" "${NEW_NAME}.pro"
+sed -i "s/org.modrana.PySideExample/${NEW_UNIQUE_NAME}/g" main.h
+sed -i "s/org.modrana.PySideExample/${NEW_UNIQUE_NAME}/g" android/src/org/kde/necessitas/origo/QtActivity.java
+sed -i "s/org.modrana.PySideExample/${NEW_UNIQUE_NAME}/g" android/AndroidManifest.xml
+sed -i "s/PySideExample/${NEW_NAME}/g" android/AndroidManifest.xml
+sed -i "s/PySideExample/${NEW_NAME}/g" android/res/values/strings.xml
+sed -i "s/PySideExample/${NEW_NAME}/g" android/build.xml
+&lt;/code>
+Just change NEW_NAME and NEW_UNIQUE_NAME to values matching you application and you are set. :)
+
+===== What the rename script does =====
+
+Lets say we want to rename the example project from PySideExample to BarApp and from org.modrana.PySideExample to foo.foomatic.BarApp
+
+* rename the project file:
+&lt;code>
+mv PySideExample.pro BarApp.pro
+&lt;/code>
+
+* replace the name inside the project file:
+&lt;code>
+sed -i "s/PySideExample/BarApp/g" BarApp.pro
+&lt;/code>
+
+* replace all unique names in main.h:
+&lt;code>
+sed -i "s/org.modrana.PySideExample/foo.foomatic.BarApp/g" main.h
+&lt;/code>
+
+* replace all unique names in the QtActivity:
+&lt;code>
+sed -i "s/org.modrana.PySideExample/foo.foomatic.BarApp/g" android/src/org/kde/necessitas/origo/QtActivity.java
+&lt;/code>
+
+* replace all names in the Android manifest file:
+&lt;code>
+sed -i "s/org.modrana.PySideExample/foo.foomatic.BarApp/g" android/AndroidManifest.xml
+sed -i "s/PySideExample/BarApp/g" android/AndroidManifest.xml
+&lt;/code>
+
+* and the last is in the android/res/strings.xml and android/build.xml file:
+&lt;code>
+sed -i "s/PySideExample/BarApp/g" android/res/values/strings.xml
+sed -i "s/PySideExample/BarApp/g" android/build.xml
+&lt;/code>
+
+'''NOTE:''' Some of these names can be changed from the Necessitas Qt Creator GUI or of course also by using an editor.
+
+To verify that you have really changed all of the original names or if there are still some left, you can use this command:
+
+&lt;code>
+find . -type f -print0 | xargs –0 file | grep -P text | cut -d: -f1 | xargs grep "PySideExample"
+&lt;/code>
+
+==== Replacing the application ====
+The application is located in: android/res/raw/my_python_project.zip
+
+This file is decompressed into the /data/data/org.modrana.PySide.Example/files/ folder on first start after installation. Then /data/data/org.modrana.PySide.Example/files/main.py is run by Python.
+
+To replace the example application, just replace the contents of my_python_project.zip, if you want to start other file than main.py, just change the ''MAIN_PYTHON_FILE'' path in main.h .
+
+==== Replacing Python ====
+The project contains two Python "bundles", one is used to compile the application wrapper and is located in build_dependencies/python, the other one is in android/res/raw/python_27.zip and is deployed on first start after installation into /data/data/org.modrana.PySide.Example/files/python with all other bundled libraries and files in this archive.
+
+When replacing Python, you should probably replace both bundles with the same Android-compiled Python version, or at least use the same series (2.7 &amp; 2.7 not 2.7 &amp; 2.6).
+
+==== Replacing PySide libraries ====
+The PySide libraries are located in android/res/raw/python_27.zip archive inside the ''lib'' folder. This folder is deployed to /data/data/org.modrana.PySide.Example/files/python/lib on the Android device.
+
+When replacing PySide, you need to replace the libshiboken and libpyside:
+&lt;code>
+Replace lib/libshiboken.so by stage/lib/libshiboken.so
+Replace lib/libpyside.so by stage/lib/libpyside.so
+Replace lib/python2.7/site-packages/PySide by stage/lib/python2.7/site-packages/PySide
+&lt;/code>
+
+==== Replacing Qt Components ====
+The Qt Components are packed in the android/res/raw/python_27.zip in the imports directory, the theme is in themes. These to folders are deployed like this after installation:
+&lt;code>
+/data/org.modrana.PySide.Example/python/imports
+/data/org.modrana.PySide.Example/python/themes
+&lt;/code>
+
+So to replace Qt Components and/or their theme, just replace the content of the ''imports'' and/or ''themes'' folders in the python_27.zip archives.
+
+==== Adding files, libraries &amp; executables ====
+===== Files =====
+Arbitrary files needed by you application should probably go to the my_python_project.zip, to be deployed together with your application to the main instalation folder.
+
+===== Libraries &amp; executables =====
+Libraries should be added to python_27.zip to the lib> folder, exectuables to the bin folder. Like this they will be deployed to a folder that is listed in $LD_LIBRARY_PATH and $PATH respectively.
+
+'''NOTE:''' I haven't yet tested if running executables through ''subprocess'' actually works.
+
+== Ideas for improvement ==
+There is definitely still room for improvement, such as:
+* customizes Necessitas Qt Creator PySide projects
+* building APKs from command line only without Qt Creator
+* show a progress bar when the bundled libs are unpacked on first start
+* modified bundling that doesn't unpack the files during startup bud during installation * this could speed up the first start quite a bit
+* compiling the many Qt Components files &amp; images to a single resource file ?
+* documenting how to use Android specific APIs from Python
+* videos
+
+== Links ==
+=== Source code listing ===
+A convenient listing of sources for all the components used for the PySide &amp; co port to Android. :)
+
+Shiboken for Android
+https://github.com/M4rtinK/shiboken-android/tree/android
+
+PySide for Android
+https://github.com/M4rtinK/pyside-android/tree/android
+
+PySide for Android build scripts
+https://github.com/M4rtinK/android-pyside-build-scripts
+
+Qt Components
+https://qt.gitorious.org/~martink/qt-components/martinks-ineans-qt-components/commits/android
+
+Example program
+https://github.com/M4rtinK/expyside/tree/android
+
+Example project for Necessitas QtCreator
+https://github.com/M4rtinK/android-pyside-example-project
+
+=== Binary listing ===
+List of relevant pre-built binaries
+
+PySide libraries
+http://modrana.org/platforms/android/pyside/
+
+PyQt libraries
+http://modrana.org/platforms/android/pyqt4/
+
+Python 2.7 compiled for android- libs, executables &amp; headers
+http://www.modrana.org/platforms/android/python2.7/python2.7_for_android_v1.zip
+
+Qt Components for Android
+http://modrana.org/platforms/android/qt_components/qt_components_v1.zip
+
+Cut-down Qt Components theme
+http://modrana.org/platforms/android/qt_components/qt_components_theme_mini_v1.zip
+
+Example application APK
+http://modrana.org/platforms/android/pyside_example/PySideExample_1.2.apk
+
+== Acknowledgement ==
+
+As usual with open source development, I haven't done all of this single handedly, but built on work done by others before me. So I'd like to both acknowledge on which work this is build upon and also provided links to the sources I've used:
+* THPs [http://thp.io/2011/pyside-android/ PySide for Android] - showing that this is possible
+* Adrià Cereto-Massagué - integrated &amp; improved THPs patches for [https://github.com/ssorgatem/PySide/tree/android Shiboken] and [https://github.com/ssorgatem/PySide/tree/android PySide]
+* [http://code.google.com/p/android-python27/ The Android-Python2.7 project] - solved the APK bundling issue, provides Android-buildable Python 2.7
+* [http://hg.microcode.ca/blackberry-py/wiki/Building the BlackBerry-Py Building PySide guide] PySide - I've used this as a base when making the Android build scripts
+* [http://necessitas.kde.org/ the Necessitas project] - made Qt on Android possible * also provides the Necessitas Qt Creator used for by the example project for building standalone APKs
+* [http://qt.io/ Qt-Project] - provides the GUI toolkit :)
+* [http://wiki.qt.io/PySide PySide] - provides the Python-Qt bindings
+* [https://gitorious.org/~inean/qt-components/ineans-qt-components Ineans Qt Components] - with small modifications used in the example application &amp; project
+</textarea><div class="templatesUsed"></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/PySide_for_Android_guide" title="PySide for Android guide">PySide for Android guide</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/PySide_for_Android_guide">http://wiki.qt.io/PySide_for_Android_guide</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=PySide+for+Android+guide" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/PySide_for_Android_guide"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:PySide_for_Android_guide&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/PySide_for_Android_guide" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=PySide_for_Android_guide&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=PySide_for_Android_guide&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/PySide_for_Android_guide" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/PySide_for_Android_guide" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=PySide_for_Android_guide&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":167});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=PySide_for_Android_guide&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:39:10 GMT -->
+</html>

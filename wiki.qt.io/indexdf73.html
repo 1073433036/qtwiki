@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Modern_mobile_applications_with_Qt_and_QML&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:02:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Modern mobile applications with Qt and QML - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Modern_mobile_applications_with_Qt_and_QML","wgTitle":"Modern mobile applications with Qt and QML","wgCurRevisionId":15985,"wgRevisionId":15985,"wgArticleId":1154,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing with Qt::Qt Quick","Learning","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Modern_mobile_applications_with_Qt_and_QML","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Modern_mobile_applications_with_Qt_and_QML skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Modern mobile applications with Qt and QML</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexa33d.php?title=Modern_mobile_applications_with_Qt_and_QML&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><b>English</b> [<a rel="nofollow" class="external text" href="http://qt-devnet.developpez.com/tutoriels/qt-quick/qml/applications-mobiles-modernes/">French</a>]
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Modern_Mobile_Applications_with_Qt_and_QML"><span class="tocnumber">1</span> <span class="toctext">Modern Mobile Applications with Qt and QML</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Create_new_project"><span class="tocnumber">1.1</span> <span class="toctext">Create new project</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Code_core_logic_in_C.2B"><span class="tocnumber">1.2</span> <span class="toctext">Code core logic in C<i>+</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Add_QML_interface"><span class="tocnumber">1.3</span> <span class="toctext">Add QML interface</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Multilingual"><span class="tocnumber">1.4</span> <span class="toctext">Multilingual</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Modern_Mobile_Applications_with_Qt_and_QML">Modern Mobile Applications with Qt and QML</span></h1>
+<p>Qt is a flexible and powerful framework for creating cross-platform applications. QML is now part of Qt, providing a markup language which gives complete freedom in development of user interfaces.
+</p><p>A good way to see the power of Qt is to start coding with it. Let's write a simple application using Qt and QML. This will be an application I called 4Toddler; the application will start in full-screen mode and it has just two buttons placed in the top right corner of the window: <b>About</b> and <b>Close</b>. The main function is to display a random image with a fireworks effect and with a random sound effect.
+</p><p>The User interface will be written with QML; the backbone is written in Qt C+<i>.</i>
+</p>
+<h2><span class="mw-headline" id="Create_new_project">Create new project</span></h2>
+<p>If you do not have Qt already installed, visit <a rel="nofollow" class="external text" href="http://qt.nokia.com/downloads/">Qt download page</a> to download Qt SDK for your platform and install it.
+</p><p>Launch Qt Creator, select <b>File</b> -&gt; <b>New File or Project</b>. In the new dialog select <b>Qt C++ Project</b>-&gt; <b>Qt Gui Application</b>, and then click <b>Choose…</b> 
+</p><p><a href="index23d7.html?title=Special:Upload&amp;wpDestFile=Http://appdeveloper.intel.com/sites/files/1-qt-qml-art.png" class="new" title="File:Http://appdeveloper.intel.com/sites/files/1-qt-qml-art.png">screenshot</a>
+</p><p>In the new window: type project name, select path to the project folder and then click <b>Next</b>.
+</p><p><a href="index4cf8.html?title=Special:Upload&amp;wpDestFile=Http://appdeveloper.intel.com/sites/files/2-qt-qml-art.png" class="new" title="File:Http://appdeveloper.intel.com/sites/files/2-qt-qml-art.png">screenshot</a>
+</p><p>In the next window: uncheck <b>Generate form</b> option. We do not need to generate a form. Click <b>Next</b>
+</p><p><a href="indexb14e.php?title=Special:Upload&amp;wpDestFile=Http://appdeveloper.intel.com/sites/files/3-qt-qml-art.png" class="new" title="File:Http://appdeveloper.intel.com/sites/files/3-qt-qml-art.png">screenshot</a>
+</p><p>In the last window: just click <b>Finish</b>.
+</p><p><a href="indexbb39.php?title=Special:Upload&amp;wpDestFile=Http://appdeveloper.intel.com/sites/files/4-qt-qml-art.png" class="new" title="File:Http://appdeveloper.intel.com/sites/files/4-qt-qml-art.png">http://appdeveloper.intel.com/sites/files/4-qt-qml-art.png</a>
+</p><p>The application skeleton is ready, now we can proceed to code the logic and design the UI.
+</p>
+<h2><span class="mw-headline" id="Code_core_logic_in_C.2B">Code core logic in C<i>+</span></h2></i>
+<p>First we need to add the <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qtdeclarative.html"><i>qt-declarative</i></a> module to our project. This is the module that provides a widget in which a QML interface is displayed.
+</p><p>Open project file (<i>4Toddler.pro</i>) and append the line
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QT <span class="st0">''</span><span class="sy0">=</span> core gui<span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+with <span class="st0">''</span>declarative<span class="st0">''</span></pre></div></div>QT<i>= core gui declarative&lt;/code&gt;</i>
+<p>Now we need to change the base class for our main window. Replace <i>QMainWindow</i> with <i>QDeclarativeView</i> and include <i>QDeclarativeView</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QDeclarativeView&gt;</span>
+<span class="kw2">class</span> MainWindow <span class="sy0">:</span> <span class="kw2">public</span> QDeclarativeView
+<span class="br0">&#123;</span>
+ …
+<span class="br0">&#125;</span></pre></div></div>
+<p>Also we need to cut off <i>QMainWindow(parent)</i> from the MainWindow constructor; we do not need this initialization anymore.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MainWindow<span class="sy0">::</span><span class="me2">MainWindow</span><span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ Init<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>If you launch the application right now you will see an empty window. This is because we have not initialized or created our QML interface yet.
+</p>
+<h2><span class="mw-headline" id="Add_QML_interface">Add QML interface</span></h2>
+<p>Let's add a new file to our project: right click on the project in the projects explorer window.
+</p><p><a href="index9007.php?title=Special:Upload&amp;wpDestFile=Http://appdeveloper.intel.com/sites/files/5-qt-qml-art.png" class="new" title="File:Http://appdeveloper.intel.com/sites/files/5-qt-qml-art.png">http://appdeveloper.intel.com/sites/files/5-qt-qml-art.png</a>
+</p><p><b>Add New</b> then select <b>Qt</b> section and <b>Qt QML File</b> in the templates list and click <b>Choose…</b>
+</p><p><a href="index7387.php?title=Special:Upload&amp;wpDestFile=Http://appdeveloper.intel.com/sites/files/6-qt-qml-art.png" class="new" title="File:Http://appdeveloper.intel.com/sites/files/6-qt-qml-art.png">http://appdeveloper.intel.com/sites/files/6-qt-qml-art.png</a>
+</p><p>Type the file name in the <b>Name</b> field, click <b>Next</b> then <b>Finish</b> in the next window.
+</p><p><a href="index524d.php?title=Special:Upload&amp;wpDestFile=Http://appdeveloper.intel.com/sites/files/7-qt-qml-art.png" class="new" title="File:Http://appdeveloper.intel.com/sites/files/7-qt-qml-art.png">http://appdeveloper.intel.com/sites/files/7-qt-qml-art.png</a>
+</p><p>The wizard will create and open the new QML file in the editor. There is just one <b>Rectangle</b> element inside it. This will be the root element for our user interface. Let's add some new properties to this element.
+</p><p><i>Note: some versions of Qt Creator will add a Hello World text element centered in the Rectangle. Remove the text element before proceeding.</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle
+<span class="br0">&#123;</span>
+ <span class="co1">// ID of this element. Using this ID we can access the element and its properties from other elements</span>
+ id<span class="sy0">:</span> canvas
+ <span class="co1">// Background color, black in this case</span>
+ color<span class="sy0">:</span> <span class="st0">&quot;black&quot;</span>
+ <span class="co1">// Change sizes of this element to fill the parent</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent
+ <span class="co1">// Element can receive focus</span>
+ focus<span class="sy0">:</span> <span class="kw2">true</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>There is nothing special for now, just black background.
+</p>
+<h2><span class="mw-headline" id="Multilingual">Multilingual</span></h2>
+<p>During the remainder of this tutorial we will shift back and forth between QML and C++ development.
+</p><p>We need to add some initialization code for our QML interface by defining a new method inside the <b>mainwindow.h</b> file …
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">void</span> Init<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+.. <span class="me1">And</span> implementing it in the <span class="st0">''</span><span class="st0">'mainwindow.cpp'</span><span class="st0">''</span> file</pre></div></div>
+<p>void MainWindow::Init()
+{
+</p>
+<pre>// Path to the content folder
+QString contentPath;
+</pre>
+<ol>
+<li>ifdef QT_DEBUG
+</li>
+</ol>
+<pre>// In the debug version of our project this is a path to the project folder
+contentPath = "D:/MyProjects/QT/4Toddler";
+</pre>
+<ol>
+<li>else
+</li>
+</ol>
+<pre>// In the release version - path to the application folder
+contentPath = QApplication::applicationDirPath();
+</pre>
+<ol>
+<li>endif
+</li>
+</ol>
+<pre>setFocusPolicy(Qt::StrongFocus);
+// Change QML document sizes to fit the main window
+setResizeMode(QDeclarativeView::SizeRootObjectToView);
+// Load QML file
+setSource(QUrl::fromLocalFile(contentPath + "/main.qml"));
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Now we need to replace one line in the <span class="st0">''</span><span class="st0">'main.cpp'</span><span class="st0">''</span> file</pre></div></div>
+<p>int main(int argc, char *argv[])
+{
+</p>
+<pre>…
+w.show();
+…
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">With</pre></div></div>
+<p>int main(int argc, char *argv[])
+</p><p>{
+</p>
+<pre>…
+w.showFullScreen();
+…
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">This will force our window to open in full<span class="sy0">-</span>screen mode.
+&#160;
+<span class="sy0">==</span> Structure code with components <span class="sy0">==</span>
+&#160;
+Before we launch our application<span class="sy0">,</span> let<span class="st0">'s add two buttons. One is to display '</span><span class="st0">''</span>About<span class="st0">''</span><span class="st0">' dialog and the second to '</span><span class="st0">''</span>Close<span class="st0">''</span><span class="st0">' our window. We do not need to implement buttons twice, we going to create a [http://doc.qt.nokia.com/4.7-snapshot/qml-extending-types.html component] and use it every time we need to add a new button by overriding just a few properties.
+&#160;
+Let'</span>s add the <span class="kw1">new</span> Qml file <span class="sy0">-</span> <span class="st0">''</span><span class="st0">'WindowButton.qml'</span><span class="st0">''</span> to our project. <span class="st0">''</span>Note the filename begins with a capital letter — <span class="kw1">this</span> signifies it defines a QML component.<span class="st0">''</span></pre></div></div>
+<p>Image
+{
+</p>
+<pre>// ID of this element
+id: button
+// The MouseArea item enables simple mouse handling
+MouseArea
+{
+anchors.fill: parent
+id: mouseArea
+// On click call callback() handler
+onClicked: callback()
+}
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Now we can add two buttons to our window</pre></div></div>
+<p>// Place items in row
+</p><p>Row
+{
+</p>
+<pre>// Right side of the item is anchored to the right side of the parent element
+anchors.right: parent.right
+// Right margin
+anchors.rightMargin: 4
+// Top side of the item is anchored to the top side of the parent element
+anchors.top: parent.top
+// Top margin
+anchors.topMargin: 4
+// Margins for children elements
+spacing: 4
+WindowButton
+{
+// Button to display the About dialog
+id: about
+// Path to background picture. This is a relative path to the path of this QML file
+source: "about.png"
+// Callback method, which will be called on mouse click
+// onClicked: callback()
+function callback()
+{
+}
+}
+WindowButton
+{
+// Button to close window
+id: exit
+source: "exit.png"
+function callback()
+{
+}
+}
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">==</span> Communicate between QML and C<span class="sy0">++</span> <span class="sy0">==</span>
+&#160;
+Now we should implement both <span class="st0">''</span><span class="st0">'callback()'</span><span class="st0">''</span> methods. <span class="me1">To</span> close the window we will call the <span class="st0">''</span><span class="st0">'Quit'</span><span class="st0">''</span> function of the main window. <span class="me1">Now</span> we will see how <span class="kw5">Qt</span> and QML communicate. <span class="me1">Methods</span> will be implemented inside <span class="kw5">Qt</span> and then called from the QML file.
+&#160;
+<span class="me1">Let</span><span class="st0">'s add a new function to the '</span><span class="st0">''</span>mainwindow.<span class="me1">h</span><span class="st0">''</span><span class="st0">' header file</span></pre></div></div>Q_INVOKABLE void Quit();&lt;/code&gt;
+<p>And implementation in <b>mainwindow.cpp</b> file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">void</span> MainWindow<span class="sy0">::</span><span class="me2">Quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+&#160;
+<span class="br0">&#123;</span>
+&#160;
+<span class="kw5">QApplication</span><span class="sy0">::</span><span class="me2">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="br0">&#125;</span></pre></div></div>
+<p>Now we need to "tell" QML about this method. Inside <b>Init</b> we should to add just one line:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">rootContext<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">setContextProperty</span><span class="br0">&#40;</span><span class="st0">&quot;window&quot;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+Now we can access <span class="st0">''</span><span class="st0">'window'</span><span class="st0">''</span> object<span class="st0">'s functions declared as '</span><span class="st0">''</span>Q_INVOKABLE<span class="st0">''</span><span class="st0">' from QML. '</span><span class="st0">''</span>Window<span class="st0">''</span><span class="st0">' here is just an example, you could use any object name you want.
+&#160;
+Let'</span>s add <span class="st0">''</span><span class="st0">'callback()'</span><span class="st0">''</span> function implementation to close button</pre></div></div>
+<p>function callback()
+{
+</p>
+<pre>window.Quit();
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">==</span> Visualize state and add animation <span class="sy0">==</span>
+Ok<span class="sy0">,</span> the application can be launched. <span class="me1">Launch</span> it and click the <span class="st0">''</span><span class="st0">'Close'</span><span class="st0">''</span> button. <span class="me1">You</span> see? State of the button is not changed after click<span class="sy0">;</span> it looks like the button is just inactive. <span class="me1">Let</span><span class="st0">'s add state changes for normal and clicked states.</span></pre></div></div>
+<p>Image
+{
+</p>
+<pre>…
+states:[
+State
+{
+// Name of the state
+name: "hovered"
+// When condition. Item will go to this state if condition is true
+// In this case on mouse click
+when: mouseArea.pressed
+// Which properties will be changed in that state
+// In this case- opacity
+PropertyChanges { target: button; opacity: 1}
+},
+</pre>
+<p>State
+</p>
+<pre>{
+name: "normal"
+// This state will be activated if mouse button is not pressed
+when: mouseArea.pressed == false
+PropertyChanges { target: button; opacity: 0.7; }
+}
+]
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Item will change state <span class="kw1">if</span> the condition described in <span class="st0">''</span>when<span class="st0">''</span> property is <span class="kw2">true</span>. <span class="me1">You</span> could change state manually by assigning state property.
+<span class="me1">Let</span><span class="st0">'s launch the application again. Ok, this time it looks more active. We can make our button nicer by adding some animation.</span></pre></div></div>
+<p>Image
+{
+</p>
+<pre>…
+Behavior on opacity
+{
+// Animaion step is a 100 milliseconds
+// On every iteration opacity will increase or descrease with step equals to 0,1
+NumberAnimation { duration: 100 }
+}
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">The <span class="st0">''</span>Behavior<span class="st0">''</span> is a simple and flexible way to create animations. <span class="me1">This</span> element allows you to specify a <span class="kw1">default</span> animation <span class="kw1">for</span> a property change.
+&#160;
+<span class="me1">Launch</span> the application and <span class="kw2">try</span> to click on <span class="st0">''</span><span class="st0">'About'</span><span class="st0">''</span> or <span class="st0">''</span><span class="st0">'Close'</span><span class="st0">''</span> buttons. <span class="me1">This</span> looks much better<span class="sy0">!</span>
+&#160;
+<span class="br0">&#91;</span><span class="br0">&#91;</span>Image<span class="sy0">:</span>http<span class="sy0">:</span><span class="co1">//appdeveloper.intel.com/sites/files/8-qt-qml-art.png|http://appdeveloper.intel.com/sites/files/8-qt-qml-art.png]]</span>
+&#160;
+We will implement the <span class="st0">''</span><span class="st0">'About'</span><span class="st0">''</span> dialog only <span class="kw2">using</span> QML. <span class="me1">Dialog</span> will appear on the screen when <span class="st0">''</span><span class="st0">'About'</span><span class="st0">''</span> button is clicked and disappear when the user clicks inside the button or on the background.
+&#160;
+<span class="me1">Let</span><span class="st0">'s add '</span><span class="st0">''</span>About.<span class="me1">qml</span><span class="st0">''</span><span class="st0">' file to our project.</span></pre></div></div>
+<p>// Parent element for dialog window
+Rectangle
+{
+</p>
+<pre>id: about
+// Function to display dialog window
+// This function just changes opacity of the main element to 1
+function show()
+{
+about.opacity = 1
+}
+// Function to hide dialog window
+// This function just changes opacity of the main element to 0
+function hide()
+{
+about.opacity = 0
+}
+// Transparent background
+color: "transparent"
+// Opacity is 0 by default, dialog not visible
+opacity: 0
+// Anchors to parent width and height.
+width: parent.width
+height: parent.height
+// Element is visible if opacity &gt; 0
+// opacity &gt; 0
+visible: opacity &gt; 0
+// Child element to create semitransparent background
+Rectangle
+{
+anchors.fill: parent
+opacity: 0.5
+color: "gray"
+}
+// Body of the dialog window
+Rectangle
+{
+id: dialog
+</pre>
+<p>// Fixed width and height
+</p>
+<pre>width: 360
+height: 230
+// To make dialog centered inside parent we need to calculate its x and y coordinates
+x: parent.width / 2 - dialog.width / 2
+y: parent.height / 2 - dialog.height / 2
+// Place dialog on top of other elements
+z: 10
+border.color: "gray"
+Text
+{
+text: "4 Toddler"
+font.bold: true
+font.pixelSize: 22
+</pre>
+<p>anchors.horizontalCenter: parent.horizontalCenter
+</p>
+<pre>anchors.verticalCenter: parent.verticalCenter
+}
+}
+Behavior on opacity
+{
+NumberAnimation { duration: 100 }
+}
+MouseArea
+{
+anchors.fill: parent
+// Hide dialog on mouse click
+onClicked: hide()
+}
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Take a look at the line</pre></div></div>visible: opacity &gt; 0&lt;/code&gt;
+<p>As you can see, property can be assigned and can be calculated.
+</p><p>Let's add <b>About</b> dialog and callback() function implementation for the button <b>About</b>. In <i>Main.qml</i> file we need to declare the new About element.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle
+<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> canvas
+ ..
+ <span class="me1">About</span>
+ <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> aboutDlg
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>And <b>callback()</b> function implementation
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">aboutDlg.<span class="me1">show</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+to</pre></div></div>
+<p>WindowButton
+{
+</p>
+<pre>id: about
+…
+function callback()
+{
+aboutDlg.show()
+}
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Finally we need to implement the main functionality <span class="kw1">for</span> our application.
+&#160;
+<span class="me1">The</span> element to display a random icon on the screen will be an <span class="st0">''</span><span class="st0">'Image'</span><span class="st0">''</span> element. <span class="me1">Let</span><span class="st0">'s add a new file for the new element - '</span><span class="st0">'Block.qml'</span><span class="st0">'</span></pre></div></div>
+<p>Image
+{
+</p>
+<pre>id: block;
+// New custom properties to change visibility of this element
+property bool remove: false
+property bool show: false
+opacity: 0
+fillMode: Image.Stretch
+states: [
+State
+{
+// State is used to remove element from the screen and destroy it
+name: "remove"; when: remove  true
+     PropertyChanges { target: block; opacity: 0 }
+     StateChangeScript { script: block.destroy(1000) }
+   },
+   State
+   {
+     // State is used to display element
+     name: "show"; when: show  true
+PropertyChanges { target: block; opacity: 1 }
+}
+]
+Behavior on opacity { NumberAnimation { duration: 300 } }
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Now we need to implement the keyboard handler. <span class="me1">Handler</span> will be implemented with <span class="st0">''</span><span class="st0">'JavaScript'</span><span class="st0">''</span>. <span class="me1">Let</span><span class="st0">'s add new '</span><span class="st0">'main.js'</span><span class="st0">' to our project.</span></pre></div></div>// Template for new elements
+<p>var component = Qt.createComponent("block.qml")
+// Max number of items on the screen
+var maxBlocksCount = 10
+// Array for the items
+var blocksArray = new Array()
+// Keyboard handler
+function handleKey()
+{
+</p>
+<pre>// x coordinate is a random number from 0 to window with in pixels
+var x = Math.floor(Math.random() * canvas.width)
+// y coordinate is a random number from 0 to window height in pixels
+var y = Math.floor(Math.random() * canvas.height)
+// This function will create a new element on each call with random x and y coordinates
+createNewBlock(x, y)
+</pre>
+<p>}
+// Function to create a new element
+function createNewBlock(x, y)
+{
+</p>
+<pre>if(component.status&#160;!= Component.Ready)
+{
+return false
+}
+// Remove items if number of items is more than maxBlocksCount
+if(blocksArray.length &gt; maxBlocksCount)
+{
+removeAllBlocks()
+}
+var newBlock = component.createObject(canvas)
+if(newBlock == null)
+{
+return false
+}
+// Path to image is available via randomIcon property of the main window
+var iconFile = window.randomIcon
+newBlock.source = ("Icons/" + iconFile)
+newBlock.x = x
+newBlock.y = y
+// Change state to show
+newBlock.show = true
+blocksArray.push(newBlock)
+// Play random sound effect
+window.PlaySound()
+return true
+</pre>
+<p>}
+// Function do remove all existings items
+function removeAllBlocks()
+{
+</p>
+<pre>for(var i = 0; i &lt; blocksArray.length; +<i>i)</i>
+{
+blocksArray[i].remove = true
+}
+while(blocksArray.length&#160;!= 0)
+{
+blocksArray.pop()
+}
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">As you see in code above we should implement <span class="kw1">new</span> property <span class="st0">''</span><span class="st0">'randomIcon'</span><span class="st0">''</span> and method <span class="st0">''</span><span class="st0">'PlaySound'</span><span class="st0">''</span>.
+&#160;
+<span class="me1">Let</span><span class="st0">'s add property declaration and method to access it to our '</span><span class="st0">'mainwindow.h'</span><span class="st0">' file.</span></pre></div></div>Q_PROPERTY(QString randomIcon READ RandomIcon)&lt;/code&gt;
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QString</span> RandomIcon<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+Implementation in <span class="st0">''</span>mainwindow.<span class="me1">cpp</span><span class="st0">''</span> file</pre></div></div>
+<p>QString MainWindow::RandomIcon()
+{
+</p>
+<pre>QStringList iconFilesList;
+QString searchPath = m_ContentPath<i> "/Icons/";</i>
+QDir directory = QDir(searchPath);
+QStringList filters;
+filters &lt;&lt; "<b>.png";</b>
+directory.setNameFilters(filters);
+// Get the list of the png files inside Icons directory
+iconFilesList = directory.entryList(QDir::AllEntries);
+// Generate random index of the element
+int fileIdx = qrand()&#160;% iconFilesList.count();
+</pre>
+<pre>// Return file name
+return iconFilesList.at(fileIdx);
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Now we need to declare the method to play a random sound effect in <span class="st0">''</span>mainwindow.<span class="me1">h</span><span class="st0">''</span> file</pre></div></div>Q_INVOKABLE void PlaySound();&lt;/code&gt;
+<p>And implementation in <i>mainwindow.cpp</i> file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">void</span> MainWindow<span class="sy0">::</span><span class="me2">PlaySound</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw5">QStringList</span> soundFilesList<span class="sy0">;</span>
+ <span class="kw5">QDir</span> directory <span class="sy0">=</span> <span class="kw5">QDir</span><span class="br0">&#40;</span>m_ContentPath <span class="sy0">+</span> <span class="st0">&quot;/Sounds/&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QStringList</span> filters<span class="sy0">;</span>
+ filters <span class="sy0">&lt;&lt;</span> <span class="st0">&quot;'''.wav&quot;</span><span class="sy0">;</span>
+ directory.<span class="me1">setNameFilters</span><span class="br0">&#40;</span>filters<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="co1">// Wav files list inside Sounds directory</span>
+ soundFilesList <span class="sy0">=</span> directory.<span class="me1">entryList</span><span class="br0">&#40;</span><span class="kw5">QDir</span><span class="sy0">::</span><span class="me2">AllEntries</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="co1">// Generate random index of the element</span>
+ <span class="kw4">int</span> fileIdx <span class="sy0">=</span> qrand<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">%</span> soundFilesList.<span class="me1">count</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="co1">// File name</span>
+ <span class="kw5">QString</span> soundFile <span class="sy0">=</span> m_ContentPath <span class="sy0">+</span> <span class="st0">&quot;/Sounds/&quot;</span> <span class="sy0">+</span> soundFilesList.<span class="me1">at</span><span class="br0">&#40;</span>fileIdx<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="co1">// Play file asynchronously</span>
+ <span class="kw5">QSound</span><span class="sy0">::</span><span class="me2">play</span><span class="br0">&#40;</span>soundFile<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Almost done. All we need is to add the keyboard handler to our parent QML element. But first we should include <i>main.js</i> file to <i>main.qml</i> file
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+import <span class="st0">&quot;main.js&quot;</span> as Main</pre></div></div>
+<p>Keyboard event handler for root element
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle
+<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> canvas
+ …
+ Keys.<span class="me1">onPressed</span><span class="sy0">:</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span>event.<span class="me1">isAutoRepeat</span> <span class="sy0">==</span> <span class="kw2">false</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ Main.<span class="me1">handleKey</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>That's all! Now you can launch the application and try to press any key on the keyboard. But… I almost forgot about the fireworks effect.
+</p><p>Let's add a new file called <i>Fireworks.qml</i>. Why do we need a new file? Because this will be a reusable element, this will save time in the future.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span>.<span class="kw3">labs</span>.<span class="me1">particles</span> <span class="nu16">1.0</span>
+Particles
+<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> particles
+ width<span class="sy0">:</span> <span class="nu0">1</span>
+ height<span class="sy0">:</span> <span class="nu0">1</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ emissionRate<span class="sy0">:</span> <span class="nu0">0</span>
+ lifeSpan<span class="sy0">:</span> <span class="nu0">700</span>
+ lifeSpanDeviation<span class="sy0">:</span> <span class="nu0">600</span>
+ angle<span class="sy0">:</span> <span class="nu0">0</span>
+ angleDeviation<span class="sy0">:</span> <span class="nu0">360</span>
+ velocity<span class="sy0">:</span> <span class="nu0">100</span>
+ velocityDeviation<span class="sy0">:</span> <span class="nu0">30</span>
+ source<span class="sy0">:</span> randomImage<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="co1">// Get random image path</span>
+ function randomImage<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#123;</span>
+ <span class="co1">// Array of the image files</span>
+ var images <span class="sy0">=</span> <span class="br0">&#91;</span><span class="st0">&quot;red.png&quot;</span><span class="sy0">,</span> <span class="st0">&quot;blue.png&quot;</span><span class="sy0">,</span> <span class="st0">&quot;green.png&quot;</span><span class="sy0">,</span> <span class="st0">&quot;white.png&quot;</span><span class="sy0">,</span> <span class="st0">&quot;yellow.png&quot;</span><span class="br0">&#93;</span>
+ <span class="co1">// Get random index of the array element</span>
+ var idx <span class="sy0">=</span> Math.<span class="kw3">floor</span><span class="br0">&#40;</span><span class="br0">&#40;</span>Math.<span class="me1">random</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">*</span> <span class="nu0">100</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">%</span> images.<span class="me1">length</span>
+ <span class="co1">// Return the relative image file path</span>
+ <span class="kw1">return</span> <span class="br0">&#40;</span><span class="st0">&quot;Stars/&quot;</span> <span class="sy0">+</span> images<span class="br0">&#91;</span>idx<span class="br0">&#93;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Now we need to add our Firework element to the Block element. Open <i>Block.qml</i> file and add declaration of the new element
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Image
+<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> block
+ …
+ Firework
+ <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> firework
+ <span class="br0">&#125;</span>
+ …
+<span class="br0">&#125;</span></pre></div></div>
+<p>To launch fireworks on item going to visible state we need to add just one line of code
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">StateChangeScript <span class="br0">&#123;</span> script<span class="sy0">:</span> firework.<span class="me1">burst</span><span class="br0">&#40;</span><span class="nu0">50</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#125;</span><span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+to <span class="st0">&quot;show&quot;</span> state</pre></div></div>
+<p>State
+{
+</p>
+<pre>name: "show"; when: show == true
+StateChangeScript { script: firework.burst(50)}
+PropertyChanges { target: block; opacity: 1 }
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Launch application and press any key. <span class="me1">Image</span> appears on the screen with fireworks and sound effect.
+&#160;
+<span class="br0">&#91;</span><span class="br0">&#91;</span>Image<span class="sy0">:</span>http<span class="sy0">:</span><span class="co1">//appdeveloper.intel.com/sites/files/9-qt-qml-art.png|http://appdeveloper.intel.com/sites/files/9-qt-qml-art.png]]</span>
+&#160;
+This is a simple application<span class="sy0">,</span> but <span class="kw1">this</span> is a good playground to understand the principles of QML.
+&#160;
+<span class="me1">To</span> learn more about QML you can extend <span class="kw1">this</span> application by adding features. <span class="me1">Who</span> knows<span class="sy0">,</span> maybe someday <span class="kw1">this</span> sample will grow to a commercial app? Idea from me<span class="sy0">:</span> educational software with letters<span class="sy0">,</span> numbers<span class="sy0">,</span> shapes<span class="sy0">,</span> colors<span class="sy0">,</span> etc.
+&#160;
+&#160;
+<span class="sy0">-----</span>
+&#160;
+This article originally appeared on <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//appdeveloper.intel.com/en-us/blog/2010/12/24/modern-mobile-applications-qt-and-qml the Intel AppUp(SM) developer program blog]. A Russian version is available [http://habrahabr.ru/blogs/qt_software/110544/ here]</span>
+&#160;
+Thanks to <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//intelloware.com Dmitry] for allowing us to copy his tutorial.</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.583 seconds
+Real time usage: 0.584 seconds
+Preprocessor visited node count: 151/1000000
+Preprocessor generated node count: 692/1000000
+Post‐expand include size: 1376/2097152 bytes
+Template argument size: 439/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1154-0!*!0!!en!2!* and timestamp 20151105114537 and revision id 15985
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index86bd.html?title=Modern_mobile_applications_with_Qt_and_QML&amp;oldid=15985">http://wiki.qt.io/index.php?title=Modern_mobile_applications_with_Qt_and_QML&amp;oldid=15985</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Developing_with_Qt__Qt_Quick.html" title="Category:Developing with Qt::Qt Quick">Developing with Qt::Qt Quick</a></li><li><a href="Category_Learning.html" title="Category:Learning">Learning</a></li><li><a href="Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="index43b6.php?title=Special:QtLogin&amp;returnto=Modern+mobile+applications+with+Qt+and+QML" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Modern_mobile_applications_with_Qt_and_QML.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="index2027.php?title=Talk:Modern_mobile_applications_with_Qt_and_QML&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Modern_mobile_applications_with_Qt_and_QML.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexa33d.php?title=Modern_mobile_applications_with_Qt_and_QML&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index1de0.php?title=Modern_mobile_applications_with_Qt_and_QML&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Modern_mobile_applications_with_Qt_and_QML" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Modern_mobile_applications_with_Qt_and_QML" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index86bd.html?title=Modern_mobile_applications_with_Qt_and_QML&amp;oldid=15985" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index21e1.php?title=Modern_mobile_applications_with_Qt_and_QML&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:25.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,239 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":1066});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Modern_mobile_applications_with_Qt_and_QML&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:02:29 GMT -->
+</html>

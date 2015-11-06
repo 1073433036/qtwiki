@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Model_View_Programming/ro&oldid=14277 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:05:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Model View Programming/ro - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Model_View_Programming/ro","wgTitle":"Model View Programming/ro","wgCurRevisionId":14277,"wgRevisionId":14277,"wgArticleId":1152,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Learning","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Model_View_Programming/ro","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Model_View_Programming_ro skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Model View Programming/ro</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 16:01, 16 March 2015 by <a href="http://wiki.qt.io/index.php?title=User:AutoSpider&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:AutoSpider (page does not exist)">AutoSpider</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:AutoSpider&amp;action=edit&amp;redlink=1" class="new" title="User talk:AutoSpider (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/AutoSpider" title="Special:Contributions/AutoSpider">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Model_View_Programming/ro&amp;diff=prev&amp;oldid=14277" title="Model View Programming/ro">diff</a>) <a href="http://wiki.qt.io/index.php?title=Model_View_Programming/ro&amp;direction=prev&amp;oldid=14277" title="Model View Programming/ro">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="http://wiki.qt.io/index.php?title=Model_View_Programming/ro&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="http://wiki.qt.io/Updated_pages" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<h1><span class="mw-headline" id="Arhitectura_Model-View-Controller_.28MVC.29">Arhitectura Model-View-Controller (MVC)</span></h1>
+<h2><span class="mw-headline" id="Generalit.C4.83.C8.9Bi">Generalități</span></h2>
+<p>În Qt există un set de clase de vizualizare a datelor cu ajutorul <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Model–view–controller">arhitecturii Model-View</a> pentru a gestiona relațiile dintre date și modul în care sunt acestea prezentate utilizatorului. Separația funcțională introdusă de această arhitectură dă programatorului o mai mare flexibilitate în a personaliza prezentarea datelor și oferă un model de interfață care permite o gamă mai largă de surse de date ce pot fi folosite.
+</p><p><b>Arhitectura Model-View-Controller</b> este un <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Design_pattern">design pattern</a> originar din SmallTalk care este adesea folosit atunci când se construiesc interfețe cu utilizatorul. Model-View-Controller conține trei tipuri de obiecte:
+</p>
+<ul>
+<li> <b>Modelul</b> este un obiect de aplicație;
+</li>
+<li> <b>View</b>-ul este prezentarea pe ecran;
+</li>
+<li> <b>Controller</b>-ul definește modul în care interfața cu utilizatorul reacționează la comenzile date de utilizator.
+</li>
+</ul>
+<p>Înainte de această arhitectură, cele trei obiecte erau de regulă puse laolalta. <b>Arhitectura Model-View-Controller</b> le decuplează pentru a crește flexibilatea codului și să-l facă reutilizabil.
+</p><p>Dacă <b>view</b>-ul și <b>controller</b>-ul sunt combinate, rezultatul va fi o <b>arhitectură model-view</b>. Chiar și în acest caz, datele sunt separate de modul în care ele sunt prezentate, dar oferă niște mecanisme mai ușoare de lucru bazate pe aceleași principii. Această separație face posibilă afișarea a acelorași date în mai multe feluri fără a fi nevoie să schimbăm modul în care sunt structurate datele. Pentru a permite un mod flexibil de gestionare a comenzile utilizatorului, se introduce conceptul de <b>delegat</b>. Delegații ne permit să modificăm modul în care datele sunt afișate și editate. 
+</p><p><br />
+Clasele unei astfel de arhitecturi sunt clasele de <b>model</b>, de <b>view</b> și <b>delegații</b>. Modelul comunică cu o sursă de date și oferă o interfață de comunicare cu celelalte componente. View-ul obține indexul de la care își va extrage datele din model pentru a le prezenta. Atunci când datele sunt editate delegatul va comunica direct cu modelul folosind indexul. Toate aceste clase vor comunica între ele utilizând semnale și slot-uri. Semnalele de la model vor informa despre schimbările de date. Semnalele de la view vor comunica comenzile date de utilizator. Semnalele de la delegat vor fi folosite în timpul editării datelor să informeze modelul și view-ul în legătură cu starea editorului.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7-snapshot/images/modelview-overview.png" class="new" title="File:Http://doc.qt.nokia.com/4.7-snapshot/images/modelview-overview.png">http://doc.qt.nokia.com/4.7-snapshot/images/modelview-overview.png</a>
+</p><p><br />
+</p>
+<pre>Toate clasele care implementează modele sunt bazate pe clasa <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qabstractitemmodel.html">QAbstractItemModel</a>. Această clasă definește o interfață care să poată fi folosită de view-uri și de delegați pentru a accesa date. Datele propriu-zise nu trebuie neapărat reținute într-un model. Ele pot fi păstrate într-o structură de date oferită de o clasă separată, un fișier, o bază de date sau altă componentă de aplicație.
+</pre>
+<p><br />
+Qt oferă niște modele gata definite care pot fi folosite pentru a gestiona un set de date:
+</p>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qstringlistmodel.html">QStringListModel</a>- pentru a reține o listă de QString;
+</li>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qstandarditemmodel.html">QStandardItemModel</a> - poate lucra cu structuri de date ierarhice care conțin orice tip de date;
+</li>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qfilesystemmodel.html">QFileSystemModel</a> - reține informații despre fișiere și directoare;
+</li>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qsqlquerymodel.html">QSqlQueryModel</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qsqltablemodel.html">QSqlTableModel</a>, <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> - sunt folosite pentru a accesa baze de date conform convențiilor arhitecturii Model-View.
+</li>
+</ul>
+<p>Implementări complete sunt disponibile pentru următoarele view-uri:
+</p>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qlistview.html">QListView</a> - pentru o listă de elemente;
+</li>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qtableview.html">QTableView</a> - poate a afișa datele dintr-un tabel;
+</li>
+<li> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qtreeview.html">QTreeView</a> - pentru a afișa date dintr-un model ierarhic;
+</li>
+</ul>
+<p>Toate clasele menționate mai sus moștenesc clasa <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qabstractitemview.html">QAbstractItemView</a> și pot fi și ele la rândul lor moștenite pentru a le oferi mai multe funcționalități. Delegații moștenesc clasa <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qabstractitemdelegate.html">QAbstractItemDelegate</a>. Delegatul implicit folosit de view-uri este <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qstyleditemdelegate.html">QStyledItemDelegate</a>.
+</p><p>Există două metode de a sorta elementele într-o arhitectură model-view. Dacă modelul este sortabil se poate reimplementa funcția <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qabstractitemmodel.html#sort">void sort()</a>. <b>QTableView</b> și <b>QTreeView</b> dau posibilitatea modelul să fie sortat printr-un click pe antetul tabelului.
+</p>
+<h2><span class="mw-headline" id="Prezentarea_datelor_.C3.AEntr-un_tabel">Prezentarea datelor într-un tabel</span></h2>
+<p>Clasele <b>QSqlQueryModel</b>, <b>QSqlTableModel</b>, <b>SqlRelationalTableModel</b> pot fi folosite ca surse de date pentru clasele de tip view ca <b>QListView</b>, <b>QTableView</b>, și <b>QTreeView</b>. În practică <b>QTableView</b> este cel mai des folosit, deoarece în esență un rezultat de la o interogare SQL este o structură de date bidimensională.
+</p><p>Înainte de a prezenta diferite date într-un tabel, în arhitectura Model/View este mai întâi nevoie să ne generăm un model pe care să-l asociem mai târziu tabelului. Acest lucru se poate face prin intermediul unor clase precum <b>QSqlQueryModel</b>, <b>QSqlTableModel</b>, <b>SqlRelationalTableModel</b> cum de altfel <a rel="nofollow" class="external text" href="http://developer.qt.nokia.com/wiki/Working_with_Databases_Romanian">s-a putut vedea aici </a>.
+</p><p>Putem folosi același model pentru mai multe view-uri. Dacă utilizatorul editează modelul într-una din view-uri aceste schimbări se vor reflecta imediat. De asemenea putem personaliza și antetul unui view prin apelul funcției <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qabstractitemmodel.html#setHeaderData">setHeaderData()</a> a unui model.
+</p><p>Uneori dorim să presortăm datele dintr-un model. Clasa <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7-snapshot/qsortfilterproxymodel.html">QSortFilterProxyModel </a> poate fi interpusă între un model și un view pentru sortări și filtrări a datelor. Această clasă transformă structura modelului sursă prin maparea indexurilor modelului în noi indexi. Această abordare permite ca un model sursă să fie restructurat fără a efectura transformări asupra modelului sursă și fără a duplica informații în memorie.
+</p><p>Să presupunem că dorim să sortăm și să filtrăm informațiile dintr-un model. Următorul cod va crea un model care va fi dat ca model sursă pentru un model <b>QSortFilterProxyModel</b>&#160;:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> model <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QSqlQueryModel</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ proxyModel <span class="sy0">=</span> <span class="kw1">new</span> MySortFilterProxyModel<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ proxyModel<span class="sy0">-&gt;</span><span class="me3">setSourceModel</span><span class="br0">&#40;</span>model<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Iar pentru a permite sortarea trebuie să setăm proprietatea <b>dynamicSortFilter</b>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> proxyModel<span class="sy0">-&gt;</span><span class="me3">setDynamicSortFilter</span><span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+Acest lucru ne va permite să sortăm informațiile dintr<span class="sy0">-</span>un tabel printr<span class="sy0">-</span>un click pe antetul view<span class="sy0">-</span>ului.
+&#160;
+<span class="me1">Pentru</span> a filtra datele ne folosim de funcția <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7-snapshot/qsortfilterproxymodel.html#filterRegExp-prop setFilterRegExp() ] pentru a specifica filtrul folosit și de [http://doc.qt.nokia.com/4.7-snapshot/qsortfilterproxymodel.html#filterKeyColumn-prop setFilterKeyColumn] pentru a specifica coloană pe care aplicăm respectivul filtru.</span>
+&#160;
+<span class="sy0">==</span> Folosirea delegaților în arhitectura Model<span class="sy0">-</span>View<span class="sy0">-</span>Controller <span class="sy0">==</span>
+&#160;
+Un view standard oferit de <span class="kw5">Qt</span> folosește pentru editare instanțe ale clasei <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7-snapshot/qitemdelegate.html QItemDelegate]. Toate rolurile standard sunt interpretate de delegatul implicit al unui view. În următorul exemplu se va folosi un [http://doc.qt.nokia.com/4.7-snapshot/qdoublespinbox.html QDoubleSpinBox ] pentru a oferi facilități de editare pentru un delegat și vom redefini modul în care afișăm datele dintr-o celulă. Vom moșteni clasa '''QItemDelegate''' și vom reimplementa o serie de funcții&#160;:</span></pre></div></div>class CustomSpinBoxDelegate: public QItemDelegate {
+<p>Q_OBJECT
+public:
+</p>
+<pre>CustomSpinBoxDelegate(QObject *parent = 0);
+QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &amp;option;,const QModelIndex &amp;index;) const;
+void setEditorData(QWidget *editor, const QModelIndex &amp;index;) const;
+void setModelData(QWidget *editor, QAbstractItemModel *model,
+const QModelIndex &amp;index;) const;
+void updateEditorGeometry(QWidget *editor,const QStyleOptionViewItem &amp;option;, const QModelIndex &amp;index;) const;
+void paint(QPainter *painter, const QStyleOptionViewItem &amp;option;,
+</pre>
+ const QModelIndex &amp;index;) const;};<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Când un tabel are nevoie de un editor<span class="sy0">,</span> el îl preia de la delegat. <span class="me1">Acest</span> editor se crează prin apelul funcției <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7-snapshot/qitemdelegate.html#createEditor createEditor()] al obiectului de tip delegat:</span></pre></div></div>QWidget *CustomSpinBoxDelegate::createEditor(QWidget <b>parent,</b>
+<pre>const QStyleOptionViewItem &amp;/<b> option */, const QModelIndex &amp;/</b> index */) const {
+QDoubleSpinBox *editor = new QDoubleSpinBox(parent);
+editor-&gt;setAccelerated(true);
+editor-&gt;setRange(0, 10000);
+</pre>
+ return editor;}<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Nu e nevoie să păstrăm un pointer către editor<span class="sy0">,</span> deoarece tabelul își asumă responsabilitatea dealocării acestuia când nu va mai fi nevoie de el. <span class="me1">C</span>ând utilizatorul a terminat de editat<span class="sy0">,</span> tabelul va apela funcția <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7-snapshot/qitemdelegate.html#setModelData setModelData()] pentru a salva datele:</span></pre></div></div>void CustomSpinBoxDelegate::setModelData(QWidget *editor,
+<pre>QAbstractItemModel *model, const QModelIndex &amp;index;) const {
+QDoubleSpinBox <b>spinBox = static_cast&lt;QDoubleSpinBox</b>&gt; (editor);
+spinBox-&gt;interpretText();
+qreal value = spinBox-&gt;value();
+model-&gt;setData(index, value, Qt::EditRole);
+</pre>
+}<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">De asemenea delegatul trebuie să conțină și funcții prin care copiem datele din model în editor. În acest caz preluăm datele păstrate în model și<span class="sy0">-</span>l atribuim editorului<span class="sy0">:</span></pre></div></div>void CustomSpinBoxDelegate::setEditorData(QWidget *editor,
+<pre>const QModelIndex &amp;index;) const {
+qreal value = index.model()-&gt;data(index, Qt::EditRole).toDouble();
+QDoubleSpinBox <b>spinBox = static_cast&lt;QDoubleSpinBox</b>&gt; (editor);
+spinBox-&gt;setValue(value);
+</pre>
+}<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Iar dacă dorim să modificăm modul în care datele sunt afișate trebuie să reimplementăm funcția <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//doc.qt.nokia.com/4.7-snapshot/qitemdelegate.html#paint paint()]&#160;:</span></pre></div></div>void CustomSpinBoxDelegate::paint(QPainter *painter,
+<pre>const QStyleOptionViewItem &amp;option;, const QModelIndex &amp;index;) const {
+if (option.state &amp; QStyle::State_Selected) {
+painter-&gt;setCompositionMode (QPainter:: CompositionMode_SourceAtop);
+painter-&gt;fillRect(option.rect, option.palette.highlight());
+painter-&gt;drawText(option.rect, Qt::AlignCenter, QString::number(index.data().toDouble(), 'f', 2));
+painter-&gt;setCompositionMode(QPainter::CompositionMode_SourceOver);
+} else {
+painter-&gt;drawText(option.rect, Qt::AlignCenter, QString::number(index.data().toDouble(), 'f', 2));
+}
+</pre>
+}<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">&#160;</pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.135 seconds
+Real time usage: 0.149 seconds
+Preprocessor visited node count: 50/1000000
+Preprocessor generated node count: 224/1000000
+Post‐expand include size: 1308/2097152 bytes
+Template argument size: 422/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1152-0!*!0!!*!2!* and timestamp 20151104123126 and revision id 14277
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Model_View_Programming/ro&amp;oldid=14277">http://wiki.qt.io/index.php?title=Model_View_Programming/ro&amp;oldid=14277</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/Category:Articles_needing_cleanup" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="http://wiki.qt.io/Category:Learning" title="Category:Learning">Learning</a></li><li><a href="http://wiki.qt.io/index.php?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Model+View+Programming%2Fro" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Model_View_Programming/ro"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Model_View_Programming/ro&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Model_View_Programming/ro" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Model_View_Programming/ro&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Model_View_Programming/ro&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Model_View_Programming/ro" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Model_View_Programming/ro" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Model_View_Programming/ro&amp;oldid=14277&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Model_View_Programming/ro&amp;oldid=14277" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Model_View_Programming/ro&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 16 March 2015, at 16:01.</li>
+											<li id="footer-info-viewcount">This page has been accessed 815 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":219});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Model_View_Programming/ro&oldid=14277 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:05:40 GMT -->
+</html>

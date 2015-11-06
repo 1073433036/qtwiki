@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Writing_Unit_Tests&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:50:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for Writing Unit Tests - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Writing_Unit_Tests","wgTitle":"Writing Unit Tests","wgCurRevisionId":16790,"wgRevisionId":0,"wgArticleId":2186,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Writing_Unit_Tests","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Writing_Unit_Tests skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for Writing Unit Tests</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/Writing_Unit_Tests" title="Writing Unit Tests">Writing Unit Tests</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">[[Category:Developing_Qt::QA]]
+
+= General principles for writing unit tests =
+
+=== Use &lt;tt>initTestCase&lt;/tt> and &lt;tt>cleanupTestCase&lt;/tt> for setup and teardown of test harness ===
+
+Tests that require preparations should use the global &lt;tt>initTestCase&lt;/tt> for that purpose. In the end, every test should leave the system in a usable state, so it can be run repeatedly. Cleanup operations should be handled in &lt;tt>cleanupTestCase&lt;/tt>, so they get run even if the test fails and exits early.
+
+Another option is to use [http://en.wikipedia.org/wiki/RAII RAII], with cleanup operations called in destructors, to ensure they happen when the test function returns and the object goes out of scope.
+
+=== Test functions should be self-contained ===
+
+Within a test program, test functions should be independent of each other and not rely upon previous test functions having been run. You can check this by running the test function on its own with "&lt;tt>tst_foo testname&lt;/tt>".
+
+=== Test the full stack ===
+
+If an API is implemented in terms of pluggable/platform-specific backends that do the heavy-lifting make sure to write tests that cover the code-paths all the way down into the backends. Testing the upper layer API parts using a mock backend is a nice way to isolate errors in the API layer from the backends, but is complementary to tests that exercise the actual implementation with real-world data.
+
+=== Tests should complete quickly ===
+
+Tests should not waste time by being unnecessarily repetitious, using inappropriately large volumes of test data, or by introducing needless idle time.
+
+This is particularly true for unit testing, where every second of extra unit test execution time makes CI testing of a branch across multiple targets take longer. Remember that unit testing is separate from load and reliability testing, where larger volumes of test data and lengthier test runs are expected.
+
+Benchmark tests, which typically execute the same test multiple times, should be in the separate &lt;tt>tests/benchmarks&lt;/tt> directory and not mixed with functional unit tests.
+
+=== Use data-driven testing as much as possible ===
+
+Data-driven tests make it easier to add new tests for boundary conditions found in later bug reports.
+
+Using a data-driven test rather than testing several items in sequence in a test function also prevents an earlier &lt;tt>QVERIFY&lt;/tt>/&lt;tt>QCOMPARE&lt;/tt> failure from blocking the reporting of later checks.
+
+=== Always respect &lt;tt>QCOMPARE&lt;/tt> parameter semantics ===
+
+The first parameter to &lt;tt>QCOMPARE&lt;/tt> should always be the actual value produced by the code-under-test, while the second parameter should always be the expected value. When the values don't match, &lt;tt>QCOMPARE&lt;/tt> prints them with the labels "Actual" and "Expected". If the parameter order is swapped, debugging a failing test can be confusing.
+
+=== Use &lt;tt>QSignalSpy&lt;/tt> to verify signal emissions ===
+
+The &lt;tt>QSignalSpy&lt;/tt> class provides an elegant mechanism for capturing the list of signals emitted by an object.
+
+=== Verify the validity of a QSignalSpy after construction ===
+
+QSignalSpy's constructor does a number of sanity checks, such as verifying that the signal to be spied upon actually exists. To make diagnosis of test failures easier, the result of these checks should be checked by calling "QVERIFY (spy.isValid());" before proceeding further with a test.
+
+=== Use coverage tools to direct testing effort ===
+
+Use a coverage tool such as [http://www.froglogic.com/squish/coco/ Squish Coco] or [http://gcc.gnu.org/onlinedocs/gcc/Gcov.html gcov] to help write tests that cover as many statements/branches/conditions as possible in the function/class being tested. The earlier this is done in the development cycle for a new feature, the easier it will be to catch regressions later as the code is refactored.
+
+=== Naming of test functions is important ===
+
+Test functions should be named to make it obvious what the function is trying to test.
+
+Naming test functions using the bug-tracking identifier is to be avoided, as these identifiers soon become obsolete if the bug-tracker is replaced and some bug-trackers may not be accessible to external users (e.g. the internal Jira server that stores Company Confidential data). To track which bug-tracking task a test function relates to, it should be sufficient to include the bug identifier in the commit message. Source management tools such a "&lt;tt>git blame&lt;/tt>" can then be used to retrieve this information.
+
+=== Use appropriate mechanisms to exclude inapplicable tests ===
+
+&lt;tt>QSKIP&lt;/tt> should be used to handle cases where a test function is found at run-time to be inapplicable in the current test environment. For example, a test of font rendering may call &lt;tt>QSKIP&lt;/tt> if needed fonts are not present on the test system.
+
+Beware moc limitation when excluding tests. The moc preprocessor has not access to all the builtins defines the compiler has and those macro are often used for feature decation of the compiler. It may then happen that moc does not 'sees' the test, and as a result, the test would never be called.
+
+If an entire test program is inapplicable for a specific platform, the best approach is to use the parent directory's &lt;tt>.pro&lt;/tt> file to avoid building the test. For example, if the &lt;tt>tests/auto/gui/someclass&lt;/tt> test is not valid for Mac OS X, add the following to &lt;tt>tests/auto/gui.pro&lt;/tt>:
+
+&lt;code>
+mac*:SUBDIRS -= someclass
+&lt;/code>
+
+=== Prefer &lt;tt>QEXPECT_FAIL&lt;/tt> to &lt;tt>QSKIP&lt;/tt> for known bugs ===
+
+If a test exposes a known bug that will not be fixed immediately, use the &lt;tt>QEXPECT_FAIL&lt;/tt> macro to document the failure and reference the bug tracking identifier for the known issue. When the test is run, expected failures will be marked as &lt;tt>XFAIL&lt;/tt> in the test output and will not be counted as failures when setting the test program's return code. If an expected failure does not occur, the &lt;tt>XPASS&lt;/tt> (unexpected pass) will be reported in the test output and will be counted as a test failure.
+
+For known bugs, &lt;tt>QEXPECT_FAIL&lt;/tt> is better than &lt;tt>QSKIP&lt;/tt> because a developer cannot fix the bug without an &lt;tt>XPASS&lt;/tt> result reminding them that the test needs to be updated too. If &lt;tt>QSKIP&lt;/tt> is used, there is no reminder to revise/re-enable the test, without which subsequent regressions would not be reported.
+
+=== Avoid &lt;tt>Q_ASSERT&lt;/tt> in tests ===
+
+The &lt;tt>Q_ASSERT&lt;/tt> macro causes a program to abort whenever the asserted condition is false, but only if the software was built in debug mode. In both release and debug+release builds, &lt;tt>Q_ASSERT&lt;/tt> does nothing.
+
+&lt;tt>Q_ASSERT&lt;/tt> should be avoided because it makes tests behave differently depending on whether a debug build is being tested, and because it causes a test to abort immediately, skipping all remaining test functions and returning incomplete and/or malformed test results.
+
+Instead of &lt;tt>Q_ASSERT&lt;/tt>, the &lt;tt>QCOMPARE&lt;/tt> or &lt;tt>QVERIFY&lt;/tt>-style macros should be used. These cause the current test to report a failure and terminate, but allow the remaining test functions to be executed and the entire test program to terminate normally. &lt;tt>Q_VERIFY2&lt;/tt> even allows a descriptive error message to be output into the test log.
+
+== Hints on writing reliable tests ==
+
+=== Avoid side-effects in verification steps ===
+
+When performing verification steps in an autotest using &lt;tt>QCOMPARE&lt;/tt>, &lt;tt>QVERIFY&lt;/tt> and friends, side-effects should be avoided. Side-effects in verification steps can make a test difficult to understand and can easily break a test in difficult to diagnose ways when the test is changed to use &lt;tt>QTRY_VERIFY&lt;/tt>, &lt;tt>QTRY_COMPARE&lt;/tt> or &lt;tt>QBENCHMARK&lt;/tt>, all of which can execute the passed expression multiple times, thus repeating any side-effects.
+
+=== Avoid fixed wait times for asynchronous behaviour ===
+
+In the past, many unit tests were written to use &lt;tt>qWait()&lt;/tt> to delay for a fixed period between performing some action and waiting for some asynchronous behaviour triggered by that action to be completed. For example, changing the state of a widget and then waiting for the widget to be repainted.
+
+Such timeouts would often cause failures when a test written on a workstation was executed on a device, where the expected behaviour might take longer to complete. The natural response to this kind of failure was to increase the fixed timeout to a value several times larger than needed on the slowest test platform. This approach slows down the test run on all platforms, particularly for table-driven tests.
+
+If the code under test issues Qt signals on completion of the asynchronous behaviour, a better approach is to use the &lt;tt>QSignalSpy&lt;/tt> class (part of qtestlib) to notify the test function that the verification step can now be performed.
+
+If there are no Qt signals, use the &lt;tt>QTRY_COMPARE&lt;/tt> and &lt;tt>QTRY_VERIFY&lt;/tt> macros, which periodically test a specified condition until it becomes true or some maximum timeout is reached. These macros prevent the test from taking longer than necessary, while avoiding breakages when tests are written on workstations and later executed on embedded platforms.
+
+If there are no Qt signals, and you are writing the test as part of developing a new API, consider whether the API could benefit from the addition of a signal that reports the completion of the asynchronous behaviour.
+
+=== Beware of timing-dependent behaviour ===
+
+Some test strategies are vulnerable to timing-dependent behaviour of certain classes, which can lead to tests that fail only on certain platforms or that do not return consistent results.
+
+One example of this is text-entry widgets, which often have a blinking cursor that can make comparisons of captured bitmaps succeed or fail depending on the state of the cursor when the bitmap is captured, which may in turn depend on the speed of the machine executing the test.
+
+When testing classes that change their state based on timer events, the timer-based behaviour needs to be taken into account when performing verification steps. Due to the variety timing-dependent behaviour, there is no single generic solution to this testing problem.
+
+In the example, potential solutions include disabling the cursor blinking behaviour (if the API provides that feature), waiting for the cursor to be in a known state before capturing a bitmap (e.g. by subscribing to an appropriate signal if the API provides one), or excluding the area containing the cursor from the bitmap comparison.
+
+=== Prefer programmatic verification methods to bitmap capture and comparison ===
+
+While necessary in many situations, verifying test results by capturing and comparing bitmaps can be quite fragile and labour intensive.
+
+For example, a particular widget may have different appearance on different platforms or with different widget styles, so reference bitmaps may need to be created multiple times and then maintained in the future as Qt's set of supported platforms evolves. Bitmap comparisons can also be influenced by factors such as the test machine's screen resolution, bit depth, active theme, colour scheme, widget style, active locale (currency symbols, text direction, etc), font size, transparency effects, and choice of window manager.
+
+Where possible, verification by programmatic means (that is, by verifying properties of objects and variables) is preferable to using bitmaps.
+
+== Hints on producing readable and helpful test output ==
+
+=== Explicitly ignore expected warning messages ===
+
+If a test is expected to cause Qt to output a warning or debug message on the console, the test should call &lt;tt>QTest::ignoreMessage()&lt;/tt> to filter that message out of the test output (and to fail the test if the message is not output).
+
+If such a message is only output when Qt is built in debug mode, use QLibraryInfo::isDebugBuild() to determine whether the Qt libraries were built in debug mode. (Using "#ifdef QT_DEBUG" in this case is insufficient, as it will only tell you whether the test was built in debug mode, and that is not a guarantee that the Qt libraries were also built in debug mode.)
+
+=== Avoid printing debug messages from autotests ===
+
+Autotests should not produce any unhandled warning or debug messages. This will allow the CI Gate to treat new warning or debug messages as test failures.
+
+Adding debug messages during development is fine, but these should either disabled or removed before a test is checked in.
+
+=== Prefer well-structured diagnostic code to quick-and-dirty debug code ===
+
+Any diagnostic output that would be useful if a test fails should be part of the regular test output rather than being commented-out, disabled by preprocessor directives or being enabled only in debug builds. If a test fails during Continuous integration, having all of the relevant diagnostic output in the CI logs could save you a lot of time compared to enabling the diagnostic code and testing again, especially if the failure was on a platform that you don't have on your desktop.
+
+Diagnostic messages in tests should use Qt's output mechanisms (e.g. qDebug, qWarning, etc) rather than stdio.h or iostream.h output mechanisms, as these bypass Qt's message handling and will prevent testlib's -silent command-line option from suppressing the diagnostic messages and this could result in important failure messages being hidden in a large volume of debugging output.
+
+=== Prefer &lt;tt>QCOMPARE&lt;/tt> over &lt;tt>QVERIFY&lt;/tt> for value comparisons ===
+
+&lt;tt>QVERIFY&lt;/tt> should be used for verifying boolean expressions, except where the expression directly compares two values.
+
+&lt;tt>QVERIFY (x == y)&lt;/tt> and &lt;tt>QCOMPARE (x, y)&lt;/tt> are equivalent, however, &lt;tt>QCOMPARE&lt;/tt> is more verbose and outputs both expected and actual values when the comparison fails.
+
+=== Use &lt;tt>QVERIFY2&lt;/tt> for extra failure details ===
+
+&lt;tt>QVERIFY2&lt;/tt> should be used when it is practical and valuable to put additional information into the test failure report.
+
+For example, if you have an object file and you are testing its &lt;tt>open()&lt;/tt> function, you may write a test with a statement like:
+
+&lt;code>
+bool opened = file.open(QIODevice::WriteOnly);
+QVERIFY (opened);
+&lt;/code>
+
+If this test fails, it will give no clue as to why the file failed to open:
+
+&lt;code>
+FAIL! : tst_QFile::open_write() 'opened' returned FALSE. ()
+&lt;/code>
+
+Your object should have a function to retrieve some detail about the last error (if it doesn't, then the API is arguably broken). So, why not use it?
+
+&lt;code>
+QVERIFY2(opened, qPrintable(QString("open %1: %2").arg(file.fileName()).arg(file.errorString()));
+FAIL! : tst_QFile::open_write() 'opened' returned FALSE. (open /tmp/qt.a3B42Cd: No space left on device)
+&lt;/code>
+
+Much better! And, if this branch is being tested in the Qt CI system, the above detailed failure message will go straight into any emailed reports.
+
+== Hints on performance/benchmark testing ==
+
+=== Verify occurrences of &lt;tt>QBENCHMARK&lt;/tt> and &lt;tt>QTest::setBenchmarkResult()&lt;/tt> ===
+
+A performance test should contain either a single &lt;tt>QBENCHMARK&lt;/tt> macro or a single call to &lt;tt>QTest::setBenchmarkResult()&lt;/tt>.
+Multiple occurrences of &lt;tt>QBENCHMARK&lt;/tt> or &lt;tt>QTest::setBenchmarkResult()&lt;/tt> in the same test function makes no sense. At most one performance result can be reported per test function, or per data tag in a data-driven setup.
+
+=== Avoid changing a performance test ===
+
+Avoid changing the test code that forms (or influences) the body of a &lt;tt>QBENCHMARK&lt;/tt> macro, or the test code that computes the value passed to &lt;tt>QTest::setBenchmarkResult()&lt;/tt>. Differences in successive performance results should ideally be caused only by changes to the product we are testing (i.e. the Qt library). Changes to the test code can potentially result in a [http://en.wikipedia.org/wiki/False_positive false positive].
+
+=== Verify a performance test if possible ===
+
+In a test function that measures performance, the &lt;tt>QBENCHMARK&lt;/tt> or &lt;tt>QTest::setBenchmarkResult()&lt;/tt> should if possible be followed by a verification step using &lt;tt>QCOMPARE&lt;/tt>, &lt;tt>QVERIFY&lt;/tt> and friends. This can be used to flag a performance result as invalid if we know that we measured a different code path than the intended one. A performance analysis tool can use this information to filter out invalid results.
+
+For example, an unexpected error condition will typically cause the program to bail out prematurely from the normal program execution, and thus falsely show a dramatic performance increase.
+
+== Writing testable code ==
+
+=== Break dependencies ===
+
+The idea of unit testing is to use every class in isolation. Since many classes instantiate other classes it is not possible to instantiate one class separately. Therefore a technique called dependency injection should be used. With dependency injection object creation is separated from object use. A factory is responsible for building object trees. Other objects manipulate these objects through abstract interfaces. This technique works well for data driven application. For GUI applications this approach can be difficult as there are plenty of object creations and destructions going on. To verify the correct behaviour of classes that depend from abstract interfaces mocks can be used. There are [http://code.google.com/p/googlemock/ tools to support the generation of mocks].
+
+=== Compile all classes in a static library ===
+
+In small to medium sized projects there is typically a build script which lists all source files and then compiles the executable in one go. The build scripts for the tests must list the needed source files again. It is easier to list the source files and the headers only once in a script to build a static library. Then main() will be linked against the static library to build the executable and the tests will be linked again the static libraries also.
+
+== Building a test suite with qtestlib ==
+
+qtestlib provides the tools to build an executable which contains one test class which typically tests one class of production code. In a real world project many classes shall be tested by running one command. This collection of tests is also called a test suite.
+
+=== using qmake ===
+
+In Qt 4.7 or later, place &lt;tt>CONFIG+=testcase&lt;/tt> in each test program's &lt;tt>.pro&lt;/tt> file. Then, from a parent subdirs project, you may run make check to run all testcases.
+
+The behavior may be customized in a few different ways. Examples:
+
+&lt;code>
+make -j1 check-> run one test at a time
+make -j4 check-> run four tests at a time - make sure the tests are written OK for this!
+make check TESTRUNNER=path/to/testrunner -> run autotests through a custom test runner script (which may e.g. handle crashes, fails)
+make check TESTARGS=-xml-> run autotests in XML logging mode
+&lt;/code>
+
+=== using CMake and CTest ===
+
+The KDE project uses [http://www.itk.org/Wiki/CMake_Testing_With_CTest CMake and CTest] to make a test suite. With CMake it is possible to label build targets as a test. All labeled targets will be run when make test is called on the command line. There are several other advantages with CMake. The result of a test run can be published on a webserver using CDash with virtually no effort. See the [http://doc-snapshot.qt.io/qt5-stable/cmake-manual.html CMake manual] for more about cmake and automtic moc invocation.
+
+== Common problems with test machine setup ==
+
+=== Screen savers ===
+
+Screen savers can interfere with some of the tests for GUI classes, causing unreliable test results. Screen savers should be disabled to ensure that test results are consistent and reliable.
+
+=== System dialogs ===
+
+Dialogs displayed unexpectedly by the operating system or other running applications can steal input focus from widgets involved in an autotest, causing unreproducible failures.
+
+Examples encountered in the past include online update notification dialogs on Mac OS X, false alarms from virus scanners, scheduled tasks such as virus signature updates, software updates pushed out to workstations by IT, and chat programs popping up windows on top of the stack.
+
+=== Display usage ===
+
+Some tests use the test machine's display, mouse and keyboard and can thus fail if the machine is being used for something else at the same time (e.g. as somebody's workstation), or if multiple tests are run in parallel.
+
+The CI system uses dedicated test machines to avoid this problem, but if you don't have a dedicated test machine, you may be able to solve this problem by running the tests on a second display.
+
+On Unix, one can also run the tests on a nested or virtual X-server, such as &lt;tt>Xephyr&lt;/tt>. For example, to run the entire set of tests under &lt;tt>Xephyr&lt;/tt>, execute the following commands:
+
+&lt;code>
+Xephyr :1 -ac -screen 1920x1200 >/dev/null 2>&amp;1 &amp;
+sleep 5
+DISPLAY=:1 icewm >/dev/null 2>&amp;1 &amp;
+cd tests/auto
+make
+DISPLAY=:1 make -k -j1 check
+&lt;/code>
+
+In Qt5 there is a nice alternative called offscreen plugin, which you can use like that:
+&lt;code>
+TESTARGS="-platform offscreen" make check -k -j1
+&lt;/code>
+
+=== Window managers ===
+
+On Unix, at least two autotests (&lt;tt>tst_examples&lt;/tt> and &lt;tt>tst_gestures&lt;/tt>) require a window manager to be running. Therefore if running these tests under a nested X-server, you must also run a window manager in that X-server.
+
+Your window manager must be configured to position all windows on the display automatically. Some windows managers (e.g. twm) have a mode where the user must manually position new windows, and this prevents the test suite running without user interaction.
+
+Note that the twm window manager has been found to be unsuitable for running the full suite of Qt autotests, as the &lt;tt>tst_gestures&lt;/tt> autotest causes twm to forget its configuration and revert to manual window placement.
+
+== Miscellaneous topics ==
+
+=== &lt;tt>QSignalSpy&lt;/tt> and &lt;tt>QVariant&lt;/tt> parameters ===
+
+With Qt 4, &lt;tt>QVariant&lt;/tt> parameters recorded by &lt;tt>QSignalSpy&lt;/tt> have to be cast to &lt;tt>QVariant&lt;/tt> (e.g., by &lt;tt>qvariant_cast&lt;QVariant>()&lt;/tt>) to get the actual value; this is because &lt;tt>QSignalSpy&lt;/tt> wraps the value inside another &lt;tt>QVariant&lt;/tt> (of type &lt;tt>QMetaType::QVariant&lt;/tt>). The following snippet is from the &lt;tt>tst_qpropertyanimation&lt;/tt> autotest:
+
+&lt;code>
+QSignalSpy spy(&amp;anim, SIGNAL (valueChanged(QVariant)));
+
+...
+
+QCOMPARE (spy.count(), 6); //we should have got everything from 0 to 5
+for (int i = 0; i &lt; spy.count(); ++i) {
+ QCOMPARE (qvariant_cast&lt;QVariant>(spy.at(i).first()).toInt(), i);
+}
+&lt;/code>
+
+With Qt 5, casting the QVariant parameter to a QVariant is no longer required; &lt;tt>QSignalSpy&lt;/tt> contains a direct (not wrapped) copy of the &lt;tt>QVariant&lt;/tt> value. The above for loop can be written as follows:
+
+&lt;code>
+for (int i = 0; i &lt; spy.count();++i) {
+ QCOMPARE (spy.at(i).first().toInt(), i);
+}
+&lt;/code>
+</textarea><div class="templatesUsed"></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/Writing_Unit_Tests" title="Writing Unit Tests">Writing Unit Tests</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/Writing_Unit_Tests">http://wiki.qt.io/Writing_Unit_Tests</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Writing+Unit+Tests" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Writing_Unit_Tests"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Writing_Unit_Tests&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/Writing_Unit_Tests" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=Writing_Unit_Tests&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Writing_Unit_Tests&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Writing_Unit_Tests" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Writing_Unit_Tests" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Writing_Unit_Tests&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":220});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Writing_Unit_Tests&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:50:02 GMT -->
+</html>

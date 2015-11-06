@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&oldid=15069 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:09:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>PySide Shiboken Code Injection Semantics - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"PySide_Shiboken_Code_Injection_Semantics","wgTitle":"PySide Shiboken Code Injection Semantics","wgCurRevisionId":15069,"wgRevisionId":15069,"wgArticleId":1294,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["LanguageBindings::PySide"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"PySide_Shiboken_Code_Injection_Semantics","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-PySide_Shiboken_Code_Injection_Semantics skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">PySide Shiboken Code Injection Semantics</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 14:08, 26 March 2015 by <a href="http://wiki.qt.io/index.php?title=User:Henri_Vikki&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Henri Vikki (page does not exist)">Henri Vikki</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:Henri_Vikki&amp;action=edit&amp;redlink=1" class="new" title="User talk:Henri Vikki (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Henri_Vikki" title="Special:Contributions/Henri Vikki">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&amp;diff=prev&amp;oldid=15069" title="PySide Shiboken Code Injection Semantics">diff</a>) <a href="http://wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&amp;direction=prev&amp;oldid=15069" title="PySide Shiboken Code Injection Semantics">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p><p>API Extractor provides the inject-code tag allowing the user to put custom written code to on specific locations of the generated code. Yet this is only part of what is needed to generate proper binding code, where the custom code should be written to depends upon the technology used on the generated binding code.
+</p><p>This is the inject-code tag options that matters to Shiboken.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&lt;</span>inject<span class="sy0">-</span>code <span class="kw2">class</span><span class="sy0">=</span><span class="st0">&quot;native | target&quot;</span> position<span class="sy0">=</span><span class="st0">&quot;beginning | end&quot;</span><span class="sy0">&gt;</span>
+ <span class="co1">// custom code</span>
+<span class="sy0">&lt;/</span>inject<span class="sy0">-</span>code<span class="sy0">&gt;</span></pre></div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Conventions"><span class="tocnumber">1</span> <span class="toctext">Conventions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#C.2B.2B_Wrapper"><span class="tocnumber">1.1</span> <span class="toctext">C++ Wrapper</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Python_Wrapper"><span class="tocnumber">1.2</span> <span class="toctext">Python Wrapper</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Native"><span class="tocnumber">1.3</span> <span class="toctext">Native</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Target"><span class="tocnumber">1.4</span> <span class="toctext">Target</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#inject-code_tag"><span class="tocnumber">2</span> <span class="toctext">inject-code tag</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Anatomy_of_Code_Injection"><span class="tocnumber">3</span> <span class="toctext">Anatomy of Code Injection</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Noteworthy_Cases"><span class="tocnumber">3.1</span> <span class="toctext">Noteworthy Cases</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Removing_arguments_and_setting_a_default_values_for_them"><span class="tocnumber">3.2</span> <span class="toctext">Removing arguments and setting a default values for them</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Removing_arguments_and_calling_the_method_with_your_own_hands"><span class="tocnumber">3.3</span> <span class="toctext">Removing arguments and calling the method with your own hands</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Calling_the_method_with_your_own_hands_always.21"><span class="tocnumber">3.4</span> <span class="toctext">Calling the method with your own hands always!</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Code_Injection_for_Functions.2FMethods"><span class="tocnumber">4</span> <span class="toctext">Code Injection for Functions/Methods</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#On_The_Native_Side"><span class="tocnumber">4.1</span> <span class="toctext">On The Native Side</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#On_The_Target_Side"><span class="tocnumber">4.2</span> <span class="toctext">On The Target Side</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Code_Injection_for_Wrapped_Classes"><span class="tocnumber">5</span> <span class="toctext">Code Injection for Wrapped Classes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#On_The_Native_Side_2"><span class="tocnumber">5.1</span> <span class="toctext">On The Native Side</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#On_The_Target_Side_2"><span class="tocnumber">5.2</span> <span class="toctext">On The Target Side</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Code_Injection_for_Modules"><span class="tocnumber">6</span> <span class="toctext">Code Injection for Modules</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#On_The_Native_Side_3"><span class="tocnumber">6.1</span> <span class="toctext">On The Native Side</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#On_The_Target_Side_3"><span class="tocnumber">6.2</span> <span class="toctext">On The Target Side</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Conventions">Conventions</span></h2>
+<h3><span class="mw-headline" id="C.2B.2B_Wrapper">C++ Wrapper</span></h3>
+<p>This term refers to a generated C++ class that extends a class from the wrapped library. It is used only when a wrapped C++ class is polymorphic, i.e. it has or inherits any virtual methods.
+</p>
+<h3><span class="mw-headline" id="Python_Wrapper">Python Wrapper</span></h3>
+<p>The code that exports the C++ wrapped class to Python. Python wrapper refers to all the code needed to export a C++ class to Python, and Python method/function wrapper means the specific function that calls the C++ method/function on behalf of Python.
+</p>
+<h3><span class="mw-headline" id="Native">Native</span></h3>
+<p>This is a possible value for the class attribute of the inject-code tag, it means things more akin to the C++ side.
+</p>
+<h3><span class="mw-headline" id="Target">Target</span></h3>
+<p>Another class attribute value, it indicates things more close to the Python side.
+</p>
+<h2><span class="mw-headline" id="inject-code_tag">inject-code tag</span></h2>
+<p>The following table describes the semantics of inject-code tag as used on Shiboken.
+</p>
+<table class="wikitable">
+<tr>
+<th>Parent Tag
+</th>
+<th>Class
+</th>
+<th>Position
+</th>
+<th>Meaning
+</th></tr>
+<tr>
+<td>value-type, object-type
+</td>
+<td>native
+</td>
+<td>beginning
+</td>
+<td>Write to the beginning of a class wrapper .cpp file, right after the #include clauses. A common use would be to write prototypes for custom functions whose definitions are put on a native/end code injection.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>end
+</td>
+<td>Write to the end of a class wrapper .cpp file. Could be used to write custom/helper functions definitions for prototypes declared on native/beginning.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>target
+</td>
+<td>beginning
+</td>
+<td>Meaning.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>end
+</td>
+<td>Meaning.
+</td></tr>
+<tr>
+<td>modify-function
+</td>
+<td>native
+</td>
+<td>beginning
+</td>
+<td>Code here is put on the virtual method override of a C++ wrapper class (the one responsible for passing C++ calls to a Python override, if there is any), right after the C++ arguments have been converted but before the Python call.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>end
+</td>
+<td>This code injection is put in a virtual method override on the C++ wrapper class, after the call to Python and before dereferencing the Python method and tuple of arguments.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>target
+</td>
+<td>beginning
+</td>
+<td>This code is injected on the Python method wrapper (PyCLASS_METHOD(…)), right after the decisor have found which signature to call and also after the conversion of the arguments to be used, but before the actual call.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>end
+</td>
+<td>This code is injected on the Python method wrapper (PyCLASS_METHOD(…)), right after the C++ method call, but still inside the scope created by the overload for each signature.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>shell
+</td>
+<td>beginning
+</td>
+<td>Used only for virtual functions. The code is injected when the function does not has a pyhton implementation, then the code is inserted before c++ call.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>end
+</td>
+<td>Same as above, but the code is inserted after c++ call.
+</td></tr>
+<tr>
+<td>typesystem
+</td>
+<td>native
+</td>
+<td>beginning
+</td>
+<td>Write code to the beginning of the module .cpp file, right after the #include clauses. This position has a similar purpose as the native/beginning position on a wrapper class .cpp file, namely write function prototypes, but not restricted to this use.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>end
+</td>
+<td>Write code to the end of the module .cpp file. Usually implementations for function prototypes inserted at the beginning of the file with a native/beginning code injection.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>target
+</td>
+<td>beginning
+</td>
+<td>Insert code at the start of the module initialization function (initMODULENAME()), before the calling Py_InitModule.
+</td></tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>end
+</td>
+<td>Insert code at the end of the module initialization function (initMODULENAME()), but before the checking that emits a fatal error in case of problems importing the module.
+</td></tr></table>
+<h2><span class="mw-headline" id="Anatomy_of_Code_Injection">Anatomy of Code Injection</span></h2>
+<p>To make things clear let’s use a simplified example of generated wrapper code and the places where each kind of code injection goes.
+</p><p>Below is the example C++ class for whom wrapper code will be generated.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> InjectCode <span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+ InjectCode<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">double</span> overloadedMethod<span class="br0">&#40;</span><span class="kw4">int</span> arg<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">double</span> overloadedMethod<span class="br0">&#40;</span><span class="kw4">double</span> arg<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">virtual</span> <span class="kw4">int</span> virtualMethod<span class="br0">&#40;</span><span class="kw4">int</span> arg<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>From the C++ class, Shiboken will generate a injectcode_wrapper.cpp file with the binding code. The next section will use a simplified version of the generated wrapper code with the injection spots marked with comments.
+</p>
+<h3><span class="mw-headline" id="Noteworthy_Cases">Noteworthy Cases</span></h3>
+<p>The type system description system gives the binding developer a lot of flexibility, which is power, which comes with responsibility. Some modifications to the wrapped API will not be complete without some code injection.
+</p>
+<h3><span class="mw-headline" id="Removing_arguments_and_setting_a_default_values_for_them">Removing arguments and setting a default values for them</span></h3>
+<p>A simple case is when a function have one argument removed, as when the C++ method METHOD (ARG) is modified to be used from Python as METHOD(); of course the binding developer must provide some guidelines to the generator on what to do to call it. The most common solution is to remove the argument and set a default value for it at the same time, so the original C++ method could be called without problems.
+</p>
+<h3><span class="mw-headline" id="Removing_arguments_and_calling_the_method_with_your_own_hands">Removing arguments and calling the method with your own hands</span></h3>
+<p>If the argument is removed and no default value is provided, the generator will not write any call to the method and expect the modify-function - target/beginning code injection to call the original C++ method on its own terms. If even this custom code is not provided the generator will put an #error clause to prevent compilation of erroneus binding code.
+</p>
+<h3><span class="mw-headline" id="Calling_the_method_with_your_own_hands_always.21">Calling the method with your own hands always!</span></h3>
+<p>If your custom code to be injected contains a call to the wrapped C++ method, it surely means that you don’t want the generator to write another call to the same method. As expected Shiboken will detect the user written call on the code injection and will not write its own call, but for this to work properly the binding developer must use the template variable&#160;%FUNCTION_NAME instead of writing the actual name of the wrapped method/function.
+</p><p>In other words, use
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&lt;</span>inject<span class="sy0">-</span>code <span class="kw2">class</span><span class="sy0">=</span><span class="st0">&quot;target&quot;</span> position<span class="sy0">=</span><span class="st0">&quot;beginning | end&quot;</span><span class="sy0">&gt;</span>
+ <span class="sy0">%</span>CPPSELF.<span class="me1">originalMethodName</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="sy0">&lt;/</span>inject<span class="sy0">-</span>code<span class="sy0">&gt;</span></pre></div></div>
+<p>instead of
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&lt;</span>inject<span class="sy0">-</span>code <span class="kw2">class</span><span class="sy0">=</span><span class="st0">&quot;target&quot;</span> position<span class="sy0">=</span><span class="st0">&quot;beginning | end&quot;</span><span class="sy0">&gt;</span>
+ <span class="sy0">%</span>CPPSELF.<span class="sy0">%</span>FUNCTION_NAME<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="sy0">&lt;/</span>inject<span class="sy0">-</span>code<span class="sy0">&gt;</span></pre></div></div>
+<h2><span class="mw-headline" id="Code_Injection_for_Functions.2FMethods">Code Injection for Functions/Methods</span></h2>
+<h3><span class="mw-headline" id="On_The_Native_Side">On The Native Side</span></h3>
+<p>Notice that this is only used when there is a C++ wrapper, i.e. the wrapped class is polymorphic.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">int</span> InjectCodeWrapper<span class="sy0">::</span><span class="me2">virtualMethod</span><span class="br0">&#40;</span><span class="kw4">int</span> arg<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ PyObject<span class="sy0">*</span> method <span class="sy0">=</span> BindingManager<span class="sy0">::</span><span class="me2">instance</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">getOverride</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> <span class="st0">&quot;virtualMethod&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>py_override<span class="br0">&#41;</span>
+ <span class="kw1">return</span> this<span class="sy0">-&gt;</span><span class="me3">InjectCode</span><span class="sy0">::</span><span class="me2">virtualMethod</span><span class="br0">&#40;</span>arg<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="br0">&#40;</span>… here C<span class="sy0">++</span> arguments are converted to Python …<span class="br0">&#41;</span>
+&#160;
+<span class="co1">// INJECT-CODE: &lt;modify-function&gt;&lt;inject-code class=&quot;native&quot; position=&quot;beginning&quot;&gt;</span>
+ <span class="co1">// Uses: pre method call custom code, modify the argument before the</span>
+ <span class="co1">// Python call.</span>
+&#160;
+<span class="br0">&#40;</span>… Python method call goes in here …<span class="br0">&#41;</span>
+&#160;
+<span class="co1">// INJECT-CODE: &lt;modify-function&gt;&lt;inject-code class=&quot;native&quot; position=&quot;end&quot;&gt;</span>
+ <span class="co1">// Uses: post method call custom code, modify the result before delivering</span>
+ <span class="co1">// it to C++ caller.</span>
+&#160;
+<span class="br0">&#40;</span>… Python method and argument tuple are dereferenced here …<span class="br0">&#41;</span>
+&#160;
+<span class="kw1">return</span> Shiboken<span class="sy0">::</span><span class="me2">Converter</span><span class="sy0">&lt;</span><span class="kw4">int</span><span class="sy0">&gt;::</span><span class="me2">toCpp</span><span class="br0">&#40;</span>method_result<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="On_The_Target_Side">On The Target Side</span></h3>
+<p>All the overloads of a method from C++ are gathered together on a single Python method that uses an overload decisor to call the correct C++ method based on the arguments passed by the Python call. Each overloaded method signature has its own beginning and end code injections.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">static</span> PyObject<span class="sy0">*</span>
+PyInjectCode_overloadedMethod<span class="br0">&#40;</span>PyObject<span class="sy0">*</span> self<span class="sy0">,</span> PyObject<span class="sy0">*</span> arg<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ PyObject<span class="sy0">*</span> py_result <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>PyFloat_Check<span class="br0">&#40;</span>arg<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw4">double</span> cpp_arg0 <span class="sy0">=</span> Shiboken<span class="sy0">::</span><span class="me2">Converter</span><span class="sy0">&lt;</span><span class="kw4">double</span> <span class="sy0">&gt;::</span><span class="me2">toCpp</span><span class="br0">&#40;</span>arg<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// INJECT-CODE: &lt;modify-function&gt;&lt;inject-code class=&quot;target&quot; position=&quot;beginning&quot;&gt;</span>
+ <span class="co1">// Uses: pre method call custom code.</span>
+&#160;
+py_result <span class="sy0">=</span> Shiboken<span class="sy0">::</span><span class="me2">Converter</span><span class="sy0">&lt;</span><span class="kw4">double</span> <span class="sy0">&gt;::</span><span class="me2">toPython</span><span class="br0">&#40;</span>
+ PyInjectCode_cptr<span class="br0">&#40;</span>self<span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">InjectCode</span><span class="sy0">::</span><span class="me2">overloadedMethod</span><span class="br0">&#40;</span>cpp_arg0<span class="br0">&#41;</span>
+ <span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// INJECT-CODE: &lt;modify-function&gt;&lt;inject-code class=&quot;target&quot; position=&quot;end&quot;&gt;</span>
+ <span class="co1">// Uses: post method call custom code.</span>
+&#160;
+<span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>PyNumber_Check<span class="br0">&#40;</span>arg<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="br0">&#40;</span>… other overload calling code …<span class="br0">&#41;</span>
+ <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">goto</span> PyInjectCode_overloadedMethod_TypeError<span class="sy0">;</span>
+&#160;
+<span class="kw1">if</span> <span class="br0">&#40;</span>PyErr_Occurred<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">||</span> <span class="sy0">!</span>py_result<span class="br0">&#41;</span>
+ <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+&#160;
+<span class="kw1">return</span> py_result<span class="sy0">;</span>
+&#160;
+PyInjectCode_overloadedMethod_TypeError<span class="sy0">:</span>
+ PyErr_SetString<span class="br0">&#40;</span>PyExc_TypeError<span class="sy0">,</span> <span class="st0">&quot;'overloadedMethod()' called with wrong parameters.&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="Code_Injection_for_Wrapped_Classes">Code Injection for Wrapped Classes</span></h2>
+<h3><span class="mw-headline" id="On_The_Native_Side_2">On The Native Side</span></h3>
+<p>Those injections go in the body of the CLASSNAME_wrapper.cpp file for the wrapped class.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// Start of ``CLASSNAME_wrapper.cpp``</span>
+<span class="co2">#define protected public</span>
+<span class="co1">// default includes</span>
+<span class="co2">#include &lt;shiboken.h&gt;</span>
+<span class="br0">&#40;</span>…<span class="br0">&#41;</span>
+<span class="co2">#include &quot;injectcode_wrapper.h&quot;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> Shiboken<span class="sy0">;</span>
+&#160;
+<span class="co1">// INJECT-CODE: &lt;value/object-type&gt;&lt;inject-code class=&quot;native&quot; position=&quot;beginning&quot;&gt;</span>
+<span class="co1">// Uses: prototype declarations</span>
+&#160;
+<span class="br0">&#40;</span>… C<span class="sy0">++</span> wrapper <span class="kw2">virtual</span> methods<span class="sy0">,</span> <span class="kw1">if</span> any …<span class="br0">&#41;</span>
+&#160;
+<span class="br0">&#40;</span>… Python wrapper code …<span class="br0">&#41;</span>
+&#160;
+PyAPI_FUNC<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
+init_injectcode<span class="br0">&#40;</span>PyObject <span class="sy0">*</span>module<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="br0">&#40;</span>…<span class="br0">&#41;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="br0">&#40;</span>…<span class="br0">&#41;</span>
+&#160;
+<span class="co1">// INJECT-CODE: &lt;value/object-type&gt;&lt;inject-code class=&quot;native&quot; position=&quot;end&quot;&gt;</span>
+<span class="co1">// Uses: definition of functions prototyped at ``native/beginning``.</span>
+&#160;
+<span class="co1">// End of ``CLASSNAME_wrapper.cpp``</span></pre></div></div>
+<h3><span class="mw-headline" id="On_The_Target_Side_2">On The Target Side</span></h3>
+<p>Code injections to the class Python initialization function.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// Start of ``CLASSNAME_wrapper.cpp``</span>
+&#160;
+<span class="br0">&#40;</span>…<span class="br0">&#41;</span>
+&#160;
+PyAPI_FUNC<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
+init_injectcode<span class="br0">&#40;</span>PyObject <span class="st0">''</span><span class="st0">'module)
+{
+ // INJECT-CODE: &lt;value/object-type&gt;&lt;inject-code class=&quot;target&quot; position=&quot;beginning&quot;&gt;
+ // Uses: Alter something in the PyInjectCode_Type (tp_flags value for example)
+ // before registering it.
+&#160;
+ if (PyType_Ready(&amp;PyInjectCode_Type) &lt; 0)
+ return;
+&#160;
+ Py_INCREF(&amp;PyInjectCode_Type);
+ PyModule_AddObject(module, &quot;InjectCode&quot;,
+ ((PyObject'</span><span class="st0">''</span><span class="br0">&#41;</span><span class="sy0">&amp;</span>PyInjectCode_Type<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// INJECT-CODE: &lt;value/object-type&gt;&lt;inject-code class=&quot;target&quot; position=&quot;end&quot;&gt;</span>
+ <span class="co1">// Uses: do something right after the class is registered, like set some static</span>
+ <span class="co1">// variable injected on this same file elsewhere.</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="br0">&#40;</span>…<span class="br0">&#41;</span>
+&#160;
+<span class="co1">// End of ``CLASSNAME_wrapper.cpp``</span></pre></div></div>
+<h2><span class="mw-headline" id="Code_Injection_for_Modules">Code Injection for Modules</span></h2>
+<p>The C++ libraries are wapped as Python modules, a collection of classes, functions, enums and namespaces. Shiboken creates wrapper files for all of them and also one extra MODULENAME_module_wrapper.cpp to register the whole module. Code injection xml tags who have the typesystem tag as parent will be put on this file.
+</p>
+<h3><span class="mw-headline" id="On_The_Native_Side_3">On The Native Side</span></h3>
+<p>This works exactly as the class wrapper code injections On The Native Side.
+</p>
+<h3><span class="mw-headline" id="On_The_Target_Side_3">On The Target Side</span></h3>
+<p>This is very similar to class wrapper code injections On The Target Side. Notice that the inject code at target/end is inserted before the check for errors to prevent bad custom code to pass unnoticed.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">// Start of ``MODULENAME_module_wrapper.cpp``</span>
+&#160;
+<span class="br0">&#40;</span>…<span class="br0">&#41;</span>
+initMODULENAME<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="co1">// INJECT-CODE: &lt;typesystem&gt;&lt;inject-code class=&quot;target&quot; position=&quot;beginning&quot;&gt;</span>
+ <span class="co1">// Uses: do something before the module is created.</span>
+&#160;
+PyObject<span class="sy0">*</span> module <span class="sy0">=</span> Py_InitModule<span class="br0">&#40;</span><span class="st0">&quot;MODULENAME&quot;</span><span class="sy0">,</span> MODULENAME_methods<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="br0">&#40;</span>… initialization of wrapped classes<span class="sy0">,</span> namespaces<span class="sy0">,</span> functions and enums …<span class="br0">&#41;</span>
+&#160;
+<span class="co1">// INJECT-CODE: &lt;typesystem&gt;&lt;inject-code class=&quot;target&quot; position=&quot;end&quot;&gt;</span>
+ <span class="co1">// Uses: do something after the module is registered and initialized.</span>
+&#160;
+<span class="kw1">if</span> <span class="br0">&#40;</span>PyErr_Occurred<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+ Py_FatalError<span class="br0">&#40;</span><span class="st0">&quot;can't initialize module sample&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="br0">&#40;</span>…<span class="br0">&#41;</span>
+&#160;
+<span class="co1">// Start of ``MODULENAME_module_wrapper.cpp``</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.172 seconds
+Real time usage: 0.174 seconds
+Preprocessor visited node count: 154/1000000
+Preprocessor generated node count: 260/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1294-0!*!*!!en!*!* and timestamp 20151105060654 and revision id 15069
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&amp;oldid=15069">http://wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&amp;oldid=15069</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:LanguageBindings::PySide" title="Category:LanguageBindings::PySide">LanguageBindings::PySide</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=PySide+Shiboken+Code+Injection+Semantics" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/PySide_Shiboken_Code_Injection_Semantics"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:PySide_Shiboken_Code_Injection_Semantics&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/PySide_Shiboken_Code_Injection_Semantics" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/PySide_Shiboken_Code_Injection_Semantics" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/PySide_Shiboken_Code_Injection_Semantics" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&amp;oldid=15069&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&amp;oldid=15069" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 26 March 2015, at 14:08.</li>
+											<li id="footer-info-viewcount">This page has been accessed 448 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":423});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=PySide_Shiboken_Code_Injection_Semantics&oldid=15069 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:09:01 GMT -->
+</html>

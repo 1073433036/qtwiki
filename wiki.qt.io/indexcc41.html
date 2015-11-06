@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Introduction-to-Qt3D&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:20:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for Introduction-to-Qt3D - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Introduction-to-Qt3D","wgTitle":"Introduction-to-Qt3D","wgCurRevisionId":17016,"wgRevisionId":0,"wgArticleId":1081,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Introduction-to-Qt3D","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Introduction-to-Qt3D skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for Introduction-to-Qt3D</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/Introduction-to-Qt3D" title="Introduction-to-Qt3D">Introduction-to-Qt3D</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{Delete|reason=Outdated information}}
+{{Cleanup | reason=Auto-imported from ExpressionEngine.}}
+
+[[Category:Developing_with_Qt::Qt3D]]
+
+= Introduction to Qt 3D =
+
+''NOTE: '''Qt 3D''' (along with '''Qt Quick 3D''' project) is undergoing '''heavy development'''. They are '''not yet part of Qt 5''', and the API shown in this article may be subject to changes.''
+
+''WARNING: The contents of this article were last updated in 2012. This article is heavily outdated.''
+
+'''Qt 3D''' is a set of C++ APIs for 3D programming built on top of '''Qt OpenGL'''. The newest project is called '''Qt Quick 3D''' which creates QML bindings to '''Qt 3D'''.
+
+First, we'll make a comparison of the previous '''OpenGL''' APIs: '''GLUT''' and '''Qt OpenGL'''.
+
+== '''GLUT''' (OpenGL Utility Toolkit) ==
+
+'''GLUT''' was one the first (if not the first) toolkit to provide a portable API to handle '''window management''' for '''OpenGL''' programs. It uses callbacks to register drawing functions and more. There were also routines provided for drawing geometric primitives (both in solid and wireframe state) such as cubes and spheres.
+
+A simple '''OpenGL''' program with just a ''3D cube and some lighting'' could be as long as '''140 lines''' of code when developed with '''GLUT'''.
+
+[[Image:https://gitorious.org/wiki-sources/wiki-sources/blobs/raw/284e0d0b70f0d4d786b16156f0ae0dba1d926e3e/images/3d-cube-screenshot.png|3D Hello World Cube]]
+''3D cube drawn using OpenGL.''
+
+&lt;code>…
+
+void initialize()
+{
+ float ambientLight[] = { 0.2, 0.2, 0.2, 1.0 };
+ float specularLight[] = { 1.0, 1.0, 1.0, 1.0 };
+ float specularity[] = { 1.0, 1.0, 1.0, 1.0 };
+ float shininess[] = { 60.0 };
+ float lightPosition[] = { 0.0, 50.0, 50.0, 1.0 };
+
+…
+
+// Enable lighting with one light source
+ glEnable(GL_LIGHTING);
+ glEnable(GL_LIGHT0);
+
+…
+
+// Properties of the objects' materials
+ glMaterialfv(GL_FRONT, GL_SPECULAR, specularity); // Reflectance
+ glMaterialfv(GL_FRONT, GL_SHININESS, shininess); // Shininess
+
+// Enable ambient light usage
+ glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientLight);
+
+glLightfv(GL_LIGHT0, GL_AMBIENT, ambientLight);
+ glLightfv(GL_LIGHT0, GL_SPECULAR, specularLight);
+
+// Position of the light source
+ glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+}
+
+…
+
+void resize(int width, int height)
+{
+ …
+
+// Set the viewport to be the entire window
+ glViewport(0, 0, width, height);
+
+…
+
+// Defines the perspective projection
+ glLoadIdentity();
+ gluPerspective(45, aspectRatio, 1, 500);
+
+…
+
+// Defines the position of the camera and the target
+ glLoadIdentity();
+ gluLookAt(0, 80, 200, 0, 0, 0, 0, 1, 0);
+}
+
+void paint()
+{
+ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+// Vertices
+ static const float vertices[6][4][3] = {
+ { { 1.0, –1.0, 1.0 }, { 1.0, –1.0, –1.0 }, { 1.0, 1.0, –1.0 }, { 1.0, 1.0, 1.0 } },
+ { { –1.0, –1.0, –1.0 }, { –1.0, –1.0, 1.0 }, { –1.0, 1.0, 1.0 }, { –1.0, 1.0, –1.0 } },
+ { { 1.0, –1.0, –1.0 }, { –1.0, –1.0, –1.0 }, { –1.0, 1.0, –1.0 }, { 1.0, 1.0, –1.0 } },
+ { { –1.0, –1.0, 1.0 }, { 1.0, –1.0, 1.0 }, { 1.0, 1.0, 1.0 }, { –1.0, 1.0, 1.0 } },
+ { { –1.0, –1.0, –1.0 }, { 1.0, –1.0, –1.0 }, { 1.0, –1.0, 1.0 }, { –1.0, –1.0, 1.0 } },
+ { { –1.0, 1.0, 1.0 }, { 1.0, 1.0, 1.0 }, { 1.0, 1.0, –1.0 }, { –1.0, 1.0, –1.0 } }
+ };
+
+…
+
+for (int i = 0; i &lt; 6; +''i) {
+ glBegin(GL_QUADS);
+ glNormal3fv(normals[i]);
+ for (int j = 0; j &lt; 4;''+j)
+ glVertex3fv(vertices[i][j]);
+ glEnd();
+ }
+
+glutSwapBuffers();
+}
+
+int main(int argc, char **argv)
+{
+ …
+
+initialize();
+
+// Register the drawing function "paint()"
+ glutDisplayFunc(paint);
+
+// Register the resizing function "resize()"
+ glutReshapeFunc(resize);
+
+…
+}&lt;/code> ''Drawing a 3D cube with GLUT.'' [https://gitorious.org/wiki-sources/wiki-sources/trees/master/opengl source code]
+
+The code above follows a very basic '''OpenGL''' program structure. It has a '''''initialize''''' function (for doing some initial setup), a '''''resize''''' function (to handle window resizes) and a '''''paint''''' function (to draw the actual 3D objects).
+
+== '''Qt OpenGL''' ==
+
+'''Qt OpenGL''' is a port of the '''OpenGL''' API to the '''Qt''' toolkit. It does a fairly good job at translating all of '''OpenGL''' basic functions
+to a '''Qt''' widget. Now, instead of several functions being registered for callbacks, it is possible to take advantage of the SIGNAL/SLOT system of '''Qt'''.
+
+One of the most commonly used approches for '''Qt OpenGL''' to write a 3D program is to subclass '''QGLWidget'''. '''QGLWidget''' provides three convenience methods that you can reimplement to perform the typical OpenGL tasks: '''paintGL''', '''resizeGL''' and '''initializeGL''' (similar to the '''GLUT''' version of the program).
+
+The program below follows the same basic structure of its '''GLUT''' previous version.
+
+&lt;code>…
+
+class GLWidget : public QGLWidget
+{
+ Q_OBJECT
+
+public:
+ GLWidget(QWidget *parent = 0);
+
+protected:
+ void initializeGL();
+ void resizeGL(int width, int height);
+ void paintGL();
+};
+
+GLWidget::GLWidget(QWidget *parent)
+ : QGLWidget(parent)
+{
+ setFormat(QGLFormat(QGL::Rgba | QGL::DoubleBuffer | QGL::DepthBuffer));
+}
+
+void GLWidget::initializeGL()
+{
+ float ambientLight[] = { 0.2, 0.2, 0.2, 1.0 };
+ float specularLight[] = { 1.0, 1.0, 1.0, 1.0 };
+ float specularity[] = { 1.0, 1.0, 1.0, 1.0 };
+ float shininess[] = { 60.0 };
+ float lightPosition[] = { 0.0, 50.0, 50.0, 1.0 };
+
+…
+
+// Enable lighting with one light source
+ glEnable(GL_LIGHTING);
+ glEnable(GL_LIGHT0);
+
+…
+
+// Properties of the objects' materials
+ glMaterialfv(GL_FRONT, GL_SPECULAR, specularity); // Reflectance
+ glMaterialfv(GL_FRONT, GL_SHININESS, shininess); // Shininess
+
+// Enable ambient light usage
+ glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientLight);
+
+glLightfv(GL_LIGHT0, GL_AMBIENT, ambientLight);
+ glLightfv(GL_LIGHT0, GL_SPECULAR, specularLight);
+
+// Position of the light source
+ glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+}
+
+void GLWidget::resizeGL(int width, int height)
+{
+ …
+
+// Set the viewport to be the entire window
+ glViewport(0, 0, width, height);
+
+…
+
+// Defines the perspective projection
+ glLoadIdentity();
+ gluPerspective(45, aspectRatio, 1, 500);
+
+…
+
+// Defines the position of the camera and the target
+ glLoadIdentity();
+ gluLookAt(0, 80, 200, 0, 0, 0, 0, 1, 0);
+}
+
+void GLWidget::paintGL()
+{
+ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+// Vertices
+ static const float vertices[6][4][3] = {
+ { { 1.0, –1.0, 1.0 }, { 1.0, –1.0, –1.0 }, { 1.0, 1.0, –1.0 }, { 1.0, 1.0, 1.0 } },
+ { { –1.0, –1.0, –1.0 }, { –1.0, –1.0, 1.0 }, { –1.0, 1.0, 1.0 }, { –1.0, 1.0, –1.0 } },
+ { { 1.0, –1.0, –1.0 }, { –1.0, –1.0, –1.0 }, { –1.0, 1.0, –1.0 }, { 1.0, 1.0, –1.0 } },
+ { { –1.0, –1.0, 1.0 }, { 1.0, –1.0, 1.0 }, { 1.0, 1.0, 1.0 }, { –1.0, 1.0, 1.0 } },
+ { { –1.0, –1.0, –1.0 }, { 1.0, –1.0, –1.0 }, { 1.0, –1.0, 1.0 }, { –1.0, –1.0, 1.0 } },
+ { { –1.0, 1.0, 1.0 }, { 1.0, 1.0, 1.0 }, { 1.0, 1.0, –1.0 }, { –1.0, 1.0, -1.0 } }
+ };
+
+ …
+
+ for (int i = 0; i &lt; 6; +''i) {
+ glBegin(GL_QUADS);
+ glNormal3fv(normals[i]);
+ for (int j = 0; j &lt; 4;''+j)
+ glVertex3fv(vertices[i][j]);
+ glEnd();
+ }
+}&lt;/code> ''GLWidget class for drawing the 3D cube.'' [https://gitorious.org/wiki-sources/wiki-sources/trees/master/QtOpenGL/glwidget source code]
+
+This version is still about '''140 lines''' of code. Except that now we have the convenience of using it within a '''Qt''' class. That means, the drawing of the 3D objects can still be done with '''OpenGL''' standard functions, while leaving the window management and input handling part to the '''Qt''' API.
+
+== Using '''Qt 3D''' ==
+'''Qt 3D''' was created to simplify the usage of the '''OpenGL''' standard API within a '''Qt''' application. It abstracts most of the setup previously required. Camera position, viewing volume, vertices definition and other initial settings become '''much simpler'''. Therefore, reduces the overall code needed for creating a basic 3D program.
+
+Similar to '''QGLWidget''', in '''Qt 3D''' there's a class named '''QGLView''' which does most of the work regarding this initial settings. All we need to do is subclass it.
+
+&lt;code>/* Qt 3D headers */
+
+class GLView : public QGLView
+{
+ Q_OBJECT
+
+public:
+ GLView(QWidget *parent = 0);
+ ~GLView();
+
+protected:
+ void initializeGL(QGLPainter *painter);
+ void paintGL(QGLPainter *painter);
+
+private:
+ QGLSceneNode *m_rootNode;
+};
+
+
+GLView::GLView(QWidget *parent)
+ : QGLView(parent)
+ , m_rootNode(0)
+{
+ // Create the cube
+ QGLBuilder builder;
+ builder &lt;&lt; QGL::Faceted &lt;&lt; QGLCube(2);
+ m_rootNode = builder.finalizedSceneNode();
+
+ // Setup the camera
+ camera()->setFieldOfView(45);
+ camera()->setNearPlane(1);
+ camera()->setFarPlane(500);
+}
+
+GLView::~GLView()
+{
+ delete m_rootNode;
+}
+
+void GLView::initializeGL(QGLPainter *painter)
+{
+ QGLLightParameters *lightParameters = new QGLLightParameters(this);
+ QGLMaterial *material = new QGLMaterial(this);
+ QColor color;
+
+// Setup the lighting for the scene
+ painter->setStandardEffect(QGL::LitMaterial);
+ color.setRgbF(0.2, 0.2, 0.2, 1.0);
+ lightParameters->setAmbientColor(color);
+ color.setRgbF(1.0, 1.0, 1.0, 1.0);
+ lightParameters->setSpecularColor(color);
+ lightParameters->setDirection(QVector3D(0.0, 50.0, 50.0));
+ painter->setMainLight(lightParameters);
+
+// Apply a material
+ color.setRgbF(1.0, 1.0, 1.0, 1.0);
+ material->setSpecularColor(color);
+ material->setShininess(60);
+ color.setRgbF(0.0, 0.0, 1.0, 1.0);
+ material->setAmbientColor(color);
+ material->setDiffuseColor(color);
+ painter->setFaceMaterial(QGL::AllFaces, material);
+}
+
+void GLView::paintGL(QGLPainter *painter)
+{
+ // Perform some transformations
+ painter->modelViewMatrix().translate(0.0, 0.0, 5.0);
+ painter->modelViewMatrix().rotate(15.0, 1.0, 0.0, 0.0);
+ painter->modelViewMatrix().rotate(30.0, 0.0, 1.0, 0.0);
+ painter->modelViewMatrix().rotate(15.0, 0.0, 0.0, 1.0);
+
+// Draw the cube
+ m_rootNode->draw(painter);
+}&lt;/code> ''GLView class for drawing the 3D cube.'' [https://gitorious.org/wiki-sources/wiki-sources/trees/master/Qt3D/glview source code]
+
+The code now looks easier to understand than its previous versions. There was no need for setting the cube's vertices, no aspect ratio calculation, no lighting normals set. The real work is done by the '''QGLBuilder''' class and '''QGLPainter''' class. The first one ('''QGLBuilder''') creates the geometry of the cube and adds it to the scene, while the second ('''QGLPainter''') does the actual drawing of the cube.
+
+The basic structure of the program is still there with the '''paintGL''' and '''initializeGL''' methods. There are also three more classes that handle typical '''OpenGL''' tasks: '''QGLCamera''', '''QGLLightParameters''' and '''QGLMaterial'''.
+
+== References ==
+
+The source code used in this article was based on examples from the following references:
+[http://www.glprogramming.com/red/ OpenGL Programming Guide]
+[http://www.opengl.org/resources/libraries/glut/ GLUT]
+[http://doc.qt.io/qt-5/qtopengl-index.html Qt OpenGL]
+[http://doc.qt.nokia.com/qt-quick3d-snapshot/ Qt 3D]
+
+'''Qt 3D''' latest snapshot can be obtained here: [http://doc.qt.nokia.com/qt-quick3d-snapshot/ Qt Quick 3D]
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:Ambox" title="Template:Ambox">Template:Ambox</a> (<a href="http://wiki.qt.io/index.php?title=Template:Ambox&amp;action=edit" title="Template:Ambox">view source</a>) </li><li><a href="http://wiki.qt.io/Template:Cleanup" title="Template:Cleanup">Template:Cleanup</a> (<a href="http://wiki.qt.io/index.php?title=Template:Cleanup&amp;action=edit" title="Template:Cleanup">view source</a>) </li><li><a href="http://wiki.qt.io/Template:Delete" title="Template:Delete">Template:Delete</a> (<a href="http://wiki.qt.io/index.php?title=Template:Delete&amp;action=edit" title="Template:Delete">view source</a>) </li><li><a href="http://wiki.qt.io/Template:WarningBox" title="Template:WarningBox">Template:WarningBox</a> (<a href="http://wiki.qt.io/index.php?title=Template:WarningBox&amp;action=edit" title="Template:WarningBox">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/Introduction-to-Qt3D" title="Introduction-to-Qt3D">Introduction-to-Qt3D</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/Introduction-to-Qt3D">http://wiki.qt.io/Introduction-to-Qt3D</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Introduction-to-Qt3D" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Introduction-to-Qt3D"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Introduction-to-Qt3D&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/Introduction-to-Qt3D" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=Introduction-to-Qt3D&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Introduction-to-Qt3D&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Introduction-to-Qt3D" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Introduction-to-Qt3D" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Introduction-to-Qt3D&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":198});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Introduction-to-Qt3D&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:20:39 GMT -->
+</html>

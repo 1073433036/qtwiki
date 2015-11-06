@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=QML_Multi-line_Texts_Handling&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:29:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>QML Multi-line Texts Handling - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"QML_Multi-line_Texts_Handling","wgTitle":"QML Multi-line Texts Handling","wgCurRevisionId":16006,"wgRevisionId":16006,"wgArticleId":1376,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing with Qt::Qt Quick","HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"QML_Multi-line_Texts_Handling","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-QML_Multi-line_Texts_Handling skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">QML Multi-line Texts Handling</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="index5008.html?title=QML_Multi-line_Texts_Handling&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><b>English</b>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#QML_Multi-line_Texts_Handling"><span class="tocnumber">1</span> <span class="toctext">QML Multi-line Texts Handling</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Introduction"><span class="tocnumber">1.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Text_Component"><span class="tocnumber">1.2</span> <span class="toctext">Text Component</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Text_Component_Handling"><span class="tocnumber">1.3</span> <span class="toctext">Text Component Handling</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Direct_Binding_of_a_Value"><span class="tocnumber">1.4</span> <span class="toctext">Direct Binding of a Value</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Use_of_Properties_Defined_at_Top_Level"><span class="tocnumber">1.5</span> <span class="toctext">Use of Properties Defined at Top Level</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Bind_a_Value_Using_QML_Binding_Element"><span class="tocnumber">1.6</span> <span class="toctext">Bind a Value Using QML Binding Element</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Use_onCompleted_Attached_Property"><span class="tocnumber">1.7</span> <span class="toctext">Use onCompleted Attached Property</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Apply_a_JavaScript_Inline_Function"><span class="tocnumber">1.8</span> <span class="toctext">Apply a JavaScript Inline Function</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#How_to_Format_a_Multi-line_Text"><span class="tocnumber">1.9</span> <span class="toctext">How to Format a Multi-line Text</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Make_Your_Text_Block_Flickable"><span class="tocnumber">1.10</span> <span class="toctext">Make Your Text Block Flickable</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="QML_Multi-line_Texts_Handling">QML Multi-line Texts Handling</span></h1>
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>There are many situations where we need to handle relatively lengthy fragments of text, for example in help systems. Qt framework has its <a rel="nofollow" class="external text" href="http://developer.qt.nokia.com/doc/qt-4.8/assistant-manual.html">Assistance help system</a> implemented in Qt C+<i>. As another example we may consider learning content for which we need a flexible interface to multi-line blocks of text.</i>
+</p><p>Don't confuse this with text processing; we are considering options for easy structuring of text in blocks and their rendering through a flexible QML interface.
+</p><p>At first look, QML with its <i>Text</i> element, is oriented to handling short text portions like labels, titles, dialogs, etc. Combining rich text formatting options in QML with its software architecture possibilities we may have interesting solutions.
+</p><p>The starting point is the requirement to separate text blocks from basic QML code, encapsulating the text blocks in autonomous units, and providing a powerful interface. It is clear that a text block can change very often - editing of the text, translation in other languages and so on. The solution is to form a QML component and instantiate it in the basic application code in places where we need it. 
+</p>
+<h2><span class="mw-headline" id="Text_Component">Text Component</span></h2>
+<p>Let us recall how we define a <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativedocuments.html">component in QML</a>. The next snippet demonstrates our text component, which is used in all examples that follow. The text component is placed in a file named <i>TextTemplate.qml</i>. That is the name of our text component, which is used in main QML file. This name appears in next illustrating code fragments. You have needed explanations in comments.
+</p><p><b>TextTemplate.qml</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">//This file forms a text component to be included as template in other files</span>
+<span class="co1">//Note that the name of the component file has to begin with a capital letter</span>
+<span class="co1">//The component file is placed in the same directory as files, which will use it</span>
+&#160;
+import QtQuick <span class="nu16">1.0</span>
+&#160;
+Item <span class="br0">&#123;</span>id<span class="sy0">:</span>container
+<span class="co1">//This Item is not needed really. The Text element could form the component</span>
+<span class="co1">//directly. It is used to demonstrate how to get Text element properties at top</span>
+<span class="co1">//level to be able to control them programmatically. You may need a container if you</span>
+<span class="co1">//have two (or more) Text elements and/or combine a Text element with others element.</span>
+ width<span class="sy0">:</span><span class="nu0">500</span><span class="sy0">;</span> height<span class="sy0">:</span><span class="nu0">500</span>
+&#160;
+<span class="co1">//Bind Text element properties with properties at top level</span>
+ property string wrap<span class="sy0">:</span><span class="st0">&quot;Text.WordWrap&quot;</span>
+ property real topwidth<span class="sy0">:</span><span class="nu0">300</span>
+ property string label<span class="sy0">:</span><span class="st0">&quot;Sample text&quot;</span>
+ property color paint
+&#160;
+ Text <span class="br0">&#123;</span> id<span class="sy0">:</span><span class="kw2">template</span>
+ width<span class="sy0">:</span>topwidth <span class="co1">//Some properties of Text element take effect only</span>
+ <span class="co1">//if width property is defined</span>
+ color<span class="sy0">:</span>paint
+ font.<span class="me1">pointSize</span><span class="sy0">:</span><span class="nu0">12</span>
+ wrapMode<span class="sy0">:</span>wrap <span class="co1">//If the text line length exceeds the width property</span>
+ <span class="co1">//value the text will be wrapped (on word boundaries)</span>
+ text<span class="sy0">:</span>label <span class="co1">//A text property value is anything that results in to a string</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="Text_Component_Handling">Text Component Handling</span></h2>
+<p>As a first solution (and trivial one) for text blocks structuring we may define as many components as many text blocks we have. In the application code we include components in places where we need to display respective text blocks.
+</p><p>The second approach uses the possibility to bind a value to a QML element property at a later time - not when the element is defined. And we want to do this programmatically. In our text component we bind text property to another top level property (note it is of type string). This way the text component becomes a generic entity where different text property values could be bound when the component is used in the basic QML code. In other words, we use the text component as a template, instantiate it in different places and bind different text property values. That is what we call programmatically altering of text values.
+</p><p>The next point is how we could assign values in QML? As we know QML is a declarative language and it has no explicit operation assignment you may know from other procedural (imperative) languages. In QML we could bind a value in property definition. We may think about this as initializing of the property - the initial value could be changed later. This is similar as well for pre-defined properties as for own defined ones.
+</p><p>Another option is to construct a script block where assignment operation is allowed. There a few cases where we could define a script block. For example the value of an attached property of a signal could be a script block and what we will apply in the following examples.
+</p><p>Following the above ideas for text property altering we could have several approaches as explained bellow.
+</p>
+<h2><span class="mw-headline" id="Direct_Binding_of_a_Value">Direct Binding of a Value</span></h2>
+<p>The name of the main QML file is <i>LargeTexts.qml</i>.
+</p><p><b>LargeTexts.qml</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">//Main file</span>
+…
+<span class="co1">//*'''''' Scenario #1 ''''''</span>
+<span class="co1">//We may bind a text when we instantiate the component TextTemplate</span>
+ TextTemplate <span class="br0">&#123;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;Another sample text - Hello World&quot;</span>
+ <span class="br0">&#125;</span>
+<span class="co1">// End of Scenario #1</span>
+…
+<span class="co1">// End of main file</span></pre></div></div>
+<h2><span class="mw-headline" id="Use_of_Properties_Defined_at_Top_Level">Use of Properties Defined at Top Level</span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">//Main file</span>
+…
+<span class="co1">//Section of definition of top level entities</span>
+ property string topproperty<span class="sy0">:</span><span class="st0">&quot;Locate text block at the beginning of the file&quot;</span>
+…
+<span class="co1">//*'''''' Scenario #2 ''''''</span>
+<span class="co1">//We want to encapsulate the text block at the beginning of the file</span>
+ TextTemplate <span class="br0">&#123;</span>
+ label<span class="sy0">:</span> topproperty
+&#160;
+ <span class="br0">&#125;</span>
+<span class="co1">// End of Scenario #2</span>
+…
+<span class="co1">// End of main file</span></pre></div></div>
+<h2><span class="mw-headline" id="Bind_a_Value_Using_QML_Binding_Element">Bind a Value Using QML Binding Element</span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">//Main file</span>
+…
+<span class="co1">//Section of definition of top level entities</span>
+ property string newProperty<span class="sy0">:</span><span class="st0">&quot;Note that value of 'property' item in 'Binding'&quot;</span><span class="st0">''</span>
+<span class="st0">&quot;element is a string - double quotes.&quot;</span>
+…
+<span class="co1">//*'''''' Scenario #3 ''''''</span>
+<span class="co1">//The same as Scenario #2, but using element Binding</span>
+ Binding <span class="br0">&#123;</span>target<span class="sy0">:</span>bind<span class="sy0">;</span> property<span class="sy0">:</span><span class="st0">&quot;label&quot;</span><span class="sy0">;</span> value<span class="sy0">:</span>newProperty<span class="br0">&#125;</span>
+ TextTemplate <span class="br0">&#123;</span>id<span class="sy0">:</span>bind<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// End of Scenario #3</span>
+…
+<span class="co1">// End of main file</span></pre></div></div>
+<h2><span class="mw-headline" id="Use_onCompleted_Attached_Property">Use onCompleted Attached Property</span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">//Main file</span>
+…
+<span class="co1">//*'''* The following definitions are used by Scenario #4'''</span>
+ property string signalText
+ property string arrayText
+ Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span>startup
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span> <span class="br0">&#123;</span>
+ var complete <span class="sy0">=</span> <span class="st0">&quot;We are using onCompleted property&quot;</span><span class="sy0">;</span>
+ signalText<span class="sy0">=</span>complete<span class="sy0">;</span>
+ var elements<span class="sy0">=</span> <span class="br0">&#91;</span><span class="st0">&quot;text1&quot;</span><span class="sy0">,</span><span class="st0">&quot;text2&quot;</span><span class="sy0">,</span> <span class="st0">&quot;text3&quot;</span><span class="br0">&#93;</span><span class="sy0">;</span>
+ arrayText<span class="sy0">=</span>elements<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="co1">//*''''''* End of definitions ''''''</span>
+…
+<span class="co1">//*'''''' Scenario #4 ''''''</span>
+<span class="co1">//We use 'onCompleted' attached property to have a script element and</span>
+<span class="co1">//assign some values</span>
+&#160;
+TextTemplate <span class="br0">&#123;</span>id<span class="sy0">:</span>top1
+ label<span class="sy0">:</span> signalText
+ <span class="br0">&#125;</span>
+ TextTemplate <span class="br0">&#123;</span>
+ y<span class="sy0">:</span><span class="nu0">50</span>
+ paint<span class="sy0">:</span><span class="st0">&quot;red&quot;</span>
+ label<span class="sy0">:</span> arrayText
+ <span class="br0">&#125;</span>
+&#160;
+<span class="co1">// End of Scenario #4</span>
+…
+<span class="co1">// End of main file</span></pre></div></div>
+<h2><span class="mw-headline" id="Apply_a_JavaScript_Inline_Function">Apply a JavaScript Inline Function</span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">//Main file</span>
+…
+<span class="co1">//*'''* The following definitions are used by Scenario #5'''</span>
+ property string functAssignment<span class="sy0">:</span>assign<span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>
+ function assign<span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ var list <span class="sy0">=</span> <span class="br0">&#91;</span><span class="st0">&quot;textFragment1&quot;</span><span class="sy0">,</span> <span class="st0">&quot;textFragment2&quot;</span><span class="sy0">,</span> <span class="st0">&quot;textFragment3&quot;</span><span class="br0">&#93;</span><span class="sy0">;</span>
+ <span class="kw1">return</span> list<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="co1">//*''''''* End of definitions ''''''</span>
+…
+<span class="co1">//*'''''' Scenario #5 ''''''</span>
+<span class="co1">//An inline JavaScript function - assign() - is used to assign a value</span>
+&#160;
+TextTemplate <span class="br0">&#123;</span>
+ label<span class="sy0">:</span> functAssignment
+ <span class="br0">&#125;</span>
+&#160;
+<span class="co1">// End of Scenario #5</span>
+…
+<span class="co1">// End of main file</span></pre></div></div>
+<p>The third approach uses JavaScript constructs to define text blocks in a separate <i>.js</i> file. We recall that text property accepts as values anything that result in to a string. For example text property value could be an expression evaluated to a string. Particularly this value could be a string element of a JavaScript array.  The scheme is as follows:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">//Main file</span>
+import QtQuick <span class="nu16">1.0</span>
+import <span class="st0">&quot;arrayExt.js&quot;</span> as FileExt <span class="co1">//This file is used by Scenario #6</span>
+…
+<span class="co1">//*'''''' Scenario #6 ''''''</span>
+<span class="co1">//An external file - arrayExt.js - contains text blocks</span>
+&#160;
+TextTemplate <span class="br0">&#123;</span>
+ label<span class="sy0">:</span> FileExt.<span class="me1">externalArray</span><span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="co1">// End of Scenario #6</span>
+…
+<span class="co1">// End of main file</span>
+&#160;
+<span class="co1">//External javaScript file - arrayExt.js</span>
+<span class="coMULTI">/* This external JavaScript file contains the text blocks */</span>
+ var externalArray <span class="sy0">=</span> <span class="br0">&#91;</span><span class="st0">&quot;textblock1&quot;</span><span class="sy0">,</span><span class="st0">&quot;textblock2&quot;</span><span class="sy0">,</span><span class="st0">&quot;textblock3 -  use backslash to continue&quot;</span><span class="br0">&#93;</span><span class="sy0">;</span></pre></div></div>
+<p>Do you really need an array? If you prefer you may have a variable for each text block:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var text1 <span class="sy0">=</span> <span class="st0">&quot;textblock1&quot;</span><span class="sy0">;</span>
+var text2 <span class="sy0">=</span> <span class="st0">&quot;textblock2&quot;</span><span class="sy0">;</span>
+…</pre></div></div>
+<h2><span class="mw-headline" id="How_to_Format_a_Multi-line_Text">How to Format a Multi-line Text</span></h2>
+<p>As you know QML supports plain text as well as rich one. There is an essential difference here. QML Text element has built-in properties for text formatting like <i>font.bold</i>, <i>font.pointSize</i>, etc. When we use them they apply to the whole string being value of the text property. If you want to format a text fragment in your text block or even a separate word (symbol) you should use QML rich text mode. This of course supposes you have a background in HTML. Be aware that QML supports a sub-set of HTML/CSS - <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/richtext-html-subset.html">consult</a> for supported HTML/CSS constructs.
+The QML runtime includes a JavaScript engine and supports JavaScript, HTML and CSS. For instance, if you create a HTML file with your favorite WYSIWYG HTML editor (without deep HTML coding understanding) it is most probably that QML will accept this file when you define it as a text block. For example this HTML file from my HTML editor works with QML:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&lt;!</span>DOCTYPE html PUBLIC <span class="st0">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span> 
+&#160;
+<span class="st0">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</span><span class="sy0">&gt;</span>
+<span class="sy0">&lt;</span>html <span class="sy0">&gt;</span>
+&#160;
+<span class="sy0">&lt;</span>head<span class="sy0">&gt;</span>
+<span class="sy0">&lt;</span>meta content<span class="sy0">=</span><span class="st0">&quot;text/html; charset=utf-8&quot;</span> http<span class="sy0">-</span>equiv<span class="sy0">=</span><span class="st0">&quot;Content-Type&quot;</span> <span class="sy0">/&gt;</span>
+<span class="sy0">&lt;</span>title<span class="sy0">&gt;</span>Untitled <span class="nu0">1</span><span class="sy0">&lt;/</span>title<span class="sy0">&gt;</span>
+<span class="sy0">&lt;</span>style type<span class="sy0">=</span><span class="st0">&quot;text/css&quot;</span><span class="sy0">&gt;</span>
+ .<span class="me1">auto</span><span class="sy0">-</span>style2 <span class="br0">&#123;</span>
+ font<span class="sy0">-</span>family<span class="sy0">:</span> <span class="st0">&quot;Times New Roman&quot;</span><span class="sy0">,</span> Times<span class="sy0">,</span> serif<span class="sy0">;</span>
+ font<span class="sy0">-</span>size<span class="sy0">:</span> small<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ .<span class="me1">auto</span><span class="sy0">-</span>style3 <span class="br0">&#123;</span>
+ background<span class="sy0">-</span>color<span class="sy0">:</span> <span class="co2">#FFFF00;</span>
+ <span class="br0">&#125;</span>
+<span class="sy0">&lt;/</span>style<span class="sy0">&gt;</span>
+<span class="sy0">&lt;/</span>head<span class="sy0">&gt;</span>
+&#160;
+<span class="sy0">&lt;</span>body<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>p<span class="sy0">&gt;&lt;</span>b<span class="sy0">&gt;</span>Header text<span class="sy0">&lt;/</span>b<span class="sy0">&gt;&lt;</span>br<span class="sy0">/&gt;&lt;/</span>p<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>span <span class="kw2">class</span><span class="sy0">=</span><span class="st0">&quot;auto-style3&quot;</span><span class="sy0">&gt;</span>This is paragraph text<span class="sy0">&lt;/</span>span<span class="sy0">&gt;</span> 
+&#160;
+ <span class="sy0">&lt;</span>hr <span class="sy0">/&gt;</span>
+<span class="sy0">&lt;/</span>body<span class="sy0">&gt;</span> 
+&#160;
+<span class="sy0">&lt;/</span>html<span class="sy0">&gt;</span></pre></div></div>
+<p>Now return to the case of plain text. Suppose we have a text header and a paragraph and want to format them differently- for example the header to be bold and colored. The simplest solution is to have two separate Text elements - one for the header and one for the paragraph. The better solution is to
+encapsulate somehow the both constructs. To do this we may nest Text elements like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> <span class="nu0">360</span>
+ height<span class="sy0">:</span> <span class="nu0">360</span>
+ Text <span class="br0">&#123;</span>id<span class="sy0">:</span>top
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ color<span class="sy0">:</span><span class="st0">&quot;lightblue&quot;</span>
+ font.<span class="me1">bold</span><span class="sy0">:</span><span class="kw2">true</span>
+ text<span class="sy0">:</span> <span class="st0">&quot;Header Level&quot;</span>
+ Text <span class="br0">&#123;</span>id<span class="sy0">:</span>nested
+ anchors.<span class="me1">top</span><span class="sy0">:</span>parent.<span class="me1">bottom</span>
+ anchors.<span class="me1">topMargin</span><span class="sy0">:</span><span class="nu0">20</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ text<span class="sy0">:</span><span class="st0">&quot;Paragraph Level&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>When we are dealing with a multi-line text in QML an important issue is how text is wrapped. Use QML <i>Text</i> element property <i>wrapMode</i>. It takes several <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">enumerated values</a> . For example you may use <i>Text.WordWrap</i> as it is done in our text component example. In this mode the text is wrapped on words boundaries. You have to define the <i>Text</i> element <i>width</i> property if want <i>wrapMode</i> to take effect.
+</p><p>You may fix the length of each line in a multi-line text using so called hard breaks. In a plain text use control symbol '<b> to mark line end. In a rich text we use <i><br /></i> tag.</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Text <span class="br0">&#123;</span>id<span class="sy0">:</span>text4
+ text<span class="sy0">:</span><span class="st0">&quot;Plain text - first line<span class="es1">\n</span> Plain text - second line<span class="es1">\n</span>&quot;</span>
+<span class="br0">&#125;</span>
+Text <span class="br0">&#123;</span>
+ anchors.<span class="me1">top</span><span class="sy0">:</span>text4.<span class="me1">bottom</span>
+ text<span class="sy0">:</span><span class="st0">&quot;&lt;b&gt;Rich text - third line&lt;/b&gt;&lt;br&gt;&lt;i&gt;Rich text - Fourth line&lt;/i&gt;&quot;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>This approach is not recommended especially in cases the text changes often. Instead define the <i>width</i> property of the <i>Text</i> element and apply <i>wrapMode</i> property to have text block adapted to the text frame automatically.
+</p><p>Mixing QML, JavaScript and HTML/CSS constructs it is very easy to run into some syntax issues with some control symbols. The first problem comes from double quotes. They are used in QML as well in HTML/CSS also. The simplest solution seems to be replacing double quotes in text property with single ones or vice-verse. Of course you may use escape sequence '<b> also like this:</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+ width<span class="sy0">:</span> <span class="nu0">360</span>
+ height<span class="sy0">:</span> <span class="nu0">360</span>
+ Text <span class="br0">&#123;</span>id<span class="sy0">:</span>text1
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ text<span class="sy0">:</span> <span class="st0">'&lt;p&gt; &lt;span &gt;Sample text&lt;/span&gt;&lt;/p&gt;'</span>
+ <span class="br0">&#125;</span>
+ Text <span class="br0">&#123;</span>id<span class="sy0">:</span>text2
+ anchors.<span class="me1">top</span><span class="sy0">:</span>text1.<span class="me1">bottom</span>
+ text<span class="sy0">:</span> <span class="st0">&quot;&lt;p&gt; &lt;span &gt;Sample text&lt;/span&gt;&lt;/p&gt;&quot;</span>
+ <span class="br0">&#125;</span>
+ Text <span class="br0">&#123;</span>id<span class="sy0">:</span>text3
+ anchors.<span class="me1">top</span><span class="sy0">:</span>text2.<span class="me1">bottom</span>
+ text<span class="sy0">:</span> <span class="st0">&quot;&lt;p&gt; &lt;span style=quot;color:blackquot;&gt;Sample text&lt;/span&gt;&lt;/p&gt;&quot;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>When composing your text block in Qt Quick or other editors you will want to break each line of the text to fit on the screen without any scrolling. If such a block is defined in a script element we have to keep to rules for string splitting in multiple lines. Otherwise you get a message like "<i>Parse error</i>". The proposed solution is: before breaking a text line add a control symbol for string continuation - _. Probably you know it from other programming languages.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+ property string new1
+ property string split
+ property string how<span class="sy0">:</span><span class="st0">&quot;String bound to a property
+is split in two lines&quot;</span>
+ width<span class="sy0">:</span> <span class="nu0">360</span>
+ height<span class="sy0">:</span> <span class="nu0">360</span>
+&#160;
+Text <span class="br0">&#123;</span>id<span class="sy0">:</span>text0
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ text<span class="sy0">:</span>how
+ <span class="br0">&#125;</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span> <span class="br0">&#123;</span>new1<span class="sy0">=</span><span class="st0">&quot;Not allowed
+splitting&quot;</span><span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span> <span class="br0">&#123;</span>split<span class="sy0">=</span><span class="st0">&quot;Use backslash to split a string defined in a script element&quot;</span><span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Text <span class="br0">&#123;</span>id<span class="sy0">:</span>text00
+ anchors.<span class="me1">top</span><span class="sy0">:</span>text0.<span class="me1">bottom</span>
+ text<span class="sy0">:</span>split
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="Make_Your_Text_Block_Flickable">Make Your Text Block Flickable</span></h2>
+<p>It is obvious that for bigger text blocks we should make them somehow scrollable. QML offers a very useful construct <i>Flickable</i> for these purposes. Recall the <i>Flickable</i> <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-flickable.html">construct from</a>. The main question here is what should be the width and height dimensions of the flickable area. You may fix them, but it is not recommendable. The <i>width</i>
+property depends on the page design rather. Inherit the <i>width</i> value from <i>Flickable</i> parents. For <i>height</i> property we may use properties binding and calculate <i>Flickable height</i> programmatically. Assume we have three <i>Text</i> elements included in <i>Flickable</i> element that have IDs like this: <i>id:element1</i>,
+<i>id:element2</i> and <i>id:element3</i>. Then <i>Flickable</i> element <i>height</i> property could be calculated as:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Flicable <span class="br0">&#123;</span>
+…
+height<span class="sy0">:</span>element1.<span class="me1">height</span><span class="sy0">+</span>element2.<span class="me1">height</span><span class="sy0">+</span>element3.<span class="me1">height</span><span class="sy0">+</span><span class="nu0">200</span>
+…
+<span class="br0">&#125;</span>  <span class="co1">//end of Flickable</span></pre></div></div>
+<p> 
+Note: You may get a demo file illustrating the discussed constructs. Download it at <a rel="nofollow" class="external text" href="http://bit.ly/1jNwAAu">Syncho Server</a>
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.271 seconds
+Real time usage: 0.280 seconds
+Preprocessor visited node count: 181/1000000
+Preprocessor generated node count: 400/1000000
+Post‐expand include size: 1324/2097152 bytes
+Template argument size: 426/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1376-0!*!0!!en!*!* and timestamp 20151104130826 and revision id 16006
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexc4c0.html?title=QML_Multi-line_Texts_Handling&amp;oldid=16006">http://wiki.qt.io/index.php?title=QML_Multi-line_Texts_Handling&amp;oldid=16006</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Developing_with_Qt__Qt_Quick.html" title="Category:Developing with Qt::Qt Quick">Developing with Qt::Qt Quick</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=1b2416a3fb0afaf8&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="QML_Multi-line_Texts_Handling.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_QML_Multi-line_Texts_Handling.html?title=Talk:QML_Multi-line_Texts_Handling&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="QML_Multi-line_Texts_Handling.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index5008.html?title=QML_Multi-line_Texts_Handling&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index43cd.html?title=QML_Multi-line_Texts_Handling&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/QML_Multi-line_Texts_Handling.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/QML_Multi-line_Texts_Handling.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="indexc4c0.html?title=QML_Multi-line_Texts_Handling&amp;oldid=16006" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index0520.html?title=QML_Multi-line_Texts_Handling&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:27.</li>
+											<li id="footer-info-viewcount">This page has been accessed 3,215 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":239});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=QML_Multi-line_Texts_Handling&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:29:49 GMT -->
+</html>

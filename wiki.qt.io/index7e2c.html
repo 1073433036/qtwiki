@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_5_from_Git&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:15:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for Building Qt 5 from Git - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building_Qt_5_from_Git","wgTitle":"Building Qt 5 from Git","wgCurRevisionId":19736,"wgRevisionId":0,"wgArticleId":129,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building_Qt_5_from_Git","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building_Qt_5_from_Git skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for Building Qt 5 from Git</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/Building_Qt_5_from_Git" title="Building Qt 5 from Git">Building Qt 5 from Git</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{LangSwitch}}
+[[Category:HowTo]]
+[[Category:Developing with Qt]]
+
+This article provides hints for checking out and building the modularized Qt 5 from Git, on '''desktop''' platforms.
+
+To compile Qt Creator, see [[Building Qt Creator from Git]].
+
+== System Requirements ==
+
+=== All desktop platforms ===
+
+* Git ('''>= 1.6.x''')
+* Perl ('''>=5.14''')
+* Python ('''>=2.6.x''')
+* A working C++ compiler
+
+For more detailed information, see [http://doc.qt.io/qt-5/build-sources.html Building Qt Sources]
+
+==== SSL (optional) ====
+
+See [http://doc.qt.io/qt-5/ssl.html#enabling-and-disabling-ssl-support Enabling and Disabling SSL Support]
+
+==== WebKit (optional) ====
+
+* bison
+* flex
+* gperf
+* [http://www.ruby-lang.org/ Ruby]
+* [http://site.icu-project.org/ ICU]
+
+For Windows, ''bison'', ''flex'' and ''gperf'' are provided with the source code at ''c:\pathToQt\gnuwin32\bin''. Get Ruby from http://rubyinstaller.org/. You can download the precompiled ICU packages from [http://download.qt.io/development_releases/prebuilt/icu/prebuilt/ download.qt.io], or see [[Compiling-ICU]] to compile your own.
+
+=== Linux/X11 ===
+
+==== apt-get build-dep ====
+
+Ubuntu/Debian based systems have a convenient way of installing build-depends for any package:
+
+ sudo apt-get build-dep qt5-default
+
+RPM-based distros with yum offer a similar tool called yum-builddep.
+
+==== Convenience packages (Ubuntu 11.10 -- 12.10 only) ====
+
+For Ubuntu/Debian, Gabor Loki has provided a custom PPA with the [https://launchpad.net/~u-szeged/+archive/sedkit sedkit-env-webkit] meta package that installs all required dependencies for building Qt/Qt WebKit. You can add the PPA by calling:
+
+ sudo apt-add-repository ppa:u-szeged/sedkit &amp;&amp;\
+ sudo apt-get update &amp;&amp;\
+ sudo apt-get install sedkit-env-qtwebkit
+
+For other distros, get the separate components below.
+
+==== Build essentials ====
+{| border="1" style="border-collapse:collapse"
+| '''Ubuntu/Debian:'''
+| &lt;code>sudo apt-get install build-essential perl python git&lt;/code>
+|-
+| '''Fedora:'''
+| &lt;code>su - -c "yum install perl-version"&lt;/code>
+|-
+| '''OpenSUSE:'''
+| &lt;code>sudo zypper install git-core gcc-c++ make&lt;/code>
+|}
+
+==== Libxcb ====
+
+[http://xcb.freedesktop.org/ Libxcb] is now the default window-system backend for platforms based on X11/Xorg, and you should therefore install libxcb and its accompanying packages. Qt5 should build with whatever libxcb version is available in your distro's packages (but you may optionally wish to use v1.8 or higher to have threaded rendering support). The [http://code.qt.io/cgit/qt/qtbase.git/tree/src/plugins/platforms/xcb/README README] lists the required packages.
+
+{| border="1" style="border-collapse:collapse"
+| '''Ubuntu/Debian:'''
+| &lt;code>sudo apt-get install "^libxcb.*" libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev&lt;/code>
+|-
+| '''Fedora up to 16:'''
+| &lt;code>su - -c "yum install libxcb libxcb-devel xcb-util xcb-util-devel"&lt;/code>
+|-
+| '''Fedora 17+:'''
+| &lt;code>su - -c "yum --enablerepo=updates install libxcb libxcb-devel xcb-util xcb-util-devel xcb-util-*-devel libX11-devel libXrender-devel libXi-devel"&lt;/code>
+Note: xcb-util-renderutil is currently available in the updates repository until it goes stable
+|-
+| '''OpenSUSE 12+:'''
+| &lt;code>sudo zypper in xorg-x11-libxcb-devel xcb-util-devel xcb-util-image-devel xcb-util-keysyms-devel xcb-util-renderutil-devel xcb-util-wm-devel xorg-x11-devel libxkbcommon-devel libXi-devel&lt;/code>
+|-
+| '''ArchLinux:'''
+| &lt;code>sudo pacman -S --needed libxcb xcb-proto xcb-util xcb-util-image xcb-util-wm libxi&lt;/code>
+|-
+| '''Chakra Linux:'''
+| Install the ArchLinux packages, plus xcb-util-keysyms. It's available from CCR.
+|-
+| '''Mandriva/ROSA/Unity:'''
+| &lt;code>urpmi 'pkgconfig(xcb)' 'pkgconfig(xcb-icccm)' 'pkgconfig(xcb-image)' 'pkgconfig(xcb-renderutil)' 'pkgconfig(xcb-keysyms)' 'pkgconfig(xrender)'&lt;/code>
+|-
+| '''Centos 5/6 '''
+| Install missing Qt build dependencies:
+ yum install libxcb libxcb-devel xcb-util xcb-util-devel
+
+Install Red Hat DevTools 1.1 for CentOS-5/6 x86_64, they are required due to outdated GCC shipped with default CentOS:
+ wget http://people.centos.org/tru/devtools-1.1/devtools-1.1.repo -O /etc/yum.repos.d/devtools-1.1.repo
+ yum install devtoolset-1.1
+
+Initialise your newly installed dev tools:
+ scl enable devtoolset-1.1 bash
+ # Test - Expect to see gcc version 4.7.2 ('''not''' gcc version 4.4.7)
+ gcc -v
+
+For more info on preparing the environment on '''CentOS''', see [http://forum.qt.io/topic/30140 this thread].
+|}
+
+====OpenGL support====
+
+For Qt Quick 2 a graphics driver with native OpenGL 2.0 support is highly recommended.
+
+====Accessibility====
+
+It is recommended to build with accessibility enabled, install '''libatspi 2''' and '''libdbus-1''' development packages.
+
+====Qt WebKit====
+
+{| border="1" style="border-collapse:collapse"
+| '''Ubuntu/Debian:'''
+| &lt;code>sudo apt-get install flex bison gperf libicu-dev libxslt-dev ruby&lt;/code>
+|-
+| '''Fedora:'''
+| &lt;code>su - -c "yum install flex bison gperf libicu-devel libxslt-devel ruby"&lt;/code>
+&lt;/code>
+|-
+| '''OpenSUSE:'''
+| &lt;code>sudo zypper install flex bison gperf libicu-devel ruby&lt;/code>
+|-
+| '''Mandriva/ROSA/Unity:'''
+| &lt;code>urpmi gperf&lt;/code>
+|}
+
+====Qt WebEngine====
+
+{| border="1" style="border-collapse:collapse"
+| '''Ubuntu/Debian:'''
+| &lt;code>sudo apt-get install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libfontconfig1-dev&lt;/code>. Additional dependencies on Ubuntu 14.04: &lt;code>sudo apt-get install libcap-dev libbz2-dev libgcrypt11-dev libpci-dev libnss3-dev build-essential libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdrm-dev libfontconfig1-dev libxtst-dev libasound2-dev gperf libcups2-dev libpulse-dev libudev-dev libssl-dev flex bison ruby&lt;/code>
+|-
+| '''Fedora:'''
+| &lt;code>sudo yum install "qt5-*"; sudo yum install libgcrypt-devel libgcrypt pciutils-devel nss-devel libXtst-devel gperf cups-devel pulseaudio-libs-devel libgudev1-devel systemd-devel libcap-devel alsa-lib-devel flex bison ruby gcc-c++ dbus libXrandr-devel libXcomposite-devel libXcursor-devel dbus-devel fontconfig-devel
+&lt;/code>
+|-
+| '''OpenSUSE:'''
+| &lt;code>sudo zypper install libcap-devel pciutils-devel dbus-1-devel fontconfig-devel atk-devel mozilla-nss-devel alsa-devel&lt;/code>
+|-
+| '''Mandriva/ROSA/Unity:'''
+| &lt;code>urpmi gperf&lt;/code>
+|}
+
+==== Qt Multimedia ====
+
+You'll need at least alsa-lib ('''>= 1.0.15''') and gstreamer ('''>=0.10.24''') with the base-plugins package.
+
+{| border="1" style="border-collapse:collapse"
+| '''Ubuntu/Debian:'''
+| &lt;code>sudo apt-get install libasound2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev&lt;/code>
+|}
+
+=== OS X ===
+
+Install the latest Xcode from the App Store. Verify that your Xcode install is properly set up for command line use:
+
+ xcodebuild -version &amp;&amp; xcodebuild -showsdks
+
+This should give you eg:
+
+ Xcode 6.2
+ Build version 6C131e
+
+ OS X SDKs:
+  OS X 10.9                     	-sdk macosx10.9
+  OS X 10.10                    	-sdk macosx10.10
+
+ iOS SDKs:
+  iOS 8.2                       	-sdk iphoneos8.2
+
+ iOS Simulator SDKs:
+  Simulator - iOS 8.2           	-sdk iphonesimulator8.2
+
+You can verify that the right Xcode is being used by running:
+
+ xcode-select --print-path
+
+If this points to /Developer you're probably using an older Xcode version. Switch to the latest one by running:
+
+ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+
+=== Windows ===
+
+==== Windows Graphics Drivers ====
+
+Qt Quick 2 requires OpenGL 2.1 or higher or OpenGL ES 2.0 to work.
+
+In Windows, two options are available:
+# Use the [http://code.google.com/p/angleproject/ ANGLE-library] to translate OpenGL calls into ''DirectX'' (default)
+# Use the native OpenGL driver for your graphics card
+
+A copy of ANGLE is bundled in Qt 5. To use Option 1, you need to install the [http://msdn.microsoft.com/en-us/directx/default.aspx DirectX SDK] (Note: Starting from Windows Kit 8, this is included in the Windows SDK). You'll also need to add the path to &lt;tt>d3d_compiler&lt;xx>.dll&lt;/tt> to the &lt;tt>PATH&lt;/tt> variable, if it's not there already:
+
+''"Any project that uses run-time shader compilation must have D3DCOMPILER_xx.DLL copied to the local executable path for the project. This DLL is available in this sub-directory of the Windows SDK installation under %ProgramFiles(x86)%\Windows Kits\8.0\Redist\D3D\&lt;arch> or %ProgramFiles(x86)%\Windows Kits\8.1\Redist\D3D\&lt;arch> where &lt;arch> is x86 and x64."'' - [https://msdn.microsoft.com/en-us/library/windows/desktop/ee663275.aspx]
+
+To use Option 2, you need to ensure that your graphics card driver supports OpenGL 2.1 or higher (Note: The stock Windows driver only supports OpenGL 1.1, which is insufficient), and pass &lt;tt>-opengl desktop&lt;/tt> to configure.exe.
+
+==== Supported Compilers on Windows ====
+
+* Visual Studio 2013
+* Visual Studio 2012
+* Visual Studio 2010 or Windows SDK v7.0A (upgradable to Windows SDK v7.1)
+* Visual Studio 2008 or Windows SDK v6.0A (upgradable to Windows SDK v6.1)
+* MinGW-w64 based compiler with ''g++'' version 4.7 or higher (e.g. [http://sourceforge.net/projects/mingwbuilds/ MinGW-builds], see also [[MinGW-64-bit]]).
+
+Notes:
+* Add compiler to the PATH environment variable.
+* Windows SDK v6.0A/v7.0A contains the same compiler as Visual Studio 2008/2010.
+* Windows SDK 8.0 and later do not include a compiler.
+* As of 16.3.2012, if you wish to install both Visual Studio 2010 and the standalone SDK, you need to follow this order (see readme.html provided with the service pack):
+*# Install Visual Studio 2010
+*# Install Windows SDK 7.1. See also the [[Cannot Install Windows SDK]] page.
+*# Install Visual Studio 2010 SP1
+*# Install Visual C++ 2010 SP1 Compiler Update for the Windows SDK 7.1
+
+==== Windows Build environment ====
+
+We recommend creating a command prompt that provides the build environment (see the [http://code.qt.io/cgit/qt-creator/qt-creator.git/tree/README.md Qt Creator README] ). In this environment, ''Python'' (e.g. ''[http://www.python.org/download/releases/ Active Python] 2.7'' later) and ''Perl'' (e.g. ''[http://strawberryperl.com/ StrawberryPerl] 5.12'' or later) should be in the ''PATH''.
+[http://rubyinstaller.org/downloads/ Ruby ] is required for WebKit.
+
+'''Hint''': Make sure that ''Perl'' is added to the path in front of ''git'' since that ships an outdated version (''Perl'' 5.8), which will cause the scripts to fail.
+
+Multicore building: To speed up building when using ''nmake'', the compiler can be instructed to use all available CPU cores in one of the following ways:
+* Pass the option ''-MP'' to Qt's ''configure''
+* Set the environment variable ''CL'' (specifying Visual Studio compiler options) to ''/MP'' (On the command line: &lt;tt>set CL=/MP&lt;/tt>)
+* Use the tool [[jom]] instead of nmake. (Using jom instead of nmake reduces compile time quite a bit)
+
+==== Configuring Visual Studio 2013 on Windows 8, 8.1 &amp; 10 ====
+
+Setting the environment variables to properly build Qt can be done by following the steps below:
+* Create a file called qt5vars.cmd, paste the following inside it and save it
+'''Hint''': Remember to change &lt;arch> to your desired platform and double-check that the paths are correct for Qt and Visual Studio
+&lt;pre style="word-wrap: break-word;">
+REM Set up \Microsoft Visual Studio 2013, where &lt;arch> is \c amd64, \c x86, etc.
+CALL "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" &lt;arch>
+SET _ROOT=C:\qt5
+SET PATH=%_ROOT%\qtbase\bin;%_ROOT%\gnuwin32\bin;%PATH%
+REM Uncomment the below line when using a git checkout of the source repository
+REM SET PATH=%_ROOT%\qtrepotools\bin;%PATH%
+SET QMAKESPEC=win32-msvc2013
+SET _ROOT=
+&lt;/pre>
+
+Complete the steps below after you have cloned Qt5 from Git
+
+* After having cloned Qt5 from Git (assuming its at C:\Qt5), move qt5vars.cmd to the Qt5 folder
+* Navigate to C:\Qt5 on cmd and run the script by typing qt5vars.cmd and pressing enter
+
+'''Hint''': It is recommended but not necessary to create a desktop link that opens a command prompt with the environment set up. This can be done by specifying the following command as application:
+&lt;pre style="word-wrap: break-word;">
+%SystemRoot%\system32\cmd.exe /E:ON /V:ON /k c:\Qt5\qt5vars.cmd
+&lt;/pre>
+
+The working directory should be c:\Qt5
+
+All the required environment variables are now correctly set up and building Qt5 with nmake should work now. 
+You have to run qt5vars.cmd everytime you open up Windows cmd to build Qt5 with nmake if you have NOT created a desktop link as suggested above.
+
+The above steps also work for setting up nmake to build [[jom]].
+
+
+====ICU on Windows====
+
+Qt 5 can make use of the [http://site.icu-project.org/ ICU] library for UNICODE and Globalization support. This is '''required''' for building Qt WebKit. You can use precompiled versions of ICU with a Visual Studio 2010 dependency from the website, get precompiled verisons for different compilers from [http://download.qt.io/development_releases/prebuilt/icu/prebuilt/ download.qt.io], or [[Compiling ICU|compile ICU on your own]].
+
+At compile time, the absolute paths of ''include'' and ''lib'' folders of the ICU installation must be appended to ''INCLUDE'' and ''LIB'' environment variables after calling the setup script of the Windows SDK.
+
+At run-time, the ICU DLLs need to be found. This can be achieved by copying the DLLs to the application folder or adding the ''bin'' folder of the ICU installation to the ''PATH'' environment variable.
+
+
+==Getting the source code==
+
+First clone the top-level Qt 5 git repository:
+
+ $ git clone &lt;nowiki>git://code.qt.io/qt/qt5.git&lt;/nowiki>
+
+or (if you're behind a firewall and want to use the https protocol):
+
+ $ git clone &lt;nowiki>https://code.qt.io/qt/qt5.git&lt;/nowiki>
+
+Then check out the target branch (see [[Branch Guidelines]]):
+
+ $ cd qt5
+ $ git checkout 5.5
+
+Following the [http://code.qt.io/cgit/qt/qt5.git/tree/README.git README.git] we initialize the repository using the script ''init-repository'' which clones the various sub-modules of Qt 5. Relevant options:
+
+* &lt;tt>--no-webkit&lt;/tt> : Consider skipping qtwebkit by passing this option. This module is quite big, takes a long time to compile and is often a source of compile errors, so it is recommend to only download it if you intend to use it. You can always re-run init-repository later on to add it.
+* &lt;tt>--codereview-username &lt;Jira/Gerrit username>&lt;/tt> : If you plan to contribute to Qt, you should specify your [[Gerrit Introduction| codereview username]] so that the git remotes are properly set up.
+
+ $ cd qt5
+ $ perl init-repository
+
+In order to build a specific release of Qt, you can checkout the desired tag but only after init-repository has been run:
+
+ $ cd qt5
+ $ git checkout v5.5.0
+
+More information can be found in [[Get The Source]].
+
+== Configuring and Building ==
+
+The Qt5 build system should be fairly resilient against any "outside distractions" - it shouldn't matter whether you have other Qt versions in PATH, and QTDIR is entirely ignored. However, make sure that you have no qmake-specific environment variables like QMAKEPATH or QMAKEFEATURES set, and the qmake -query output does not refer to any other Qt versions ($HOME/.config/Trolltech/QMake.conf should be empty).
+
+For more configure options see [http://doc.qt.io/qt-5/configure-options.html Qt Configure Options].
+
+Configure the build (from top level dir). Disabling tests and examples will greatly speed up compilation:
+
+For Linux / OS X:
+
+ $ ./configure -developer-build -opensource -nomake examples -nomake tests
+
+For Windows:
+
+ $ configure -developer-build -opensource -nomake examples -nomake tests
+
+The &lt;tt>-developer-build&lt;/tt> options export more symbols than in a traditional Qt build in order to allow more classes and functions to be unit tested. It also defaults to a 'debug' build, and installs the binaries in the current directory, avoiding the need for 'make install'. '-opensource' sets the license to be LGPL 2.1. The &lt;tt>-nomake examples&lt;/tt> and &lt;tt>-nomake tests&lt;/tt> parameters make sure examples and tests aren't compiled by default. You can always decide to compile them later by hand.
+
+'''Some Hints'''
+
+# On Linux, you should also pass &lt;tt>-no-gtkstyle&lt;/tt>. This is because on a number of systems (at least SUSE and Gentoo) &lt;tt>pkg-config --cflags gtk+–2.0&lt;/tt> actually returns paths that include the system Qt 4.x include directories.
+# You can add &lt;tt>-confirm-license&lt;/tt> to get rid of the question whether you agree to the license.
+# On Windows, you might not be able to build if &lt;tt>sh.exe&lt;/tt> is in your ''PATH'' (for example due to a ''git'' or ''msys'' installation). Such an error is indicated by &lt;tt>qt5-src\qtbase\bin\qmake.exe: command not found&lt;/tt> and alike. In this case, make sure that &lt;tt>sh.exe&lt;/tt> is ''not'' in your path. You will have to re-configure if your installation is already configured.
+
+Now trigger the build by running:
+
+ $ make -j4
+
+For Windows (MSVC), choose one of the following, depending on your setup/environment:
+
+ $ nmake
+
+or
+
+ $ jom
+
+or
+
+ $ mingw32-make
+
+Or only build a specific module, e.g. declarative, and modules it depends on:
+
+ $ make module-qtdeclarative
+
+=== Building Qt WebKit ===
+
+==== Windows ====
+
+[http://trac.webkit.org/wiki/BuildingQtOnWindows WebKit.org] has instructions for building WebKit on Windows. [http://site.icu-project.org/ ICU] is required for building.
+
+The tools ''bison'', ''flex'' and ''gperf'' which are required for building are provided for convenience in the folder ''gnuwin32\bin''. If you are using shadow builds, you must add this directory to your &lt;tt>PATH&lt;/tt>, else no special actions need to be done manually in order to use them.
+
+== Installing (Linux / OS X) ==
+
+* '''Note:''' Installation is only needed if you haven't used the configure options &lt;tt>-developer-build&lt;/tt> or &lt;tt>-prefix "%PWD%/qtbase"&lt;/tt>. Otherwise you can just use Qt from the build directory.
+
+To install, run
+
+ $ make install
+
+== Cleaning ==
+
+To get a '''really''' clean tree use:
+
+ $ git submodule foreach --recursive "git clean -dfx" &amp;&amp; git clean -dfx
+
+since make confclean no longer works from the top-level of the repo.
+
+== Getting updates ==
+
+To update both the qt5.git repo as well as the submodules to the list of revisions that are known to work, run
+
+ $ git pull
+ $ perl init-repository -f
+
+In addition, you should pass the same parameters to init-repository as you did in "Getting the source code".
+
+Unlike a "normal" git submodule update, this ensures that any changes to the module structure are automatically pulled as well.
+
+If you are planning to do nightly builds, consider using the script ''qt5_tool'' that lives in ''qtrepotools/bin''. It provides options for updating the repository, cleaning and building. For example, &lt;tt>qt5_tool -u -c -b&lt;/tt> can be used to clean, update and build. &lt;tt>qt5_tool -p -c- b&lt;/tt> would be used to pull all modules to the head of their master branches.
+
+Depending upon what changed in the source since it was last updated you might have to run configure again. To be really sure everything gets built, you can run clean first, then configure and make.
+
+* '''Hint1:''' The submodule update does a checkout in submodules, potentially hiding any local commits you've done. If the latter happened to you (and you haven't been working with branches anyhow), &lt;tt>git reflog&lt;/tt> is your friend.
+* '''Hint2:''' When creating scripts for updates on Windows, note that &lt;tt>git clean&lt;/tt> often fails if some process locks a file or folder.
+
+== Using latest branches in the submodules ==
+
+By default, the checkout will not contain the latest stable/dev branches of each individual submodule repository, but a combination of versions that are known to work together. If you want to get the absolute latest stuff you can do so on a per-module basis, e.g.
+
+ $ cd qtdeclarative
+ $ git fetch
+ $ git checkout -b 5.5 origin/5.5
+
+or tell init-repository to check out branches in all repositories:
+
+ $ perl init-repository -f --branch
+
+However, there's a good chance that compilation will fail due to incompatible versions of submodules. You might want to ask other persons actively working on a module how to resolve these incompatibilities.
+
+Some [[Unix shell tricks for developing Qt]] can be useful when you are making or reviewing changes in multiple modules.
+
+==Issues==
+
+===Linux===
+
+====configure fails with "No QPA platform plugin enabled!" (Linux)====
+
+You should install the libxcb and it's accompanying packages, see 'System Requirements'.
+
+====configure fails with errors like "cannot stat file ..."====
+
+Your perl version is too old, Qt 5 beta1 needs at least 5.14.
+
+====qmlscene segfaults "Cannot create platform GL context, none of GLX, EGL, DRI2 is enabled" (Linux)====
+
+Try installing the libx11-xcb-dev package:
+
+ $ sudo apt-get install libx11-xcb-dev
+
+afterwards you have to re-run configure and force qtbase/src/plugins/platforms/xcb to recompile.
+
+====WebKit doesn't compile, missing ICU====
+
+Currently there is no configure time check for ICU, so install it through the package manager through
+
+====on Ubuntu/Debian:====
+
+ $ sudo apt-get install libicu-dev
+
+====on Fedora:====
+
+ $ su - -c "yum install libicu-devel"
+
+* You can also compile Qt without Qt WebKit by deleting / renaming the qtwebkit, qtwebkit-examples-and-demos directories.
+* The --no-webkit option of configure added, see [https://bugreports.qt.io/browse/QTBUG-20577 QTBUG-20577] issue.
+
+==== Qt D-Bus fails to build due to "inconsistent user-defined literal suffixes" ====
+
+This occours when you attempt to build Qt 5 with GCC 4.7 while D-Bus &lt; 1.4.20 is present on your system. (For example, the default Fedora 17 installation is prone to this error.) The error message is this:
+
+ qdbusinternalfilters.cpp:124:36: error: inconsistent user-defined literal suffixes ‘DBUS_INTROSPECT_1_0_XML_PUBLIC_IDENTIFIER’ and ‘DBUS_INTROSPECT_1_0_XML_SYSTEM_IDENTIFIER’ in string literal
+
+'''Note:''' The error is in the header files of D-Bus itself, and it has been fixed upstream, see https://bugs.freedesktop.org/show_bug.cgi?id=46147.
+
+'''Solution:''' either upgrade to a newer version of D-Bus or edit that one line of the header file manually.
+
+==== ...::isNull is not defined (from qvariant_p.h) ====
+
+C++11 support is detected while your GCC doesn't properly support it. Fixed by passing &lt;tt>-no-c11&lt;/tt> to the configure options.
+
+====cc1: fatal error: .pch/release-shared/QtGui: No such file or directory====
+
+Currently unresolved bug with the build of assembly files, see discussion at http://comments.gmane.org/gmane.comp.lib.qt.devel/5933&lt;br/>
+Fixed by passing &lt;/tt>-no-pch&lt;/tt> to the configure options.
+
+====ld: hidden symbol `void QQmlThread::postMethodToThread&lt;QQmlDataBlob*, QQmlDataBlob*, QQmlDataLoaderThread>(void (QQmlDataLoaderThread::''')(QQmlDataBlob'''), QQmlDataBlob* const&amp;)' isn't defined====
+
+Bug with GCC versions &lt; 4.4.x, see bug report at https://bugzilla.redhat.com/show_bug.cgi?id=493929. Fixed by adding &lt;tt>QMAKE_CXXFLAGS_RELEASE *= -fno-inline&lt;/tt> in ''qtdeclarative/src/qml/qml.pro''.
+
+==== Touchscreen (or Wacom tablet) doesn't work ====
+
+Qt depends on having libxi (including development headers), supporting XInput protocol 2.2 or higher, available at build time in order to have multi-touch support. Otherwise configure will fall back to XInput 2.0 which does not support touchscreens. To prove that is the problem, try this:
+
+ $ export QT_XCB_DEBUG_XINPUT_DEVICES=1
+
+and try your Qt application again. At startup, Qt will enumerate the input devices available, like this
+
+ XInput version 2.2 is available and Qt supports 2.2 or greater
+ input device … (keyboard, mouse etc.) …
+ input device Advanced Silicon S.A CoolTouch™ System
+ has valuator "Abs MT Position X" recognized? true
+ has valuator "Abs MT Position Y" recognized? true
+ has touch class with mode 1
+ it's a touchscreen with type 0 capabilities 0x21 max touch points 10
+
+If it does not say Qt supports 2.2 or greater, it means the headers weren't available when Qt was built, so the support for touch was not included. If you do have 2.2 or greater but it doesn't say it's a touchscreen at the end, there may be some other problem such that the touchscreen is not recognized, and you may want to write up a bug, after verifying that touch works in other X11 applications.
+
+=== Windows ===
+
+Note that if you're shadow-building Qt, the source directory and build directory must be on the same drive.
+
+==== Debugging OpenGL issues (Windows) ====
+
+Set the environment variable &lt;tt>QT_QPA_VERBOSE=gl:1&lt;/tt> and run the application with [http://technet.microsoft.com/en-us/sysinternals/bb896647 DebugView] installed. The log will show the requested vs obtained OpenGL version. If the log tells you that it only has OpenGL 1.1, Qt Quick 2 will not work. Note that ''qmlscene'' will not report errors about unsupported OpenGL versions.
+
+==Questions and comments==
+
+Please raise questions &amp; comments about this article in this [http://forum.qt.io/topic/6861/qt5-development-primer forum thread].
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Template used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:LangSwitch" title="Template:LangSwitch">Template:LangSwitch</a> (<a href="http://wiki.qt.io/index.php?title=Template:LangSwitch&amp;action=edit" title="Template:LangSwitch">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/Building_Qt_5_from_Git" title="Building Qt 5 from Git">Building Qt 5 from Git</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/Building_Qt_5_from_Git">http://wiki.qt.io/Building_Qt_5_from_Git</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Building+Qt+5+from+Git" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Building_Qt_5_from_Git"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Building_Qt_5_from_Git&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/Building_Qt_5_from_Git" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=Building_Qt_5_from_Git&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Building_Qt_5_from_Git&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Building_Qt_5_from_Git" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Building_Qt_5_from_Git" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Building_Qt_5_from_Git&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":283});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Building_Qt_5_from_Git&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:15:06 GMT -->
+</html>

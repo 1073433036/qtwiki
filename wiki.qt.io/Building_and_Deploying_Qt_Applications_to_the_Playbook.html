@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Building_and_Deploying_Qt_Applications_to_the_Playbook by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:55:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Building and Deploying Qt Applications to the Playbook - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Building_and_Deploying_Qt_Applications_to_the_Playbook","wgTitle":"Building and Deploying Qt Applications to the Playbook","wgCurRevisionId":15533,"wgRevisionId":15533,"wgArticleId":116,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["BlackBerry PlayBook OS"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Building_and_Deploying_Qt_Applications_to_the_Playbook","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Building_and_Deploying_Qt_Applications_to_the_Playbook skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Building and Deploying Qt Applications to the Playbook</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p><p>It is actually very easy to build and deploy Qt applications to the Playbook. The process is very similar to building any other Qt application. The only differences arise in packaging the application and the deployment steps which we will detail here.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#About_the_Playbook_Packaging_System"><span class="tocnumber">1</span> <span class="toctext">About the Playbook Packaging System</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Preparing_Your_Project_File"><span class="tocnumber">2</span> <span class="toctext">Preparing Your Project File</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Building_and_packaging"><span class="tocnumber">3</span> <span class="toctext">Building and packaging</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Deploying_and_Running"><span class="tocnumber">4</span> <span class="toctext">Deploying and Running</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Removing_an_application_from_the_device_or_simulator"><span class="tocnumber">5</span> <span class="toctext">Removing an application from the device or simulator</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Deploying_Qt_to_a_central_place"><span class="tocnumber">6</span> <span class="toctext">Deploying Qt to a central place</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="About_the_Playbook_Packaging_System">About the Playbook Packaging System</span></h2>
+<p>To deploy an application to the Playbook we need to create a package called a bar file. A bar file is basically an archive file that contains the directory structure for your application and any additional resources that it needs. When developing an application we create a bar file using our debug token that we made earlier. This allows the bar file to be deployed only to the device that holds that debug token. The command line tools to package and deploy your application are included the BBNDK that we have already installed.
+</p><p>The approach we will take is to modify the .pro file for your project to add an additional Makefile target that will create the bar file for you.
+</p>
+<h2><span class="mw-headline" id="Preparing_Your_Project_File">Preparing Your Project File</span></h2>
+<p>Before we begin building your application we need to edit the .pro qmake project file to include some directives to help us package up our applications ready for deployment. Here is an example .pro file for a very simple hello world Qt 5 application that uses QtQuick2:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">TEMPLATE <span class="sy0">=</span> app
+TARGET <span class="sy0">=</span> helloqtquick2
+DEPENDPATH <span class="sy0">+=</span> .
+<span class="me1">INCLUDEPATH</span><span class="sy0">+=</span> .
+&#160;
+<span class="me1">QT</span> <span class="sy0">+=</span> qml quick
+&#160;
+SOURCES<span class="sy0">+=</span> main.<span class="me1">cpp</span>
+&#160;
+RESOURCES <span class="sy0">+=</span> helloqtquick2.<span class="me1">qrc</span>
+&#160;
+OTHER_FILES<span class="sy0">+=</span> main.<span class="me1">qml</span>
+&#160;
+qnx <span class="br0">&#123;</span>
+ QMAKE_LFLAGS <span class="sy0">+=</span> <span class="st0">'-Wl,-rpath,#39;./app/native/lib#39;'</span>
+&#160;
+ PACKAGE_ARGS <span class="sy0">=</span>  $$<span class="br0">&#123;</span>PWD<span class="br0">&#125;</span><span class="sy0">/</span>bar<span class="sy0">-</span>descriptor.<span class="me1">xml</span> $$TARGET  <span class="sy0">-</span>e $$<span class="br0">&#123;</span>PWD<span class="br0">&#125;</span><span class="sy0">/</span>icon.<span class="me1">png</span> res<span class="sy0">/</span>icon.<span class="me1">png</span>  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtCore.<span class="me1">so</span>.5 lib<span class="sy0">/</span>
+libQtCore.<span class="me1">so</span>.5  <span class="sy0">-</span>e
+$$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtGui.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtGui.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtOpenGL.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtOpenGL.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>
+libQtNetwork.<span class="me1">so</span>.5
+lib<span class="sy0">/</span>libQtNetwork.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtWidgets.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtWidgets.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtQuick.<span class="me1">so</span>.5 lib<span class="sy0">/</span>
+libQtQuick.<span class="me1">so</span>.5  <span class="sy0">-</span>e
+$$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtQml.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtQml.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtSql.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtSql.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtV8.<span class="me1">so</span>.5
+lib<span class="sy0">/</span>libQtV8.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtXmlPatterns.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtXmlPatterns.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_PLUGINS<span class="br0">&#93;</span><span class="sy0">/</span>platforms<span class="sy0">/</span>libqnx.<span class="me1">so</span>
+plugins<span class="sy0">/</span>platforms<span class="sy0">/</span>libqnx.<span class="me1">so</span>  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_IMPORTS<span class="br0">&#93;</span><span class="sy0">/</span> qml<span class="sy0">/</span>
+&#160;
+ package.<span class="me1">target</span> <span class="sy0">=</span> $$<span class="br0">&#123;</span>TARGET<span class="br0">&#125;</span>.<span class="me1">bar</span>
+ package.<span class="me1">depends</span> <span class="sy0">=</span> $$TARGET
+ package.<span class="me1">commands</span> <span class="sy0">=</span> blackberry<span class="sy0">-</span>nativepackager  <span class="sy0">-</span>package $$<span class="br0">&#123;</span>TARGET<span class="br0">&#125;</span>.<span class="me1">bar</span>  <span class="sy0">-</span>devMode <span class="sy0">-</span>debugToken $$<span class="br0">&#40;</span>DEBUG_TOKEN<span class="br0">&#41;</span>  $$<span class="br0">&#123;</span>PACKAGE_ARGS<span class="br0">&#125;</span>
+&#160;
+ QMAKE_EXTRA_TARGETS<span class="sy0">+=</span> package
+&#160;
+OTHER_FILES <span class="sy0">+=</span> bar<span class="sy0">-</span>descriptor.<span class="me1">xml</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Now that looks scary at first sight but it's actually pretty simple to see what is going on in there. At the top of the file we have the usual qmake variables that can be found in pretty much any Qt project. The interesting stuff for our purposes here is found within the qnx {} scope. Let's break it down into easy steps.
+</p><p>First of all we have the line:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QMAKE_LFLAGS<span class="sy0">+=</span> <span class="st0">'-Wl,-rpath,#39;./app/native/lib#39;'</span></pre></div></div>
+<p>This tells the linker that when the application is executed on the device it should additionally look for libraries inside the directory ./app/native/lib relative to the application.
+</p><p>We then define a variable called PACKAGE_ARGS with:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">PACKAGE_ARGS <span class="sy0">=</span>  $$<span class="br0">&#123;</span>PWD<span class="br0">&#125;</span><span class="sy0">/</span>bar<span class="sy0">-</span>descriptor.<span class="me1">xml</span> $$TARGET  <span class="sy0">-</span>e $$<span class="br0">&#123;</span>PWD<span class="br0">&#125;</span><span class="sy0">/</span>icon.<span class="me1">png</span> res<span class="sy0">/</span>icon.<span class="me1">png</span>  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtCore.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtCore.<span class="me1">so</span>.5 
+<span class="sy0">-</span>e
+$$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtGui.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtGui.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtOpenGL.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtOpenGL.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>
+libQtNetwork.<span class="me1">so</span>.5
+lib<span class="sy0">/</span>libQtNetwork.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtWidgets.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtWidgets.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtQuick.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtQuick.<span class="me1">so</span>.5
+<span class="sy0">-</span>e
+$$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtQml.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtQml.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtSql.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtSql.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtV8.<span class="me1">so</span>.5
+lib<span class="sy0">/</span>libQtV8.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_LIBS<span class="br0">&#93;</span><span class="sy0">/</span>libQtXmlPatterns.<span class="me1">so</span>.5 lib<span class="sy0">/</span>libQtXmlPatterns.<span class="me1">so</span>.5  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_PLUGINS<span class="br0">&#93;</span><span class="sy0">/</span>platforms<span class="sy0">/</span>libqnx.<span class="me1">so</span>
+plugins<span class="sy0">/</span>platforms<span class="sy0">/</span>libqnx.<span class="me1">so</span>  <span class="sy0">-</span>e $$<span class="br0">&#91;</span>QT_INSTALL_IMPORTS<span class="br0">&#93;</span><span class="sy0">/</span> qml<span class="sy0">/</span></pre></div></div>
+<p>This contains the arguments that will be passed to the command line tool that will actually create our application's package (the .bar file). This variable contains a few interesting parts:
+</p>
+<ol>
+<li> The bar-descriptor.xml file is a simple XML file that describes our package and how it should be launched. Many of the other arguments listed here can optionally be specified inside the bar-descriptor.xml file instead.
+</li>
+<li> Then what follows are a lot of -e &lt;source&gt; &lt;dest&gt; directives. These just tell the packaging tool to copy the &lt;source&gt; location to &lt;dest&gt; inside of the bar file and hence to &lt;dest&gt; within the application's sandbox when deployed onto the device. 
+</li>
+</ol>
+<blockquote>Note that the icon needs to be 86x86 pixels.
+</blockquote>
+<p>For now we have to do this manually as Qt 5 is not part of the Playbook's firmware image yet and Qt Creator does not yet have an automatic way of determining what should go into your .bar file. This situation should improve shortly.
+</p><p>The last section of the .pro file creates the actual Makefile target for us:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> package.<span class="me1">target</span> <span class="sy0">=</span> $$<span class="br0">&#123;</span>TARGET<span class="br0">&#125;</span>.<span class="me1">bar</span>
+ package.<span class="me1">depends</span> <span class="sy0">=</span> $$TARGET
+ package.<span class="me1">commands</span> <span class="sy0">=</span> blackberry<span class="sy0">-</span>nativepackager  <span class="sy0">-</span>package $$<span class="br0">&#123;</span>TARGET<span class="br0">&#125;</span>.<span class="me1">bar</span>  <span class="sy0">-</span>devMode <span class="sy0">-</span>debugToken $$<span class="br0">&#40;</span>DEBUG_TOKEN<span class="br0">&#41;</span>  $$<span class="br0">&#123;</span>PACKAGE_ARGS<span class="br0">&#125;</span>
+&#160;
+QMAKE_EXTRA_TARGETS <span class="sy0">+=</span> package</pre></div></div>
+<p>where $$(DEBUG_TOKEN) is an environment variable that you need to set that points at the path to your debug token. For example on Linux you could do:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">export DEBUG_TOKEN<span class="sy0">=</span><span class="st0">&quot;$HOME/.rim/debugtoken.bar&quot;</span></pre></div></div>
+<p>You should be able to pretty much copy and paste the above into your own .pro files to adapt it to additionally create a Playbook bar file package.
+</p><p>To go along with the above .pro file we need a bar-descriptor.xml file. Here is a fairly typical example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">&lt;</span>?xml version<span class="sy0">=</span><span class="st0">&quot;1.0&quot;</span> encoding<span class="sy0">=</span><span class="st0">&quot;utf-8&quot;</span> standalone<span class="sy0">=</span><span class="st0">&quot;no&quot;</span>?<span class="sy0">&gt;</span>
+<span class="sy0">&lt;</span>qnx <span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>id<span class="sy0">&gt;</span>com.<span class="me1">kdab</span>.<span class="me1">helloqtquick2</span><span class="sy0">&lt;/</span>id<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>filename<span class="sy0">&gt;</span>helloqtquick2<span class="sy0">&lt;/</span>filename<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>name<span class="sy0">&gt;</span>Hello QtQuick2<span class="sy0">&lt;/</span>name<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>versionNumber<span class="sy0">&gt;</span>1.0.0<span class="sy0">&lt;/</span>versionNumber<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>buildId<span class="sy0">&gt;</span><span class="nu0">1</span><span class="sy0">&lt;/</span>buildId<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>description<span class="sy0">&gt;</span>Hello QtQuick2<span class="sy0">&lt;/</span>description<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>copyright<span class="sy0">&gt;</span><span class="nu0">2012</span><span class="sy0">&lt;/</span>copyright<span class="sy0">&gt;</span>
+&#160;
+<span class="sy0">&lt;</span>initialWindow<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>systemChrome<span class="sy0">&gt;</span>none<span class="sy0">&lt;/</span>systemChrome<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>transparent<span class="sy0">&gt;</span><span class="kw2">false</span><span class="sy0">&lt;/</span>transparent<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>autoOrients<span class="sy0">&gt;</span><span class="kw2">true</span><span class="sy0">&lt;/</span>autoOrients<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>aspectRatio<span class="sy0">&gt;</span>landscape<span class="sy0">&lt;/</span>aspectRatio<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;/</span>initialWindow<span class="sy0">&gt;</span>
+&#160;
+<span class="sy0">&lt;</span>publisher<span class="sy0">&gt;</span>KDAB<span class="sy0">&lt;/</span>publisher<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>permission <span class="kw3">system</span><span class="sy0">=</span><span class="st0">&quot;true&quot;</span><span class="sy0">&gt;</span>run_native<span class="sy0">&lt;/</span>permission<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>env var<span class="sy0">=</span><span class="st0">&quot;LD_LIBRARY_PATH&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;app/native/lib&quot;</span><span class="sy0">/&gt;</span>
+ <span class="sy0">&lt;</span>env var<span class="sy0">=</span><span class="st0">&quot;QT_PLUGIN_PATH&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;app/native/plugins&quot;</span><span class="sy0">/&gt;</span>
+ <span class="sy0">&lt;</span>env var<span class="sy0">=</span><span class="st0">&quot;QML_IMPORT_PATH&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;app/native/imports&quot;</span><span class="sy0">/&gt;</span>
+ <span class="sy0">&lt;</span>env var<span class="sy0">=</span><span class="st0">&quot;QML2_IMPORT_PATH&quot;</span> value<span class="sy0">=</span><span class="st0">&quot;app/native/qml&quot;</span><span class="sy0">/&gt;</span>
+ <span class="sy0">&lt;</span>category<span class="sy0">&gt;</span>core.<span class="me1">games</span><span class="sy0">&lt;/</span>category<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;</span>icon<span class="sy0">&gt;&lt;</span>image<span class="sy0">&gt;</span>res<span class="sy0">/</span>icon.<span class="me1">png</span><span class="sy0">&lt;/</span>image<span class="sy0">&gt;&lt;/</span>icon<span class="sy0">&gt;</span>
+ <span class="sy0">&lt;/</span>qnx<span class="sy0">&gt;</span></pre></div></div>
+<p>The fields are fairly self-explanatory but more information can be found <a rel="nofollow" class="external text" href="https://developer.blackberry.com/native/documentation/core/com.qnx.doc.ide.userguide/topic/capabilities_editor_options_base.html">here</a>
+</p>
+<h2><span class="mw-headline" id="Building_and_packaging">Building and packaging</span></h2>
+<p>To build and package our application is now simplicity itself. All we have to do is:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$ qmake
+$ make <span class="sy0">-</span>j<span class="sy0">&lt;</span>N<span class="sy0">&gt;</span>
+$ make <span class="sy0">&lt;</span>app<span class="sy0">-</span>name<span class="sy0">&gt;</span>.<span class="me1">bar</span></pre></div></div>
+<p>where &lt;app-name&gt; is the name of your application. In this case it would be make helloqtquick2.bar. You should now have a .bar file in your build directory ready to be deployed.
+</p>
+<h2><span class="mw-headline" id="Deploying_and_Running">Deploying and Running</span></h2>
+<p>To deploy your bar file to the Playbook we use another tool included in the BBNDK called blackberry-deploy. The syntax for this tool is:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$ blackberry<span class="sy0">-</span>deploy <span class="sy0">-</span>installApp <span class="sy0">-</span>device <span class="sy0">&lt;</span>device<span class="sy0">-</span>ip<span class="sy0">&gt;</span> <span class="sy0">-</span>password <span class="sy0">&lt;</span>device<span class="sy0">-</span>password<span class="sy0">&gt;</span> <span class="sy0">&lt;</span>appname<span class="sy0">&gt;</span>.<span class="me1">bar</span></pre></div></div>
+<p>Once this tool has executed you should see your application icon in the launcher of the Playbook.
+The console output of the application is saved in the /accounts/1000/appdata/*APPNAME*/logs/log file on the device.
+</p>
+<h2><span class="mw-headline" id="Removing_an_application_from_the_device_or_simulator">Removing an application from the device or simulator</span></h2>
+<p>Open a command prompt windows, and then type:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$ blackberry<span class="sy0">-</span>deploy <span class="sy0">-</span>uninstallApp <span class="sy0">-</span>device <span class="sy0">&lt;</span>device<span class="sy0">-</span>ip<span class="sy0">&gt;</span> <span class="sy0">-</span>package <span class="sy0">&lt;</span>appname<span class="sy0">&gt;</span>.<span class="me1">bar</span> <span class="sy0">-</span>password <span class="sy0">&lt;</span>device<span class="sy0">-</span>password<span class="sy0">&gt;</span></pre></div></div>
+<h2><span class="mw-headline" id="Deploying_Qt_to_a_central_place">Deploying Qt to a central place</span></h2>
+<p>The method described above copies Qt into the application's BAR package, which increases its size considerably and makes deploying really slow. For development, it is useful to have Qt preinstalled on the device. See <a rel="nofollow" class="external text" href="Deploying_Qt_to_a_central_place_on_Blackberry_devices.html">this article on how to install Qt to a central place</a>
+</p><p>Of course you also need to undo the changes to the <i>.pro</i> file above, so that Qt is not added to the BAR package automatically.
+Also, the above <i>bar-descriptor.xml</i> file already contains lines that set environment variables, these need to be overwritten with those lines mentioned in the article.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li> <a href="Blackberry-2.html" title="Blackberry" class="mw-redirect">Blackberry</a>
+</li>
+<li> <a href="Building-Qt5-for-the-Playbook.html" title="Building-Qt5-for-the-Playbook" class="mw-redirect">Building-Qt5-for-the-Playbook</a>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.170 seconds
+Real time usage: 0.175 seconds
+Preprocessor visited node count: 117/1000000
+Preprocessor generated node count: 232/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:116-0!*!0!!en!*!* and timestamp 20151104093846 and revision id 15533
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index68e0.html?title=Building_and_Deploying_Qt_Applications_to_the_Playbook&amp;oldid=15533">http://wiki.qt.io/index.php?title=Building_and_Deploying_Qt_Applications_to_the_Playbook&amp;oldid=15533</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="index191a.php?title=Category:BlackBerry_PlayBook_OS&amp;action=edit&amp;redlink=1" class="new" title="Category:BlackBerry PlayBook OS (page does not exist)">BlackBerry PlayBook OS</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=ea5d59f382341929&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Building_and_Deploying_Qt_Applications_to_the_Playbook.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Building_and_Deploying_Qt_Applications_to_the_Playbook.html?title=Talk:Building_and_Deploying_Qt_Applications_to_the_Playbook&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Building_and_Deploying_Qt_Applications_to_the_Playbook.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index40bc.html?title=Building_and_Deploying_Qt_Applications_to_the_Playbook&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index2f0c.html?title=Building_and_Deploying_Qt_Applications_to_the_Playbook&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Building_and_Deploying_Qt_Applications_to_the_Playbook.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Building_and_Deploying_Qt_Applications_to_the_Playbook.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexd75e-2.html?title=Building_and_Deploying_Qt_Applications_to_the_Playbook&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index68e0.html?title=Building_and_Deploying_Qt_Applications_to_the_Playbook&amp;oldid=15533" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index1fd7.html?title=Building_and_Deploying_Qt_Applications_to_the_Playbook&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 9 April 2015, at 07:07.</li>
+											<li id="footer-info-viewcount">This page has been accessed 596 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":185});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Building_and_Deploying_Qt_Applications_to_the_Playbook by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:56:03 GMT -->
+</html>

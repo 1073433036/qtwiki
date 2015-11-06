@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Filling-and-reading-QML-UI-forms-from-Python&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:08:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for Filling-and-reading-QML-UI-forms-from-Python - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Filling-and-reading-QML-UI-forms-from-Python","wgTitle":"Filling-and-reading-QML-UI-forms-from-Python","wgCurRevisionId":14995,"wgRevisionId":0,"wgArticleId":791,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Filling-and-reading-QML-UI-forms-from-Python","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Filling-and-reading-QML-UI-forms-from-Python skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for Filling-and-reading-QML-UI-forms-from-Python</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/Filling-and-reading-QML-UI-forms-from-Python" title="Filling-and-reading-QML-UI-forms-from-Python">Filling-and-reading-QML-UI-forms-from-Python</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">
+
+[[Category:LanguageBindings::PySide]]
+[[Category:snippets]]
+[[Category:Developing_with_Qt::Qt Quick]]
+[[Category:Developing_with_Qt::Qt Quick::QML]]
+[[Category:Developing_with_Qt::Qt Quick::Tutorial]]
+
+
+This [[PySide]] tutorial shows you how to create a "classic" form-based UI with the Colibri QML Components and have it filled and controlled by Python code. There are several ways to do this, and depending on your use case, there might be a better method. Please also note that in this example, the controller code knows a bit about the UI (or rather: the UI has to inform the controller which widgets are to be filled), which might not be desired.
+
+== CarAnalogy.py ==
+
+=== Import the required modules ===
+
+We need the '''QtCore''' module for QObject, the '''QtGui''' module for QApplication and the '''QtDeclarative''' module for the QML View (QDeclarativeView):
+
+&lt;code>
+import sys
+
+from PySide import QtCore, QtGui, QtDeclarative
+&lt;/code>
+
+=== Define a Car as QObject ===
+
+This is simply the Python version of a normal QObject with 4 properties:
+
+* '''model''' (String) - The car name
+* '''brand''' (String) - The company who made the card
+* '''year''' (int) - The year it was first produced
+* '''inStock''' (bool) - If the car is still in stock at the warehouse
+
+&lt;code>
+class Car(QtCore.QObject):
+ def ''init''(self, model='', brand='', year=0, in_stock=False):
+ QtCore.QObject.''init''(self)
+ self._''model = model
+ self.brand = brand
+ self.year = year
+ self.''_in_stock = in_stock
+
+changed = QtCore.Signal()
+
+def ''model(self): return self.''_model
+ def ''brand(self): return self.''_brand
+ def ''year(self): return self.''_year
+ def ''inStock(self): return self.''_in_stock
+
+def ''setModel(self, model):
+ self.''_model = model
+ self.changed.emit()
+
+def ''setBrand(self, brand):
+ self.''_brand = brand
+ self.changed.emit()
+
+def ''setYear(self, year):
+ self.''_year = year
+ self.changed.emit()
+
+def ''setInStock(self, in_stock):
+ self.''_in_stock = in_stock
+ self.changed.emit()
+
+model = QtCore.Property(str, _model, _setModel, notify=changed)
+ brand = QtCore.Property(str, _brand, _setBrand, notify=changed)
+ year = QtCore.Property(int, _year, _setYear, notify=changed)
+ inStock = QtCore.Property(bool, _inStock, ''setInStock, notify=changed)
+&lt;/code>
+
+=== The controller to fill the form and react to events ===
+This is another QObject that takes a list of cars as constructor parameter. It also remembers the current position in the list of cars. There are three slots that are visible to the "outside" (QML in our case):
+
+* '''prev''' - Go to the previous item
+* '''next''' - Go to the next item
+* '''init''' - Show the first item
+
+All these slots take a QObject as parameter, and from the QML file, we will pass the root object there, which has a property '''widgets''' where we save a dictionary of mappings from name to QML component. The '''fill''' function takes care of filling in the data of the current car into the QML widgets.
+
+&lt;code>
+class Controller(QtCore.QObject):
+ definit&lt;span class="lst self,">:
+ QtCore.QObject.&lt;/span>init''_(self)
+ self._lst = lst
+ self._pos = 0
+
+def fill(self, widgets):
+ widgets['model'].setProperty('text', self._lst[self._pos].model)
+ widgets['brand'].setProperty('text', self._lst[self._pos].brand)
+ widgets['year'].setProperty('value', self._lst[self._pos].year)
+ widgets['inStock'].setProperty('checked', self._lst[self._pos].inStock)
+ widgets['position'].setProperty('text', 'd/%d' (self._pos+1, len(self._lst)))
+
+QtCore.Slot(QtCore.QObject)
+ def prev(self, root):
+ print 'prev'
+ self._pos = max(0, self._pos - 1)
+ self.fill(root.property('widgets'))
+
+QtCore.Slot(QtCore.QObject)
+ def next(self, root):
+ print 'next'
+ self._pos = min(len(self._lst) - 1, self.''pos + 1)
+ self.fill(root.property('widgets'))
+
+QtCore.Slot(QtCore.QObject)
+ def init(self, root):
+ print 'init'
+ self.fill(root.property('widgets'))
+&lt;/code>
+
+=== Example data ===
+Here is some example data, so that we can use our example and click through a list of cars:
+
+&lt;code>
+cars = [
+ Car('Model T', 'Ford', 1908),
+ Car('Beetle', 'Volkswagen', 1938, True),
+ Car('Corolla', 'Toyota', 1966),
+ Car('Clio', 'Renault', 1991, True),
+ Car('Ambassador', 'Hindustan', 1958),
+ Car('Uno', 'Fiat', 1983, True),
+ Car('Ibiza', 'Seat', 1984, True),
+]
+&lt;/code>
+
+=== Putting it all together ===
+We first need to create the '''controller''', which then also knows about our '''cars'''. Then, there is some housekeeping that we need to do - create a QApplication, create the QDeclarativeView and set its resizing mode (so that the root object in QML is always as big as the window).
+
+We then get the root context and expose the controller and the cars list to it (if you look closely, we don't really need the cars themselves). Then, we load the QML file, show the view and start the application.
+
+&lt;code>
+controller = Controller(cars)
+
+app = QtGui.QApplication(sys.argv)
+
+view = QtDeclarative.QDeclarativeView()
+view.setResizeMode(QtDeclarative.QDeclarativeView.SizeRootObjectToView)
+
+ctx = view.rootContext()
+
+for name in ('controller', 'cars'):
+ ctx.setContextProperty(name, locals()[name])
+
+view.setSource(file.replace('.py', '.qml'))
+view.show()
+
+app.exec''()
+&lt;/code>
+
+== CarAnalogy.qml ==
+
+This is the user interface of our application. We only use the controller in the UI, and we also only use it for initialization and when buttons are clicked.
+
+&lt;code>
+
+import Qt 4.7
+import "colibri"
+
+Rectangle {
+ id: page
+
+property variant widgets
+
+width: 800
+ height: 480
+
+Grid {
+ id: grid
+ columns: 2
+ anchors.centerIn: parent
+ spacing: 10
+
+Row {
+ CLButton { text: "←"; onClicked: { controller.prev(page) } }
+ CLButton { text: "→"; onClicked: { controller.next(page) } }
+ }
+
+Text { id: position; text: " " }
+
+Text { text: "Model:" }
+
+CLLineEdit { id: model }
+
+Text { text: "Brand:" }
+
+CLLineEdit { id: brand }
+
+Text { text: "Year:" }
+
+Column {
+ spacing: 10
+ CLSlider {
+ id: year
+ minimum: 1900
+ maximum: 2010
+ }
+ Text {
+ text: year.value
+ }
+ }
+
+Text { text: " " }
+
+Row {
+ spacing: 10
+ CLCheckBox { id: inStock }
+ Text { text: "In Stock" }
+ }
+ }
+
+Component.onCompleted: {
+ widgets = {
+ 'position': position,
+ 'model': model,
+ 'brand': brand,
+ 'year': year,
+ 'inStock': inStock,
+ }
+ controller.init(page)
+ }
+}
+&lt;/code>
+
+== How the example app looks like ==
+
+Simply start the resulting app with '''python CarAnalogy.py''' and you should get something like this:
+
+[[Image:Screenshotfill.jpg]]
+</textarea><div class="templatesUsed"></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/Filling-and-reading-QML-UI-forms-from-Python" title="Filling-and-reading-QML-UI-forms-from-Python">Filling-and-reading-QML-UI-forms-from-Python</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/Filling-and-reading-QML-UI-forms-from-Python">http://wiki.qt.io/Filling-and-reading-QML-UI-forms-from-Python</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Filling-and-reading-QML-UI-forms-from-Python" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Filling-and-reading-QML-UI-forms-from-Python"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Filling-and-reading-QML-UI-forms-from-Python&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/Filling-and-reading-QML-UI-forms-from-Python" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=Filling-and-reading-QML-UI-forms-from-Python&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Filling-and-reading-QML-UI-forms-from-Python&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Filling-and-reading-QML-UI-forms-from-Python" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Filling-and-reading-QML-UI-forms-from-Python" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Filling-and-reading-QML-UI-forms-from-Python&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":217});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Filling-and-reading-QML-UI-forms-from-Python&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:08:16 GMT -->
+</html>

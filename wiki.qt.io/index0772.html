@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=JavaScript&oldid=18602 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:27:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>JavaScript - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"JavaScript","wgTitle":"JavaScript","wgCurRevisionId":18602,"wgRevisionId":18602,"wgArticleId":1090,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing with Qt"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"JavaScript","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-JavaScript skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">JavaScript</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 20:16, 28 June 2015 by <a href="http://wiki.qt.io/User:Wieland" title="User:Wieland" class="mw-userlink">Wieland</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/User_talk:Wieland" title="User talk:Wieland">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Wieland" title="Special:Contributions/Wieland">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=JavaScript&amp;diff=prev&amp;oldid=18602" title="JavaScript">diff</a>) <a href="http://wiki.qt.io/index.php?title=JavaScript&amp;direction=prev&amp;oldid=18602" title="JavaScript">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 20px;border: 1px solid #C00; border-left: 10px solid #C00; background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> TODO: This article is far from being complete.
+</td></tr></table>
+<div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<p>This article provides an overview of the JavaScript language. The idea is to provide a thorough overview of all of the language's features. You may want to read through this article from start to finish to learn about all the basic features of this language - especially when you are getting started with a JavaScript related technology.
+Whenever possible, you should try out the examples in an interactive console. Most Linux distributions ship with the <a rel="nofollow" class="external text" href="http://www.mozilla.org/js/spidermonkey/">SpiderMonkey</a> console (smjs). If you prefer using a native Qt-based console, try <a rel="nofollow" class="external text" href="https://github.com/unclefrank/qmlscriptconsole">qtjs</a> or <a rel="nofollow" class="external text" href="https://github.com/unclefrank/qmlscriptconsole">qmlscriptconsole</a>. See the <a href="http://wiki.qt.io/QML_Script_Console" title="QML Script Console">QML_Script_Console</a> article if you're curious.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#The_Type_System"><span class="tocnumber">2</span> <span class="toctext">The Type System</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Expressions"><span class="tocnumber">3</span> <span class="toctext">Expressions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Control_Flow"><span class="tocnumber">4</span> <span class="toctext">Control Flow</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Branching"><span class="tocnumber">4.1</span> <span class="toctext">Branching</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Repetitions_and_Iterators"><span class="tocnumber">4.2</span> <span class="toctext">Repetitions and Iterators</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Labeled_Loops.2C_Break_and_Continue"><span class="tocnumber">4.3</span> <span class="toctext">Labeled Loops, Break and Continue</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Objects_and_Functions"><span class="tocnumber">5</span> <span class="toctext">Objects and Functions</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Prototype_based_Inheritance"><span class="tocnumber">6</span> <span class="toctext">Prototype based Inheritance</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Scopes.2C_Closures_and_Encapsulation"><span class="tocnumber">7</span> <span class="toctext">Scopes, Closures and Encapsulation</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Namespaces"><span class="tocnumber">8</span> <span class="toctext">Namespaces</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Common_Methods"><span class="tocnumber">9</span> <span class="toctext">Common Methods</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Exceptions"><span class="tocnumber">10</span> <span class="toctext">Exceptions</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Resources"><span class="tocnumber">11</span> <span class="toctext">Resources</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Web_Links"><span class="tocnumber">11.1</span> <span class="toctext">Web Links</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Books"><span class="tocnumber">11.2</span> <span class="toctext">Books</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>JavaScript is a minimalistic dynamically typed scripting language. It is truly object-oriented, although it lacks support for classes. Frequently associated with client-side web development, JavaScript is a language of its own. Originally developed at Netscape and nowadays standardized as <a rel="nofollow" class="external text" href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript-262 (3rd and 5th edition)</a> , the language has found wide-spread use and circulates under various names. "JScript" is Microsoft's derivative of the language. "JavaScript" was the original name chosen by Netscape when the language was introduced with Netscape 2. Adobe's ActionScript was also based on ECMAScript-262 before version 3 was released.
+</p><p>Qt has been supporting a JavaScript engine compatible with ECMAScript-262 since Qt 4.3. This engine is called "QtScript" and was originally an independent implementation. Since Qt 4.5, QtScript has been based on JavaScriptCore from WebKit. Qt's new markup language(QML) makes intense use of QtScript. Property values in QML are JavaScript expressions and are evaluated using QtScript.
+</p>
+<h2><span class="mw-headline" id="The_Type_System">The Type System</span></h2>
+<p>JavaScript supports the following fundamental types:
+</p>
+<ul>
+<li> boolean
+</li>
+<li> number
+</li>
+<li> string
+</li>
+<li> object
+</li>
+<li> function
+</li>
+</ul>
+<p>New variables are introduced into the current scope using the <i>var</i> statement:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var flag <span class="sy0">=</span> <span class="kw2">false</span> <span class="co1">// a boolean</span>
+var x <span class="sy0">=</span> <span class="nu0">1</span>.<span class="sy0">,</span> y <span class="sy0">=</span> <span class="nu0">2</span> <span class="co1">// numbers can be integers and reals</span>
+var s1 <span class="sy0">=</span> <span class="st0">'abc'</span><span class="sy0">;</span> <span class="co1">// a string</span></pre></div></div>
+<p>To query the type of a variable, use the <i>typeof</i> keyword. <i>typeof</i> returns the name of the type as a string.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var x <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> typeof x <span class="co1">// 'number'</span>
+typeof <span class="br0">&#123;</span> x<span class="sy0">:</span> <span class="nu0">1</span> <span class="br0">&#125;</span> <span class="co1">// 'object'</span>
+typeof typeof <span class="br0">&#123;</span> x <span class="sy0">:</span> <span class="nu0">1</span> <span class="br0">&#125;</span> <span class="co1">// 'string'</span>
+typeof JSON.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">'{&quot;a&quot;: 7}'</span><span class="br0">&#41;</span> <span class="co1">// 'object'</span></pre></div></div>
+<p>Everything in JavaScript acts like an object.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="nu16">1.3333333</span>.<span class="me1">toFixed</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span> <span class="co1">// '1.33'</span>
+<span class="nu0">7</span>..<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// '7'</span></pre></div></div>
+<p>Note that in JavaScript the expression '7.toString()' can't be interpreted correctly. '7.' is parsed into a number and thereafter results in a syntax error.
+</p><p>The primitive types <i>boolean</i>, <i>number</i> and <i>string</i> are implicitly converted into objects when needed. For this purpose, the global object provides special constructor functions which can also be invoked manually:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">typeof <span class="nu0">1</span>. <span class="co1">// 'number'</span>
+typeof <span class="kw1">new</span> Number<span class="br0">&#40;</span><span class="nu0">1</span>.<span class="br0">&#41;</span> <span class="co1">// 'object'</span>
+typeof <span class="kw1">new</span> String<span class="br0">&#40;</span><span class="st0">'Hi!'</span><span class="br0">&#41;</span> <span class="co1">// 'object'</span></pre></div></div>
+<p>Functions are special kinds of objects. They only differ from objects because they can be called and used as constructors. Properties can be added to functions dynamically:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function f<span class="br0">&#40;</span>x<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> f.<span class="me1">A</span> <span class="sy0">*</span> x <span class="sy0">*</span> x <span class="br0">&#125;</span>
+f.<span class="me1">A</span> <span class="sy0">=</span> <span class="nu16">2.7</span>
+&#160;
+function Buffer<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
+Buffer.<span class="me1">MAX_LINE_LENGTH</span> <span class="sy0">=</span> <span class="nu0">4096</span></pre></div></div>
+<p>Usually those properties serve as global constants and therefore are written in uppercase.
+</p><p>Objects themselves can be expressed using an array or object literal. Arrays have no separate type, but are specialized objects which use array indexes as properties:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var o <span class="sy0">=</span> <span class="br0">&#123;</span> name<span class="sy0">:</span> <span class="st0">'Werner'</span><span class="sy0">,</span> age<span class="sy0">:</span> <span class="nu0">84</span> <span class="br0">&#125;</span> <span class="co1">// allocate simple object</span>
+print<span class="br0">&#40;</span>o.<span class="me1">name</span><span class="sy0">,</span> o<span class="br0">&#91;</span>age<span class="br0">&#93;</span><span class="br0">&#41;</span>
+ <span class="co1">// both notations are valid, but [] notation allows generated strings</span>
+var a <span class="sy0">=</span> <span class="br0">&#91;</span><span class="st0">'a'</span><span class="sy0">,</span> <span class="st0">'b'</span><span class="sy0">,</span> <span class="nu0">7</span><span class="sy0">,</span> <span class="nu0">11</span>.<span class="br0">&#93;</span>
+ <span class="co1">// an array, equivalent to {'0': 'a', '1': 'b', '2': 7, '3': 11.}</span>
+typeof o<span class="sy0">,</span> a <span class="co1">// 'object', 'object'</span></pre></div></div>
+<h2><span class="mw-headline" id="Expressions">Expressions</span></h2>
+<p>The expression syntax follows mostly "C" syntax (as in C++ or Java). As a major difference, there is no sharp distinction between statements and expressions. Basically everything evaluates to something. Function declarations and compounds can be included on-the-fly:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function f<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="co1">// evaluates 'undefined'</span>
+function f<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="sy0">+</span> <span class="nu0">1</span> <span class="co1">// evaluates to 1, because 'undefined' is casted to 0</span>
+<span class="br0">&#40;</span>function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="br0">&#41;</span> <span class="co1">// evaluates to a function object</span>
+<span class="br0">&#40;</span>function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span> <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// evaluates to 0</span>
+<span class="br0">&#123;</span><span class="nu0">1</span><span class="sy0">;</span><span class="nu0">2</span><span class="sy0">;</span><span class="nu0">3</span><span class="br0">&#125;</span> <span class="sy0">*</span> <span class="nu0">2</span> <span class="co1">// evaluates to 6</span></pre></div></div>
+<p>Expressions are separated by semicolons or line breaks.
+</p>
+<h2><span class="mw-headline" id="Control_Flow">Control Flow</span></h2>
+<h3><span class="mw-headline" id="Branching">Branching</span></h3>
+<p>Conditional branches follow "C" syntax.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">&lt;</span>expression<span class="sy0">&gt;</span><span class="br0">&#41;</span>
+ <span class="sy0">&lt;</span>statement1<span class="sy0">&gt;</span>
+<span class="kw1">else</span> <span class="co1">// optional</span>
+ <span class="sy0">&lt;</span>statement2<span class="sy0">&gt;</span> <span class="co1">// optional</span></pre></div></div>
+<p>The switch statement follows the same fall through semantics as in "C":
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw1">switch</span><span class="br0">&#40;</span>expression<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">case</span> <span class="sy0">&lt;</span>expression1<span class="sy0">&gt;:</span>
+ <span class="sy0">&lt;</span>statement<span class="sy0">-</span>list1<span class="sy0">&gt;</span>
+ break<span class="sy0">;</span>
+ <span class="kw1">case</span> <span class="sy0">&lt;</span>expression2<span class="sy0">&gt;:</span>
+ <span class="sy0">&lt;</span>statement<span class="sy0">-</span>list2<span class="sy0">&gt;</span>
+ break<span class="sy0">;</span>
+ …
+ <span class="kw1">default</span><span class="sy0">:</span>
+ <span class="sy0">&lt;</span>statement<span class="sy0">-</span>listn<span class="sy0">&gt;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Repetitions_and_Iterators">Repetitions and Iterators</span></h3>
+<p>Repeated actions can be expressed using <i>do</i>, <i>while</i> and <i>for</i> loops:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw1">do</span> <span class="sy0">&lt;</span>statement<span class="sy0">&gt;</span> <span class="kw1">while</span> <span class="br0">&#40;</span>expression<span class="br0">&#41;</span>
+<span class="kw1">while</span> <span class="br0">&#40;</span>expression<span class="br0">&#41;</span> <span class="sy0">&lt;</span>statement<span class="sy0">&gt;</span>
+<span class="kw1">for</span> <span class="br0">&#40;</span><span class="sy0">&lt;</span>init<span class="sy0">-</span>expression<span class="sy0">&gt;;&lt;</span>test<span class="sy0">-</span>expression<span class="sy0">&gt;;&lt;</span>step<span class="sy0">-</span>expression<span class="sy0">&gt;</span><span class="br0">&#41;</span> <span class="sy0">&lt;</span>statement<span class="sy0">&gt;</span></pre></div></div>
+<p>For iterating objects JavaScript provides a special <i>for-in</i> statement:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw1">for</span> <span class="br0">&#40;</span><span class="sy0">&lt;</span>expression<span class="sy0">&gt;</span> in <span class="sy0">&lt;</span>object<span class="sy0">&gt;</span><span class="br0">&#41;</span> <span class="sy0">&lt;</span>statement<span class="sy0">&gt;</span></pre></div></div>
+<p>The given expression needs to be suitable for the left-hand side of an assignment. In the simplest case, it is just a variable declaration. Consider the following example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var a <span class="sy0">=</span> <span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">2</span><span class="sy0">,</span><span class="nu0">3</span><span class="sy0">,</span><span class="nu0">4</span><span class="br0">&#93;</span>
+<span class="kw1">for</span> <span class="br0">&#40;</span>var i in a<span class="br0">&#41;</span>
+ print<span class="br0">&#40;</span>i<span class="sy0">,</span> a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">*</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="co1">// '0', 1</span>
+<span class="co1">// '1', 4</span>
+<span class="co1">// '2', 9</span>
+<span class="co1">// '3', 16</span></pre></div></div>
+<p>Here the variable <i>i</i> is assigned to all keys of the array <i>a</i> consecutively. In the next example, the left-hand expression is dynamically generated:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var o <span class="sy0">=</span> <span class="br0">&#123;</span>a0<span class="sy0">:</span> <span class="nu0">11</span><span class="sy0">,</span> a1<span class="sy0">:</span> <span class="nu0">7</span><span class="sy0">,</span> a2<span class="sy0">:</span> <span class="nu0">5</span><span class="br0">&#125;</span>
+var k <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#93;</span>
+<span class="kw1">for</span><span class="br0">&#40;</span>k<span class="br0">&#91;</span>k.<span class="me1">length</span><span class="br0">&#93;</span> in o<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>The keys of <i>o</i> are copied to <i>k</i>. The loop statement itself is left empty. For each member in o, the name is assigned to another member of k.
+</p>
+<h3><span class="mw-headline" id="Labeled_Loops.2C_Break_and_Continue">Labeled Loops, Break and Continue</span></h3>
+<p>In JavaScript, loop statements can be given labels. The <i>break</i> and <i>continue</i> statements break or continue the current loop. It is possible to break an outer loop from the inner loop by using the label name as shown in the following example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">label_x<span class="sy0">:</span>
+<span class="kw1">for</span> <span class="br0">&#40;</span>var x <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> x <span class="sy0">&lt;</span> <span class="nu0">11</span><span class="sy0">;</span> <span class="sy0">+</span><span class="st0">''</span>x<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">for</span> <span class="br0">&#40;</span>var y <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> y <span class="sy0">&lt;</span> <span class="nu0">11</span><span class="sy0">;</span>y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>x<span class="st0">''</span> y<span class="br0">&#41;</span> <span class="sy0">%</span> <span class="nu0">7</span> <span class="sy0">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw2">break</span> label_x<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="Objects_and_Functions">Objects and Functions</span></h2>
+<p>Objects are created using an object literal or the <i>new</i> operator.
+</p><p>In the following example, a point coordinate is expressed as object literal:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var p <span class="sy0">=</span> <span class="br0">&#123;</span> x<span class="sy0">:</span> <span class="nu16">0.1</span><span class="sy0">,</span> y<span class="sy0">:</span> <span class="nu16">0.2</span> <span class="br0">&#125;</span></pre></div></div>
+<p>Objects are entirely dynamic sets of properties. New properties are introduced on first assignment. They can be deleted again by using the <i>delete</i> operator. To query if an object contains a certain property, use the <i>in</i> operator.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">'z'</span> in p <span class="co1">// false</span>
+p.<span class="me1">z</span> <span class="sy0">=</span> <span class="nu16">0.3</span> <span class="co1">// introduce new property 'z'</span>
+<span class="st0">'z'</span> in p <span class="co1">// true</span>
+<span class="kw1">delete</span> p.<span class="me1">z</span> <span class="co1">// remove 'z' from p</span>
+p.<span class="me1">z</span> <span class="co1">// undefined</span></pre></div></div>
+<p>Property values can be of any type - including the <i>function</i> type. Methods in JavaScript are just function properties. When a function is invoked in method notation, it gets passed a reference to the object as an implicit argument called <i>this</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">p.<span class="me1">move</span> <span class="sy0">=</span> function<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">x</span> <span class="sy0">=</span> x
+ <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> y
+<span class="br0">&#125;</span>
+p.<span class="me1">move</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="co1">// invoke a method</span></pre></div></div>
+<p>JavaScript allows any function to be called as a method of any object by using the <i>call</i> method, however, there are only a few cases in which you would want to use the <i>call</i> method.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">p2 <span class="sy0">=</span> <span class="br0">&#123;</span> x<span class="sy0">:</span> <span class="nu0">0</span><span class="sy0">,</span> y<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+p.<span class="me1">move</span>.<span class="me1">call</span><span class="br0">&#40;</span>p2<span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">&#41;</span></pre></div></div>
+<h2><span class="mw-headline" id="Prototype_based_Inheritance">Prototype based Inheritance</span></h2>
+<p>The second way of creating objects is by using the <i>new</i> keyword together with a <b>constructor function</b>:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var p <span class="sy0">=</span> <span class="kw1">new</span> Object
+p.<span class="me1">x</span> <span class="sy0">=</span> <span class="nu16">0.1</span>
+p.<span class="me1">y</span> <span class="sy0">=</span> <span class="nu16">0.2</span></pre></div></div>
+<p>The <i>new</i> operator allocates a new object and calls the given constructor to initialize the object. In this case, the constructor is called <i>Object</i>, but it could be any other function as well. The constructor function gets passed the newly created object as the implicit <i>this</i> argument. In JavaScript there are no classes, but hierarchies of constructor functions which operate like object factories. Common constructor functions are written with a starting capital letter to distinguish them from average functions. The following example shows how to create point coordinates using a constructor function:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function Point<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">x</span> <span class="sy0">=</span> x
+ <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> y
+<span class="br0">&#125;</span>
+var p <span class="sy0">=</span> <span class="kw1">new</span> Point<span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">2</span><span class="br0">&#41;</span></pre></div></div>
+<p>Each function in JavaScript can be used as a constructor in combination with the <i>new</i> operator. To support inheritance, each function has a default property named <i>prototype</i>. Objects created from a constructor inherit all properties from the constructor's prototype. Consider the following example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function Point<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">x</span> <span class="sy0">=</span> x
+ <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> y
+<span class="br0">&#125;</span>
+Point.<span class="me1">prototype</span> <span class="sy0">=</span> <span class="kw1">new</span> Object <span class="co1">// can be omitted here</span>
+Point.<span class="me1">prototype</span>.<span class="me1">translate</span> <span class="sy0">=</span> function<span class="br0">&#40;</span>dx<span class="sy0">,</span> dy<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">x</span> <span class="st0">''</span><span class="sy0">=</span> dx
+ <span class="kw1">this</span>.<span class="me1">y</span><span class="st0">''</span><span class="sy0">=</span> dy
+<span class="br0">&#125;</span></pre></div></div>
+<p>First we declared a new function called <i>Point</i> which is meant to initialize a point. Thereafter we create our own prototype object, which in this case is redundant. The prototype of a function already defaults to an empty object. Properties which should be shared among all points are assigned to the prototype. In this case, we define the <i>translate</i> function which moves a point by a certain distance.
+</p><p>We can now instantiate points using the Point constructor:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var p0 <span class="sy0">=</span> <span class="kw1">new</span> Point<span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">&#41;</span>
+var p1 <span class="sy0">=</span> <span class="kw1">new</span> Point<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">&#41;</span>
+p1.<span class="me1">translate</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span> –<span class="nu0">1</span><span class="br0">&#41;</span>
+p0 <span class="sy0">=</span> p1 <span class="co1">// false</span>
+p0.<span class="me1">translate</span> <span class="sy0">=</span> p1.<span class="me1">translate</span> <span class="co1">// true</span></pre></div></div>
+<p>The <i>p0</i> and <i>p1</i> objects carry their own <i>x</i> and <i>y</i> properties, but they share the <i>translate</i> method. Whenever an object's property value is requested by name, the underlying JavaScript engine first looks into the object itself and, if it doesn't contain that name, it falls back to the object's prototype. Each object carries a copy of its constructor's prototype for this purpose.
+</p><p>If an object actually contains a certain property, or if it is inherited, it can be inquired using the <i>Object.hasOwnProperty()</i> method.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">p0.<span class="me1">hasOwnProperty</span><span class="br0">&#40;</span><span class="st0">&quot;x&quot;</span><span class="br0">&#41;</span> <span class="co1">// true</span>
+p0.<span class="me1">hasOwnProperty</span><span class="br0">&#40;</span><span class="st0">&quot;translate&quot;</span><span class="br0">&#41;</span> <span class="co1">// false</span></pre></div></div>
+<p>So far, we have only defined a single constructor with no real object hierarchy. We will now introduce two additional constructors to show how to chain prototypes and thereby build up more complex relationships between objects:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function Point<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">x</span> <span class="sy0">=</span> x
+ <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> y
+<span class="br0">&#125;</span>
+Point.<span class="me1">prototype</span> <span class="sy0">=</span> <span class="br0">&#123;</span>
+ move<span class="sy0">:</span> function<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">x</span> <span class="sy0">=</span> x
+ <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> y
+ <span class="br0">&#125;</span><span class="sy0">,</span>
+ translate<span class="sy0">:</span> function<span class="br0">&#40;</span>dx<span class="sy0">,</span> dy<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">x</span> <span class="st0">''</span><span class="sy0">=</span> dx
+ <span class="kw1">this</span>.<span class="me1">y</span><span class="st0">''</span><span class="sy0">=</span> dy
+ <span class="br0">&#125;</span><span class="sy0">,</span>
+ area<span class="sy0">:</span> function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+function Ellipsis<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="sy0">,</span> a<span class="sy0">,</span> b<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ Point.<span class="me1">call</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> x<span class="sy0">,</span> y<span class="br0">&#41;</span>
+ <span class="kw1">this</span>.<span class="me1">a</span> <span class="sy0">=</span> a
+ <span class="kw1">this</span>.<span class="me1">b</span> <span class="sy0">=</span> b
+<span class="br0">&#125;</span>
+Ellipsis.<span class="me1">prototype</span> <span class="sy0">=</span> <span class="kw1">new</span> Point
+Ellipsis.<span class="me1">prototype</span>.<span class="me1">area</span> <span class="sy0">=</span> function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> Math.<span class="me1">PI</span> <span class="sy0">*</span> <span class="kw1">this</span>.<span class="me1">a</span> <span class="sy0">*</span> <span class="kw1">this</span>.<span class="me1">b</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+&#160;
+function Circle<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="sy0">,</span> r<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ Ellipsis.<span class="me1">call</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="sy0">,</span> x<span class="sy0">,</span> y<span class="sy0">,</span> r<span class="sy0">,</span> r<span class="br0">&#41;</span>
+<span class="br0">&#125;</span>
+Circle.<span class="me1">prototype</span> <span class="sy0">=</span> <span class="kw1">new</span> Ellipsis</pre></div></div>
+<p>Here we have three constructors which create points, ellipsis and circles. For each constructor, we have set up a prototype. When a new object is created using the <i>new</i> operator, the object is given an internal copy of the constructor's prototype. The internal reference to the prototype is used when resolving property names which are not directly stored in an object. Thereby properties of the prototypes are reused among the objects created from a certain constructor. For instance, let us create a circle and call its <i>move</i> method:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var circle <span class="sy0">=</span> <span class="kw1">new</span> Circle<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">&#41;</span>
+circle.<span class="me1">move</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">&#41;</span></pre></div></div>
+<p>The JavaScript engine first looks into the <i>circle</i> object to see if it has a <i>move</i> property. As it can't find one, it asks the prototype of <i>circle</i>. The circle object's internal prototype reference was set to <i>Circle.prototype</i> during construction. It was created using the <i>Ellipsis</i> constructor, but it doesn't contain a <i>move</i> property either. Therefore, the name resolution continues with the prototype's prototype, which is created with the <i>Point</i> constructor and contains the <i>move</i> property, whereby the name resolution succeeds. The internal prototype references are commonly referred to as the <b>prototype chain</b> of an object.
+</p><p>To query information about the prototype chain, JavaScript provides the <i>instanceof</i> operator.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">circle instanceof Circle <span class="co1">// true</span>
+circle instanceof Ellipsis <span class="co1">// true</span>
+circle instanceof Point <span class="co1">// true</span>
+circle instanceof Object <span class="co1">// true</span>
+circle instanceof Array <span class="co1">// false, is not an Array</span></pre></div></div>
+<p>As properties are introduced when they are first assigned, properties delivered by the prototype chain are overloaded when newly assigned. The <i>Object.hasOwnProperty</i> method and <i>in</i> operator allow the place where a property is stored to be investigated.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">circle.<span class="me1">hasOwnProperty</span><span class="br0">&#40;</span><span class="st0">&quot;x&quot;</span><span class="br0">&#41;</span> <span class="co1">// true, assigned by the Point constructor</span>
+circle.<span class="me1">hasOwnProperty</span><span class="br0">&#40;</span><span class="st0">&quot;area&quot;</span><span class="br0">&#41;</span> <span class="co1">// false</span>
+<span class="st0">&quot;area&quot;</span> in circle <span class="co1">// true</span></pre></div></div>
+<p>As can be seen, the <i>in</i> operator resolves names using the prototype chain, while the <i>Object.hasOwnProperty</i> only looks into the current object.
+</p><p>In most JavaScript engines, the internal prototype reference is called <i>__proto__</i> and is accessible from outside. In our next example, we will use the <i>__proto__</i> reference to explore the prototype chain. Because this property is non-standard, you should avoid using it in all other context.
+First let us define a function to inspect an object by iterating its members:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function inspect<span class="br0">&#40;</span>o<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">for</span> <span class="br0">&#40;</span>var n in o<span class="br0">&#41;</span> <span class="kw1">if</span> <span class="br0">&#40;</span>o.<span class="me1">hasOwnProperty</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span><span class="br0">&#41;</span> print<span class="br0">&#40;</span>n<span class="sy0">,</span> <span class="st0">&quot;=&quot;</span><span class="sy0">,</span> o<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="br0">&#125;</span></pre></div></div>
+<p>The <i>inspect</i> function prints all members stored in an object, so if we now apply this function to the <i>circle</i> object as well as to its prototypes, we obtain the following output:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">js<span class="sy0">&gt;</span> inspect<span class="br0">&#40;</span>circle<span class="br0">&#41;</span>
+x <span class="sy0">=</span> <span class="nu0">1</span>
+y <span class="sy0">=</span> <span class="nu0">1</span>
+a <span class="sy0">=</span> <span class="nu0">1</span>
+b <span class="sy0">=</span> <span class="nu0">1</span>
+js<span class="sy0">&gt;</span> inspect<span class="br0">&#40;</span>circle.<span class="st0">''</span>proto<span class="st0">''</span><span class="br0">&#41;</span>
+x <span class="sy0">=</span> undefined
+y <span class="sy0">=</span> undefined
+a <span class="sy0">=</span> undefined
+b <span class="sy0">=</span> undefined
+js<span class="sy0">&gt;</span> inspect<span class="br0">&#40;</span>circle.<span class="st0">''</span>proto<span class="st0">''</span>.<span class="st0">''</span>proto<span class="st0">''</span><span class="br0">&#41;</span>
+x <span class="sy0">=</span> undefined
+y <span class="sy0">=</span> undefined
+area <span class="sy0">=</span> function <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> Math.<span class="me1">PI</span> <span class="sy0">*</span> <span class="kw1">this</span>.<span class="me1">a</span> <span class="sy0">*</span> <span class="kw1">this</span>.<span class="me1">b</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+js<span class="sy0">&gt;</span> inspect<span class="br0">&#40;</span>circle.<span class="st0">''</span>proto<span class="st0">''</span>.<span class="st0">''</span>proto<span class="st0">''</span>.<span class="st0">''</span>proto<span class="st0">''</span><span class="br0">&#41;</span>
+move <span class="sy0">=</span> function <span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">x</span> <span class="sy0">=</span> x
+ <span class="kw1">this</span>.<span class="me1">y</span> <span class="sy0">=</span> y<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+translate <span class="sy0">=</span> function <span class="br0">&#40;</span>dx<span class="sy0">,</span> dy<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">x</span> <span class="st0">''</span><span class="sy0">=</span> dx
+ <span class="kw1">this</span>.<span class="me1">y</span><span class="st0">''</span><span class="sy0">=</span> dy<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+area <span class="sy0">=</span> function <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+js<span class="sy0">&gt;</span> inspect<span class="br0">&#40;</span>circle.<span class="st0">''</span>proto<span class="st0">''</span>.<span class="st0">''</span>proto<span class="st0">''</span>.<span class="st0">''</span>proto<span class="st0">''</span>.<span class="st0">''</span>proto<span class="st0">''</span><span class="br0">&#41;</span>
+js<span class="sy0">&gt;</span></pre></div></div>
+<p>As you can see, the <i>move</i> method is actually stored in <i>circle.__proto__.__proto__.__proto__</i>. You can also see a lot of redundant undefined members, but this shouldn't cause you any concern as prototype objects are shared among instances.
+</p>
+<h2><span class="mw-headline" id="Scopes.2C_Closures_and_Encapsulation">Scopes, Closures and Encapsulation</span></h2>
+<p>In JavaScript, execution starts in the global scope. Predefined global functions like <i>Math</i> or <i>String</i> are properties of the global object. The global object serves as the root of the scope chain and is the first object created. The global object can be referenced from the global scope by explicitly using the <i>this</i> keyword. It means the following is the same:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw1">this</span>.<span class="me1">Math</span> <span class="sy0">===</span> Math</pre></div></div>
+<p>Further scopes are created on-demand, whenever a function is called. Scopes are destroyed as any other object when they are no longer needed. When a function is defined, the enclosing scope is kept with the function definition and used as the parent scope for the function invocation scope. The new scope that is created upon function invocation is commonly referred to as the <b>activation object</b>. The scope in which functions are defined is commonly referred to as the <b>lexical scope</b>.
+</p><p>The following example shows how to use lexical scopes to hide private members:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function Point<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">getX</span> <span class="sy0">=</span> function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> x<span class="sy0">;</span> <span class="br0">&#125;</span>
+ <span class="kw1">this</span>.<span class="me1">setX</span> <span class="sy0">=</span> function<span class="br0">&#40;</span>x2<span class="br0">&#41;</span> <span class="br0">&#123;</span> x <span class="sy0">=</span> x2<span class="sy0">;</span> <span class="br0">&#125;</span>
+ <span class="kw1">this</span>.<span class="me1">getY</span> <span class="sy0">=</span> function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> y<span class="sy0">;</span> <span class="br0">&#125;</span>
+ <span class="kw1">this</span>.<span class="me1">setY</span> <span class="sy0">=</span> function<span class="br0">&#40;</span>y2<span class="br0">&#41;</span> <span class="br0">&#123;</span> y <span class="sy0">=</span> y2<span class="sy0">;</span> <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>When the <i>Point</i> constructor is invoked, it creates get and set methods. The newly generated scope for the invocation of the <i>Point</i> constructor carries the <i>x</i> and <i>y</i> members. The getters and setters reference this scope and therefore it will be retained for the lifetime of the newly created object. Interestingly there is no other way to access <i>x</i> and <i>y</i> other than via the set and get methods. This way JavaScript supports <b>data encapsulation</b>.
+</p><p>The concept of a function referencing the enclosing scope and retaining it for the lifetime of the function is commonly called a <b>closure</b>. Low-level programming languages like "C" do not support closures because local scopes are created using stack frames and therefore need to be destroyed when the function returns.
+</p>
+<h2><span class="mw-headline" id="Namespaces">Namespaces</span></h2>
+<p>Functions play a pivotal role in JavaScript. They serve as simple functions, methods, constructors and are used to encapsulate private properties. Additionally functions serve as anonymous namespaces:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="br0">&#40;</span>function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="co1">// my code</span>
+ var smth <span class="sy0">=</span> <span class="kw1">new</span> Smth <span class="co1">// safe</span>
+ other <span class="sy0">=</span> <span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">2</span><span class="sy0">,</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="co1">// bad, goes into global scope</span>
+ Array <span class="sy0">=</span> function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="co1">// forbidden</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span> <span class="br0">&#40;</span><span class="br0">&#41;</span>
+var smthElse <span class="sy0">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="co1">// bad, goes into global scope</span></pre></div></div>
+<p>An anonymous function is defined and executed on-the-fly. Global initialization code in particular is commonly wrapped in such a way to prevent polluting the global scope. As the global object can be modified as any other object in JavaScript, wrapping code in such a way reduces the risk of accidentally overwriting a global variable. To ensure that it actually works, all variables need to be duly introduced using the <i>var</i> statement.
+</p><p>Named namespaces can also be created with functions. If for instance we wanted to write a utility library for painting applications, we could write:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">function PaintUtil<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ PaintUtil.<span class="me1">Point</span> <span class="sy0">=</span> function<span class="br0">&#40;</span>x<span class="sy0">,</span> y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">this</span>.<span class="me1">move</span> <span class="sy0">=</span> function<span class="br0">&#40;</span>x2<span class="sy0">,</span> y2<span class="br0">&#41;</span> <span class="br0">&#123;</span> x <span class="sy0">=</span> x2<span class="sy0">;</span> y <span class="sy0">=</span> y2 <span class="br0">&#125;</span>
+ <span class="kw1">this</span>.<span class="me1">getX</span> <span class="sy0">=</span> function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> x<span class="sy0">;</span> <span class="br0">&#125;</span>
+ <span class="kw1">this</span>.<span class="me1">getY</span> <span class="sy0">=</span> function<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> y<span class="sy0">;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="co1">// Ellipsis, Circle, other painting utility methods</span>
+<span class="br0">&#125;</span>
+PaintUtil<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>
+<p>Once this little library module is executed, it will provide the single <i>PaintUtil</i> object which makes the utility functions accessible. A point can be instantiated using the constructor provided by <i>PaintUtil</i> as follows:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var p <span class="sy0">=</span> <span class="kw1">new</span> PaintUtil.<span class="me1">Point</span><span class="br0">&#40;</span><span class="nu16">0.1</span><span class="sy0">,</span> <span class="nu16">0.2</span><span class="br0">&#41;</span></pre></div></div>
+<p>Reusable JavaScript modules should only introduce a single global object with a distinguishable name.
+</p>
+<h2><span class="mw-headline" id="Common_Methods">Common Methods</span></h2>
+<p>JavaScript allows the default behavior of an object to be changed using the <i>valueOf()</i> and the <i>toString()</i> methods. <i>valueOf()</i> is expected to return a value of fundamental type. It is used to compare objects (when sorting them) and to evaluate expressions comprising of objects and fundamental types. <i>toString()</i> is invoked when an object is cast to a string.
+In JavaScript, objects are compared for equality differently than for being greater or lower. Comparison for equality always compares the object references. Comparison for being lower or greater, on the other hand, converts objects by first converting the objects to values of fundamental types. First <i>valueOf()</i> is invoked and, if it doesn't return a fundamental type, it calls <i>toString()</i> instead.
+</p><p>For our <i>Point</i> class, we could define the methods as follows:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Point.<span class="me1">prototype</span>.<span class="me1">valueOf</span> <span class="sy0">=</span> function <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">return</span> Math.<span class="kw3">sqrt</span><span class="br0">&#40;</span><span class="kw1">this</span>.<span class="me1">getX</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">*</span> <span class="kw1">this</span>.<span class="me1">getX</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">+</span> <span class="kw1">this</span>.<span class="me1">getY</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">*</span> <span class="kw1">this</span>.<span class="me1">getY</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+Point.<span class="me1">prototype</span>.<span class="me1">toString</span> <span class="sy0">=</span> function <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">return</span> <span class="kw1">this</span>.<span class="me1">getX</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">+</span> <span class="st0">&quot;,&quot;</span> <span class="sy0">+</span> <span class="kw1">this</span>.<span class="me1">getY</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">toString</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="Exceptions">Exceptions</span></h2>
+<p>JavaScript provides an exception handling mechanism like most other high-level languages. Exceptions are thrown using the <i>throw</i> statement. Any value can be used as an exception object:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">throw <span class="sy0">&lt;</span>expression<span class="sy0">&gt;</span></pre></div></div>
+<p>When an exception is thrown, JavaScript unwinds the current scope until it arrives at a try-catch scope:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">try</span> <span class="br0">&#123;</span>
+ <span class="sy0">&lt;</span>statement<span class="sy0">-</span>list<span class="sy0">&gt;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">catch</span> <span class="br0">&#40;</span><span class="sy0">&lt;</span>name <span class="kw1">for</span> exception object<span class="sy0">&gt;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="co1">// handle exception</span>
+<span class="br0">&#125;</span>
+finally <span class="br0">&#123;</span>
+ <span class="co1">// always go through here</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>The name of the exception object is only locally defined inside the catch scope.
+Exceptions can be re-thrown.
+</p>
+<h2><span class="mw-headline" id="Resources">Resources</span></h2>
+<h3><span class="mw-headline" id="Web_Links">Web Links</span></h3>
+<ul>
+<li> <a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/JavaScript/Reference">The JavaScript Reference</a> 
+</li>
+<li> <a rel="nofollow" class="external text" href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core/">JavaScript. The core. (Dmitry A. Soshnikov)</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=Kq4FpMe6cRs">Changes to JavaScript: EcmaScript 5 (Mark Miller)</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">Standard ECMA-262</a>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Books">Books</span></h3>
+<p>See <a href="http://wiki.qt.io/Non-Qt_Books#JavaScript" title="Non-Qt Books">Non-Qt_Books#JavaScript</a>.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.755 seconds
+Real time usage: 0.778 seconds
+Preprocessor visited node count: 500/1000000
+Preprocessor generated node count: 1425/1000000
+Post‐expand include size: 2168/2097152 bytes
+Template argument size: 46/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1090-0!*!0!!en!*!* and timestamp 20151104175840 and revision id 18602
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=JavaScript&amp;oldid=18602">http://wiki.qt.io/index.php?title=JavaScript&amp;oldid=18602</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:Developing_with_Qt" title="Category:Developing with Qt">Developing with Qt</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=JavaScript" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/JavaScript"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:JavaScript&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/JavaScript" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=JavaScript&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=JavaScript&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/JavaScript" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/JavaScript" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=JavaScript&amp;oldid=18602&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=JavaScript&amp;oldid=18602" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=JavaScript&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 June 2015, at 20:16.</li>
+											<li id="footer-info-viewcount">This page has been accessed 4,116 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":498});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=JavaScript&oldid=18602 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:27:20 GMT -->
+</html>

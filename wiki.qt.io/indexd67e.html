@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_To_Build_Qt_Creator_From_Source&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:11:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for How To Build Qt Creator From Source - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_To_Build_Qt_Creator_From_Source","wgTitle":"How To Build Qt Creator From Source","wgCurRevisionId":15912,"wgRevisionId":0,"wgArticleId":914,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_To_Build_Qt_Creator_From_Source","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_To_Build_Qt_Creator_From_Source skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for How To Build Qt Creator From Source</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/How_To_Build_Qt_Creator_From_Source" title="How To Build Qt Creator From Source">How To Build Qt Creator From Source</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{Cleanup | reason=Auto-imported from ExpressionEngine.}}
+
+[[Category:HowTo]]
+[[Category:Tools::QtCreator]]
+'''English'''
+
+
+= Building Qt Creator with Qt SDK 1.1.0 =
+
+This article describes how to build the newest Qt Creator from source. That's an easy and quick way to take a part in developing the Qt Creator tool. These instructions are known to work on Windows for Qt SDK 1.1.0, Qt Creator 2.3.1, and Qt 4.7.4. With appropriate path name changes they ''should'' work on OS X and Linux, but I have not tested that yet.
+
+== How to build Qt Creator From Source ==
+
+I decided today that I wanted to chase down a bug in the Qt Creator 2.3.1 Mercurial plugin. "Shouldn't be hard to find," says I to myself, "I'll just re-build a debug version of Qt Creator and step through that part of the code using a debugger." Which was easier said than done, because:
+
+* Qt Creator 2.3.1 has dependencies on various private interfaces within the Qt library, and
+* The instructions for how to resolve those dependencies turn out to be incomplete.
+
+The official build of Qt Creator is done in an environment where the Qt Library is freshly built. In that environment, all of the private headers are present in the library tree. My goal was to stay within the "as installed" QtSDK environment as much as I could. I also wanted to build things in such a way that I could use the "stock" version of Qt Creator as my debugger, because it has all kinds of useful IDE goodness. Hopefully, my solution will be useful to other people who want to work on Qt Creator, either to fix a bug or to develop a new or improved Qt Creator plugin.
+
+If you want to build Qt Creator ''without'' re-building the Qt Library, the recommended procedure is as follows:
+# Download the source for Qt Creator
+# Download the source for the Qt Library, so that you have the private headers that Qt Creator needs. I put this in *C:.
+# Add '''QT_PRIVATE_HEADERS="C:QtSDKSrcinclude"''' (using ''your'' path to the sources) to the qmake invocation line.
+# Build.
+
+If QT_PRIVATE_HEADERS is ''not'' specified, several components will be omitted from the Qt Creator build because they rely on private header files. If QT_PRIVATE_HEADERS is set, the build on Windows will ''still'' fail, because there are dependencies on the '''qwineventnotifier_p.h''' header file and some of the qmake project files in the Qt Creator tree haven't been updated to reference QT_PRIVATE_HEADERS in their include lines. The '''qwineventnotifier_p.h''' header may be going public soon ([https://bugreports.qt.nokia.com/browse/QTCREATORBUG-3701 bug report]).
+
+Ignoring the problem with '''qwineventnotifier_p.h''', the components that get left out when you build this way are not things that you want to leave out when you are debugging Qt Creator. The designer component is one of them, and that one is pretty important. If you are trying to hunt down a problem, you probably want to be using a build that is as close to the "real thing" as you can. So my question was: what was the ''least'' change I could make to the build environment provided in the SDK that would let me do a complete build of Qt Creator?
+
+== Updating the QtSDK Tree ==
+
+Here a fairly easy way to update the QtSDK tree to let you build Qt Creator using the SDK:
+
+# Install the Qt SDK to *C: (the default)
+# Download the Qt Creator source code and unpack it to C:. It ''should'' work to build it in other locations, but in my case it did not.
+# Download and unpack the Qt Library source code from the download site. You want this version because it contains the generated include/ directories. The one you get from the package manager does ''not'' have these directories. In my case, I unpacked these to *C:
+# From *c:, copy the ''private'' header file directories in '''include\QtCore''', '''include\QtGui''', '''include\QtDeclarative''' and '''include\QtScript''' to the respective locations under '''C:.7.4\mingw\include'''. If you are building using Visual Studio 2008, copy them to the directory tree under '''C:.7.4\msvc2008\include''' instead.
+# The files in the '''…/private/''' directories make reference directly back into the source tree. Copy the '''C:.7.4\src''' to '''C:.7.4\mingw\src''' (for Visual Studio 2008, copy them to '''C:.7.4\msvc2008\src'''). You could ''probably'' copy these from *c: instead. I figured that taking them from the '''QtSources''' module would reduce the likelihood of "drift" between the sources and the binaries.
+
+Note that these changes are pretty easy to undo. The "official" SDK tree doesn't have source code or private header files down in the Qt Version subdirectories, so they are easy to find and delete by hand.
+
+If you merely want a quick way to make sure that you aren't depending on private interfaces by accident, you can simply ''rename'' the '''src''' tree you created to '''_src'''. The private header files that you copied simply turn around and include things from the '''src''' tree. If you include a private header by mistake, moving the '''src''' tree will cause a compile failure. This is a nice way to do things, since it's easy to restore.
+
+'''Caution:''' Removing the Desktop Qt component (the one you just modified) using the package manager will ''not'' remove the extra files. In fact, if you remove and re-install the component, they will still be present!
+
+Hopefully this sort of thing will become unnecessary when the anticipated modularity improvements to Qt Library are implemented.
+
+== Building Qt Creator ==
+
+Now for the fun part.
+
+Using the SDK version of Qt Creator (!), open the file C:.pro file. I selected the MinGW build environment. I have not tested the build under Visual Studio. Once the project has loaded, you will need to make the following changes:
+
+* In the Project Build Settings box (both Release and Debug), under '''Build Steps''', select the Details* button for the qmake line.
+* Add '''QT_PRIVATE_HEADERS="C:QtSDKDesktopQt4.7.4mingwinclude"''' to the '''Additional arguments''' box. The changes you made above have placed all of the necessary private headers in the Qt SDK tree.
+* On Windows: Switch to the '''Run Settings''', and change the '''Run configuration''' to '''app'''. This may not be necessary on other platforms.
+
+Now re-run qmake and re-build the QtCreator project. Depending on the power of your machine, the build make take as much as an hour.
+
+'''Hint:''' If you plan to debug the resulting version of Qt Creator, you may find it helpful to disable '''Restore last session on startup''' in the Qt Creator session manager. If you do not disable this, the ''inferior'' version of Qt Creator (the one you just built) will happily load up the same Qt Creator project that you have loaded in the ''superior'' version of Qt Creator. This is amusing the first time, but both copies of Qt Creator will be attempting to update their "current session" state at the same time, which probably isn't a good thing. If you like, you can create separate sessions named something like '''Superior Creator''' and '''Inferior Creator''' to help keep things organized.
+
+== Conclusion ==
+
+I'm off to go debug the Mercurial plugin. In the meantime, I hope this "How To" will be useful to somebody.
+
+= Building Qt Creator with Qt SDK 1.2 =
+
+Tested with: Qt SDK 1.2 + Qt Creator 2.6 + Qt 4.8.0 + MSVC 10.0 (Tested on WinXP 32-bit SP3)
+
+== Installation ==
+
+# Download and Install the [http://qt.nokia.com/downloads QtSDK]. Make sure that you have the Development Tools->Qt 4.8.0->Desktop Qt 4.8.0 - MSVC 2010 option checked, if not, you can run the SDKMaintenaceTool and update.
+# Get the Qt Creator Sources
+Checkout the Qt Creator source from [http://qt.gitorious.org/qt-creator gitorious] (git clone git://gitorious.org/qt-creator/qt-creator.git).
+# Get the Qt Sources
+Checkout the Qt 4 sources from [http://qt.gitorious.org/qt gitorious] (git clone git://gitorious.org/qt/qt.git). Checked sources during the installation of the Qt SDK ("Miscellaneous -> Qt Sources-> Qt 4.8.0 Sources" should work as well but I do not recommend that, with sources from gitorious you're guaranteed to have most up to date sources.
+# Download the free version of [http://go.microsoft.com/?linkid=9709969 Visual Studio Express 2010] or Visual C++ Express 2010.
+
+== Configuration ==
+
+When you have everything installed. We need to set up our toolchain or rather Qt Creator does that for you. After installation of MSVCExpress and restarting system, you should run your Qt Creator, go to Option->Build &amp; Run->Tool Chains, in auto decteted branch you should see the "Microsoft Visual C++ Compiler 10.0". If not add the MSVC tool chain manually.
+* '''Option 1: Copy Source'''
+Now we need to use our Qt Sources, because normally Qt Creator depends on some private interfaces. To do this we need to go to our qt repository and copy the '''src''' directory into '''QtSDK/Desktop/Qt/4.8.0/msvc2010/''' directory. Note that if you checked to install the sources with Qt SDK, files you need should be available in '''QtSDK/QtSources/4.8.0/src''' directory.
+* '''Option 2: Use QT_PRIVATE_HEADERS'''
+set QT_PRIVATE_HEADERS=QtSDK/QtSources/4.8.0/include
+
+The very last last thing we need, is to open the qt-creator project in our Qt Creator, go to Projects tab, and select "Microsoft Visual C++ Compiler 10.0" tool chain.
+
+Comparing to the previous releases of QtSDK (1.1) there was no need for adding the '''QT_PRIVATE_HEADERS''' variable into qmake parameters.
+
+== Compile &amp; Run ==
+
+That's the fun part: just press that nice and shiny green play button!
+Note: I've also set the "Run" option as "app" to se the new QtCreator from source for the first time)
+That's all! We can build newest QtCreator with a bit older QtCreator. Isn't that great?
+
+I hope you like that quick-and-easy way of building QtCreator.
+
+'''Note about MinGW compiler:'''
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:Ambox" title="Template:Ambox">Template:Ambox</a> (<a href="http://wiki.qt.io/index.php?title=Template:Ambox&amp;action=edit" title="Template:Ambox">view source</a>) </li><li><a href="http://wiki.qt.io/Template:Cleanup" title="Template:Cleanup">Template:Cleanup</a> (<a href="http://wiki.qt.io/index.php?title=Template:Cleanup&amp;action=edit" title="Template:Cleanup">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/How_To_Build_Qt_Creator_From_Source" title="How To Build Qt Creator From Source">How To Build Qt Creator From Source</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/How_To_Build_Qt_Creator_From_Source">http://wiki.qt.io/How_To_Build_Qt_Creator_From_Source</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=How+To+Build+Qt+Creator+From+Source" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/How_To_Build_Qt_Creator_From_Source"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:How_To_Build_Qt_Creator_From_Source&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/How_To_Build_Qt_Creator_From_Source" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=How_To_Build_Qt_Creator_From_Source&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=How_To_Build_Qt_Creator_From_Source&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/How_To_Build_Qt_Creator_From_Source" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/How_To_Build_Qt_Creator_From_Source" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=How_To_Build_Qt_Creator_From_Source&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":222});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_To_Build_Qt_Creator_From_Source&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:11:31 GMT -->
+</html>

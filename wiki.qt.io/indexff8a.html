@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Maps_and_Navigation_API&oldid=15322 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 09:10:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Maps and Navigation API - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Maps_and_Navigation_API","wgTitle":"Maps and Navigation API","wgCurRevisionId":15322,"wgRevisionId":15322,"wgArticleId":1132,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Maps_and_Navigation_API","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Maps_and_Navigation_API skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Maps and Navigation API</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 10:36, 31 March 2015 by <a href="http://wiki.qt.io/index.php?title=User:Henri_Vikki&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Henri Vikki (page does not exist)">Henri Vikki</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:Henri_Vikki&amp;action=edit&amp;redlink=1" class="new" title="User talk:Henri Vikki (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Henri_Vikki" title="Special:Contributions/Henri Vikki">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Maps_and_Navigation_API&amp;diff=prev&amp;oldid=15322" title="Maps and Navigation API">diff</a>) <a href="http://wiki.qt.io/index.php?title=Maps_and_Navigation_API&amp;direction=prev&amp;oldid=15322" title="Maps and Navigation API">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Qt_Mobility_1.1_Features"><span class="tocnumber">1</span> <span class="toctext">Qt Mobility 1.1 Features</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Summary"><span class="tocnumber">2</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Functionality"><span class="tocnumber">3</span> <span class="toctext">Functionality</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Maps"><span class="tocnumber">3.1</span> <span class="toctext">Maps</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Routing"><span class="tocnumber">3.2</span> <span class="toctext">Routing</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Geocoding_and_places_searching"><span class="tocnumber">3.3</span> <span class="toctext">Geocoding and places searching</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Writing_a_new_plugin"><span class="tocnumber">4</span> <span class="toctext">Writing a new plugin</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Example_applications"><span class="tocnumber">5</span> <span class="toctext">Example applications</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Qt_Mobility_1.1_Features">Qt Mobility 1.1 Features</span></h2>
+<p><a rel="nofollow" class="external text" href="http://labs.qt.nokia.com/2011/05/04/qt-4-7-3-and-qt-mobility-1-1-3-have-been-released/">Qt Mobility 1.1.3 Release</a> is available now for commercial app development and deployment on Ovi store.
+<a rel="nofollow" class="external text" href="http://labs.qt.nokia.com/2011/05/12/qt-mobility-1-2-0-released/">Qt Mobility 1.2.0 release</a> is available now.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Summary">Summary</span></h2>
+<p>The Maps and Navigation API provides access to mapping, routing and geocoding services.
+</p><p>The API is designed so that the core functionality it provided by a plugin. Qt Mobility will ship with a plugin that accesses Nokia services by default but there should be nothing to stop someone from writing plugins that work with other services (provided that we designed the API correctly).
+</p><p>What we have at the moment should give you some idea of what we're aiming at in terms of functionality offered and the API which provides access to it.
+</p><p>The current code can be viewed as a draft of the API which we'll be releasing. We have applied some of the API review feedback although there are still some changes which will still have to make, and there is some additional functionality we'd like to add to the API, so some of the classes and methods might be renamed between now and the release.
+</p>
+<h2><span class="mw-headline" id="Functionality">Functionality</span></h2>
+<p>Since most providers of mapping, routing and geocoding information offer no guarantees that their data is interoperable with the data provided by other services, the plugins are used to group the functionality per service provider. This doesn't mean that you can't mix and match your sources of data, although it's a hint from us that you may want to be really sure that the "matching" part is done with care.
+</p><p>Plugin are loaded using the <b>QGeoServiceProvider</b> class, which give access to instances of the classes reponsible for each area of functionality in the API.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QGeoMappingManager <span class="sy0">*</span>mappingManager <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+QGeoRoutingManager <span class="sy0">*</span>routingManager <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+QGeoSearchManager <span class="sy0">*</span>searchManager <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+&#160;
+QGeoServiceProvider serviceProvider<span class="br0">&#40;</span><span class="st0">&quot;nokia&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw1">if</span> <span class="br0">&#40;</span>serviceProvider.<span class="me1">error</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">==</span> QGeoServiceProvider<span class="sy0">::</span><span class="me2">NoError</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ mappingManager <span class="sy0">=</span> serviceProvider.<span class="me1">mappingManager</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ routingManager <span class="sy0">=</span> serviceProvider.<span class="me1">routingManager</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ searchManager <span class="sy0">=</span> serviceProvider.<span class="me1">searchManager</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>For the communications with the routing and search services we borrowed quite a bit of API from the Qt Network module.
+</p><p>The QGeoRoutingManager and QGeoSearchManager classes have methods which return QGeoRouteReply and QGeoSearchReply instances respectively, in the same way that QNetworkAccessManager returns QNetworkReply instances, and those classes are heavily influences by QNetworkReply. The class documentation for the QGeoRoutingManager and QGeoSearchManager contain example code which should help users get started in these areas.
+</p>
+<h3><span class="mw-headline" id="Maps">Maps</span></h3>
+<p>The class at the center of the mapping functionality is <b>QGeoMapWidget</b>. This will be renamed before the beta release since it's not a widget at all.
+</p><p>You can get hold of an instance of QGeoMapWidget with:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QGeoMapWidget <span class="sy0">*</span>widget <span class="sy0">=</span> <span class="kw1">new</span> QGeoMapWidget<span class="br0">&#40;</span>mappingManager<span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>The widget instance allows the user to
+<b> set or get the coordinate at the center of the map</b>
+</p>
+<ul>
+<li> set or get the zoom level
+</li>
+<li> set or get the map type (street map, satellite map, etc…)
+</li>
+<li> pan the map
+</li>
+<li> convert between coordinates and positions on the screen
+</li>
+<li> add, remove and retrieve map objects
+</li>
+<li> get the minimum and maximum zoom levels supported by the mapping service
+</li>
+<li> get the map types supported by the mapping service
+</li>
+</ul>
+<p>Multiple widgets can make use of the same QGeoMappingManager in the one application.
+</p><p>We're not quite done with the map objects at the moment, but in the future they'll include
+</p>
+<ul>
+<li> a rectangle object
+</li>
+<li> a circle object (all points within a given distance of a center point)
+</li>
+<li> a polygon object
+</li>
+<li> a polyline object
+</li>
+<li> an image object for map markers
+</li>
+<li> possibly some others
+</li>
+</ul>
+<p>The MapsViewer example is available for those who'd like to see the code in action before diving in.
+</p>
+<h4><span class="mw-headline" id="Current_status">Current status</span></h4>
+<p>The Nokia plugin provides basic mapping functionality, although the performance is undergoing a major overhaul and the map objects are not complete.
+</p><p>We haven't finished the map objects yet.
+</p><p>We are looking at ways in which we might be able to allow users to specify map overlays, and are working on a set of convenience classes to form a tiled mapping API in order to assist plugin implementers who are working with tile-based mapping services.
+</p><p>We have some work to do before we're ready for vector based mapping services, but it's on our list.
+</p>
+<h3><span class="mw-headline" id="Routing">Routing</span></h3>
+<p>Routes can be calculated using
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QGeoRouteReply<span class="sy0">*</span> QGeoRoutingManager<span class="sy0">::</span><span class="me2">calculateRoute</span><span class="br0">&#40;</span><span class="kw4">const</span> QGeoRouteRequest <span class="sy0">&amp;</span>request<span class="br0">&#41;</span></pre></div></div>
+<p>The QGeoRouteRequest class contains:
+</p>
+<ul>
+<li> the waypoints of the route
+</li>
+<li> the number of alternative routes to provide
+</li>
+<li> the travel mode (or modes)
+</li>
+</ul>
+<p><b><i> Car, Pedestrian, Bicycle, PublicTransit, Truck</i></b>
+</p>
+<ul>
+<li> the route optimization to use
+</li>
+</ul>
+<p><b><i> Shortest, Fastest, MostEconomic, MostScenic</i></b>
+</p>
+<ul>
+<li> the features to avoid
+</li>
+</ul>
+<p><b><i> Tolls, Highways, etc</i></b>
+</p>
+<ul>
+<li> geographic areas to exclude from the route
+</li>
+<li> whether to retrieve the route segment information
+</li>
+<li> whether to retrueve the navigation instruction information
+</li>
+</ul>
+<p>The QGeoRoutingManager instance has a related set of functions which can be used to determine whether the service supports a particular feature or constraint.
+</p><p>The QGeoRouteReply instance returned by calculateRoute() will contain one or more QGeoRoute instances, depending on whether alternative routes were requested.
+</p><p>The routing information may contain a number of instructions to be issued at various locations along the route - these instructions are described by the QGeoNavigationInstruction class.
+</p><p>We break the route up into a number of QGeoRouteSegment instances which correspond to the segments of the route which occur between two consecutive instructions.
+</p><p>The QGeoRoute class contains summary information for the route:
+</p>
+<ul>
+<li> the estimated travel time for the route
+</li>
+<li> the estimated total distance covered by the route
+</li>
+<li> a route ID, for use when updating the route
+</li>
+<li> a geographical bounding box for the route
+</li>
+<li> the travel mode used by the route
+</li>
+</ul>
+<p>as well as a list of QGeoRouteSegment instances
+</p><p>The QGeoRouteSegment contains:
+</p>
+<ul>
+<li> the estimated travel time for the route
+</li>
+<li> the estimated total distance covered by the route
+</li>
+<li> a list of QGeoCoordinates which defines the path taken by the route segment
+</li>
+<li> a QGeoNavigationInstruction instance
+</li>
+</ul>
+<p>and the QGeoNavigationInstruction contains:
+</p>
+<ul>
+<li> the instruction text
+</li>
+<li> the distance and time to the next instruction
+</li>
+<li> the position of the instruction
+</li>
+</ul>
+<p><b><i> this might be before the end of the corresponding segment</i></b>
+<b><i>* especially if the speed limit is high</i></b>
+</p><p>We plan to provide a QGeoMapObject subclass to assist with displaying routes on maps soon.
+</p>
+<h4><span class="mw-headline" id="Current_status_2">Current status</span></h4>
+<p>The Nokia plugin provides routing functionality.
+</p><p>The relationships between QGeoRoute, QGeoRouteSegment and QGeoNavigationInstruction are going to be re-examined, and QGeoRouteSegment and QGeoNavigationInstruction will probably be renamed.
+</p><p>The ability to specify features to avoid will probably be enhanced in order to support more fine-grained preferences with regard to features.
+</p>
+<h3><span class="mw-headline" id="Geocoding_and_places_searching">Geocoding and places searching</span></h3>
+<p>Geocoding and reverse geocoding are used to convert between address and coordinates:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QGeoSearchReply<span class="sy0">*</span> QGeoSearchManager<span class="sy0">::</span><span class="me2">geocode</span><span class="br0">&#40;</span><span class="kw4">const</span> QGeoCoordinate <span class="sy0">&amp;</span>coordinate<span class="sy0">,</span>
+ <span class="kw4">const</span> QGeoBoundingBox <span class="sy0">&amp;</span>boundingBox <span class="sy0">=</span> QGeoBoundingBox<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+QGeoSearchReply<span class="sy0">*</span> QGeoSearchManager<span class="sy0">::</span><span class="me2">geocode</span><span class="br0">&#40;</span><span class="kw4">const</span> QGeoAddress <span class="sy0">&amp;</span>address<span class="sy0">,</span>
+ <span class="kw4">const</span> QGeoBoundingBox <span class="sy0">&amp;</span>boundingBox <span class="sy0">=</span> QGeoBoundingBox<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>The QGeoSearchReply class contains a list of QGeoPlace instances, each of which contains a coordinate, and address and an optional bounding box. We return both pieces of information as the address or coordinate that was used in the geocode() function may be slightly different from the corresponding address or coordinate in the reply.
+</p><p>The optional bounds parameters is used to limit the results to those within a certain geographical area - usually the area corresponding to what a user has in their map viewport. When converting from address to coordinate the bounds parameter is most useful when a partially filled out address object is used - a QGeoAddress with city set to "London" could represent London, Great Britain or London, Kentucky, USA.
+</p><p>When converting from coordinate to address some geocoding services will give the coordinate/address pairs at multiple levels of detail - for the street address, the suburb, the city, the state and the country - and the bounds parameter can be used to limit that behaviour.
+</p><p>These functions will only work if
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">bool</span> QGeoSearchManager<span class="sy0">::</span><span class="me2">supportsGeocoding</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span></pre></div></div>
+<p>returns true.
+</p><p>To do a free text search, use:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QGeoSearchReply<span class="sy0">*</span> QGeoSearchManager<span class="sy0">::</span><span class="me2">placeSearch</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span> <span class="sy0">&amp;</span>searchString<span class="sy0">,</span>
+ SearchTypes searchTypes <span class="sy0">=</span> SearchTypes<span class="br0">&#40;</span> SearchAll <span class="br0">&#41;</span><span class="sy0">,</span>
+ <span class="kw4">const</span> QGeoBoundingBox <span class="sy0">&amp;</span> bounds <span class="sy0">=</span> QGeoBoundingBox<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>The searchTypes parameter is used to specify whether searchString is to be used for geocoding (in which case it will be treated as an address), for landmarks searching (in which case it will be used to search the services landmarks database) or both.
+</p><p>The values of searchType supported by the plugin can be found with:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">SearchTypes QGeoSearchManager<span class="sy0">::</span><span class="me2">supportedSearchTypes</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>
+<p>The return type for this method is still a list of QGeoPlace objects. The QLandmark class from the Landmarks API is a subclass of QGeoPlace, and users can check QGeoPlace instances to see if they’re actually QLandmark instances and make a conversion from a QGeoPlace instance to a QLandmark instance if necessary.
+</p><p>The user can also specify additional QLandmarkManager instances to be used with QGeoSearchManager. This can be used so that a single search can make use of the plugins landmark database and a users personal landmark database at the same time.
+</p><p>For more involved handling of landmarks, the Qt Mobility Landmarks API should be used.
+</p>
+<h4><span class="mw-headline" id="Current_status_3">Current status</span></h4>
+<p>The Nokia plugin provides geocoding and reverse geocoding, but does not search online landmark databases at present.
+</p><p>We still need to work out the best way to do paging, in order to handle the case where someone searches for landmarks containing the text "the". The current method (return them all) is not exactly network friendly.
+</p><p>We also need to write the code to combine the placeSearch results from the plugin implementation and from the additional landmark managers.
+</p>
+<h2><span class="mw-headline" id="Writing_a_new_plugin">Writing a new plugin</span></h2>
+<p>A plugin implementer needs to subclass QGeoServiceProviderFactory.
+</p><p>In addition to specifying the name and version of the plugin, the QGeoServiceProviderFactory subclass can provide implementations of createMappingManagerEngine(), createRoutingManagerEngine() and createSearchManagerEngine() as appropriate. The default implementations of these last three functions will be suitable if the plugin does not provide that particular set of functionality.
+</p><p>The plugin implementer should subclass QGeoMappingManagerEngine, QGeoRoutingManagerEngine and QGeoSearchManagerEngine in order to provide the requried functionality, and should take care to set the various metadata associated with each so that clients of the plugin can determine the specific capabilities of any particular plugin. See the class documentation for more informaiton.
+</p>
+<h2><span class="mw-headline" id="Example_applications">Example applications</span></h2>
+<p>There are two example applications provided.
+</p><p>The first is the <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtlocation-mapviewer-example.html">Map Viewer example</a>, which demonstrates the Mapping functionality.
+</p><p>Users can double click to center and zoom, drag to change position, and use the + and - keys to change the zoom level. Right clicking will bring up a menu which can be used to add objects to the map.
+</p><p>The second is QGeoAPIUI (which will be renamed soon) which demonstrates the routing and geocoding functionality.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.130 seconds
+Real time usage: 0.133 seconds
+Preprocessor visited node count: 106/1000000
+Preprocessor generated node count: 188/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1132-0!*!*!!en!*!* and timestamp 20151104215340 and revision id 15322
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Maps_and_Navigation_API&amp;oldid=15322">http://wiki.qt.io/index.php?title=Maps_and_Navigation_API&amp;oldid=15322</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Maps+and+Navigation+API" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Maps_and_Navigation_API"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Maps_and_Navigation_API&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Maps_and_Navigation_API" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Maps_and_Navigation_API&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Maps_and_Navigation_API&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Maps_and_Navigation_API" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Maps_and_Navigation_API" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Maps_and_Navigation_API&amp;oldid=15322&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Maps_and_Navigation_API&amp;oldid=15322" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Maps_and_Navigation_API&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 31 March 2015, at 10:36.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,341 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":345});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Maps_and_Navigation_API&oldid=15322 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 09:10:38 GMT -->
+</html>

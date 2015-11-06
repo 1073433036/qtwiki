@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/QML-Containers by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:49:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>QML Containers - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="QML_Containers.html" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"QML_Containers","wgTitle":"QML Containers","wgCurRevisionId":19274,"wgRevisionId":19274,"wgArticleId":1382,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing with Qt::Qt Quick","HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"QML_Containers","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"QML-Containers","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-QML_Containers skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">QML Containers</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub">(Redirected from <a href="index8702.html?title=QML-Containers&amp;redirect=no" title="QML-Containers">QML-Containers</a>)</div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Needs to be updated to QtQuick 2<br /><small>Please <b><a rel="nofollow" class="external text" href="index9d09.html?title=QML_Containers&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#ListModel_Element"><span class="tocnumber">2</span> <span class="toctext">ListModel Element</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Nested_ListElements"><span class="tocnumber">3</span> <span class="toctext">Nested ListElements</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Long_Texts"><span class="tocnumber">4</span> <span class="toctext">Long Texts</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#list_and_variant_Data_Types_as_Containers"><span class="tocnumber">5</span> <span class="toctext">list and variant Data Types as Containers</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#QML_Containers_and_Texts"><span class="tocnumber">6</span> <span class="toctext">QML Containers and Texts</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#QML_Containers_and_Images"><span class="tocnumber">7</span> <span class="toctext">QML Containers and Images</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#QML_Containers_and_JavaScript_Objects"><span class="tocnumber">8</span> <span class="toctext">QML Containers and JavaScript Objects</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#QML_Containers_and_Components"><span class="tocnumber">9</span> <span class="toctext">QML Containers and Components</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>In programming we are used to applying some language constructs for data collections like arrays for example. In QML these constructs are lists. They are implemented as <i>ListModel</i> elements and <i>list</i> and <i>variant</i> types. In the text bellow we call these constructs containers. A container holds linearly ordered elements, which are accessed by an index. The indexing uses special methods as in case of <i>ListModel</i> element or well-known square bracket notation in case of <i>list</i> and <i>variant</i> types. This article explores application of QML containers and how they are controlled dynamically.
+</p>
+<h2><span class="mw-headline" id="ListModel_Element">ListModel Element</span></h2>
+<p>It implements a classical list – an ordered collection of data items. Each item is accessible through <i>ListModel</i> element name and an index in the ordering. The index starts from 0. The data items are other QML elements – <i>ListElement</i>. They define properties and assign values to them in usual manner, but with stronger <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qml-listelement.html">restrictions</a>. In QML documentation the <i>ListElements</i> properties are called roles.
+</p><p>Here is an example that illustrates these definitions:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">//This snippet illustrates how ListModel is used as a container for other QML elements</span>
+import QtQuick <span class="nu16">1.1</span>
+&#160;
+Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>top<span class="sy0">;</span> width<span class="sy0">:</span><span class="nu0">500</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">500</span>
+ property alias getText<span class="sy0">:</span>arrangeText <span class="co1">//Makes arrangeText elements visible in top</span>
+ Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span>dummy
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>
+ top.<span class="me1">color</span><span class="sy0">=</span><span class="st0">&quot;lightsteelblue&quot;</span>
+ <span class="co1">//Demonstrates how ListElement properties are accessed</span>
+ top.<span class="me1">getText</span>.<span class="me1">firstText</span>.<span class="me1">text</span><span class="sy0">=</span>ourContainer.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">test1</span>
+ top.<span class="me1">getText</span>.<span class="me1">secondText</span>.<span class="me1">text</span><span class="sy0">=</span>ourContainer.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>.<span class="me1">test1</span>
+ top.<span class="me1">getText</span>.<span class="me1">thirdText</span>.<span class="me1">text</span><span class="sy0">=</span>ourContainer.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>.<span class="me1">test1</span>
+&#160;
+top.<span class="me1">getText</span>.<span class="me1">forthText</span>.<span class="me1">text</span><span class="sy0">=</span>ourContainer.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>.<span class="me1">moreParameters</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">year</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="co1">// end dummy</span>
+&#160;
+ListModel <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> ourContainer
+ ListElement <span class="br0">&#123;</span>
+ test1<span class="sy0">:</span><span class="st0">&quot;FirstText as title&quot;</span>
+ authorA<span class="sy0">:</span><span class="st0">&quot;Smith&quot;</span>
+ moreParameters<span class="sy0">:</span><span class="br0">&#91;</span>ListElement<span class="br0">&#123;</span>year<span class="sy0">:</span><span class="st0">&quot;1947&quot;</span><span class="br0">&#125;</span><span class="br0">&#93;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ test1<span class="sy0">:</span><span class="st0">&quot;SecondText as abstract&quot;</span>
+ authorA<span class="sy0">:</span><span class="st0">&quot;Kavendish&quot;</span>
+ moreParameters<span class="sy0">:</span><span class="br0">&#91;</span>ListElement<span class="br0">&#123;</span>year<span class="sy0">:</span><span class="st0">&quot;2001&quot;</span><span class="br0">&#125;</span><span class="br0">&#93;</span>
+ <span class="br0">&#125;</span>
+ ListElement <span class="br0">&#123;</span>
+ test1<span class="sy0">:</span><span class="st0">&quot;ThirdText as table of content&quot;</span>
+ authorA<span class="sy0">:</span><span class="st0">&quot;Vandey&quot;</span>
+ moreParameters<span class="sy0">:</span><span class="br0">&#91;</span>ListElement<span class="br0">&#123;</span>year<span class="sy0">:</span><span class="st0">&quot;Start date: 1999&quot;</span><span class="br0">&#125;</span><span class="br0">&#93;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+Column<span class="br0">&#123;</span>id<span class="sy0">:</span>arrangeText
+ property alias firstText<span class="sy0">:</span>first
+ property alias secondText<span class="sy0">:</span>second
+ property alias thirdText<span class="sy0">:</span>third
+ property alias forthText<span class="sy0">:</span>parameters
+ spacing<span class="sy0">:</span><span class="nu0">30</span>
+ Text<span class="br0">&#123;</span>id<span class="sy0">:</span>first<span class="br0">&#125;</span>
+ Text<span class="br0">&#123;</span>id<span class="sy0">:</span>second<span class="br0">&#125;</span>
+ Text<span class="br0">&#123;</span>id<span class="sy0">:</span>third<span class="br0">&#125;</span>
+ Text<span class="br0">&#123;</span>id<span class="sy0">:</span>parameters<span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="co1">//end rectangle top</span></pre></div></div>
+<p>What is important here is that we could have several <i>ListElement</i> elements, but each defines the same properties. You could see the similarity with arrays in other programming languages where the array's elements must be of the same type.
+</p><p>With the <i>ListModel</i> element are associated typical operations for lists: <i>insert(), append(), remove(), get()</i> , etc. Consult <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qml-listmodel.html#methods">documentation</a> for their usage.
+</p><p>What could we do with the <i>ListModel</i> container? Firstly, the container should be constructed by the definition and operations eventually. Next, the data items in the container could be accessed and used in other QML elements. Finally, all data items of a <i>ListModel</i> element could be rendered as a collection through views such as the <i>ListView</i> for example. The views are special QML elements servicing as viewers – see <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qdeclarativeelements.html">here</a>.
+</p><p>The demo snippet above demonstrates how <i>ListModel</i> container is used to hold some data. Note that we not use a <i>ListVeiw</i> for rendering the data. Usually <i>ListModel</i> is paired with <i>ListView</i> element. Our goal is to show how a <i>ListModel</i> serves as a data container supplying data to other QML elements.
+</p><p>The snippet is constructed as follows. Firstly, we define a <i>ListModel</i> element <i>ourContainer</i> and within it three <i>ListElement</i>. The QML snippet file introduces four <i>Text</i> elements – <i>first, second, third, parameters</i>. The functionality of the snippet is displaying the <i>text</i> properties values of the <i>Text</i> elements, which in turn are properties values of the <i>ListElements</i>. For convenience the displayed texts are arranged in columns. The role of custom defined properties in the snippet is to grant access to different QML elements. You remember the access rules for QML elements tree: from bottom to top entities are visible, but the contrary is not true. The rectangle <i>dummy</i> is used to form a script block where we get the data from the container and assign them to respective properties of <i>Text</i> elements.
+</p>
+<h2><span class="mw-headline" id="Nested_ListElements">Nested ListElements</span></h2>
+<p>In our example we define a property – <i>moreparameters</i> – which receives values that are other <i>ListElements</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListElement <span class="br0">&#123;</span>
+ test1<span class="sy0">:</span><span class="st0">&quot;ThirdText as table of content&quot;</span>
+ authorA<span class="sy0">:</span><span class="st0">&quot;Vandey&quot;</span>
+ moreParameters<span class="sy0">:</span><span class="br0">&#91;</span>ListElement<span class="br0">&#123;</span>year<span class="sy0">:</span><span class="st0">&quot;Start date: 1999&quot;</span><span class="br0">&#125;</span><span class="br0">&#93;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>In other words, we could have nested <i>ListElements</i>. To have access to nested values in the example we use <i>get()</i> method two times:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">top.<span class="me1">getText</span>.<span class="me1">forthText</span>.<span class="me1">text</span><span class="sy0">=</span>ourContainer.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>.<span class="me1">moreParameters</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">year</span></pre></div></div>
+<p>A property of a <i>ListElement</i> could be of <i>list</i> type, but be aware that elements of that list must be other <i>ListElements</i>.
+</p>
+<h2><span class="mw-headline" id="Long_Texts">Long Texts</span></h2>
+<p>If you have a long text as a <i>ListElement</i> property value you may prefer to hold it in a separate place not in the corresponding <i>ListModel</i> definition. One solution is to use <i>JavaScript</i> arrays – see <a rel="nofollow" class="external text" href="QML_Multi-line_Texts_Handling.html">here</a>. Another solution is to define an empty <i>ListModel</i>, which is used as a template and the respective property value (long text) is defined dynamically in a script block.
+</p><p>There are two approaches. The first uses the <i>setProperty()</i> method of the <i>ListModel</i> element. Here is a code fragment as example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>top<span class="sy0">;</span> width<span class="sy0">:</span><span class="nu0">500</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">500</span>
+ Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span>dummy
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>
+ ourContainer.<span class="me1">setProperty</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="st0">&quot;test1&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;New property value<span class="es1">\n</span> Second line<span class="es1">\n</span> Third line&quot;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="co1">// end dummy</span>
+ ListModel <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> ourContainer
+ ListElement <span class="br0">&#123;</span>
+ test1<span class="sy0">:</span><span class="st0">&quot;&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Text<span class="br0">&#123;</span>id<span class="sy0">:</span>first
+ text<span class="sy0">:</span>ourContainer.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">test1</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="co1">//end rectangle top</span></pre></div></div>
+<p>The property value of the <i>List Element</i>, which holds the long text, initially is an empty string. Later this value is changed dynamically in a separate script block. What is the role of the <i>dummy</i> rectangle above – just to construct a separate place where to put the long text.
+</p><p>The second approach defines an empty <i>ListModel</i>, which has no <i>ListElements</i> at all. Dynamically we use the <i>set()</i> method of the <i>ListModel</i> to add a long text. Have a look at a code sample:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>top<span class="sy0">;</span> width<span class="sy0">:</span><span class="nu0">500</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">500</span>
+ function longTextFragment<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ var back<span class="sy0">=</span> <span class="st0">&quot;First line - defined in the function body<span class="es1">\n</span>&quot;</span><span class="sy0">+</span>
+ <span class="st0">&quot;Second line - defined in the function body&quot;</span>
+ <span class="kw1">return</span> back
+ <span class="br0">&#125;</span>
+ ListModel <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> ourContainer
+ <span class="br0">&#125;</span>
+ Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span>dummy
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>
+ ourContainer.<span class="me1">set</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="br0">&#123;</span><span class="st0">&quot;test1&quot;</span><span class="sy0">:</span>longTextFragment<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#125;</span><span class="br0">&#41;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;Test the new entry in ourContainer<span class="es1">\n</span>&quot;</span><span class="sy0">,</span>ourContainer.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">test1</span><span class="br0">&#41;</span>
+ first.<span class="me1">text</span><span class="sy0">=</span>ourContainer.<span class="me1">get</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">test1</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="co1">// end dummy</span>
+ Text<span class="br0">&#123;</span>id<span class="sy0">:</span>first
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="co1">//end rectangle top</span></pre></div></div>
+<p>The property values of a <i>ListElement</i> could be <i>JavaScript</i> expressions and particularly a return value from a <i>JavaScript</i> function call. In the snippet above the function is named <i>longTextFragment()</i> and the long text is placed and formatted in the function body.
+</p><p>The full demo code for the above use cases you could find <a rel="nofollow" class="external text" href="http://bit.ly/1fpxKyX">here</a>.
+</p>
+<h2><span class="mw-headline" id="list_and_variant_Data_Types_as_Containers">list and variant Data Types as Containers</span></h2>
+<p>QML offers two data types – <i>list</i> and <i>variant</i> – which could be used as arrays. They are very similar, but too different semantically at the same time. The documentation on <i>list</i> and <i>variant</i> data types is <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qdeclarativebasictypes.html">here</a>. Consult the properties usage <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/propertybinding.html#list-properties">document</a> also.
+</p><p>The <i>list</i> data type collects QML elements, which are of the type as the type in the <i>list</i> type definition or inherited from that type. The <i>list</i> data are defined as a custom property like that:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">property list<span class="sy0">&lt;</span>Rectangle<span class="sy0">&gt;</span> exampleDefinition<span class="sy0">:</span> <span class="br0">&#91;</span>Rectangle<span class="br0">&#123;</span>width<span class="sy0">:</span><span class="nu0">50</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">50</span><span class="br0">&#125;</span><span class="sy0">,</span>
+ Rectangle<span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy0">,</span>Rectangle<span class="br0">&#123;</span>id<span class="sy0">:</span>last<span class="sy0">;</span><span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>The initializing part of the definition (right side) is optional. We could define just a <i>list</i> data name and at a later moment assign elements to the list.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">property list<span class="sy0">&lt;</span>Item<span class="sy0">&gt;</span> sample
+…
+ Rectangle<span class="br0">&#123;</span>id<span class="sy0">:</span>rect1<span class="sy0">;</span>width<span class="sy0">:</span><span class="nu0">40</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">40</span><span class="br0">&#125;</span>
+ Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>rect2<span class="sy0">;</span>width<span class="sy0">:</span><span class="nu0">100</span><span class="sy0">;</span>height<span class="sy0">:</span><span class="nu0">100</span><span class="br0">&#125;</span>
+ Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>dummy
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>sample<span class="sy0">=</span><span class="br0">&#91;</span>rect1<span class="sy0">,</span>rect2<span class="br0">&#93;</span><span class="sy0">;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;rect1 width = &quot;</span><span class="sy0">,</span>sample<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>.<span class="me1">width</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+…</pre></div></div>
+<p>All elements in a <i>list</i> data definition have to be of the same type. Basic QML data types as <i>int, string</i>, etc. could not be elements of a <i>list</i> data.
+</p><p>The <i>variant</i> data type uses the same square brackets to form a list of entities. They could be basic QML types (but not QML elements types) or <i>JavaScript</i> objects. It is important to note that <i>variant</i> data type list entities could be of different types.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">…
+function fun<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+ <span class="kw1">return</span> <span class="st0">&quot;Return value from fun()&quot;</span>
+<span class="br0">&#125;</span>
+…
+property string text1<span class="sy0">:</span><span class="st0">&quot;Some text&quot;</span>
+property string text2<span class="sy0">:</span><span class="st0">&quot;Another text&quot;</span>
+…
+property variant anotherArrayType<span class="sy0">:</span><span class="br0">&#91;</span><span class="st0">&quot;This is a string&quot;</span><span class="sy0">,</span>text1<span class="sy0">+</span>text2<span class="sy0">,</span> <span class="nu0">30</span><span class="sy0">*</span><span class="nu0">2</span><span class="sy0">,</span>fun<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#93;</span>
+…
+&#160;
+Rectangle <span class="br0">&#123;</span>id<span class="sy0">:</span>dummy1
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span>anotherArrayType<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">,</span>anotherArrayType<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy0">,</span>anotherArrayType<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="br0">&#125;</span>
+…</pre></div></div>
+<p>The both sequences – <i>list</i> and <i>variant</i> – are immutable. That means that once defined elements in a <i>list</i> or <i>variant</i> data could not be changed. For the <i>variant</i> data there is a tricky <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-4.8/qml-variant.html">approach</a> to go around this limitation.
+</p><p>The complete code of examples in this section could be downloaded <a rel="nofollow" class="external text" href="http://bit.ly/1fpxKyX`">here</a>.
+</p>
+<h2><span class="mw-headline" id="QML_Containers_and_Texts">QML Containers and Texts</span></h2>
+<p>Let us consider a typical use case for program systems. We have a set of text messages and need to store them in a container. In different situations we get a message from the container and display it.
+</p><p>The simplest solution is to define a <i>variant</i> list and hold the messages in it as strings:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">property variant someMessages<span class="sy0">:</span><span class="br0">&#91;</span><span class="st0">&quot;This is the first message[[Image:&quot;</span><span class="sy0">,</span>
+   <span class="st0">&quot;This is the second message|]]&quot;</span><span class="sy0">,</span>
+ <span class="st0">&quot;This is the third message!&quot;</span><span class="br0">&#93;</span></pre></div></div>
+<p>The complete snippet is <a rel="nofollow" class="external text" href="http://bit.ly/1fpxKyX">here</a>.
+</p><p>If we want to be able to format text messages we could use a l_ist_ data type to hold QML Text elements:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">property list<span class="sy0">&lt;</span>Item<span class="sy0">&gt;</span> someMessages<span class="sy0">:</span><span class="br0">&#91;</span>Text<span class="br0">&#123;</span>text<span class="sy0">:</span><span class="st0">&quot;First message&quot;</span><span class="sy0">;</span>color<span class="sy0">:</span><span class="st0">&quot;white&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+ Text<span class="br0">&#123;</span>text<span class="sy0">:</span><span class="st0">&quot;Second Message&quot;</span><span class="sy0">;</span>color<span class="sy0">:</span><span class="st0">&quot;red&quot;</span><span class="sy0">;</span>font<span class="br0">&#123;</span>bold<span class="sy0">:</span><span class="kw2">true</span><span class="br0">&#125;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+ Text<span class="br0">&#123;</span>text<span class="sy0">:</span><span class="st0">&quot;Third message&quot;</span><span class="sy0">;</span>font<span class="br0">&#123;</span>italic<span class="sy0">:</span>true<span class="sy0">;</span>pixelSize<span class="sy0">:</span><span class="nu0">16</span><span class="br0">&#125;</span><span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>The complete code for this use case is <a rel="nofollow" class="external text" href="http://bit.ly/1fpxKyX">here</a>.
+</p><p>As the both <i>variant</i> and <i>list</i> containers just hold data we need a solution for rendering them. The process has two steps: firstly we get the data and then render them. The proposed solution is to use a QML loader and it is illustrated in the diagram bellow.
+</p><p><a href="File_ListDiagram.html" class="image" title="Diagram"><img alt="Diagram" src="images/c/c5/ListDiagram.jpg" width="414" height="283" /></a>
+</p><p>The loader – <i>id:light</i> – loads a template <i>VirtualText.qml</i>. It is a QML component file. The template is an empty structure and contains a QML <i>Text</i> element that corresponds to QML <i>Text</i> elements of the <i>variant</i> (<i>list</i>) containers. The goal of the template is to render <i>Text</i> elements stored in containers. Firstly the loader <i>light</i> loads and renders the empty template:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">light.<span class="me1">source</span><span class="sy0">=</span><span class="st0">&quot;VirtualText.qml&quot;</span><span class="sy0">;</span></pre></div></div>
+<p>After loading, the <i>text</i> property of the loaded item is changed to <i>text</i> property of corresponding element in the <i>variant</i> (<i>list</i>) container:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">light.<span class="me1">item</span>.<span class="me1">accessText</span><span class="sy0">=</span>someMessages<span class="br0">&#91;</span>counter<span class="br0">&#93;</span></pre></div></div>
+<p>The property <i>counter</i> serves as container index and a loop is organized to accept several clicks. The property <i>accessText</i> defined in <i>VirtualText.qml</i> grants access to <i>text</i> property of virtual <i>Text</i> element.
+</p><p>The demo snippets play as follows – see screenshots bellow. We have two areas on the screen. One where the texts are displayed and another which accepts mouse clicks. The first mouse click displays the first container text element and so on. After the list is exhausted the program quits.
+</p><p><a href="File_ScreenHunterformattedfirst.html" class="image" title="Screenshot - text1"><img alt="Screenshot - text1" src="images/e/e5/ScreenHunterformattedfirst.jpg" width="384" height="437" /></a>
+</p><p><a href="File_ScreenHunterformattedthird.html" class="image" title="Screenshot - text3"><img alt="Screenshot - text3" src="images/a/ae/ScreenHunterformattedthird.jpg" width="383" height="436" /></a>
+</p>
+<h2><span class="mw-headline" id="QML_Containers_and_Images">QML Containers and Images</span></h2>
+<p>This use case is very similar to the previous one about text messages. Now the container should hold images and its elements are QML <i>Image</i> elements:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">property list<span class="sy0">&lt;</span>Item<span class="sy0">&gt;</span> someImages<span class="sy0">:</span><span class="br0">&#91;</span>Image<span class="br0">&#123;</span>id<span class="sy0">:</span>first<span class="sy0">;</span>source<span class="sy0">:</span><span class="st0">&quot;balls.jpg&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+ Image<span class="br0">&#123;</span>id<span class="sy0">:</span>second<span class="sy0">;</span>source<span class="sy0">:</span><span class="st0">&quot;funny_balls.jpg&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+ Image<span class="br0">&#123;</span>id<span class="sy0">:</span>third<span class="sy0">;</span>source<span class="sy0">:</span><span class="st0">&quot;four_balls.jpg&quot;</span><span class="br0">&#125;</span><span class="br0">&#93;</span></pre></div></div>
+<p>The same techniques as in the previous section are used to define a template (<i>VirtualImage.qml</i>) and a loader, which loads images sequentially. Bellow you see some screenshots.
+</p><p><a href="File_ScreenHunteballs.html" class="image" title="Screenshot - image1"><img alt="Screenshot - image1" src="images/2/27/ScreenHunteballs.jpg" width="379" height="433" /></a>
+</p><p><a href="File_ScreenHunterfunnyballs.html" class="image" title="Screenshot - image2"><img alt="Screenshot - image2" src="images/2/29/ScreenHunterfunnyballs.jpg" width="381" height="430" /></a>
+</p><p>The functionality that is implemented is similar to "Loader and Inline Component" use case analyzed <a rel="nofollow" class="external text" href="QML-Application-Structuring-Approaches.html">here</a>.
+</p><p>The full code is available <a rel="nofollow" class="external text" href="http://bit.ly/1fpxKyX">here</a>.
+</p>
+<h2><span class="mw-headline" id="QML_Containers_and_JavaScript_Objects">QML Containers and JavaScript Objects</span></h2>
+<p>The QML <i>variant</i> type container could have elements, which are <i>JavaScript</i> objects defined in an external <i>JavaScript</i> file. Suppose we have the following <i>JavaScript</i> file:
+</p><p>jsfile.js
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">var externalObject<span class="sy0">=</span><span class="st0">&quot;External JS Object&quot;</span>
+var array<span class="sy0">=</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">2</span><span class="sy0">,</span><span class="nu0">3</span><span class="br0">&#93;</span>
+function func<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;The function 'func()'is invoked&quot;</span><span class="br0">&#41;</span>
+ <span class="kw1">return</span> <span class="st0">&quot;Returned value from function 'func()'&quot;</span>
+<span class="br0">&#125;</span>
+function funSecond<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+ <span class="kw1">return</span> <span class="st0">&quot;Returned value from function 'funSecond()'&quot;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Then we may have the following <i>variant</i> type container definition in the main QML file:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">property variant jsVariable<span class="sy0">:</span><span class="br0">&#91;</span>Extended.<span class="me1">externalObject</span><span class="sy0">,</span>Extended.<span class="me1">func</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span>
+ Extended.<span class="me1">array</span><span class="sy0">,</span>Extended.<span class="me1">funSecond</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#93;</span></pre></div></div>
+<p>To test the above constructs we define a rectangle in the main file that forms a script block:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span>id<span class="sy0">:</span>dummy
+ Component.<span class="me1">onCompleted</span><span class="sy0">:</span><span class="br0">&#123;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;Value of 'externalObject' variable: &quot;</span><span class="sy0">,</span>jsVariable<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;Function 'func()' is called: &quot;</span><span class="sy0">,</span>jsVariable<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+ var pix<span class="sy0">=</span>jsVariable<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>
+ var funSecondValue<span class="sy0">;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;Value of 'pix' variable that is return value of 'func()': &quot;</span><span class="sy0">,</span>pix<span class="br0">&#41;</span>
+ <span class="co1">//Here we have an array of arrays</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="st0">&quot;Value of the second element of 'array' object: &quot;</span><span class="sy0">,</span>jsVariable<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+ <span class="co1">//We have an array of functions and could decide which one to call</span>
+ <span class="kw1">if</span><span class="br0">&#40;</span>test<span class="sy0">==</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+ funSecondValue<span class="sy0">=</span>jsVariable<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="sy0">;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span>funSecondValue<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>The discussed constructs are similar to ones in other programming languages and known as "array of functions", 'array of arrays".
+</p><p>The complete example could be downloaded <a rel="nofollow" class="external text" href="http://bit.ly/1fpxKyX">here</a>.
+</p>
+<h2><span class="mw-headline" id="QML_Containers_and_Components">QML Containers and Components</span></h2>
+<p>We are considering the situation where QML component files are used. For simplicity suppose we have two components defined as files <i>ComponentTest1.qml</i> and <i>ComponentTest2.qml</i>.
+</p><p>The question now is: could we arrange these components in a <i>list</i> or <i>variant</i> type container? The answer is positive one and we have two solutions.
+</p><p>Firstly, let us consider the following definition:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> property list<span class="sy0">&lt;</span>Item<span class="sy0">&gt;</span> componentList<span class="sy0">:</span><span class="br0">&#91;</span>ComponentTest1<span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy0">,</span>ComponentTest2<span class="br0">&#123;</span><span class="br0">&#125;</span><span class="br0">&#93;</span></pre></div></div>
+<p>We see that elements of the <i>componentList</i> container are instances of the components – curly brackets are applied. The components are accessible through indexing and for example
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">componentList<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>.<span class="me1">width</span></pre></div></div>
+<p>gives the value of the <i>width</i> property of the <i>ComponentTest1</i>.
+</p><p>Secondly, we may use <i>variant</i> type to store the names of components like this:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">property variant componentUrl<span class="sy0">:</span><span class="br0">&#91;</span><span class="st0">&quot;ComponentTest1.qml&quot;</span><span class="sy0">,</span> <span class="st0">&quot;ComponentTest2.qml&quot;</span><span class="br0">&#93;</span></pre></div></div>
+<p>Further, a loader could be used to load elements of the <i>componentUrl</i> container:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Loader<span class="br0">&#123;</span>id<span class="sy0">:</span>light<span class="sy0">;</span> source<span class="sy0">:</span> componentUrl<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#125;</span></pre></div></div>
+<p>The complete snippet is <a rel="nofollow" class="external text" href="http://bit.ly/1fpxKyX">here</a>.
+</p><p><i>Note</i>: All code snippets analyzed above are included in a <a rel="nofollow" class="external text" href="http://bit.ly/1fpxKyX">downloadable</a> package, which contains:
+</p><p>Subdirectory - - Files
+</p><p>listContainer - - Listcontainer.qml
+</p><p>listContainerSet - - listContainerProperty.qml, listContainerSet.qml
+</p><p>containerText - - containerText.qml, VirtualText.qml
+</p><p>containerFormattedText - - containerFormattedText.qml, VirtualText.qml
+</p><p>containerImage - - containerImage.qml, VirtualImage.qml, balls.jpg, four_balls.jpg, funny_balls.jpg
+</p><p>containerJavaScript - - containerJavaScript.qml, jsfile.js
+</p><p>containerComponent - - containerComponent.qml, ComponentTest1.qml, ComponentTest2.qml
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.437 seconds
+Real time usage: 1.474 seconds
+Preprocessor visited node count: 307/1000000
+Preprocessor generated node count: 1103/1000000
+Post‐expand include size: 3299/2097152 bytes
+Template argument size: 403/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1382-0!*!0!!en!2!* and timestamp 20151104162640 and revision id 19274
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index7754.html?title=QML_Containers&amp;oldid=19274">http://wiki.qt.io/index.php?title=QML_Containers&amp;oldid=19274</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Developing_with_Qt__Qt_Quick.html" title="Category:Developing with Qt::Qt Quick">Developing with Qt::Qt Quick</a></li><li><a href="Category_HowTo.html" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=6d3bfc0cfc9a19c6&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="QML_Containers.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_QML_Containers.html?title=Talk:QML_Containers&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="QML_Containers.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index9d09.html?title=QML_Containers&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexfe57.html?title=QML_Containers&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/QML_Containers.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/QML_Containers.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index0e26.html?title=QML_Containers&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="index7754.html?title=QML_Containers&amp;oldid=19274" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexbaa8.html?title=QML_Containers&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:23.</li>
+											<li id="footer-info-viewcount">This page has been accessed 4,467 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":360});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/QML-Containers by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:49:10 GMT -->
+</html>

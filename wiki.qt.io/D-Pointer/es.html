@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/D-Pointer/es by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 07:50:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>D-Pointer/es - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"D-Pointer/es","wgTitle":"D-Pointer/es","wgCurRevisionId":18991,"wgRevisionId":18991,"wgArticleId":754,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","HowTo","Developing with Qt","QtInternals","Spanish","QtDevelopmentSpanish::General"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"D-Pointer/es","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-D-Pointer_es skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">D-Pointer/es</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="../D-Pointer.html" title="D-Pointer">D-Pointer</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../index25b6.html?title=D-Pointer/es&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><b>Español</b> <a href="../Dpointer_SimplifiedChinese.html" title="Dpointer SimplifiedChinese" class="mw-redirect">简体中文</a> <a href="../Dpointer_Bulgarian.html" title="Dpointer Bulgarian" class="mw-redirect">Български</a> <a href="../Dpointer.html" title="Dpointer" class="mw-redirect">English</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.C2.BFQu.C3.A9_es_el_d-pointer.3F"><span class="tocnumber">1</span> <span class="toctext">¿Qué es el d-pointer?</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Compatibilidad_binaria.2C_.C2.BFqu.C3.A9_es_eso.3F"><span class="tocnumber">1.1</span> <span class="toctext">Compatibilidad binaria, ¿qué es eso?</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#.C2.BFPor_qu.C3.A9_se_rompi.C3.B3.3F"><span class="tocnumber">1.2</span> <span class="toctext">¿Por qué se rompió?</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#El_d-pointer"><span class="tocnumber">1.3</span> <span class="toctext">El d-pointer</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Otros_beneficios_del_d-pointer"><span class="tocnumber">1.4</span> <span class="toctext">Otros beneficios del d-pointer</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#El_q-pointer"><span class="tocnumber">1.5</span> <span class="toctext">El q-pointer</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Herencia_de_d-pointers_para_optimizaci.C3.B3n"><span class="tocnumber">1.6</span> <span class="toctext">Herencia de d-pointers para optimización</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#d-pointers_en_Qt"><span class="tocnumber">1.7</span> <span class="toctext">d-pointers en Qt</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id=".C2.BFQu.C3.A9_es_el_d-pointer.3F">¿Qué es el d-pointer?</span></h1>
+Si has leído el ficheros fuente de Qt, como <a rel="nofollow" class="external text" href="http://qt.gitorious.org/qt/qt/blobs/HEAD/src/gui/widgets/qlabel.cpp">éste</a>, habrás encontrado por todas partes las macros <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Q_D</pre></div></div> y <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Q_Q</pre></div></div> macros. Este artículo desentraña el propósito de dichas macros.
+Las macros <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Q_D</pre></div></div> y <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Q_Q</pre></div></div> son parte de un patrón de diseño denominado "d-pointer" (también llamado <a rel="nofollow" class="external text" href="http://es.wikipedia.org/wiki/Puntero_opaco">puntero opaco</a>) mediante el cual los detalles de implementación de una librería se pueden ocultar a sus usuarios y se pueden realizar cambios en la implementación sin afectar a la compatibilidad binaria.
+<h2><span class="mw-headline" id="Compatibilidad_binaria.2C_.C2.BFqu.C3.A9_es_eso.3F">Compatibilidad binaria, ¿qué es eso?</span></h2>
+<p>Cuando se diseñan librerias como Qt, es deseable que las aplicaciones que enlaza con Qt dinámicamente continúen funcionando sin recompilar incluso después de que la librería Qt sea actualizada o reemplazada por otra versión. Por ejemplo, si tu aplicación <i>CuteApp</i> se basa en Qt 4.5, deberías ser capaz de actualizar las librerías Qt (en Windows son proporcionan con la aplicación, ¡en Linux a menudo vienen automáticamente mediante el administrador de paquetes!) de la versión 4.5 a Qt 4.6 y tu CuteApp, que fue compilada con Qt 4.5, debería poder seguir funcionando.
+</p>
+<h3><span class="mw-headline" id=".C2.BFQu.C3.A9_afecta_a_la_compatibilidad_binaria.3F">¿Qué afecta a la compatibilidad binaria?</span></h3>
+<p>Entonces, ¿en qué caso provoca un cambio en la librería la recompilación de la aplicación? Vamos a ver un ejemplo sencillo:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> Widget <span class="br0">&#123;</span>
+ …
+ <span class="kw2">private</span><span class="sy0">:</span>
+ Rect m_geometry<span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">class</span> Label <span class="sy0">:</span> <span class="kw2">public</span> Widget <span class="br0">&#123;</span>
+ …
+ String text<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span> <span class="kw1">return</span> m_text<span class="sy0">;</span> <span class="br0">&#125;</span>
+ <span class="kw2">private</span><span class="sy0">:</span>
+ String m_text<span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Aquí tenemos un Widget que contiene como variable su geometría. Compilamos nuestro Widget y lo publicamos como <b>WidgetLib 1.0</b>
+</p><p>Para <b>WidgetLib 1.1</b>, alguien viene con la brillante idea de agregar soporte para hojas de estilo. Sin problmas, simplemente añadimos unos métodos nuevos y agregamos un <i>atributo</i>.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> Widget <span class="br0">&#123;</span>
+ …
+ <span class="kw2">private</span><span class="sy0">:</span>
+ Rect m_geometry<span class="sy0">;</span>
+ String m_stylesheet<span class="sy0">;</span> <span class="co1">// NUEVO en WidgetLib 1.1</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">class</span> Label <span class="sy0">:</span> <span class="kw2">public</span> Widget <span class="br0">&#123;</span>
+ <span class="kw2">public</span><span class="sy0">:</span>
+ …
+ String text<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span> <span class="kw1">return</span> m_text<span class="sy0">;</span> <span class="br0">&#125;</span>
+ <span class="kw2">private</span><span class="sy0">:</span>
+ String m_text<span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Publicamos WidgetLib 1.1 con los cambios anteriores para encontrarnos con que CuteApp, que fue compilada con WidgetLib 1.0 y funcionaba perfectamente, ¡se estrella estrepitosamente!
+</p>
+<h2><span class="mw-headline" id=".C2.BFPor_qu.C3.A9_se_rompi.C3.B3.3F">¿Por qué se rompió?</span></h2>
+<p>La razón es que, al agregar un nuevo atributo, hemos cambiado el también el tamaño de los objetos Widget y Label. ¿Y qué importa eso? Cuando el compilador C++ genera código, usa 'offsets' (desplazamientos) para acceder a los datos que hay dentro de un objeto.
+</p><p>Aquí tenemos una versión muy simplificada de cómo aparecerían dichos objetos en la memoria.
+</p>
+<table>
+<tr>
+<td><b>Disposición del objeto Label en WidgetLib 1.0</b>
+</td>
+<td><b>Disposición del objeto label en WidgetLib 1.1</b>
+</td></tr>
+<tr>
+<td>m_geometry &lt;offset 0&gt;
+</td>
+<td>m_geometry &lt;offset 0&gt;
+</td></tr>
+<tr>
+<td>—————
+</td>
+<td>m_stylesheet &lt;offset 1&gt;
+</td></tr>
+<tr>
+<td>m_text &lt;offset 1&gt;
+</td>
+<td>——————  
+</td></tr>
+<tr>
+<td>—————
+</td>
+<td>m_text &lt;offset 2&gt;
+</td></tr></table>
+En WidgetLib 1.0, el miembro text de Label se encontraba en el desplazamient (lógico) 1. El código que el compilador ha generado en la aplicación para el método <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Label<span class="sy0">::</span><span class="me2">text</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> se traduce a un acceso al desplazamiento 1 del objeto "label" en la aplicación. En WidgetLib 1.1, ¡el miembro "text" de la Label se ha movido al desplazamiento (lógico) 2! Dado que no hemos recompilado la aplicación, ésta sigue pensando que <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">text</pre></div></div> se encuentra en el desplazamiento 1 ¡y acaba accediendo a la variable <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">stylesheet</pre></div></div>!
+Estoy seguro de que en este momento hay unos cuántos preguntándose por qué el cálculo del desplazamiento de <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Label<span class="sy0">::</span><span class="me2">text</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> acabó en el binario de CuteApp y no en el de WidgetLib. La respuesta es que el código de <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Label<span class="sy0">::</span><span class="me2">text</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> se definió en el fichero de cabecera y el compilador terminó por insertarlo (<a rel="nofollow" class="external text" href="https://es.wikipedia.org/wiki/Función_inline">inline</a>).
+Por tanto, ¿cambiaría la situación si <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Label<span class="sy0">::</span><span class="me2">text</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> no hubiera sido convertida en "inline"? Digamos, en el caso de haber movido <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Label<span class="sy0">::</span><span class="me2">text</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> al fichero fuente? Pues no. El compilador C++ se basa en que el tamaño de los objetos va a ser el mismo al compilar y al ejecutar. Por ejemplo, para el desenrollado de pila (si has creado un objeto Label en la pila, el compilador habrá generado código para crear espacio en la pila basándose en el tamaño de Label a la hora de compilar) . Dado que el tamaño de Label es diferente al ejecutarse con WidgetLib 1.1, el constructor de Label va a sobreescribir datos ya existentes en la pila y terminará corrompiéndola.
+<h3><span class="mw-headline" id="Nunca_cambies_el_tama.C3.B1o_de_una_clase_de_C.2B.2B_exportada">Nunca cambies el tamaño de una clase de C++ exportada</span></h3>
+<p>En resumen, nunca jamás cambies el tamaño o distribución (no alteres la posición de los datos) de clases de C++ <i>exportadas</i> (es decir, visibles para el usuario) una vez que hayas publicado tu librería. El compilador C++ genera código asumiendo que el tamaño y orden de los datos en una clase no cambiará <i>después</i> de que la aplicación ha sido compilada.
+</p><p>Entonces, ¿cómo puede uno agregar nuevas propiedades sin alterar el tamaño de los objetos?
+</p>
+<h2><span class="mw-headline" id="El_d-pointer">El d-pointer</span></h2>
+<p>El truco está en mantener constante el tamaño de todas las clases públicas de una librería, almacenando un único puntero. Este puntero apunta a una estructura de dato privada/interna que contiene todos los datos. El tamaño de esta estructura interna puede encoger o crecer sin tener ningún efecto secundario sobre la aplicación porque a este puntero se acceder sólo desde el código de la librería y, desde el punto de vista de la aplicación, el tamaño del objeto nunca cambia (siempr es del tamaño de un puntero). A este puntero lo llamamos el <i>d-pointer</i>.
+</p><p>El espíritu de este patrón lo esbozamos en el siguiente código (el código en este artículo no contiene destructures, pero por supuesto deberíamos añadirlos en código real).
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="coMULTI">/* widget.h */</span>
+ <span class="co1">// Declaración anticipada. La definición estará en widget.cpp o</span>
+ <span class="co1">// en un fichero aparte, digamos widget_p.h</span>
+ <span class="kw2">class</span> WidgetPrivate<span class="sy0">;</span>
+&#160;
+<span class="kw2">class</span> Widget <span class="br0">&#123;</span>
+ …
+ Rect geometry<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ …
+ <span class="kw2">private</span><span class="sy0">:</span>
+ <span class="co1">// nunca se hace referencia al d-pointer en el fichero de cabecera.</span>
+ <span class="co1">// dado que WidgetPrivate no está definida en esta cabecera,</span>
+ <span class="co1">// cualquier acceso provocará un error de compilación</span>
+ WidgetPrivate <span class="st0">''</span><span class="st0">'d_ptr;
+ };
+&#160;
+ /'</span><span class="st0">''</span> widget_p.<span class="me1">h</span> <span class="sy0">*/</span> <span class="br0">&#40;</span>_p significa privado<span class="br0">&#41;</span>
+ <span class="kw4">struct</span> WidgetPrivate <span class="br0">&#123;</span>
+ Rect geometry<span class="sy0">;</span>
+ String stylesheet<span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ <span class="sy0">/</span><span class="st0">''</span><span class="st0">' widget.cpp */
+ #include &quot;widget_p.h&quot;
+ Widget::Widget()
+ : d_ptr(new WidgetPrivate) {// creamos los datos privados
+ }
+&#160;
+ Rect Widget::geoemtry() const {
+ // sólo se accede al d-ptr en el código de la librería
+ return d_ptr-&gt;geometry;
+ }
+&#160;
+ /'</span><span class="st0">''</span> label.<span class="me1">h</span> <span class="sy0">*/</span>
+ <span class="kw2">class</span> Label <span class="sy0">:</span> <span class="kw2">public</span> Widget <span class="br0">&#123;</span>
+ …
+ String text<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw2">private</span><span class="sy0">:</span>
+ <span class="co1">// cada clase mantiene su propio d-pointer</span>
+ LabelPrivate <span class="st0">''</span><span class="st0">'d_ptr;
+ };
+&#160;
+ /'</span><span class="st0">''</span> label.<span class="me1">cpp</span> <span class="sy0">*/</span>
+ <span class="co1">// Al contrario que en WidgetPrivate, definimos LabelPrivate en el propio fichero fuente</span>
+ <span class="kw4">struct</span> LabelPrivate <span class="br0">&#123;</span>
+ String text<span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ Label<span class="sy0">::</span><span class="me2">Label</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="sy0">:</span> d_ptr<span class="br0">&#40;</span><span class="kw1">new</span> LabelPrivate<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="br0">&#125;</span>
+&#160;
+ String Label<span class="sy0">::</span><span class="me2">text</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">return</span> d_ptr<span class="sy0">-&gt;</span><span class="me3">text</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Con la estructura anterior, CuteApp nunca accede directamente al d-pointer. Y dado que los únicos accessos al <i>d-pointer</i> están en WidgetLib, que se recompila con cada nueva publicación, se puede cambiar con libertad la clase Private sin tener impacto en CuteApp.
+</p>
+<h2><span class="mw-headline" id="Otros_beneficios_del_d-pointer">Otros beneficios del d-pointer</span></h2>
+<p>La compatibilidad binaria no lo es todo. El d-pointer tiene otras ventajas:
+<b> Oculta detalles de implementación - Podemos publicar simplemente los ficheros de cabecera y binarios de WidgetLib. Los ficheros .cpp pueden ser fuente cerrada.</b>
+</p>
+<ul>
+<li> El fichero de cabecera está limpio de detalles de implementación y puede servir como API de referencia.
+</li>
+<li> Dado que los ficheros de cabecera necesarios para la implementación se han pasado desde un fichero de cabecera al fichero (fuente) de implementación, las compilaciones serán mucho más rápidas.
+</li>
+</ul>
+<p>Ciertamente, estas ventajas pueden parecer triviales. La razón real para el uso de los d-pointer en Qt es la compatibilidad binaria y el hecho de que Qt comenzó siendo de código cerrado.
+</p>
+<h2><span class="mw-headline" id="El_q-pointer">El q-pointer</span></h2>
+Hasta ahora, sólo hemos visto el d-pointer como una estructura de datos de tipo C. En realidad, contiene métodos privados (funciones de ayuda). Por ejemplo, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">LabelPrivate</pre></div></div> podría tener una función de ayuda <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">getLinkTargetFromPoint<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> que se precisa para encontrar el objetivo cuando se pulsa el ratón. En muchos casos, estos métodos de ayuda requieren de acceso a la clase pública (es decir, algunas funciones de Label o de su clase base, Widget). Por ejemplo, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">setTextAndUpdateWidget<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> (un método de ayuda), podría querer llamar a <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Widget<span class="sy0">::</span><span class="me2">update</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>, que es un método público para solicitar una repintada de Widget. Por tanto, el <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">WidgetPrivate</pre></div></div> almacena un puntero a la clase pública llamado el q-pointer. Modificando el código de arriba para tener el q-pointer obtenemos:
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="coMULTI">/* widget.h */</span>
+ <span class="co1">// Declaración anticipada. La definición estará en widget.cpp o</span>
+ <span class="co1">// en un fichero aparte, digamos widget_p.h</span>
+ <span class="kw2">class</span> WidgetPrivate<span class="sy0">;</span>
+&#160;
+<span class="kw2">class</span> Widget <span class="br0">&#123;</span>
+ …
+ Rect geometry<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+ …
+ <span class="kw2">private</span><span class="sy0">:</span>
+ <span class="co1">// nunca se hace referencia al d-pointer en el fichero de cabecera.</span>
+ <span class="co1">// dado que WidgetPrivate no está definida en esta cabecera,</span>
+ <span class="co1">// cualquier acceso provocará un error de compilación</span>
+ WidgetPrivate <span class="st0">''</span><span class="st0">'d_ptr;
+ };
+&#160;
+ /'</span><span class="st0">''</span> widget_p.<span class="me1">h</span> <span class="sy0">*/</span> <span class="br0">&#40;</span>_p significa privado<span class="br0">&#41;</span>
+ <span class="kw4">struct</span> WidgetPrivate <span class="br0">&#123;</span>
+ <span class="co1">// constructor que inicializa el q-ptr</span>
+ WidgetPrivate<span class="br0">&#40;</span>Widget <span class="sy0">*</span>q<span class="br0">&#41;</span> <span class="sy0">:</span> q_ptr<span class="br0">&#40;</span>q<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="br0">&#125;</span>
+ Widget <span class="st0">''</span><span class="st0">'q_ptr; // q-ptr que apunta a la clase de API
+ Rect geometry;
+ String stylesheet;
+ };
+&#160;
+ /'</span><span class="st0">''</span> widget.<span class="me1">cpp</span> <span class="sy0">*/</span>
+ <span class="co2">#include &quot;widget_p.h&quot;</span>
+ <span class="co1">// creamos los datos privados. pasamos el puntero 'this' para inicializar el q-ptr</span>
+ Widget<span class="sy0">::</span><span class="me2">Widget</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="sy0">:</span> d_ptr<span class="br0">&#40;</span><span class="kw1">new</span> WidgetPrivate<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="br0">&#125;</span>
+&#160;
+ Rect Widget<span class="sy0">::</span><span class="me2">geometry</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span> <span class="br0">&#123;</span>
+ <span class="co1">// sólo se accede al d-ptr en el código de la librería</span>
+ <span class="kw1">return</span> d_ptr<span class="sy0">-&gt;</span><span class="me3">geometry</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+ <span class="sy0">/</span><span class="st0">''</span><span class="st0">' label.h */
+ class Label&#160;: public Widget {
+ …
+ String text() const;
+ private:
+ LabelPrivate '</span><span class="st0">''</span>d_ptr<span class="sy0">;</span> <span class="co1">// cada clase mantiene su propio d-pointer</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ <span class="sy0">/</span><span class="st0">''</span><span class="st0">' label.cpp */
+ // Al contrario que en WidgetPrivate, definimos LabelPrivate en el propio fichero fuente
+ struct LabelPrivate {
+ LabelPrivate(Label *q)&#160;: q_ptr(q) { }
+ Label '</span><span class="st0">''</span>q_ptr<span class="sy0">;</span>
+ String text<span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ Label<span class="sy0">::</span><span class="me2">Label</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="sy0">:</span> d_ptr<span class="br0">&#40;</span><span class="kw1">new</span> LabelPrivate<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="br0">&#125;</span>
+&#160;
+ String Label<span class="sy0">::</span><span class="me2">text</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="kw1">return</span> d_ptr<span class="sy0">-&gt;</span><span class="me3">text</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h2><span class="mw-headline" id="Herencia_de_d-pointers_para_optimizaci.C3.B3n">Herencia de d-pointers para optimización</span></h2>
+En el código anterior, la creación de una Label resulta en la reserva de memoria para <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">LabelPrivate</pre></div></div> y <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">WidgetPrivate</pre></div></div>. Si empleásemos esta estrategia para Qt, la situación se volvería mucho peor en clases como <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QListWidget</span></pre></div></div>, que se encuentra a 6 niveles en la jerarquía de herencia de clases ¡y resultaría en hasta 6 reservas de memoria!
+<p>Eto se resuelve teniendo una jerarquía de herencia para nuestras clases <i>privadas</i> y haciendo que la clase que se está instanciando pase el d-pointer hacia arriba.
+</p><p>Observa que cuando se heredan d-pointers, la declarción de la clase privada tiene que estar en un fichero separado, por ejemplo widget_p.h. No se puede seguir declarando en el fichero widget.cpp.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="sy0">/</span><span class="st0">''</span><span class="st0">' widget.h */
+ class Widget {
+ public:
+ Widget();
+ …
+ protected:
+ // sólo las subclases pueden acceder a lo siguiente
+ Widget(WidgetPrivate &amp;d); // permitir a las subclases inicializarse usando su propio Private concreto
+ WidgetPrivate '</span><span class="st0">''</span>d_ptr<span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ <span class="sy0">/</span><span class="st0">''</span><span class="st0">' widget_p.h */ (_p significa private)
+ struct WidgetPrivate {
+ WidgetPrivate(Widget *q)&#160;: q_ptr(q) { } // constructor que inicializa el q-ptr
+ Widget '</span><span class="st0">''</span>q_ptr<span class="sy0">;</span> <span class="co1">// q-ptr que apunta a la clase de API</span>
+ Rect geometry<span class="sy0">;</span>
+ String stylesheet<span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ <span class="sy0">/</span><span class="st0">''</span><span class="st0">' widget.cpp */
+ Widget::Widget()
+ : d_ptr(new WidgetPrivate(this)) {
+ }
+&#160;
+ Widget::Widget(WidgetPrivate &amp;d)
+ : d_ptr(&amp;d) {
+ }
+&#160;
+ /'</span><span class="st0">''</span> label.<span class="me1">h</span> <span class="sy0">*/</span>
+ <span class="kw2">class</span> Label <span class="sy0">:</span> <span class="kw2">public</span> Widget <span class="br0">&#123;</span>
+ <span class="kw2">public</span><span class="sy0">:</span>
+ Label<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ …
+ <span class="kw2">protected</span><span class="sy0">:</span>
+ Label<span class="br0">&#40;</span>LabelPrivate <span class="sy0">&amp;</span>d<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// allow Label subclasses to pass on their Private</span>
+ <span class="co1">// observa cómo Label ¡no tiene un d_ptr! Simplemente usa el de Widget</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ <span class="sy0">/</span><span class="st0">''</span><span class="st0">' label.cpp */
+ #include &quot;widget_p.h&quot; // de manera que podamos acceder a WidgetPrivate
+&#160;
+class LabelPrivate&#160;: public WidgetPrivate {
+ public:
+ String text;
+ };
+&#160;
+Label::Label()
+ : Widget(*new LabelPrivate) // inicializar el d-pointer con nuestro propio Private
+ }
+&#160;
+Label::Label(LabelPrivate &amp;d)
+ : Widget(d) {
+ }</span></pre></div></div>
+¿Ves la belleza? Ahora cuando creamos un objeto <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Label</pre></div></div>, creará un <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">LabelPrivate</pre></div></div> (que deriva de <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">WidgetPrivate</pre></div></div>). ¡Pasa el <i>d-pointer</i> en concreto al constructor protegido de Widget! Ahora, cuando se crea un objeto <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Label</pre></div></div>, sólo se hace una reserva de memoria. Label tiene también un constructor protegido que pueden usar sus clases derivadas para proporcionar sus propias clases privadas.
+<h2><span class="mw-headline" id="d-pointers_en_Qt">d-pointers en Qt</span></h2>
+En Qt, prácticamente cada clase pública usa el enfoque d-pointer. Los únicos casos en los que no se usa es cuando se sabe con anticipación que nunca se van a agregar miembros nuevos a la clase. Por ejemplo, no se espera añadir miembros nuevos para clases como <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QPoint</span></pre></div></div> o <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QRect</span></pre></div></div> y, por tanto, los miembros datos se almacenan directmente en la clase en lugar de usar el d-pointer.
+Observa que, en Qt, la clase base de todos los objetos Private es <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QObjectPrivate</pre></div></div>.
+<h3><span class="mw-headline" id="Q_D_and_Q_Q">Q_D and Q_Q</span></h3>
+Un efecto colateral a la optimización que hicimos en el paso anterior es que el q-ptr y el d-ptr son de tipo <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Widget</pre></div></div> y <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">WidgetPrivate</pre></div></div>. Eso significa que lo siguiente no va a funcionar.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">void</span> Label<span class="sy0">::</span><span class="me2">setText</span><span class="br0">&#40;</span><span class="kw4">const</span> String <span class="sy0">&amp;</span>text<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="co1">// ¡no funcionará! ya que d_ptr es de tipo WidgetPrivate incluso aunque apunta a un objeto LabelPrivate</span>
+ d_ptr<span class="sy0">-&gt;</span><span class="me3">text</span> <span class="sy0">=</span> text<span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Por tanto, cuando se accede al d-pointer en una clase derivada, necesitamos un static_cast con el tipo apropiado.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">void</span> Label<span class="sy0">::</span><span class="me2">setText</span><span class="br0">&#40;</span><span class="kw4">const</span> String <span class="sy0">&amp;</span>text<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ LabelPrivate <span class="st0">''</span><span class="st0">'d = static_cast&lt;LabelPrivate'</span><span class="st0">''</span><span class="sy0">&gt;</span><span class="br0">&#40;</span>d_ptr<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// convertir a nuestro tipo privado</span>
+ d<span class="sy0">-&gt;</span><span class="me3">text</span> <span class="sy0">=</span> text<span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Como puedes ver, no es bonito tener static_cast por todos lados. En su lugar, se han definido dos macros en src/corelib/global/qglobal.h, que lo convierte en algo más sencillo:
+</p><p><b>global.h</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="co2">#define Q_D(Class) Class##Private * const d = d_func()</span>
+ <span class="co2">#define Q_Q(Class) Class * const q = q_func()</span></pre></div></div>
+<p><b>label.cpp</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co1">//Con Q_D se pueden usar miembros de LabelPrivate desde Label</span>
+ <span class="kw4">void</span> Label<span class="sy0">::</span><span class="me2">setText</span><span class="br0">&#40;</span><span class="kw4">const</span> String <span class="sy0">&amp;</span>text<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ Q_D<span class="br0">&#40;</span>Label<span class="br0">&#41;</span><span class="sy0">;</span>
+ d<span class="sy0">-&gt;</span><span class="me3">text</span> <span class="sy0">=</span> text<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="co1">//Con Q_Q puedes usar los miembros de Label desde LabelPrivate</span>
+ <span class="kw4">void</span> LabelPrivate<span class="sy0">::</span><span class="me2">someHelperFunction</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ Q_Q<span class="br0">&#40;</span>Label<span class="br0">&#41;</span><span class="sy0">;</span>
+ q<span class="sy0">-&gt;</span><span class="me3">selectAll</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Q_DECLARE_PRIVATE_y_Q_DECLARE_PUBLIC">Q_DECLARE_PRIVATE y Q_DECLARE_PUBLIC</span></h3>
+Las clases de Qt tienen una macro <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Q_DECLARE_PRIVATE</pre></div></div> en la clase pública. La macro es como sigue:
+<p><b>qglobal.h</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="co2">#define Q_DECLARE_PRIVATE(Class)  inline Class##Private* d_func() { return reinterpret_cast&lt;Class##Private '''&gt;(qGetPtrHelper(d_ptr)); }  inline const Class##Private''' d_func() const {  return reinterpret_cast&lt;const Class##Private *&gt;(qGetPtrHelper(d_ptr)); }  friend class Class##Private;</span></pre></div></div>
+<p>Esta macro se puede puede usar de esta manera:
+</p><p><b>qlabel.h</b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> <span class="kw5">QLabel</span> <span class="br0">&#123;</span>
+ <span class="kw2">private</span><span class="sy0">:</span>
+ Q_DECLARE_PRIVATE<span class="br0">&#40;</span><span class="kw5">QLabel</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+La idea es que <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QLabel</span></pre></div></div> proporcione una función <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">d_func<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> que permita el acceso a su clase privada interna. Este método en sí es privado (dado que la macro está en una sección privada de qlabel.h). Sin embargo, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">d_func<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> puede ser invocada por clases <b>amigas</b> (C++ friend) de <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QLabel</span></pre></div></div>. Esto es útil principalmente para que clases de Qt que no pueden acceder a la API pública de <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QLabel</span></pre></div></div> puedan acceder a la información. Un ejemplo estrafalario de esto sería que <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QLabel</span></pre></div></div> quiera llevar un conteo del número de veces que un usuario ha pulsado en un enlace. Sin embargo, no hay API pública para acceder a esta información. <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QStatistics</pre></div></div> es una clase que necesita esta información. Un desarrollador de Qt añadirá <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QStatistics</pre></div></div> como clase amiga de <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QLabel</span></pre></div></div> y <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">QStatistics</pre></div></div> podrá entonces hacer <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">label<span class="sy0">-&gt;</span><span class="me3">d_func</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">linkClickCount</span></pre></div></div>.
+La <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">d_func</pre></div></div> tiene también la ventaja de forzar la corrección de const: en una función miembro const de MyClass, necesitarás una Q_D(const MyClass) y, por tanto, sólo podrás invocar a funciones miembro const de MyClassPrivate. Con un d_ptr "desnudo" también podrías invocar funciones que no sean const.
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.986 seconds
+Real time usage: 0.991 seconds
+Preprocessor visited node count: 443/1000000
+Preprocessor generated node count: 1164/1000000
+Post‐expand include size: 1256/2097152 bytes
+Template argument size: 409/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:754-0!*!0!!en!*!* and timestamp 20151105010707 and revision id 18991
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../indexe84c-2.html?title=D-Pointer/es&amp;oldid=18991">http://wiki.qt.io/index.php?title=D-Pointer/es&amp;oldid=18991</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="../Category_HowTo.html" title="Category:HowTo">HowTo</a></li><li><a href="../Category_Developing_with_Qt.html" title="Category:Developing with Qt">Developing with Qt</a></li><li><a href="../Category_QtInternals.html" title="Category:QtInternals">QtInternals</a></li><li><a href="../Category_Spanish.html" title="Category:Spanish">Spanish</a></li><li><a href="../Category_QtDevelopmentSpanish__General.html" title="Category:QtDevelopmentSpanish::General">QtDevelopmentSpanish::General</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=ee4cda15f2358687&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="es.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_D-Pointer/es.html?title=Talk:D-Pointer/es&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="es.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../index25b6.html?title=D-Pointer/es&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../index305c.html?title=D-Pointer/es&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/D-Pointer/es.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/D-Pointer/es.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../indexebd0.html?title=D-Pointer/es&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../indexe84c-2.html?title=D-Pointer/es&amp;oldid=18991" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../indexf79c.html?title=D-Pointer/es&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 18 August 2015, at 14:44.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,034 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":247});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/D-Pointer/es by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 07:50:58 GMT -->
+</html>

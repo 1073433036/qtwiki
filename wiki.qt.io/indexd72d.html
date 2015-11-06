@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Qt_Script_V8_Port&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:20:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Qt Script V8 Port - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Qt_Script_V8_Port","wgTitle":"Qt Script V8 Port","wgCurRevisionId":16166,"wgRevisionId":16166,"wgArticleId":2114,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Outdated pages","Articles needing cleanup","Developing Qt::Qt Script"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Qt_Script_V8_Port","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Qt_Script_V8_Port skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Qt Script V8 Port</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 20px;border: 1px solid #C00; border-left: 10px solid #C00; background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>IMPORTANT:</b> The content of this page is outdated. Reason: This project is <a rel="nofollow" class="external text" href="https://bugreports.qt.io/browse/QTBUG-12503">abandoned</a><br /><small>If you have checked or updated this page and found the content to be suitable, please remove this notice.</small>
+</td></tr></table>
+<table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexeabe.html?title=Qt_Script_V8_Port&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><a rel="nofollow" class="external text" href="http://code.google.com/p/v8/">V8</a> is Google's open source JavaScript engine, used in the Google Chrome browser. The QtScript V8 port is an effort to implement the existing <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qtscript.html">QtScript API</a> on top of V8.
+</p><p>The master task for researching whether Qt (including QtWebKit) can be "switched over" to using V8 is <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-12502">QTBUG-12502</a>.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Goal"><span class="tocnumber">1</span> <span class="toctext">Goal</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Getting_the_Code"><span class="tocnumber">2</span> <span class="toctext">Getting the Code</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Workflow"><span class="tocnumber">3</span> <span class="toctext">Workflow</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#About_V8"><span class="tocnumber">4</span> <span class="toctext">About V8</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#V8_Isolates"><span class="tocnumber">5</span> <span class="toctext">V8 Isolates</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Hacking_on_the_V8_Build"><span class="tocnumber">6</span> <span class="toctext">Hacking on the V8 Build</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#generated.2Flibraries.cpp"><span class="tocnumber">6.1</span> <span class="toctext">generated/libraries.cpp</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Snapshots"><span class="tocnumber">6.2</span> <span class="toctext">Snapshots</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Goal">Goal</span></h2>
+<p>The ideal outcome of this work is a new version of the QtScript library that QML, QtWebKit and Qt applications can readily benefit from (e.g., through improved script performance due to the V8 compiler technology).
+</p><p>We strive to preserve source, binary and behavioral with existing versions of QtScript, so that projects that already use QtScript can move to the V8-based version without much impact on their existing code.
+</p>
+<h2><span class="mw-headline" id="Getting_the_Code">Getting the Code</span></h2>
+<p><a rel="nofollow" class="external free" href="http://qt.gitorious.org/+qt-developers/qt/qt-script-ng">http://qt.gitorious.org/+qt-developers/qt/qt-script-ng</a>
+</p><p>The repository is is a full clone of Qt that can be configured and built like usual.
+It includes a copy of V8-Isolates in src/3rdparty/v8, which is automatically built as part of building QtScript.
+<b>master-v8</b> is the currently active branch.
+</p>
+<h2><span class="mw-headline" id="Workflow">Workflow</span></h2>
+<p>The port was started by removing the old QtScript implementation completely, and creating "stubs" (empty implementations) for all functions in the QtScript API. Thus, the starting point was a QtScript library that's fully source and binary compatible with previous QtScript releases. When an unimplemented API function is invoked, it will issue a "Not implemented" warning, and otherwise do nothing. This enables us to incrementally implement the API, while all the time being able to test the implementation against existing autotest suites and applications (including QML).
+</p><p>Our workflow consists of running an application/autotest and fixing failures, one at a time. Eventually, there will be no more failures, and no show-stopping performance regressions against previous QtScript releases, at which time the project can be considered "Done".
+</p><p>Test failures are tracked at <a rel="nofollow" class="external text" href="http://bugreports.qt.nokia.com/browse/QTBUG-17640">QTBUG-17640</a>.
+</p>
+<h2><span class="mw-headline" id="About_V8">About V8</span></h2>
+<p>Like QtScript, V8 provides a C++ API for embedding JavaScript into an application, and for integrating with native application code.
+</p><p>The V8 <a rel="nofollow" class="external text" href="http://code.google.com/intl/no/apis/v8/embed.html">Embedder's Guide</a> gives a good introduction to the V8 C++ API. If you plan to work on the QtScript port, it's a good idea to first familiarize yourself with the V8 design and concepts (handles, handle scopes, accessors, interceptors). The core API is all in one file in the V8 repository: <a rel="nofollow" class="external text" href="http://code.google.com/p/v8/source/browse/branches/bleeding_edge/include/v8.h">include/v8.h</a>. There are additional includes for e.g. debugging and profiling APIs.
+</p><p>The <a rel="nofollow" class="external text" href="http://code.google.com/intl/no/apis/v8/build.html">How to Download and Build V8</a> page has instructions for getting the V8 source code and building it. However, for starters you shouldn't have to worry about that, since the QtScript V8 port includes its own copy of V8 that's built as part of building QtScript.
+</p><p>If you want to follow V8 development closely, consider subscribing to the <a rel="nofollow" class="external text" href="http://groups.google.com/group/v8-dev">v8-dev list</a>. This is a rather high-volume list, consisting mostly of automated mails from code reviews and commits. There's also a <a rel="nofollow" class="external text" href="http://groups.google.com/group/v8-users">v8-users list</a> for discussing how to use V8.
+</p>
+<h2><span class="mw-headline" id="V8_Isolates">V8 Isolates</span></h2>
+<p><i>V8 Isolates</i> is a research project by Google to support multiple V8 "instances" per process. This feature will enable Chromium to support <a rel="nofollow" class="external text" href="http://code.google.com/p/v8/issues/detail?id=510">in-process workers</a>. Coincidentally, this feature is a requirement for the QtScript V8 port, since the QtScript API is re-entrant.
+</p>
+V8 Isolates is developed in the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">experimental<span class="sy0">/</span>isolates<span class="sy0">&lt;</span>code<span class="sy0">&gt;</span> branch in the V8 repository. <span class="me1">Essentially</span><span class="sy0">,</span> <span class="kw1">this</span> branch gathers all <span class="kw4">static</span> variables in V8 into thread<span class="sy0">-</span>local storage. <span class="me1">Isolates</span> is the branch we track and import into <span class="kw5">QtScript</span>.
+&#160;
+<span class="me1">Google</span> aims to <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=510#c15 eventually land Isolates on the main development branch].</span>
+&#160;
+<span class="sy0">==</span> Relevant V8 Bugs <span class="sy0">==</span>
+&#160;
+We use the <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/list V8 issue tracker] to report and track bugs relevant to QtScript, such as ECMA compliance issues, build issues, V8 API behavior, and suggestions for additional API. This section lists those issues.</span>
+&#160;
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=510 510]: Several V8 instances in a process</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1204 1204]: Limitation of setData method</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1205 1205]: Isolate::setData</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1021 1021]: Prototype Setter Interceptor not working</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1022 1022]: Interceptor &quot;blocking&quot; setter in prototype</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1028 1028]: RangeError in Array ctor (ECMA compliance)</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1035 -1035-]: Memory leak in Isolate class</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1036 -1036-]: Memory leak in Logger class</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=884 884]: shell sample Infinite loop in JSObject::LookupCallbackSetterInPrototypes (''Possibly a gcc bug; watch out for it in release builds'')</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=435 435]: The .length property of a function always returns zero (''actually, of native functions. Having this fixed would also provide one clean way to make the length parameter of QScriptEngine::newFunction() work'')</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1061 1061]: Some function not working in Isolate branch (work arounded in our patched V8)</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1072 1072]: TryCatch doesn't catch exceptions thrown from an accessor.</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1078 1078]: Assert when changing the prototype of the global object. (some test change the protoype of the global object)</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=862 862]: GetOwnProperty() should return enumerable properties for String chars (''ECMA compliance item that we check in our autotests'')</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=1256 -1256-]: v8::Array::New() ignores length argument (causes QScriptEngine::newArray(123) to be slow, since we have to set the length explicitly)</span>
+<span class="sy0">*</span> <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/detail?id=831 831]: regexp performance seems to degrade exponentially with length of failed ([http://code.google.com/p/v8/issues/detail?id=1259 1259] has been merged into this issue)</span>
+&#160;
+<span class="sy0">==</span> Reporting V8 Bugs <span class="sy0">==</span>
+&#160;
+If you find a bug in V8 that affects <span class="kw5">QtScript</span><span class="sy0">,</span> you should create a an upstream report in the <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//code.google.com/p/v8/issues/list V8 issue tracker]. It's important that the report has a minimal testcase, and in particular that it doesn't depend on QtScript; i.e., the testcase should use the V8 API directly.</span>
+&#160;
+Since we<span class="st0">'re working with a (not-necessarily-up-to-date) copy of V8 Isolates, it'</span>s possible that the bug isn<span class="st0">'t present in upstream V8 (because it'</span>s been fixed already<span class="br0">&#41;</span>. <span class="me1">You</span> should first <span class="kw2">try</span> to reproduce the bug with V8 trunk or bleeding_edge<span class="sy0">,</span> and report it straight away <span class="kw1">if</span> it<span class="st0">'s present there. If you can'</span>t reproduce the bug in trunk or bleeding_edge<span class="sy0">,</span> but can reproduce it in the Isolates branch<span class="sy0">,</span> it<span class="st0">'s either because the fix hasn'</span>t been merged into Isolates yet<span class="sy0">,</span> or there<span class="st0">'s an Isolates-specific bug. Depending on the nature of the bug, you'</span>ll have to <span class="kw2">try</span> to decide which it is.
+&#160;
+<span class="me1">The</span> purpose of the testcase is to make it easy <span class="kw1">for</span> the V8 developers to reproduce the bug. <span class="me1">Here</span><span class="st0">'s a template main.cpp:</span></pre></div></div>
+<ol>
+<li>include &lt;v8.h&gt;
+</li>
+<li>include &lt;assert.h&gt;
+</li>
+<li>include &lt;stdio.h&gt;
+</li>
+</ol>
+<p>int main(int argc, char **argv)
+{
+</p>
+<pre>v8::V8::SetFlagsFromCommandLine(&amp;argc, argv, true);
+</pre>
+<p>v8::HandleScope handle_scope;
+</p>
+<pre>v8::Handle&lt;v8::ObjectTemplate&gt; global = v8::ObjectTemplate::New();
+// Put your global object properties here…
+// global-&gt;Set(v8::String::New("foo"), v8::Integer::New(123));
+</pre>
+<p>v8::Persistent&lt;v8::Context&gt; context = v8::Context::New(NULL, global);
+</p>
+<pre>assert(!context.IsEmpty());
+v8::Context::Scope context_scope(context);
+</pre>
+<p>v8::TryCatch try_catch;
+</p><p>// Put your script here…
+</p>
+<pre>v8::Handle&lt;v8::String&gt; source = v8::String::New("'hello'");
+assert(!source.IsEmpty());
+</pre>
+<p>v8::Handle&lt;v8::Script&gt; script = v8::Script::Compile(source);
+</p>
+<pre>assert(!script.IsEmpty());
+</pre>
+<p>v8::Handle&lt;v8::Value&gt; result = script-&gt;Run();
+</p>
+<pre>assert(!result.IsEmpty());
+</pre>
+<p>// Print the result…
+</p>
+<pre>v8::String::Utf8Value str(result);
+printf("%s\n", *str);
+</pre>
+<p>context.Dispose();
+</p>
+<pre>v8::V8::Dispose();
+return 0;
+</pre>
+}<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Assuming you<span class="st0">'ve built V8 in $V8DIR, here'</span>s how you can build it with GCC<span class="sy0">:</span></pre></div></div>g++ -I$V8DIR/include -L$V8DIR -lv8 template.cpp -o mybug&lt;/code&gt;
+<p>Once the testcase is working, you can strip away everything that's not needed (asserts and such) before submitting.
+</p><p>Finally, add a link to the newly created upstream bug in the previous section ("Relevant V8 Bugs"), and preferably refer to the bug in our JIRA ("This depends on the following upstream bug: …"), and source code (e.g., update the QEXPECT_FAIL message of a test).
+</p>
+<h2><span class="mw-headline" id="Hacking_on_the_V8_Build">Hacking on the V8 Build</span></h2>
+<p>This section provides information about how we build V8; this is useful to know if you encounter V8-related compile-time or runtime issues, for example.
+</p>
+By default, QtScript uses a copy of V8 located in <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">src<span class="sy0">/</span>3rdparty<span class="sy0">/</span>v8<span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+V8 is built as a separate <span class="br0">&#40;</span><span class="kw4">static</span><span class="br0">&#41;</span> library that <span class="kw5">QtScript</span> links against. <span class="me1">The</span> <span class="kw1">default</span> <span class="br0">&#40;</span>upstream<span class="br0">&#41;</span> build <span class="kw3">system</span> <span class="kw1">for</span> V8 is <span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//www.scons.org/ SCons]. However, to avoid a dependency on SCons (which isn't available on all Qt platform — Symbian in particular), we currently maintain a QMake project file for building V8:</span></pre></div></div>src/script/v8.pro&lt;/code&gt; This file is a (manual) port of (a subset of) the SConstruct and src/SConscript files in the V8 repository.
+<p>Currently, Linux and Mac OS are the only regularly tested platforms.
+</p>
+<h3><span class="mw-headline" id="generated.2Flibraries.cpp">generated/libraries.cpp</span></h3>
+<p>V8 implements large parts of its functionality (such as the core ECMA objects) in JavaScript itself; see the .js files in the V8 src/ directory. V8 evaluates these files as part of "bootstrapping" the V8 environment. In order to avoid an external dependency on the .js files, their contents are embedded in the V8 library (analogous to how Qt resource (.qrc) files are used by Qt). A Python script in the V8 directory (tools/js2c.py) generates a C++ file which is literally a char array of the .js contents, plus functions for retrieving script contents by index/name.
+</p><p>The js2c.py script is automatically invoked when building V8, and will regenerate libraries.cpp if any of the V8 .js files are modified.
+</p>
+<h3><span class="mw-headline" id="Snapshots">Snapshots</span></h3>
+<p>By default, we build V8 with <i>snapshot support</i>. This is a feature of V8 that greatly improves creation time of the V8 environment. When using snapshots, instead of evaluating the thousands of lines of JavaScript contained in the built-in .js files (see previous section), V8 will initialize itself from a serialized version. This is possible since, for a given build of V8 on a given platform/CPU, the state of V8 after evaluating the built-in .js files will always be the same.
+</p>
+<h4><span class="mw-headline" id="mksnapshot">mksnapshot</span></h4>
+<p>The snapshot feature is aided by a tool, mksnapshot, which creates a V8 environment the "normal" way (by evaluating .js files et al), and generates a C++ file (generated/snapshot.cpp) containing the serialized V8 state. This file is then linked into QtScript to provide V8 with the snapshot.
+</p><p>mksnapshot is automatically built and run when building QtScript.
+</p>
+<h4><span class="mw-headline" id="Versioning.2FCompatibility">Versioning/Compatibility</span></h4>
+<p>The serialized V8 state is platform/CPU-specific, and isn't guaranteed to work across V8 versions (or the same V8 version compiled with different defines/compiler options). V8 has some code to check whether the snapshot data is actually useable; if it isn't, you'll hopefully get a failing assert during deserialization (rather than some obscure crash later).
+</p>
+<h4><span class="mw-headline" id="Cross-compiling">Cross-compiling</span></h4>
+<p>When cross-compiling, snapshots are disabled, since the mksnapshot tool would have to be run on the target system in order to generate the snapshot. (You could try generating it in an emulator, but the emulator would have to be perfectly compatible with the target — note that V8 detects certain CPU features at run time, and that the snapshot can contain native code that relies on certain features (instructions) being supported. If they aren't, undefined behavior (typically, a crash) will ensue.)
+</p><p>When deploying QtScript to devices, the snapshot would have to be generated in such a way that it's compatible with any supported device/configuration (the "lowest common denominator" — e.g. ARMv5, VFPv2, …).
+</p>
+<h4><span class="mw-headline" id="Manually_Disabling_Snapshots">Manually Disabling Snapshots</span></h4>
+<p>The snapshot feature is not enabled by default upstream, so it's perhaps not as well-tested as non-snapshot builds. If you encounter strange crashes in V8 code (typically at construction time), you can disable snapshots to quickly check whether that's the issue.
+</p>
+To disable snapshots, set the QMake variable V8SNAPSHOT to "no". E.g. <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qmake <span class="sy0">-</span>r <span class="st0">&quot;V8SNAPSHOT=no&quot;</span><span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+and rebuild <span class="kw5">QtScript</span>.
+&#160;
+<span class="sy0">====</span> Dynamic Snapshotting? <span class="sy0">====</span>
+&#160;
+It would be awesome <span class="kw1">if</span><span class="sy0">,</span> rather than being a compile<span class="sy0">-</span><span class="kw3">time</span> step<span class="sy0">,</span> V8 would create and use snapshots dynamically<span class="sy0">;</span> e.<span class="me1">g</span>. <span class="me1">the</span> first <span class="kw3">time</span> a V8 environment is created<span class="sy0">,</span> a snapshot is automatically created<span class="sy0">,</span> and subsequent V8 environments would be initialized from the snapshot.
+&#160;
+<span class="sy0">===</span> Updating src<span class="sy0">/</span>3rdparty<span class="sy0">/</span>v8 <span class="sy0">===</span>
+&#160;
+Updating <span class="kw5">Qt</span><span class="st0">'s copy of V8 is done using the util/scripts/mkdist-v8 script. It takes a git-svn checkout of V8 and copies a specified revision of it to src/3rdparty/v8.
+&#160;
+Before running the script, you first need to set the git v8.url variable to point to your V8 checkout:</span></pre></div></div>git config v8.url path/to/v8&lt;/code&gt;
+<p>Then, in the V8 repository, create a tag that references the SHA1 you want to import (e.g. HEAD):
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git tag v8<span class="sy0">-</span>snapshot<span class="sy0">-</span><span class="nu0">23032011</span><span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+Lastly<span class="sy0">,</span> in the <span class="kw5">Qt</span> source tree<span class="sy0">,</span> run</pre></div></div>util/scripts/mkdist-v8 &lt;tag&gt;&lt;/code&gt;
+<p>Everything will be staged, and you can run
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">git commit<span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+to commit it all. <span class="me1">But</span> before you <span class="kw1">do</span> that<span class="sy0">,</span> you probably want to <span class="kw2">try</span> to recompile <span class="kw5">QtScript</span>.
+&#160;
+<span class="sy0">====</span> Fixing the build <span class="sy0">====</span>
+&#160;
+If .<span class="me1">cc</span> files have been added<span class="sy0">,</span> you must manually add them to src<span class="sy0">/</span>script<span class="sy0">/</span>v8<span class="sy0">/</span>v8.<span class="me1">pro</span>.
+&#160;
+<span class="me1">You</span> should <span class="kw2">try</span> the build in both debug and release mode. <span class="me1">If</span> you get errors<span class="sy0">,</span> <span class="kw2">try</span> compiling V8 the normal way outside of <span class="kw5">Qt</span>. <span class="me1">Pay</span> attention to the defines that are passed to the compiler<span class="sy0">;</span> <span class="kw1">if</span> there<span class="st0">'s a define missing for the QtScript/V8 build, add it to src/script/v8/v8.pri. (Note that the upstream V8 might not have been tested with(out) the defines we use; make sure that it'</span>s not a bug in V8<span class="sy0">,</span> e.<span class="me1">g</span>. <span class="me1">that</span> the upstream V8 builds without ENABLE_LOGGING_AND_PROFILING defined <span class="br0">&#40;</span>pass <span class="st0">&quot;profilingsupport=off&quot;</span> to SCons<span class="br0">&#41;</span>.<span class="br0">&#41;</span>
+&#160;
+<span class="sy0">====</span> Excluding files <span class="sy0">====</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.124 seconds
+Real time usage: 0.127 seconds
+Preprocessor visited node count: 114/1000000
+Preprocessor generated node count: 288/1000000
+Post‐expand include size: 2182/2097152 bytes
+Template argument size: 745/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:2114-0!*!0!!en!*!* and timestamp 20151105102355 and revision id 16166
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexd033.html?title=Qt_Script_V8_Port&amp;oldid=16166">http://wiki.qt.io/index.php?title=Qt_Script_V8_Port&amp;oldid=16166</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Outdated_pages.html?title=Category:Outdated_pages&amp;action=edit&amp;redlink=1" class="new" title="Category:Outdated pages (page does not exist)">Outdated pages</a></li><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Developing_Qt__Qt_Script.html" title="Category:Developing Qt::Qt Script">Developing Qt::Qt Script</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=3981f9940d426702&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Qt_Script_V8_Port.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Qt_Script_V8_Port.html?title=Talk:Qt_Script_V8_Port&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Qt_Script_V8_Port.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexeabe.html?title=Qt_Script_V8_Port&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index539d-2.html?title=Qt_Script_V8_Port&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Qt_Script_V8_Port.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Qt_Script_V8_Port.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="indexd033.html?title=Qt_Script_V8_Port&amp;oldid=16166" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index7993.html?title=Qt_Script_V8_Port&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 18 April 2015, at 01:13.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,519 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":254});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Qt_Script_V8_Port&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:20:33 GMT -->
+</html>

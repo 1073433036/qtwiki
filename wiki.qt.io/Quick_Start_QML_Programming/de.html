@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Quick_Start_QML_Programming/de by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 09:37:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Quick Start QML Programming/de - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Quick_Start_QML_Programming/de","wgTitle":"Quick Start QML Programming/de","wgCurRevisionId":17430,"wgRevisionId":17430,"wgArticleId":1936,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Pages with broken file links","Learning","HowTo"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Quick_Start_QML_Programming/de","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Quick_Start_QML_Programming_de skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Quick Start QML Programming/de</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../index71d3.html?title=Quick_Start_QML_Programming/de&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Schnelleinstieg_in_die_Programmierung_mit_QML"><span class="tocnumber">1</span> <span class="toctext">Schnelleinstieg in die Programmierung mit QML</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#QML_um_Benutzerschnittstellen_zu_erstellen"><span class="tocnumber">1.1</span> <span class="toctext">QML um Benutzerschnittstellen zu erstellen</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Knopf_und_Men.C3.BC_definieren"><span class="tocnumber">1.2</span> <span class="toctext">Knopf und Menü definieren</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Eine_Men.C3.BCseite_erstellen"><span class="tocnumber">1.3</span> <span class="toctext">Eine Menüseite erstellen</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Men.C3.BCleiste_implementieren"><span class="tocnumber">1.4</span> <span class="toctext">Menüleiste implementieren</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Datenmodelle_und_Ansichten_benutzen"><span class="tocnumber">1.5</span> <span class="toctext">Datenmodelle und Ansichten benutzen</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Einen_Texteditor_bauen"><span class="tocnumber">1.6</span> <span class="toctext">Einen Texteditor bauen</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Schnelleinstieg_in_die_Programmierung_mit_QML">Schnelleinstieg in die Programmierung mit QML</span></h1>
+<p>Willkommen in der Welt von QML, der deklarativen UI Sprache. In diesem Schnelleinstieg werden wir eine einfache Texteditor-Anwendung erstellen unter benutzung von QML. Nach dem Sie diese Anleitung durch haben, sollten Sie in der Lage sein eigene QML und Qt C++ Anwendungen zu erstellen.
+</p>
+<h2><span class="mw-headline" id="QML_um_Benutzerschnittstellen_zu_erstellen">QML um Benutzerschnittstellen zu erstellen</span></h2>
+<p>Die Anwendung, die wir erstellen, ist ein einfacher Texteditor der Text laden, speichern und ändern können wird. Diese Anleitung besteht aus zwei Teilen. Der erste Teil wird erklären wie das Design der Anwendung sowie ihr Verhalten mit Hilfe deklarativer Sprache in QML erstellt wird. Im zweiten Teil wird das Laden und Speichern von Dateien in Qt C++ implementiert. Mittels <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/metaobjects.html">Qts Meta-Object System</a> können wir C++ Funktionen als Eigenschaften für QML Elemente zur Verfügung stellen. Unter Anwendung von QML und Qt C++ können wir effektiv die Benutzerschnittstelle von der Buisnesslogik trennen.
+</p><p>p=. <a href="../indexaa3f.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 editmenu.png">Texteditor</a>
+</p><p>Um das QML Beispiel auszuführen reicht es dem <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qmlviewer.html">qmlviewer</a> die QML Datei als Argument zu übergeben. Der C++ Teil dieser Anleitung setzt grundlegendes Wissen um den Qts Kompilierungsprozess voraus.
+</p>
+<h2><span class="mw-headline" id="Knopf_und_Men.C3.BC_definieren">Knopf und Menü definieren</span></h2>
+<h3><span class="mw-headline" id="Grundelement_-_ein_Knopf">Grundelement - ein Knopf</span></h3>
+<p>Wir beginnen unseren Texteditor mit dem Erschaffen eines Knopfes. Funktionstechnisch hat ein Knopf einen Maussensitiven Bereich und eine Beschriftung. Knöpfe führen eine Aktion aus nach dem der Benutzer drauf geklickt hat.
+</p>
+In QML ist das <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rechteck</a> das grundlegende visuelle Element. Das <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> Element hat Eigenschaften zu Kontrolle des Aussehens und Position.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>simplebutton
+ color<span class="sy0">:</span> <span class="st0">&quot;grey&quot;</span>
+ width<span class="sy0">:</span> <span class="nu0">150</span>
+ height<span class="sy0">:</span> <span class="nu0">80</span>
+ Text<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonLabel
+ text<span class="sy0">:</span> <span class="st0">&quot;button label&quot;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent<span class="sy0">;</span>
+ anchors.<span class="me1">verticalCenterOffset</span><span class="sy0">:</span> –<span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+Zunächst erlaubt <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span></pre></div></div> dem qmlviewer QML Elemente zu importieren, die wir später verwenden werden. Diese Zeile muß in jeder QML Datei vorhanden sein. Beachten Sie die Version der Qt Module, die im import mit angegeben wird.
+Dieses einfache Rechteck hat einen eindeutigen Bezeichner, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">simplebutton</pre></div></div>, der an die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">id</pre></div></div> Eigentschaft gebunden ist. <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div>s Elementeigenschaften werden an Werte gebunden, in dem die Eigenschaft gefolgt von Doppelpunkt und dem Wert notiert werden. Im Codeausschnitt wird die Farbe grau an die Farbeigenschaft des Rechteckes gebunden. Ähnlich verbinden wir die Breite <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">width</pre></div></div> und Höhe <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">height</pre></div></div> des Rechteckes.
+Das <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">Textelement</a> ist ein nichteditierbares Textfeld. Wir benennen dieses Textelement mit <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonLabel</pre></div></div>. Um den Textinhalt des Textfeldes zu setzen binden wir die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">text</pre></div></div>-Eigenschaft an einen Wert. Die Beschriftung ist im Rechteck Element enthalten und wird innerhalb des Elternelements zentriert in dem wir die Anker (<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">anchors</pre></div></div>) Eigenschaft des Textelementes dem Elternelement zuweisen — <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">simplebutton</pre></div></div>. Anker können auch an Anker anderer Elemente gebunden werden, um Layoutzuweisungen zu erleichtern.
+Wir werden diesen Code als <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">SimpleButton.<span class="me1">qml</span></pre></div></div> abspeichern. Das Ausführen von qmlviewer mit dieser Datei als Argument zeigt uns das graue Rechteck mit einer Textuellen Bezeichnung.
+<p>p=. <a href="../indexe2e3.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_simplebutton.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 simplebutton.png">Einfacher Knopf</a>
+</p><p>Um die Klickfunktionalität des Knopfes zu implementieren, greifen wir auf QMLs Ereignisbehandlung zurück. QMLs Ereignisbehandlung ist dem <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/signalsandslots.html">Qt's signal and slot</a> Mechanismus sehr ähnlich. Signale werden ausgelöst und damit verbundene Slots werden aufgerufen.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>simplebutton
+ …
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonMouseArea
+&#160;
+anchors.<span class="me1">fill</span><span class="sy0">:</span> parent <span class="co1">//anchor all sides of the mouse area to the rectangle's anchors</span>
+ <span class="co1">//onClicked handles valid mouse button clicks</span>
+ onClicked<span class="sy0">:</span> console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+Wir fügen ein <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> Element in unseren <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">simplebutton</pre></div></div> ein. <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> Elemente beschreiben den interaktiven Bereich in dem Mausbewegungen registriert werden. Bei unserem Knopf verankern wir den gesamten <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-mousearea.html">MouseArea</a> Bereich an das Elternelement — <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">simplebutton</pre></div></div>. Die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">anchors.<span class="me1">fill</span></pre></div></div> Syntax ist ein Weg um an die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">fill</pre></div></div> Eigenschaft innerhalb einer Gruppe von Ankereigenschaften zu kommen. QML benutzt <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-anchor-layout.html">Ankerbasierte Layouts</a> an Stellen wo Elemente an andere Elemente ankern können um robuste Layouts zu ermöglichen.
+Die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> hat viele Signalbehandlungsroutinen, die während einer Mausbewegung aufgerufen werden, die innerhalb der angegebenen <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> auftreten. Eine davon ist <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onClicked</pre></div></div>. Diese wird immer dann aufgerufen, wenn akzeptierter Mausknopf gedrückt wird; Linksklick ist dabei der Standard. Wir können mit der <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onClicked</pre></div></div> Routine Aktionen verbinden. In unserem Beispiel gibt <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> einen Text aus bei jedem Klick in die MouseArea. Die Funktion <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">console.<span class="kw3">log</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> ist eine nützliche Funktion um Funktionalitäten auszutesten oder einen Text auszugeben.
+Der Code in <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">SimpleButton.<span class="me1">qml</span></pre></div></div> genügt um einen Knopf anzuzeigen und einen Text für jeden getätigten Klick auszugeben.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span>Button
+ …
+&#160;
+property color buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightblue&quot;</span>
+ property color onHoverColor<span class="sy0">:</span> <span class="st0">&quot;gold&quot;</span>
+ property color borderColor<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+&#160;
+<span class="kw4">signal</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ onButtonClick<span class="sy0">:</span> <span class="br0">&#123;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea <span class="br0">&#123;</span>
+ onClicked<span class="sy0">:</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ hoverEnabled<span class="sy0">:</span> <span class="kw2">true</span>
+ onEntered<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> onHoverColor
+ onExited<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> borderColor
+ <span class="br0">&#125;</span>
+&#160;
+<span class="co1">// determines the color of the button by using the conditional operator</span>
+ color<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="kw5">Qt</span>.<span class="me1">darker</span><span class="br0">&#40;</span>buttonColor<span class="sy0">,</span> <span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy0">:</span> buttonColor
+<span class="br0">&#125;</span></pre></div></div>
+Ein voll funktioneller Knopf ist in <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div>. Der Codeschnipsel in diesem Artikel läßt Codestücke, die bereits erklärt wurden, weg.
+Benutzereigene Eigenschaften werden durch die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">property typ name</pre></div></div> Syntax definiert. Im code wird die Eigenschaft <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonColor</pre></div></div> mit dem typ <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">color</pre></div></div> deklariert und an den Wert <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">&quot;lightblue&quot;</span></pre></div></div> gebunden. Die Eigenschaft <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonColor</pre></div></div> wird später für eine bedingte Operation verwendet um die Füllfarbe des Knopfes zu bestimmen. Beachten Sie, daß eine Wert Zuweisung durch den = Operator möglich ist, zusätzlich zu der Wertbindung durch den&#160;: Operator. Benutzereigene Eigenschaften erlauben es interne Sachen von außerhalb des <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> Geltungsbereich erreichbar zu machen. Es gibt grundlegende <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativebasictypes.html">QML Typen</a> wie <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">int</span></pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">string</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">real</pre></div></div>, so wie <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">variant</pre></div></div> genannten Typ.
+Durch die Anbindung der <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onEntered</pre></div></div> und <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onExited</pre></div></div> Signalroutinen an Farben, wird der Knopfrand gelb solange die Maus sich über dem Knopf befindet, und ändert sich wieder zurück sobald die Maus den Knopf verläßt.
+Ein <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonClicked<span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div> Signal wird in <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div> durch das Platzieren des <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw4">signal</span></pre></div></div> Schlüsselwortes vor dem Signalnamen deklariert. Alle Signale bekommen ihre Signalroutine automatisch, ihren Namen mit <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">on</pre></div></div> beginnend, generiert. Als Ergebnis ist <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick</pre></div></div> <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonClick</pre></div></div>s Signalroutine. <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick</pre></div></div> wird dann eine auszuführende Aktion zugewiesen. In unserem Knopf Beispiel ruft die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onClicked</pre></div></div> Signalroutine einfach <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick</pre></div></div> auf, die einen Text anzeigt. Die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick</pre></div></div> Routine ermöglicht externen Objekten einfachen Zugrif auf den Mausbereich. Zum Beispiel können Gegenstände mehrere <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> Deklarationen besitzen und ein <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">buttonClick</pre></div></div> Signal macht die Unterscheidung zwischen den verschiedenen <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MouseArea</pre></div></div> Signalroutinen einfacher.
+Wir haben nun das Basiswissen um Gegenstände in QML zu implementieren, die in der Lage sind Mausbewegungen zu behandeln. Wir haben eine Beschriftung innerhalb eines <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> Objektes erstellt, dessen Eigenschaften verändert und Verhalten implementiert, das auf Mausbewegungen reagiert. Die Idee Elemente innerhalb anderer Elemente zu erstellen wird in der Texteditor Anwendung durchgehend wiederholt.
+<p>Dieser Knopf ist unbrauchbar, es sei denn er wird als eine Komponente verwendet um eine Aktion auszuführen. Im nächsten Abschnitt werden wir bald ein Menü erstellen, das einige dieser Knöpfe enthält.
+</p><p>p=. <a href="../index9db7.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_button.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 button.png">Knopf</a>
+</p>
+<h2><span class="mw-headline" id="Eine_Men.C3.BCseite_erstellen">Eine Menüseite erstellen</span></h2>
+<p>Bisher haben wir das Erstellen von Elementen und das Zuweisen des Verhaltens in einer QML Datei besprochen. In diesem Abschnitt werden wir den Import anderer QML Elemente besprechen, und wie man bereits erstellte Komponenten wiederverwendet um andere Komponenten zu erstellen.
+</p>
+Menüs zeigen den Inhalt einer Liste. Jedes Element hat die Fähigkeit eine Aktion auszuführen. In QML können wir auf unterschiedliche Weisen ein Menü erstellen. Zunächst werden wir ein Menü erstellen, das Knöpfe enthält, die letztendlich unterschiedliche Aktionen durchführen. Der Menücode befindet sich in <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FileMenu.<span class="me1">qml</span></pre></div></div>.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span> import the main <span class="kw5">Qt</span> QML module
+import <span class="st0">&quot;folderName&quot;</span> import the contents of the folder
+import <span class="st0">&quot;script.js&quot;</span> as Script import a Javascript file and name it as Script</pre></div></div>
+Die oben gezeigte Syntax zeigt, wie das <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import</pre></div></div> Schlüsselwort zu benutzen ist. Dieses ist nötig um <a rel="nofollow" class="external text" href="https://developer.mozilla.org/de/JavaScript">JavaScript</a> Dateien verwenden zu können, oder QML Dateien, die nicht im gleichen Verzeichnis liegen. Da <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div> im selben Verzeichnis liegt wie <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FileMenu.<span class="me1">qml</span></pre></div></div>, brauchen wir <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div> nicht zu importieren um es verwenden zu können. Wir können direkt ein <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button</pre></div></div> Element erstellen durch die Deklaration <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button<span class="br0">&#123;</span><span class="br0">&#125;</span></pre></div></div>, ähnlich der <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span><span class="br0">&#125;</span></pre></div></div> Deklaration.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">In FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span> parent.<span class="me1">width</span><span class="sy0">/</span><span class="nu0">6</span>
+&#160;
+Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> loadButton
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightgrey&quot;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;Load&quot;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;grey&quot;</span>
+ id<span class="sy0">:</span> saveButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Save&quot;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> exitButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Exit&quot;</span>
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;darkgrey&quot;</span>
+&#160;
+onButtonClick<span class="sy0">:</span> <span class="kw5">Qt</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+In <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FileMenu.<span class="me1">qml</span></pre></div></div> deklarieren wir drei <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button</pre></div></div> Elemente. Sie werden innerhalb eines <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-row.html">Row</a> Elementes deklariert, einem Stellungregler, der seine Kinder vertikal ausrichtet. Die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button</pre></div></div> Deklaration ist in Button.qml abgelegt, was die gleiche Datei ist, die wir in vorherigem Abschnitt verwendet haben. Neue Eigenschaftbindungen können innerhalb der neu erstellten Knöpfe deklariert werden, was die bereits in der Button.qml gesetzte Eigenschaften überschreibt. Der <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">exitButton</pre></div></div> genannte Knopf beendet und schließt das Anwendungsfenster beim Klicken. Beachten Sie, daß die Signalroutine <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick</pre></div></div> in <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Button.<span class="me1">qml</span></pre></div></div> zusätzlich zu <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">onButtonClick</pre></div></div> Routine im <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">exitButton</pre></div></div> aufgerufen wird.
+<p>p=. <a href="../indexf003.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_filemenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 filemenu.png">Menü</a>
+</p>
+Die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Row</pre></div></div> Deklaration wird in einem <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> vorgenommen, um einen rechteckigen Container für die Knopfzeile zu erstellen. Dieses zusätzliche Rechteck stellt eine indirekte Möglichkeit die Knopfzeile in einem Menü zu organisieren.
+Die Deklaration des Bearbeitungsmenü ist zu diesem Zeitpunkt sehr ähnlich. Das Menü besitzt Knöpfe mit Beschriftungen: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Copy</pre></div></div>, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Paste</pre></div></div> und <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Select All</pre></div></div>.
+<p>p=. <a href="../indexe0a4.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 editmenu.png">Bearbeitungsmenü</a>
+</p><p>Mit unserem Wissen über das Importieren und Anpassen früher erstellter Komponenten ausgerüstet können wir nun diese Menüseiten kombinieren um eine Menüleiste zu erstellen, bestehend aus Knöpfen um das Menü auszuwählen, und schauen wie wir die Daten unter Verwendung von QML strukturieren können.
+</p>
+<h2><span class="mw-headline" id="Men.C3.BCleiste_implementieren">Menüleiste implementieren</span></h2>
+<p>Unsere Texteditor Anwendung wird einen Weg benötigen um Menüs in einer Menüzeile anzuzeigen. Die Menüleiste wird zwischen den verschiedenen Menüs umschalten und der Benutzer kann entscheiden welches Menü angezeigt werden soll. Das Menü Umschalten deutet darauf hin, daß wir mehr Struktur benötigen als simples anzeigen in einer Zeile. QML verwendet Modele und Ansichten um Daten zu strukturieren und sie anzuzeigen.
+</p>
+<h2><span class="mw-headline" id="Datenmodelle_und_Ansichten_benutzen">Datenmodelle und Ansichten benutzen</span></h2>
+QML hat unterschiedliche <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativemodels.html">Datenansichten</a>, die Datenmodelle anzeigen. Unsere Menüleiste wird Menüs in einer Liste anzeigen; mit Menünamen in der Kopfzeile. Die Liste der Menüs sind innerhalb von <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">VisualItemModel</pre></div></div> deklariert. Das <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-visualitemmodel.html">VisualItemModel</a> Element beinhaltet Elemente, die bereits Ansichten besitzen, wie die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle</pre></div></div> Elemente und importierte UI Elemente. Andere Modelltypen wie das <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-listmodel.html">ListModel</a> Element brauchen einen Delegierer um ihre Daten anzuzeigen.
+Wir deklarieren zwei visuelle Dinge in <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">menuListModel</pre></div></div>, das <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FileMenu</pre></div></div> und das <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">EditMenu</pre></div></div>. Wir passen die zwei Menüs an und zeigen sie an unter Verwendung von einem <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-listview.html">ListView</a>. Die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">MenuBar.<span class="me1">qml</span></pre></div></div> Datei beinhaltet die QML Deklarationen und ein einfaches <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">edit</pre></div></div> Menü ist in der <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">EditMenu.<span class="me1">qml</span></pre></div></div> definiert.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">VisualItemModel <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListModel
+ FileMenu<span class="br0">&#123;</span>
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ color<span class="sy0">:</span> fileColor
+ <span class="br0">&#125;</span>
+ EditMenu<span class="br0">&#123;</span>
+ color<span class="sy0">:</span> editColor
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+Das <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-listview.html">ListView</a> Element wird ein Model anzeigen, das vom Delegierer bereitgestellt wird. Der Delegierer kann die Modeldaten so deklarieren, daß sie in einem Zeilenelement angezeigt werden, oder in einem Gitternetz. Unser <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">menuListModel</pre></div></div> hat bereits sichtbare Dinge, deshalb brauchen wir keinen Delegierer zu deklarieren.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListView
+&#160;
+<span class="co1">//Anchors are set to react to window anchors</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ anchors.<span class="me1">bottom</span><span class="sy0">:</span> parent.<span class="me1">bottom</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ height<span class="sy0">:</span> parent.<span class="me1">height</span>
+&#160;
+<span class="co1">//the model contains the data</span>
+ model<span class="sy0">:</span> menuListModel
+&#160;
+<span class="co1">//control the movement of the menu switching</span>
+ snapMode<span class="sy0">:</span> ListView.<span class="me1">SnapOneItem</span>
+ orientation<span class="sy0">:</span> ListView.<span class="me1">Horizontal</span>
+ boundsBehavior<span class="sy0">:</span> Flickable.<span class="me1">StopAtBounds</span>
+ flickDeceleration<span class="sy0">:</span> <span class="nu0">5000</span>
+ highlightFollowsCurrentItem<span class="sy0">:</span> <span class="kw2">true</span>
+ highlightMoveDuration<span class="sy0">:</span><span class="nu0">240</span>
+ highlightRangeMode<span class="sy0">:</span> ListView.<span class="me1">StrictlyEnforceRange</span>
+<span class="br0">&#125;</span></pre></div></div>
+Zusätzlich erbt <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView</pre></div></div> von <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-flickable.html">Flickable</a>, was die Liste auf Mausverschiebungen und andere Gesten reagieren lässt. Der letzte Teil des oberen Codes setzt <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Flickable</pre></div></div> Eigenschaften um das gewünschte schnellende Bewegen in unserer Ansicht zu bewirken. Speziell die Eigenschaft <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">highlightMoveDuration</pre></div></div> verändert die Dauer des schnellenden Übergangs. Ein größerer <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">highlightMoveDuration</pre></div></div> Wert resultiert in langsamerer Menü Umschaltung.
+Die <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView</pre></div></div> behält die Modeleinträge durch einen index und alle visuellen Elemente im Model sind durch diesen Index zugänglich, in der Reihenfolge ihrer Deklarierung. Das Ändern des <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">currentIndex</pre></div></div> ändert praktisch das hervorgehobene Element in der <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ListView</pre></div></div>. Die Kopfzeile unseres Menüs führt diesen Effekt beispielhaft vor. Es gibt zwei Knöpfe in der Zeile, beide ändern durch Betätigen das aktuelle Menü. Der <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">fileButton</pre></div></div> Knopf ändert das aktuelle Menü zu Dateimenü, der index ist hier 0, da <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">FileMenu</pre></div></div> als Erstes in der <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">menuListModel</pre></div></div> deklariert ist. Ähnlich ändert der <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">editButton</pre></div></div> das aktuelle Menü zu <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">EditMenu</pre></div></div> wenn er geklickt wird.
+Das <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">labelList</pre></div></div> Rechteck hat einen z-Wert von 1, kennzeichnend, daß es im Vordergrund der Menuleiste angezeigt wird. Elemente mit einem höheren z-Wert werden vor Elementen mit einem niedrigeren z-Wert angezeigt. Der Standard z-Wert ist 0.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> labelList
+ …
+ z<span class="sy0">:</span> <span class="nu0">1</span>
+ Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span><span class="nu0">40</span>
+ Button<span class="br0">&#123;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;File&quot;</span>
+ id<span class="sy0">:</span> fileButton
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">0</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> editButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Edit&quot;</span>
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Die Menüleiste, die wir gerade erstellt haben, kann benutzt werden um Menüs zu erreichen oder durch das Klicken auf die oberen Menünamen. Umschalten der Menümasken ist intuitiv und schnell.
+</p><p>p=. <a href="../index9081.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor2_menubar.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor2 menubar.png">Menüleiste</a>
+</p>
+<h2><span class="mw-headline" id="Einen_Texteditor_bauen">Einen Texteditor bauen</span></h2>
+<h3><span class="mw-headline" id="TextArea_deklarieren">TextArea deklarieren</span></h3>
+
+<!-- 
+NewPP limit report
+CPU time usage: 1.908 seconds
+Real time usage: 1.929 seconds
+Preprocessor visited node count: 971/1000000
+Preprocessor generated node count: 2152/1000000
+Post‐expand include size: 1328/2097152 bytes
+Template argument size: 427/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1936-0!*!0!!en!2!* and timestamp 20151104111516 and revision id 17430
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../index7e33.html?title=Quick_Start_QML_Programming/de&amp;oldid=17430">http://wiki.qt.io/index.php?title=Quick_Start_QML_Programming/de&amp;oldid=17430</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="../Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li><li><a href="../Category_Learning.html" title="Category:Learning">Learning</a></li><li><a href="../Category_HowTo.html" title="Category:HowTo">HowTo</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=affedca10f2ca5f1&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="de.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_Quick_Start_QML_Programming/de.html?title=Talk:Quick_Start_QML_Programming/de&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="de.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../index71d3.html?title=Quick_Start_QML_Programming/de&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../index6bbf-2.html?title=Quick_Start_QML_Programming/de&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/Quick_Start_QML_Programming/de.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/Quick_Start_QML_Programming/de.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../index2f2b.html?title=Quick_Start_QML_Programming/de&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../index7e33.html?title=Quick_Start_QML_Programming/de&amp;oldid=17430" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../indexb75b.html?title=Quick_Start_QML_Programming/de&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 26 May 2015, at 12:42.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,457 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":1082});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Quick_Start_QML_Programming/de by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 09:37:54 GMT -->
+</html>

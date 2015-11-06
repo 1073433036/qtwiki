@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Gerrit_Introduction&oldid=19531 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:09:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Gerrit Introduction - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Gerrit_Introduction","wgTitle":"Gerrit Introduction","wgCurRevisionId":19531,"wgRevisionId":19531,"wgArticleId":805,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing Qt"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Gerrit_Introduction","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Gerrit_Introduction skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Gerrit Introduction</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 21:04, 8 September 2015 by <a href="http://wiki.qt.io/index.php?title=User:Louai_Al-Khanji&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:Louai Al-Khanji (page does not exist)">Louai Al-Khanji</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:Louai_Al-Khanji&amp;action=edit&amp;redlink=1" class="new" title="User talk:Louai Al-Khanji (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Louai_Al-Khanji" title="Special:Contributions/Louai Al-Khanji">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Gerrit_Introduction&amp;diff=prev&amp;oldid=19531" title="Gerrit Introduction">diff</a>) <a href="http://wiki.qt.io/index.php?title=Gerrit_Introduction&amp;direction=prev&amp;oldid=19531" title="Gerrit Introduction">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+<b>Note, if you are a first time Gerrit user, please take a look at the <a href="http://wiki.qt.io/Setting_up_Gerrit" title="Setting up Gerrit">Setting up Gerrit</a> page.</b>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Main_Features"><span class="tocnumber">1.1</span> <span class="toctext">Main Features</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Basic_Workflow"><span class="tocnumber">1.2</span> <span class="toctext">Basic Workflow</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Repository_Structure"><span class="tocnumber">1.3</span> <span class="toctext">Repository Structure</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Terminology"><span class="tocnumber">1.4</span> <span class="toctext">Terminology</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Creating_and_Uploading_Contributions"><span class="tocnumber">2</span> <span class="toctext">Creating and Uploading Contributions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Preparation"><span class="tocnumber">2.1</span> <span class="toctext">Preparation</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Creating_a_New_Contribution"><span class="tocnumber">2.2</span> <span class="toctext">Creating a New Contribution</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Review_Workflow"><span class="tocnumber">3</span> <span class="toctext">Review Workflow</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Reviewing_Contributions"><span class="tocnumber">3.1</span> <span class="toctext">Reviewing Contributions</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Processing_Review_Feedback"><span class="tocnumber">3.2</span> <span class="toctext">Processing Review Feedback</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Updating_a_Contribution_With_New_Code"><span class="tocnumber">3.3</span> <span class="toctext">Updating a Contribution With New Code</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Integrating_Changes"><span class="tocnumber">4</span> <span class="toctext">Integrating Changes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="#Continuous_Integration"><span class="tocnumber">4.1</span> <span class="toctext">Continuous Integration</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-29"><a href="#Abandoning_and_Deferring_Contributions"><span class="tocnumber">5</span> <span class="toctext">Abandoning and Deferring Contributions</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="#Feature_Branches"><span class="tocnumber">6</span> <span class="toctext">Feature Branches</span></a>
+<ul>
+<li class="toclevel-2 tocsection-31"><a href="#Topics_vs._Branches"><span class="tocnumber">6.1</span> <span class="toctext">Topics vs. Branches</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Merging_Feature_Branches"><span class="tocnumber">6.2</span> <span class="toctext">Merging Feature Branches</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#Merging_Branches_Alien_to_Gerrit"><span class="tocnumber">6.3</span> <span class="toctext">Merging Branches Alien to Gerrit</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-34"><a href="#Closing_Remarks"><span class="tocnumber">7</span> <span class="toctext">Closing Remarks</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<h3><span class="mw-headline" id="Main_Features">Main Features</span></h3>
+<p>Gerrit is a web-based tool that is used for code review. Its main features are the side-by-side difference viewing and inline commenting, which makes code reviews a quick and simple task. It is used together with the Git version control system. Gerrit allows authorized contributors to merge Changes to the Git repository, after reviews are done. Contributors can get their code reviewed with little effort, and get their Changes quickly through the system.
+</p>
+<h3><span class="mw-headline" id="Basic_Workflow">Basic Workflow</span></h3>
+<p>Gerrit usage has two stages: First, the contributor uploads Changes to Gerrit with Git, and second, peers use the web browser to make reviews. The review process includes the following steps:
+</p>
+<ul>
+<li> Review Changes
+</li>
+<li> Publish comments
+</li>
+<li> Approve or abandon Changes
+</li>
+</ul>
+<h3><span class="mw-headline" id="Repository_Structure">Repository Structure</span></h3>
+<p>Gerrit can manage multiple repositories (projects). Branches are fully supported by Gerrit, each repository can have any number of branches.
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Structure.png" class="image"><img alt="Gerrit Intro Structure.png" src="http://wiki.qt.io/images/1/1b/Gerrit_Intro_Structure.png" width="600" height="329" /></a>
+</p><p>Gerrit stores Changes, which are normal commits, as references in the refs/changes/ namespace. When contributors push Changes, they prepend <tt>refs/for/</tt> to the target branch. For example, when contributor uploads a commit to the <tt>stable</tt> branch, the target ref will be <tt>refs/for/stable</tt>.
+</p>
+<h3><span class="mw-headline" id="Terminology">Terminology</span></h3>
+<p>Common terms used in Gerrit:
+</p>
+<table class="wikitable">
+<tr>
+<th>Term
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td><b>Change</b>
+</td>
+<td>The unit of review. Results in a single commit when merged to the Git repository.
+<p>Change numbers are unique and never change.
+</p>
+</td></tr>
+<tr>
+<td><b>Patch Set</b>
+</td>
+<td>A revision of a Change. Each time a Change is modified, it will receive a new Patch Set.
+<p>Patch Set numbering starts from 1.
+Technically, a Patch Set is a unique Git commit.
+</p>
+</td></tr>
+<tr>
+<td><b>Approval Category</b>
+</td>
+<td>Name for a scope that is checked during review process. Qt is using the categories <tt>Code Review</tt> and <tt>Sanity Review</tt>.
+</td></tr>
+<tr>
+<td><b>Score</b>
+</td>
+<td>A value in an Approval Category. Indicates if a Change is approved and can be submitted to the Git repository.
+</td></tr>
+<tr>
+<td><b>Submit</b>
+</td>
+<td>An action that allows Gerrit to merge a Change to the Git repository.
+</td></tr>
+<tr>
+<td><b>Abandon</b>
+</td>
+<td>Action that archives a Change. An abandoned Change can be restored later.
+</td></tr>
+<tr>
+<td><b>Project</b>
+</td>
+<td>A Git repository.
+</td></tr></table>
+<h2><span class="mw-headline" id="Creating_and_Uploading_Contributions">Creating and Uploading Contributions</span></h2>
+<h3><span class="mw-headline" id="Preparation">Preparation</span></h3>
+<p>Before any contribution can be created, a Git clone of the target repository must be obtained and properly configured.
+The necessary steps are explained in <a href="http://wiki.qt.io/Setting_up_Gerrit" title="Setting up Gerrit">Setting up Gerrit</a>.
+</p>
+<h3><span class="mw-headline" id="Creating_a_New_Contribution">Creating a New Contribution</span></h3>
+<p>All contributions are uploaded with a regular Git push. Gerrit handles reviews at the commit level. A single contribution can easily result in several reviewable Changes in Gerrit. The contributor prepares a contribution by following these steps:
+</p>
+<ol>
+<li> Creating or updating the local repository
+</li>
+<li> Optionally creating a topic branch
+</li>
+<li> Creating commits
+</li>
+<li> Uploading the commit(s) to Gerrit
+</li>
+<li> Soliciting feedback
+</li>
+</ol>
+<h4><span class="mw-headline" id="Creating_a_topic_branch">Creating a topic branch</span></h4>
+<p>Keep code organized in <a rel="nofollow" class="external text" href="http://git-scm.com/book/en/Git-Branching-Branching-Workflows">topic branches.</a> This is what Git excels in. "next-big-thing" is used as an example topic branch below:
+</p>
+<pre>
+$ git checkout -b next-big-thing
+Switched to a new branch 'next-big-thing'
+$
+</pre>
+<h4><span class="mw-headline" id="Creating_Commits">Creating Commits</span></h4>
+<p>See the <a href="http://wiki.qt.io/Git_Introduction" title="Git Introduction">Git Introduction</a> to get started.
+</p><p>Here are a few notes specific to Qt/Gerrit:
+</p>
+<ul>
+<li> If you correctly set up the clone, the commit message editor will present you with a template for the message.
+</li>
+<li> The guidelines for creating good commit messages - and creating good commits in general, for that matter - are outlined in the <a href="http://wiki.qt.io/Commit_Policy" title="Commit Policy">Commit Policy</a>.
+</li>
+<li> On initial creation of a commit, if the commit-msg hook is set up properly, an additional line in the form of "Change-Id: …" should have been added.
+</li>
+</ul>
+<h4><span class="mw-headline" id="Uploading_Commits">Uploading Commits</span></h4>
+<p>Changes are pushed to Gerrit with <tt>git push</tt>. Note that a special target ref is used.
+Gerrit reports how many Changes were created and provides links to these Changes.
+</p>
+<pre>
+$ git push gerrit HEAD:refs/for/dev
+Counting objects: 6, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 407 bytes, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2)
+remote: Processing changes: new: 1, refs: 1, done    
+remote: 
+remote: New Changes:
+remote:   https://codereview.qt-project.org/12345
+remote: 
+To ssh://qtcontributor@codereview.qt-project.org:29418/qt/qtbase
+ * [new branch] HEAD -&gt; refs/for/dev
+$
+</pre>
+<p>When pushing to Gerrit, a typical <a rel="nofollow" class="external text" href="http://git-scm.com/book/en/Git-Internals-The-Refspec">refspec</a> uses HEAD as the source ref and a special Gerrit ref for the target branch. The target ref has the format <tt>refs/for/&lt;branch name&gt;</tt>. Pushes to this target ref causes Gerrit to create new Changes for all commits pushed this way. To group your Changes, push to a <a href="#Topics_in_Gerrit">topic</a> by using the format <tt>refs/for/&lt;branch name&gt;/&lt;topic name&gt;</tt>.
+Note that it is possible to use any other ref as source ref instead of HEAD when necessary.
+See <a href="http://wiki.qt.io/Branch_Guidelines" title="Branch Guidelines">Branch Guidelines</a> to decide about the target branch.
+</p><p>It is recommended that you use the git-gpush command from our <a rel="nofollow" class="external text" href="http://code.qt.io/cgit/qt/qtrepotools.git/">qtrepotools repository</a> (make sure to add the bin directory to your PATH for maximal convenience):
+</p>
+<pre>
+$ git gpush
+[same output as above]
+</pre>
+<p>Once a Change has been created, it can be viewed in the web browser:
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_ChangeScreen.png" class="image"><img alt="Gerrit Intro ChangeScreen.png" src="http://wiki.qt.io/images/d/d7/Gerrit_Intro_ChangeScreen.png" width="1177" height="883" /></a>
+</p>
+<h4><span class="mw-headline" id="Soliciting_Feedback">Soliciting Feedback</span></h4>
+<p>The contributor requests feedback by adding reviewers to the Change. This is typically done via the web browser. Access the Change with the web browser and use the "Add Reviewer" button to add any other registered user(s) to the review.
+</p><p>Alternatively, reviewers can be added already when uploading a contribution. Use the git-gpush tool for that purpose:
+</p>
+<pre>
+$ git gpush +approver@example.com
+[same output as above]
+</pre>
+<h2><span class="mw-headline" id="Review_Workflow">Review Workflow</span></h2>
+<p>It is easy to get an overview of pending contributions in the "My Changes" page, also known as the "Dashboard":
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Dashboard.png" class="image"><img alt="Gerrit Intro Dashboard.png" src="http://wiki.qt.io/images/b/ba/Gerrit_Intro_Dashboard.png" width="1172" height="441" /></a>
+</p><p>It is possible to find Changes by issuing <a rel="nofollow" class="external text" href="https://codereview.qt-project.org/Documentation/user-search.html">search queries</a>. Links for the Change owner, project name and branch name in the search result listings can be used to quickly search for related Changes.
+</p><p>The navigation bar at the top of the Gerrit web view provides quick access to common search queries under the "My" and "All" items.
+</p>
+<h3><span class="mw-headline" id="Reviewing_Contributions">Reviewing Contributions</span></h3>
+<p>The review process starts with choosing a Change to review. After choosing a Change, changed files can be viewed side-by-side and comments can be posted in-line to each file. Contributions are typically reviewed by Approvers, but anyone can make a review.
+</p><p>The following steps are needed to complete a code review:
+</p>
+<ol>
+<li> Opening the Change page (entered from the Dashboard or following a link in a notification mail)
+</li>
+<li> Reviewing changed files
+</li>
+<li> Publishing comments and reviewing results
+</li>
+</ol>
+<h4><span class="mw-headline" id="Viewing_the_Change_Overview">Viewing the Change Overview</span></h4>
+<p>Changes can have several Patch Sets. When Changes get updated after review, the Patch Set number increases.
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_PatchSets.png" class="image"><img alt="Gerrit Intro PatchSets.png" src="http://wiki.qt.io/images/d/d7/Gerrit_Intro_PatchSets.png" width="1074" height="343" /></a>
+</p>
+<h4><span class="mw-headline" id="Reviewing_Changed_Files">Reviewing Changed Files</span></h4>
+<p>Changes are compared side-by-side or in the unified diff view.
+The reviewer can also compare differences between specific Patch Sets (also called "inter-diffs").
+</p><p>Comments are posted by double clicking on a line. Comments are saved as drafts until they are published as in the pictures:
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Commenting.png" class="image"><img alt="Gerrit Intro Commenting.png" src="http://wiki.qt.io/images/9/90/Gerrit_Intro_Commenting.png" width="1178" height="608" /></a>
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_CommentDrafts.png" class="image"><img alt="Gerrit Intro CommentDrafts.png" src="http://wiki.qt.io/images/c/c9/Gerrit_Intro_CommentDrafts.png" width="1150" height="180" /></a>
+</p><p>Gerrit keeps track which files have been reviewed and which files have comments ready to be published. If an ongoing review is interrupted, the reviewer can return later and resume where they left off. Draft comments can be edited and deleted before they are published.
+</p>
+<h5><span class="mw-headline" id="Downloading_Changes">Downloading Changes</span></h5>
+<p>It is also possible to download Changes for local review. The easiest way to do that is to copy the Download link from Gerrit to the command line:
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_CheckingOut.png" class="image"><img alt="Gerrit Intro CheckingOut.png" src="http://wiki.qt.io/images/a/a4/Gerrit_Intro_CheckingOut.png" width="1025" height="273" /></a>
+</p>
+<pre>
+$ git fetch ssh://qtcontributor@codereview.qt-project.org:29418/qt/qtbase refs/changes/19/419/1 &amp;&amp; git checkout FETCH_HEAD
+From ssh://codereview.qt-project.org:29418/qt/qtbase
+ * branch refs/changes/19/419/1 -&gt; FETCH_HEAD
+Note: checking out 'FETCH_HEAD'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.  
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+git checkout -b new_branch_name
+
+HEAD is now at 9a006a3... My Feature
+$ git checkout -b changes/419
+Switched to a new branch 'changes/419'
+$
+</pre>
+<p>This makes it possible to use the usual git commands to view changes, to build the code, and to run tests.
+</p>
+<h4><span class="mw-headline" id="Publishing_Comments">Publishing Comments</span></h4>
+<p>When all files are reviewed, the reviewer continues to the Publish Comments screen with the Review button.
+</p><p>The review is completed by writing an optional cover message and giving a score.
+</p><p>The Code Review category has 5 levels. A Change can only be submitted after it receives a +2 score, and cannot be be submitted if it receives a -2 score. Giving these scores is limited to Approvers; regular contributors can give only advisory scores (-1 to +1).
+</p><p>A Sanity Review score should <b>not</b> be given unless the <a href="http://wiki.qt.io/Early_Warning_System" title="Early Warning System">Sanity Bot</a> made a mistake and needs to be overridden.
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Publishing.png" class="image"><img alt="Gerrit Intro Publishing.png" src="http://wiki.qt.io/images/c/c3/Gerrit_Intro_Publishing.png" width="1148" height="706" /></a>
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Published.png" class="image"><img alt="Gerrit Intro Published.png" src="http://wiki.qt.io/images/2/2c/Gerrit_Intro_Published.png" width="1151" height="695" /></a>
+</p>
+<h5><span class="mw-headline" id="Publishing_Review_Results_From_The_Command_Line">Publishing Review Results From The Command Line</span></h5>
+<p>An alternative to browser-based review is to use the Gerrit ssh command line interface. Please do <i>not</i> do this, as scripting a step which is meant to be visual and interactive removes the additional safety net.
+</p>
+<h3><span class="mw-headline" id="Processing_Review_Feedback">Processing Review Feedback</span></h3>
+<p>The contributor can view feedback on their contributions by accessing the Change page and reading comments file-by-file. It is possible to reply to comments and have a discussion about the code review in-line.
+</p><p>The contributor processes the feedback by following these steps:
+</p>
+<ol>
+<li> Opening the Change page (entered from the Dashboard or following a link in a notification mail)
+</li>
+<li> Locating comments in the Change page
+</li>
+<li> Reading and writing in-line comments
+</li>
+<li> Publishing a reply and/or uploading a new Patch Set
+</li>
+</ol>
+<h4><span class="mw-headline" id="Locating_Comments_in_The_Change">Locating Comments in The Change</span></h4>
+<p>Comments are located below the list of Patch Sets. In the picture below the comments for Patch Set 2 are examined:
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Comments.png" class="image"><img alt="Gerrit Intro Comments.png" src="http://wiki.qt.io/images/c/c9/Gerrit_Intro_Comments.png" width="1148" height="636" /></a>
+</p>
+<h4><span class="mw-headline" id="Reading_in-line_Comments">Reading in-line Comments</span></h4>
+<p>Replies can be posted by clicking the comment like in the picture below:
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Replying.png" class="image"><img alt="Gerrit Intro Replying.png" src="http://wiki.qt.io/images/c/c0/Gerrit_Intro_Replying.png" width="1170" height="534" /></a>
+</p><p>Note that the comments are <b>not</b> actually posted until you publish them.
+</p><p><b>Note:</b> do not reply to the notification mails you get from Gerrit. The mails you send this way will not be publicly visible and archived.
+</p>
+<h3><span class="mw-headline" id="Updating_a_Contribution_With_New_Code">Updating a Contribution With New Code</span></h3>
+<p>Most Changes require multiple iterations of the review process. The contributor needs to update the Change if it received some comments that require action, or it did not merge with the branch tip. Each time a Change is updated, it gains a new Patch Set.
+</p><p>Updating a Change is done by following these steps:
+</p>
+<ol>
+<li> Accessing the Changes
+</li>
+<li> Modifying the Change(s)
+</li>
+<li> Pushing updated Changes
+</li>
+</ol>
+<h4><span class="mw-headline" id="Accessing_The_Changes">Accessing The Changes</span></h4>
+<p>If the original commit(s) are still available, it is possible to amend them right away. Otherwise, download the Change(s) the same way as for local review.
+</p><p>If Gerrit reported a merge conflict, now would be the time to rebase the Changes:
+</p>
+<pre>
+$ git rebase --onto origin/dev
+</pre>
+<p>If you are not using a separate branch, you can just use <tt>git pull --rebase</tt>.
+</p><p><i>Note:</i> Please do <b>not</b> rebase unnecessarily, as this makes inter-diffs much less useful.
+</p>
+<h4><span class="mw-headline" id="Modifying_Commits">Modifying Commits</span></h4>
+<p>Modifications in the working tree are committed with the --amend option. If the contribution consists of multiple commits, you will need to use <tt>git rebase --interactive</tt> to revise earlier commits.
+</p><p>When you amend commit messages, make <i>sure</i> to preserve the Change-Id footer, as this is how Gerrit identifies new Patch Sets for existing Changes.
+</p>
+<pre>
+$ vim src/foo.cc
+$ git add src/foo.cc
+$ git commit --amend
+[changes/419 2ea7773] My Feature
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 src/foo.cc
+$
+</pre>
+<p>Pay even more attention to copying the Change-Id when you redo commits from scratch.
+</p>
+<h4><span class="mw-headline" id="Pushing_Updated_Changes">Pushing Updated Changes</span></h4>
+<p>The commit(s) are uploaded back to Gerrit with the same target ref as before. After the push, new Patch Sets will have been created for the target Change(s):
+</p>
+<pre>
+$ git push gerrit HEAD:refs/for/dev
+Counting objects: 6, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 419 bytes, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2)
+remote: Processing changes: updated: 1, refs: 1, done
+To ssh://qtcontributor@codereview.qt-project.org:29418/qt/qtbase.git
+ * [new branch] HEAD -&gt; refs/for/dev
+$
+</pre>
+<p><a href="http://wiki.qt.io/File:Gerrit_Intro_Updating.png" class="image"><img alt="Gerrit Intro Updating.png" src="http://wiki.qt.io/images/d/d0/Gerrit_Intro_Updating.png" width="1147" height="750" /></a>
+</p>
+<h2><span class="mw-headline" id="Integrating_Changes">Integrating Changes</span></h2>
+<p>There are two ways to submit a Change. If the project is using a continuous integration system, Changes will be merged to staging. Otherwise, they will be submitted directly to their destination branch.
+</p>
+<ul>
+<li> To submit a Change to the CI system press "Merge Patch Set &lt;n&gt; to Staging".
+</li>
+<li> To submit a Change directly to the target branch press "Submit Patch Set &lt;n&gt;"
+</li>
+</ul>
+<p>It is usually best when the contributor submits their own Changes.
+</p><p>Even if there are multiple reviewers, only one +2 approval is required. However, if other reviewers have shown a specific interest in a contribution, such as by repeated comments, it is polite to give them some time to add a +1 or +2 before submitting.
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Submitting.png" class="image"><img alt="Gerrit Intro Submitting.png" src="http://wiki.qt.io/images/4/4e/Gerrit_Intro_Submitting.png" width="1150" height="640" /></a>
+</p>
+<h3><span class="mw-headline" id="Continuous_Integration">Continuous Integration</span></h3>
+<p>Gerrit has been slightly customized for the Qt project. The continuous integration system that is running regular builds and tests has been incorporated to the workflow. Instead of directly submitting Changes, Changes can be merged to a staging branch. There is a staging branch for each normal branch. Staging branches are maintained by Gerrit and are not visible to the contributors.
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Workflow.png" class="image"><img alt="Gerrit Intro Workflow.png" src="http://wiki.qt.io/images/e/e8/Gerrit_Intro_Workflow.png" width="649" height="163" /></a>
+</p><p>As part of the customization, Changes gained new states. Changes in the New state are waiting for a review. After review, Changes are merged to a staging branch and marked as Staged. The continuous integration system will pick staged Changes at regular intervals and move them to the Integrating state. From the Integrating state Changes are either submitted or moved back to the New state. If builds succeed and tests pass, the Changes are submitted or merged into their destination branch. Otherwise they are moved back to the New state for further analysis. The contributor of the affected Change(s) is expected to analyze the failure and upload fixes as necessary.
+</p>
+<h2><span class="mw-headline" id="Abandoning_and_Deferring_Contributions">Abandoning and Deferring Contributions</span></h2>
+<p>Changes which are inherently flawed or became inapplicable should be abandoned.
+An abandoned Change will disappear from open Changes lists and is considered closed.
+Abandoned Changes can be restored later if they become valid again or if they were abandoned by accident.
+</p><p>Changes which have potential but will not be worked on in the near future should be deferred.
+Deferred Changes are basically abandoned, but are more easily accessible via the "My Deferred Changes" menu item.
+</p><p>Abandoning is a normal operation that is used to maintain Gerrit and hide Changes that will not make their way to the Git repository, for any reason.
+</p><p>To abandon a Change, its owner or an Administrator can click the "Abandon Change" button:
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Abandon.png" class="image"><img alt="Gerrit Intro Abandon.png" src="http://wiki.qt.io/images/8/82/Gerrit_Intro_Abandon.png" width="1148" height="187" /></a>
+</p><p><a href="http://wiki.qt.io/File:Gerrit_Intro_Abandoned.png" class="image"><img alt="Gerrit Intro Abandoned.png" src="http://wiki.qt.io/images/9/9f/Gerrit_Intro_Abandoned.png" width="1150" height="330" /></a>
+</p>
+<h2><span class="mw-headline" id="Feature_Branches">Feature Branches</span></h2>
+<p>The Qt Project's handling of branches is documented by the <a href="http://wiki.qt.io/Branch_Guidelines" title="Branch Guidelines">Branch Guidelines</a>.
+</p>
+<h3><span class="mw-headline" id="Topics_vs._Branches">Topics vs. Branches</span></h3>
+<p>Gerrit topics can be used as "feature branches". A topic is created when a target ref like <tt>refs/for/&lt;branch name&gt;/&lt;topic name&gt;</tt> is used. It is often good enough to push a set of commits for review to a topic. However, if the contributor intends to work with others on a long-living branch, the Gerrit Administrators should be contacted for a new branch in Gerrit. Also, the QA team has to be contacted so they can include the new branch in the CI system builds. This way the code can be reviewed already when working on it in the branch.
+</p>
+<h3><span class="mw-headline" id="Merging_Feature_Branches">Merging Feature Branches</span></h3>
+<p>Merges between feature branches and the mainline are like all other commits and are pushed, reviewed and staged the usual way. However, only 'Merge Masters' can push merge commits. User may recruit the merge master from outside project team if it they do not have person knowledgeable on Git available. Note: Do not create a merge from commits which have not been integrated yet.
+</p>
+<h3><span class="mw-headline" id="Merging_Branches_Alien_to_Gerrit">Merging Branches Alien to Gerrit</span></h3>
+<p>This should not happen often. Nevertheless, only a merge commit should be pushed in this case. 'Push Master' can be asked to import the branch into Gerrit.
+</p>
+<h2><span class="mw-headline" id="Closing_Remarks">Closing Remarks</span></h2>
+<p>See <a href="http://wiki.qt.io/Gerrit_Caveats_and_Hints" title="Gerrit Caveats and Hints">Gerrit Caveats and Hints</a> to avoid common traps.
+</p><p>There is a process for <a href="http://wiki.qt.io/Requesting_New_Repositories" title="Requesting New Repositories">requesting new repositories</a>.
+</p><p>Report bugs in our Gerrit to <a rel="nofollow" class="external text" href="http://bugreports.qt.io/browse/QTQAINFRA/component/19470">the bugtracker</a>. Ideally, provide a link to an <a rel="nofollow" class="external text" href="http://code.google.com/p/gerrit/issues/list">upstream issue</a> (note that the issue may be already closed, as we are typically lagging by several versions).
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.088 seconds
+Real time usage: 2.353 seconds
+Preprocessor visited node count: 207/1000000
+Preprocessor generated node count: 300/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:805-0!*!0!!en!2!* and timestamp 20151104082949 and revision id 19531
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Gerrit_Introduction&amp;oldid=19531">http://wiki.qt.io/index.php?title=Gerrit_Introduction&amp;oldid=19531</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:Developing_Qt" title="Category:Developing Qt">Developing Qt</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Gerrit+Introduction" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Gerrit_Introduction"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Gerrit_Introduction&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Gerrit_Introduction" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Gerrit_Introduction&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Gerrit_Introduction&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Gerrit_Introduction" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Gerrit_Introduction" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Gerrit_Introduction&amp;oldid=19531&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Gerrit_Introduction&amp;oldid=19531" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Gerrit_Introduction&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 8 September 2015, at 21:04.</li>
+											<li id="footer-info-viewcount">This page has been accessed 14,709 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":215});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Gerrit_Introduction&oldid=19531 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:09:39 GMT -->
+</html>

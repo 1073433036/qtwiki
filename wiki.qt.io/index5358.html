@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=CI_Machine_Configuration&oldid=18405 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:03:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>CI Machine Configuration - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"CI_Machine_Configuration","wgTitle":"CI Machine Configuration","wgCurRevisionId":18405,"wgRevisionId":18405,"wgArticleId":607,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Developing Qt::QA"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"CI_Machine_Configuration","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-CI_Machine_Configuration skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">CI Machine Configuration</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 12:25, 28 June 2015 by <a href="http://wiki.qt.io/User:Wieland" title="User:Wieland" class="mw-userlink">Wieland</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/User_talk:Wieland" title="User talk:Wieland">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Wieland" title="Special:Contributions/Wieland">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=CI_Machine_Configuration&amp;diff=prev&amp;oldid=18405" title="CI Machine Configuration">diff</a>) <a href="http://wiki.qt.io/index.php?title=CI_Machine_Configuration&amp;direction=prev&amp;oldid=18405" title="CI Machine Configuration">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This page describes how the Qt Project CI machines (testers and servers) are set up and maintained.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The_qtqa.2Fsysadmin_repository"><span class="tocnumber">1</span> <span class="toctext">The qtqa/sysadmin repository</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Introduction_to_puppet"><span class="tocnumber">1.1</span> <span class="toctext">Introduction to puppet</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Completeness_of_the_puppet_setup"><span class="tocnumber">1.2</span> <span class="toctext">Completeness of the puppet setup</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Installing_and_configuring_qtqa.2Fsysadmin"><span class="tocnumber">1.3</span> <span class="toctext">Installing and configuring qtqa/sysadmin</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#qtqa.2Fsysadmin_coding_guidelines"><span class="tocnumber">2</span> <span class="toctext">qtqa/sysadmin coding guidelines</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="The_qtqa.2Fsysadmin_repository">The qtqa/sysadmin repository</span></h2>
+<p>Most of the CI machine setup is maintained under source control, in the "qtqa/sysadmin" repository hosted in gerrit and on gitorious - <a rel="nofollow" class="external free" href="http://qt.gitorious.org/qtqa/sysadmin">http://qt.gitorious.org/qtqa/sysadmin</a>
+</p><p>This repository holds metadata about the test machines and servers such as:
+</p>
+<ul>
+<li> the set of installed packages
+</li>
+<li> helper scripts deployed onto test machines
+</li>
+<li> configuration of tools used in the test process (perl, git, ssh, etc.)
+</li>
+<li> system-wide configuration for an unattended build/test machine running GUI tests (e.g. on Windows, registry values to disable the screensaver)
+</li>
+<li> other miscellaneous bits and pieces (e.g. the HTML and CSS templates used on <a rel="nofollow" class="external free" href="http://testresults.qt.io/">http://testresults.qt.io/</a> )
+</li>
+</ul>
+<p>The history of this repository dates to the beginning of 2011; prior to this, an internal repository was used within Nokia.
+</p><p>Most of the machines are controlled by a (free, open-source) sysadmin tool called <a rel="nofollow" class="external text" href="http://puppetlabs.com/">puppet</a> .
+</p>
+<h3><span class="mw-headline" id="Introduction_to_puppet">Introduction to puppet</span></h3>
+<p>The qtqa/sysadmin repository uses a masterless puppet setup (no central server).
+In this configuration, puppet is run periodically (through a cron job or Windows scheduled task).
+When run, it parses a set of files (<i>manifests</i>) which describe the desired state of the machine.
+The qtqa/sysadmin repository itself is updated regularly on the machine, so that all changes are applied automatically.
+</p><p>For most tasks, puppet uses its own simple, mostly-declarative syntax. For more advanced tasks, it is possible to drop down to ruby.
+</p><p>Puppet code is typically arranged into <b>modules</b> of related code. For example, here is a snippet of code from the "qt_prereqs" module, intended to include the prerequisite packages for building and testing Qt:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># from puppet/modules/qt_prereqs/manifests/linux.pp</span>
+<span class="co2"># Linux-specific class inherits from a class applicable to all Unix-like systems</span>
+<span class="kw2">class</span> qt_prereqs<span class="sy0">::</span><span class="me2">linux</span> inherits qt_prereqs<span class="sy0">::</span><span class="me2">unix</span> <span class="br0">&#123;</span>
+&#160;
+<span class="co2"># These packages shall be installed on all Linux systems;</span>
+ <span class="co2"># we could also say &quot;ensure =&gt; absent&quot; to make sure a package is ''not'' installed.</span>
+ <span class="co2"># These come from the system's default package manager.</span>
+ package <span class="br0">&#123;</span>
+ <span class="st0">&quot;chrpath&quot;</span><span class="sy0">:</span> ensure <span class="sy0">=&gt;</span> installed<span class="sy0">;</span>
+ <span class="st0">&quot;lsb&quot;</span><span class="sy0">:</span> ensure <span class="sy0">=&gt;</span> installed<span class="sy0">;</span>
+ <span class="st0">&quot;libasound2-dev&quot;</span><span class="sy0">:</span> ensure <span class="sy0">=&gt;</span> installed<span class="sy0">;</span>
+ <span class="st0">&quot;libbluetooth-dev&quot;</span><span class="sy0">:</span> ensure <span class="sy0">=&gt;</span> installed<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="co2"># enable some additional packages only on Ubuntu…</span>
+ <span class="kw1">if</span> $<span class="sy0">::</span><span class="me2">operatingsystem</span> <span class="sy0">==</span> <span class="st0">&quot;Ubuntu&quot;</span> <span class="br0">&#123;</span>
+ package <span class="br0">&#123;</span>
+ <span class="st0">&quot;libgstreamer-plugins-base0.10-dev&quot;</span><span class="sy0">:</span> ensure <span class="sy0">=&gt;</span> installed<span class="sy0">;</span>
+ <span class="st0">&quot;libdbus-1-dev&quot;</span><span class="sy0">:</span> ensure <span class="sy0">=&gt;</span> installed<span class="sy0">;</span>
+ <span class="st0">&quot;libssl-dev&quot;</span><span class="sy0">:</span> ensure <span class="sy0">=&gt;</span> installed<span class="sy0">;</span>
+ <span class="st0">&quot;libpulse-dev&quot;</span><span class="sy0">:</span> ensure <span class="sy0">=&gt;</span> installed<span class="sy0">;</span>
+ <span class="st0">&quot;pulseaudio&quot;</span><span class="sy0">:</span> ensure <span class="sy0">=&gt;</span> installed<span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+&#160;
+<span class="br0">&#125;</span></pre></div></div>
+<p>Each package declared above is referred to as a puppet <b>resource</b>. The most common types of resources used in our setup are:
+</p>
+<ul>
+<li> <b>package</b>: ensures a particular package is installed, absent, or installed at a particular version
+</li>
+<li> <b>file</b>: ensures a particular file or directory is present or absent, with specified permissions and content; the content may be generated from a ruby-based template (erb)
+</li>
+<li> <b>exec</b>: run a command whenever puppet is run, if some condition evaluates to true (e.g. download and run some Windows installer to install some program, if it does not appear to be already installed)
+</li>
+</ul>
+<p>The full reference of puppet's built-in resource types is documented online: <a rel="nofollow" class="external free" href="http://docs.puppetlabs.com/references/2.7.19/type.html">http://docs.puppetlabs.com/references/2.7.19/type.html</a>
+</p><p>The sysadmin repository also contains various custom defined types (e.g. a <b>baselayout::startup</b> type for managing commands executed when a user logs in).
+</p>
+<h3><span class="mw-headline" id="Completeness_of_the_puppet_setup">Completeness of the puppet setup</span></h3>
+<p>Ideally, all aspects of test machines and servers would be encapsulated in puppet, so that the machine setup could always be reproduced in an automated and predictable manner. In practice, certain elements have proven difficult to automate with puppet, resulting in an incomplete puppet setup.
+</p><p>The level of completeness varies for each platform:
+</p>
+<ul>
+<li> <b>Linux</b>: almost 100% complete. Linux is the most mature platform supported by puppet, and there are no known significant gaps in the setup.
+</li>
+<li> <b>Mac</b>: mostly complete. Notably, on CI test machines, user account creation and the installation of xcode are not covered.
+</li>
+<li> <b>Windows</b>: mostly incomplete. As a working puppet setup on Windows was not established until halfway through 2012, most machine setup completed prior to then is not covered, though this is being gradually improved.
+</li>
+</ul>
+<h3><span class="mw-headline" id="Installing_and_configuring_qtqa.2Fsysadmin">Installing and configuring qtqa/sysadmin</span></h3>
+<p><b>Note:</b> this section is currently <b>proposed</b> and depends on this change being merged - <a rel="nofollow" class="external free" href="https://codereview.qt-project.org/33381">https://codereview.qt-project.org/33381</a>
+</p><p>The recommended method for setting up a machine is to download and run the appropriate "bootstrap" script for your platform, found under the "bootstrap" folder ( <a rel="nofollow" class="external free" href="http://qt.gitorious.org/qtqa/sysadmin/trees/master/bootstrap">http://qt.gitorious.org/qtqa/sysadmin/trees/master/bootstrap</a> ).
+These simple scripts are generally able to install the needed prerequisites (git, puppet) themselves. (On Windows, the situation is <a rel="nofollow" class="external text" href="http://wiki.qt.io/CI_Windows_Tester_Setup">slightly more complicated</a>.)
+</p><p>During the run of the bootstrap script, you'll be asked what kind of machine you are trying to configure (e.g. CI node, network test server, etc) and some additional questions about the setup.
+</p><p>The rest of this section describes the steps performed by the bootstrap scripts.
+</p><p>A machine maintained by the qtqa/sysadmin repository must declare its role (and possibly some parameters) in a simple configuration file under the puppet/nodecfg directory. An example of this configuration file:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># YAML syntax.</span>
+<span class="co2"># 'classes' declares which puppet classes should be included; in qtqa/sysadmin, there</span>
+<span class="co2"># is one top-level class defined for each supported type of machine.</span>
+classes<span class="sy0">:</span>
+ <span class="co2"># we want this machine to be a ci_tester (CI system build/test node)</span>
+ ci_tester<span class="sy0">:</span>
+ <span class="co2"># we'll use the icecream distributed compilation tool…</span>
+ icecc_enabled<span class="sy0">:</span> <span class="kw2">true</span>
+ <span class="co2"># with this scheduler host…</span>
+ icecc_scheduler_host<span class="sy0">:</span> <span class="st0">&quot;icecc.example.com&quot;</span>
+ <span class="co2"># …and all building/testing will be done under this user account</span>
+ testuser<span class="sy0">:</span> qt</pre></div></div>
+<p>At least one class must be declared (and, in the usual case, only one class will be declared). Parameters can be left blank to use default values.
+</p><p>This configuration file can be interactively generated by running the <b>puppet/nodecfg.pl -interactive</b> command (which is also invoked as part of the previously mentioned bootstrap scripts). This tool will perform a simple question-answer process to generate the machine's configuration, such as in the following example:
+</p><p>pre.. $ puppet/nodecfg.pl -interactive
+Configuring interactively.
+</p><p>This script will generate the following configuration file:
+</p>
+<pre>puppet/nodecfg/10-config.yaml
+</pre>
+<p>The usage of this script is optional; it is intended to give a quick start
+to configuring a machine for the most common use-cases.
+It's fine to instead create the configuration by hand, or copy a file from
+another machine, or skip this for now and come back later.
+</p><p>Press CTRL+C to abort this interactive process at any time.
+</p><p><br />
+Select which of the following best describes the purpose of this host:
+</p>
+<pre>(1) network_test_server- Network test server, used for some QtNetwork autotests (qt-test-server.qt-test-net)
+(2) ci_server - Qt Project CI system server (Jenkins - Gerrit integration)
+(3) ci_tester - Qt Project CI tester, performing Qt compilation and autotests
+</pre>
+<p>? 3
+Configuring a node of class 'ci_tester'
+</p><p>Username of the account used for all testing;
+this should be an account which is not used for any other
+activities on this machine.
+</p>
+<pre>testuser [qt]&#160;? test
+</pre>
+<p>Use icecream distributed compilation tool?
+</p>
+<pre>icecc_enabled [y]&#160;?
+</pre>
+<p>Icecream scheduler hostname; leave empty for autodiscovery,
+</p>
+<pre>which usually works if the scheduler is on the same LAN and IP broadcast
+is working.
+icecc_scheduler_host []&#160;?
+</pre>
+<p>Configuration completed:
+</p><p>classes:
+</p>
+<pre>ci_tester:
+icecc_enabled: true
+icecc_scheduler_host: ""
+testuser: test
+</pre>
+<p>Save (y/n) [y]&#160;? y
+Configuration saved to puppet/nodecfg/10-config.yaml.
+To reconfigure, run: puppet/nodecfg.pl -interactive
+</p><p>After the configuration file is put in place, sync_and_run.pl should be run once (as root or administrator). This will set up the necessary cron job or scheduled task for managing the machine by qtqa/sysadmin from this point onwards. This is also done automatically by the bootstrap scripts.
+</p>
+<h2><span class="mw-headline" id="qtqa.2Fsysadmin_coding_guidelines">qtqa/sysadmin coding guidelines</span></h2>
+<p>The sysadmin repository generally follows the same rules as Qt itself, as well as a few additional guidelines.
+</p>
+<ul>
+<li> the repository is covered by the Qt Project CI system and commits must pass testing to be accepted.
+</li>
+<li> code should have a reasonable amount of autotest coverage (check the repo for examples of perl and puppet autotests)
+</li>
+<li> code must be reviewed in gerrit and receive a +2 score as per the rules for Qt itself.
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.052 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 37/1000000
+Preprocessor generated node count: 64/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:607-0!*!*!!en!*!* and timestamp 20151105115012 and revision id 18405
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=CI_Machine_Configuration&amp;oldid=18405">http://wiki.qt.io/index.php?title=CI_Machine_Configuration&amp;oldid=18405</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://wiki.qt.io/Category:Developing_Qt::QA" title="Category:Developing Qt::QA">Developing Qt::QA</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=CI+Machine+Configuration" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/CI_Machine_Configuration"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:CI_Machine_Configuration&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/CI_Machine_Configuration" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=CI_Machine_Configuration&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=CI_Machine_Configuration&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/CI_Machine_Configuration" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/CI_Machine_Configuration" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=CI_Machine_Configuration&amp;oldid=18405&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=CI_Machine_Configuration&amp;oldid=18405" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=CI_Machine_Configuration&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 June 2015, at 12:25.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,059 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":254});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=CI_Machine_Configuration&oldid=18405 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:03:16 GMT -->
+</html>

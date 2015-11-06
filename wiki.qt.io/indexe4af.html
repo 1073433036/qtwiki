@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&oldid=19239 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:58:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Getting Started Programming with QML/sq - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Getting_Started_Programming_with_QML/sq","wgTitle":"Getting Started Programming with QML/sq","wgCurRevisionId":19239,"wgRevisionId":19239,"wgArticleId":2405,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Getting_Started_Programming_with_QML/sq","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Getting_Started_Programming_with_QML_sq skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Getting Started Programming with QML/sq</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 13:21, 23 August 2015 by <a href="http://wiki.qt.io/index.php?title=User:AutoSpider&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:AutoSpider (page does not exist)">AutoSpider</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:AutoSpider&amp;action=edit&amp;redlink=1" class="new" title="User talk:AutoSpider (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/AutoSpider" title="Special:Contributions/AutoSpider">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&amp;diff=prev&amp;oldid=19239" title="Getting Started Programming with QML/sq">diff</a>) <a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&amp;direction=prev&amp;oldid=19239" title="Getting Started Programming with QML/sq">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="http://wiki.qt.io/Updated_pages" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Fillimi_i_programimit_n.C3.AB_QML"><span class="tocnumber">1</span> <span class="toctext">Fillimi i programimit në QML</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#QML_p.C3.ABr_t.C3.AB_nd.C3.ABrtuar_nd.C3.ABrfaqe_p.C3.ABr_p.C3.ABrdorues"><span class="tocnumber">1.1</span> <span class="toctext">QML për të ndërtuar ndërfaqe për përdorues</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Komponenta_themelore_.E2.80.93_nj.C3.AB_buton"><span class="tocnumber">1.2</span> <span class="toctext">Komponenta themelore – një buton</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Krijimi_i_nj.C3.AB_faqe_meny"><span class="tocnumber">1.3</span> <span class="toctext">Krijimi i një faqe meny</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Zbatimi_i_nj.C3.AB_shiriti_p.C3.ABr_meny"><span class="tocnumber">1.4</span> <span class="toctext">Zbatimi i një shiriti për meny</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#P.C3.ABrdorimi_i_modeleve_t.C3.AB_t.C3.AB_dh.C3.ABnave_dhe_shikimeve"><span class="tocnumber">1.5</span> <span class="toctext">Përdorimi i modeleve të të dhënave dhe shikimeve</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Nd.C3.ABrtimi_i_edituesit_t.C3.AB_tekstit"><span class="tocnumber">1.6</span> <span class="toctext">Ndërtimi i edituesit të tekstit</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Dekorimi_i_edituesit_t.C3.AB_tekstit"><span class="tocnumber">1.7</span> <span class="toctext">Dekorimi i edituesit të tekstit</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Zgjerimi_i_QML_duke_shfryt.C3.ABzuar_Qt_dhe_C.2B"><span class="tocnumber">1.8</span> <span class="toctext">Zgjerimi i QML duke shfrytëzuar Qt dhe C<i>+</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Fillimi_i_programimit_n.C3.AB_QML">Fillimi i programimit në QML</span></h1>
+<p>Mirë se vjen në botën e QML, gjuhë deklarative për krijimin e ndërfaqeve (UI). Në këtë udhërrëfyes ne do të krijojmë një program i cili shërben si editues teksti. Pasi që ta keni lexuar këtë udhërrëfyes, ju do të jeni gati të shkruani aplikacionet tuaja duke shfrytëzuar QML dhe Qt C+<i>.</i>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="QML_p.C3.ABr_t.C3.AB_nd.C3.ABrtuar_nd.C3.ABrfaqe_p.C3.ABr_p.C3.ABrdorues">QML për të ndërtuar ndërfaqe për përdorues</span></h2>
+<p>Aplikacioni të cilin jemi duke e ndërtuar është një editues teksti i cili do të ngarkojë, ruaj dhe do të manipulojë tekst. Ky udhërrëfyes përmban dy pjesë. Në pjesën e parë do të bëhet konstruktimi i faqosjeve dhe sjelljeve duke shfrytëzuar gjuhën deklarative në QML. Për pjesën e dytë, ngarkimi dhe ruajtja e skedarit do të implementohet duke shfrytëzuar C<i>+ dhe Qt. Duke shfrytëzuar sistemin e Qt për meta-objekte, ne mund ti vëmë në dukje funksionet e C++ si veti (apo në gjuhën angleze, property) të cilat elementet e QML mund ti përdorin. Duke shfrytëzuar QML dhe Qt C++ ne në mënyrë efikase mund ta ndajmë logjikën e ndërfaqes nga logjika e aplikacionit.</i>
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 editmenu.png">pamja1</a>
+</p><p>Për ta ekzekutuar QML kodin, thjesht përdoreni veglën e qujtur qmlviewer me QML skedarin sikur argument. Pjesa e C++ supozon që lexuesi posedon njohuri bazike mbi procedurat e përpilimit (kompajllimit) të Qt.
+</p><p><i>Kapitujt e udhëzimit</i>
+</p>
+<ol>
+<li> Përcaktimi i butonit dhe menysë
+</li>
+<li> Zbatimi i shiritit të menysë
+</li>
+<li> Ndërtimi i edituesit të tekstit
+</li>
+<li> Dekorimi i edituesit të tekstit
+</li>
+<li> Zgjerimi i QML duke shfrytëzuar C++ dhe Qt
+</li>
+</ol>
+<h2><span class="mw-headline" id="Komponenta_themelore_.E2.80.93_nj.C3.AB_buton">Komponenta themelore – një buton</span></h2>
+<p>Ne fillojmë zhvillimin e edituesit të tekstit duke ndërtuar një buton. Funksionalisht, butoni ka një zonë të ndjeshme e cila mund të preket nga klikimi I miut dhe një etiketë (Ang. Label) e cila mban tekst. Butonët kryejnë veprime pasi që përdoruesi ta shtypë butonin.
+</p><p>Elementi vizual themelor në QML është një elementi drejtkëndësh i shkruar në gjuhën angleze si Rectangle. Elementi drejtkëndësh ka veti për të kontrolluar paraqitjen dhe pozicionin e elementit.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import <span class="kw5">Qt</span> <span class="nu16">4.7</span>
+&#160;
+Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>simplebutton
+ color<span class="sy0">:</span> <span class="st0">&quot;grey&quot;</span>
+ width<span class="sy0">:</span> <span class="nu0">150</span>
+ height<span class="sy0">:</span> <span class="nu0">80</span>
+ Text<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonLabel
+ text<span class="sy0">:</span> <span class="st0">&quot;button label&quot;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> simplebutton<span class="sy0">;</span>
+ anchors.<span class="me1">verticalCenterOffset</span><span class="sy0">:</span> –<span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Pjesa më e lartë e quajtur import Qt 4.7 lejon veglën qmlviewer ti importoj QML elementet të cilat do ti përdorim më vonë. Kjo linjë duhet të ekzistojë në çdo QML skedar. Vëmendje sepse versioni i Qt moduleve është i përfshirë në deklaratën për import.
+Ky drejtkëndësh i thjeshtë ka një identifikues unik, i quajtur simplebutton, i cili është i lidhur me vetinë id. Vetitë e elementit drejtkëndësh janë të lidhura me vlera duke listuar vetinë e ndjekur nga dy pika dhe më pas vlera. Në shembull është paraqitur që ngjyra grey është i lidhur me vetinë color të drejtkëndëshit. Në mënyrë të ngjashme janë lidhur edhe vetitë tjera të drejtkëndëshit siç është gjerësia dhe lartësia (width dhe height).
+</p><p>Elementi Text është fushë e tekstit e cila nuk mund të ndryshohet. Ne e quajmë këtë element teksti si buttonLabel. Për ta vendosur përmbajtjen e stringut së fushës për tekst, ne lidhim vlerën me vetinë text. Etiketa është e përmbajtur brenda drejtkëndëshit dhe në mënyrë që ta vendosim atë në mes në e caktojmë anchor vetinë e Text elementit që të jetë në prindin e tij, i cili quhet simplebutton. Ankorët mund të lidhin edhe ankorë të elementeve të tjera duke bërë faqosjen më të lehtë.
+</p><p>Ne do ta ruajmë këtë kod si SimpleButton.qml. Ekzekutimi i qmlviewer me emrin e skedarit si argument do bëjë shfaqjen e një drejtkëndëshi me një etiketë me tekst brenda.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_simplebutton.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 simplebutton.png">pamja2</a>
+</p><p>Për ta zbatuar funksionalitetin e klikimit të butonit, ne mund ta përdorim trajtimin e ngjarjeve që na jep QML. Trajtimi I ngjarjeve në QML është shumë i ngjashëm me mekanizmin e sinjaleve dhe slotëve që gjindet në Qt. Sinjalet emetohet dhe slot-ët që janë të lidhur për atë sinjal thirren.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>simplebutton
+ …
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonMouseArea
+&#160;
+anchors.<span class="me1">fill</span><span class="sy0">:</span> parent <span class="co1">//vendos të gjitha anët e zonës së miut te anët e drejtkëndëshit</span>
+ <span class="co1">//onClicked trajton klikimet valide të butonit</span>
+ onClicked<span class="sy0">:</span> console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Ne e përfshijmë një element të quajtur MouseArea në elementin simplebutton. Elementi MouseArea përshkruan një zonë interaktive ku zbluohen lëvizjet e miut. Për butonin tonë ne e zmadhojmë të gjithë MouseArea sa është elementi prind i tij, i cili në rastin tonë është simplebutton.
+</p><p>Sintaksa anchors.fill është njëra nga mënyrat për qasjen në një veti të quajtur fill e cila gjindet nën grupin e vetive anchors. QML përdor faqosjen e bazuar në ankor (spirancë) ku një element mund të jetë ankor i një elementi tjeter dhe kështu krijon faqosje të fuqishme.
+</p><p>MouseArea ka plot mbajtës të sinjaleve thirrja e të cilëve bëhet gjatë lëvizjeve të miut brenda kufijve të caktuar të MouseArea. Njëri nga ta është onClicked dhe thirrja e të cilit bëhet në momentin kur klikohet me butonin e pranueshëm të miut, ku fillimisht klikimi i pranueshëm është klikimi me butonin e majtë të miut, kjo mund të ndërrohet. Ne mund të lidhim veprime në mbajtësin e quajtur onClicked. Në shembullin tonë, console.log() nxjerr rezultat në formë teksti sa herë që zona e miut (MouseArea) klikohet. Funksioni console.log() është vegël e dobishme për qëllim të rregullimeve (debug-im) dhe për të nxjerrë tekst në ekran.
+</p><p>Kodi në SimpleButton.qml është i mjaftueshëm për shfaqjen e një butoni në ekran dhe për të nxjerrë tekst sa herë që ai të preket me miun e kompjuterit.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span>Button
+ …
+&#160;
+property color buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightblue&quot;</span>
+ property color onHoverColor<span class="sy0">:</span> <span class="st0">&quot;gold&quot;</span>
+ property color borderColor<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+&#160;
+<span class="kw4">signal</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ onButtonClick<span class="sy0">:</span> <span class="br0">&#123;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ onClicked<span class="sy0">:</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ hoverEnabled<span class="sy0">:</span> <span class="kw2">true</span>
+ onEntered<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> onHoverColor
+ onExited<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> borderColor
+ <span class="br0">&#125;</span>
+&#160;
+<span class="co1">//determines the color of the button by using the conditional operator</span>
+ color<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="kw5">Qt</span>.<span class="me1">darker</span><span class="br0">&#40;</span>buttonColor<span class="sy0">,</span> <span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy0">:</span> buttonColor
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Butoni plotësisht funksional është në Button.qml. Disa copa të kodit në këtë artikull janë hequr dhe janë zëvendësuar me shenja që tregojn heqjen e tekstit (elips) sepse ato copëza të kodit janë paraqitur në seksione të mëparshme apo janë të parëndësishme për diskutimin aktual të kodit.
+Veti të ndërtuara sipas nevojes janë deklaruar me sintaksen vetija tipi emri (Ang. Property type name). Në kod vetija buttonColor e tipit color është deklaruar dhe i lidhur me vlerën "lightblue". Vetija buttonColor përdoret më vonë në operactionin kushtëzues për të vendosur ngjyrën e butonit. Vëmendje në caktimin e vlerës së vetisë sepse është i mundur përdorimi i shenjës së barazimit (=) krahas lidhjes së vlerës duke shfrytëzuar karakterin dy pika (&#160;: ).
+Vetitë e ndërtuara sipas nevojës lejojnë qasjen nga jashtë të elementeve të brendshme të cilat gjinden jashtë fushës së drejtkëndëshit. Në QML ka tipe të të dhënave bazike si int, string, real si dhe tipi i të dhënave variant.
+</p><p>Duke lidhur trajtuesit e sinjaleve onEntered dhe onExited me ngjyrat, kufijtë e butonit do të kthehet në ngjyrë të verdhë kur miu afrohet sipër butonit dhe kthen ngjyrën kur miu largohet nga zona e miut (MouseArea).
+</p><p>Sinjali buttonClick() është deklaruar në Button.qml duke vendosur fjalën kyçe signal para emrit të sinjalit. Trajtuesit e të gjitha sinjaleve krijohen automatikisht, emrat e tyre fillojnë me on. Si rezultat onButtonClick është trajtuesi i buttonClick.
+onButtonClick atëherë i caktohet një veprim të cilin duhet ta kryej. Në shembullin tonë të butonit, onClicked trajtuesi i miut thjesht thërret onButtonClick, i cili shfaq një tekst.
+</p><p>onButtonClick lejon që objektet e jashtme të kenë qasje të lehtë te zona e miut të butonit. Për shembull elementet mund të kenë më shumë se një zonë të miut (MouseArea) të deklaruar dhe një buttonClick sinjal mund të bëjë më mirë dallime në mes të disa MouseArea trajtuesve.
+</p><p>Ne tani kemi njohuri bazike për ti zbatuar elementet në QML të cilët mund të trajtojnë lëvizje bazike të miut. Ne krijuam një etiketë teksti (Text elementi) brenda një drejtkëndëshi (Rectangle elementi) i përshtatëm vetitë dhe zbatuam sjelljet të cilat reagojnë në lëvizjet e miut. Kjo ide për të krijuar elemente brenda elementeve përsëritet gjatë gjithë aplikacionit për editim të tekstit.
+Ky buton nuk është i dobishëm përderisa nuk përdoret si përbërës që të kryej ndonjë veprim. Në pjesën tjetër ne do të krijojmë një meny e cila përmbanë disa prej ketyre butonëve.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_button.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 button.png">pamja3</a>
+</p>
+<h2><span class="mw-headline" id="Krijimi_i_nj.C3.AB_faqe_meny">Krijimi i një faqe meny</span></h2>
+<p>Deri në këtë fazë kemi mbuluar si të krijojmë elemente dhe të caktojmë sjellje brenda një QML skedari të vetëm. Në këtë seksion ne do të mbulojmë se si të importojmë QML elementet dhe si ti ripërdorim disa përbërës të krijuar më heret si bazë për të ndërtuar përbërës të tjerë.
+Menytë shfaqin përmbajtjet e një liste, secili element ka aftësi të kryerjes së një veprimi. Në QML ne mund të krijojmë një meny në disa mënyra. Së pari ne krijojmë një meny e cila përmbanë butonë të cilat përfundimisht do të kryejnë veprime të ndryshme. Kodi për meny është në FileMenu.qml.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> import <span class="kw5">Qt</span> <span class="nu16">4.7</span> importimi i modulit kryesor të <span class="kw5">Qt</span> QML
+ import <span class="st0">&quot;folderName&quot;</span> importimi i përmbajtjes së direktoriumit
+ import <span class="st0">&quot;script.js&quot;</span> as Script importimi i skedarit të JavaScript dhe emërto atë si Script</pre></div></div>
+<p>Sintaksa e shfaqur më sipër tregon si mund ta përdorni fjalën kyçe import. Kjo është e nevojshme për të përdorur skedarë të JavaScript apo QML skedarë të cilët nuk janë në direktoriumin e njëjtë. Pasi që Button.qml është në direktoriumin e njëjtë sikur FileMenu.qml ne nuk kemi nevojë të importojmë skedarin Button.qml për të përdorim atë.
+Ne mund drejtpërdrejt të krijojmë një Button element duke e deklaruar si Button{}, ngjashëm si deklarimi i një drejtkëndëshi, Rectangle{}.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Në skedarin FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span> parent.<span class="me1">width</span><span class="sy0">/</span><span class="nu0">6</span>
+&#160;
+Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> loadButton
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightgrey&quot;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;Load&quot;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;grey&quot;</span>
+ id<span class="sy0">:</span> saveButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Save&quot;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> exitButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Exit&quot;</span>
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;darkgrey&quot;</span>
+&#160;
+onButtonClick<span class="sy0">:</span> <span class="kw5">Qt</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Në FileMenu.qml kemi deklaruar tri Button elemente. Ata janë të deklaruar brenda një Roë elementit, i cili do ti pozicionojë fëmijët e tij së bashku në një rresht vertical. Deklarimi i Button është në Button.qml i cili është I njëjtë Button.qml që përdorëm në seksionin e mëparshëm. Lidhjet e reja të vetive mund të deklarohen brenda butonëve të sapo krijuar, në mënyrë efektive i mbishkruan vetitë e dhëna në Button.qml.
+Butoni i quajtur exitButton pasi që të shtypet do ta përfundojë aplikacionin dhe ta mbyllë dritaren ku aplikacioni ishte i hapur. Vini re se thirrja e trajtuesit onButtonClick në Button.qml do të bëhet në vend të trajtuesit onButtonClick në exitButton.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_filemenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 filemenu.png">pamja4</a>
+</p><p>Elementi Row është i deklaruar në drejtkëndësh (në Rectangle element), kështu duke krijuar një konteiner për rresht të butonëve. Ky drejtkëndësh shtesë në mënyrë indirekte krijon një mënyrë për organizimin e rreshtit të butonëve brenda në meny.
+Deklarimi i menyja për redaktim është shumë i ngjashëm në këtë fazë. Menyja ka butonë të cilat kanë etiketat: Copy, Paste dhe Select All.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 editmenu.png">pamja5</a>
+</p><p>I pajisur me njohuritë tona për importimin dhe përvetësimin e përbërësve të krijuar më parë, ne tani mund të kombinojmë këto faqe të menyve dhe të krijojmë një shirit menyje të përbërë nga butonët për të përzgjedhur menynë dhe të vështrojmë se si ne mund të strukturojmë të dhëna duke shfrytëzuar QML.
+</p>
+<h2><span class="mw-headline" id="Zbatimi_i_nj.C3.AB_shiriti_p.C3.ABr_meny">Zbatimi i një shiriti për meny</span></h2>
+<p>Aplikacionit tonë për editim të tekstit i duhet një mënyrë e shfaqjes së menyve duke shfrytëzuar shiritin për meny. Shiriti i menysë do të ndryshoj menytë e ndryshme dhe përdoruesi do të bën përzgjedhjen se cilën meny do ta shfaq. Ndryshimi i menyve nënkupton se menyve ju duhet më shumë strukturë se sa thjesht ti shfaq ato në një rresht. QML përdor modelet dhe shikimet (models dhe vieës) për ti strukturuar të dhënat dhe ti shfaq ato të dhëna të strukturuara.
+</p>
+<h2><span class="mw-headline" id="P.C3.ABrdorimi_i_modeleve_t.C3.AB_t.C3.AB_dh.C3.ABnave_dhe_shikimeve">Përdorimi i modeleve të të dhënave dhe shikimeve</span></h2>
+<p>QML ka disa shikime të të dhënave që shfaqin modele të të dhënave. Shiriti jonë i menysë do të shfaqë menytë në një listë me një shirit kryesues (Ang. Header) i cili shfaq rreshtin e emrave të menysë. Lista e menyve është deklaruar brenda një VisualItemModel. VisualItemModel elementi përmban elementet të cilat tashmë kanë shikime (Ang. Vieës) siç është elementi drejtkëndësh (Rectangle elementi) dhe ndërfaqet për përdorues të cilat janë të importuara. Tipeve të modeleve tjera siç është elementi ListModel, i duhet një delegues (Ang. Delegate) për ti shfaqur të dhënat e tyre.
+Deklarojmë dy elemente vizuele në menuListModel të quajtura FileMenu dhe EditMenu.
+Pastaj përshtatim dy menytë tona dhe shfaqim ato duke shfrytëzuar ListView.
+Skedari MenuBar.qml përmban QML deklarimet dhe një meny e thjeshtë për redaktim është e definuar në EditMenu.qml.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> VisualItemModel<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListModel
+ FileMenu<span class="br0">&#123;</span>
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ color<span class="sy0">:</span> fileColor
+ <span class="br0">&#125;</span>
+ EditMenu<span class="br0">&#123;</span>
+ color<span class="sy0">:</span> editColor
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Elementi ListView do të shfaq modelin sipas deleguesit. Deleguesi mund të deklarojë modelin e elementeve për ti shfaqur ato në një Roë element apo ti shfaqë elementet në një grid. menuListModel tashmë ka elemente të dukshme prandaj ne nuk kemi nevojë të deklarojmë një delegues.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> ListView<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListView
+&#160;
+<span class="co1">//Ankorët janë vendosur për të reaguar në ankorët e dritares</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ anchors.<span class="me1">bottom</span><span class="sy0">:</span> parent.<span class="me1">bottom</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ height<span class="sy0">:</span> parent.<span class="me1">height</span>
+&#160;
+<span class="co1">//modeli i cili përmban të dhënat</span>
+ model<span class="sy0">:</span> menuListModel
+&#160;
+<span class="co1">//kontrollo lëvizjen e ndryshimeve të menysë</span>
+ snapMode<span class="sy0">:</span> ListView.<span class="me1">SnapOneItem</span>
+ orientation<span class="sy0">:</span> ListView.<span class="me1">Horizontal</span>
+ boundsBehavior<span class="sy0">:</span> Flickable.<span class="me1">StopAtBounds</span>
+ flickDeceleration<span class="sy0">:</span> <span class="nu0">5000</span>
+ highlightFollowsCurrentItem<span class="sy0">:</span> <span class="kw2">true</span>
+ highlightMoveDuration<span class="sy0">:</span><span class="nu0">240</span>
+ highlightRangeMode<span class="sy0">:</span> ListView.<span class="me1">StrictlyEnforceRange</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Si informacion shtesë, ListView trashëgohet nga Flickable elementi, e cila ndihmon që lista të reagojë në tërheqje të miut dhe gjesteve të tjera. Pjesa e fundit e kodit sipër vendos vetitë e Flickable elementit për të krijuar lëvizje të lehta në shikimin tonë. Veçanërisht, vetija highlightMoveDuration ndryshon kohëzgjatjen e tranzicionit të lëvizjes së lehtë. Vlera më e lartë në highlightMoveDuration, rezulton në ndryshim më të ngadalshëm të menysë.
+ListView mirëmban elementet e modelit përmes indeksit dhe çdo element vizuel në model ka qasje përmes indeksit, në QML thirrja e indeksit mundësohet nga variabla index. Ndryshimin e currentIndex në mënyrë efektive ndryshon elementin e përzgjedhur në ListVieë. Pjesa kryesore e menysë ilustron me shembull këtë efekt. Ka dy butonë në një rresht, që të dyja ndryshojnë menynë e njëjtë pasi që të klikohen. fileButton ndryshon menynë aktuale në menynë për skedar pasi që të klikohet, në këtë rast indeksi është 0 sepse FileMenu është krijuar i pari në menuListModel. Në mënyrë të ngjashme, editButton do të ndryshojë menynë aktuale në EditMenu pasi që të klikohet.
+Drejtkëndëshi labelList ka vlerën 1 në z variablën, kjo do të thotë që është paraqitur në pjesën e përparme të shiritit të menysë. Elementet me vlerë më të madhe të variablës z, shfaqen në pjesën e përparme të elementeve që vlerën e variablës z e kanë më të vogel. Vlera e variablës z fillimisht është 0.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> labelList
+ …
+ z<span class="sy0">:</span> <span class="nu0">1</span>
+ Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span><span class="nu0">40</span>
+ Button<span class="br0">&#123;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;File&quot;</span>
+ id<span class="sy0">:</span> fileButton
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">0</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> editButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Edit&quot;</span>
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Në shiritin e menysë që sapo krijuam, qasja në menu mund të bëhet duke rrëshqitur (Ang. Flicking) apo duke klikuar në emrat e tyre në krye. Kalimi nëpër ekranet e menysë ka ndjeshmëri intuitive dhe ka reagim të lehtë.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor2_menubar.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor2 menubar.png">pamja6</a>
+</p>
+<h2><span class="mw-headline" id="Nd.C3.ABrtimi_i_edituesit_t.C3.AB_tekstit">Ndërtimi i edituesit të tekstit</span></h2>
+<h3><span class="mw-headline" id="Deklarimi_i_TextArea">Deklarimi i TextArea</span></h3>
+<p>Edituesi jonë i tekstit nuk mund të jetë një editues i tekstit nëse i mungon zona e cila përdoret për ta edituar tekstin. TextEdit elementi në QML lejon deklarimin e një zone për editim te tekstit e cila ka më shumë se një linjë. TextEdit është një formë tjetër e Text elementit, i cili nuk lejon përdoruesin që në mënyrë direkte ta ndryshojë tekstin.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> TextEdit<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> textEditor
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ width<span class="sy0">:</span>parent.<span class="me1">width</span><span class="sy0">;</span> height<span class="sy0">:</span>parent.<span class="me1">height</span>
+ color<span class="sy0">:</span><span class="st0">&quot;midnightblue&quot;</span>
+ focus<span class="sy0">:</span> <span class="kw2">true</span>
+&#160;
+wrapMode<span class="sy0">:</span> TextEdit.<span class="me1">Wrap</span>
+&#160;
+onCursorRectangleChanged<span class="sy0">:</span> flickArea.<span class="me1">ensureVisible</span><span class="br0">&#40;</span>cursorRectangle<span class="br0">&#41;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Edituesi ka të caktuar vetinë e ngjyrës së fontit dhe po ashtu ka të caktuar një veti për ta mbështjellur (Ang. Wrap) tekstin. Zona TextEdit gjindet brenda zonës e cila ka të aplikuar lëvizjet e lehta (Ang. Flickable) e cila ndihmon për ta rrëshqitur tekstin nëse kursori është jashtë zonës së dukshme. Funksioni ensureVisible() do të kontrollojë nëse drejtkëndëshi i kursorit është jashtë kufijve të dukshëm dhe do ta lëviz zonën e tekstit në përputhje me rrethanat. QML përdor sintaksë të Javascript për skriptat e tij, dhe siç përmendëm më heret Javascript skedarët mund po ashtu të importohen brenda skedarit të QML.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> function ensureVisible®<span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>contentX <span class="sy0">&gt;=</span> r.<span class="me1">x</span><span class="br0">&#41;</span>
+ contentX <span class="sy0">=</span> r.<span class="me1">x</span><span class="sy0">;</span>
+ <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>contentX<span class="sy0">+</span>width <span class="sy0">&lt;=</span> r.<span class="me1">x</span><span class="sy0">+</span>r.<span class="me1">width</span><span class="br0">&#41;</span>
+ contentX <span class="sy0">=</span> r.<span class="me1">x</span><span class="sy0">+</span>r.<span class="me1">width</span><span class="sy0">-</span>width<span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>contentY <span class="sy0">&gt;=</span> r.<span class="me1">y</span><span class="br0">&#41;</span>
+ contentY <span class="sy0">=</span> r.<span class="me1">y</span><span class="sy0">;</span>
+ <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>contentY<span class="sy0">+</span>height <span class="sy0">&lt;=</span> r.<span class="me1">y</span><span class="sy0">+</span>r.<span class="me1">height</span><span class="br0">&#41;</span>
+ contentY <span class="sy0">=</span> r.<span class="me1">y</span><span class="sy0">+</span>r.<span class="me1">height</span><span class="sy0">-</span>height<span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id="Kombinimi_i_p.C3.ABrb.C3.ABr.C3.ABsve_p.C3.ABr_edituesin_e_tekstit">Kombinimi i përbërësve për edituesin e tekstit</span></h3>
+<p>Tani jemi gati për ta krijuar një faqosje të edituesit tonë të tekstit duke shfrytëzuar QML. Edituesi i tekstit ka dy komponente, shiritin e menysë të cilën e krijuam më parë dhe zonën e tekstit. QML na lejon ripërdorimin e përbërësve duke i importuar dhe ndryshuar ato sipas nevojës, në këtë formë edhe kodi jonë do të jetë më i thjeshtë. Edituesi i tekstit ndan dritarën në dysh, një e treta e ekranit është i dedikuar shiritit të menysë, dhe dy të tretat tjera janë dedikuar ekranit për shfaqjen e zonës për tekst. Shiriti i menysë shfaqet përpara çdo elementi tjetër.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+&#160;
+id<span class="sy0">:</span> screen
+ width<span class="sy0">:</span> <span class="nu0">1000</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">1000</span>
+&#160;
+<span class="co1">//ekrani është ndarë në MenuBar dhe TextArea. 1/3 e ekranit i është caktuar MenuBar elementit</span>
+ property <span class="kw4">int</span> partition<span class="sy0">:</span> height<span class="sy0">/</span><span class="nu0">3</span>
+&#160;
+MenuBar<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>menuBar
+ height<span class="sy0">:</span> partition
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ z<span class="sy0">:</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+&#160;
+TextArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>textArea
+ anchors.<span class="me1">bottom</span><span class="sy0">:</span>parent.<span class="me1">bottom</span>
+ y<span class="sy0">:</span> partition
+ color<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+ height<span class="sy0">:</span> partition<span class="sy0">*</span><span class="nu0">2</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Kështu duke importuar përbërës të ripërdorshëm, kodi për TextEditor duket shumë më i thjeshtë. Ne mund ta përshtatim aplikacionin tonë pa u shqetësuar për vetitë të cilat tashmë kanë sjellje. Duke shfrytëzuar këtë qasje, faqosjen e aplikacioneve dhe komponentet për ndërfaqe të përdoruesve mund të krijohen shumë lehtë.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor3_texteditor.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor3 texteditor.png">pamja7</a>
+</p>
+<h2><span class="mw-headline" id="Dekorimi_i_edituesit_t.C3.AB_tekstit">Dekorimi i edituesit të tekstit</span></h2>
+<h3><span class="mw-headline" id="Zbatimi_i_nd.C3.ABrfaqes_.E2.80.93_sirtar">Zbatimi i ndërfaqes – sirtar</span></h3>
+<p>Edituesi jonë i tekstit duket shumë i thjeshtë dhe duhet ta dekorojmë. Duke shfrytëzuar QML ne mund të deklarojmë tranzicione dhe ta gjallërojmë aplikacionin tonë duke shfrytëzuar animacione. Shiriti i menysë është duke e zënë një të tretën e ekranit dhe do të ishte mirë ta shfaqim atë kur të na duhet.
+Për ta arritur atë ne do të shtojmë një ndërfaqe – sirtar e cila do ta shfaq apo ta fsheh shiritin e menysë pasi që të klikohet. Në zbatimin tonë ne kemi një drejtkëndësh të hollë e cila i përgjigjet klikimeve të miut. Elementi draëer po ashtu edhe aplikacioni jonë ka dy gjendje: gjendja kur "sirtari është i hapur" dhe gjendja kur "sirtari është i mbyllur". Elementi draëer është një drejtkëndësh me lartësi të vogël. Brenda është një Image element i ndërthurur e cila deklaron që një ikonë shigjete do të jetë e përqëndruar brenda dhe në mes të sirtarit. Sirtari cakton gjendjen e gjithë aplikacionit me identifikuesin screen sa herë që përdoruesi klikon mbi zonën e miut.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>drawer
+ height<span class="sy0">:</span><span class="nu0">15</span>
+&#160;
+Image<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> arrowIcon
+ source<span class="sy0">:</span> <span class="st0">&quot;images/arrow.png&quot;</span>
+ anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> drawerMouseArea
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ onClicked<span class="sy0">:</span><span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>screen.<span class="me1">state</span>  <span class="st0">&quot;DRAWER_CLOSED&quot;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+                     screen.<span class="me1">state</span> <span class="sy0">=</span> <span class="st0">&quot;DRAWER_OPEN&quot;</span>
+                 <span class="br0">&#125;</span>
+                 <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>screen.<span class="me1">state</span>  <span class="st0">&quot;DRAWER_OPEN&quot;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+ screen.<span class="me1">state</span> <span class="sy0">=</span> <span class="st0">&quot;DRAWER_CLOSED&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ …
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Gjendja është thjesht një koleksion i konfigurimeve dhe është i deklaruar në elementin e quajtur State. Lista e gjendjeve mund të listohet dhe të lidhet me vetinë states. Në aplikacionin tonë dy gjendje janë të quajtura DRAWER_CLOSED dhe DRAWER_OPEN. Konfiguracionet e elementeve janë të deklaruara në PropertyChanges elementet. Në gjendjën DRAWER_OPEN janë katër elemente të cilat pranojnë njoftimin e ndryshimit të vetive. Objektivi i parë është që elementi menuBar të ndërrojë vetinë y në vlerën 0, ngjashëm vlenë edhe për textArea i cili do të ulë pozicionin kur gjendja është DRAWER_OPEN. Elementet textArea, drawer dhe ikona e sirtarit do ti nënshtrohen njoftimeve të ndryshimeve të vetive për të takuar gjendjën aktuale.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> states<span class="sy0">:</span><span class="br0">&#91;</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;DRAWER_OPEN&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">0</span><span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> y<span class="sy0">:</span> partition <span class="sy0">+</span> drawer.<span class="me1">height</span><span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> y<span class="sy0">:</span> partition<span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> arrowIcon<span class="sy0">;</span> rotation<span class="sy0">:</span> <span class="nu0">180</span><span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="sy0">,</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;DRAWER_CLOSED&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> y<span class="sy0">:-</span>height<span class="sy0">;</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> y<span class="sy0">:</span> drawer.<span class="me1">height</span><span class="sy0">;</span> height<span class="sy0">:</span> screen.<span class="me1">height</span><span class="sy0">-</span> drawer.<span class="me1">height</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> arrowIcon<span class="sy0">;</span> rotation<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>Ndryshimet e gjendjeve janë të papritura dhe iu nevoiten tranzicione të lëmuara. Tranzicionet në mes të gjendjeve janë të definuara duke shfrytëzuar elementin e quajtur Transition i cili pastaj mund të lidhet në vetinë transitions të elementit. Edituesi jonë i tekstit ka tranzicion të gjendjeve sa herë që gjendja të ndryshohet cilido nga dy gjendjet tona DRAWER_OPEN apo DRAWER_CLOSED. E rëndësishme është që tranzicionit i nevojiten dy gjendje të përcaktuara nga dhe deri (from dhe to) gjendjet, që QML të na ndihmojë për rrjedhinë e tranzicioneve që do të pason dhe i duhen këto të dyja të jenë të përcaktuara, por për tranzicionet tona ne mund ta përdorim shenjën * në gjendjen to e cila paraqet që tranzicioni vlen për të gjitha ndryshimet e gjendjeve.
+</p><p>Elementi jonë menuBar ndërron pozicionin nga y:0 në y:-partition dhe ne mund ta animojmë këtë tranzicion duke shfrytëzuar NumerAnimation elementin. Ne e deklarojmë që vetitë e objektivave do të animohen për një kohë të caktuar dhe duke shfrytëzuar një easing curve të caktuar. Easing curve i kontrollon normat e animacionit dhe sjelljet e mbushjeve së kufijve brenda kufijve bazë (Ang. Interpolation) gjatë tranzicionit të gjendjeve. Easing curve të cilin ne e kemi zgjedhur është Easing.OutQuint i cili ngadalëson lëvizjen pranë fundit të animacionit. Ju lutemi lexojeni artikullin për animacione në QML.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> transitions<span class="sy0">:</span> <span class="br0">&#91;</span>
+ Transition <span class="br0">&#123;</span>
+ to<span class="sy0">:</span> <span class="st0">&quot;*&quot;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y, height&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span>Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>Një mënyrë tjetër për të animuar ndryshime të vetive është duke deklaruar një element të quajtur Behavior. Tranzicioni punon vetëm gjatë ndryshimeve të gjendjeve kurse Behavior mund të caktojë animacion për ndryshim gjeneral të vetive. Në edituesin e tekstit, shigjeta ka një NumberAnimation element të definuar i cili bën animimin e vetisë rotation sa herë që vetija ndërron.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Në skedarin TextEditor.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Behavior<span class="br0">&#123;</span>
+ NumberAnimation<span class="br0">&#123;</span>property<span class="sy0">:</span> <span class="st0">&quot;rotation&quot;</span><span class="sy0">;</span>easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Kthehemi prapa tek përbërësit tonë me njohuritë mbi gjendjet dhe animacionet, ne tani mund ta përmirsojmë dukjen e komponenteve.
+Në skedarin Button.qml ne mund të shtojmë njoftimet mbi ndryshimet e vetive color dhe scale kur butoni është klikuar. Tipet e ngjyrave animohen duke shfrytëzuar ColorAnimation dhe numrat animohen duke shfrytëzuar NumberAnimation. Sintaksa on propertyName e cila shfaqet më poshtë na ndihmon kur kemi për qëllim ta animojmë vetëm një veti.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Në skedarin Button.<span class="me1">qml</span><span class="sy0">:</span>
+ …
+&#160;
+color<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="kw5">Qt</span>.<span class="me1">darker</span><span class="br0">&#40;</span>buttonColor<span class="sy0">,</span> <span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy0">:</span> buttonColor
+ Behavior on color <span class="br0">&#123;</span> ColorAnimation<span class="br0">&#123;</span> duration<span class="sy0">:</span> <span class="nu0">55</span><span class="br0">&#125;</span> <span class="br0">&#125;</span>
+&#160;
+scale<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="nu16">1.1</span> <span class="sy0">:</span> <span class="nu16">1.00</span>
+ Behavior on scale <span class="br0">&#123;</span> NumberAnimation<span class="br0">&#123;</span> duration<span class="sy0">:</span> <span class="nu0">55</span><span class="br0">&#125;</span> <span class="br0">&#125;</span></pre></div></div>
+<p>Si shtesë ne mund ta përmirsojmë dukjen e QML komponenteve tona duke shtuar efekte të ngjyrave siç janë gradientët dhe efektin për tejdukshmëri. Duke deklaruar një element të quajtur Gradient ne shkelim vetinë fillestare color të elementit dhe kështu duke deklaruar një gradient. Ju mund të deklaroni një ngjyrë brenda gradientit duke shfrytëzuar elementin GradientStop. Gradienti është i pozicionuar duke shfrytëzuar shkallë (Ang. Scale) në mes të 0.0 dhe 1.0.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Në skedarin MenuBar.<span class="me1">qml</span>
+ gradient<span class="sy0">:</span> Gradient <span class="br0">&#123;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.0</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#8C8F8C&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.17</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#6A6D6A&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.98</span><span class="sy0">;</span>color<span class="sy0">:</span> <span class="st0">&quot;#3F3F3F&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">1.0</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#0e1B20&quot;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Ky gradient përdoret nga shiriti i menysë për të simuluar thelësinë e gradientit. Ngjyra e parë e gradientit fillon në 0.0 dhe ngjyra e fundit është në 1.0.
+</p><p><b>Ku të shkojmë nga këtu</b>
+</p><p>Ne kemi mbaruar ndërtimin e ndërfaqës së përdoruesit të edituesit të tekstit tonë të thjeshtë. Ndërfaqja e përdoruesit është kompletuar dhe nga tash mund të vazhdojmë me zbatimin e logjikës së aplikacionit duke shfrytëuar Qt dhe C+<i>. QML punon shumë mirë si një vegël për të ndërtuar prototype kështu duke ndarë logjikën e aplikacionit nga dizajni i ndërfaqes së përdoruesit.</i>
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor4_texteditor.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor4 texteditor.png">pamja8</a>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Zgjerimi_i_QML_duke_shfryt.C3.ABzuar_Qt_dhe_C.2B">Zgjerimi i QML duke shfrytëzuar Qt dhe C<i>+</span></h2></i>
+<p>Tani që kemi faqosjen e edituesit të tekstit ne mund ta zbatojmë funksionalitetin e edituesit të tekstit në C+<i>. Duke shfrytëzuar QML me C</i>+ na mundëson që ta krijojmë logjikën e aplikacionit në Qt. Ne mund të krijojmë QML kontekst në C++ duke shfrytëzuar klasat Declarative të Qt dhe mund ti shfaqim QML elementet duke shfrytëzuar skenë grafike (Ang. Graphics Scene).
+Ndryshe nga kjo ne mund ta eksportojmë kodin tonë që e kemi shkruar në C++ në një shtese (Ang. Plugin) të cilin vegla e quajtur qmlvieëer mund ta lexojë. Për aplikacionin tonë ne do ti implementojmë funksionalitetet për ruajtje dhe lexim të tekstit në C++ dhe do ta eksportojmë atë si shtesë. Në këtë mënyrë ne na nevojitet vetëm ta ngarkojmë QML skedarin në vend se ta ekzekutojmë një aplikacion të tërë.
+</p>
+<h3><span class="mw-headline" id="Ekspozimi_i_klasave_t.C3.AB_C.2B.2B_n.C3.AB_QML">Ekspozimi i klasave të C++ në QML</span></h3>
+<p>Ne do ta zbatojmë ngarkimin dhe ruajtjen e skedarit duke shfrytëzuar Qt dhe C+<i>. Klasat dhe funksionet e C</i>+ mund të përdoren në QML pasi që ti regjistrojmë ato. Klasa po ashtu duhet të hartohet (Ang. Compiled) sikur shtesë (Ang. Plugin) në Qt dhe QML skedari duhet të di se ku ndodhet shtesa.
+</p><p>Për aplikacionin tonë ne na duhet të krijojmë elementet në vazhdim:
+</p>
+<ol>
+<li> Klasa Directory e cila do të trajtojë operacionet të cilat kanë të bëjnë me direktoriume.
+</li>
+<li> Klasa File e cila është një QObject, e cila simulon listën e skedarëve në një direktorium
+</li>
+<li> Klasa plugin e cila do të regjistrojë klasën në kontekstin e QML
+</li>
+<li> Skedari i projektit i cili do ta hartojë shtesën.
+</li>
+<li> Skedari qmldir i cili do ti tregon qmlviewer veglës se ku mund ta gjejë shtesën.
+</li>
+</ol>
+<h3><span class="mw-headline" id="Nd.C3.ABrtimi_i_nj.C3.AB_shtese_n.C3.AB_Qt">Ndërtimi i një shtese në Qt</span></h3>
+<p>Për të ndërtuar një shtesë në skedarin e projektit të Qt ne duhet të vendosim përmbajtjet në vazhdim. Së pari na duhen skedarët kryesor, skedarët e burimeve dhe modulet e Qt që ti shtojmë në skedarin e projektit. I gjithë C++ kodi dhe skedarët e projektit janë në direktoriumin e quajtur filedialog.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Në skedarin cppPlugins.<span class="me1">pro</span><span class="sy0">:</span>
+&#160;
+TEMPLATE <span class="sy0">=</span> lib
+ CONFIG <span class="st0">''</span><span class="sy0">=</span> qt plugin
+ QT<span class="st0">''</span><span class="sy0">=</span> declarative
+&#160;
+DESTDIR <span class="st0">''</span><span class="sy0">=</span> ..<span class="sy0">/</span>plugins
+ OBJECTS_DIR <span class="sy0">=</span> tmp
+ MOC_DIR <span class="sy0">=</span> tmp
+&#160;
+ TARGET <span class="sy0">=</span> FileDialog
+&#160;
+ HEADERS<span class="st0">''</span><span class="sy0">=</span> directory.<span class="me1">h</span>  file.<span class="me1">h</span>  dialogPlugin.<span class="me1">h</span>
+&#160;
+SOURCES <span class="sy0">+=</span> directory.<span class="me1">cpp</span>  file.<span class="me1">cpp</span>  dialogPlugin.<span class="me1">cpp</span></pre></div></div>
+<p>Veçanërisht ne e hartojmë Qt me modulin declarative dhe e konfigurojmë atë sikur shtesë, të cilës i nevojitet lib të jetë në pjesën TEMPLATE. Ne do ta vendosim shtesën e hartuar në direktoriumin plugins.
+</p>
+<h3><span class="mw-headline" id="Regjistrimi_i_klas.C3.ABs_n.C3.AB_QML">Regjistrimi i klasës në QML</span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Në skedarin dialogPlugin.<span class="me1">h</span><span class="sy0">:</span>
+&#160;
+<span class="co2">#include &lt;QDeclarativeExtensionPlugin&gt;</span>
+&#160;
+<span class="kw2">class</span> DialogPlugin <span class="sy0">:</span> <span class="kw2">public</span> QDeclarativeExtensionPlugin
+ <span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw4">void</span> registerTypes<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>uri<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Klasa jonë e shtesës, DialogPlugin është një nënklasë e QDeclarativeExtensionPlugin klasës. Ne duhet ta implementojmë funksionin e trashëguar registerTypes(). Skedari dialogPlugin.cpp duket sikur në vazhdim:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> DialogPlugin.<span class="me1">cpp</span><span class="sy0">:</span>
+&#160;
+<span class="co2">#include &quot;dialogPlugin.h&quot;</span>
+ <span class="co2">#include &quot;directory.h&quot;</span>
+ <span class="co2">#include &quot;file.h&quot;</span>
+ <span class="co2">#include &lt;qdeclarative.h&gt;</span>
+&#160;
+<span class="kw4">void</span> DialogPlugin<span class="sy0">::</span><span class="me2">registerTypes</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="st0">''</span><span class="st0">'uri){
+&#160;
+ qmlRegisterType&lt;Directory&gt;(uri, 1, 0, &quot;Directory&quot;);
+ qmlRegisterType&lt;File&gt;(uri, 1, 0,&quot;File&quot;);
+ }
+&#160;
+ Q_EXPORT_PLUGIN2(FileDialog, DialogPlugin);</span></pre></div></div>
+<p>Funksioni i quajtur registerTypes(), bën regjistrimin e dy klasave tona të quajtura File dhe Directory në QML. Këtij funksioni i duhet emri i klasës për shabllonin e tij, numrin madhor të verzionit, numrin e vogël të verzionit dhe emirn për klasët tona.
+Ne duhet ta eksportojmë shtesën duke shfrytëzuar Q_EXPORT_PLUGIN2 makro funksionin. Vini re se në skedarin dialogPlugin.h ne kemi Q_OBJECT makron në krye të klasës. Si dhe na nevojitet ekzekutimi i qmake në skedarin e projektit për të gjeneruar kodin e nevojshëm të meta-objektit që na kërkon Qt. 
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Krijimi_i_QML_vetive_n.C3.AB_nj.C3.AB_C.2B.2B_klas.C3.AB">Krijimi i QML vetive në një C++ klasë</span></h3>
+<p>Ne mund të krijojmë QML elemente dhe veti duke shfrytëzuar C++ dhe sistemin e Qt për meta-objekte. Ne mund të zbatojmë veti duke shfrytëzuar mekanizmin e sinjaleve dhe slot-ëve, duke bërë Qt të vetëdijshëm për këto veti. Pastaj këto veti mund të përdoren në QML.
+</p><p>Për edituesin e tekstit na nevojitet mundësia për të ngarkuar dhe ruajtur skedarë. Në mënyrë tipike, këto tipare janë të përfshira në dialogun për skedar. Për fat të mirë ne mund të përdorim QDir, QFile dhe QTextStream për të zbatuar leximin e direktoriumeve dhe funksionalitetin hyrës dhe dalës.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> Directory <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span><span class="br0">&#123;</span>
+&#160;
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw4">int</span> filesCount READ filesCount CONSTANT<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> filename READ filename WRITE setFilename NOTIFY filenameChanged<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> fileContent READ fileContent WRITE setFileContent NOTIFY fileContentChanged<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> files READ files CONSTANT <span class="br0">&#41;</span>
+&#160;
+ …</pre></div></div>
+<p><br />
+Klasa Directory përdor sistemin meta-objekt të Qt-së për ti regjistruar vetitë të cilat i duhen për të përmbushur trajtimin e skedarëve. Klasa Directory është e eksportuar si shtesë dhe është e përdorshme në QML sikur Directory element. Secila veti e listuar e cila përdor Q_PROPERTY makron është QML veti.
+</p><p>Q_PROPERTY deklaron një veti si dhe funksionet për lexim dhe shkrim në meta-objekt sistemin e Qt. Për shembull vetija filename e tipit QString është e lexueshme duke shfrytëzuar funksionin e quajtur filename() dhe mund të shkruajë duke shfrytëzuar funksionin e quajtur setFilename(). Përveç kësaj, ekziston një sinjal i lidhur me vetinë për emër të skedarit (filename) i cili quhet filenameChanged(), i cili emetohet sa herë që vetija ndërron. Funksionet për lexim dhe shkrim janë të deklaruara sikur funksione publike në skedarin kryesues (Ang. Header file). 
+</p><p>Ngjashëm kemi edhe veti të tjera të deklaruara sipas përdorueshmërisë së tyre. Vetija filesCount tregon numrin e skedarëve në direktorium. Vetija filename caktohet kur kemi një skedar të zgjedhur dhe ngarkimi dhe ruajtja e përmbajtjes së skedarit ruhet në vetinë fileContent.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Q_PROPERTY<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> files READ files CONSTANT <span class="br0">&#41;</span></pre></div></div>
+<p><br />
+Vetija files është një veti listë e cila përmban listën e të gjithë skedarët e filtruar në një direktorium.
+Klasa Directory është zbatuar në atë mënyrë që ti filtrojë dhe ti heq skedarët që nuk janë tekst skedarë, vetëm skedarët me prapashtesë .txt janë të vlefshëm. Më tej, QList-at mund të përdoren në QML skedarë duke deklaruar ato sikur QDeclarativeListProperty në C+<i>. Objekti i cili është shabllon duhet të trashëgohet nga QObject. Në klasën Directory, lista e objekteve të quajtura File është e ruajtur në një QList e quajtur m_fileList.</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> File <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span><span class="br0">&#123;</span>
+&#160;
+ <span class="kw2">Q_OBJECT</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> name READ name WRITE setName NOTIFY nameChanged<span class="br0">&#41;</span>
+&#160;
+ …
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>Dhe tani vetitë mund të përdoren në QML sikur pjesë e vetive të elementit Directory. Vini re se ne nuk kemi nevojë të krijojmë një identifikues (veti të quajtur id) në kodin tonë në C.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Directory<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> directory
+&#160;
+ filesCount
+ filename
+ fileContent
+ files
+&#160;
+ files<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>.<span class="me1">name</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p><br />
+Ngaqë QML përdor sintaksë dhe strukturë të Javascript ne mund të kalojmë nëpër listë të skedarëve dhe të marrim vetitë e tyre. Për të marrë vetinë e cila shfrytëzohet për emer të skedarit të parë ne mund të bëjmë thirrjen në këtë formë, files[0].name.
+</p><p>Funksionet e rregullta ne C<i>+ mund po ashtu të jenë të arritshme nga QML. Funksionet për ngarkim dhe ruajtje janë të zbatuara në C++ dhe janë të deklaruara duke shfrytëzuar Q_INVOKABLE makron. Në mënyrë alternative ne mund të deklarojmë funksionet sikur slot-ë dhe funksionet mund të kenë qasje nga QML.</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Në skedarin Directory.<span class="me1">h</span><span class="sy0">:</span>
+&#160;
+ Q_INVOKABLE <span class="kw4">void</span> saveFile<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ Q_INVOKABLE <span class="kw4">void</span> loadFile<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Klasa Directory po ashtu ka për të njoftuar objektet tjera sa herë që përmbajtja e direktoriumeve të ndryshojë. Ky tipar kryhet duke shfrytëzuar një sinjal. Siç e përmendem më heret QML sinjalet kanë trajtuesin përkatës ku emrat e tyre janë të parashtruara me on. Sinjali quhet directoryChanged dhe emetohet pasi që direktoriumi të ndryshojë përmbajtjen apo të rifreskohet. Rifreskimi i direktoriumit thjesht ringarkon përmbajtjen e direktoriumit dhe freskon listen e skedarëve valid në atë direktorium. QML elementet mund të njoftohen duke bashkangjitur një veprim në onDirectoryChanged trajtuesin e sinjalit.
+</p><p>Vetitë e listave duhet hulumtuar më tepër. Kjo është sepse vetitë listë përdorin prapa-thirrjet (Ang. Callbacks) për të patur qasje dhe modifikoj përmbajtjen e listës. Vetija e listës është e tipit QDeclarativeListProperty&lt;File&gt;. Sa herë që list aka qasje, funksioni i cili i qasjet listës duhet të kthejë QDeclarativeListProperty&lt;File&gt;. Shabllonit File i nevojitet që të jetë derivate I QObject. Më shumë për të krijuar një QDeclarativeListProperty, aksesori dhe modifikuesi duhet kaluar në konstruktor si tregues në funksione (Ang. Function pointers). Listës, në rastin tonë është QList, po ashtu i nevojitet të jetë një listë e File pointerëve.
+</p><p>Konstruktori i QDeclarativeListProperty dhe konstruktori i zbatimit të Directory:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> QDeclarativeListProperty <span class="br0">&#40;</span> <span class="kw5">QObject</span><span class="st0">''</span><span class="st0">' object, void * data, AppendFunction append, CountFunction count = 0, AtFunction at = 0, ClearFunction clear = 0 )
+ QDeclarativeListProperty&lt;File&gt;( this, &amp;m_fileList, &amp;appendFiles, &amp;filesSize, &amp;fileAt, &amp;clearFilesPtr );</span></pre></div></div>
+<p>Konstruktori kalon pointerët në funksionet të cilët do të shtojnë në listë, numrojnë listën dhe do të marrin elemente nga lista duke shfrytëzuar indeksin dhe listën e zbrazët. Vetëm funksioni për shtim në listë është i detyrueshëm. Vini re se pointerët në funksione duhet të përputhen me definicionin e AppendFunction, CountFunction, AtFunction apo ClearFunction.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">void</span> appendFiles<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="sy0">,</span> File <span class="sy0">*</span> file<span class="br0">&#41;</span>
+ File<span class="sy0">*</span> fileAt<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="sy0">,</span> <span class="kw4">int</span> index<span class="br0">&#41;</span>
+ <span class="kw4">int</span> filesSize<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="br0">&#41;</span>
+ <span class="kw4">void</span> clearFilesPtr<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span>property<span class="br0">&#41;</span></pre></div></div>
+<p>Për ta thjeshtuar dialogun tonë për skedar, klasa Directory filtron tekst skedarët jo valid, skedarë të cilët nuk kanë prapashtesën .txt. Nëse emri i skedarit nuk ka prapashtesën .txt atëherë ajo nuk do të shfaqet në dialogun për skedarë. Gjithashtu zbatimi i këtij funksionaliteti sigurohet që skedarët posedojnë prapashtesën .txt në emer të skedarit. Direktoriumi përdorë QTextStream klasën për të lexuar skedarin dhe për të shkruar përmbajtjen e edituesit të tekstit në skedar.
+</p><p>Me elementin Directory ne mund të marrim skedarë si listë, mund të dijmë se sa skedarë tekstesh ka në direktoriumin e aplikacionit, mund të marrim emrat e skedarëve dhe përmbajtjet si string dhe mund të njoftohemi sa herë që kemi ndryshime në përmbajtje te direktoriumeve.
+</p><p>Për ta ndërtuar shtesën, ekzekuto qmake mbi cppPlugins.pro skedarin dhe më pas ekzekuto make për ta ndërtuar shtesën dhe për ta transferuar atë në direktoriumin e quajtur plugins.
+</p>
+<h3><span class="mw-headline" id="Importimi_i_shtes.C3.ABs_n.C3.AB_QML">Importimi i shtesës në QML</span></h3>
+<p>Vegla e quajtur qmlviewer importon skedarët të cilët janë në direktoriumin e njëjtë me aplikacionin. Ne po ashtu mund të krijojmë një qmldir skedar i cili përmban lokacionet e QML skedarëve të cilët ne dëshirojmë ti importojmë. Skedari qmldir po ashtu mund të ruajë lokacione të shtesave dhe resurseve të tjera.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Në skedarin qmldir<span class="sy0">:</span>
+&#160;
+Button .<span class="sy0">/</span>Button.<span class="me1">qml</span>
+ FileDialog .<span class="sy0">/</span>FileDialog.<span class="me1">qml</span>
+ TextArea .<span class="sy0">/</span>TextArea.<span class="me1">qml</span>
+ TextEditor .<span class="sy0">/</span>TextEditor.<span class="me1">qml</span>
+ EditMenu .<span class="sy0">/</span>EditMenu.<span class="me1">qml</span>
+&#160;
+plugin FileDialog plugins</pre></div></div>
+<p>Shtesa që sapo krijuam, quhet FileDialog, dhe është treguar nga fusha TARGET në skedarin e projektit. Shtesa e hartuar është në direktoriumin plugins.
+</p>
+<h3><span class="mw-headline" id="Integrimi_i_File_Dialog_n.C3.AB_File_Menu">Integrimi i File Dialog në File Menu</span></h3>
+<p>Elementi FileMenu duhet të shfaq FileDialog elementin i cili përmban listën e tekst skedarëve në një direktorium kështu lejon përdoruesin për të zgjedhur skedarin duke klikuar mbi listë. Ne po ashtu duhet që caktojmë veprimet e butonëve për ruajtje, ngarkim dhe skedar të ri (save, load dhe new butonët). FileMenu elementi posedon një hyrje e cila ka përmbajtje të tekstit i cili mund të editohet për të lejuar përdoruesin ta shkruaj emrin e skedarit duke shfrytëzuar tastieren.
+</p><p>Elementi Directory është përdorë në skedarin FileMenu.qml dhe njofton FileDialog elementin që directory elementi ka rifreskuar përmbajtjen e tij. Ky njoftim kryhet nëpërmes trajtuesit të sinjalit i cili quhet onDirectoryChanged.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Në skedarin FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Directory<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>directory
+ filename<span class="sy0">:</span> textInput.<span class="me1">text</span>
+ onDirectoryChanged<span class="sy0">:</span> fileDialog.<span class="me1">notifyRefresh</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Për të mbajtur thjeshtësinë e aplikacionit tonë, dialogu për skedarë do të jetë përherë i dukshëm dhe nuk do të bëjë shfaqjen e tekst skedarëve jo valid, të cilët nuk do të kenë prapashtesën .txt.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Në skedarin FileDialog.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+<span class="kw4">signal</span> notifyRefresh<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ onNotifyRefresh<span class="sy0">:</span> dirView.<span class="me1">model</span> <span class="sy0">=</span> directory.<span class="me1">files</span></pre></div></div>
+<p>Elementi i quajtur FileDialog do të bëjë shfaqjen e përmbajtjes së direktoriumit duke lexuar vetinë listë të quajtur files. Vetija e quajtur files do të përdoret si model i një GridVieë elementi i cili shfaq të dhënat e elementeve në një grid sipas një delegati të definuar. Delegati trajton dukjen e modelit dhe dialogu për skedar thjesht do të krijojë një grid me tekst të përqëndruar në mes. Klikimi në emër të skedarit do të rezultojë që në dukjen e drejtkëndëshit të theksohet emri i skedarit. Pastaj FileDialog do të njoftohet sa herë që notifyRefresh sinjali emetohet dhe kështu rezulton duke ringarkuar skedarët në atë direktorium.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Në skedarin FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> newButton
+ label<span class="sy0">:</span> <span class="st0">&quot;New&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ textArea.<span class="me1">textContent</span> <span class="sy0">=</span> <span class="st0">&quot;&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> loadButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Load&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ directory.<span class="me1">filename</span> <span class="sy0">=</span> textInput.<span class="me1">text</span>
+ directory.<span class="me1">loadFile</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ textArea.<span class="me1">textContent</span> <span class="sy0">=</span> directory.<span class="me1">fileContent</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> saveButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Save&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ directory.<span class="me1">fileContent</span> <span class="sy0">=</span> textArea.<span class="me1">textContent</span>
+ directory.<span class="me1">filename</span> <span class="sy0">=</span> textInput.<span class="me1">text</span>
+ directory.<span class="me1">saveFile</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> exitButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Exit&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ <span class="kw5">Qt</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>Elementi FileMenu tani mund të lidhet me veprimet e tyre përkatëse. saveButton do të transferojë tekstin nga TextEdit elementi në vetinë fileContent të elementit Directory, pastaj do të bëjë kopje emrin e skedarit nga një vend për futje të tekstit. Më në fund butoni bën thirrjen e funksionit saveFile() duke rezultuar në ruajtje të skedarit. sloadButton ka kryerje të ngjashme. Gjithashtu veprimi Neë do të zbrazë përmbajtjen aktuale të TextEdit elementit.
+</p><p>Butonët e EditMenu elementit janë të lidhur me funksionet për kopjim, ngjitje dhe për selektim të gjithë tekstit (Ang. Copy, paste, select all) në editues të tekstit.
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_filemenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 filemenu.png">pamja9</a>
+</p><p><b>Kompletimi i Edituesit të Tekstit</b>
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_newfile.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 newfile.png">pamja10</a>
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.625 seconds
+Real time usage: 0.658 seconds
+Preprocessor visited node count: 350/1000000
+Preprocessor generated node count: 768/1000000
+Post‐expand include size: 1364/2097152 bytes
+Template argument size: 436/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:2405-0!*!0!!en!2!* and timestamp 20151105080031 and revision id 19239
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&amp;oldid=19239">http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&amp;oldid=19239</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/Category:Articles_needing_cleanup" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="http://wiki.qt.io/index.php?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Getting+Started+Programming+with+QML%2Fsq" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Getting_Started_Programming_with_QML/sq"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Getting_Started_Programming_with_QML/sq&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Getting_Started_Programming_with_QML/sq" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Getting_Started_Programming_with_QML/sq" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Getting_Started_Programming_with_QML/sq" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&amp;oldid=19239&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&amp;oldid=19239" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:21.</li>
+											<li id="footer-info-viewcount">This page has been accessed 500 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":977});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/sq&oldid=19239 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:58:33 GMT -->
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Basic_Qt_Programming_Tutorial/es by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 07:33:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Basic Qt Programming Tutorial/es - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Basic_Qt_Programming_Tutorial/es","wgTitle":"Basic Qt Programming Tutorial/es","wgCurRevisionId":15823,"wgRevisionId":15823,"wgArticleId":57,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","HowTo","Developing with Qt::General","Tutorial","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Basic_Qt_Programming_Tutorial/es","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Basic_Qt_Programming_Tutorial_es skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Basic Qt Programming Tutorial/es</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="../Basic_Qt_Programming_Tutorial.html" title="Basic Qt Programming Tutorial">Basic Qt Programming Tutorial</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../index4fca.html?title=Basic_Qt_Programming_Tutorial/es&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><br />
+<b>Español</b> <a href="../Basic_Qt_Programming_Tutorial.html" title="Basic Qt Programming Tutorial">English</a> <a href="../Basic_Qt_Programming_Tutorial_SimplifiedChinese.html?title=Basic_Qt_Programming_Tutorial_SimplifiedChinese&amp;action=edit&amp;redlink=1" class="new" title="Basic Qt Programming Tutorial SimplifiedChinese (page does not exist)">简体中文</a> <a href="../Basic_Qt_Programming_Tutorial_Persian.html?title=Basic_Qt_Programming_Tutorial_Persian&amp;action=edit&amp;redlink=1" class="new" title="Basic Qt Programming Tutorial Persian (page does not exist)">فارسی</a> <a href="../Temel_Qt_Programlama_Egitimi.html" title="Temel Qt Programlama Egitimi" class="mw-redirect">Türkçe</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducci.C3.B3n"><span class="tocnumber">1</span> <span class="toctext">Introducción</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Primer_contacto:_Crear_un_nuevo_proyecto"><span class="tocnumber">1.1</span> <span class="toctext">Primer contacto: Crear un nuevo proyecto</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Aprendiendo_a_gatear:_Editar_los_archivos_del_proyecto"><span class="tocnumber">1.2</span> <span class="toctext">Aprendiendo a gatear: Editar los archivos del proyecto</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#De_pie_y_corriendo:_Compilando_y_ejecutando_la_aplicaci.C3.B3n"><span class="tocnumber">1.3</span> <span class="toctext">De pie y corriendo: Compilando y ejecutando la aplicación</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Ver_tambi.C3.A9n"><span class="tocnumber">1.4</span> <span class="toctext">Ver también</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Introducci.C3.B3n">Introducción</span></h1>
+<p>En este tutorial se explica en detalle como dar los primeros pasos programando con Qt usando el entorno de desarrollo Qt Creator.
+</p><p>Si quieres aprender a hacer potentes interfaces de usuario con las últimas tecnologías este no es tu tutorial. Lo único que se persigue aquí es proporcionar una introducción a quienes están empezando para que pierdan el miedo.
+</p><p>Empezaremos creando un nuevo proyecto de Qt, modificando el código para mostrar una interfaz gráfica (GUI) muy simple. Una vez que la aplicación básica esté funcionando, la modificaremos para hacer algunas cosas útiles.
+</p><p>Para comenzar, instala el Qt SDK, o, en Linux, consigue una copia de Qt y un compilador.
+</p>
+<h2><span class="mw-headline" id="Primer_contacto:_Crear_un_nuevo_proyecto">Primer contacto: Crear un nuevo proyecto</span></h2>
+<p>Intentaremos hacer una aplicación básica con una sola ventana que muestra un QLabel y un QLineEdit. Para ello sólo hay que seguir estos pasos:
+</p>
+<ol>
+<li> Abre Qt Creator.
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/22/category/7"></a><a href="../index3788.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152033-f24040e3.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152033-f24040e3.jpg">Start Qt-Creator</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/22/category/7"></a>
+</p>
+<ol>
+<li> Ve a File-&gt;"New File or Project…" en el menú.
+</li>
+<li> Elige Qt Gui Application y ponle un nombre.
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/23/category/7"></a><a href="../index0cf3.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152034-ea9bb58a.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152034-ea9bb58a.jpg">Select project type</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/23/category/7"></a>
+</p>
+<ol>
+<li> Pon un nombre al proyecto, por ejemplo "qt-tutorial-01".
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/24/category/7"></a><a href="../indexfc1f.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152034-8dabd337.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152034-8dabd337.jpg">Choose project name</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/24/category/7"></a>
+</p>
+<ol>
+<li> Selecciona una o varias versiones de Qt. Una versión desktop build será apropiada para este tutorial.
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/25/category/7"></a><a href="../index744a.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152034-35f9e7cb.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152034-35f9e7cb.jpg">Choose Qt build to target</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/25/category/7"></a>
+</p>
+<ol>
+<li> Nombra a la clase base QWidget (también puedes dejar el nombre que salga por defecto y usarlo más adelante en lugar de QWidget).
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/26/category/7"></a><a href="../indexd8c5.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152034-26f92911.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152034-26f92911.jpg">Select project generation options</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/26/category/7"></a>
+</p>
+<ol>
+<li> Haz clic en "Finish" cuando hayas comprobado las opciones del proyecto.
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/27/category/7"></a><a href="../indexc073.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152034-95ce9f30.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503152034-95ce9f30.jpg">Check project summary</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/27/category/7"></a>
+</p><p>Al terminar se creará un proyecto con los siguientes cuatro archivos:
+</p>
+<ul>
+<li> main.cpp
+</li>
+<li> widget.h
+</li>
+<li> widget.cpp
+</li>
+<li> widget.ui
+</li>
+</ul>
+<h2><span class="mw-headline" id="Aprendiendo_a_gatear:_Editar_los_archivos_del_proyecto">Aprendiendo a gatear: Editar los archivos del proyecto</span></h2>
+<p>Vamos a editar el archivo widget.ui primero:
+</p>
+<ol>
+<li> Haz clic en él y se abrirá el archivo pasando a modo diseño. Deberías ver una ventana vacía. Ahora haz esto:
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/28/category/7"></a><a href="../index6574.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-af1ea190.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-af1ea190.jpg">Open designer</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/28/category/7"></a>
+</p>
+<ol>
+<li> Desde la barra de herramientas a la izquierda, arrastra un Label hasta el centro de la ventana.
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/29/category/7"></a><a href="../indexf26c.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-661b1ceb.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-661b1ceb.jpg">Add label</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/29/category/7"></a>
+</p>
+<ol>
+<li> Haz lo mismo con un Line Edit y colócalo a la derecha del Label. No importa la posición exacta.
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/30/category/7"></a><a href="../index77c8.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-8c16787b.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-8c16787b.jpg">Add line edit</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/30/category/7"></a>
+</p>
+<ol>
+<li> Haz clic en el fondo de la ventana para no tener nada seleccionado.
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/31/category/7"></a><a href="../index2789.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-5084f96c.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-5084f96c.jpg">Select parent widget</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/31/category/7"></a>
+</p>
+<ol>
+<li> En la barra superior haz clic en "Lay out Horizontall" o presiona Ctrl+h para añadir un bloque de disposición horizontal. De este modo el bloque se encargará de redimensionar automáticamente tus componentes si hay cambios de tamaño.
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/32/category/7"></a><a href="../indexcf4f.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-01e7e207.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-01e7e207.jpg">Apply horizontal layout</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/32/category/7"></a>
+</p>
+<ol>
+<li> Haz doble clic en el Label y cambiará a modo edición. Escribe en el "Me llamo:"
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/33/category/7"></a><a href="../index8807.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-4e8b7939.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-4e8b7939.jpg">Change label text</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/33/category/7"></a>
+</p>
+<ol>
+<li> Pulsa Ctrl+s para guardar.
+</li>
+<li> Haz clic en el botón de modo Edit en el panel a la izquierda para volver a ese modo. Probablemente verás el contenido xml del archivo UI. Ciérralo.
+</li>
+</ol>
+<p><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/34/category/7"></a><a href="../index28b9.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-abad6378.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503154826-abad6378.jpg">Switch to Edit mode</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/34/category/7"></a>
+</p><p>Ahora abre el archivo widget.h y modifícalo para que sea igual que:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#ifndef WIDGET_H</span>
+<span class="co2">#define WIDGET_H</span>
+&#160;
+<span class="co2">#include &lt;QWidget&gt;</span>
+&#160;
+<span class="kw2">namespace</span> Ui <span class="br0">&#123;</span>
+ <span class="kw2">class</span> Widget<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw2">class</span> Widget <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QWidget</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw2">explicit</span> Widget<span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ ~Widget<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw4">void</span> setName<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span> <span class="sy0">&amp;</span>name<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QString</span> name<span class="br0">&#40;</span><span class="br0">&#41;</span> const<span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ Ui<span class="sy0">::</span><span class="me2">Widget</span> <span class="sy0">*</span>ui<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="co2">#endif // WIDGET_H</span></pre></div></div>
+<p>Ahora edita el archivo .cpp correspondiente para que coincida con este:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &quot;widget.h&quot;</span>
+<span class="co2">#include &quot;ui_widget.h&quot;</span>
+&#160;
+Widget<span class="sy0">::</span><span class="me2">Widget</span><span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent<span class="br0">&#41;</span> <span class="sy0">:</span>
+ <span class="kw5">QWidget</span><span class="br0">&#40;</span>parent<span class="br0">&#41;</span><span class="sy0">,</span>
+ ui<span class="br0">&#40;</span><span class="kw1">new</span> Ui<span class="sy0">::</span><span class="me2">Widget</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ ui<span class="sy0">-&gt;</span><span class="me3">setupUi</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+Widget<span class="sy0">::</span><span class="me2">~Widget</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">delete</span> ui<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> Widget<span class="sy0">::</span><span class="me2">setName</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw5">QString</span> <span class="sy0">&amp;</span>name<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ ui<span class="sy0">-&gt;</span><span class="me3">lineEdit</span><span class="sy0">-&gt;</span><span class="me3">setText</span><span class="br0">&#40;</span>name<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw5">QString</span> Widget<span class="sy0">::</span><span class="me2">name</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw4">const</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">return</span> ui<span class="sy0">-&gt;</span><span class="me3">lineEdit</span><span class="sy0">-&gt;</span><span class="me3">text</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Para terminar edita main.cpp&#160;:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2">#include &lt;QApplication&gt;</span>
+<span class="co2">#include &quot;widget.h&quot;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="st0">''</span><span class="st0">'argv[])
+{
+ QApplication a(argc, argv);
+ Widget w;
+&#160;
+ w.setName(&quot;Slim Shady&quot;);
+&#160;
+ w.show();
+&#160;
+ return a.exec();
+}</span></pre></div></div>
+<h2><span class="mw-headline" id="De_pie_y_corriendo:_Compilando_y_ejecutando_la_aplicaci.C3.B3n">De pie y corriendo: Compilando y ejecutando la aplicación</span></h2>
+<p>Ahora compila (con el icono del martillo abajo a la izquierda o con Ctrl-Shift-B) y ejecuta la aplicación (botón verde "play"). Verás aparecer algunos mensajes en el panel "Compile Output" abajo mientras se compila.
+<a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/35/category/7"></a><a href="../index02ef.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503160137-3e61f249.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503160137-3e61f249.jpg">Compiling the project</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/35/category/7"></a>
+</p><p>Este es el aspecto de la aplicación al ejecutarse:
+<a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/36/category/7"></a><a href="../index9241.html?title=Special:Upload&amp;wpDestFile=Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503160137-aac48922.jpg" class="new" title="File:Http://gallery.theharmers.co.uk/upload/2011/05/03/thumbnail/TN-20110503160137-aac48922.jpg">The running application</a><a rel="nofollow" class="external text" href="http://gallery.theharmers.co.uk/picture.php?/36/category/7"></a>
+</p><p>Como puedes ver la función main() es muy sencilla. Todo lo que hacemos es crear una <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qapplication.html">QApplication</a> y luego un Widget (la ventana que modificamos en el diseñador y a la que añadimos un comportamiento en el código con las funciones name() y setName()).
+</p><p>Después invocamos a setName en el widget. Este a partir de un puntero al <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qlineedit.html">QLineEdit</a> que colocamos en el diseño llama al método <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/latest/qlineedit.html#text-prop">setText()</a>().
+</p><p>Finalmente mostramos el widget y entramos en el bucle de eventos invocando a a.exec().
+</p><p>Una vez que entiendas como funciona este simple programa puedes empezar a añadirle florituras como conexiones signal/slot.
+</p>
+<h2><span class="mw-headline" id="Ver_tambi.C3.A9n">Ver también</span></h2>
+<p><b> <a href="../Introduction_to_Qt_Quick_for_Cpp_developers.html" title="Introduction to Qt Quick for Cpp developers" class="mw-redirect">"Introduction to Qt Quick for C++ Developers"</a></b>
+<i>Note:</i> The paper above is deprecated. Its content is now part of <a href="../Introduction_to_Qt_Quick.html" title="Introduction to Qt Quick">"Introduction to Qt Quick"</a>.
+</p>
+<ul>
+<li> <a href="../How_to_Use_QPushButton.html" title="How to Use QPushButton">"How to Use QPushButton"</a>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.089 seconds
+Real time usage: 0.139 seconds
+Preprocessor visited node count: 64/1000000
+Preprocessor generated node count: 156/1000000
+Post‐expand include size: 1336/2097152 bytes
+Template argument size: 429/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:57-0!*!0!!en!2!* and timestamp 20151104165145 and revision id 15823
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../indexb586.html?title=Basic_Qt_Programming_Tutorial/es&amp;oldid=15823">http://wiki.qt.io/index.php?title=Basic_Qt_Programming_Tutorial/es&amp;oldid=15823</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="../Category_HowTo.html" title="Category:HowTo">HowTo</a></li><li><a href="../Category_Developing_with_Qt__General.html" title="Category:Developing with Qt::General">Developing with Qt::General</a></li><li><a href="../Category_Tutorial.html" title="Category:Tutorial">Tutorial</a></li><li><a href="../Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=6358cc0d949587cf&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="es.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_Basic_Qt_Programming_Tutorial/es.html?title=Talk:Basic_Qt_Programming_Tutorial/es&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="es.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../index4fca.html?title=Basic_Qt_Programming_Tutorial/es&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../index20fe.html?title=Basic_Qt_Programming_Tutorial/es&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/Basic_Qt_Programming_Tutorial/es.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/Basic_Qt_Programming_Tutorial/es.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../index89a9.html?title=Basic_Qt_Programming_Tutorial/es&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../indexb586.html?title=Basic_Qt_Programming_Tutorial/es&amp;oldid=15823" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../index289b.html?title=Basic_Qt_Programming_Tutorial/es&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 April 2015, at 12:12.</li>
+											<li id="footer-info-viewcount">This page has been accessed 3,675 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":192});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Basic_Qt_Programming_Tutorial/es by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 07:34:04 GMT -->
+</html>

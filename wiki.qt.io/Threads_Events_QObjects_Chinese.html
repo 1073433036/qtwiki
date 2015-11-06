@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Threads_Events_QObjects_Chinese by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:59:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Threads Events QObjects/zh - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="Threads_Events_QObjects/zh.html" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Threads_Events_QObjects/zh","wgTitle":"Threads Events QObjects/zh","wgCurRevisionId":19366,"wgRevisionId":19366,"wgArticleId":2054,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Pages with broken file links","Developing with Qt"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Threads_Events_QObjects/zh","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Threads_Events_QObjects_Chinese","wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Threads_Events_QObjects_zh skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Threads Events QObjects/zh</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="Threads_Events_QObjects.html" title="Threads Events QObjects">Threads Events QObjects</a></span>(Redirected from <a href="index3cc5.html?title=Threads_Events_QObjects_Chinese&amp;redirect=no" title="Threads Events QObjects Chinese">Threads Events QObjects Chinese</a>)</div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexf125.html?title=Threads_Events_QObjects/zh&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><br />
+<b>中文</b> <a href="Threads_Events_QObjects.html" title="Threads Events QObjects">English</a> <a href="Threads_Events_QObjects_Russian.html" title="Threads Events QObjects Russian" class="mw-redirect">Русский</a> <a href="Threads_Events_QObjects_Korean.html" title="Threads Events QObjects Korean" class="mw-redirect">한국어</a> <a href="Threads_Events_QObjects_Bulgarian.html" title="Threads Events QObjects Bulgarian" class="mw-redirect">Български</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.5BDRAFT.5D"><span class="tocnumber">1</span> <span class="toctext">[DRAFT]</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#.E7.BA.BF.E7.A8.8B.E3.80.81.E4.BA.8B.E4.BB.B6.E4.B8.8EQObject"><span class="tocnumber">2</span> <span class="toctext">线程、事件与QObject</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#.E6.95.AC.E5.91.8A.EF.BC.9A.E6.B5.8B.E8.AF.95.E7.89.88.E6.9C.AC"><span class="tocnumber">2.1</span> <span class="toctext">敬告：测试版本</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#.E4.BB.8B.E7.BB.8D"><span class="tocnumber">3</span> <span class="toctext">介绍</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#.E5.85.88.E5.86.B3.E6.9D.A1.E4.BB.B6"><span class="tocnumber">4</span> <span class="toctext">先决条件</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#.E4.BA.8B.E4.BB.B6.E4.B8.8E.E4.BA.8B.E4.BB.B6.E5.BE.AA.E7.8E.AF"><span class="tocnumber">5</span> <span class="toctext">事件与事件循环</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#.E4.B8.BA.E4.BB.80.E4.B9.88.E9.9C.80.E8.A6.81.E8.BF.90.E8.A1.8C.E4.BA.8B.E4.BB.B6.E5.BE.AA.E7.8E.AF.EF.BC.9F"><span class="tocnumber">5.1</span> <span class="toctext">为什么需要运行事件循环？</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E9.98.BB.E5.A1.9E.E4.BA.8B.E4.BB.B6.E5.BE.AA.E7.8E.AF"><span class="tocnumber">5.2</span> <span class="toctext">阻塞事件循环</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#.E5.BC.BA.E5.88.B6.E4.BA.8B.E4.BB.B6.E5.BE.AA.E7.8E.AF"><span class="tocnumber">5.3</span> <span class="toctext">强制事件循环</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Qt_.E7.BA.BF.E7.A8.8B.E7.B1.BB"><span class="tocnumber">6</span> <span class="toctext">Qt 线程类</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#QThread"><span class="tocnumber">6.1</span> <span class="toctext">QThread</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#QRunnable_.E5.92.8C_QThreadPool"><span class="tocnumber">6.2</span> <span class="toctext">QRunnable 和 QThreadPool</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#QtConcurrent"><span class="tocnumber">6.3</span> <span class="toctext">QtConcurrent</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#.E5.8A.9F.E8.83.BD.E6.AF.94.E8.BE.83"><span class="tocnumber">6.4</span> <span class="toctext">功能比较</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#.E7.BA.BF.E7.A8.8B.E4.B8.8EQObjects"><span class="tocnumber">6.5</span> <span class="toctext">线程与QObjects</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#.E8.B7.A8.E7.BA.BF.E7.A8.8B.E7.9A.84.E4.BF.A1.E5.8F.B7.E4.B8.8E.E6.A7.BD"><span class="tocnumber">6.6</span> <span class="toctext">跨线程的信号与槽</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#.E6.88.91.E5.BA.94.E8.AF.A5.E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E4.BD.BF.E7.94.A8.E7.BA.BF.E7.A8.8B"><span class="tocnumber">7</span> <span class="toctext">我应该什么时候使用线程</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#.E5.BD.93.E4.BD.A0.E4.B8.8D.E5.BE.97.E4.B8.8D.E4.BD.BF.E7.94.A8.E4.B8.80.E4.B8.AA.E9.98.BB.E5.A1.9E.E5.BC.8FAPI.E6.97.B6"><span class="tocnumber">7.1</span> <span class="toctext">当你不得不使用一个阻塞式API时</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#.E5.BD.93.E4.BD.A0.E6.83.B3.E6.89.A9.E5.B1.95.E8.87.B3.E5.A4.9A.E6.A0.B8"><span class="tocnumber">7.2</span> <span class="toctext">当你想扩展至多核</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#.E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E4.BD.A0.E5.8F.AF.E8.83.BD.E4.B8.8D.E6.83.B3.E5.88.AB.E4.BA.BA.E9.98.BB.E5.A1.9E"><span class="tocnumber">7.3</span> <span class="toctext">什么时候你可能不想别人阻塞</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#.E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E4.B8.8D.E9.9C.80.E8.A6.81.E4.BD.BF.E7.94.A8.E7.BA.BF.E7.A8.8B"><span class="tocnumber">8</span> <span class="toctext">什么时候不需要使用线程</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#.E8.AE.A1.E6.97.B6.E5.99.A8"><span class="tocnumber">8.1</span> <span class="toctext">计时器</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#.E7.BD.91.E7.BB.9C.2F.E7.8A.B6.E6.80.81.E6.9C.BA"><span class="tocnumber">8.2</span> <span class="toctext">网络/状态机</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#.E5.88.86.E8.A7.A3.E4.BB.BB.E5.8A.A1.E6.8B.86.E6.88.90.E4.B8.8D.E5.90.8C.E7.9A.84.E5.9D.97"><span class="tocnumber">8.3</span> <span class="toctext">分解任务拆成不同的块</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id=".5BDRAFT.5D">[DRAFT]</span></h2>
+<h1><span class="mw-headline" id=".E7.BA.BF.E7.A8.8B.E3.80.81.E4.BA.8B.E4.BB.B6.E4.B8.8EQObject">线程、事件与QObject</span></h1>
+<h2><span class="mw-headline" id=".E6.95.AC.E5.91.8A.EF.BC.9A.E6.B5.8B.E8.AF.95.E7.89.88.E6.9C.AC">敬告：测试版本</span></h2>
+<p>本译文接近定稿，但还须一些加工和更好的例子。欢迎任何评阅和贡献。有关本文的讨论参见如下<a rel="nofollow" class="external text" href="http://developer.qt.nokia.com/forums/viewthread/2423/">链接</a>
+</p>
+<h1><span class="mw-headline" id=".E4.BB.8B.E7.BB.8D">介绍</span></h1>
+<blockquote>You're doing it wrong. — Bradley T. Hughes
+</blockquote>
+<p>线程是qt channel里最流行的讨论话题之一。许多人加入了讨论并询问如何解决他们在运行跨线程编程时所遇到的问题。
+</p><p>快速检阅一下他们的代码，在发现的问题当中，十之八九遇到得最大问题是他们在某个地方使用了线程，而随后又坠入了并行编程的陷阱。Qt中创建、运行线程的"易用"性、缺乏相关编程尤其是异步网络编程知识或是养成的使用其它工具集的习惯、这些因素和Qt的信号槽架构混合在一起，便经常使得人们自己把自己射倒在了脚下。此外，Qt对线程的支持是把双刃剑：它即使得你在进行Qt多线程编程时感觉十分简单，但同时你又必须对Qt所新添加许多的特性尤为小心，特别是与QObject的交互。
+</p><p>本文的目的不是教你如何使用线程、如何适当地加锁，也不是教你如何进行并行开发或是如何写可扩展的程序；关于这些话题，有很多好书，比如这个链接给的推荐读物清单. 这篇文章主要是为了向读者介绍Qt 4的事件循环以及线程使用，其目的在于帮助读者们开发出拥有更好结构的、更加健壮的多线程代码，并回避Qt事件循环以及线程使用的常见错误。
+</p>
+<h1><span class="mw-headline" id=".E5.85.88.E5.86.B3.E6.9D.A1.E4.BB.B6">先决条件</span></h1>
+<p>考虑到本文并不是一个线程编程的泛泛介绍，我们希望你有如下相关知识：
+</p><p>C+<i>基础；</i>
+Qt 基础：QOjbects , 信号/槽，事件处理；
+了解什么是线程、线程与进程间的关系和操作系统；
+了解主流操作系统如何启动、停止、等待并结束一个线程；
+了解如何使用mutexes, semaphores 和以及wait conditions 来创建一个线程安全/可重入的函数、数据结构、类。
+本文我们将沿用如下的名词解释，即
+</p><p><b>可重入</b> 一个类被称为是可重入的：只要在同一时刻至多只有一个线程访问同一个实例，那么我们说多个线程可以安全地使用各自线程内自己的实例。 一个函数被称为是可重入的：如果每一次函数的调用只访问其独有的数据（译者注：全局变量就不是独有的，而是共享的），那么我们说多个线程可以安全地调用这个函数。 也就是说，类和函数的使用者必须通过一些外部的加锁机制来实现访问对象实例或共享数据的序列化。
+<b>线程安全</b> 如果多个线程可以同时使用一个类的对象，那么这个类被称为是线程安全的；如果多个线程可以同时使用一个函数体里的共享数据，那么这个函数被称为线程安全的。
+(译者注： 更多可重入(reentrant)和t线程安全(thread-safe)的解释： 对于类，如果它的所有成员函数都可以被不同线程同时调用而不相互影响——即使这些调用是针对同一个类对象，那么该类被定义为线程安全。 对于类，如果其不同实例可以在不同线程中被同时使用而不相互影响，那么该类被定义为可重入。在Qt的定义中，在类这个层次，thread-safe是比reentrant更严格的要求)
+</p>
+<h1><span class="mw-headline" id=".E4.BA.8B.E4.BB.B6.E4.B8.8E.E4.BA.8B.E4.BB.B6.E5.BE.AA.E7.8E.AF">事件与事件循环</span></h1>
+<p>Qt作为一个事件驱动的工具集，其事件和事件派发起到了核心的作用。本文将不会全面的讨论这个话题，而是会聚焦于与线程相关的一些关键概念。想要了解更多的Qt事件系统专题参见 (这里[doc.qt.nokia.com] 和 这里 [doc.qt.nokia.com] ) （译者注：也欢迎参阅译者写的博文：浅议Qt的事件处理机制一，二）
+</p><p>一个Qt的事件是代表了某件另人感兴趣并已经发生的对象；事件与信号的主要区别在于，事件是针对于与我们应用中一个具体目标对象（而这个对象决定了我们如何处理这个事件），而信号发射则是"漫无目的"。从代码的角度来说，所有的事件实例是QEvent [doc.qt.nokia.com]的子类，并且所有的QObject的派生类可以重载虚函数QObject::event(),从而实现对目标对象实例事件的处理。
+</p><p>事件可以产生于应用程序的内部，也可以来源于外部；比如：
+</p><p>QKeyEvent和QMouseEvent对象代表了与键盘、鼠标相关的交互事件，它们来自于视窗管理程序。
+当计时器开始计时，QTimerEvent 对象被发送到QObject对象中，它们往往来自于操作系统。
+当一个子类对象被添加或删除时，QChildEvent对象会被发送到一个QObject对象重，而它们来自于你的应用程序内部
+对于事件来讲，一个重要的事情在于它们并没有在事件产生时被立即派发，而是列入到一个事件队列（Event queue）中，等待以后的某一个时刻发送。分配器（dispatcher ）会遍历事件队列，并且将入栈的事件发送到它们的目标对象当中，因此它们被称为事件循环（Event loop）. 从概念上讲,下段代码描述了一个事件循环的轮廓:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="nu0">1</span><span class="sy0">:</span> <span class="kw1">while</span> <span class="br0">&#40;</span>is_active<span class="br0">&#41;</span>
+<span class="nu0">2</span><span class="sy0">:</span> <span class="br0">&#123;</span>
+<span class="nu0">3</span><span class="sy0">:</span> <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy0">!</span>event_queue_is_empty<span class="br0">&#41;</span>
+<span class="nu0">4</span><span class="sy0">:</span> dispatch_next_event<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">5</span><span class="sy0">:</span>
+<span class="nu0">6</span><span class="sy0">:</span> wait_for_more_events<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">7</span><span class="sy0">:</span> <span class="br0">&#125;</span></pre></div></div>
+<p>我们是通过运行QCoreApplication::exec()来进入Qt的主体事件循环的；这会引发阻塞，直至QCoreApplication::exit() 或者 QCoreApplication::quit() 被调用，进而结束循环。
+</p><p>这个"wait_for_more_events()" 函数产生阻塞，直至某个事件的产生。 如果我们仔细想想，会发现所有在那个时间点产生事件的实体必定是来自于外部的资源（因为当前所有内部事件派发已经结束，事件队列里也没有悬而未决的事件等待处理），因此事件循环被这样唤醒：
+</p>
+<ul>
+<li> 视窗管理活动（键盘按键、鼠标点击，与视窗的交互等等）；
+</li>
+<li> socket活动 （有可见的用来读取的数据或者一个可写的非阻塞Socket, 一个新的Socket连接的产生）；
+</li>
+<li> timers (即计时器开始计时）
+</li>
+<li> 其它线程Post的事件（见后文）。
+</li>
+</ul>
+<p>Unix系统中，视窗管理活动（即X11）通过Socket（Unix 域或者TCP/IP）通知应用程序（事件的产生），因为客户端使用它们与X服务器进行通讯。 如果我们决定用一个内部的socketpair(2)来实现跨线程的事件派发，那么视窗管理活动需要唤醒的是
+</p>
+<ul>
+<li> sockets;
+</li>
+<li> timers;
+</li>
+</ul>
+<p>这也是*select(2)* 系统调用所做的： 它为视窗管理活动监控了一组描述符，如果一段时间内没有任何活动，它会超时。Qt所要做的是把系统调用select的返回值转换为正确的QEvent子类对象，并将其列入事件队列的栈中，现在你知道事件循环里面装着什么东西了吧:)
+</p>
+<h2><span class="mw-headline" id=".E4.B8.BA.E4.BB.80.E4.B9.88.E9.9C.80.E8.A6.81.E8.BF.90.E8.A1.8C.E4.BA.8B.E4.BB.B6.E5.BE.AA.E7.8E.AF.EF.BC.9F">为什么需要运行事件循环？</span></h2>
+<p>下面的清单并不全，但你会有一幅全景图，你应该能够猜到哪些类需要使用事件循环。
+</p>
+<ul>
+<li> <b>Widgets 绘图与交互*： 当派发QPaintEvent事件时，QWidget::paintEvent() 将会被调用。QPaintEvent可以产生于内部的QWidget::update() ，也可以产生于外部的视窗管理（比如，一个显示被隐藏的窗口）。同样的，各种各样的交互（键盘、鼠标等）所对应的事件均需要事件循环来派发。</b>
+</li>
+</ul>
+<p><b> </b>Timers<b>: 长话短说，当select(2)或相类似的调用超时时，计时器开始计时，因此需要让Qt通过返回事件循环让那些调用为你工作。</b>
+</p>
+<ul>
+<li> <b>Networking</b>: 所以底层的Qt网络类(QTcpSocket, QUdpSocket, QTcpServer等)均被设计成异步的。当你调用read()时，它们仅仅是返回已经可见的数据而已； 当你调用write()时，它们仅是将写操作列入执行计划表待稍后执行。 真正的读写仅发生于事件循环返回的时候。 请注意虽然Qt网络类提供了相应的同步方法（waitFor* 一族），但它们是不被推荐使用的，原因在于他们阻塞了正在等待的事件循环。向QNetworkAccessManager这样的上层类，并不提供同步API 而且需要事件循环。
+</li>
+</ul>
+<h2><span class="mw-headline" id=".E9.98.BB.E5.A1.9E.E4.BA.8B.E4.BB.B6.E5.BE.AA.E7.8E.AF">阻塞事件循环</span></h2>
+<p>在讨论为什么*你永远都不要阻塞事件循环*之前，让我们尝试着再进一步弄明白到底"阻塞"意味着什么。假定你有一个按钮widget，它被按下时会emit一个信号；还有一个我们下面定义的Worker对象连接了这个信号，而且这个对象的槽做了很多耗时的事情。当你点击完这个按钮后，从上之下的函数调用栈如下所示：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">main<span class="br0">&#40;</span><span class="kw4">int</span><span class="sy0">,</span> <span class="kw4">char</span> <span class="st0">''</span><span class="st0">''</span><span class="st0">''</span><span class="br0">&#41;</span>
+<span class="kw5">QApplication</span><span class="sy0">::</span><span class="me2">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#91;</span>…<span class="br0">&#93;</span>
+<span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">event</span><span class="br0">&#40;</span><span class="kw5">QEvent</span> <span class="st0">''</span><span class="st0">')
+Button::mousePressEvent(QMouseEvent'</span><span class="st0">''</span><span class="br0">&#41;</span>
+Button<span class="sy0">::</span><span class="me2">clicked</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#91;</span>…<span class="br0">&#93;</span>
+Worker<span class="sy0">::</span><span class="me2">doWork</span><span class="br0">&#40;</span><span class="br0">&#41;</span></pre></div></div>
+<p>在main()中，我们通过调用QApplication::exec() （如上段代码第2行所示）开启了事件循环。视窗管理者发送了鼠标点击事件，该事件被Qt内核捕获，并转换成QMouseEvent ，随后通过QApplication::notify() （notify并没有在上述代码里显示）发送到我们的widget的event()方法中（第4行）。因为Button并没有重载event()，它的基类QWidget方法得以调用。 QWidget::event() 检测出传入的事件是一个鼠标点击，并调用其专有的事件处理器，即Button::mousePressEvent() (第5行)。我们重载了 mousePressEvent方法，并发射了Button::clicked()信号（第6行），该信号激活了我们worker对象中十分耗时的Worker::doWork()槽（第8行）。（译者注：如果你对这一段所描述得函数栈的更多细节，请参见浅议Qt的事件处理机制一，二）
+</p><p>当worker对象在繁忙的工作时，事件循环在做什么呢？ 你也许猜到了答案：什么也没做！它分发了鼠标点击事件，并且因等待event handler返回而被阻塞。我们阻塞了事件循环，也就是说，在我们的doWork()槽（第8行）干完活之前再不会有事件被派发了，也再不会有pending的事件被处理。
+</p><p>当事件派发被就此卡住时，widgets 也将不会再刷新自己（QPaintEvent对象将在事件队列里静候），也不能有进一步地与widgets交互的事件发生，计时器也不会在开始计时，网络通讯也将变得迟钝、停滞。更严重的是，许多视窗管理程序会检测到你的应用不再处理事件，从而告诉用户你的程序不再有响应（not responding）. 这就是为什么快速的响应事件并尽可能快的返回事件循环如此重要的原因
+</p>
+<h2><span class="mw-headline" id=".E5.BC.BA.E5.88.B6.E4.BA.8B.E4.BB.B6.E5.BE.AA.E7.8E.AF">强制事件循环</span></h2>
+<p>那么，对于需要长时间运行的任务，我们应该怎么做才会不阻塞事件循环？ 一个可行的答案是将这个任务移动另一个线程中：在一节，我们会看到如果去做。一个可能的方案是，在我们的受阻塞的任务中，通过调用QCoreApplication::processEvents() 人工地强迫事件循环运行。QCoreApplication::processEvents() 将处理所有事件队列中的事件并返回给调用者。
+</p><p>另一个可选的强制地重入事件的方案是使用QEventLoop [doc.qt.nokia.com] 类，通过调用QEventLoop::exec() ，我们重入了事件循环，而且我们可以把信号连接到QEventLoop::quit() 槽上使得事件循环退出，如下代码所示：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="nu0">1</span><span class="sy0">:</span> <span class="kw5">QNetworkAccessManager</span> qnam<span class="sy0">;</span>
+<span class="nu0">2</span><span class="sy0">:</span> <span class="kw5">QNetworkReply</span> <span class="st0">''</span><span class="st0">'reply = qnam.get(QNetworkRequest(QUrl(…)));
+3: QEventLoop loop;
+4: QObject::connect(reply, SIGNAL (finished()), &amp;loop, SLOT (quit()));
+5: loop.exec();
+6: /'</span><span class="st0">''</span> reply has finished<span class="sy0">,</span> use it <span class="sy0">*/</span></pre></div></div>
+<p>QNetworkReply 没有提供一个阻塞式的API，而且它要求运行一个事件循环。我们进入到一个局部QEventLoop，并且当回应完成时，局部的事件循环退出。
+</p><p>当重入事件循环是从"其他路径"完成的则要非常小心：它可能会导致无尽的递归循环！让我们回到Button这个例子。如果我们再在doWork() 槽里面调用QCoreApplication::processEvents() ，这时用户又一次点击了button，那么doWork()槽将会再次被调用：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">main<span class="br0">&#40;</span><span class="kw4">int</span><span class="sy0">,</span> <span class="kw4">char</span><span class="br0">&#41;</span>
+<span class="kw5">QApplication</span><span class="sy0">::</span><span class="me2">exec</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#91;</span>…<span class="br0">&#93;</span>
+<span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">event</span><span class="br0">&#40;</span><span class="kw5">QEvent</span><span class="st0">''</span><span class="st0">')
+Button::mousePressEvent(QMouseEvent '</span><span class="st0">''</span><span class="br0">&#41;</span>
+Button<span class="sy0">::</span><span class="me2">clicked</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#91;</span>…<span class="br0">&#93;</span>
+Worker<span class="sy0">::</span><span class="me2">doWork</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// 实现，内部调用</span>
+<span class="kw5">QCoreApplication</span><span class="sy0">::</span><span class="me2">processEvents</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="co1">// 我们人工的派发事件而且…</span>
+<span class="br0">&#91;</span>…<span class="br0">&#93;</span>
+<span class="kw5">QWidget</span><span class="sy0">::</span><span class="me2">event</span><span class="br0">&#40;</span><span class="kw5">QEvent</span><span class="st0">''</span><span class="st0">') // 另一个鼠标点击事件被发送给Button
+Button::mousePressEvent(QMouseEvent *)
+Button::clicked() // 这里又一次emit了clicked() …
+[…]
+Worker::doWork() // 完蛋! 我们已经递归地调用了doWork槽</span></pre></div></div>
+<p>一个快速并且简单的临时解决办法是把QEventLoop::ExcludeUserInputEvents 传递给QCoreApplication::processEvents(), 也就是说，告诉事件循环不要派发任何用户输入事件（事件将简单的呆在队列中）。
+</p><p>同样地，使用一个对象的deleteLater() 来实现异步的删除事件（或者，可能引发某种"关闭（shutdown）"的任何事件）则要警惕事件循环的影响。 （译者注：deleteLater()将在事件循环中删除对象并返回）
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="nu0">1</span><span class="sy0">:</span> <span class="kw5">QObject</span> <span class="st0">''</span><span class="st0">'object = new QObject;
+2: object-&gt;deleteLater();
+3: QEventLoop loop;
+4: loop.exec();
+5: /'</span><span class="st0">''</span> 现在object是一个野指针<span class="sy0">!</span> <span class="sy0">*/</span></pre></div></div>
+<p>可以看到，我们并没有用QCoreApplication::processEvents() (从Qt 4.3之后，删除事件不再被派发 ），但是我们确实用到了其他的局部事件循环（像我们QEventLoop 启动的这个循环，或者下面将要介绍的QDialog::exec()）。
+</p><p>切记当我们调用QDialog::exec()或者 QMenu::exec()时，Qt进入了一个局部事件循环。Qt 4.5 以后的版本，QDialog 提供了QDialog::open() 方法用来再不进入局部循环的前提下显示window-modal式的对话框
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="nu0">1</span><span class="sy0">:</span> <span class="kw5">QObject</span> <span class="st0">''</span><span class="st0">'object = new QObject;
+2: object-&gt;deleteLater();
+3: QDialog dialog;
+4: dialog.exec();
+5: /'</span><span class="st0">''</span> 现在object是一个野指针<span class="sy0">!</span> <span class="sy0">*/</span></pre></div></div>
+<h1><span class="mw-headline" id="Qt_.E7.BA.BF.E7.A8.8B.E7.B1.BB">Qt 线程类</span></h1>
+<p>Qt对线程的支持已经有很多年了（发布于2000年九月22日的Qt2.2引入了QThread类），Qt 4.0版本的release则对其所有所支持平台默认地是对多线程支持的。（当然你也可以关掉对线程的支持，参见这里）。现在Qt提供了不少类用于处理线程，让你我们首先预览一下：
+</p>
+<h2><span class="mw-headline" id="QThread">QThread</span></h2>
+<p>QThread 是Qt中一个对线程支持的核心的底层类。 每个线程对象代表了一个运行的线程。由于Qt的跨平台特性，QThread成功隐藏了所有在不同操作系统里使用线程的平台相关性代码。
+</p><p>为了运用QThread从而让代码在一个线程里运行，我们可以创建一个QThread的子类，并重载QThread::run() 方法：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+<span class="kw2">protected</span><span class="sy0">:</span>
+<span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="sy0">/</span><span class="st0">''</span><span class="st0">' your thread implementation goes here */
+}
+};</span></pre></div></div> 
+<p><br />
+接着，我们可以使用：
+</p><p>class Thread&#160;: public QThread {
+protected:
+void run() {
+/<b> your thread implementation goes here */</b>
+}
+}; 
+</p><p>来真正的启动一个新的线程。 请注意，Qt 4.4版本之后，QThread不再支持抽象类；现在虚函数QThread::run()实际上是简单调用了QThread::exec(),而它启动了线程的事件循环。（更多信息见后文）
+</p>
+<h2><span class="mw-headline" id="QRunnable_.E5.92.8C_QThreadPool">QRunnable 和 QThreadPool</span></h2>
+<p>QRunnable [doc.qt.nokia.com] 是一种轻量级的、以"run and forget"方式来在另一个线程开启任务的抽象类，为了实现这一功能，我们所需要做的全部事情是派生QRunnable 类，并实现纯虚函数方法run()
+</p><p>class Task&#160;: public QRunnable {
+public:
+void run() {
+/<b> your runnable implementation goes here */</b>
+}
+}; 
+</p><p>事实上，我们是使用QThreadPool 类来运行一个QRunnable 对象，它维护了一个线程池。通过调用QThreadPool::start(runnable) ，我们把一个QRunnable 放入了QThreadPool的运行队列中；只要线程是可见得，QRunnable 将会被拾起并且在那个线程里运行。尽管所有的Qt应用程序都有一个全局的线程池，且它是通过调用QThreadPool::globalInstance()可见得，但我们总是显式地创建并管理一个私有的QThreadPool 实例。
+</p><p>请注意，QRunnable 并不是一个QObject类，它并没有一个内置的与其他组件显式通讯的方法。你必须使用底层的线程原语（比如收集结构的枷锁保护队列等）来亲自编写代码。
+</p>
+<h2><span class="mw-headline" id="QtConcurrent">QtConcurrent</span></h2>
+<p>QtConcurrent 是一个构建在QThreadPool之上的上层API，它用于处理最普通的并行计算模式：map [en.wikipedia.org], reduce [en.wikipedia.org], and filter [en.wikipedia.org] 。同时，QtConcurrent::run()方法提供了一种便于在另一个线程运行一个函数的方法。
+</p><p>不像QThread 以及QRunnable，QtConcurrent 没有要求我们使用底层的同步原语，QtConcurrent 所有的方法会返回一个QFuture 对象，它包含了结果而且可以用来查询线程计算的状态（它的进度），从而暂停、继续、取消计算。QFutureWatcher 可以用来监听一个QFuture 进度，并且通过信号和槽与之交互（注意QFuture是一个基于数值的类，它并没有继承自QObject）.
+</p>
+<h2><span class="mw-headline" id=".E5.8A.9F.E8.83.BD.E6.AF.94.E8.BE.83">功能比较</span></h2>
+<p>|<i>. </i>. QThread|<i>. QRunnable|</i>. QtConcurrent[1]|
+|High level API|✘|✘|✔|
+|Job-oriented|✘|✔|✔|
+|Builtin support for pause/resume/cancel|✘|✘|✔|
+|Can run at a different priority|✔|✘|✘|
+|Can run an event loop|✔|✘|✘|
+</p>
+<h2><span class="mw-headline" id=".E7.BA.BF.E7.A8.8B.E4.B8.8EQObjects">线程与QObjects</span></h2>
+<h3><span class="mw-headline" id=".E7.BA.BF.E7.A8.8B.E7.9A.84.E4.BA.8B.E4.BB.B6.E5.BE.AA.E7.8E.AF">线程的事件循环</span></h3>
+<p>我们在上文中已经讨论了事件循环，我们可能理所当然地认为在Qt的应用程序中只有一个事件循环，但事实并不是这样：QThread对象在它们所代表的线程中开启了新的事件循环。因此，我们说main 事件循环是由调用main()的线程通过QCoreApplication::exec() 创建的。 它也被称做是GUI线程，因为它是界面相关操作唯一允许的进程。一个QThread的局部事件循环可以通过调用QThread::exec() 来开启（它包含在run()方法的内部）
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+<span class="kw2">protected</span><span class="sy0">:</span>
+<span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="sy0">/</span><span class="st0">''</span><span class="st0">' … initialize … */
+exec();
+}
+};</span></pre></div></div>
+<p>正如我们之前所提到的，自从Qt 4.4 的QThread::run() 方法不再是一个纯虚函数，它调用了QThread::exec()。就像QCoreApplication，QThread 也有QThread::quit() 和QThread::exit()来停止事件循环。
+</p><p>一个线程的事件循环为驻足在该线程中的所有QObjects派发了所有事件，其中包括在这个线程中创建的所有对象，或是移植到这个线程中的对象。我们说一个QObject的线程依附性（thread affinity）是指某一个线程，该对象驻足在该线程内。我们在任何时间都可以通过调用QObject::thread()来查询线程依附性，它适用于在QThread对象构造函数中构建的对象。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> MyThread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span>
+<span class="br0">&#123;</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+MyThread<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+otherObj <span class="sy0">=</span> <span class="kw1">new</span> QObject<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">private</span><span class="sy0">:</span>
+<span class="kw5">QObject</span> obj<span class="sy0">;</span>
+<span class="kw5">QObject</span> <span class="st0">''</span><span class="st0">'otherObj;
+QScopedPointer&lt;QObject&gt; yetAnotherObj;
+};</span></pre></div></div>
+<p>如上述代码，我们在创建了MyThread 对象后，obj, otherObj, yetAnotherObj 的线程依附性是怎么样的？要回答这个问题，我们必须要看一下创建他们的线程：是这个运行MyThread 构造函数的线程创建了他们。因此，这三个对象并没有驻足在MyThread 线程，而是驻足在创建MyThread 实例的线程中。
+</p><p>要注意的是在QCoreApplication 对象之前创建的QObjects没有依附于某一个线程。因此，没有人会为它们做事件派发处理。（换句话说，QCoreApplication 构建了代表主线程的QThread 对象）
+</p><p><a href="index2c58.html?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/threadsandobjects.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/threadsandobjects.png">http://doc.qt.nokia.com/4.7/images/threadsandobjects.png</a>
+</p><p>我们可以使用线程安全的QCoreApplication::postEvent() 方法来为某个对象分发事件。它将把事件加入到对象所驻足的线程事件队列中。因此，除非事件对象依附的线程有一个正在运行的事件循环，否则事件不会被派发。
+</p><p>理解QObject和它所有的子类不是线程安全的（尽管是可重入的）非常重要；因此，除非你序列化对象内部数据所有可访问的接口、数据，否则你不能让多个线程同一时刻访问相同的QObject（比如，用一个锁来保护）。请注意，尽管你可以从另一个线程访问对象，但是该对象此时可能正在处理它所驻足的线程事件循环派发给它的事件! 基于这种原因，你不能从另一个线程去删除一个QObject，一定要使用QObject::deleteLater()，它会Post一个事件，目标删除对象最终会在它所生存的线程中被删除。（译者注：QObject::deleteLater作用是，当控制流回到该对象所依附的线程事件循环时，该对象才会被"本"线程中删除）。
+</p><p>此外，QWidget 和它所有的子类，以及所有与GUI相关的类（即便不是基于QObject的，像QPixmap）并不是可重入的。它们必须专属于GUI线程。
+</p><p>我们可以通过调用QObject::moveToThread()来改变一个QObject的依附性；它将改变这个对象以及它的孩子们的依附性。因为QObject不是线程安全的，我们必须在对象所驻足的线程中使用此函数；也就是说，你只能将对象从它所驻足的线程中推送到其他线程中，而不能从其他线程中拉回来。此外，Qt要求一个QObject的孩子必须与它们的双亲驻足在同一个线程中。这意味着：
+</p><p>你不能使用QObject::moveToThread()作用于有双亲的对象；
+你千万不要在一个线程中创建对象的同时把QThread对象自己作为它的双亲。 （译者注：两者不在同一个线程中）：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+<span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="kw5">QObject</span> obj <span class="sy0">=</span> <span class="kw1">new</span> <span class="kw5">QObject</span><span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// WRONG[[Image:|Image:]]!</span>
+<span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>这是因为，QThread 对象驻足在另一个线程中，即QThread 对象它自己被创建的那个线程中。
+</p><p>Qt同样要求所有的对象应该在代表该线程的QThread对象销毁之前得以删除；实现这一点并不难：只要我们所有的对象是在QThread::run() 方法中创建即可。（译者注：run函数的局部变量，函数返回时得以销毁）。
+</p>
+<h2><span class="mw-headline" id=".E8.B7.A8.E7.BA.BF.E7.A8.8B.E7.9A.84.E4.BF.A1.E5.8F.B7.E4.B8.8E.E6.A7.BD">跨线程的信号与槽</span></h2>
+<p>接着上面讨论的，我们如何应用驻足在其他线程里的QObject方法呢？Qt提供了一种非常友好而且干净的解决方案：向事件队列post一个事件，事件的处理将以调用我们所感兴趣的方法为主（当然这需要线程有一个正在运行的事件循环）。而触发机制的实现是由moc提供的内省方法实现的（译者注：有关内省的讨论请参见我的另一篇文章Qt的内省机制剖析）：因此，只有信号、槽以及被标记成Q_INVOKABLE的方法才能够被其它线程所触发调用。
+</p><p><br />
+静态方法QMetaObject::invokeMethod() 为我们做了如下工作：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QMetaObject</span><span class="sy0">::</span><span class="me2">invokeMethod</span><span class="br0">&#40;</span>object<span class="sy0">,</span> <span class="st0">&quot;methodName&quot;</span><span class="sy0">,</span>
+<span class="kw5">Qt</span><span class="sy0">::</span><span class="me2">QueuedConnection</span><span class="sy0">,</span>
+Q_ARG<span class="br0">&#40;</span>type1<span class="sy0">,</span> arg1<span class="br0">&#41;</span><span class="sy0">,</span>
+Q_ARG<span class="br0">&#40;</span>type2<span class="sy0">,</span> arg2<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p><br />
+请注意，因为上面所示的参数需要被在构建事件时进行硬拷贝，参数的自定义型别所对应的类需要提供一个共有的构造函数、析构函数以及拷贝构造函数。而且必须使用注册Qt型别系统所提供的qRegisterMetaType() 方法来注册这一自定义型别。
+</p><p>跨线程的信号槽的工作方式相类似。当我们把信号连接到一个槽的时候，QObject::connect的第五个可选输入参数用来特化这一连接类型：
+</p><p><b> direct connection 是指：发起信号的线程会直接触发其所连接的槽；</b>
+</p>
+<ul>
+<li> queued connection 是指：一个事件被派发到接收者所在的线程中，在这里，事件循环会之后的某一时间将该事件拾起并引起槽的调用；
+</li>
+<li> blocking queued connection 与queued connection的区别在于，发送者的线程会被阻塞，直至接收者所在线程的事件循环处理发送者发送（入栈）的事件，当连接信号的槽被触发后，阻塞被解除；
+</li>
+<li> automatic connection (缺省默认参数) 是指： 如果接收者所依附的线程和当前线程是同一个线程，direct connection会被使用。否则使用queued connection。
+</li>
+</ul>
+<p>请注意，在上述四种连接方式当中，发送对象驻足于哪一个线程并不重要！对于automatic connection，Qt会检查触发信号的线程，并且与接收者所驻足的线程相比较从而决定到底使用哪一种连接类型。特别要指出的是：当前的Qt文档的声明(4.7.1) 是错误的：
+</p><p>如果发射者和接受者在同一线程，其行为与Direct Connection相同；，如果发射者和接受者不在同一线程，其行为Queued Connection相同
+</p><p>因为，发送者对象的线程依附性在这里无关紧要。举例子说明
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">view plaincopy to clipboardprint?
+<span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span>
+<span class="br0">&#123;</span>
+<span class="kw2">Q_OBJECT</span>
+<span class="kw2">signals</span><span class="sy0">:</span>
+<span class="kw4">void</span> aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw2">protected</span><span class="sy0">:</span>
+<span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+emit aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+<span class="coMULTI">/* … */</span>
+Thread thread<span class="sy0">;</span>
+Object obj<span class="sy0">;</span>
+<span class="kw5">QObject</span><span class="sy0">::</span><span class="kw2">connect</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>thread<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>aSignal<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>obj<span class="sy0">,</span> SLOT <span class="br0">&#40;</span>aSlot<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+thread.<span class="me1">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>如上述代码，信号aSignal() 将在一个新的线程里被发射（由线程对象所代表）；因为它并不是Object 对象驻足的线程，所以尽管Thread对象thread与Object对象obj在同一个线程，但仍然是queued connection被使用。
+</p><p>（译者注：这里作者分析的很透彻，希望读者仔细揣摩Qt文档的这个错误。 也就是说 发送者对象本身在哪一个线程对与信号槽连接类型不起任何作用，起到决定作用的是接收者对象所驻足的线程以及发射信号（该信号与接受者连接）的线程是不是在同一个线程，本例中aSignal()在新的线程中被发射，所以采用queued connection）。
+</p><p>另外一个常见的错误如下：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">view plaincopy to clipboardprint?
+<span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span>
+<span class="br0">&#123;</span>
+<span class="kw2">Q_OBJECT</span>
+<span class="kw2">slots</span><span class="sy0">:</span>
+<span class="kw4">void</span> aSlot<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="sy0">/</span><span class="st0">''</span><span class="st0">' … */
+}
+protected:
+void run() {
+/'</span><span class="st0">''</span> … <span class="sy0">*/</span>
+<span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+<span class="sy0">/</span><span class="st0">''</span><span class="st0">' … */
+Thread thread;
+Object obj;
+QObject::connect(&amp;obj, SIGNAL (aSignal()), &amp;thread, SLOT (aSlot()));
+thread.start();
+obj.emitSignal();</span></pre></div></div>
+<p><br />
+当"obj"发射了一个aSignal()信号是，哪种连接将被使用呢？你也许已经猜到了：direct connection。这是因为Thread对象实在发射该信号的线程中生存。在aSlot()槽里，我们可能接着去访问线程里的一些成员变量，然而这些成员变量可能同时正在被run()方法访问：这可是导致完美灾难的秘诀。可能你经常在论坛、博客里面找到的解决方案是在线程的构造函数里加一个moveToThread(this)方法。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+&#160;
+<span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+&#160;
+Thread<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&#160;
+moveToThread<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// 错误</span>
+&#160;
+<span class="br0">&#125;</span>
+&#160;
+<span class="sy0">/</span><span class="st0">''</span><span class="st0">' … */
+&#160;
+};</span></pre></div></div>
+<p>（译注：moveToThread(this)）
+</p><p>这样做确实可以工作(因为现在线程对象的依附性已经发生了改变），但这是一个非常不好的设计。这里的错误在于我们正在误解线程对象的目的（QThread子类）：QThread对象们不是线程；他们是围绕在新产生的线程周围用于控制管理新线程的对象，因此，它们应该用在另一个线程（往往在它们所驻足的那一个线程）
+</p><p>一个比较好而且能够得到相同结果的做法是将"工作"部分从"控制"部分剥离出来，也就是说，写一个QObject子类并使用QObject::moveToThread()方法来改变它的线程依附性：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">view plaincopy to clipboardprint?
+<span class="kw2">class</span> Worker <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+<span class="kw2">Q_OBJECT</span>
+<span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+<span class="kw4">void</span> doWork<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="sy0">/</span><span class="st0">''</span><span class="st0">' … */
+}
+};
+/'</span><span class="st0">''</span> … <span class="sy0">*/</span>
+<span class="kw5">QThread</span> thread<span class="sy0">;</span>
+Worker worker<span class="sy0">;</span>
+<span class="kw2">connect</span><span class="br0">&#40;</span>obj<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>workReady<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>worker<span class="sy0">,</span> SLOT <span class="br0">&#40;</span>doWork<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+worker.<span class="me1">moveToThread</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>thread<span class="br0">&#41;</span><span class="sy0">;</span>
+thread.<span class="me1">start</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<h1><span class="mw-headline" id=".E6.88.91.E5.BA.94.E8.AF.A5.E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E4.BD.BF.E7.94.A8.E7.BA.BF.E7.A8.8B">我应该什么时候使用线程</span></h1>
+<h2><span class="mw-headline" id=".E5.BD.93.E4.BD.A0.E4.B8.8D.E5.BE.97.E4.B8.8D.E4.BD.BF.E7.94.A8.E4.B8.80.E4.B8.AA.E9.98.BB.E5.A1.9E.E5.BC.8FAPI.E6.97.B6">当你不得不使用一个阻塞式API时</span></h2>
+<p>当你需要（通过信号和槽，或者是事件、回调函数）使用一个没有提供非阻塞式API的库或者代码时，为了阻止冻结事件循环的唯一可行的解决方案是开启一个进程或者线程。由于创建一个新的进程的开销显然要比开启一个线程的开销大，后者往往是最常见的一种选择。
+</p><p>这种API的一个很好的例子是地址解析 方法（只是想说我们并不准备谈论蹩脚的第三方API, 地址解析方法它是每个C库都要包含的）,它负责将主机名转化为地址。这个过程涉及到启动一个查询（通常是远程的）系统：域名系统或者叫DNS。尽管通常情况下响应会在瞬间发生，但远程服务器可能会失败：一些数据包可能会丢失，网络连接可能断开等等。简而言之，我们也许要等待几十秒才能得到查询的响应。
+</p><p>UNIX系统可见的标准API只有阻塞式的（不仅过时的gethostbyname(3)是阻塞式的,而且更新的getservbyname(3) 以及getaddrinfo(3)也是阻塞式的）。QHostInfo [doc.qt.nokia.com], 它是一个负责处理域名查找的Qt类，该类使用了QThreadPool 从而使得查询可以在后台进行）（参见here [qt.gitorious.com]）；如果屏蔽了多线程支持，它将切换回到阻塞式API).
+</p><p>另一个简单的例子是图像装载和放大。QImageReader [doc.qt.nokia.com] 和QImage [doc.qt.nokia.com]仅仅提供了阻塞式方法来从一个设备读取图像，或者放大图像到一个不同的分辨率。如果你正在处理一个非常大的图像，这些处理会持续数（十)秒。
+</p>
+<h2><span class="mw-headline" id=".E5.BD.93.E4.BD.A0.E6.83.B3.E6.89.A9.E5.B1.95.E8.87.B3.E5.A4.9A.E6.A0.B8">当你想扩展至多核</span></h2>
+<p>多线程允许你的程序利用多核系统的优势。因为每个线程都是被操作系统独立调度的，因此如果你的应用运行在这样多核机器上，调度器很可能同时在不同的处理器上运行每个线程。
+</p><p>例如，考虑到一个通过图像集生成缩略图的应用。一个_n_ threads的线程农场（也就是说，一个有着固定数量线程的线程池），在系统中可见的CPU运行一个线程（可参见QThread::idealThreadCount()），可以将缩小图像至缩略图的工作交付给所有的进程，从而有效地提高了并行加速比，它与处理器的数量成线性关系。（简单的讲，我们认为CPU正成为一个瓶颈)。
+</p>
+<h2><span class="mw-headline" id=".E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E4.BD.A0.E5.8F.AF.E8.83.BD.E4.B8.8D.E6.83.B3.E5.88.AB.E4.BA.BA.E9.98.BB.E5.A1.9E">什么时候你可能不想别人阻塞</span></h2>
+<p>这是一个很高级的话题，你可以忽略该小节。一个比较好的例子来自于Webkit里使用的QNetworkAccessManager 。Webkit是一个时髦的浏览器引擎，也就是说，它是一组用于处理网页的布局和显示的类集合。使用Webkit的Qt widget是QWebView。
+</p><p>QNetworkAccessManager 是一个用于处理HTTP任何请求和响应的Qt类，我们可以把它当作一个web浏览器的网络引擎；所有的网络访问被同一个QNetworkAccessManager 以及它的QNetworkReplys 驻足的线程所处理。
+</p><p>尽管在网络处理时不使用线程是一个很好的主意，它也有一个很大的缺点：如果你没有从socket中尽快地读取数据，内核的缓存将会被填满，数据包可能开始丢失而且传输速率也将迅速下降。
+</p><p>Sokcet活动（即，从一个socket读取一些数据的可见性）由Qt的事件循环管理。阻塞事件循环因此会导致传输性能的损失，因为没有人会被通知将有数据可以读取（从而没人会去读数据）。
+</p><p>但究竟什么会阻塞事件循环呢？令人沮丧地回答: WebKit它自己！只要有数据被接收到，WebKit便用其来布局网页。不幸地是，布局处理过程相当复杂，而且开销巨大。因此，它阻塞事件循环的一小段时间足以影响到正在进行地传输（宽带连接这里起到了作用，在短短几秒内就可填满内核缓存）。
+</p><p>总结一下上述所发生的事情：
+</p><p>WebKit提出了一个请求；
+一些响应数据开始到达；
+WebKit开始使用接收到的数据布局网页，从而阻塞了事件循环；
+数据被OS接受，但没有一个正在运行的事件循环为之派发，所以并没有被QNetworkAccessManager sockets所读取；
+内核缓存将被填满，传输将变慢。
+网页的总体装载时间因其自发引起的传输速率降低而变得越来越坏。
+</p><p>诺基亚的工程师正在试验一个支持多线程的QNetworkAccessManager来解决这个问题。请注意因为QNetworkAccessManagers 和QNetworkReplys 是QObjects，他们不是线程安全的，因此你不能简单地将他们移到另一个线程中并且继续在你的线程中使用他们，原因在于，由于事件将被随后线程的事件循环所派发，他们可能同时被两个线程访问：你自己的线程以及已经它们驻足的线程。
+</p>
+<h1><span class="mw-headline" id=".E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E4.B8.8D.E9.9C.80.E8.A6.81.E4.BD.BF.E7.94.A8.E7.BA.BF.E7.A8.8B">什么时候不需要使用线程</span></h1>
+<p>bq. If you think you need threads then your processes are too fat. — Bradley T. Hughes
+</p>
+<h2><span class="mw-headline" id=".E8.AE.A1.E6.97.B6.E5.99.A8">计时器</span></h2>
+<p>这也许是线程滥用最坏的一种形式。如果我们不得不重复调用一个方法（比如每秒），许多人会这样做：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">view plaincopy to clipboardprint?
+<span class="co1">// 非常之错误</span>
+<span class="kw1">while</span> <span class="br0">&#40;</span>condition<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+doWork<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+sleep<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// this is sleep(3) from the C library</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><br />
+然后他们发现这会阻塞事件循环，因此决定引入线程：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">view plaincopy to clipboardprint?
+<span class="co1">// 错误</span>
+<span class="kw2">class</span> Thread <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QThread</span> <span class="br0">&#123;</span>
+<span class="kw2">protected</span><span class="sy0">:</span>
+<span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="kw1">while</span> <span class="br0">&#40;</span>condition<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="co1">// notice that &quot;condition&quot; may also need volatiness and mutex protection</span>
+<span class="co1">// if we modify it from other threads (!)</span>
+doWork<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+sleep<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// this is QThread::sleep()</span>
+<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>一个更好也更简单的获得相同效果的方法是使用timers,即一个QTimer[doc.qt.nokia.com]对象，并设置一秒的超时时间，并让doWork方法成为它的槽：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">view plaincopy to clipboardprint?
+<span class="kw2">class</span> Worker <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+<span class="kw2">Q_OBJECT</span>
+<span class="kw2">public</span><span class="sy0">:</span>
+Worker<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="kw2">connect</span><span class="br0">&#40;</span><span class="sy0">&amp;</span>timer<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>timeout<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span> <span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>doWork<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+timer.<span class="me1">start</span><span class="br0">&#40;</span><span class="nu0">1000</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">private</span> <span class="kw2">slots</span><span class="sy0">:</span>
+<span class="kw4">void</span> doWork<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="sy0">/</span><span class="st0">''</span><span class="st0">' … */
+}
+private:
+QTimer timer;
+};</span></pre></div></div>
+<p><br />
+所有我们需要做的就是运行一个事件循环，然后doWork()方法将会被每隔秒钟调用一次。
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id=".E7.BD.91.E7.BB.9C.2F.E7.8A.B6.E6.80.81.E6.9C.BA">网络/状态机</span></h2>
+<p>一个处理网络操作非常之常见的设计模式如下：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">view plaincopy to clipboardprint?
+socket<span class="sy0">-&gt;</span><span class="kw2">connect</span><span class="br0">&#40;</span>host<span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">waitForConnected</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+data <span class="sy0">=</span> getData<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">write</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">waitForBytesWritten</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">waitForReadyRead</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">read</span><span class="br0">&#40;</span>response<span class="br0">&#41;</span><span class="sy0">;</span>
+reply <span class="sy0">=</span> process<span class="br0">&#40;</span>response<span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">write</span><span class="br0">&#40;</span>reply<span class="br0">&#41;</span><span class="sy0">;</span>
+socket<span class="sy0">-&gt;</span><span class="me3">waitForBytesWritten</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="sy0">/</span><span class="st0">''</span><span class="st0">' … and so on … */</span></pre></div></div>
+<p><br />
+不用多说，各种各样的waitFor<b>()函数阻塞了调用者使其无法返回到事件循环，UI被冻结等等。请注意上面的这段代码并没有考虑到错误处理，否则它会更加地笨重。这个设计中非常错误的地方是我们正在忘却网络编程是异步的设计，如果我们构建一个同步的处理方法，则是自己给自己找麻烦。为了解决这个问题，许多人简单得将这些代码移到另一个线程中。</b>
+</p><p>另一个更加抽象的例子：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">view plaincopy to clipboardprint?
+result <span class="sy0">=</span> process_one_thing<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw1">if</span> <span class="br0">&#40;</span>result<span class="sy0">-&gt;</span><span class="me3">something</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+process_this<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="kw1">else</span>
+process_that<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+wait_for_user_input<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+input <span class="sy0">=</span> read_user_input<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+process_user_input<span class="br0">&#40;</span>input<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="coMULTI">/* … */</span></pre></div></div>
+<p>它多少反映了网络编程相同的陷阱。
+</p><p>让我们回过头来从更高的角度来想一下我们这里正在构建的代码：我们想创造一个状态机，用以反映某类的输入并相对应的作某些动作。比如，上面的这段网络代码，我们可能想做如下这些事情：
+</p><p>空闲→ 正在连接 (当调用connectToHost());
+正在连接→ 已经连接(当connected() 信号被发射);
+已经连接→ 发送录入数据 (当我们发送录入的数据给服务器);
+发送录入数据 → 录入 (服务器响应一个ACK)
+发送录入数据→ 录入错误(服务器响应一个NACK)
+以此类推。
+</p><p>现在，有很多种方式来构建状态机（Qt甚至提供了QStateMachine[doc.qt.nokia.com]类），最简单的方式是用一个枚举值（及，一个整数）来记忆当前的状态。我们可以这样重写以下上面的代码：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Object <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+<span class="kw2">Q_OBJECT</span>
+<span class="kw2">enum</span> State <span class="br0">&#123;</span>
+State1<span class="sy0">,</span> State2<span class="sy0">,</span> State3 <span class="sy0">/</span><span class="st0">''</span><span class="st0">' and so on */
+};
+State state;
+public:
+Object()&#160;: state(State1)
+{
+connect(source, SIGNAL (ready()), this, SLOT (doWork()));
+}
+private slots:
+void doWork() {
+switch (state) {
+case State1:
+/'</span><span class="st0">''</span> … <span class="sy0">*/</span>
+state <span class="sy0">=</span> State2<span class="sy0">;</span>
+break<span class="sy0">;</span>
+<span class="kw1">case</span> State2<span class="sy0">:</span>
+<span class="sy0">/</span><span class="st0">''</span><span class="st0">' … */
+state = State3;
+break;
+/'</span><span class="st0">''</span> etc. <span class="sy0">*/</span>
+<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p><br />
+那么"souce"对象和它的信号"ready()" 究竟是什么? 我们想让它们是什么就是什么：比如说，在这个例子中，我们可能想把我们的槽连接到socket的QAbstractSocket::connected() 以及QIODevice::readyRead() 信号中，当然，我们也可以简单地在我们的用例中加更多的槽（比如一个槽用于处理错误情况，它将会被QAbstractSocket::error() 信号所通知）。这是一个真正的异步的，信号驱动的设计！
+</p>
+<h2><span class="mw-headline" id=".E5.88.86.E8.A7.A3.E4.BB.BB.E5.8A.A1.E6.8B.86.E6.88.90.E4.B8.8D.E5.90.8C.E7.9A.84.E5.9D.97">分解任务拆成不同的块</span></h2>
+<p>假如我们有一个开销很大的计算，它不能够轻易的移到另一个线程中（或者说它根本不能被移动，举个例子，它必须运行在GUI线程中）。如果我们能将计算拆分成小的块，我们就能返回到事件循环，让它来派发事件，并让它激活处理下一个块相应的函数。如果我们还记得queued connections是怎么实现的，那么会觉得这是很容易能够做到的：一个事件派发到接收者所驻足的线程的事件循环；当事件被传递，相应的槽随之被激活。
+</p><p>我们可以使用特化QMetaObject::invokeMethod() 的激活类型为Qt::QueuedConnection 来得到相同的结果；这需要函数是可激活的。因此它需要一个槽或者用Q_INVOKABLE宏来标识。如果我们同时想给函数中传入参数，他们需要使用Qt元对象类型系统里的qRegisterMetaType()进行注册。请看下面这段代码：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw2">class</span> Worker <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span>
+<span class="br0">&#123;</span>
+<span class="kw2">Q_OBJECT</span>
+<span class="kw2">public</span> <span class="kw2">slots</span><span class="sy0">:</span>
+<span class="kw4">void</span> startProcessing<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+processItem<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">void</span> processItem<span class="br0">&#40;</span><span class="kw4">int</span> index<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+<span class="sy0">/</span><span class="st0">''</span><span class="st0">' process items[index] … */
+if (index &lt; numberOfItems)
+QMetaObject::invokeMethod(this,
+&quot;processItem&quot;,
+Qt::QueuedConnection,
+Q_ARG(int, index'</span><span class="st0">' 1));
+}
+};</span></pre></div></div>
+<p>因为并没有引入多线程，所以暂停/进行/取消这样的计算并收集回结果变得简单。（结束）
+</p><p><b>中文译者的博客</b>
+<a rel="nofollow" class="external free" href="http://blog.csdn.net/changsheng230">http://blog.csdn.net/changsheng230</a>
+</p><p><b>该译文在博客的连接</b>
+<a rel="nofollow" class="external free" href="http://blog.csdn.net/changsheng230/archive/2010/12/27/6101232.aspx">http://blog.csdn.net/changsheng230/archive/2010/12/27/6101232.aspx</a>
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.431 seconds
+Real time usage: 0.436 seconds
+Preprocessor visited node count: 309/1000000
+Preprocessor generated node count: 616/1000000
+Post‐expand include size: 1312/2097152 bytes
+Template argument size: 423/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:2054-0!*!0!!en!2!* and timestamp 20151105101733 and revision id 19366
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexc67d-2.html?title=Threads_Events_QObjects/zh&amp;oldid=19366">http://wiki.qt.io/index.php?title=Threads_Events_QObjects/zh&amp;oldid=19366</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li><li><a href="Category_Developing_with_Qt.html" title="Category:Developing with Qt">Developing with Qt</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=5d7d95d830141920&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Threads_Events_QObjects/zh.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Threads_Events_QObjects/zh.html?title=Talk:Threads_Events_QObjects/zh&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Threads_Events_QObjects/zh.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexf125.html?title=Threads_Events_QObjects/zh&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index08ef.html?title=Threads_Events_QObjects/zh&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Threads_Events_QObjects/zh.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Threads_Events_QObjects/zh.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexd1d7-2.html?title=Threads_Events_QObjects/zh&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexc67d-2.html?title=Threads_Events_QObjects/zh&amp;oldid=19366" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index1c0b.html?title=Threads_Events_QObjects/zh&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 23 August 2015, at 13:26.</li>
+											<li id="footer-info-viewcount">This page has been accessed 2,148 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":166});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Threads_Events_QObjects_Chinese by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:59:26 GMT -->
+</html>

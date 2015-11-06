@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Create_Qt_on_Raspberry_Pi&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:21:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Create Qt on Raspberry Pi - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,follow" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load6077.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="load8b5e.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;printable=1&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load041f.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Create_Qt_on_Raspberry_Pi","wgTitle":"Create Qt on Raspberry Pi","wgCurRevisionId":18429,"wgRevisionId":18429,"wgArticleId":661,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["QtonPi"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Create_Qt_on_Raspberry_Pi","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Create_Qt_on_Raspberry_Pi skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Create Qt on Raspberry Pi</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<span style="color:#ccc;">Ko</span>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#QtonPi_App_SDK"><span class="tocnumber">1</span> <span class="toctext">QtonPi App SDK</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Download"><span class="tocnumber">2</span> <span class="toctext">Download</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Install"><span class="tocnumber">3</span> <span class="toctext">Install</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Qt_Creator"><span class="tocnumber">3.1</span> <span class="toctext">Qt Creator</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Toolchain_and_Sysroot"><span class="tocnumber">3.2</span> <span class="toctext">Toolchain and Sysroot</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Qt_5"><span class="tocnumber">3.3</span> <span class="toctext">Qt 5</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#SD_Card_Image"><span class="tocnumber">3.4</span> <span class="toctext">SD Card Image</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Configuring_Qt_Creator.2C_Toolchain.2C_Qt_5_and_Raspberry_Pi_board"><span class="tocnumber">3.5</span> <span class="toctext">Configuring Qt Creator, Toolchain, Qt 5 and Raspberry Pi board</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Hello_QtonPi.21"><span class="tocnumber">4</span> <span class="toctext">Hello QtonPi!</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Uninstall"><span class="tocnumber">5</span> <span class="toctext">Uninstall</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Qt_Creator_2"><span class="tocnumber">5.1</span> <span class="toctext">Qt Creator</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Toolchain_and_Sysroot_2"><span class="tocnumber">5.2</span> <span class="toctext">Toolchain and Sysroot</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Qt_5_2"><span class="tocnumber">5.3</span> <span class="toctext">Qt 5</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="QtonPi_App_SDK">QtonPi App SDK</span></h2>
+<p>QtonPi Release-0.x App SDK consists of,
+</p>
+<ul>
+<li> Qt Creator
+</li>
+<li> Sysroot + Toolchain
+</li>
+</ul>
+<p>As indicated in the <a href="Contribute.html" title="Contribute"> roadmap</a>, we hope to have a more integrated App SDK from Release-1.x onwards.
+</p>
+<h2><span class="mw-headline" id="Download">Download</span></h2>
+<p>QtonPi releases are distributed via BitTorrent. QtonPi download page is <a href="Download.html" title="Download"> here</a>.
+</p>
+Upon downloading a QtonPi release, you should see a tarball <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qtonpi<span class="sy0">-</span>X.<span class="me1">Y</span>.<span class="me1">tar</span>.<span class="me1">bz2</span></pre></div></div>, where <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">&quot;X&quot;</span></pre></div></div> is the major release number and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="st0">&quot;Y&quot;</span></pre></div></div> is the minor release.
+<p>QtonPi release directory is organized as follows,
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qtonpi<span class="sy0">-</span>X.<span class="me1">Y</span><span class="sy0">/</span>
+├── app<span class="sy0">-</span>sdk<span class="sy0">/</span>
+├── platform<span class="sy0">-</span>sdk<span class="sy0">/</span>
+│ ├── host<span class="sy0">-</span>rpms<span class="sy0">/</span>
+│ ├── image<span class="sy0">-</span>creator<span class="sy0">-</span>binaries<span class="sy0">/</span>
+│ └── mt<span class="sy0">-</span>cross<span class="sy0">-</span>tools<span class="sy0">/</span>
+└── sdcard<span class="sy0">-</span>img<span class="sy0">/</span></pre></div></div>
+<p>Following is a brief description of the directory structure,
+</p>
+<table>
+<tr>
+<td><div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">app<span class="sy0">-</span>sdk<span class="sy0">/</span></pre></div></div>
+</td>
+<td>Application SDK
+</td></tr>
+<tr>
+<td><div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">platform<span class="sy0">-</span>sdk<span class="sy0">/</span></pre></div></div>
+</td>
+<td><i>Platform SDK - In case you would like to roll your own SD Card Image and/or Sysroot. See [[Contribute</i>
+</td></tr>
+<tr>
+<td><div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sdcard<span class="sy0">-</span>img<span class="sy0">/</span></pre></div></div>
+</td>
+<td><i>Default SD Card Image - Please use this for reporting bugs!</i>
+</td></tr></table>
+<h2><span class="mw-headline" id="Install">Install</span></h2>
+<h3><span class="mw-headline" id="Qt_Creator">Qt Creator</span></h3>
+<p>First step would be to install Qt Creator. You will find Qt Creator installer here, <b><span class="Sysroot_ and _Toolchain from instructions the follow and Creator Qt current your use Just installed. SDK Qt updated an have you if necessary not is This Note:"></span></b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qtonpi<span class="sy0">-</span>X.<span class="me1">Y</span><span class="sy0">/</span>
+├── app<span class="sy0">-</span>sdk<span class="sy0">/</span>
+│ └── qt<span class="sy0">-</span>creator<span class="sy0">-</span>linux<span class="sy0">-</span>x86<span class="sy0">-</span>opensource<span class="sy0">-</span><span class="nu0">2</span>.<span class="me1">x</span>.<span class="me1">y</span>.<span class="me1">bin</span></pre></div></div>
+To install, just run the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qt<span class="sy0">-</span>creator<span class="sy0">-</span>linux<span class="sy0">-</span>x86<span class="sy0">-</span>opensource<span class="sy0">-</span><span class="nu0">2</span>.<span class="me1">x</span>.<span class="me1">y</span>.<span class="me1">bin</span></pre></div></div> file
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$ pwd
+<span class="sy0">/</span>home<span class="sy0">/</span>rajiv<span class="sy0">/</span>qtonpi<span class="sy0">-</span><span class="nu16">0.2</span><span class="sy0">/</span>app<span class="sy0">-</span>sdk
+$ .<span class="sy0">/</span>qt<span class="sy0">-</span>creator<span class="sy0">-</span>linux<span class="sy0">-</span>x86<span class="sy0">-</span>opensource<span class="sy0">-</span>2.4.1.<span class="me1">bin</span></pre></div></div>
+<p>This should install, launch Qt Creator. In addition, it'll also create an icon on your Desktop.
+</p>
+<h3><span class="mw-headline" id="Toolchain_and_Sysroot">Toolchain and Sysroot</span></h3>
+<p>Next step would be to install the toolchain and default sysroot. You can find it here,
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qtonpi<span class="sy0">-</span>X.<span class="me1">Y</span><span class="sy0">/</span>
+├── app<span class="sy0">-</span>sdk<span class="sy0">/</span>
+│ └── toolchain<span class="sy0">-</span>and<span class="sy0">-</span>sysroot<span class="sy0">-</span>armv5tel.<span class="me1">tar</span>.<span class="me1">bz2</span></pre></div></div>
+You will need to extract this as <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">root</pre></div></div> user, into the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">root<span class="br0">&#40;</span><span class="st0">&quot;/&quot;</span><span class="br0">&#41;</span></pre></div></div> directory of your filesystem.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$ cd <span class="sy0">/</span>
+$ pwd
+<span class="sy0">/</span>
+$ sudo tar jxvf <span class="sy0">/</span>home<span class="sy0">/</span>rajiv<span class="sy0">/</span>qtonpi<span class="sy0">-</span><span class="nu16">0.2</span><span class="sy0">/</span>app<span class="sy0">-</span>sdk<span class="sy0">/</span>toolchain<span class="sy0">-</span>and<span class="sy0">-</span>sysroot<span class="sy0">-</span>armv5tel.<span class="me1">tar</span>.<span class="me1">bz2</span></pre></div></div>
+<h3><span class="mw-headline" id="Qt_5">Qt 5</span></h3>
+<p>QtonPi ships with a known working (necessarily not stable!) version of Qt 5. This version works both on the sysroot and the target and you can find it here, <b><span class="release 1.x the in resolved be should This development. x86 for installed Qt5 have already you if instance For install. Qt5 another with nicely play not does This Note:"></span></b>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qtonpi<span class="sy0">-</span><span class="nu16">0.2</span><span class="sy0">/</span>
+├── app<span class="sy0">-</span>sdk<span class="sy0">/</span>
+│ ├── opt<span class="sy0">-</span>qt5<span class="sy0">-</span>current.<span class="me1">tar</span>.<span class="me1">bz2</span></pre></div></div>
+You will need to extract this as <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">root</pre></div></div> user, into the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">root<span class="br0">&#40;</span><span class="st0">&quot;/&quot;</span><span class="br0">&#41;</span></pre></div></div> directory of your filesystem.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$ cd <span class="sy0">/</span>
+$ pwd
+<span class="sy0">/</span>
+$ sudo tar jxvf <span class="sy0">/</span>home<span class="sy0">/</span>rajiv<span class="sy0">/</span>qtonpi<span class="sy0">-</span><span class="nu16">0.2</span><span class="sy0">/</span>app<span class="sy0">-</span>sdk<span class="sy0">/</span>opt<span class="sy0">-</span>qt5<span class="sy0">-</span>current.<span class="me1">tar</span>.<span class="me1">bz2</span></pre></div></div>
+<h3><span class="mw-headline" id="SD_Card_Image">SD Card Image</span></h3>
+<p>In addition, there is also a default 2GB SD Card Image, with Qt 5 on it. You'll find it here.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qtonpi<span class="sy0">-</span>X.<span class="me1">Y</span><span class="sy0">/</span>
+└── sdcard<span class="sy0">-</span>img<span class="sy0">/</span>
+ └── qtonpi<span class="sy0">-</span>sdcard<span class="sy0">-</span>X.<span class="me1">Y</span>.<span class="me1">img</span>.<span class="me1">bz2</span></pre></div></div>
+To setup your SD card, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cat<span class="sy0">/</span>dd</pre></div></div> the contents of this file onto your SD Card. Assuming your SD Card device is <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">/</span>dev<span class="sy0">/</span>sdb</pre></div></div>, one way to do this is as follows. Note you'll need to be logged in as <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">root</pre></div></div> in order to be able to write to <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">/</span>dev<span class="sy0">/</span>sdb</pre></div></div> device.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># pwd</span>
+<span class="sy0">/</span>home<span class="sy0">/</span>rajiv<span class="sy0">/</span>qtonpi<span class="sy0">-</span><span class="nu16">0.2</span><span class="sy0">/</span>sdcard<span class="sy0">-</span>img
+<span class="co2"># bzcat qtonpi-sdcard-0.2.img.bz2 &gt; /dev/sdb; sync</span></pre></div></div>
+You're now ready to boot your Raspberry Pi Device! There are two accounts - <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">root</pre></div></div> and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qtonpi</pre></div></div>. Password for the accounts are <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">rootme</pre></div></div> and <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qtonpi</pre></div></div> respectively.
+Upon booting and logging into your Raspberry Pi device as <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">root</pre></div></div>, you'll need to enable networking (which is disabled by default!). If you've DHCP setup, find out the ethernet interface of your Raspberry Pi device by doing <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ifconfig <span class="sy0">-</span>a</pre></div></div> and run <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">dhclient eth0</pre></div></div> on that interface.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">-</span>bash<span class="sy0">-</span><span class="nu16">4.1</span><span class="co2"># ifconfig -a</span>
+eth0 Link encap<span class="sy0">:</span>Ethernet HWaddr B8<span class="sy0">:</span><span class="nu0">27</span><span class="sy0">:</span>EB<span class="sy0">:</span>E2<span class="sy0">:</span><span class="nu0">26</span><span class="sy0">:</span>B5
+&#160;
+<span class="br0">&#91;</span>…<span class="br0">&#93;</span>
+&#160;
+<span class="sy0">-</span>bash<span class="sy0">-</span><span class="nu16">4.1</span><span class="co2"># dhclient eth0</span>
+&#160;
+<span class="br0">&#91;</span>…<span class="br0">&#93;</span>
+&#160;
+<span class="sy0">-</span>bash<span class="sy0">-</span><span class="nu16">4.1</span><span class="co2"># ifconfig -a</span>
+eth0 Link encap<span class="sy0">:</span>Ethernet HWaddr B8<span class="sy0">:</span><span class="nu0">27</span><span class="sy0">:</span>EB<span class="sy0">:</span><span class="nu0">44</span><span class="sy0">:</span><span class="nu0">23</span><span class="sy0">:</span><span class="nu0">50</span>
+ inet addr<span class="sy0">:</span>10.48.194.196 Bcast<span class="sy0">:</span>10.48.194.255 Mask<span class="sy0">:</span>255.255.255.128
+ UP BROADCAST RUNNING MULTICAST MTU<span class="sy0">:</span><span class="nu0">1488</span> Metric<span class="sy0">:</span><span class="nu0">1</span>
+ RX packets<span class="sy0">:</span><span class="nu0">549</span> errors<span class="sy0">:</span><span class="nu0">0</span> dropped<span class="sy0">:</span><span class="nu0">0</span> overruns<span class="sy0">:</span><span class="nu0">0</span> frame<span class="sy0">:</span><span class="nu0">0</span>
+ TX packets<span class="sy0">:</span><span class="nu0">46</span> errors<span class="sy0">:</span><span class="nu0">0</span> dropped<span class="sy0">:</span><span class="nu0">0</span> overruns<span class="sy0">:</span><span class="nu0">0</span> carrier<span class="sy0">:</span><span class="nu0">0</span>
+ collisions<span class="sy0">:</span><span class="nu0">0</span> txqueuelen<span class="sy0">:</span><span class="nu0">1000</span>
+ RX bytes<span class="sy0">:</span><span class="nu0">90538</span> <span class="br0">&#40;</span><span class="nu16">88.4</span> KiB<span class="br0">&#41;</span> TX bytes<span class="sy0">:</span><span class="nu0">8025</span> <span class="br0">&#40;</span><span class="nu16">7.8</span> KiB<span class="br0">&#41;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">dhclient</pre></div></div> usually does a lousy job at giving useful information. So, once you are back on the command prompt, do an <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ifconfig <span class="sy0">-</span>a</pre></div></div> to see if an IP Address got assigned. In the above example, eth0 has an IP address of 10.48.194.196.
+Then update the date/time on Raspberry Pi device. This can be done easily using <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">ntpdate</pre></div></div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">-</span>bash<span class="sy0">-</span><span class="nu16">4.1</span><span class="co2"># ntpdate -u 0.us.pool.ntp.org</span></pre></div></div>
+<h3><span class="mw-headline" id="Configuring_Qt_Creator.2C_Toolchain.2C_Qt_5_and_Raspberry_Pi_board">Configuring Qt Creator, Toolchain, Qt 5 and Raspberry Pi board</span></h3>
+<h4><span class="mw-headline" id="Connecting_Qt_Creator_to_Raspberry_Pi_board">Connecting Qt Creator to Raspberry Pi board</span></h4>
+<p>By this time you should be able to ssh from your host machine (running Qt Creator) into your Raspberry Pi Board. If you are not able to do so, please check your network connectivity before proceeding any further!
+</p>
+<ol>
+<li> Launch Qt Creator and select <b>Tools -&gt; Options-&gt; Linux Devices</b>
+</li>
+<li> Click <b>Add</b> and select <b>Generic Linux Device</b>. Then Click on <b>Start Wizard</b>
+</li>
+<li> Enter the following in the dialog box that appears
+<ul>
+<li> The name to identify this configuration: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Raspberry Pi</pre></div></div>
+</li>
+<li> The device's hostname or IP address&#160;: <i>IP Address of your Raspberry Pi device</i>
+</li>
+<li> The user name to log into the device: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">root</pre></div></div>
+</li>
+<li> The authentication type: <i>Select Password</i>
+</li>
+<li> The user's password: <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">rootme</pre></div></div>
+</li>
+</ul>
+</li>
+<li> Click <b>Next</b> followed by <b>Finish</b>
+</li>
+<li> The Device Test should finish successfully. If not, go back and check your network connectivity and other settings.
+</li>
+</ol>
+<h4><span class="mw-headline" id="Setting_up_your_toolchain">Setting up your toolchain</span></h4>
+<ol>
+<li> In Qt Creator, select <b>Tools -&gt; Options-&gt; Build &amp; Run</b> and <b>Tool Chains</b> tab
+</li>
+<li> Select <b>Manual</b> and click on <b>Add</b>
+</li>
+<li> In the dropdown menu, select <b>GCC</b>
+</li>
+<li> Then select <b>GCC</b>, as it appears below <b>Manual</b> and specify the <i>Compiler path:</i> as <i>/opt/qtonpi/bin/armv5tel-qtonpi-linux-gnueabi-gcc</i> and <i>Debugger:</i> as <i>/opt/qtonpi/bin/armv5tel-qtonpi-linux-gnueabi-gdb</i>
+</li>
+<li> Click on <b>Apply</b> and select <b>OK</b>
+</li>
+</ol>
+<h4><span class="mw-headline" id="Selecting_Qt_5_for_Raspberry_Pi">Selecting Qt 5 for Raspberry Pi</span></h4>
+<ol>
+<li> In Qt Creator, select <b>Tools -&gt; Options-&gt; Build &amp; Run</b> and <b>Qt Versions</b> tab
+</li>
+<li> Select <b>Manual</b> and click on <b>Add…</b>
+</li>
+<li> Then select <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qmake</pre></div></div> file located in <i>/opt/qt5/bin/qmake</i> and click on <b>Open</b>
+</li>
+<li> Click on <b>Apply</b> and select <b>OK</b>
+</li>
+</ol>
+<p>Qt creator might indicate "Qt version 5.0.0 for Desktop", which can be safely ignored for now.
+</p>
+<h2><span class="mw-headline" id="Hello_QtonPi.21">Hello QtonPi!</span></h2>
+QtonPi App SDK comes with <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">hello<span class="sy0">-</span>qtonpi</pre></div></div> App to get you started with Qt 5, which is located here,
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">qtonpi<span class="sy0">-</span>X.<span class="me1">Y</span><span class="sy0">/</span>
+├── app<span class="sy0">-</span>sdk<span class="sy0">/</span>
+│ ├── hello<span class="sy0">-</span>qtonpi.<span class="me1">tar</span>.<span class="me1">bz2</span></pre></div></div>
+<p>Feel free to extract the tarball anywhere in your home directory.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$ pwd
+<span class="sy0">/</span>home<span class="sy0">/</span>rajiv
+$ tar jxvf qtonpi<span class="sy0">-</span><span class="nu16">0.2</span><span class="sy0">/</span>app<span class="sy0">-</span>sdk<span class="sy0">/</span>hello<span class="sy0">-</span>qtonpi.<span class="me1">tar</span>.<span class="me1">bz2</span>
+hello<span class="sy0">-</span>qtonpi<span class="sy0">/</span>
+hello<span class="sy0">-</span>qtonpi<span class="sy0">/</span>main.<span class="me1">cpp</span>
+hello<span class="sy0">-</span>qtonpi<span class="sy0">/</span>hello<span class="sy0">-</span>qtonpi.<span class="me1">pro</span>
+<span class="br0">&#91;</span>…<span class="br0">&#93;</span></pre></div></div>
+<p>Next launch Qt Creator (if you don't already have it running!), and do the following.
+</p>
+<ol>
+<li> Select <b>File -&gt; Open File or Project…</b>, navigate to <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">hello<span class="sy0">-</span>qtonpi<span class="sy0">/</span>hello<span class="sy0">-</span>qtonpi.<span class="me1">pro</span></pre></div></div> and click <b>Open</b>
+</li>
+<li> When you do this first time, <b>Project Setup</b> Dialog appears for the Target Setup, with sane defaults. Select <b>Finish</b>
+</li>
+<li> In the side-bar, select <b>Projects</b> mode or press Control-5, and go into <b>Run Settings</b>
+</li>
+<li> In the <b>Deployment</b> section, click on <b>Add</b> and select <b>Deploy to Remote Linux Host</b>
+</li>
+<li> In <b>Device Configuration</b> you should see <i>Raspberry Pi (Default)</i>
+</li>
+<li> In the <b>Run</b> section, click on <b>Add</b> and select <b>hello-qtonpi (on Remote Generic Linux Host)</b>
+</li>
+<li> At this point, you should be all set to roll. In the side-bar, select <b>Edit</b> mode or press Control-2
+</li>
+<li> To build your project, select <b>Build -&gt; Build All</b>. This should build the binary using QtonPi toolchain.
+</li>
+<li> Next step would be deploy your binaries onto your Raspberry Pi Device. To do this, select <b>Build -&gt; Deploy All</b>. Your Raspberry Pi device should now have <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">hello<span class="sy0">-</span>qtonpi</pre></div></div> executable in <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">/</span>root<span class="sy0">/</span>hello<span class="sy0">-</span>qtonpi</pre></div></div> directory.
+</li>
+<li> To run your newly minted App, select <b>Build -&gt; Run*, and at this point you should see your Qt 5 Qt Quick App running on your display</b>
+</li>
+</ol>
+<p>Now that you've a working QtonPi SDK, next step would be to learn more about Qt Quick. Following are some resources to help you get started.
+</p>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://qt.nokia.com/learning/online/training/materials/qt-essentials-qt-quick-edition">Qt Essentials- Qt Quick for C++ Developers</a>
+</li>
+</ul>
+<p><b> <a rel="nofollow" class="external text" href="http://qt.nokia.com/learning/online/training/materials/qt-quick-for-designers">Qt Quick for Designers</a> </b>
+</p>
+<h2><span class="mw-headline" id="Uninstall">Uninstall</span></h2>
+<p>Release 0.x of QtonPi SDK consists of three parts, which you'll need to uninstall separately.
+</p>
+<ol>
+<li> Qt Creator
+</li>
+<li> Qt 5
+</li>
+<li> QtonPi Toolchain and Sysroot
+</li>
+</ol>
+<p><b>Note -</b> If you are updating between 0.x releases, you <b>do not</b> have to uninstall Qt Creator each time.
+</p>
+<h3><span class="mw-headline" id="Qt_Creator_2">Qt Creator</span></h3>
+In order to uninstall Qt Creator, go to the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">bin<span class="sy0">/</span></pre></div></div> directory in your Qt Creator installation and execute the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">uninstall</pre></div></div> command.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$ pwd
+<span class="sy0">/</span>home<span class="sy0">/</span>rajiv
+$ cd qtcreator<span class="sy0">-</span>2.4.1<span class="sy0">/</span>bin
+$ pwd
+<span class="sy0">/</span>home<span class="sy0">/</span>rajiv<span class="sy0">/</span>qtcreator<span class="sy0">-</span>2.4.1<span class="sy0">/</span>bin
+$ .<span class="sy0">/</span>uninstall</pre></div></div>
+<h3><span class="mw-headline" id="Toolchain_and_Sysroot_2">Toolchain and Sysroot</span></h3>
+Uninstalling the toolchain and sysroot is as simple as removing the <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">/</span>opt<span class="sy0">/</span>qtonpi<span class="sy0">/</span></pre></div></div> directory.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$ sudo rm <span class="sy0">-</span>rf <span class="sy0">/</span>opt<span class="sy0">/</span>qtonpi<span class="sy0">/</span></pre></div></div>
+<p>Should take care of it!
+</p>
+<h3><span class="mw-headline" id="Qt_5_2">Qt 5</span></h3>
+Likewise, to uninstall Qt 5, remove <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span></pre></div></div> directory.
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">$ sudo rm <span class="sy0">-</span>rf <span class="sy0">/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.991 seconds
+Real time usage: 0.990 seconds
+Preprocessor visited node count: 627/1000000
+Preprocessor generated node count: 1719/1000000
+Post‐expand include size: 2318/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:661-0!*!0!!en!*!* and timestamp 20151105102730 and revision id 18429
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="index5eb8-2.html?title=Create_Qt_on_Raspberry_Pi&amp;oldid=18429">http://wiki.qt.io/index.php?title=Create_Qt_on_Raspberry_Pi&amp;oldid=18429</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_QtonPi.html" title="Category:QtonPi">QtonPi</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=db21c176888e27f4&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Create_Qt_on_Raspberry_Pi.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Create_Qt_on_Raspberry_Pi.html?title=Talk:Create_Qt_on_Raspberry_Pi&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Create_Qt_on_Raspberry_Pi.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index99c2.html?title=Create_Qt_on_Raspberry_Pi&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexb02c.html?title=Create_Qt_on_Raspberry_Pi&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Create_Qt_on_Raspberry_Pi.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Create_Qt_on_Raspberry_Pi.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="index5eb8-2.html?title=Create_Qt_on_Raspberry_Pi&amp;oldid=18429" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexb2f8-2.html?title=Create_Qt_on_Raspberry_Pi&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 28 June 2015, at 12:57.</li>
+											<li id="footer-info-viewcount">This page has been accessed 3,596 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load2f85.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;printable=1&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":753});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Create_Qt_on_Raspberry_Pi&printable=yes by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 12:21:40 GMT -->
+</html>

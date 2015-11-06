@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Introduction-to-Qt3D by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:24:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Introduction-to-Qt3D - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Introduction-to-Qt3D","wgTitle":"Introduction-to-Qt3D","wgCurRevisionId":17016,"wgRevisionId":17016,"wgArticleId":1081,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Delete","Articles needing cleanup","Developing with Qt::Qt3D","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Introduction-to-Qt3D","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Introduction-to-Qt3D skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Introduction-to-Qt3D</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 20px;border: 1px solid #C00; border-left: 10px solid #C00; background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> This article is nominated for deletion. Reason: Outdated information<br /><small>Please raise your support/opposition to this nomination in the article's Discussion page.</small>
+</td></tr></table>
+<table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="indexcc41.html?title=Introduction-to-Qt3D&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction_to_Qt_3D"><span class="tocnumber">1</span> <span class="toctext">Introduction to Qt 3D</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#GLUT_.28OpenGL_Utility_Toolkit.29"><span class="tocnumber">1.1</span> <span class="toctext"><b>GLUT</b> (OpenGL Utility Toolkit)</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Qt_OpenGL"><span class="tocnumber">1.2</span> <span class="toctext"><b>Qt OpenGL</b></span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Using_Qt_3D"><span class="tocnumber">1.3</span> <span class="toctext">Using <b>Qt 3D</b></span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#References"><span class="tocnumber">1.4</span> <span class="toctext">References</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Introduction_to_Qt_3D">Introduction to Qt 3D</span></h1>
+<p><i>NOTE: <b>Qt 3D</b> (along with <b>Qt Quick 3D</b> project) is undergoing <b>heavy development</b>. They are <b>not yet part of Qt 5</b>, and the API shown in this article may be subject to changes.</i>
+</p><p><i>WARNING: The contents of this article were last updated in 2012. This article is heavily outdated.</i>
+</p><p><b>Qt 3D</b> is a set of C++ APIs for 3D programming built on top of <b>Qt OpenGL</b>. The newest project is called <b>Qt Quick 3D</b> which creates QML bindings to <b>Qt 3D</b>.
+</p><p>First, we'll make a comparison of the previous <b>OpenGL</b> APIs: <b>GLUT</b> and <b>Qt OpenGL</b>.
+</p>
+<h2><span class="mw-headline" id="GLUT_.28OpenGL_Utility_Toolkit.29"><b>GLUT</b> (OpenGL Utility Toolkit)</span></h2>
+<p><b>GLUT</b> was one the first (if not the first) toolkit to provide a portable API to handle <b>window management</b> for <b>OpenGL</b> programs. It uses callbacks to register drawing functions and more. There were also routines provided for drawing geometric primitives (both in solid and wireframe state) such as cubes and spheres.
+</p><p>A simple <b>OpenGL</b> program with just a <i>3D cube and some lighting</i> could be as long as <b>140 lines</b> of code when developed with <b>GLUT</b>.
+</p><p><a href="index2539.html?title=Special:Upload&amp;wpDestFile=Https://gitorious.org/wiki-sources/wiki-sources/blobs/raw/284e0d0b70f0d4d786b16156f0ae0dba1d926e3e/images/3d-cube-screenshot.png" class="new" title="File:Https://gitorious.org/wiki-sources/wiki-sources/blobs/raw/284e0d0b70f0d4d786b16156f0ae0dba1d926e3e/images/3d-cube-screenshot.png">3D Hello World Cube</a>
+<i>3D cube drawn using OpenGL.</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">…
+&#160;
+<span class="kw4">void</span> initialize<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw4">float</span> ambientLight<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu16">0.2</span><span class="sy0">,</span> <span class="nu16">0.2</span><span class="sy0">,</span> <span class="nu16">0.2</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw4">float</span> specularLight<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw4">float</span> specularity<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw4">float</span> shininess<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu16">60.0</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw4">float</span> lightPosition<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">50.0</span><span class="sy0">,</span> <span class="nu16">50.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+…
+&#160;
+<span class="co1">// Enable lighting with one light source</span>
+ glEnable<span class="br0">&#40;</span>GL_LIGHTING<span class="br0">&#41;</span><span class="sy0">;</span>
+ glEnable<span class="br0">&#40;</span>GL_LIGHT0<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+…
+&#160;
+<span class="co1">// Properties of the objects' materials</span>
+ glMaterialfv<span class="br0">&#40;</span>GL_FRONT<span class="sy0">,</span> GL_SPECULAR<span class="sy0">,</span> specularity<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Reflectance</span>
+ glMaterialfv<span class="br0">&#40;</span>GL_FRONT<span class="sy0">,</span> GL_SHININESS<span class="sy0">,</span> shininess<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Shininess</span>
+&#160;
+<span class="co1">// Enable ambient light usage</span>
+ glLightModelfv<span class="br0">&#40;</span>GL_LIGHT_MODEL_AMBIENT<span class="sy0">,</span> ambientLight<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+glLightfv<span class="br0">&#40;</span>GL_LIGHT0<span class="sy0">,</span> GL_AMBIENT<span class="sy0">,</span> ambientLight<span class="br0">&#41;</span><span class="sy0">;</span>
+ glLightfv<span class="br0">&#40;</span>GL_LIGHT0<span class="sy0">,</span> GL_SPECULAR<span class="sy0">,</span> specularLight<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Position of the light source</span>
+ glLightfv<span class="br0">&#40;</span>GL_LIGHT0<span class="sy0">,</span> GL_POSITION<span class="sy0">,</span> lightPosition<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+…
+&#160;
+<span class="kw4">void</span> resize<span class="br0">&#40;</span><span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ …
+&#160;
+<span class="co1">// Set the viewport to be the entire window</span>
+ glViewport<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> width<span class="sy0">,</span> height<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+…
+&#160;
+<span class="co1">// Defines the perspective projection</span>
+ glLoadIdentity<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ gluPerspective<span class="br0">&#40;</span><span class="nu0">45</span><span class="sy0">,</span> aspectRatio<span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">500</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+…
+&#160;
+<span class="co1">// Defines the position of the camera and the target</span>
+ glLoadIdentity<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ gluLookAt<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">80</span><span class="sy0">,</span> <span class="nu0">200</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> paint<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ glClear<span class="br0">&#40;</span>GL_COLOR_BUFFER_BIT <span class="sy0">|</span> GL_DEPTH_BUFFER_BIT<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Vertices</span>
+ <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">float</span> vertices<span class="br0">&#91;</span><span class="nu0">6</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">4</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+…
+&#160;
+<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="nu0">6</span><span class="sy0">;</span> <span class="sy0">+</span><span class="st0">''</span>i<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ glBegin<span class="br0">&#40;</span>GL_QUADS<span class="br0">&#41;</span><span class="sy0">;</span>
+ glNormal3fv<span class="br0">&#40;</span>normals<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> j <span class="sy0">&lt;</span> <span class="nu0">4</span><span class="sy0">;</span><span class="st0">''</span><span class="sy0">+</span>j<span class="br0">&#41;</span>
+ glVertex3fv<span class="br0">&#40;</span>vertices<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ glEnd<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+&#160;
+glutSwapBuffers<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">**</span>argv<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ …
+&#160;
+initialize<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Register the drawing function &quot;paint()&quot;</span>
+ glutDisplayFunc<span class="br0">&#40;</span>paint<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Register the resizing function &quot;resize()&quot;</span>
+ glutReshapeFunc<span class="br0">&#40;</span>resize<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+…
+<span class="br0">&#125;</span></pre></div></div> <i>Drawing a 3D cube with GLUT.</i> <a rel="nofollow" class="external text" href="https://gitorious.org/wiki-sources/wiki-sources/trees/master/opengl">source code</a>
+<p>The code above follows a very basic <b>OpenGL</b> program structure. It has a <i><b>initialize</b></i> function (for doing some initial setup), a <i><b>resize</b></i> function (to handle window resizes) and a <i><b>paint</b></i> function (to draw the actual 3D objects).
+</p>
+<h2><span class="mw-headline" id="Qt_OpenGL"><b>Qt OpenGL</b></span></h2>
+<p><b>Qt OpenGL</b> is a port of the <b>OpenGL</b> API to the <b>Qt</b> toolkit. It does a fairly good job at translating all of <b>OpenGL</b> basic functions
+to a <b>Qt</b> widget. Now, instead of several functions being registered for callbacks, it is possible to take advantage of the SIGNAL/SLOT system of <b>Qt</b>.
+</p><p>One of the most commonly used approches for <b>Qt OpenGL</b> to write a 3D program is to subclass <b>QGLWidget</b>. <b>QGLWidget</b> provides three convenience methods that you can reimplement to perform the typical OpenGL tasks: <b>paintGL</b>, <b>resizeGL</b> and <b>initializeGL</b> (similar to the <b>GLUT</b> version of the program).
+</p><p>The program below follows the same basic structure of its <b>GLUT</b> previous version.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">…
+&#160;
+<span class="kw2">class</span> GLWidget <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QGLWidget</span>
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ GLWidget<span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">void</span> initializeGL<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> resizeGL<span class="br0">&#40;</span><span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> paintGL<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+GLWidget<span class="sy0">::</span><span class="me2">GLWidget</span><span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent<span class="br0">&#41;</span>
+ <span class="sy0">:</span> <span class="kw5">QGLWidget</span><span class="br0">&#40;</span>parent<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ setFormat<span class="br0">&#40;</span><span class="kw5">QGLFormat</span><span class="br0">&#40;</span>QGL<span class="sy0">::</span><span class="me2">Rgba</span> <span class="sy0">|</span> QGL<span class="sy0">::</span><span class="me2">DoubleBuffer</span> <span class="sy0">|</span> QGL<span class="sy0">::</span><span class="me2">DepthBuffer</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> GLWidget<span class="sy0">::</span><span class="me2">initializeGL</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw4">float</span> ambientLight<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu16">0.2</span><span class="sy0">,</span> <span class="nu16">0.2</span><span class="sy0">,</span> <span class="nu16">0.2</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw4">float</span> specularLight<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw4">float</span> specularity<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw4">float</span> shininess<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu16">60.0</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+ <span class="kw4">float</span> lightPosition<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span> <span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">50.0</span><span class="sy0">,</span> <span class="nu16">50.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+…
+&#160;
+<span class="co1">// Enable lighting with one light source</span>
+ glEnable<span class="br0">&#40;</span>GL_LIGHTING<span class="br0">&#41;</span><span class="sy0">;</span>
+ glEnable<span class="br0">&#40;</span>GL_LIGHT0<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+…
+&#160;
+<span class="co1">// Properties of the objects' materials</span>
+ glMaterialfv<span class="br0">&#40;</span>GL_FRONT<span class="sy0">,</span> GL_SPECULAR<span class="sy0">,</span> specularity<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Reflectance</span>
+ glMaterialfv<span class="br0">&#40;</span>GL_FRONT<span class="sy0">,</span> GL_SHININESS<span class="sy0">,</span> shininess<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// Shininess</span>
+&#160;
+<span class="co1">// Enable ambient light usage</span>
+ glLightModelfv<span class="br0">&#40;</span>GL_LIGHT_MODEL_AMBIENT<span class="sy0">,</span> ambientLight<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+glLightfv<span class="br0">&#40;</span>GL_LIGHT0<span class="sy0">,</span> GL_AMBIENT<span class="sy0">,</span> ambientLight<span class="br0">&#41;</span><span class="sy0">;</span>
+ glLightfv<span class="br0">&#40;</span>GL_LIGHT0<span class="sy0">,</span> GL_SPECULAR<span class="sy0">,</span> specularLight<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Position of the light source</span>
+ glLightfv<span class="br0">&#40;</span>GL_LIGHT0<span class="sy0">,</span> GL_POSITION<span class="sy0">,</span> lightPosition<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> GLWidget<span class="sy0">::</span><span class="me2">resizeGL</span><span class="br0">&#40;</span><span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ …
+&#160;
+<span class="co1">// Set the viewport to be the entire window</span>
+ glViewport<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> width<span class="sy0">,</span> height<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+…
+&#160;
+<span class="co1">// Defines the perspective projection</span>
+ glLoadIdentity<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ gluPerspective<span class="br0">&#40;</span><span class="nu0">45</span><span class="sy0">,</span> aspectRatio<span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">500</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+…
+&#160;
+<span class="co1">// Defines the position of the camera and the target</span>
+ glLoadIdentity<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ gluLookAt<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">80</span><span class="sy0">,</span> <span class="nu0">200</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> GLWidget<span class="sy0">::</span><span class="me2">paintGL</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ glClear<span class="br0">&#40;</span>GL_COLOR_BUFFER_BIT <span class="sy0">|</span> GL_DEPTH_BUFFER_BIT<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Vertices</span>
+ <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">float</span> vertices<span class="br0">&#91;</span><span class="nu0">6</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">4</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="br0">&#123;</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+ <span class="br0">&#123;</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> –<span class="nu16">1.0</span> <span class="br0">&#125;</span><span class="sy0">,</span> <span class="br0">&#123;</span> –<span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="sy0">-</span><span class="nu16">1.0</span> <span class="br0">&#125;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+ …
+&#160;
+ <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="nu0">6</span><span class="sy0">;</span> <span class="sy0">+</span><span class="st0">''</span>i<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ glBegin<span class="br0">&#40;</span>GL_QUADS<span class="br0">&#41;</span><span class="sy0">;</span>
+ glNormal3fv<span class="br0">&#40;</span>normals<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> j <span class="sy0">&lt;</span> <span class="nu0">4</span><span class="sy0">;</span><span class="st0">''</span><span class="sy0">+</span>j<span class="br0">&#41;</span>
+ glVertex3fv<span class="br0">&#40;</span>vertices<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ glEnd<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div> <i>GLWidget class for drawing the 3D cube.</i> <a rel="nofollow" class="external text" href="https://gitorious.org/wiki-sources/wiki-sources/trees/master/QtOpenGL/glwidget">source code</a>
+<p>This version is still about <b>140 lines</b> of code. Except that now we have the convenience of using it within a <b>Qt</b> class. That means, the drawing of the 3D objects can still be done with <b>OpenGL</b> standard functions, while leaving the window management and input handling part to the <b>Qt</b> API.
+</p>
+<h2><span class="mw-headline" id="Using_Qt_3D">Using <b>Qt 3D</b></span></h2>
+<p><b>Qt 3D</b> was created to simplify the usage of the <b>OpenGL</b> standard API within a <b>Qt</b> application. It abstracts most of the setup previously required. Camera position, viewing volume, vertices definition and other initial settings become <b>much simpler</b>. Therefore, reduces the overall code needed for creating a basic 3D program.
+</p><p>Similar to <b>QGLWidget</b>, in <b>Qt 3D</b> there's a class named <b>QGLView</b> which does most of the work regarding this initial settings. All we need to do is subclass it.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="coMULTI">/* Qt 3D headers */</span>
+&#160;
+<span class="kw2">class</span> GLView <span class="sy0">:</span> <span class="kw2">public</span> QGLView
+<span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ GLView<span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ ~GLView<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">protected</span><span class="sy0">:</span>
+ <span class="kw4">void</span> initializeGL<span class="br0">&#40;</span>QGLPainter <span class="sy0">*</span>painter<span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw4">void</span> paintGL<span class="br0">&#40;</span>QGLPainter <span class="sy0">*</span>painter<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="kw2">private</span><span class="sy0">:</span>
+ QGLSceneNode <span class="sy0">*</span>m_rootNode<span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+&#160;
+GLView<span class="sy0">::</span><span class="me2">GLView</span><span class="br0">&#40;</span><span class="kw5">QWidget</span> <span class="sy0">*</span>parent<span class="br0">&#41;</span>
+ <span class="sy0">:</span> QGLView<span class="br0">&#40;</span>parent<span class="br0">&#41;</span>
+ <span class="sy0">,</span> m_rootNode<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="co1">// Create the cube</span>
+ QGLBuilder builder<span class="sy0">;</span>
+ builder <span class="sy0">&lt;&lt;</span> QGL<span class="sy0">::</span><span class="me2">Faceted</span> <span class="sy0">&lt;&lt;</span> QGLCube<span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ m_rootNode <span class="sy0">=</span> builder.<span class="me1">finalizedSceneNode</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+ <span class="co1">// Setup the camera</span>
+ camera<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">setFieldOfView</span><span class="br0">&#40;</span><span class="nu0">45</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ camera<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">setNearPlane</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ camera<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">-&gt;</span><span class="me3">setFarPlane</span><span class="br0">&#40;</span><span class="nu0">500</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+GLView<span class="sy0">::</span><span class="me2">~GLView</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="kw1">delete</span> m_rootNode<span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> GLView<span class="sy0">::</span><span class="me2">initializeGL</span><span class="br0">&#40;</span>QGLPainter <span class="sy0">*</span>painter<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ QGLLightParameters <span class="sy0">*</span>lightParameters <span class="sy0">=</span> <span class="kw1">new</span> QGLLightParameters<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ QGLMaterial <span class="sy0">*</span>material <span class="sy0">=</span> <span class="kw1">new</span> QGLMaterial<span class="br0">&#40;</span><span class="kw1">this</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="kw5">QColor</span> color<span class="sy0">;</span>
+&#160;
+<span class="co1">// Setup the lighting for the scene</span>
+ painter<span class="sy0">-&gt;</span><span class="me3">setStandardEffect</span><span class="br0">&#40;</span>QGL<span class="sy0">::</span><span class="me2">LitMaterial</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ color.<span class="me1">setRgbF</span><span class="br0">&#40;</span><span class="nu16">0.2</span><span class="sy0">,</span> <span class="nu16">0.2</span><span class="sy0">,</span> <span class="nu16">0.2</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ lightParameters<span class="sy0">-&gt;</span><span class="me3">setAmbientColor</span><span class="br0">&#40;</span>color<span class="br0">&#41;</span><span class="sy0">;</span>
+ color.<span class="me1">setRgbF</span><span class="br0">&#40;</span><span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ lightParameters<span class="sy0">-&gt;</span><span class="me3">setSpecularColor</span><span class="br0">&#40;</span>color<span class="br0">&#41;</span><span class="sy0">;</span>
+ lightParameters<span class="sy0">-&gt;</span><span class="me3">setDirection</span><span class="br0">&#40;</span>QVector3D<span class="br0">&#40;</span><span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">50.0</span><span class="sy0">,</span> <span class="nu16">50.0</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ painter<span class="sy0">-&gt;</span><span class="me3">setMainLight</span><span class="br0">&#40;</span>lightParameters<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Apply a material</span>
+ color.<span class="me1">setRgbF</span><span class="br0">&#40;</span><span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ material<span class="sy0">-&gt;</span><span class="me3">setSpecularColor</span><span class="br0">&#40;</span>color<span class="br0">&#41;</span><span class="sy0">;</span>
+ material<span class="sy0">-&gt;</span><span class="me3">setShininess</span><span class="br0">&#40;</span><span class="nu0">60</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ color.<span class="me1">setRgbF</span><span class="br0">&#40;</span><span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ material<span class="sy0">-&gt;</span><span class="me3">setAmbientColor</span><span class="br0">&#40;</span>color<span class="br0">&#41;</span><span class="sy0">;</span>
+ material<span class="sy0">-&gt;</span><span class="me3">setDiffuseColor</span><span class="br0">&#40;</span>color<span class="br0">&#41;</span><span class="sy0">;</span>
+ painter<span class="sy0">-&gt;</span><span class="me3">setFaceMaterial</span><span class="br0">&#40;</span>QGL<span class="sy0">::</span><span class="me2">AllFaces</span><span class="sy0">,</span> material<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">void</span> GLView<span class="sy0">::</span><span class="me2">paintGL</span><span class="br0">&#40;</span>QGLPainter <span class="sy0">*</span>painter<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+ <span class="co1">// Perform some transformations</span>
+ painter<span class="sy0">-&gt;</span><span class="me3">modelViewMatrix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">translate</span><span class="br0">&#40;</span><span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">5.0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ painter<span class="sy0">-&gt;</span><span class="me3">modelViewMatrix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">rotate</span><span class="br0">&#40;</span><span class="nu16">15.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">0.0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ painter<span class="sy0">-&gt;</span><span class="me3">modelViewMatrix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">rotate</span><span class="br0">&#40;</span><span class="nu16">30.0</span><span class="sy0">,</span> <span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">0.0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ painter<span class="sy0">-&gt;</span><span class="me3">modelViewMatrix</span><span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">rotate</span><span class="br0">&#40;</span><span class="nu16">15.0</span><span class="sy0">,</span> <span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="co1">// Draw the cube</span>
+ m_rootNode<span class="sy0">-&gt;</span><span class="me3">draw</span><span class="br0">&#40;</span>painter<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div> <i>GLView class for drawing the 3D cube.</i> <a rel="nofollow" class="external text" href="https://gitorious.org/wiki-sources/wiki-sources/trees/master/Qt3D/glview">source code</a>
+<p>The code now looks easier to understand than its previous versions. There was no need for setting the cube's vertices, no aspect ratio calculation, no lighting normals set. The real work is done by the <b>QGLBuilder</b> class and <b>QGLPainter</b> class. The first one (<b>QGLBuilder</b>) creates the geometry of the cube and adds it to the scene, while the second (<b>QGLPainter</b>) does the actual drawing of the cube.
+</p><p>The basic structure of the program is still there with the <b>paintGL</b> and <b>initializeGL</b> methods. There are also three more classes that handle typical <b>OpenGL</b> tasks: <b>QGLCamera</b>, <b>QGLLightParameters</b> and <b>QGLMaterial</b>.
+</p>
+<h2><span class="mw-headline" id="References">References</span></h2>
+<p>The source code used in this article was based on examples from the following references:
+<a rel="nofollow" class="external text" href="http://www.glprogramming.com/red/">OpenGL Programming Guide</a>
+<a rel="nofollow" class="external text" href="http://www.opengl.org/resources/libraries/glut/">GLUT</a>
+<a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5/qtopengl-index.html">Qt OpenGL</a>
+<a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/qt-quick3d-snapshot/">Qt 3D</a>
+</p><p><b>Qt 3D</b> latest snapshot can be obtained here: <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/qt-quick3d-snapshot/">Qt Quick 3D</a>
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.098 seconds
+Real time usage: 0.116 seconds
+Preprocessor visited node count: 77/1000000
+Preprocessor generated node count: 204/1000000
+Post‐expand include size: 2022/2097152 bytes
+Template argument size: 615/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1081-0!*!0!!en!2!* and timestamp 20151104211214 and revision id 17016
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexd53b.html?title=Introduction-to-Qt3D&amp;oldid=17016">http://wiki.qt.io/index.php?title=Introduction-to-Qt3D&amp;oldid=17016</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Delete.html?title=Category:Delete&amp;action=edit&amp;redlink=1" class="new" title="Category:Delete (page does not exist)">Delete</a></li><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="Category_Developing_with_Qt__Qt3D.html" title="Category:Developing with Qt::Qt3D">Developing with Qt::Qt3D</a></li><li><a href="Category_Pages_with_broken_file_links.html?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=efabdd7937618480&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Introduction-to-Qt3D.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Introduction-to-Qt3D.html?title=Talk:Introduction-to-Qt3D&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Introduction-to-Qt3D.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="indexcc41.html?title=Introduction-to-Qt3D&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="index1006.html?title=Introduction-to-Qt3D&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Introduction-to-Qt3D.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Introduction-to-Qt3D.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="index64af.html?title=Introduction-to-Qt3D&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexd53b.html?title=Introduction-to-Qt3D&amp;oldid=17016" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="index094e.html?title=Introduction-to-Qt3D&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 24 May 2015, at 06:30.</li>
+											<li id="footer-info-viewcount">This page has been accessed 3,941 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":323});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Introduction-to-Qt3D by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:24:56 GMT -->
+</html>

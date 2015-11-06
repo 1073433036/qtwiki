@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&oldid=18214 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:22:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Strings and encodings in Qt - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=ext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Strings_and_encodings_in_Qt","wgTitle":"Strings and encodings in Qt","wgCurRevisionId":18214,"wgRevisionId":18214,"wgArticleId":2006,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Strings_and_encodings_in_Qt","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Strings_and_encodings_in_Qt skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Strings and encodings in Qt</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 20:42, 27 June 2015 by <a href="http://wiki.qt.io/User:Wieland" title="User:Wieland" class="mw-userlink">Wieland</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/User_talk:Wieland" title="User talk:Wieland">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/Wieland" title="Special:Contributions/Wieland">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&amp;diff=prev&amp;oldid=18214" title="Strings and encodings in Qt">diff</a>) <a href="http://wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&amp;direction=prev&amp;oldid=18214" title="Strings and encodings in Qt">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="background:#eeeeee;padding:2px;">
+<p><strong class="selflink">En</strong>
+<span style="color:#ccc;">Ar</span>
+<span style="color:#ccc;">Bg</span>
+<span style="color:#ccc;">De</span>
+<span style="color:#ccc;">El</span>
+<span style="color:#ccc;">Es</span>
+<span style="color:#ccc;">Fa</span>
+<span style="color:#ccc;">Fi</span>
+<span style="color:#ccc;">Fr</span>
+<span style="color:#ccc;">Hi</span>
+<span style="color:#ccc;">Hu</span>
+<span style="color:#ccc;">It</span>
+<span style="color:#ccc;">Ja</span>
+<span style="color:#ccc;">Kn</span>
+<a href="http://wiki.qt.io/Strings_and_encodings_in_Qt/ko" title="Strings and encodings in Qt/ko">Ko</a>
+<span style="color:#ccc;">Ms</span>
+<span style="color:#ccc;">Nl</span>
+<span style="color:#ccc;">Pl</span>
+<span style="color:#ccc;">Pt</span>
+<span style="color:#ccc;">Ru</span>
+<span style="color:#ccc;">Th</span>
+<span style="color:#ccc;">Tr</span>
+<span style="color:#ccc;">Uk</span>
+<span style="color:#ccc;">Zh</span>
+</p>
+</div>
+<p>This is a short introduction to encodings, and how not to fail at using them inside Qt (and in general inside a C/C++ project).
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The_short_recipe"><span class="tocnumber">1</span> <span class="toctext">The short recipe</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#The_long_story"><span class="tocnumber">2</span> <span class="toctext">The long story</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Encodings_in_C.2FC.2B.2B"><span class="tocnumber">2.1</span> <span class="toctext">Encodings in C/C++</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#QString"><span class="tocnumber">2.2</span> <span class="toctext">QString</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#A_small_digression_.E2.80.94_what.27s_an_encoding.3F"><span class="tocnumber">2.3</span> <span class="toctext">A small digression — what's an encoding?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="The_short_recipe">The short recipe</span></h2>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://www.joelonsoftware.com/articles/Unicode.html">There Ain't No Such Thing As Plain Text.</a>
+</li>
+<li> <b>Encode your source code files using UTF-8</b>. Set all your tools (editors, etc.) to read and write UTF-8 files. Do it once, for all your code base, and make your colleagues stick with it.
+</li>
+<li> Make your compiler read UTF-8 files. Changing your locale to an UTF-8 locale should be enough (otherwise, see your compiler's manual).
+</li>
+<li> In your code use <b>QString::fromUtf8()</b> for all string literals, and <b>trUtf8()</b> / <b>QT_TR_UTF8()</b> / etc. for all user-visible strings.
+</li>
+<li> If you really want to use the QString(const char *) constructor<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup>, remember to call QTextCodec::setCodecForCStrings() passing the UTF-8 text codec (QTextCodec::codecForName("UTF-8")). Being an application wide setting, this might break plugins or 3rd party Qt libraries.
+</li>
+</ul>
+<h2><span class="mw-headline" id="The_long_story">The long story</span></h2>
+<h3><span class="mw-headline" id="Encodings_in_C.2FC.2B.2B">Encodings in C/C++</span></h3>
+<h4><span class="mw-headline" id="What_is_the_encoding_of_string_literals_in_C.2FC.2B.3F">What is the encoding of string literals in C/C+<i>?</span></h4></i>
+<p>The C and C<i>+ specifications don't say much about the encoding of string literals inside a program — or about the encoding of a program's source code itself. They just specify that an <b>input character set</b> and an <b>execution character set</b> do exist, with some simple requirements. </i>
+</p>
+<h4><span class="mw-headline" id="So_what.3F">So what?</span></h4>
+<p>A compiler has to employ several techniques to deal with this problem. For starters, it must properly decode the bytes of the source file into a C/C++ program (so that the parser can parse the program). This is usually done using the current locale settings, or falling back to UTF-8 (it's ASCII compatible); if you are using GCC you can pass the -finput-charset= command line option to specify a certain encoding for the input files.
+</p>
+<h4><span class="mw-headline" id="And_then.3F">And then?</span></h4>
+<p>Once a source file is parsed, the compiler keeps the string literals in an internal, private representation, which is not really interesting — as compiler users, it suffices for us that this internal representation is able to represent any possible symbol in any alphabet. This usually means that this internal representation is actually an Unicode encoding.
+</p><p>In the end, the compiler has to emit some assembly code for the strings, that is, sequences of raw bytes; therefore, it has to encode the strings using an <i>execution</i> encoding. Again, if you're using GCC you can pass the -fexec-charset= and -fwide-exec-charset= command line options to control which encoding is used for the char[] literals and the wchar_t[] literals respectively (by default they're UTF-8 and UTF-16 or UTF-32, depending on the size of wchar_t).<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup>
+</p>
+<h4><span class="mw-headline" id="What.27s_the_scope_of_such_command_line_options.3F">What's the scope of such command line options?</span></h4>
+<p>The invocation of the compiler in which they appear, so one translation unit — yes, you can change the input and execution charsets for every translation unit, if you want.
+</p>
+<h4><span class="mw-headline" id="Wait_a_minute.E2.80.A6_so_what_does_o_exactly.3F">Wait a minute… so what does o exactly?</span></h4>
+<p>The escape sequence inside a string literal encodes the code point U+XXXX <b>using the execution character set</b> (similarly, the encodes the code point U+XXXXXXXX). Note that s, in general, a prefix for an universal character, and you're allowed to use it even outside string literals.
+</p>
+<h4><span class="mw-headline" id="How_does_Qt_know_the_encoding_of_a_byte_array_.28a_char_.2A.29.2C_for_instance.2C_when_I_build_a_QString_from_it.3F">How does Qt know the encoding of a byte array (a char *), for instance, when I build a QString from it?</span></h4>
+<p>It's simple: <b>Qt doesn't know it</b>. For instance:
+</p>
+<ul>
+<li> the QString(const char <b>) constructor uses the QTextCodec::codecForCStrings() if one was set, or falls back to Latin-1 — so if you pass data in any other encoding, including UTF-8, it may horribly break;</b>
+</li>
+</ul>
+<p><b> the static QString::fromLatin1() method builds a string from Latin-1 encoded data;</b>
+</p>
+<ul>
+<li> the static QString::fromUtf8() method builds a string from UTF-8 encoded data;
+</li>
+<li> the tr() method for translation uses the QTextCodec::codecForTr() if one was set, or, again, falls back to Latin-1;
+</li>
+<li> the lupdate tool uses the CODECFORTR and CODECFORSRC in your .pro file to know the encoding of the strings inside tr() and of your source files;
+</li>
+<li> for any other encoding schemes you have to build a proper QTextCodec (by using QTextCodec::codecForName() or similar methods), and then use its toUnicode() method.
+</li>
+</ul>
+<h3><span class="mw-headline" id="QString">QString</span></h3>
+<h4><span class="mw-headline" id="What.27s_QString.3F">What's QString?</span></h4>
+<p>QString is a <b>re-entrant</b>, <b>implicitly shared</b> container for an <b>UTF-16</b> encoded string. This means (in no particular order):
+</p>
+<ul>
+<li> All methods that take an index, as well as the iterators, work in terms of <i>code units</i>, not code points.
+</li>
+<li> A QString might contain invalid data (for instance a broken surrogate pair).
+</li>
+<li> …
+</li>
+</ul>
+<h4><span class="mw-headline" id="But_what.27s_wrong_with_the_QString.28const_char_.2A.29_constructor.3F">But what's wrong with the QString(const char *) constructor?</span></h4>
+<p>That it decodes the bytes in the passed string using the fromAscii() function, which — despite its name — uses the codec returned by QTextCodec::codecForCStrings(), or Latin-1 if you didn't set one. Thus, if you pass UTF-8 data to it without doing anything else, <b>QString is NOT going to decode your data properly</b>.
+</p><p>Note also the codec set is application-wide — once you set it, you change the behaviour of fromAscii() in your code, in libraries you are using, in plugins you may have loaded, etc. If they're very poorly coded you may even break them by doing so (BT;DT).
+</p>
+<h4><span class="mw-headline" id="So_what_should_I_use_instead.3F">So what should I use instead?</span></h4>
+<p>There are a number of available options:
+</p>
+<ul>
+<li> Switch all of your code editors to use UTF-8, convert all of your codebase (f.i. by using the iconv(1) tool), set your compiler input and execution charsets to UTF-8, then in your code use QString::fromUtf8(), trUtf8(), etc.; this way, <div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="kw5">QString</span> str <span class="sy0">=</span> <span class="kw5">QString</span><span class="sy0">::</span><span class="me2">fromUtf8</span><span class="br0">&#40;</span><span class="st0">&quot;ßàéöø&quot;</span><span class="br0">&#41;</span><span class="sy0">&lt;</span>code<span class="sy0">&gt;</span> will <span class="kw1">do</span> the right thing™.
+</li>
+</ul>
+<span class="sy0">*</span> If your source must be <span class="nu0">7</span><span class="sy0">-</span>bit ASCII<span class="sy0">,</span> you can still make use of <span class="kw5">QString</span><span class="sy0">::</span><span class="me2">fromUtf8</span> by either <span class="kw2">using</span> the refix<span class="sy0">,</span> or performing the encoding by hand and <span class="kw2">using</span> the escape sequence. <span class="me1">Be</span> sure that your execution charset is UTF<span class="sy0">-</span><span class="nu0">8</span> <span class="br0">&#40;</span>or that string literals pass through unchanged<span class="br0">&#41;</span>. <span class="me1">For</span> instance<span class="sy0">,</span></pre></div></div>QString str = QString::fromUtf8("3\xb7"); // str is "÷"&lt;/code&gt;
+<ul>
+<li> If your source is Latin-1 and you don't want to risk it to break if someone changes the codecForCStrings(), you can use the static method QString::fromLatin1().
+</li>
+<li> QLatin1String (which is thin wrapper around a Latin-1 encoded char *) can also be handy.
+</li>
+</ul>
+<h4><span class="mw-headline" id="Should_I_use_tr.28.29_.2F_trUtf8.28.29_even_if_I_don.27t_plan_to_translate_my_application.3F">Should I use tr() / trUtf8() even if I don't plan to translate my application?</span></h4>
+<p><b>Yes</b>. For instance, you <b>do</b> want to handle plural forms correctly, and not to reinvent the wheel by doing it by hand.
+</p>
+<h3><span class="mw-headline" id="A_small_digression_.E2.80.94_what.27s_an_encoding.3F">A small digression — what's an encoding?</span></h3>
+<p>In information theory, a <b>code</b> is nothing more than a rule — a function — to translate a discrete piece of information (usually, <i>symbols</i> from a <i>source alphabet</i>) into another format of representation (symbols or sequence of symbols of a <i>target alphabet</i>).
+</p><p>The process of converting a symbol from the source alphabet into its associated sequence of symbols of the target alphabet is called <b>encoding</b>; the opposite process is called <b>decoding</b>. We can naturally extend the encoding and the decoding definitions to <i>sequence of symbols</i> of the source alphabet (that is, a <i>string</i> of the source alphabet) into the corresponding sequence made of (sequence of) symbols of the target alphabet.
+</p><p>For instance, a very famous code is the <i>Morse code</i>, which translates letters in the Roman alphabet, Arabic numerals (digits) and some punctuation characters into sequences of dots and dashes.
+</p>
+<table class="wikitable">
+<tr>
+<th> Symbol
+</th>
+<th> Morse encoding
+</th></tr>
+<tr>
+<td> A
+</td>
+<td> .—
+</td></tr>
+<tr>
+<td> B
+</td>
+<td> — . . .
+</td></tr>
+<tr>
+<td> 9
+</td>
+<td> — — — — .
+</td></tr></table>
+<p>There are a certain number of properties that we'd like a code to have: its rule must be an <i>injection</i>, because we don't want to map two different pieces of information into the same representation (we wouldn't know how to translate it back); it should not be <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Entropy_(information_theory)#Entropy_as_information_content">unnecessarily verbose</a>&#160;; it could add some <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Error_detection_and_correction">error detection and/or error correction schemes</a>&#160;; etc.
+</p><p>A <b>character encoding</b> is no different: it's a rule to translate symbols from (usually) a human alphabet into sequences of bits or bytes<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup>. The most famous character encoding is probably <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/ASCII">US-ASCII</a>, which maps Roman letters, Arabic numerals, punctuation and some control characeters to the numbers in the range 0—127, and thus, requiring 7 bits in binary.
+</p><p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/ASCII_Code_Chart.svg/500px-ASCII_Code_Chart.svg.png" alt="500px-ASCII_Code_Chart.svg.png" />
+</p><p>Usually an ASCII-encoded character is encoded in a full byte with the most significant bit is set to 0, thus allowing us to index symbols in a ASCII-encoded string by simply indexing bytes.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup>
+</p><p>As you may have guessed, US-ASCII is not suitable for anything but American English — it lacks all additional characters needed to deal with other languages. The <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/ISO/IEC_8859">ISO/IEC 8859</a> series of standards extended US-ASCII by encoding additional 128 symbols with the numbers in the range 128—155, that is, using the other half of values available inside a byte.
+</p><p><a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Character_encoding#Common_character_encodings">Many other encodings exist out there</a> , and writing down a comprehensive list of them is almost impossible. Moreover, <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Windows_code_page">anyone</a> can invent his own encoding for an arbitrary set of symbols. This has simply led to many problems when a piece of software had to deal with multiple writing systems (for instance, any browser).
+</p>
+<h4><span class="mw-headline" id="Enter_Unicode">Enter Unicode</span></h4>
+<p>Unicode is a industry standard that tries to cover as many writing systems as possible in a unified manner, not only in terms of supported symbols, but also in terms of rules for character normalization, character decomposion, string collation (i.e. ordering), bidirectional writing, and so on.
+</p><p>All the symbols inside the Unicode standard are called the the <b>Universal Character Set</b> (UCS) and they are defined by the <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Universal_Character_Set">ISO/IEC 10646</a> standard. Every symbol has a number in the range from 0x000000 to 0x10FFFF<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup>, which is called a <i>code point</i>; the standard notation for naming Unicode code points is U+XXXX (where XXXX are hex digits).
+</p><p>What's so great about Unicode is that you can stop caring about all the details of the various writing systems. Just use an Unicode-compliant library and let it do all the harsh work for you. All in all
+</p>
+<h4><span class="mw-headline" id="Unicode_encodings">Unicode encodings</span></h4>
+<p>A code point is still a virtual entity; it's not an encoding. The Unicode standard defines several standard encodings for code points.
+</p>
+<h2><span class="mw-headline" id="Notes">Notes</span></h2>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">You don't. Disable those constructors by defining QT_NO_CAST_FROM_ASCII and QT_NO_CAST_TO_ASCII in your codebase.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">This whole story isn't 100% accurate — as <a rel="nofollow" class="external text" href="http://www.macieira.org/blog/">Thiago Macieira</a> kindly pointed out in <a rel="nofollow" class="external text" href="http://blog.qt.io/blog/2011/03/26/on-utf-8-latin-1-and-charsets/">his blog entry</a> , if you don't specify any encoding option GCC actually outputs the same bytes it read from the source file.</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">… or octets, but for brevity's sake let's just assume that a byte is always 8 bits.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Other uses have been suggested for the remaining bit in a byte, for instance parity check.</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">Not all numbers in the range are used, though.</span>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.071 seconds
+Real time usage: 0.078 seconds
+Preprocessor visited node count: 281/1000000
+Preprocessor generated node count: 1063/1000000
+Post‐expand include size: 2399/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 23/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:2006-0!*!0!!en!*!* and timestamp 20151105101652 and revision id 18214
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&amp;oldid=18214">http://wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&amp;oldid=18214</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Strings+and+encodings+in+Qt" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Strings_and_encodings_in_Qt"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Strings_and_encodings_in_Qt&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Strings_and_encodings_in_Qt" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Strings_and_encodings_in_Qt" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Strings_and_encodings_in_Qt" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&amp;oldid=18214&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&amp;oldid=18214" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 June 2015, at 20:42.</li>
+											<li id="footer-info-viewcount">This page has been accessed 7,406 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":173});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Strings_and_encodings_in_Qt&oldid=18214 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:22:11 GMT -->
+</html>

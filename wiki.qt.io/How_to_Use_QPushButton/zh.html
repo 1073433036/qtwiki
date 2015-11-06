@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/How_to_Use_QPushButton/zh by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:40:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>How to Use QPushButton/zh - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="../api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="../apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="../load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="../load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_Use_QPushButton/zh","wgTitle":"How to Use QPushButton/zh","wgCurRevisionId":16429,"wgRevisionId":16429,"wgArticleId":999,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Developing with Qt::General","HowTo","Snippets","Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_Use_QPushButton/zh","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_to_Use_QPushButton_zh skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">How to Use QPushButton/zh</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><span class="subpages">&lt; <a href="../How_to_Use_QPushButton.html" title="How to Use QPushButton">How to Use QPushButton</a></span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="../index9a57.html?title=How_to_Use_QPushButton/zh&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="../Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><br />
+<b>简体中文</b> <a href="../How_to_Use_QPushButton.html" title="How to Use QPushButton">English</a> <a href="../How_to_Use_QPushButton_Bulgarian.html" title="How to Use QPushButton Bulgarian" class="mw-redirect">Български</a> <a href="../How_to_Use_QPushButton_Spanish.html" title="How to Use QPushButton Spanish" class="mw-redirect">Spanish</a>
+<a href="../How_to_Use_QPushButton_Russian.html" title="How to Use QPushButton Russian" class="mw-redirect">Русский</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#.E6.80.8E.E6.A0.B7.E4.BD.BF.E7.94.A8QPushButton.EF.BC.9F"><span class="tocnumber">1</span> <span class="toctext">怎样使用QPushButton？</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#QPushButton.E6.A6.82.E8.A7.88"><span class="tocnumber">1.1</span> <span class="toctext">QPushButton概览</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E4.BF.A1.E5.8F.B7"><span class="tocnumber">1.2</span> <span class="toctext">信号</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#.E5.9F.BA.E6.9C.AC.E7.94.A8.E6.B3.95"><span class="tocnumber">1.3</span> <span class="toctext">基本用法</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id=".E6.80.8E.E6.A0.B7.E4.BD.BF.E7.94.A8QPushButton.EF.BC.9F">怎样使用QPushButton？</span></h1>
+<h2><span class="mw-headline" id="QPushButton.E6.A6.82.E8.A7.88">QPushButton概览</span></h2>
+<p>开发人员可以使用 <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5.0/qtwidgets/qpushbutton.html">QPushButton</a> 来创建和操控按钮。这个类易于使用和被定制，所以它是Qt中最有用的类之一。一般来说，按钮只显示位于其上的文字，不过它也可以同时显示一个图标。
+</p><p>QPushButton继承自 <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5.0/qtwidgets/qabstractbutton.html">QAbstractButton</a> ，后者继承自 <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5.0/qtwidgets/qwidget.html">QWidget</a> 。
+</p>
+<h2><span class="mw-headline" id=".E4.BF.A1.E5.8F.B7">信号</span></h2>
+<h3><span class="mw-headline" id=".E7.BB.A7.E6.89.BF.E8.87.AAQAbstractButton.E7.9A.84">继承自QAbstractButton的</span></h3>
+<ul>
+<li> void clicked ( bool checked = false )
+</li>
+<li> void pressed ()
+</li>
+<li> void released ()
+</li>
+<li> void toggled ( bool checked )
+</li>
+</ul>
+<h3><span class="mw-headline" id=".E7.BB.A7.E6.89.BF.E8.87.AAQWidget.E7.9A.84">继承自QWidget的</span></h3>
+<ul>
+<li> void customContextMenuRequested ( const QPoint &amp; pos )
+</li>
+</ul>
+<h3><span class="mw-headline" id=".E7.BB.A7.E6.89.BF.E8.87.AAQObject.E7.9A.84">继承自QObject的</span></h3>
+<ul>
+<li> void destroyed ( QObject * obj = 0 )
+</li>
+</ul>
+<h2><span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E7.94.A8.E6.B3.95">基本用法</span></h2>
+<h3><span class="mw-headline" id=".E6.96.87.E6.9C.AC">文本</span></h3>
+<p>QPushButton的文本可以在按钮被创建时设置，也可以在之后使用 <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5.0/qtwidgets/qabstractbutton.html#text-prop">setText()</a> 方法设置。使用 <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5.0/qtwidgets/qabstractbutton.html#text-prop">text()</a> 方法来获得按钮当前的文本。
+</p>
+<h3><span class="mw-headline" id=".E5.9B.BE.E6.A0.87">图标</span></h3>
+<p>同样的，QPushButton的图标可以在按钮被创建时设置，也可以在之后使用 <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5.0/qtwidgets/qabstractbutton.html#icon-prop">setIcon()</a> 方法设置。使用 <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5.0/qtwidgets/qabstractbutton.html#icon-prop">icon()</a> 方法来获得按钮当前的图标。
+</p>
+<h3><span class="mw-headline" id=".E4.BD.8D.E7.BD.AE.E5.92.8C.E5.A4.A7.E5.B0.8F.E7.9A.84.E8.AE.BE.E7.BD.AE">位置和大小的设置</span></h3>
+<p>使用 <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5.0/qtwidgets/qwidget.html#geometry-prop">setGeometry()</a> 方法来设置按钮的位置和大小。如果只是想修改按钮的大小，使用 <a rel="nofollow" class="external text" href="http://doc.qt.io/qt-5.0/qtwidgets/qwidget.html#size-prop">resize()</a> 方法来设置。
+</p>
+<h3><span class="mw-headline" id=".E6.8C.89.E9.92.AE.E7.9A.84.E6.93.8D.E6.8E.A7">按钮的操控</span></h3>
+<p>当有事件发生时，QPushButton会发出信号。要操控按钮，把确切的信号和一个信号相连接：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">connect</span><span class="br0">&#40;</span>m_button<span class="sy0">,</span> SIGNAL <span class="br0">&#40;</span>released<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">,</span><span class="kw1">this</span><span class="sy0">,</span> SLOT <span class="br0">&#40;</span>handleButton<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="sy0">&lt;</span>code<span class="sy0">&gt;</span>
+&#160;
+<span class="sy0">==</span> 示例 <span class="sy0">==</span>
+&#160;
+下面这个简单的代码片段演示了怎样创建和使用<span class="kw5">QPushButton</span>。它已经在<span class="kw5">Qt</span> Symbian Simulator上通过了测试。
+&#160;
+你会看到，一个<span class="kw5">QPushButton</span>的实例被创建出来。信号 <span class="st0">''</span><span class="st0">'released()'</span><span class="st0">''</span> 和槽 <span class="st0">''</span><span class="st0">'handleButton()'</span><span class="st0">''</span> 连接在一起，它们用于改变按钮的文本和大小。
+&#160;
+<span class="sy0">===</span> mainwindow.<span class="me1">h</span> <span class="sy0">===</span></pre></div></div>
+<ol>
+<li>ifndef MAINWINDOW_H
+</li>
+<li>define MAINWINDOW_H
+</li>
+</ol>
+<ol>
+<li>include &lt;QMainWindow&gt;
+</li>
+<li>include &lt;QPushButton&gt;
+</li>
+</ol>
+<p>namespace Ui {
+</p>
+<pre>class MainWindow;
+</pre>
+<p>}
+</p><p>class MainWindow&#160;: public QMainWindow
+{
+</p>
+<pre>Q_OBJECT
+</pre>
+<p>public:
+</p>
+<pre>explicit MainWindow(QWidget *parent = 0);
+virtual ~MainWindow();
+</pre>
+<p>private slots:
+</p>
+<pre>void handleButton();
+</pre>
+<p>private:
+</p>
+<pre>QPushButton *m_button;
+</pre>
+<p>};
+</p>
+<ol>
+<li>endif // MAINWINDOW_H
+</li>
+</ol>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">===</span> mainwindow.<span class="me1">cpp</span> <span class="sy0">===</span></pre></div></div>
+<ol>
+<li>include "mainwindow.h"
+</li>
+</ol>
+<ol>
+<li>include &lt;QCoreApplication&gt;
+</li>
+</ol>
+<p>MainWindow::MainWindow(QWidget *parent)
+</p>
+<pre>: QMainWindow(parent)
+</pre>
+<p>{
+</p>
+<pre>// 创建按钮
+m_button = new QPushButton("My Button", this);
+</pre>
+<p>// 设置按钮的大小和位置
+</p>
+<pre>m_button-&gt;setGeometry(QRect(QPoint(100, 100),
+QSize(200, 50)));
+</pre>
+<p>// 把按钮发出的信号连接到确切的槽
+</p>
+<pre>connect(m_button, SIGNAL (released()), this, SLOT (handleButton()));
+</pre>
+<p>}
+</p><p>void MainWindow::handleButton()
+{
+</p>
+<pre>// 改变按钮的文本
+m_button-&gt;setText("Example");
+</pre>
+<p>// 改变按钮的大小
+</p>
+<pre>m_button-&gt;resize(100,100);
+</pre>
+<p>}
+</p><p>MainWindow::~MainWindow()
+{
+</p><p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">===</span> main.<span class="me1">cpp</span> <span class="sy0">===</span></pre></div></div>
+<ol>
+<li>include "mainwindow.h"
+</li>
+</ol>
+<ol>
+<li>include &lt;QApplication&gt;
+</li>
+</ol>
+<p>int main(int argc, char *argv[])
+{
+</p>
+<pre>QApplication app(argc, argv);
+</pre>
+<p>MainWindow mainWindow;
+</p>
+<pre>mainWindow.showMaximized();
+return app.exec();
+</pre>
+<p>}
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="sy0">==</span> 参见 <span class="sy0">==</span>
+&#160;
+<span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//developer.qt.nokia.com/wiki/Qt_Buttons Qt Buttons]</span>
+&#160;
+<span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//developer.qt.nokia.com/wiki/Basic_Qt_Programming_Tutorial Basic Qt Programming Tutorial]</span>
+&#160;
+<span class="sy0">====</span> 欢迎讨论： <span class="sy0">====</span>
+&#160;
+<span class="br0">&#91;</span>http<span class="sy0">:</span><span class="co1">//blog.csdn.net/qter_wd007 Qt 博客-wd007的专栏]</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.081 seconds
+Real time usage: 0.089 seconds
+Preprocessor visited node count: 73/1000000
+Preprocessor generated node count: 196/1000000
+Post‐expand include size: 1308/2097152 bytes
+Template argument size: 422/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:999-0!*!0!!en!*!* and timestamp 20151104141055 and revision id 16429
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="../index8ecd.html?title=How_to_Use_QPushButton/zh&amp;oldid=16429">http://wiki.qt.io/index.php?title=How_to_Use_QPushButton/zh&amp;oldid=16429</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="../Special_Categories.html" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="../Category_Developing_with_Qt__General.html" title="Category:Developing with Qt::General">Developing with Qt::General</a></li><li><a href="../Category_HowTo.html" title="Category:HowTo">HowTo</a></li><li><a href="../Category_Snippets.html" title="Category:Snippets">Snippets</a></li><li><a href="../Category_Tutorial.html" title="Category:Tutorial">Tutorial</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="../User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="../User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=ac25a54f358e7f56&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="zh.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="../Talk_How_to_Use_QPushButton/zh.html?title=Talk:How_to_Use_QPushButton/zh&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="zh.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="../index9a57.html?title=How_to_Use_QPushButton/zh&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="../indexe097.html?title=How_to_Use_QPushButton/zh&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(../skins/common/images/wiki.png);" href="../Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="../Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="../Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="../How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="../Special_WhatLinksHere/How_to_Use_QPushButton/zh.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="../Special_RecentChangesLinked/How_to_Use_QPushButton/zh.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="../Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="../index7655.html?title=How_to_Use_QPushButton/zh&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="../index8ecd.html?title=How_to_Use_QPushButton/zh&amp;oldid=16429" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="../index9fc7.html?title=How_to_Use_QPushButton/zh&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 April 2015, at 13:26.</li>
+											<li id="footer-info-viewcount">This page has been accessed 1,391 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="../skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="../load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":229});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/How_to_Use_QPushButton/zh by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:41:03 GMT -->
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=New_Signal_Slot_Syntax&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:42:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for New Signal Slot Syntax - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"New_Signal_Slot_Syntax","wgTitle":"New Signal Slot Syntax","wgCurRevisionId":19173,"wgRevisionId":0,"wgArticleId":1170,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"New_Signal_Slot_Syntax","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-New_Signal_Slot_Syntax skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for New Signal Slot Syntax</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/New_Signal_Slot_Syntax" title="New Signal Slot Syntax">New Signal Slot Syntax</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{LangSwitch}}
+[[Category:Developing_Qt::Qt Planning::Qt Public Roadmap]]
+[[Category:Developing_Qt::Qt Planning]]
+[[Category:Developing_Qt]]
+
+= New Signal Slot Syntax in Qt 5 =
+
+This page was used to describe the new signal and slot syntax during its development. The feature is now released with Qt5.
+* [http://woboq.com/blog/new-signals-slots-syntax-in-qt5.html Blog entry introducing it]
+* [http://woboq.com/blog/how-qt-signals-slots-work-part2-qt5.html How it works] (implementation details)
+
+'''Note''': This is in addition to the old string-based syntax which remains valid.
+
+== Status ==
+
+* Already merged in qtbase/master
+
+== Connecting in Qt5 ==
+
+There will be several ways to connect a signal in Qt5.
+
+=== Old syntax ===
+
+Qt5 will continue to support the [http://doc.qt.io/qt-5/qobject.html#connect old string-based syntax] for connecting signals and slots defined in a QObject or any class that inherits from QObject (including QWidget)
+
+&lt;code>
+connect(sender, SIGNAL (valueChanged(QString,QString)),
+ receiver, SLOT (updateValue(QString)) );
+&lt;/code>
+
+=== New: connecting to QObject member ===
+
+Here's a new way to connect two QObjects and pass non-string objects:
+
+&lt;code>
+connect(sender, &amp;Sender::valueChanged,
+ receiver, &amp;Receiver::updateValue );
+&lt;/code>
+
+==== pros ====
+
+* Compile time check of the existence of the signals and slot, of the types, or if the Q_OBJECT is missing.
+* Argument can be by typedefs or with different namespace specifier, and it works.
+* Possibility to automatically cast the types if there is implicit conversion (e.g. from QString to QVariant)
+* It is possible to connect to any member function of QObject, not only slots.
+
+==== cons ====
+
+* More complicated syntax? (you need to specify the type of your object)
+* Very complicated syntax in cases of overloads?
+* Default arguments in slot is not supported anymore.
+
+=== New: connecting to simple function ===
+
+The new syntax can even connect to functions, not just QObjects:
+
+&lt;code>
+connect(sender, &amp;Sender::valueChanged, someFunction);
+&lt;/code>
+
+==== pro ====
+
+* can be used with tr1::bind
+* can be used with c+''11 lambda expressions
+
+&lt;code>
+connect(sender, &amp;Sender::valueChanged,
+ tr1::bind(receiver, &amp;Receiver::updateValue, "senderValue", tr1::placeholder::_1) );
+
+connect(sender, &amp;Sender::valueChanged, [=](const QString &amp;newValue) {
+ receiver->updateValue("senderValue", newValue);
+ } );
+&lt;/code>
+
+==== cons ====
+
+* There is no automatic disconnection when the 'receiver' is destroyed because it's a functor with no QObject. However, since 5.2 there is an overload which adds a "context object". When that object is destroyed, the connection is broken (the context is also used for the thread affinity: the lambda will be called in the thread of the event loop of the object used as context).
+
+== Disconnecting in Qt5 ==
+
+As you might expect, there are some changes in how connections can be terminated in Qt5, too.
+
+=== Old way ===
+
+You can disconnect in the old way (using SIGNAL, SLOT) but only if 
+
+* you connected using the old way, or
+* if you want to disconnect all the slots from a given signal using wild card character
+
+=== Symetric to the function pointer one ===
+
+&lt;code>
+disconnect(sender, &amp;Sender::valueChanged,
+ receiver, &amp;Receiver::updateValue );
+
+&lt;/code>
+
+Only works if you connected with the symmetric call, with function pointers (Or you can also use 0 for wild card)
+In particular, does not work with static function, functors or lambda functions.
+
+=== New way using QMetaObject::Connection ===
+
+&lt;code>
+QMetaObject::Connection m_connection;
+//…
+m_connection = QObject::connect(…);
+//…
+QObject::disconnect(m_connection);
+&lt;/code>
+
+Works in all cases, including lambda functions or functors.
+
+
+== Asynchronous made easier. ==
+
+With C11 it is possible to keep the code inline
+
+
+&lt;code>
+void doYourStuff(const QByteArray &amp;page)
+{
+ QTcpSocket *socket = new QTcpSocket;
+ socket->connectToHost("qt.io", 80);
+ QObject::connect(socket, &amp;QTcpSocket::connected, [socket, page] () {
+ socket->write(QByteArray("GET " + page + ""));
+ });
+ QObject::connect(socket, &amp;QTcpSocket::readyRead, [socket] () {
+ qDebug()&lt;&lt; "GOT DATA "&lt;&lt; socket->readAll();
+ });
+ QObject::connect(socket, &amp;QTcpSocket::disconnected, [socket] () {
+ qDebug()&lt;&lt; "DISCONNECTED ";
+ socket->deleteLater();
+ });
+
+ QObject::connect(socket, static_cast&lt;void (QTcpSocket::*)(QAbstractSocket::SocketError)>
+(&amp;QAbstractSocket::error), [socket](QAbstractSocket::SocketError) {
+ qDebug()&lt;&lt; "ERROR " &lt;&lt; socket->errorString();
+ socket->deleteLater();
+ });
+}
+&lt;/code>
+
+Here's a QDialog without re-entering the eventloop, and keeping the code where it belongs:
+
+&lt;code>
+void Doc::saveDocument() {
+ QFileDialog *dlg = new QFileDialog();
+ dlg->open();
+ QObject::connect(dlg, &amp;QDialog::finished, [dlg, this](int result) {
+ if (result) {
+ QFile file(dlg->selectedFiles().first());
+ // …
+ }
+ dlg->deleteLater();
+ });
+
+}
+&lt;/code>
+
+Another example using [http://blog.nikhilmarathe.me/2011/02/qhttpserver-web-apps-in-qt.html QHttpServer] : http://pastebin.com/pfbTMqUm
+
+== Error reporting ==
+
+Tested with GCC.
+
+Fortunately, IDEs like Qt Creator simplifies the function naming
+
+=== forgot Q_OBJECT ===
+
+&lt;code>
+#include &lt;QtCore>
+class Goo : public QObject {
+ Goo() {
+ connect(this, &amp;Goo::someSignal, this, &amp;QObject::deleteLater);
+ }
+signals:
+ void someSignal();
+};
+&lt;/code>
+
+&lt;code>
+qobject.h: In member function 'void QObject::qt_check_for_QOBJECT_macro(const T&amp;&amp;) const [with T = Goo]':
+qobject.h:535:9: instantiated from 'static typename QtPrivate::QEnableIf&lt;((int)
+(QtPrivate::FunctionPointer&lt;Func>::ArgumentCount) >= (int)
+(QtPrivate::FunctionPointer&lt;Func2>::ArgumentCount)), void*>::Type QObject::connect(const typename
+QtPrivate::FunctionPointer&lt;Func>::Object*, Func1, const typename QtPrivate::FunctionPointer&lt;Func2>::Object*,
+Func2, Qt::ConnectionType) [with Func1 = void (Goo::*)(), Func2 = void (QObject::*)(), typename
+QtPrivate::QEnableIf&lt;((int)(QtPrivate::FunctionPointer&lt;Func>::ArgumentCount) >= (int)
+(QtPrivate::FunctionPointer&lt;Func2>::ArgumentCount)), void*>::Type = void*, typename 
+QtPrivate::FunctionPointer&lt;Func>::Object = Goo, typename QtPrivate::FunctionPointer&lt;Func2>::Object = QObject]'
+main.cc:4:68: instantiated from here
+qobject.h:353:5: error: void value not ignored as it ought to be
+make: '''* [main.o] Error 1
+&lt;/code>
+
+=== Type mismatch ===
+
+&lt;code>
+
+#include &lt;QtCore>
+class Goo : public QObject {
+Q_OBJECT
+public:
+ Goo() {
+ connect(this, &amp;Goo::someSignal, this, &amp;Goo::someSlot1); //error
+ connect(this, &amp;Goo::someSignal, this, &amp;Goo::someSlot2); //works
+ }
+signals:
+ void someSignal(QString);
+public:
+ void someSlot1(int);
+ void someSlot2(QVariant);
+};
+&lt;/code>
+
+&lt;code>
+qobject.h: In static member function 'static typename QtPrivate::QEnableIf&lt;((int)
+(QtPrivate::FunctionPointer&lt;Func>::ArgumentCount) >= (int)
+(QtPrivate::FunctionPointer&lt;Func2>::ArgumentCount)), void*>::Type QObject::connect(const typename
+QtPrivate::FunctionPointer&lt;Func>::Object*, Func1, const typename QtPrivate::FunctionPointer&lt;Func2>::Object*,
+Func2, Qt::ConnectionType) [with Func1 = void (Goo::*)(QString), Func2 = void (Goo::*)(int), typename
+QtPrivate::QEnableIf&lt;((int)(QtPrivate::FunctionPointer&lt;Func>::ArgumentCount) >= (int)
+(QtPrivate::FunctionPointer&lt;Func2>::ArgumentCount)), void*>::Type = void*, typename 
+QtPrivate::FunctionPointer&lt;Func>::Object = Goo, typename QtPrivate::FunctionPointer&lt;Func2>::Object = Goo]':
+main.cc:6:62: instantiated from here
+qobject.h:538:163: error: no type named 'IncompatibleSignalSlotArguments' in 'struct 
+QtPrivate::CheckCompatibleArguments&lt;QtPrivate::List&lt;QString, void>, QtPrivate::List&lt;int, void>, true>'
+qobject.h: In static member function 'static void QtPrivate::FunctionPointer&lt;Ret (Obj::*)(Arg1)>::call
+(QtPrivate::FunctionPointer&lt;Ret (Obj::*)(Arg1)>::Function, Obj*, void*) [with Args = QtPrivate::List&lt;QString, void>,
+Obj = Goo, Ret = void, Arg1 = int, QtPrivate::FunctionPointer&lt;Ret (Obj::*)(Arg1)>::Function = void (Goo::*)(int)]':
+qobject.h:501:13: instantiated from 'void QObject::QSlotObject&lt;Func, Args>::call(QObject*, void**) [with Func =
+void (Goo::*)(int), Args = QtPrivate::List&lt;QString, void>, QObject = QObject]'
+main.cc:14:2: instantiated from here
+qobject.h:109:13: error: cannot convert 'QtPrivate::RemoveRef&lt;QString>::Type' to 'int' in argument passing
+make: *** [main.o] Error 1
+&lt;/code>
+
+== Open Questions ==
+
+=== Default arguments in slot ===
+
+if you have code like this:
+
+&lt;code>
+class A : public QObject { Q_OBJECT
+ public slots:
+ void someSlot(int foo = 0);
+};
+&lt;/code>
+
+The old method allows you to connect that slot to a signal that does not have arguments.
+But I cannot know with template code if a function has default arguments or not.
+So this feature is disabled.
+
+There was an implementation that falls back to the old method if there are more arguments in the slot than in the signal.
+This however is quite inconsistent, since the old method does not perform type-checking or type conversion. It was removed from the patch that has been merged.
+
+=== Overload ===
+
+As you might see in the example, connecting to QAbstractSocket::error is not really beautiful since error has an overload, and taking the address of an overloaded function requires explicit casting.
+
+Some macro could help (with c11 or ''typeof'' extensions)
+
+The best thing is probably to recommend not to overload signals or slots …
+
+… but we have been adding overloads in past minor releases of Qt because taking the address of a function was not a use case we support. But now this would be impossible without breaking the source compatibility.
+
+=== Disconnect ===
+
+Should QMetaObject::Connection have a disconnect() function?
+
+The other problem is that there is no automatic disconnection for some object in the closure if we use the syntax that take a closure.
+One could add a list of object in the disconnection, or a new function like QMetaObject::Connection::require
+
+&lt;code>
+auto c = connect(sender, &amp;Sender::valueChanged, [=](const QString &amp;newValue) {
+ receiver->updateValue("senderValue", newValue);
+ } , QList&lt;QObject> { receiver } ); // solution 1
+c.require(receiver); // solution 2
+&lt;/code>
+
+=== Callbacks ===
+
+Function such as QHostInfo::lookupHost or QTimer::singleShot or QFileDialog::open take a QObject receiver and char* slot.
+This do not work for the new method.
+If one wants to do callback c''+ way, one should use std::function (or tr1)
+But we cannot use STL types in our ABI, so a QFunction should be done to copy std::function.
+This is anyway irrelevant for QObject connections.
+
+== History ==
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Template used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:LangSwitch" title="Template:LangSwitch">Template:LangSwitch</a> (<a href="http://wiki.qt.io/index.php?title=Template:LangSwitch&amp;action=edit" title="Template:LangSwitch">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/New_Signal_Slot_Syntax" title="New Signal Slot Syntax">New Signal Slot Syntax</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/New_Signal_Slot_Syntax">http://wiki.qt.io/New_Signal_Slot_Syntax</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=New+Signal+Slot+Syntax" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/New_Signal_Slot_Syntax"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:New_Signal_Slot_Syntax&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/New_Signal_Slot_Syntax" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=New_Signal_Slot_Syntax&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=New_Signal_Slot_Syntax&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/New_Signal_Slot_Syntax" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/New_Signal_Slot_Syntax" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=New_Signal_Slot_Syntax&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":1142});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=New_Signal_Slot_Syntax&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 08:42:34 GMT -->
+</html>

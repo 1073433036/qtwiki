@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&oldid=16538 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:58:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Getting Started Programming with QML/zh - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Getting_Started_Programming_with_QML/zh","wgTitle":"Getting Started Programming with QML/zh","wgCurRevisionId":16538,"wgRevisionId":16538,"wgArticleId":1396,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup","Pages with broken file links"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Getting_Started_Programming_with_QML/zh","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Getting_Started_Programming_with_QML_zh skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Getting Started Programming with QML/zh</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"><div id="mw-revision-info">Revision as of 16:13, 4 May 2015 by <a href="http://wiki.qt.io/index.php?title=User:AutoSpider&amp;action=edit&amp;redlink=1" class="new mw-userlink" title="User:AutoSpider (page does not exist)">AutoSpider</a>  <span class="mw-usertoollinks">(<a href="http://wiki.qt.io/index.php?title=User_talk:AutoSpider&amp;action=edit&amp;redlink=1" class="new" title="User talk:AutoSpider (page does not exist)">Talk</a> | <a href="http://wiki.qt.io/Special:Contributions/AutoSpider" title="Special:Contributions/AutoSpider">contribs</a>)</span></div><br />
+				<div id="mw-revision-nav">(<a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&amp;diff=prev&amp;oldid=16538" title="Getting Started Programming with QML/zh">diff</a>) <a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&amp;direction=prev&amp;oldid=16538" title="Getting Started Programming with QML/zh">← Older revision</a> | Latest revision (diff) | Newer revision → (diff)</div></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="http://wiki.qt.io/Updated_pages" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<p><br />
+原文翻譯自：<a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/gettingstartedqml.html">Getting Started Programming With QML</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#QML.E7.A8.8B.E5.BC.8F.E8.A8.AD.E8.A8.88.E5.85.A5.E9.96.80"><span class="tocnumber">1</span> <span class="toctext">QML程式設計入門</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#.E7.94.A8QML.E5.BB.BA.E7.AB.8B.E4.BD.BF.E7.94.A8.E8.80.85.E4.BB.8B.E9.9D.A2"><span class="tocnumber">1.1</span> <span class="toctext">用QML建立使用者介面</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#.E5.AE.9A.E7.BE.A9.E6.8C.89.E9.88.95.E5.8F.8A.E9.81.B8.E5.96.AE"><span class="tocnumber">1.2</span> <span class="toctext">定義按鈕及選單</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#.E5.AF.A6.E7.8F.BE.E9.81.B8.E5.96.AE.E5.88.97"><span class="tocnumber">1.3</span> <span class="toctext">實現選單列</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.E5.BB.BA.E7.AB.8B.E6.96.87.E5.AD.97.E7.B7.A8.E8.BC.AF.E5.99.A8"><span class="tocnumber">1.4</span> <span class="toctext">建立文字編輯器</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#.E8.A3.9D.E9.A3.BE.E6.96.87.E5.AD.97.E7.B7.A8.E8.BC.AF.E5.99.A8"><span class="tocnumber">1.5</span> <span class="toctext">裝飾文字編輯器</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="QML.E7.A8.8B.E5.BC.8F.E8.A8.AD.E8.A8.88.E5.85.A5.E9.96.80">QML程式設計入門</span></h1>
+<p>歡迎來到QML，這個陳述式使用者介面語言的世界。在這篇入門導引中，我們將會展示如何運用QML建立一個簡單的文字編輯器。讀完本文後，您應該會有足夠的準備來透過QML及Qt C+<i>開發自己的軟體。</i>
+</p>
+<h2><span class="mw-headline" id=".E7.94.A8QML.E5.BB.BA.E7.AB.8B.E4.BD.BF.E7.94.A8.E8.80.85.E4.BB.8B.E9.9D.A2">用QML建立使用者介面</span></h2>
+<p>我們要建立的文字編輯器將會具備讀取(load)，儲存(save)及文字編輯(edit)等功能。這篇文章將會包含兩個部分。第一個部分包含使用QML的陳述式語言進行應用程式的介面布局及行為控制。第二個部分，將使用Qt C實現檔案的存取。透過Qt的Meta-Object系統，我們將可讓C的函式變成QML可存取的屬性(property)。利用QML與Qt C，我們可有效的從應用程式邏輯中，將使用者介面邏輯分離出來。
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 editmenu.png">您的瀏覽器不支援圖片顯示</a>
+</p><p>要執行QML範例程式，僅需執行qmlviewer工具，並以範例的QML檔案作為參數。在本文中的C部分，均假設讀者已經具備編譯Qt程式的基礎知識。
+</p><p>本文章節：
+</p>
+<ul>
+<li> 定義按鈕及選單
+</li>
+<li> 實現選單列
+</li>
+<li> 建立文字編輯器
+</li>
+<li> 裝飾文字編輯器
+</li>
+<li> 使用Qt C擴展QML
+</li>
+</ul>
+<h2><span class="mw-headline" id=".E5.AE.9A.E7.BE.A9.E6.8C.89.E9.88.95.E5.8F.8A.E9.81.B8.E5.96.AE">定義按鈕及選單</span></h2>
+<h3><span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E5.85.83.E4.BB.B6_-_.E6.8C.89.E9.88.95">基本元件 - 按鈕</span></h3>
+<p>我們從建立一個按鈕作為文字編輯器的開始。從功能上來說，按鈕是一個滑鼠感知區及一個標籤所組成。而且，按鈕會在使用者按下它時有所動作。
+</p><p>在QML中，基本的可視項目是 <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-rectangle.html">Rectangle</a> 元素。一個 <b>Rectangle</b> 有可控制外觀及位置的屬性。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">import QtQuick <span class="nu16">1.0</span>
+&#160;
+ Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span> simplebutton
+ color<span class="sy0">:</span> <span class="st0">&quot;grey&quot;</span>
+ width<span class="sy0">:</span> <span class="nu0">150</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">75</span>
+&#160;
+ Text<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonLabel
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ text<span class="sy0">:</span> <span class="st0">&quot;button label&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>首先， <b>import QtQuick 1.0</b> 讓qmlviewer工具將我們稍後所需的QML元素引入。所有的QML都必須有這一行指令。注意Qt模組的版本也要於import敘述中一併指定。
+</p><p>這個簡單的矩形有一個唯一的識別字， <b>simplebutton</b> 。這個識別字是由 id 屬性所指定的。矩形元素的屬性是由一系列的屬性後接著冒號，再接著屬性值的方式來指定。在範例中，矩形的灰色是由 <b>color</b> 屬性所指定。同樣的，我們可藉由 <b>width</b> 及 <b>height</b> 來指定矩形的寬與高。
+</p><p><a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-text.html">Text</a> 元素是一個不可編輯的文字欄位。我們將這個 Text 元素命名為 buttonLabel 。設定 Text 欄位的內容是透過 value 屬性。這個標籤被包含在一個 Rectangle 之內，為了要讓它能夠對齊中央，我們指定 Text 元素的 <b>anchors</b> 設定到他的父項目 simplebutton 上。 Anchors 可與其他項目的 anchors 綁定，這會讓元件布局更簡單。
+</p><p>我們應將這個程式碼存成 Simplebutton.qml ，並且將這個檔名作為 qmlviewer 工具的參數。接著，我們就會得到一個包含文字標籤的灰色矩形。
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_simplebutton.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 simplebutton.png">您的瀏覽器不支援圖片顯示</a>
+</p><p>要實現按鈕的單擊功能，我們可使用 QML 的事件處理。 QML的事件處理與 Qt 的 <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/signalsandslots.html">signal及slot</a> 機制極為類似。 Signals 被發射，而連結的 slot 會被呼叫。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>simplebutton
+ …
+&#160;
+ MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> buttonMouseArea
+&#160;
+ anchors.<span class="me1">fill</span><span class="sy0">:</span> parent <span class="co1">// 將滑鼠偵測區釘到整個矩形的範圍。</span>
+ <span class="co1">//onClicked會處理滑鼠按鈕按下的事件。</span>
+ onClicked<span class="sy0">:</span> console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span><span class="st0">''</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>在我們的 simplebutton 元件中，我們引入了 MouseArea 元素。 MouseArea 元素描述了可偵測滑鼠移動的互動區域。對於我們的按鈕，我們將 MouseArea 固定在他的父元件 simplebutton 上。 anchors.fill 的語法是用來存取 anchors 的屬性群組中的 fill 這個特定屬性。QML使用 anchor 為基礎的的布局方式。一個項目會固定於另外一個項目上，由此建立一個強固的布局。
+</p><p>MouseArea有許多的訊號處理函式，當滑鼠於 MouseArea 所指定的範圍內移動時將會被呼叫。其中，onClicked 是當滑鼠按鍵按下時會被呼叫，預設是用左鍵單擊。我們可以將動作綁定到onClicked的處理函式。在我們的範例中，只要這個指定的滑鼠區域被按下，console.log() 就會輸出文字。console.log()在除錯及輸出文字上是很有用的。
+</p><p>在SimpleButton.qml的程式已經足以在螢幕上顯示一個按鈕並且當滑鼠在區域內被按下時就會輸出文字。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle <span class="br0">&#123;</span>
+ id<span class="sy0">:</span>Button
+ …
+&#160;
+property color buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightblue&quot;</span>
+ property color onHoverColor<span class="sy0">:</span> <span class="st0">&quot;gold&quot;</span>
+ property color borderColor<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+&#160;
+<span class="kw4">signal</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ onButtonClick<span class="sy0">:</span> <span class="br0">&#123;</span>
+ console.<span class="kw3">log</span><span class="br0">&#40;</span>buttonLabel.<span class="me1">text</span> <span class="sy0">+</span> <span class="st0">&quot; clicked&quot;</span> <span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ onClicked<span class="sy0">:</span> buttonClick<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ hoverEnabled<span class="sy0">:</span> <span class="kw2">true</span>
+ onEntered<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> onHoverColor
+ onExited<span class="sy0">:</span> parent.<span class="me1">border</span>.<span class="me1">color</span> <span class="sy0">=</span> borderColor
+ <span class="br0">&#125;</span>
+&#160;
+<span class="co1">// 用條件運算子來決定按鈕的顏色。</span>
+ color<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="kw5">Qt</span>.<span class="me1">darker</span><span class="br0">&#40;</span>buttonColor<span class="sy0">,</span> <span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy0">:</span> buttonColor
+ <span class="br0">&#125;</span></pre></div></div>
+<p>在 Button.qml 中是一個功能完整的按鈕。本文中只擷取其中一部分，其他部分都被省略。那些程式因為是前面已經介紹過了或是與目前的討論無關，所以使用省略符號來代表他們。
+</p><p>自訂的屬性可用一般屬性的語法來宣告。在這個程式中，宣告了 buttonColor 這個型態為 color 的屬性，並且賦予 "lightblue" 的值。在後面，buttonColor使用了條件運算來決定實際要繪製的按鈕顏色。注意屬性除了使用一般冒號方式來指定值，也可以用等號來指定。自訂的屬性允許在 Rectangle 程式範圍之外存取其內部的項目。一些基本的QML型態，像是 int，string，real及variant都可以使用。
+</p><p>藉由onEntered及onExited訊號與顏色設定的結合，當滑鼠移入及移出按鈕邊界時，按鈕的顏色也將隨之改變。
+</p><p>在Button.qml中藉著在buttonClick()前面加上 signal 的關鍵字，將它宣告成一個訊號。所有的訊號的處理函式都會自動的被建立，且名稱都是 on 開頭。因此，onButtonClick是buttonClick的處理函式。之後，onButtonClick將被指定一些動作。在我們的範例中， onClicked 的滑鼠處理將會呼叫 onButtonClick函式，這個函式只是簡單的顯示一些文字。onButtonClick讓外部物件得以容易的存取按鈕的滑鼠區域。例如：如果有一個以上的MouseArea宣告，一個buttonClick訊號可以更好的區分不同的MouseArea訊號。
+</p><p>現在，我們有基礎知識在QML中實現基本的滑鼠移動處理。我們在一個矩形中建立一個 Text 標籤 ，自訂它的屬性及實現反應滑鼠移動的行為。在元素中建立元素的概念將會在我們的文字編輯器軟體中一再的出現。
+</p><p>在沒有能夠進行一些動作前，這個按鈕目前還不算太有用。下一節中，我們將會建立一個包含這些按鈕的選單。
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_button.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 button.png">您的瀏覽器不支援圖片顯示</a>
+</p>
+<h3><span class="mw-headline" id=".E5.BB.BA.E7.AB.8B.E9.81.B8.E5.96.AE.E9.A0.81.E9.9D.A2">建立選單頁面</span></h3>
+<p>直到目前為止，我們說明了如何在單一的QML檔案中，建立畫面元素及指定行為。在本節中，我們將會說明如何載入QML元素，並且重複利用這些建立好的元件來建構其他的元件。
+</p><p>選單可用來顯示列表中的內容，其中每個項目都可以進行一個動作。在QML中，我們可以用好幾種方式建立選單。首先，我們將會會先建立一個包含按鈕的選單，這些按鈕最終將會用來執行不同的動作。這個選單的程式碼放在FileMenu.qml中。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> import QtQuick <span class="nu16">1.0</span> <span class="co1">// 載入主要的Qt QML模組</span>
+ import <span class="st0">&quot;folderName&quot;</span> <span class="co1">// 載入指定資料夾的內容</span>
+ import <span class="st0">&quot;script.js&quot;</span> as Script <span class="co1">// 載入一個Javascript檔案並且將他命名成Script</span></pre></div></div>
+<p>上面的語法展示了 import 關鍵字的用法。這是用於不在同一個目錄下的 Javascript或QML 檔案時。由於 Button.qml 與 FileMenu.qml 是在同一個目錄下，我們無須在指定載入 Button.qml 就可以使用它。只需要直接透過 Button{} 的語法建立一個按鈕元素，就像是 Rectangle{} 的用法一般。在 FileMenu.qml 的內容如下：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span> parent.<span class="me1">width</span><span class="sy0">/</span><span class="nu0">6</span>
+&#160;
+Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> loadButton
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;lightgrey&quot;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;Load&quot;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;grey&quot;</span>
+ id<span class="sy0">:</span> saveButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Save&quot;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> exitButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Exit&quot;</span>
+ buttonColor<span class="sy0">:</span> <span class="st0">&quot;darkgrey&quot;</span>
+&#160;
+onButtonClick<span class="sy0">:</span> <span class="kw5">Qt</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>在 FileMenu.qml 中，我們宣告三個 Button 元素。它們被宣告在一個 Row 元素內，定位器會將這些子元素排列成垂直一列。Button 宣告在Button.qml中，跟我們前一節中使用的 Button.qml 相同。新屬性可以綁定在新建立的按鈕中，並且覆蓋原來定義於Button.qml中的設定。exitButton按鈕在被按下的時候會離開並且關閉視窗。注意，除了exitButton按鈕中的onButtonClick函式會被呼叫外，在Button.qml 中的 onButtonClick 訊號處理函式也會一併被呼叫。
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_filemenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 filemenu.png">您的瀏覽器不支援圖片顯示</a>
+</p><p>Row 是宣告在 Rectangle之內，並且建立一個矩形的容器，用來將按鈕排成一列。這個矩形建立了一種間接的方式在選單內組織一列按鈕。編輯選單的宣告非常類似於我們在這裡所指出的方法。選單有按鈕，而按鈕上還有文字標籤：Copy, Paste及Select All。
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor1_editmenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor1 editmenu.png">您的瀏覽器不支援圖片顯示</a>
+</p><p>具備了前述關於載入及客製化元件的知識，我們現在或許已經可以結合這些選單頁面來建立一個選單列，在上面包含可用來選擇選單的按鈕。並且可以看看如何用QML來組織資料。
+</p>
+<h2><span class="mw-headline" id=".E5.AF.A6.E7.8F.BE.E9.81.B8.E5.96.AE.E5.88.97">實現選單列</span></h2>
+<p>我們的文字編輯器軟體將會需要能夠使用選單列顯示選單的方法。選單列可以切換不同的選單，而使用者可以選擇顯示想要的選單。選單的切換按試著選單需要更多的結構，而不僅僅是將他們放在一列顯示而已。QML使用模型與視圖(model and view)的方式來構成資料以及顯示他們。
+</p>
+<h3><span class="mw-headline" id=".E4.BD.BF.E7.94.A8.E8.B3.87.E6.96.99.E6.A8.A1.E5.9E.8B.E8.88.87.E6.AA.A2.E8.A6.96">使用資料模型與檢視</span></h3>
+<p>QML有不同的資料視圖(view)來顯示資料模型。我們的選單列將會以列表的方式來顯示選單，並且有一列標頭用來顯示選單名稱。這列選單是宣告在 VisualItemModel 中。 VisualItemModel 元素中的項目已經包含了諸如 Rectangle 元素等視圖及已載入的UI元素。其他的模型型態像是ListModel元素需要有一個 delegate 才能夠顯示他們的資料。
+</p><p>我們在menuListModel中宣告了兩個可見的項目，FileMenu及EditMenu。我們自定兩個選單並且用ListView來顯示他們。MenuBar.qml檔案包含這些QML的宣告。此外，一個簡單的編輯選單則定義在EditMenu.qml中。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> VisualItemModel<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListModel
+ FileMenu<span class="br0">&#123;</span>
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ color<span class="sy0">:</span> fileColor
+ <span class="br0">&#125;</span>
+ EditMenu<span class="br0">&#123;</span>
+ color<span class="sy0">:</span> editColor
+ width<span class="sy0">:</span> menuListView.<span class="me1">width</span>
+ height<span class="sy0">:</span> menuBar.<span class="me1">height</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>ListView元素將會根據delegate來顯示一個資料模型。這個delegate可以將模型內的項目以Row元素的方式顯示，或是也表格的方式顯示。我們的menuListModel已經有可見的項目，因此，我們將不需要宣告一個delegate。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> ListView<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> menuListView
+&#160;
+<span class="co1">// 定位器設定為與視窗定位器連動</span>
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ anchors.<span class="me1">bottom</span><span class="sy0">:</span> parent.<span class="me1">bottom</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ height<span class="sy0">:</span> parent.<span class="me1">height</span>
+&#160;
+<span class="co1">// 指定包含資料的模型</span>
+ model<span class="sy0">:</span> menuListModel
+&#160;
+<span class="co1">// 控制選單切換的移動</span>
+ snapMode<span class="sy0">:</span> ListView.<span class="me1">SnapOneItem</span>
+ orientation<span class="sy0">:</span> ListView.<span class="me1">Horizontal</span>
+ boundsBehavior<span class="sy0">:</span> Flickable.<span class="me1">StopAtBounds</span>
+ flickDeceleration<span class="sy0">:</span> <span class="nu0">5000</span>
+ highlightFollowsCurrentItem<span class="sy0">:</span> <span class="kw2">true</span>
+ highlightMoveDuration<span class="sy0">:</span><span class="nu0">240</span>
+ highlightRangeMode<span class="sy0">:</span> ListView.<span class="me1">StrictlyEnforceRange</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>另外，因為ListView繼承自Flickable，列表會對滑鼠拖曳與手勢有所反應。上面程式的最後指定了Flickable屬性以為我們列表建立需要的翻轉移動。尤其，highlightMoveDuration屬性可用來影響翻轉時所需的時間。較高的highlightMoveDuration屬性值會造成較慢的選單切換。
+</p><p>ListView透過索引來對項目進行維護，在模型中每個可見的項目都可以依照宣告的順序透過索引進行存取。變更currentIndex就會更換目前顯示高亮度的項目。
+我們選單的標題列正是這個效果的示範。兩個同在一個列中的按鈕在被按下時，兩者都會變更目前的選單。當fileButton被按下時，會修改目前選單為檔案選單。之所以指定 index 為 0，是因為 FileMenu 在menuListModel中宣告時是第一個。同樣的，editButton被按下時，會將目前選單設定為EditMenu。
+</p><p>labelList的矩形有一個為1的z值。這表示他會被顯示在選單列的前面。有較高z值的項目會被顯示在較低z值項目的前面。項目的z值預設都是0。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> labelList
+ …
+ z<span class="sy0">:</span> <span class="nu0">1</span>
+ Row<span class="br0">&#123;</span>
+ anchors.<span class="me1">centerIn</span><span class="sy0">:</span> parent
+ spacing<span class="sy0">:</span><span class="nu0">40</span>
+ Button<span class="br0">&#123;</span>
+ label<span class="sy0">:</span> <span class="st0">&quot;File&quot;</span>
+ id<span class="sy0">:</span> fileButton
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">0</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> editButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Edit&quot;</span>
+ …
+ onButtonClick<span class="sy0">:</span> menuListView.<span class="me1">currentIndex</span> <span class="sy0">=</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>我們所建立的選單列可以透過翻轉或是按下選單名稱的方式來存取選單。切換選單螢幕感覺起來是直覺而且反應靈敏。
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor2_menubar.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor2 menubar.png">您的瀏覽器不支援圖片顯示</a>
+</p>
+<h2><span class="mw-headline" id=".E5.BB.BA.E7.AB.8B.E6.96.87.E5.AD.97.E7.B7.A8.E8.BC.AF.E5.99.A8">建立文字編輯器</span></h2>
+<h3><span class="mw-headline" id=".E5.AE.A3.E5.91.8A.E6.96.87.E5.AD.97.E7.B7.A8.E8.BC.AF.E5.8D.80">宣告文字編輯區</span></h3>
+<p>如沒有一個可編輯的文字區域，我們的編輯器就稱不上是一個文字編輯器了。QML的 TextEdit:<a rel="nofollow" class="external free" href="http://doc.qt.nokia.com/4.7/qml-textedit.html">http://doc.qt.nokia.com/4.7/qml-textedit.html</a> 元素允許宣告一個多行文字編輯區域。TextEdit與Text元素不同，後者不允許使用者直接編輯文字。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> TextEdit<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> textEditor
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ width<span class="sy0">:</span>parent.<span class="me1">width</span><span class="sy0">;</span> height<span class="sy0">:</span>parent.<span class="me1">height</span>
+ color<span class="sy0">:</span><span class="st0">&quot;midnightblue&quot;</span>
+ focus<span class="sy0">:</span> <span class="kw2">true</span>
+&#160;
+wrapMode<span class="sy0">:</span> TextEdit.<span class="me1">Wrap</span>
+&#160;
+onCursorRectangleChanged<span class="sy0">:</span> flickArea.<span class="me1">ensureVisible</span><span class="br0">&#40;</span>cursorRectangle<span class="br0">&#41;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>這個編輯器有自己的字體顏色屬性集合，已及換行的設定。TextEdit區域是在一個可翻轉的區域內，當文字游標超出可視區域時將會捲動文字。 <b>ensureVisible()</b> 函式會檢查游標矩形是否超出可視範圍，並據此移動文字區域。QML使用JavaScript語法來撰寫其腳本，如前面所提及的，JavaScript檔案可以被載入並且在QML檔案中使用。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> function ensureVisible®<span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>contentX <span class="sy0">&gt;=</span> r.<span class="me1">x</span><span class="br0">&#41;</span>
+ contentX <span class="sy0">=</span> r.<span class="me1">x</span><span class="sy0">;</span>
+ <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>contentX<span class="sy0">+</span>width <span class="sy0">&lt;=</span> r.<span class="me1">x</span><span class="sy0">+</span>r.<span class="me1">width</span><span class="br0">&#41;</span>
+ contentX <span class="sy0">=</span> r.<span class="me1">x</span><span class="sy0">+</span>r.<span class="me1">width</span><span class="sy0">-</span>width<span class="sy0">;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>contentY <span class="sy0">&gt;=</span> r.<span class="me1">y</span><span class="br0">&#41;</span>
+ contentY <span class="sy0">=</span> r.<span class="me1">y</span><span class="sy0">;</span>
+ <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>contentY<span class="sy0">+</span>height <span class="sy0">&lt;=</span> r.<span class="me1">y</span><span class="sy0">+</span>r.<span class="me1">height</span><span class="br0">&#41;</span>
+ contentY <span class="sy0">=</span> r.<span class="me1">y</span><span class="sy0">+</span>r.<span class="me1">height</span><span class="sy0">-</span>height<span class="sy0">;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<h3><span class="mw-headline" id=".E7.B5.84.E5.90.88.E6.96.87.E5.AD.97.E7.B7.A8.E8.BC.AF.E5.99.A8.E7.9A.84.E5.85.83.E4.BB.B6">組合文字編輯器的元件</span></h3>
+<p>現在，我們已經準備好了使用QML來建立文字編輯器的排版。這個文字編輯器有兩個元件，我們所建立的選單列及文字區域。QML允許我們重複使用元件，如此一來，我們可以透過載入元件並且視需要客製化來讓程式碼簡單點。我們的文字編輯器將視窗一分為二，其中三分之一的部份給選單列使用，三分之二則留給文字區域顯示內容。我們的選單列顯示在任何其他元素之前。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+&#160;
+id<span class="sy0">:</span> screen
+ width<span class="sy0">:</span> <span class="nu0">1000</span><span class="sy0">;</span> height<span class="sy0">:</span> <span class="nu0">1000</span>
+&#160;
+<span class="co1">// 螢幕分割為MenuBar及TextArea。1/3部分給MenuBar使用。</span>
+ property <span class="kw4">int</span> partition<span class="sy0">:</span> height<span class="sy0">/</span><span class="nu0">3</span>
+&#160;
+MenuBar<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>menuBar
+ height<span class="sy0">:</span> partition
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ z<span class="sy0">:</span> <span class="nu0">1</span>
+ <span class="br0">&#125;</span>
+&#160;
+TextArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>textArea
+ anchors.<span class="me1">bottom</span><span class="sy0">:</span>parent.<span class="me1">bottom</span>
+ y<span class="sy0">:</span> partition
+ color<span class="sy0">:</span> <span class="st0">&quot;white&quot;</span>
+ height<span class="sy0">:</span> partition<span class="sy0">*</span><span class="nu0">2</span>
+ width<span class="sy0">:</span>parent.<span class="me1">width</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>藉由載入可重用的元件，我們的 TextEditor 程式碼看起來更簡單了。我們可以再次客製化主程式，不用擔心那些已經定義行為的屬性。透過這樣的方式，應用軟體的配置及UI元件可以簡單的建立出來。
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor3_texteditor.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor3 texteditor.png">您的瀏覽器不支援圖片顯示</a>
+</p>
+<h2><span class="mw-headline" id=".E8.A3.9D.E9.A3.BE.E6.96.87.E5.AD.97.E7.B7.A8.E8.BC.AF.E5.99.A8">裝飾文字編輯器</span></h2>
+<h3><span class="mw-headline" id=".E5.AF.A6.E7.8F.BE.E6.8A.BD.E5.B1.9C.E4.BB.8B.E9.9D.A2">實現抽屜介面</span></h3>
+<p>我們的文字編輯器看起來有點簡單，現在我們要來裝飾它。使用QML，我們可以宣告轉換行為而讓文字編輯器出現動畫效果。我們的選單列佔用了1/3的螢幕，比較好的方式應該是當我們有需要的時候才顯示這些區域。
+</p><p>我們可以加入一個抽屜介面，它會在被按下的時候，放大或縮小選單列。在我們的實作中，我們有一個細窄的矩形區域來回應滑鼠的點擊。我們的抽屜及整個應用程式都有兩個狀態，"抽屜打開"及"抽屜關閉"。抽屜項目是一個具有很小高度的矩形。內部有一個嵌入的Image元素顯示一個箭頭圖示，並且置於抽屜的中央位置。只要使用者在滑鼠區域進行點擊，抽屜會透過screen這個識別符，指定一個狀態給整個應用程式。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Rectangle<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>drawer
+ height<span class="sy0">:</span><span class="nu0">15</span>
+&#160;
+Image<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> arrowIcon
+ source<span class="sy0">:</span> <span class="st0">&quot;images/arrow.png&quot;</span>
+ anchors.<span class="me1">horizontalCenter</span><span class="sy0">:</span> parent.<span class="me1">horizontalCenter</span>
+ <span class="br0">&#125;</span>
+&#160;
+MouseArea<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> drawerMouseArea
+ anchors.<span class="me1">fill</span><span class="sy0">:</span>parent
+ onClicked<span class="sy0">:</span><span class="br0">&#123;</span>
+ <span class="kw1">if</span> <span class="br0">&#40;</span>screen.<span class="me1">state</span>  <span class="st0">&quot;DRAWER_CLOSED&quot;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+                     screen.<span class="me1">state</span> <span class="sy0">=</span> <span class="st0">&quot;DRAWER_OPEN&quot;</span>
+                 <span class="br0">&#125;</span>
+                 <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>screen.<span class="me1">state</span>  <span class="st0">&quot;DRAWER_OPEN&quot;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+ screen.<span class="me1">state</span> <span class="sy0">=</span> <span class="st0">&quot;DRAWER_CLOSED&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ …
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>一個狀態就是一組組態設定，透過State元素來描述它。一系列的狀態可以綁定在states屬性上。在我們的應用程式中，有兩個命名為DRAWER_CLOSED與DRAWER_OPEN的狀態。項目的組態是透過PropertyChanges元素來指定。在DRAWER_OPEN狀態下，有四個項目會收到狀態改變的通知。第一個是menuBar會把 y 屬性設成 0。與此類似的，textArea也會在DRAWER_OPEN狀態下降低位置。textArea，drawer及它的icon將會遭遇屬性變更以符合目前的狀態。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> states<span class="sy0">:</span><span class="br0">&#91;</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;DRAWER_OPEN&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">0</span><span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> y<span class="sy0">:</span> partition <span class="sy0">+</span> drawer.<span class="me1">height</span><span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> y<span class="sy0">:</span> partition<span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> arrowIcon<span class="sy0">;</span> rotation<span class="sy0">:</span> <span class="nu0">180</span><span class="br0">&#125;</span>
+ <span class="br0">&#125;</span><span class="sy0">,</span>
+ State <span class="br0">&#123;</span>
+ name<span class="sy0">:</span> <span class="st0">&quot;DRAWER_CLOSED&quot;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> y<span class="sy0">:-</span>height<span class="sy0">;</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> y<span class="sy0">:</span> drawer.<span class="me1">height</span><span class="sy0">;</span> height<span class="sy0">:</span> screen.<span class="me1">height</span><span class="sy0">-</span> drawer.<span class="me1">height</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> y<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ PropertyChanges <span class="br0">&#123;</span> target<span class="sy0">:</span> arrowIcon<span class="sy0">;</span> rotation<span class="sy0">:</span> <span class="nu0">0</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>狀態的改變是突然發生的，但是我們需要能夠比較平順的轉換行為。狀態之間的轉換是透過使用Transition元素來定義，並且可於稍後綁定在項目的transitions屬性上。我們的文字編輯器狀態的轉換，最後都會是DRAWER_OPEN及DRAWER_CLOSED的其中之一。重要的是，轉換需要一個來源狀態與目的狀態，但對於我們來說，我們可以使用萬用字元 * 來表示這個轉換是給全部的狀態變化用的。
+</p><p>在轉變的過程中，我們可以指定動畫效果到屬性變動上。我們的menuBar開關位置從y:0變成y:-partition，我們可以使用 <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-numberanimation.html">NumberAnimation</a> 元素來讓這個變化有動畫的效果。我們可以宣告目標的屬性將依據某段指定的時間及某種消退曲線(easing curve)來進行動畫效果的變化。一個消退曲線可以控制動畫的速率並且依據狀態之間的變化進行必要的內插。我們選擇的消退曲線是 <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-propertyanimation.html#easing.type-prop">Easing.OutQuint</a> ，這會讓移動的速度在動畫接近結束時減緩。詳見QML的 <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qdeclarativeanimation.html">動畫說明文章</a>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> transitions<span class="sy0">:</span> <span class="br0">&#91;</span>
+ Transition <span class="br0">&#123;</span>
+ to<span class="sy0">:</span> <span class="st0">&quot;*&quot;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> textArea<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y, height&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span>Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> menuBar<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ NumberAnimation <span class="br0">&#123;</span> target<span class="sy0">:</span> drawer<span class="sy0">;</span> properties<span class="sy0">:</span> <span class="st0">&quot;y&quot;</span><span class="sy0">;</span> duration<span class="sy0">:</span> <span class="nu0">100</span><span class="sy0">;</span> easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#93;</span></pre></div></div>
+<p>另一種動畫屬性變更的方法是透過宣告一個 <a rel="nofollow" class="external text" href="http://doc.qt.nokia.com/4.7/qml-behavior.html">Behavior</a> 元素。轉換僅發生在狀態的變化上，但是 Behavior 可以針對一般的屬性變化設定一個動畫。在文字編輯器中，箭頭有設定 NumberAnimation 在屬性變化的時候驅動 rotation 屬性。
+</p><p>In TextEditor.qml:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Behavior<span class="br0">&#123;</span>
+ NumberAnimation<span class="br0">&#123;</span>property<span class="sy0">:</span> <span class="st0">&quot;rotation&quot;</span><span class="sy0">;</span>easing.<span class="me1">type</span><span class="sy0">:</span> Easing.<span class="me1">OutExpo</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>有了狀態及動畫的相關知識後，讓我們回到我們的元件上。現在，我們可以強化元件的顯示。在 Button.qml 裡，我們在按鈕被按下時，加入 color 及scale 屬性變化。顏色型態可以使用 ColorAnimation。而數字屬性可以使用 NumberAnimation。 下面的 on propertyName 語法在針對單一的屬性時會很有用。
+</p><p>在 Button.qml:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> …
+&#160;
+color<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="kw5">Qt</span>.<span class="me1">darker</span><span class="br0">&#40;</span>buttonColor<span class="sy0">,</span> <span class="nu16">1.5</span><span class="br0">&#41;</span> <span class="sy0">:</span> buttonColor
+ Behavior on color <span class="br0">&#123;</span> ColorAnimation<span class="br0">&#123;</span> duration<span class="sy0">:</span> <span class="nu0">55</span><span class="br0">&#125;</span> <span class="br0">&#125;</span>
+&#160;
+scale<span class="sy0">:</span> buttonMouseArea.<span class="me1">pressed</span>&#160;? <span class="nu16">1.1</span> <span class="sy0">:</span> <span class="nu16">1.00</span>
+ Behavior on scale <span class="br0">&#123;</span> NumberAnimation<span class="br0">&#123;</span> duration<span class="sy0">:</span> <span class="nu0">55</span><span class="br0">&#125;</span> <span class="br0">&#125;</span></pre></div></div>
+<p>此外，我們可以透過加入顏色效果增強我們 QML 元件的顯示，如 漸層(gradients) 及透明(opacity)等效果。宣告一個 Gradient 元素可以覆蓋元件的顏色屬性設定。你也可以在漸層設定中透過 GradientStop 指定一個顏色。漸層的位置(position)是透過介於 0.0 到 1.0 的數值來指定。
+</p><p>在 MenuBar.qml
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> gradient<span class="sy0">:</span> Gradient <span class="br0">&#123;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.0</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#8C8F8C&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.17</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#6A6D6A&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">0.98</span><span class="sy0">;</span>color<span class="sy0">:</span> <span class="st0">&quot;#3F3F3F&quot;</span> <span class="br0">&#125;</span>
+ GradientStop <span class="br0">&#123;</span> position<span class="sy0">:</span> <span class="nu16">1.0</span><span class="sy0">;</span> color<span class="sy0">:</span> <span class="st0">&quot;#0e1B20&quot;</span> <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>gradient 被用於選單列中以顯示一個具有模擬深度的漸層。第一個顏色由0.0開始到1.0為止。
+</p>
+<h4><span class="mw-headline" id=".E4.B8.8B.E4.B8.80.E6.AD.A5.E8.A9.B2.E6.80.8E.E9.BA.BC.E5.81.9A">下一步該怎麼做</span></h4>
+<p>我們已經完成了一個簡單的文字編輯器的使用者介面的建造。使用者介面已經完成，接著我們就可以透過標準的Qt與C+<i>實現應用軟體邏輯。QML是一個很好的原型建構工具並且能將城市邏輯與使用者介面分隔開來。</i>
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor4_texteditor.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor4 texteditor.png">您的瀏覽器不支援圖片顯示</a>
+</p>
+<h3><span class="mw-headline" id=".E4.BD.BF.E7.94.A8Qt_C.E6.93.B4.E5.B1.95QML">使用Qt C擴展QML</span></h3>
+<p>現在我們有了自己的編輯器布局，我們可以開始使用C來實現編輯器功能。在QML中搭配使用C讓我們得以使用Qt來建立應用軟體的邏輯。我們可以在C中使用Qt的Declarative類別建立一個QML的環境，並且使用Graphics Scene來顯示 QML 元素。此外，我們也可以選擇匯出我們的C程式碼到一個qmlviewer可以讀取的plugin中。對我們的應用程式而言，我們應該在C實現載入及儲存的功能，並且將他們匯出成為一個plugin。如此一來，我們只需要直接載入QML檔案而不需要執行整個可執行檔。
+</p>
+<h4><span class="mw-headline" id=".E5.B0.87C.E9.A1.9E.E5.88.A5.E9.80.8F.E9.9C.B2.E7.B5.A6QML">將C類別透露給QML</span></h4>
+<p>我們使用Qt及C來實作檔案存取的功能。C的類別與函式可透過註冊的方式讓QML使用。這些類別也需要編譯成Qt plugin的形式，同時QML檔案也需要知道去哪找到這個plugin。
+</p><p>對我們的軟體而言，我墳需要建立下面的項目：
+</p>
+<pre>1. 用來處理目錄相關操作的Directory類別。
+2. 用來模擬在一個目錄中的檔案列表的File類別，這個類別是一個QObject。
+3. plugin類別將會將這些類別註冊到QML的環境下。
+4. 會將plugin進行編譯的Qt專案檔。
+5. 一個qmldir檔案用來告訴qmlviewer工具去哪找到這些plugin。
+</pre>
+<h4><span class="mw-headline" id=".E5.BB.BA.E7.AB.8B.E4.B8.80.E5.80.8BQt_Plugin">建立一個Qt Plugin</span></h4>
+<p>要建立一個plugin，我們需要設定一個下面所列的Qt專案檔。首先，指定需要的原始程式檔，標頭檔及Qt模組。所有的C程式碼與專案檔案都放在 filedialog 的目錄中。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> 在 cppPlugins.<span class="me1">pro</span><span class="sy0">:</span>
+&#160;
+ TEMPLATE <span class="sy0">=</span> lib
+ CONFIG<span class="st0">''</span><span class="sy0">=</span> qt plugin
+ QT <span class="st0">''</span><span class="sy0">=</span> declarative
+&#160;
+ DESTDIR<span class="st0">''</span><span class="sy0">=</span> ..<span class="sy0">/</span>plugins
+ OBJECTS_DIR <span class="sy0">=</span> tmp
+ MOC_DIR <span class="sy0">=</span> tmp
+&#160;
+TARGET <span class="sy0">=</span> FileDialog
+&#160;
+HEADERS <span class="st0">''</span><span class="sy0">=</span> directory.<span class="me1">h</span>  file.<span class="me1">h</span>  dialogPlugin.<span class="me1">h</span>
+&#160;
+ SOURCES<span class="st0">''</span><span class="sy0">=</span> directory.<span class="me1">cpp</span>  file.<span class="me1">cpp</span>  dialogPlugin.<span class="me1">cpp</span></pre></div></div>
+<p>在我們將Qt與declarative模組一起編譯，且指定將它編譯成plugin時，特別要注意的事需要指定lib作為我們的樣板。我們應該將編譯好的plugin放到父目錄中的plugins子目錄。
+</p>
+<h4><span class="mw-headline" id=".E5.9C.A8QML.E4.B8.AD.E8.A8.BB.E5.86.8A.E4.B8.80.E5.80.8B.E9.A1.9E.E5.88.A5">在QML中註冊一個類別</span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> In dialogPlugin.<span class="me1">h</span><span class="sy0">:</span>
+&#160;
+<span class="co2">#include &lt;QDeclarativeExtensionPlugin&gt;</span>
+&#160;
+<span class="kw2">class</span> DialogPlugin <span class="sy0">:</span> <span class="kw2">public</span> QDeclarativeExtensionPlugin
+ <span class="br0">&#123;</span>
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+<span class="kw2">public</span><span class="sy0">:</span>
+ <span class="kw4">void</span> registerTypes<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>uri<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+<span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>我們的plugin類別 DialogPlugin 是一個QDeclarativeExtensionPlugin的子類別。現在我們需要實現繼承的函式 registerTypes()。
+dialogPlugin.cpp看起來如下：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> DialogPlugin.<span class="me1">cpp</span><span class="sy0">:</span>
+&#160;
+<span class="co2">#include &quot;dialogPlugin.h&quot;</span>
+ <span class="co2">#include &quot;directory.h&quot;</span>
+ <span class="co2">#include &quot;file.h&quot;</span>
+ <span class="co2">#include &lt;qdeclarative.h&gt;</span>
+&#160;
+<span class="kw4">void</span> DialogPlugin<span class="sy0">::</span><span class="me2">registerTypes</span><span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="st0">''</span><span class="st0">'uri){
+&#160;
+ qmlRegisterType&lt;Directory&gt;(uri, 1, 0, &quot;Directory&quot;);
+ qmlRegisterType&lt;File&gt;(uri, 1, 0,&quot;File&quot;);
+ }
+&#160;
+ Q_EXPORT_PLUGIN2(FileDialog, DialogPlugin);</span></pre></div></div>
+<p>registerTypes()函式會將我們的 File 及 Directory 類別註冊到QML中。這個函式需要一個類別名稱作為樣板，以及一個主版本，副版本還有一個自訂的名稱。
+</p><p>我們需要使用 Q_EXPORT_PLUGIN2 這個巨集來將plugin匯出。注意，在我們的 dialogPlugin.h 中，在類別的開頭處使用了 Q_OBJECT 巨集。而且，我們需要執行 qmake 來從專案檔案產生需要的 meta-object 程式碼。
+</p>
+<h4><span class="mw-headline" id=".E5.9C.A8C.2B.E9.A1.9E.E5.88.A5.E4.B8.AD.E5.BB.BA.E7.AB.8BQML.E5.B1.AC.E6.80.A7">在C+<i>類別中建立QML屬性</span></h4></i>
+<p>我們可以使用C及Qt的Meta-Object系統建立QML的元素及屬性。我們可以使用 slots 及 signals 實現屬性，讓Qt可以知道這些屬性的變化。稍後，這些屬性就可以在QML中使用。
+</p><p>在文字編輯器中，我們需要能夠存取檔案。通常這些功能都包含在一個檔案對話框中。幸運的是，我們可以使用QDir, QFile 及 QTextStream 來實現目錄的讀取及輸出入串流。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> Directory <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span><span class="br0">&#123;</span>
+&#160;
+ <span class="kw2">Q_OBJECT</span>
+&#160;
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw4">int</span> filesCount READ filesCount CONSTANT<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> filename READ filename WRITE setFilename NOTIFY filenameChanged<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> fileContent READ fileContent WRITE setFileContent NOTIFY fileContentChanged<span class="br0">&#41;</span>
+ Q_PROPERTY<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> files READ files CONSTANT <span class="br0">&#41;</span>
+&#160;
+ …</pre></div></div>
+<p>這個 Directory 類別使用 Qt 的 Meta-Object 系統來註冊用於檔案處理的屬性。這個類別是透過如同plugin一般的方式匯出的，可以在QML當成一個Directory元素來使用。每個使用 Q_PROPERTY 巨集所列出的屬性都是一個QML屬性。
+</p><p>Q_PROPERTY 宣告了一個屬性及他的讀寫函式到Qt的Meta-Object系統。舉例來說，filename屬性是QString型態，它是透過filename()函式讀取其內容，使用setFilename()函式來寫入內容。此外，有一個signal稱為filenameChanged()綁定在 filename屬性上，只要這個屬性有所變化，就會發射訊號。讀寫函式在標頭檔中都是宣告成public的。
+</p><p>同樣的，我們可以依照需要來宣告其他的屬性。 filesCount屬性代表在目錄中的檔案數目。filename屬性是代表目前所選擇的檔案，至於載入或是儲存的檔案內容則是放在fileContent屬性中。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Q_PROPERTY<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> files READ files CONSTANT <span class="br0">&#41;</span></pre></div></div>
+<p>這個 files 的屬性是在指定目錄下經過篩選的檔案列表。 Directory 類別是被設計能夠篩選掉無效的文字檔案; 只有附檔名是 .txt 的才被認為是有效的。近一步的，QLists 可以透過在 C<i>+ 中宣告成 QDeclarativeListProperty 後，就可以在QML中使用它。這個樣板的物件需要由QObject繼承而來，因此，File類別必須也繼承自QObject。在Directory類別中，File物件的列表是被儲存於稱為m_fileList的QList變數中。</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw2">class</span> File <span class="sy0">:</span> <span class="kw2">public</span> <span class="kw5">QObject</span><span class="br0">&#123;</span>
+&#160;
+ <span class="kw2">Q_OBJECT</span>
+ Q_PROPERTY<span class="br0">&#40;</span><span class="kw5">QString</span> name READ name WRITE setName NOTIFY nameChanged<span class="br0">&#41;</span>
+&#160;
+ …
+ <span class="br0">&#125;</span><span class="sy0">;</span></pre></div></div>
+<p>這個屬性在稍後可以當成Directory元素屬性的一部分而在QML使用。注意，在我們的C+<i>程式碼中，並沒有一定要建立一個 id 識別字屬性。</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> Directory<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> directory
+&#160;
+ filesCount
+ filename
+ fileContent
+ files
+&#160;
+ files<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>.<span class="me1">name</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>因為 QML 使用 Javascript的語法及結構，我們可以遞迴的尋訪檔案列表並且取得其屬性。要取得第一個檔案的屬性，我們可以呼叫 files[0].name。
+</p><p>普通的C函式也可以在QML中被存取。像是檔案的儲存與載入函式就是在C<i>+被實現的，並且透過Q_INVOKABLE巨集來宣告。另外，也可以宣告函式成為slot，這樣也可以在QML中存取它。</i>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> In Directory.<span class="me1">h</span><span class="sy0">:</span>
+&#160;
+ Q_INVOKABLE <span class="kw4">void</span> saveFile<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ Q_INVOKABLE <span class="kw4">void</span> loadFile<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div></div>
+<p>Directory類別也必須在目錄內容有所變動時通知其他的物件。這個特性是透過signal的方式達成。如前眠所提及的，QML signal有對應的處理函式存在，這個函式名稱就是在signal的前面加上 on 字串。這個signal叫做directoryChanged，它會在一個目錄被刷新的時候發出。所謂的刷新就是簡單的重新載入目錄內容並且更新有效的檔案列表。QML項目可以在稍後透過將一個動作綁在onDirectoryChanged訊號處理函式上來得到這個通知。
+</p><p>list 屬性需要在稍後能夠被使用。因為 list 屬性使用callback來存取及修改其內容。list屬性是QDeclarativeListProperty&lt;File&gt;的形態。無論何時，只要這個屬性被存取，存取函式就需要能夠傳回一個QDeclarativeListProperty&lt;File&gt;。其中，樣板的形態 File 必須衍生自 QObject。接著，要建立這個QDeclarativeListProperty，list的存取函式及修改函式需要將建構子當成函數指標傳入。 list（在我們的範例中是一個 QList）也需要是一個 File 指標的列表。
+</p><p>QDeclarativeListProperty的建構子集Directory的實作如下：
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> QDeclarativeListProperty <span class="br0">&#40;</span> <span class="kw5">QObject</span><span class="st0">''</span><span class="st0">' object, void * data, AppendFunction append, CountFunction count = 0, AtFunction at = 0, ClearFunction clear = 0 )
+ QDeclarativeListProperty&lt;File&gt;( this, &amp;m_fileList, &amp;appendFiles, &amp;filesSize, &amp;fileAt, &amp;clearFilesPtr );</span></pre></div></div>
+<p>建構子會傳入那些新增列表，計算列表內容數目，透過索引存取項目及清空列表的函式指標。其中，只有新增列表函式是必須的。注意，函式指標需符合AppendFunction，CountFunction，AtFunction及ClearFunction的定義。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"> <span class="kw4">void</span> appendFiles<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="sy0">,</span> File <span class="sy0">*</span> file<span class="br0">&#41;</span>
+ File<span class="sy0">*</span> fileAt<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="sy0">,</span> <span class="kw4">int</span> index<span class="br0">&#41;</span>
+ <span class="kw4">int</span> filesSize<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span> property<span class="br0">&#41;</span>
+ <span class="kw4">void</span> clearFilesPtr<span class="br0">&#40;</span>QDeclarativeListProperty<span class="sy0">&lt;</span>File<span class="sy0">&gt;</span> <span class="sy0">*</span>property<span class="br0">&#41;</span></pre></div></div>
+<p>要簡化我們的檔案對話框，Directory類別篩掉無效的文字檔案（那些附檔名不是.txt的檔案）。如果一個檔案名稱沒有.txt作為附檔名，它將無法在我們的檔案對話框中被看到。也就是說，這個實作確保了檔案一定會被存在一個附檔名為.txt的檔案中。Directory使用QTextStream來讀取及輸出檔案內容到實際檔案中。
+</p><p>在我們的Directory元素中，我們能夠用列表的方式取得檔案，並且查知多少檔案在目錄中，以字串的形式取得檔案的名稱及內容，以及在目錄內容有變動的時候被通知到。
+</p><p>要建立這個plugin，對cppPlugins.pro執行qmake程式，接著使用make來建立及傳送這個plugin到plugins的目錄中。
+</p>
+<h4><span class="mw-headline" id=".E5.9C.A8QML.E4.B8.AD.E8.BC.89.E5.85.A5.E4.B8.80.E5.80.8BPlugin">在QML中載入一個Plugin</span></h4>
+<p>qmlviewer工具會載入與應用程式相同路徑下的檔案。我們也可以建立一個名為qmldir的檔案，並且在其中放入我們所希望載入的QML檔案的位置。這個qmldir檔案可以儲存plugin及其他資源的位置。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">在 qmldir<span class="sy0">:</span>
+&#160;
+Button .<span class="sy0">/</span>Button.<span class="me1">qml</span>
+ FileDialog .<span class="sy0">/</span>FileDialog.<span class="me1">qml</span>
+ TextArea .<span class="sy0">/</span>TextArea.<span class="me1">qml</span>
+ TextEditor .<span class="sy0">/</span>TextEditor.<span class="me1">qml</span>
+ EditMenu .<span class="sy0">/</span>EditMenu.<span class="me1">qml</span>
+&#160;
+plugin FileDialog plugins</pre></div></div>
+<p>我們剛剛建立的plugin叫做FileDialog，也就是專案檔中的TARGET欄位所指定的名稱。編譯過的plugin會放在plugins的目錄下。
+</p>
+<h4><span class="mw-headline" id=".E6.95.B4.E5.90.88.E6.AA.94.E6.A1.88.E5.B0.8D.E8.A9.B1.E6.A1.86.E5.88.B0File.E9.81.B8.E5.96.AE.E4.B8.AD">整合檔案對話框到File選單中</span></h4>
+<p>我們的FileMenu需要顯示FileDialogh的元素，並且包含一系列的在目錄中的文字檔案，以便讓使用者可以在列表中選擇所要的檔案。我們也需要指定save，load及new按鈕到個別所對應的動作上。FileMenu包含一個可編輯的文字輸入框讓使用者透過鍵盤輸入檔案名稱。
+</p><p>Directory元素用於FileMenu.qml中，它會在目錄刷新後通知FileDialog元素。這個通知是透過onDirectoryChanged達成。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">在 FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Directory<span class="br0">&#123;</span>
+ id<span class="sy0">:</span>directory
+ filename<span class="sy0">:</span> textInput.<span class="me1">text</span>
+ onDirectoryChanged<span class="sy0">:</span> fileDialog.<span class="me1">notifyRefresh</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>為了讓我們的程式保持簡單，檔案對話框將會永遠處於可見狀態，也不會顯示那些附檔名不是.txt的無效文字檔案。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">在 FileDialog.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+<span class="kw4">signal</span> notifyRefresh<span class="br0">&#40;</span><span class="br0">&#41;</span>
+ onNotifyRefresh<span class="sy0">:</span> dirView.<span class="me1">model</span> <span class="sy0">=</span> directory.<span class="me1">files</span></pre></div></div>
+<p>FileDialog元素會透過讀取files列表屬性來顯示目錄的內容。files屬性被當成GridView元素的資料模型來使用，這將會讓delegate能夠在一個表格中顯示資料元素。delegate處理模型的顯示外觀，我們的檔案對話框將會簡單的建立一個具有置中格式文字的表格。用滑鼠在檔名上單擊將會導致一個矩形出現在檔名四周用來強調被選擇的項目。任何時候只要notifyRefresh訊號發生，FileDialog都會被通知，並且重新載入目錄下的檔案。
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">在 FileMenu.<span class="me1">qml</span><span class="sy0">:</span>
+&#160;
+Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> newButton
+ label<span class="sy0">:</span> <span class="st0">&quot;New&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ textArea.<span class="me1">textContent</span> <span class="sy0">=</span> <span class="st0">&quot;&quot;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> loadButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Load&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ directory.<span class="me1">filename</span> <span class="sy0">=</span> textInput.<span class="me1">text</span>
+ directory.<span class="me1">loadFile</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ textArea.<span class="me1">textContent</span> <span class="sy0">=</span> directory.<span class="me1">fileContent</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> saveButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Save&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ directory.<span class="me1">fileContent</span> <span class="sy0">=</span> textArea.<span class="me1">textContent</span>
+ directory.<span class="me1">filename</span> <span class="sy0">=</span> textInput.<span class="me1">text</span>
+ directory.<span class="me1">saveFile</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span>
+ Button<span class="br0">&#123;</span>
+ id<span class="sy0">:</span> exitButton
+ label<span class="sy0">:</span> <span class="st0">&quot;Exit&quot;</span>
+ onButtonClick<span class="sy0">:</span><span class="br0">&#123;</span>
+ <span class="kw5">Qt</span>.<span class="me1">quit</span><span class="br0">&#40;</span><span class="br0">&#41;</span>
+ <span class="br0">&#125;</span>
+ <span class="br0">&#125;</span></pre></div></div>
+<p>現在，我們的FileMenu可以連結到他們的個別的動作上。saveButton會將TextEdit上的文字傳送到directory的fileContent屬性中，接著將它的檔名複製到可編輯的文字輸入視窗內。最後，這個按鈕會呼叫saveFile()函式來儲存檔案。sloadButton也是相似的動作。此外，New action將會清除TextEdit的內容。
+</p><p>EditMenu按鈕也連接到TextEdit的函式，可以對文字編輯器進行複製，貼上及選擇全部文字等動作。
+</p><p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_filemenu.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 filemenu.png">您的瀏覽器不支援圖片顯示</a>
+</p>
+<h3><span class="mw-headline" id=".E6.96.87.E5.AD.97.E7.B7.A8.E8.BC.AF.E5.99.A8.E5.AE.8C.E5.B7.A5">文字編輯器完工</span></h3>
+<p><a href="http://wiki.qt.io/index.php?title=Special:Upload&amp;wpDestFile=Http://doc.qt.nokia.com/4.7/images/qml-texteditor5_newfile.png" class="new" title="File:Http://doc.qt.nokia.com/4.7/images/qml-texteditor5 newfile.png">您的瀏覽器不支援圖片顯示</a>
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.637 seconds
+Real time usage: 0.674 seconds
+Preprocessor visited node count: 380/1000000
+Preprocessor generated node count: 780/1000000
+Post‐expand include size: 1364/2097152 bytes
+Template argument size: 436/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1396-0!*!0!!en!2!* and timestamp 20151104173318 and revision id 16538
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&amp;oldid=16538">http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&amp;oldid=16538</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://wiki.qt.io/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="http://wiki.qt.io/Category:Articles_needing_cleanup" title="Category:Articles needing cleanup">Articles needing cleanup</a></li><li><a href="http://wiki.qt.io/index.php?title=Category:Pages_with_broken_file_links&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with broken file links (page does not exist)">Pages with broken file links</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=Getting+Started+Programming+with+QML%2Fzh" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/Getting_Started_Programming_with_QML/zh"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:Getting_Started_Programming_with_QML/zh&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://wiki.qt.io/Getting_Started_Programming_with_QML/zh" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/Getting_Started_Programming_with_QML/zh" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/Getting_Started_Programming_with_QML/zh" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&amp;oldid=16538&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&amp;oldid=16538" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 4 May 2015, at 16:13.</li>
+											<li id="footer-info-viewcount">This page has been accessed 2,388 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":764});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=Getting_Started_Programming_with_QML/zh&oldid=16538 by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 10:58:33 GMT -->
+</html>

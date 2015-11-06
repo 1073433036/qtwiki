@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_Use_a_QSqlQueryModel_in_QML&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:18:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>View source for How to Use a QSqlQueryModel in QML - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" href="http://wiki.qt.io/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.qt.io/opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://wiki.qt.io/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="http://wiki.qt.io/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"How_to_Use_a_QSqlQueryModel_in_QML","wgTitle":"How to Use a QSqlQueryModel in QML","wgCurRevisionId":17236,"wgRevisionId":0,"wgArticleId":982,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"How_to_Use_a_QSqlQueryModel_in_QML","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-How_to_Use_a_QSqlQueryModel_in_QML skin-vector action-edit vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">View source for How to Use a QSqlQueryModel in QML</span></h1>
+						<div id="bodyContent">
+								<div id="contentSub">← <a href="http://wiki.qt.io/How_to_Use_a_QSqlQueryModel_in_QML" title="How to Use a QSqlQueryModel in QML">How to Use a QSqlQueryModel in QML</a></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><p>You do not have permission to edit this page, for the following reason:
+</p>
+<div class="permissions-errors">
+<p>The action you have requested is limited to users in one of the groups: <a href="http://wiki.qt.io/index.php?title=Qt_Wiki:Users&amp;action=edit&amp;redlink=1" class="new" title="Qt Wiki:Users (page does not exist)">Users</a>, KnowledgeBase, QtWS.
+</p>
+</div>
+<hr />
+<p>You can view and copy the source of this page:
+</p><textarea readonly="" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" lang="en" dir="ltr" name="wpTextbox1">{{Cleanup | reason=Auto-imported from ExpressionEngine.}}
+
+[[Category:HowTo]]
+[[Category:Developing_with_Qt]]
+
+'''English''' [[How_to_use_a_QSqlQueryModel_in_QML_Spanish|Spanish]] [[HowToUseAQSqlQueryModelInQML_Italian|Italian]]
+
+
+= How to use a QSqlQueryModel in QML =
+
+== Initial fully detailed approach ==
+
+=== Introduction ===
+
+The software I develop, Photo Parata, is a client server application that uses a sql backend. Most of the time the data Photo Parata displays requires some joins. Because of this, most of the time the models are derived from QSqlQueryModel, not QSqlTableModel.
+For QSqlRelationalTableModel, you can find an working but unexplained example at http://wiki.qt.io/QML_and_QSqlTableModel
+
+In this how to, I will walk you through the steps of setting up a custom model for QML, derived from QSqlQueryModel.
+
+I would like to thank [http://cdumez.blogspot.com/ Christophe Dumez] for his blog [http://cdumez.blogspot.com/2010/11/how-to-use-c-list-model-in-qml.html How to use C++ list model in QML]. It was this blog that allowed me to piece the following together.
+
+Other useful sources were : [http://www.developer.nokia.com/Community/Wiki/Using_QStandardItemModel_in_QML Using_QStandardItemModel_in_QML (wiki page)] and [http://forum.qt.io/viewthread/12188 QSqlTableModel in QML (forum thread)]
+
+The data source for this example was lifted from one of the Sql examples that ships with Qt, [http://doc.qt.nokia.com/stable/sql-masterdetail-database-h.html examples\sql\masterdetail]
+
+=== Step 1: Create a C++ class that derives from QSqlQueryModel: ===
+
+All the magic happens in the constructor and in the overloaded data() method.
+
+&lt;code>
+class ArtistsSqlModel : public QSqlQueryModel
+{
+    Q_OBJECT
+public:
+    explicit ArtistsSqlModel(QObject *parent);
+    void refresh();
+    QVariant data(const QModelIndex &amp;index, int role) const;
+
+signals:
+
+public slots:
+
+private:
+    const static char* COLUMN_NAMES[];
+    const static char* SQL_SELECT;
+};
+&lt;/code>
+
+=== Step 2: Implement two static constants ===
+
+I always have two constant static variables in each of my models that derive from QSqlQueryModel, COLUMN_NAMES and SQL_SELECT. The order of the column names in COLUMN_NAMES must match the order they are listed in the SELECT statement
+
+&lt;code>
+const char* ArtistsSqlModel::COLUMN_NAMES[] = {
+    "artist",
+    "title",
+    "year",
+    NULL
+};
+const char* ArtistsSqlModel::SQL_SELECT =
+    "SELECT artists.artist, albums.title, albums.year"
+    " FROM albums"
+    " JOIN artists ON albums.artistid = artists.id";
+&lt;/code>
+
+=== Step 3: Set the roleNames in the constructor ===
+
+This is where all the magic really happens. The QML will reference the different columns by the role names set on the model.
+
+&lt;code>
+ArtistsSqlModel::ArtistsSqlModel(QObject *parent) :
+    QSqlQueryModel(parent)
+{
+    int idx = 0;
+    QHash&lt;int, QByteArray> roleNames;
+    while( COLUMN_NAMES[idx]) {
+    roleNames[Qt::UserRole + idx + 1] = COLUMN_NAMES[idx];
+    idx++;
+}
+    setRoleNames(roleNames);
+    refresh();
+}
+&lt;/code>
+
+=== Step 4: implement the data() method and the refresh() method: ===
+
+As long as the role that is requested is not a user role, return the default. But if the role is a user role, return the correct column:
+
+&lt;code>
+QVariant ArtistsSqlModel::data(const QModelIndex &amp;index, int role) const
+{
+    QVariant value = QSqlQueryModel::data(index, role);
+    if(role &lt; Qt::UserRole)
+    {
+        value = QSqlQueryModel::data(index, role);
+    }
+    else
+    {
+        int columnIdx = role - Qt::UserRole - 1;
+        QModelIndex modelIndex = this->index(index.row(), columnIdx);
+        value = QSqlQueryModel::data(modelIndex, Qt::DisplayRole);
+    }
+    return value;
+}
+&lt;/code>
+
+The refresh() method is the most important, without it, the model won't show anything at all. The best is to stick to the setQuery method from QSqlQueryModel.
+&lt;code>
+void ArtistsSqlModel::refresh()
+{
+    this->setQuery(SQL_SELECT);
+}
+&lt;/code>
+
+=== Step 5: Allow QML to see the model: ===
+
+Create an instance of the model (make note that the constructor of the model did query the DB the first time). Then set it as a property on the viewer’s context, in this case I called it artistModel:
+
+&lt;code>
+ArtistsSqlModel *artistsSqlModel = new ArtistsSqlModel( qApp);
+QmlApplicationViewer viewer;
+
+viewer.rootContext()->setContextProperty("artistsModel", artistsSqlModel);
+viewer.setOrientation(QmlApplicationViewer::ScreenOrientationAuto);
+viewer.setMainQmlFile(QLatin1String("qml/SQLListView/main.qml"));
+viewer.showExpanded();
+&lt;/code>
+
+=== Step 6: Create the QML list ===
+Since the model was exposed in step 5, the model exists and is ready to be used in QML. Simply set the model of the ListView to the name give in step 5.
+
+&lt;code>
+import QtQuick 1.1
+
+Rectangle {
+    width: 500
+    height: 500
+    MouseArea {
+        anchors.fill: parent
+        Text {
+            id: text1
+            anchors.verticalCenterOffset: 20
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: qsTr("Testing")
+            font.pixelSize: 12
+            }
+        ListView {
+            id: list_view1
+            x: 125
+            y: 100
+            width: 110
+            height: 160
+            delegate: ArtistItemDelegate {}
+            model: artistsModel
+        }
+    }
+}
+&lt;/code>
+
+=== Step 7: Create the QML delegate used by the list ===
+And finally implementation of the delegate. Notice here how the names set in the roleModel are used as the values to bind to the text property of the Text objects:
+
+'''ArtistItemDelegate.qml'''
+&lt;code>
+import QtQuick 1.1
+
+Item {
+    id: delegate
+    width: delegate.ListView.view.width;
+    height: 30
+    clip: true
+    anchors.margins: 4
+    Row {
+        anchors.margins: 4
+        anchors.fill: parent
+        spacing: 4;
+        Text {
+            text: artist
+            width: 150
+        }
+        Text {
+            text: title
+            width: 300;
+        }
+        Text {
+            text: year
+            width: 50;
+        }
+    }
+}
+&lt;/code>
+
+
+Source code is no longer available on my website, so feel free to contact me for the complete source code, I will be happy to share!
+
+
+== A more generic approach ==
+Based on the initial wiki article I came up with a more generic approach that allow to use the same class for all your models instead of creating a derived class for each model.
+
+Here it is :
+
+'''sqlquerymodel.h'''
+&lt;code>
+#pragma once
+#include &lt;QSqlQueryModel>
+
+class SqlQueryModel : public QSqlQueryModel
+{
+    Q_OBJECT
+
+public:
+    explicit SqlQueryModel(QObject *parent = 0);
+
+    void setQuery(const QString &amp;query, const QSqlDatabase &amp;db = QSqlDatabase());
+    void setQuery(const QSqlQuery &amp;query);
+    QVariant data(const QModelIndex &amp;index, int role) const;
+    QHash&lt;int, QByteArray> roleNames() const {	return m_roleNames;	}
+
+private:
+    void generateRoleNames();
+    QHash&lt;int, QByteArray> m_roleNames;
+};
+&lt;/code>
+
+'''sqlquerymodel.cpp'''
+&lt;code>
+#include "SqlQueryModel.h"
+#include &lt;QSqlRecord>
+#include &lt;QSqlField>
+ 
+SqlQueryModel::SqlQueryModel(QObject *parent) :
+    QSqlQueryModel(parent)
+{
+}
+ 
+void SqlQueryModel::setQuery(const QString &amp;query, const QSqlDatabase &amp;db)
+{
+    QSqlQueryModel::setQuery(query, db);
+    generateRoleNames();
+}
+ 
+void SqlQueryModel::setQuery(const QSqlQuery &amp; query)
+{
+    QSqlQueryModel::setQuery(query);
+    generateRoleNames();
+}
+ 
+void SqlQueryModel::generateRoleNames()
+{
+    m_roleNames.clear();
+    for( int i = 0; i &lt; record().count(); i ++) {
+        m_roleNames.insert(Qt::UserRole + i + 1, record().fieldName(i).toUtf8());
+    }
+}
+ 
+QVariant SqlQueryModel::data(const QModelIndex &amp;index, int role) const
+{
+    QVariant value;
+
+    if(role &lt; Qt::UserRole) {
+        value = QSqlQueryModel::data(index, role);
+    }
+    else {
+        int columnIdx = role - Qt::UserRole - 1;
+        QModelIndex modelIndex = this->index(index.row(), columnIdx);
+        value = QSqlQueryModel::data(modelIndex, Qt::DisplayRole);
+    }
+    return value;
+}
+&lt;/code>
+
+And use it like this :
+&lt;code>
+SqlQueryModel *model1 = new SqlQueryModel(0);
+model1->setQuery("SELECT * FROM table WHERE column='value'");
+SqlQueryModel *model2 = new SqlQueryModel(0);
+model2->setQuery("SELECT * FROM anothertable WHERE anothercolumn='value'");
+QmlApplicationViewer viewer;
+viewer.rootContext()->setContextProperty("myFirstModel", model1);
+viewer.rootContext()->setContextProperty("mySecondModel", model2);
+&lt;/code>
+</textarea><div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p>Templates used on this page:
+</p></div><ul>
+<li><a href="http://wiki.qt.io/Template:Ambox" title="Template:Ambox">Template:Ambox</a> (<a href="http://wiki.qt.io/index.php?title=Template:Ambox&amp;action=edit" title="Template:Ambox">view source</a>) </li><li><a href="http://wiki.qt.io/Template:Cleanup" title="Template:Cleanup">Template:Cleanup</a> (<a href="http://wiki.qt.io/index.php?title=Template:Cleanup&amp;action=edit" title="Template:Cleanup">view source</a>) </li></ul></div><p id="mw-returnto">Return to <a href="http://wiki.qt.io/How_to_Use_a_QSqlQueryModel_in_QML" title="How to Use a QSqlQueryModel in QML">How to Use a QSqlQueryModel in QML</a>.</p>
+</div>								<div class="printfooter">
+				Retrieved from "<a href="http://wiki.qt.io/How_to_Use_a_QSqlQueryModel_in_QML">http://wiki.qt.io/How_to_Use_a_QSqlQueryModel_in_QML</a>"				</div>
+												<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="http://wiki.qt.io/User:10.0.113.70" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="http://wiki.qt.io/User_talk:10.0.113.70" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="http://wiki.qt.io/index.php?title=Special:QtLogin&amp;returnto=How+to+Use+a+QSqlQueryModel+in+QML" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="http://wiki.qt.io/How_to_Use_a_QSqlQueryModel_in_QML"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="http://wiki.qt.io/index.php?title=Talk:How_to_Use_a_QSqlQueryModel_in_QML&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view"><span><a href="http://wiki.qt.io/How_to_Use_a_QSqlQueryModel_in_QML" >Read</a></span></li>
+					<li id="ca-viewsource" class="selected"><span><a href="http://wiki.qt.io/index.php?title=How_to_Use_a_QSqlQueryModel_in_QML&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://wiki.qt.io/index.php?title=How_to_Use_a_QSqlQueryModel_in_QML&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://wiki.qt.io/skins/common/images/wiki.png);" href="http://wiki.qt.io/Main_Page"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://wiki.qt.io/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="http://wiki.qt.io/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://wiki.qt.io/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://wiki.qt.io/Special:WhatLinksHere/How_to_Use_a_QSqlQueryModel_in_QML" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://wiki.qt.io/Special:RecentChangesLinked/How_to_Use_a_QSqlQueryModel_in_QML" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://wiki.qt.io/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-info"><a href="http://wiki.qt.io/index.php?title=How_to_Use_a_QSqlQueryModel_in_QML&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://wiki.qt.io/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.edit.collapsibleFooter","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://wiki.qt.io/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":617});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/index.php?title=How_to_Use_a_QSqlQueryModel_in_QML&action=edit by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 11:18:32 GMT -->
+</html>

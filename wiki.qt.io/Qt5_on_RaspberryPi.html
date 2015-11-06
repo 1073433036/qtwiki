@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.qt.io/Qt5_on_RaspberryPi by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:45:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Qt5 on RaspberryPi - Qt Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23.3" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="Qt Wiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="api251f.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Qt Wiki Atom feed" href="apidf90.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="load771b.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="loadc6d2.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: qtio_wiki:resourceloader:filter:minify-css:7:e91d7bc946738c8892a88ad5616a59ba */</style>
+<script src="load8478.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Qt5_on_RaspberryPi","wgTitle":"Qt5 on RaspberryPi","wgCurRevisionId":18221,"wgRevisionId":18221,"wgArticleId":1728,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing cleanup"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Qt5_on_RaspberryPi","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":true,"previewDialog":false,"publish":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikieditor-preview":1,"wikieditor-publish":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs500":false,"searchNs501":false,"searchNs700":false,"searchNs701":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: qtio_wiki:resourceloader:filter:minify-js:7:9743cb8b8019d46de5946bfe6dfa04d7 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp-qt {line-height: normal;}
+.source-cpp-qt li, .source-cpp-qt pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp-qt
+ * CSS class: source-cpp-qt, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp-qt.source-cpp-qt .de1, .cpp-qt.source-cpp-qt .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp-qt.source-cpp-qt  {font-family:monospace;}
+.cpp-qt.source-cpp-qt .imp {font-weight: bold; color: red;}
+.cpp-qt.source-cpp-qt li, .cpp-qt.source-cpp-qt .li1 {font-weight: normal; vertical-align:top;}
+.cpp-qt.source-cpp-qt .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp-qt.source-cpp-qt .li2 {font-weight: bold; vertical-align:top;}
+.cpp-qt.source-cpp-qt .kw1 {color: #000000; font-weight:bold;}
+.cpp-qt.source-cpp-qt .kw2 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .kw4 {color: #0057AE;}
+.cpp-qt.source-cpp-qt .kw5 {color: #22aadd;}
+.cpp-qt.source-cpp-qt .co1 {color: #888888;}
+.cpp-qt.source-cpp-qt .co2 {color: #006E28;}
+.cpp-qt.source-cpp-qt .coMULTI {color: #888888; font-style: italic;}
+.cpp-qt.source-cpp-qt .es0 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es1 {color: #000099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es2 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es3 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es4 {color: #660099; font-weight: bold;}
+.cpp-qt.source-cpp-qt .es5 {color: #006699; font-weight: bold;}
+.cpp-qt.source-cpp-qt .br0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .sy0 {color: #006E28;}
+.cpp-qt.source-cpp-qt .st0 {color: #BF0303;}
+.cpp-qt.source-cpp-qt .nu0 {color: #B08000;}
+.cpp-qt.source-cpp-qt .nu6 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu8 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu12 {color: #208080;}
+.cpp-qt.source-cpp-qt .nu16 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu17 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu18 {color:#800080;}
+.cpp-qt.source-cpp-qt .nu19 {color:#800080;}
+.cpp-qt.source-cpp-qt .me1 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me2 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .me3 {color: #2B74C7;}
+.cpp-qt.source-cpp-qt .ln-xtra, .cpp-qt.source-cpp-qt li.ln-xtra, .cpp-qt.source-cpp-qt div.ln-xtra {background-color: #ffc;}
+.cpp-qt.source-cpp-qt span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Qt5_on_RaspberryPi skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Qt5 on RaspberryPi</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Qt Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="center; margin: -1px auto 0px;border: 1px solid rgb(127, 194, 66); border-left: 10px solid rgb(127, 194, 66); background:rgb(250,250,250); width:600px">
+
+<tr>
+<td style="padding: 0.25em 0.5em;"> <b>This article may require cleanup to meet the Qt Wiki's quality standards.</b> Reason: Auto-imported from ExpressionEngine.<br /><small>Please <b><a rel="nofollow" class="external text" href="index9d10.html?title=Qt5_on_RaspberryPi&amp;action=edit">improve this article</a></b> if you can. Remove the {{cleanup}} tag and add this page to <b><a href="Updated_pages.html" title="Updated pages">Updated pages</a></b> list after it's clean.</small>
+</td></tr></table>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Simplified_guide_for_getting_Qt_5_built_and_installed_on_the_raspberry_pi"><span class="tocnumber">1</span> <span class="toctext">Simplified guide for getting Qt 5 built and installed on the raspberry pi</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Overview"><span class="tocnumber">1.1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Preparing_the_sysroot_and_getting_the_toolchain"><span class="tocnumber">1.2</span> <span class="toctext">Preparing the sysroot and getting the toolchain</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Preparing_the_Raspberry_Pi"><span class="tocnumber">1.3</span> <span class="toctext">Preparing the Raspberry Pi</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Building_qtbase.2C_qtjsbackend.2C_and_qtdeclarative"><span class="tocnumber">1.4</span> <span class="toctext">Building qtbase, qtjsbackend, and qtdeclarative</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Getting_our_.2Fopt.2Fqt5_onto_the_device"><span class="tocnumber">1.5</span> <span class="toctext">Getting our /opt/qt5 onto the device</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Trying_out_stuff"><span class="tocnumber">1.6</span> <span class="toctext">Trying out stuff</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Simplified_guide_for_getting_Qt_5_built_and_installed_on_the_raspberry_pi">Simplified guide for getting Qt 5 built and installed on the raspberry pi</span></h1>
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<p>Since the instructions at the <a href="RaspberryPi.html" title="RaspberryPi">RaspberryPi</a> wiki-page can be a bit confusing I've created this step-by-step guide to document what works for me. I'm using Ubuntu 12.04, but I don't see why the instructions wouldn't work on older / other distros.
+</p><p>Update: I was made aware that another similar guide already existed, and it looks to be more complete than this guide, please see <a href="RaspberryPi_Beginners_guide-3.html" title="RaspberryPi Beginners guide" class="mw-redirect">RaspberryPi_Beginners_guide</a>
+</p>
+<h2><span class="mw-headline" id="Preparing_the_sysroot_and_getting_the_toolchain">Preparing the sysroot and getting the toolchain</span></h2>
+<p>Download the Debian Wheezy image from here and flash it on your device: <a rel="nofollow" class="external text" href="http://www.raspberrypi.org/downloads">raspberrypi.org download page</a>
+</p><p>The instructions here are tested with the 2012-08-16-wheezy-raspbian image, but should work with 2012-07-15-wheezy-raspbian as well.
+</p><p>Replace /dev/sde with the location of your SD card as reported by "sudo fdisk -l". Note that this will overwrite any previous contents on the SD card.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">unzip <span class="nu0">2012</span><span class="sy0">-</span><span class="nu19">08</span><span class="sy0">-</span><span class="nu0">16</span><span class="sy0">-</span>wheezy<span class="sy0">-</span>raspbian.<span class="me1">zip</span>
+sudo dd <span class="kw1">if</span><span class="sy0">=</span><span class="nu0">2012</span><span class="sy0">-</span><span class="nu19">08</span><span class="sy0">-</span><span class="nu0">16</span><span class="sy0">-</span>wheezy<span class="sy0">-</span>raspbian.<span class="me1">img</span> of<span class="sy0">=/</span>dev<span class="sy0">/</span>sde bs<span class="sy0">=</span>1M
+sudo eject <span class="sy0">/</span>dev<span class="sy0">/</span>sde</pre></div></div>
+<p>We also mount the wheezy image at /mnt/rasp-pi-rootfs for use as a sysroot during cross compilation of Qt 5. The offset 62914560 is computed by running "sudo fdisk -l" on the .img file, and multiplying the sector size 512 bytes with the start of the Linux partition at sector 122880. It's the same for 2012-07-15-wheezy-raspbian. Remember to re-mount the image in case you reboot as well, otherwise a lot of confusion might ensue.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">sudo mount <span class="sy0">-</span>o loop<span class="sy0">,</span>offset<span class="sy0">=</span><span class="nu0">62914560</span> <span class="nu0">2012</span><span class="sy0">-</span><span class="nu19">08</span><span class="sy0">-</span><span class="nu0">16</span><span class="sy0">-</span>wheezy<span class="sy0">-</span>raspbian.<span class="me1">img</span> <span class="sy0">/</span>mnt<span class="sy0">/</span>rasp<span class="sy0">-</span>pi<span class="sy0">-</span>rootfs</pre></div></div>
+<p>Get and extract the Linaro toolchain graciously built and provided by Donald: <a rel="nofollow" class="external text" href="http://blueocean.qmh-project.org/gcc-4.7-linaro-rpi-gnueabihf.tbz">gcc-4.7-linaro</a>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">mkdir ~<span class="sy0">/</span>rpi
+cd~<span class="sy0">/</span>rpi
+wget http<span class="sy0">:</span><span class="co1">//blueocean.qmh-project.org/gcc-4.7-linaro-rpi-gnueabihf.tbz</span>
+tar <span class="sy0">-</span>xjf gcc<span class="sy0">-</span><span class="nu16">4.7</span><span class="sy0">-</span>linaro<span class="sy0">-</span>rpi<span class="sy0">-</span>gnueabihf.<span class="me1">tbz</span></pre></div></div>
+<p>The main site seem's down, there is a mirror on <a rel="nofollow" class="external free" href="http://swap.tsmt.eu/gcc-4.7-linaro-rpi-gnueabihf.tbz">http://swap.tsmt.eu/gcc-4.7-linaro-rpi-gnueabihf.tbz</a>
+</p><p>Get and run the fixQualifiedLibraryPaths script from cross-compile-tools in order to fix broken symlinks in the image.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd ~<span class="sy0">/</span>rpi
+git clone https<span class="sy0">:</span><span class="co1">//git.gitorious.org/cross-compile-tools/cross-compile-tools.git</span>
+cross<span class="sy0">-</span>compile<span class="sy0">-</span>tools<span class="sy0">/</span>fixQualifiedLibraryPaths <span class="sy0">/</span>mnt<span class="sy0">/</span>rasp<span class="sy0">-</span>pi<span class="sy0">-</span>rootfs~<span class="sy0">/</span>rpi<span class="sy0">/</span>gcc<span class="sy0">-</span><span class="nu16">4.7</span><span class="sy0">-</span>linaro<span class="sy0">-</span>rpi<span class="sy0">-</span>gnueabihf<span class="sy0">/</span>bin<span class="sy0">/</span>arm<span class="sy0">-</span>linux<span class="sy0">-</span>gnueabihf<span class="sy0">-</span>gcc</pre></div></div>
+<h2><span class="mw-headline" id="Preparing_the_Raspberry_Pi">Preparing the Raspberry Pi</span></h2>
+<p>The first time you boot the Raspberry Pi you get a configuration menu. Otherwise, manually run raspi-config. Make sure a keyboard is connected via USB, and that the raspberry pi is connected to your local area network via a network cable. From this menu you'll want to run the expand_rootfs option, enable ssh server, set the boot_behaviour to no to prevent X from starting (since we'll be running Qt directly on top of fullscreen EGL). Also in the memory_split option give VideoCore 128 MB of memory to be able to run the most GPU hungry QML 2 applications.
+</p><p>Also install rsync which we will later use to copy over the Qt libraries and binaries, and set the root password to enable rsync'ing to the root user.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># on the raspberry pi, as user pi (password raspberry)</span>
+sudo apt<span class="sy0">-</span>get update
+sudo apt<span class="sy0">-</span>get install rsync
+sudo passwd
+<span class="co2"># enter root password, I chose raspberry here, same as for the pi user</span>
+sudo reboot</pre></div></div>
+<p>After the raspberry has rebooted it will tell you its IP address above the login prompt. Keep track of this IP address for later.
+</p>
+<h2><span class="mw-headline" id="Building_qtbase.2C_qtjsbackend.2C_and_qtdeclarative">Building qtbase, qtjsbackend, and qtdeclarative</span></h2>
+<p>First we clone the Qt source packages we're interested in to be able to run qmlscene and QML 2 applications. qtjsbackend needs this not yet integrated patch to work on armv6, so we cherry-pick it: <a rel="nofollow" class="external free" href="https://codereview.qt.io/#change,27256">https://codereview.qt.io/#change,27256</a>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd ~<span class="sy0">/</span>rpi
+git clone git<span class="sy0">:</span><span class="co1">//gitorious.org/qt/qtbase.git</span>
+git clone git<span class="sy0">:</span><span class="co1">//gitorious.org/qt/qtjsbackend.git</span>
+<span class="br0">&#40;</span>cd qtjsbackend <span class="sy0">&amp;&amp;</span> git fetch https<span class="sy0">:</span><span class="co1">//codereview.qt.io/p/qt/qtjsbackend refs/changes/56/27256/4 &amp;&amp; git cherry-pick FETCH_HEAD)</span>
+git clone git<span class="sy0">:</span><span class="co1">//gitorious.org/qt/qtdeclarative.git</span></pre></div></div>
+<p>Next we configure and build qtbase. I've chosen the prefix /opt/qt5, which is where the qt libraries etc will end up on the device image. You might need to sync qtbase back to change 069469b468c482244c5, since I experienced build issues with the latest HEAD. If you get any build failures it's a good idea to do "git clean -dxf" in qtbase before trying again, to remove any by-products of the failed build. Note that this will erase any local changes you've made to qtbase, so use with caution.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd ~<span class="sy0">/</span>rpi<span class="sy0">/</span>qtbase
+git checkout 069469b468c482244c5 <span class="co2"># if HEAD doesn't build</span>
+.<span class="sy0">/</span>configure <span class="sy0">-</span>prefix <span class="sy0">/</span>opt<span class="sy0">/</span>qt5 <span class="sy0">-</span>release <span class="sy0">-</span>device linux<span class="sy0">-</span>rasp<span class="sy0">-</span>pi<span class="sy0">-</span>g<span class="sy0">++</span> <span class="sy0">-</span>make libs <span class="sy0">-</span>device<span class="sy0">-</span>option CROSS_COMPILE<span class="sy0">=</span>~<span class="sy0">/</span>rpi<span class="sy0">/</span>gcc<span class="sy0">-</span><span class="nu16">4.7</span><span class="sy0">-</span>linaro<span class="sy0">-</span>rpi<span class="sy0">-</span>gnueabihf<span class="sy0">/</span>bin<span class="sy0">/</span>arm<span class="sy0">-</span>linux<span class="sy0">-</span>gnueabihf<span class="sy0">-</span> <span class="sy0">-</span>sysroot <span class="sy0">/</span>mnt<span class="sy0">/</span>rasp<span class="sy0">-</span>pi<span class="sy0">-</span>rootfs
+<span class="co2"># accept the license agreement</span>
+make
+sudo make install</pre></div></div>
+<p>We're ready to build and install the other modules now, using the qmake built together with qtbase. Since it's a host tool it's installed in /opt/qt5/bin outside of the sysroot at /mnt/rasp-pi-rootfs.
+</p><p>Due to a build error I encountered with the latest qtdeclarative I had to use "sudo make". For reference, the SHA-1 of qtjsbackend I tested was e49f760da4b42c96e9f (+ the cherry-pick above), and qtdeclarative was at bf5f97ae626af46742c315.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd~<span class="sy0">/</span>rpi<span class="sy0">/</span>qtjsbackend
+<span class="sy0">/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span>bin<span class="sy0">/</span>qmake
+make
+sudo make install
+cd ~<span class="sy0">/</span>rpi<span class="sy0">/</span>qtdeclarative
+<span class="sy0">/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span>bin<span class="sy0">/</span>qmake
+sudo make
+sudo make install</pre></div></div>
+<p>Since qmlscene doesn't get built automatically, we do it manually. We also build samegame to have a QML 2 example to test.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">cd~<span class="sy0">/</span>rpi<span class="sy0">/</span>qtdeclarative<span class="sy0">/</span>tools<span class="sy0">/</span>qmlscene
+<span class="sy0">/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span>bin<span class="sy0">/</span>qmake
+make
+sudo make install
+cd ~<span class="sy0">/</span>rpi<span class="sy0">/</span>qtdeclarative<span class="sy0">/</span>examples<span class="sy0">/</span>demos<span class="sy0">/</span>samegame<span class="sy0">/</span>
+<span class="sy0">/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span>bin<span class="sy0">/</span>qmake
+make
+sudo make install</pre></div></div>
+<h2><span class="mw-headline" id="Getting_our_.2Fopt.2Fqt5_onto_the_device">Getting our /opt/qt5 onto the device</span></h2>
+<p>Now it's just a matter of rsync'ing our /opt/qt5 to the device. Exchange the IP address with your own raspberry pi's IP address as noted earlier (displayed right after the pi's boot, above the login prompt). Note the trailing slash on the source directory, without it you'll end up with /opt/qt5/qt5 on the device.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1">rsync <span class="sy0">-</span>av <span class="sy0">/</span>mnt<span class="sy0">/</span>rasp<span class="sy0">-</span>pi<span class="sy0">-</span>rootfs<span class="sy0">/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span> root@172.24.91.127<span class="sy0">:/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span></pre></div></div>
+<h2><span class="mw-headline" id="Trying_out_stuff">Trying out stuff</span></h2>
+<p>ssh into the device as the pi user, and run an example.
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># on the host</span>
+ssh pi@172.24.91.127</pre></div></div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp-qt source-cpp-qt"><pre class="de1"><span class="co2"># on the pi</span>
+export LD_LIBRARY_PATH<span class="sy0">=/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span>lib<span class="sy0">/</span>
+<span class="co2"># to prevent QML 2 animations from running too slow</span>
+export QML_FIXED_ANIMATION_STEP<span class="sy0">=</span>no
+<span class="sy0">/</span>opt<span class="sy0">/</span>qt5<span class="sy0">/</span>examples<span class="sy0">/</span>qtdeclarative<span class="sy0">/</span>demos<span class="sy0">/</span>samegame<span class="sy0">/</span>samegame</pre></div></div>
+<p>samegame should be running now, and you can interact with it if you have a mouse connected to the raspberry pi.
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.226 seconds
+Real time usage: 0.230 seconds
+Preprocessor visited node count: 141/1000000
+Preprocessor generated node count: 344/1000000
+Post‐expand include size: 1280/2097152 bytes
+Template argument size: 415/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key qtio_wiki:pcache:idhash:1728-0!*!0!!en!*!* and timestamp 20151105095619 and revision id 18221
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="indexbccb.html?title=Qt5_on_RaspberryPi&amp;oldid=18221">http://wiki.qt.io/index.php?title=Qt5_on_RaspberryPi&amp;oldid=18221</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Special_Categories.html" title="Special:Categories">Category</a>: <ul><li><a href="Category_Articles_needing_cleanup.html" title="Category:Articles needing cleanup">Articles needing cleanup</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-anonuserpage"><a href="User_10.0.113.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">10.0.113.70</a></li><li id="pt-anontalk"><a href="User_talk_10.0.113.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li><li id="pt-login"><a href="https://login.qt.io/authorize?client_id=one-qt-server-003&amp;response_type=code&amp;state=4e78078111798c0d&amp;scope=authorizations&amp;redirect_uri=https%3A%2F%2Fwiki.qt.io%2FSpecial%3AQtLogin%2Fcallback" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Sign in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Qt5_on_RaspberryPi.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="Talk_Qt5_on_RaspberryPi.html?title=Talk:Qt5_on_RaspberryPi&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Qt5_on_RaspberryPi.html" >Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="index9d10.html?title=Qt5_on_RaspberryPi&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="indexbaa9.html?title=Qt5_on_RaspberryPi&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://wiki.qt.io/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Qt Wiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(skins/common/images/wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-recentchanges"><a href="Special_RecentChanges.html" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="How_to_create_columns_in_a_QML_ListView.html" title="Load a random page [x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="Special_WhatLinksHere/Qt5_on_RaspberryPi.html" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="Special_RecentChangesLinked/Qt5_on_RaspberryPi.html" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="Special_SpecialPages.html" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="indexe0a0.html?title=Qt5_on_RaspberryPi&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="indexbccb.html?title=Qt5_on_RaspberryPi&amp;oldid=18221" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="indexc194.html?title=Qt5_on_RaspberryPi&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 June 2015, at 20:56.</li>
+											<li id="footer-info-viewcount">This page has been accessed 5,036 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-terms"><a href='https://developer.qtcloudservices.com/legal/terms'>Käyttöehdot</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="load55ad.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54043535-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":437});
+}</script>
+	</body>
+
+<!-- Mirrored from wiki.qt.io/Qt5_on_RaspberryPi by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 05 Nov 2015 13:45:28 GMT -->
+</html>
